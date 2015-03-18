@@ -34,7 +34,7 @@ int main() {
 		retval=1;
 	} else {
 		printf("Test passed !\n");
-  }
+	}
 
    return retval;
 }

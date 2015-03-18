@@ -1,0 +1,781 @@
+@I [HLS-0] Workspace /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3 opened at Fri Mar 13 21:50:40 CET 2015
+@I [HLS-100] Command "config_clock -quiet -name default -period 8 -default=false "
+@I [SYN-201] Setting up clock 'default' with a period of 8ns.
+@I [HLS-100] Command 'config_clock' returned 0; elapsed 0Total elapsed time: 1.123 sec.
+@I [HLS-100] Command "open_platform DefaultPlatform "
+@I [HLS-100] Command 'open_platform' returned 0; elapsed 0Total elapsed time: 1.174 sec.
+@I [HLS-100] Command "import_lib /nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/xilinx/zynq/zynq "
+@I [HLS-100] Command "source /nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/xilinx/common/xilinx.lib "
+@I [HLS-100] Command "source /nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/xilinx/interface/xilinx_interface.lib "
+@I [HLS-100] Command "source /nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/xilinx/interface/plb46.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.224 sec.
+@I [HLS-100] Command "source /nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/xilinx/interface/fsl.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.226 sec.
+@I [HLS-100] Command "source /nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/xilinx/interface/axi4.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.228 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.228 sec.
+@I [HLS-100] Command "source /nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/xilinx/common/dsp48.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.230 sec.
+@I [HLS-100] Command "source /nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/xilinx/ip/xfft.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.251 sec.
+@I [HLS-100] Command "source /nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/xilinx/ip/xfir.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.252 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.255 sec.
+@I [HLS-100] Command "source /nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/xilinx/common/xilinx_old.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.260 sec.
+@I [HLS-100] Command "source /nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/xilinx/common/xilinx_vivado.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 1.278 sec.
+@I [HLS-100] Command "source /nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/xilinx/common/xilinx.hlp "
+@I [HLS-100] Command "source /nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/xilinx/common/target_info.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.286 sec.
+@I [HLS-100] Command "source /nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/xilinx/common/dsp48.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.288 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.288 sec.
+@I [HLS-100] Command "source /nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/xilinx/zynq/dsp48e1.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.290 sec.
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 1.290 sec.
+@I [HLS-100] Command "config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 1.290 sec.
+@I [HLS-100] Command "config_chip_info -quiet -speed medium "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 1.290 sec.
+@I [HLS-100] Command 'import_lib' returned 0; elapsed 0.02Total elapsed time: 1.292 sec.
+@I [HLS-100] Command "source /nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/xilinx/zynq/zynq.gen "
+@I [HLS-100] Command "source /nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/xilinx/common/virtex.gen "
+@I [HLS-100] Command "source /nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/xilinx/common/xilinx.gen "
+@I [HLS-100] Command "source /nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/xilinx/interface/plb46.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.300 sec.
+@I [HLS-100] Command "source /nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/xilinx/interface/fsl.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.302 sec.
+@I [HLS-100] Command "source /nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/xilinx/interface/axi4.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.306 sec.
+@I [HLS-100] Command "source /nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/xilinx/scripts/xilinxcoregen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 1.321 sec.
+@I [HLS-100] Command "source /nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/xilinx/interface/XilEDKCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 1.334 sec.
+@I [HLS-100] Command "source /nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/xilinx/ip/util.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.336 sec.
+@I [HLS-100] Command "source /nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/xilinx/ip/xfft.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.14Total elapsed time: 1.470 sec.
+@I [HLS-100] Command "source /nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/xilinx/ip/xfir.gen "
+@I [HLS-100] Command "source /nfs/tools/xilinx/Vivado_HLS/2013.3/tps/tcl/tcllib1.11.1/struct/list.tcl "
+@I [HLS-100] Command "source /nfs/tools/xilinx/Vivado_HLS/2013.3/tps/tcl/tcllib1.11.1/cmdline/cmdline.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.489 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 1.490 sec.
+@I [HLS-100] Command "source /nfs/tools/xilinx/Vivado_HLS/2013.3/tps/tcl/tcllib1.11.1/math/bignum.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.503 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.03Total elapsed time: 1.512 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.19Total elapsed time: 1.512 sec.
+@I [HLS-100] Command "source /nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/xilinx/common/dsp48.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.515 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.19Total elapsed time: 1.515 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.19Total elapsed time: 1.515 sec.
+@I [HLS-100] Command "set_part xc7z020clg484-1 "
+@I [HLS-100] Command "add_library xilinx/zynq/zynq:xc7z020:clg484:-1 "
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 1.521 sec.
+@I [HLS-100] Command "license_exists VIVADO_HLS "
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0Total elapsed time: 1.521 sec.
+@I [HLS-100] Command "license_exists AUTOESL_NI "
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0Total elapsed time: 1.521 sec.
+@I [HLS-100] Command "license_exists HLS "
+@I [HLS-100] Command 'license_exists' returned 0; elapsed 0Total elapsed time: 1.521 sec.
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 1.526 sec.
+@I [HLS-100] Command "config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 1.526 sec.
+@I [HLS-100] Command "config_chip_info -quiet -speed slow "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 1.527 sec.
+@I [HLS-100] Command 'add_library' returned 0; elapsed 0Total elapsed time: 1.532 sec.
+@I [HLS-100] Command "add_library xilinx/zynq/zynq_fpv6 "
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 1.535 sec.
+@I [HLS-100] Command "license_exists VIVADO_HLS "
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0Total elapsed time: 1.536 sec.
+@I [HLS-100] Command "license_exists AUTOESL_NI "
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0Total elapsed time: 1.536 sec.
+@I [HLS-100] Command "license_exists HLS "
+@I [HLS-100] Command 'license_exists' returned 0; elapsed 0Total elapsed time: 1.536 sec.
+@I [HLS-100] Command "open_platform DefaultPlatform "
+@I [HLS-100] Command 'open_platform' returned 0; elapsed 0Total elapsed time: 1.536 sec.
+@I [HLS-100] Command "import_lib /nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/xilinx/zynq/zynq_fpv6 "
+@I [HLS-100] Command "source /nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/xilinx/common/xilinx_fpv7.lib "
+@I [HLS-100] Command "source /nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/xilinx/common/xilinx_fpv6.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.543 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.545 sec.
+@I [HLS-100] Command 'import_lib' returned 0; elapsed 0.02Total elapsed time: 1.561 sec.
+@I [HLS-100] Command "source /nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/xilinx/zynq/zynq_fpv6.gen "
+@I [HLS-100] Command "source /nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/xilinx/common/xilinx_fpv6.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.565 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.565 sec.
+@I [HLS-100] Command 'add_library' returned 0; elapsed 0.03Total elapsed time: 1.570 sec.
+@I [HLS-10] Setting target device to 'xc7z020clg484-1'
+@I [HLS-100] Command 'set_part' returned 0; elapsed 0.03Total elapsed time: 1.570 sec.
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 1.570 sec.
+@I [HLS-100] Command "config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 1.570 sec.
+@I [HLS-100] Command "config_chip_info -quiet -speed slow "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 1.570 sec.
+@I [HLS-100] Command 'open_solution' returned 0; elapsed 0.26Total elapsed time: 1.574 sec.
+@I [HLS-100] Command "set_part xc7z020clg484-1 "
+@I [HLS-100] Command "add_library xilinx/zynq/zynq:xc7z020:clg484:-1 "
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 1.577 sec.
+@I [HLS-100] Command "license_exists VIVADO_HLS "
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0Total elapsed time: 1.578 sec.
+@I [HLS-100] Command "license_exists AUTOESL_NI "
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0Total elapsed time: 1.578 sec.
+@I [HLS-100] Command "license_exists HLS "
+@I [HLS-100] Command 'license_exists' returned 0; elapsed 0Total elapsed time: 1.578 sec.
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 1.583 sec.
+@I [HLS-100] Command "config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 1.583 sec.
+@I [HLS-100] Command "config_chip_info -quiet -speed slow "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 1.583 sec.
+@I [HLS-100] Command 'add_library' returned 0; elapsed 0Total elapsed time: 1.589 sec.
+@I [HLS-100] Command "add_library xilinx/zynq/zynq_fpv6 "
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 1.592 sec.
+@I [HLS-100] Command "license_exists VIVADO_HLS "
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0Total elapsed time: 1.593 sec.
+@I [HLS-100] Command "license_exists AUTOESL_NI "
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0Total elapsed time: 1.593 sec.
+@I [HLS-100] Command "license_exists HLS "
+@I [HLS-100] Command 'license_exists' returned 0; elapsed 0Total elapsed time: 1.593 sec.
+@I [HLS-100] Command "open_platform DefaultPlatform "
+@I [HLS-100] Command 'open_platform' returned 0; elapsed 0Total elapsed time: 1.593 sec.
+@I [HLS-100] Command "import_lib /nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/xilinx/zynq/zynq_fpv6 "
+@I [HLS-100] Command "source /nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/xilinx/common/xilinx_fpv7.lib "
+@I [HLS-100] Command "source /nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/xilinx/common/xilinx_fpv6.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.598 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.600 sec.
+@I [HLS-100] Command 'import_lib' returned 0; elapsed 0.02Total elapsed time: 1.616 sec.
+@I [HLS-100] Command "source /nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/xilinx/zynq/zynq_fpv6.gen "
+@I [HLS-100] Command "source /nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/xilinx/common/xilinx_fpv6.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 1.619 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 1.619 sec.
+@I [HLS-100] Command 'add_library' returned 0; elapsed 0.03Total elapsed time: 1.624 sec.
+@I [HLS-100] Command 'set_part' returned 0; elapsed 0.03Total elapsed time: 1.624 sec.
+@I [HLS-100] Command "create_clock -period 8 -name default "
+@I [HLS-100] Command 'create_clock' returned 0; elapsed 0Total elapsed time: 1.632 sec.
+@I [HLS-100] Command "source ./DCT_HLS_Project/solution3/directives.tcl "
+@I [HLS-100] Command "set_directive_pipeline dct_2d/Xpose_Row_Inner_Loop "
+@I [HLS-100] Command 'set_directive_pipeline' returned 0; elapsed 0Total elapsed time: 1.634 sec.
+@I [HLS-100] Command "set_directive_pipeline dct_2d/Xpose_Col_Inner_Loop "
+@I [HLS-100] Command 'set_directive_pipeline' returned 0; elapsed 0Total elapsed time: 1.634 sec.
+@I [HLS-100] Command "set_directive_pipeline read_data/RD_Loop_Col "
+@I [HLS-100] Command 'set_directive_pipeline' returned 0; elapsed 0Total elapsed time: 1.635 sec.
+@I [HLS-100] Command "set_directive_pipeline write_data/WR_Loop_Col "
+@I [HLS-100] Command 'set_directive_pipeline' returned 0; elapsed 0Total elapsed time: 1.635 sec.
+@I [HLS-100] Command "set_directive_pipeline dct_1d/DCT_Outer_Loop "
+@I [HLS-100] Command 'set_directive_pipeline' returned 0; elapsed 0Total elapsed time: 1.635 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.635 sec.
+@I [HLS-100] Command "csynth_design "
+@I [HLS-100] Command "elaborate -effort=medium -skip_syncheck=0 -lm=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 "
+@I [HLS-10] Importing test bench file '../../project_documents/LabB/out.golden.dat' ... 
+@0 [HLS-0] Importing test bench file '../../project_documents/LabB/out.golden.dat' ... 
+@I [HLS-10] Importing test bench file '../../project_documents/LabB/in.dat' ... 
+@0 [HLS-0] Importing test bench file '../../project_documents/LabB/in.dat' ... 
+@I [HLS-10] Importing test bench file '../../project_documents/LabB/dct_test.cpp' ... 
+@0 [HLS-0] Importing test bench file '../../project_documents/LabB/dct_test.cpp' ... 
+@I [HLS-10] Analyzing design file '../../project_documents/LabB/dct.cpp' ... 
+@0 [HLS-0] Analyzing design file '../../project_documents/LabB/dct.cpp' ... 
+@I [HLS-0] Compiling one TU...
+@I [HLS-0] 
+Checking before pre-process: exec clang -gcc-toolchain "/nfs/tools/xilinx/Vivado_HLS/2013.3/lnx64/tools/gcc" -hls    -D "__asm__(...)=" -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit   -I "/nfs/tools/xilinx/Vivado_HLS/2013.3/lnx64/tools/systemc/include" -I "/nfs/tools/xilinx/Vivado_HLS/2013.3/include" -I "/nfs/tools/xilinx/Vivado_HLS/2013.3/include/ap_sysc" -fexceptions "../../project_documents/LabB/dct.cpp"  -o "/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/dct.pp.00.o"
+
+@I [HLS-0] Syntax Checker time: 0 seconds per iteration
+@I [HLS-0] 
+Source preprocessing: exec clang -gcc-toolchain "/nfs/tools/xilinx/Vivado_HLS/2013.3/lnx64/tools/gcc" -hls -fno-exceptions  -D__llvm__  -CC -E "../../project_documents/LabB/dct.cpp"     -D "__asm__(...)=" -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/autopilot" -I "/nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D "__asm__(...)="  -o "/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/dct.pp.0.cpp"
+
+@I [HLS-0] GCC PP time: 0 seconds per iteration
+@I [HLS-0] Setting directive 'PIPELINE' 
+@I [HLS-0] Setting directive 'PIPELINE' 
+@I [HLS-0] Setting directive 'PIPELINE' 
+@I [HLS-0] Setting directive 'PIPELINE' 
+@I [HLS-0] Setting directive 'PIPELINE' 
+@I [HLS-100] Command "list_core -type functional_unit "
+@I [HLS-100] Command 'list_core' returned 0; elapsed 0.01Total elapsed time: 2.493 sec.
+@I [HLS-0] Marker-Pragma convertor: /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/dct.pp.0.cpp /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/dct.pp.0.cpp.ap-line.cpp /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/dct.pp.0.cpp.ap-line.cpp.CXX 1
+@I [HLS-0] 
+Source processor: exec /nfs/tools/xilinx/Vivado_HLS/2013.3/tps/lnx64/jre/bin/java -Xmx512m -classpath   "/nfs/tools/xilinx/Vivado_HLS/2013.3/lib/classes/autopilot.sourceprocessor.jar:/nfs/tools/xilinx/Vivado_HLS/2013.3/lib/classes/org.eclipse.cdt.core_5.3.0.xilinx_patch.jar:/nfs/tools/xilinx/Vivado_HLS/2013.3/lib/classes/org.eclipse.core.runtime_3.7.0.v20110110.jar:/nfs/tools/xilinx/Vivado_HLS/2013.3/lib/classes/org.eclipse.equinox.common_3.6.0.v20110523.jar:/nfs/tools/xilinx/Vivado_HLS/2013.3/lib/classes/com.ibm.icu_4.4.2.v20110208.jar:/nfs/tools/xilinx/Vivado_HLS/2013.3/lib/classes/jargs.jar:/nfs/tools/xilinx/Vivado_HLS/2013.3/lnx64/tools/eclipse/plugins/org.eclipse.emf.common_2.7.0.v20120127-1122.jar:/nfs/tools/xilinx/Vivado_HLS/2013.3/lnx64/tools/eclipse/plugins/org.eclipse.emf.ecore_2.7.0.v20120127-1122.jar:/nfs/tools/xilinx/Vivado_HLS/2013.3/lnx64/tools/eclipse/plugins/org.eclipse.emf.ecore.xmi_2.7.0.v20120127-1122.jar:/nfs/tools/xilinx/Vivado_HLS/2013.3/lnx64/tools/eclipse/plugins/com.autoesl.autopilot.ui.directiveFileModel_1.0.0.jar:/nfs/tools/xilinx/Vivado_HLS/2013.3/lnx64/tools/eclipse/plugins/com.autoesl.autopilot.ui.common_1.0.0.jar"  autopilot.sourceprocessor.CParser  "/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/dct.pp.0.cpp.ap-line.cpp"  -m "dct" -o "/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/dct.pp.0.cpp.ap-cdt.cpp" --ad --pc --pp --directive /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/solution3.directive --source /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/../../project_documents/LabB/dct.cpp --error /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db --funcunit "AddSub AddSubnS Mul MulnS Mul2S Mul3S Mul4S Mul5S Mul6S DivnS AddSub_DSP FDiv FSqrt DDiv DSqrt DRecip DRSqrt FAddSub_nodsp FAddSub_fulldsp FMul_nodsp FMul_meddsp FMul_fulldsp FMul_maxdsp FRSqrt_nodsp FRSqrt_fulldsp FRecip_nodsp FRecip_fulldsp FLog_nodsp FLog_meddsp FLog_fulldsp FExp_nodsp FExp_meddsp FExp_fulldsp DAddSub_nodsp DAddSub_fulldsp DMul_nodsp DMul_meddsp DMul_fulldsp DMul_maxdsp DLog_nodsp DLog_meddsp DLog_fulldsp DExp_nodsp DExp_meddsp DExp_fulldsp" --ce --tcl /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db --ve --vetcl /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db --lp --ca --es --gf --nk --df --pd --p2d /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db --sd --scff /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/.systemc_flag
+
+@I [HLS-0] Error:Syntax error in source:for (__decltype(__n + 0) __niter = __n;
+Error:Missing ; in source:t
+Error:Syntax error in source:)
+ *__first = __value;
+Error:Syntax error in source:for (__decltype(__n + 0) __niter = __n;
+Error:Missing ; in source:t
+Error:Syntax error in source:)
+ *__first = __tmp;
+@I [HLS-0] Marker-Pragma convertor: /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/dct.pp.0.cpp.ap-cdt.cpp /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/dct.pragma.0.cpp /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/dct.pragma.0.cpp.ap-line.CXX 0
+@I [HLS-100] Command "source /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/pragma.status.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 8.465 sec.
+@I [HLS-0] CDT processor time: 5 seconds per iteration
+@I [HLS-0] Pragma handling time: 0 seconds per iteration
+@I [HLS-0] 
+Source preprocessing: exec clang -gcc-toolchain "/nfs/tools/xilinx/Vivado_HLS/2013.3/lnx64/tools/gcc" -hls -fno-exceptions  -D__llvm__  -CC -E "/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/dct.pragma.1.cpp"     -D "__asm__(...)=" -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/autopilot" -I "/nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D "__asm__(...)="  -o "/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/dct.pragma.2.cpp"
+
+@I [HLS-0] exec clang -gcc-toolchain /nfs/tools/xilinx/Vivado_HLS/2013.3/lnx64/tools/gcc -hls -fno-exceptions  -D__llvm__  -w  "/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/dct.pragma.2.cpp"    -D "__asm__(...)=" -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/autopilot" -I "/nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -g -o "/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/dct.g.bc"
+@I [HLS-100] Command "source /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/ve_warning.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 9.566 sec.
+@I [HLS-10] Validating synthesis directives ...
+@0 [HLS-0] Validating synthesis directives ...
+@I [HLS-100] Command "source /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/pragma.status.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 9.570 sec.
+@I [HLS-0] Linking all ...
+@I [HLS-0] exec llvm-ld  "/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/dct.bc"  -disable-opt  -L/nfs/tools/xilinx/Vivado_HLS/2013.3/lnx64/lib -lm_basic -o "/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/a.o.pre"
+@I [HLS-0] Link time: 0 seconds per iteration
+@I [HLS-0] Linking all ...
+@I [HLS-0] exec llvm-ld  "/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/dct.g.bc"  -disable-opt  -L/nfs/tools/xilinx/Vivado_HLS/2013.3/lnx64/lib -lm_basic -o "/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/a.g.pre"
+@I [HLS-0] Link time: 0 seconds per iteration
+@I [HLS-100] Command "opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 "
+@I [HLS-100] Command "cleanup_all_models "
+@I [HLS-100] Command 'cleanup_all_models' returned 0; elapsed 0Total elapsed time: 9.814 sec.
+@I [HLS-10] Checking synthesizability ...
+@0 [HLS-0] Checking synthesizability ...
+@I [HLS-0] std xform: transform -hls -share-std-xform -always-inline -promote-dbg-pointer  -interface-preproc  -scalarrepl -mem2reg -keep-read-access -instcombine -dce  -promote-dbg-pointer  -bitop-raise  -basicaa  -simplifycfg -mem2reg -globalopt  -global-constprop -deadargelim -instcombine -simplifycfg  -prune-eh -simplifycfg  -scalarrepl -instcombine -reassociate -licm  -simplifycfg -loop-simplify -indvars -instcombine  -simplifycfg -mem2reg -loop-simplify -indvars -instcombine  -gvn -gvn -instcombine -dse -adce  -break-crit-edges  -simplifycfg -loop-delete  -global-array-opt  -find-syn-modules -top dct  -deadargelim  -mem2reg -instcombine -dce  -presyn-prepare -auto-rom-infer  -syn-check -check-rec-only  -find-region -simplifycfg -func-extr -function-inline  -mem2reg -instcombine -dce   -gvn -adce -adse  -constprop -instcombine -bit-constprop  -instcombine -dce -simplifycfg -bitop-raise  -simplifycfg -dce -loop-delete  -globalopt -global-privatize -mem2reg -dce  -global-constprop -pointer-simplify -constprop -dce  -promote-dbg-pointer  -norm-name   /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/a.g.bc -o /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/a.g.1.bc -f  -phase std-opt
+@I [HLS-0] Std xform time: 0 seconds per iteration
+@I [HLS-0] syn check 1/2: transform -hls -syn-check -check-rec-only -disaggr -scalarrepl -norm-name -dce  -mem2reg -instcombine  -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce  -array-normalize -instcombine -dce  -array-seg-normalize -instcombine -dce  -array-flatten -instcombine -dce  -array-burst -dce  -deadargelim -promote-global-argument  -doublePtrSimplify -doublePtrElim -dce  -doublePtrSimplify -promote-dbg-pointer  -dce -scalarrepl -dse -adse -instcombine  -ptrLegalization  -simplifycfg -dce -instcombine  -pointer-simplify -ptrArgReplace -dce -instcombine   -disaggr -scalarrepl -norm-name -dce  -mem2reg -instcombine -ptrLegalization   -simplifycfg  -instcombine -dce -inst-simplify  -directive-preproc -mem2reg -dse -dce  -globaldce    /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/a.g.1.bc -o /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/a.g.2.prechk.bc -f
+@I [HLS-0] Syn check 1/2 time: 0 seconds per iteration
+@I [HLS-0] syn check 2/2: transform -syn-check   -interface-gen -constprop -dse -dce  /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/a.g.2.prechk.bc -o /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/a.g.2.bc -f  -phase syn-check
+@I [HLS-0] Syn check 2/2 time: 0 seconds per iteration
+@I [HLS-10] Starting code transformations ...
+@0 [HLS-0] Starting code transformations ...
+@I [HLS-0] Compiler optimizing ...
+@I [HLS-0] Share syncheck's 1.bc for syn flow: copy /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/a.g.1.bc to /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/a.o.1.bc
+@I [HLS-0] presyn 1: transform -hls  -directive-preproc -mem2reg -dse -dce  -disaggr -scalarrepl -norm-name -deadargelim  -mem2reg -instcombine -dce -auto-rom-infer -dce  -directive-preproc -mem2reg -dse -dce  -func-buffer -dce -array-normalize  -func-legal -instcombine -gvn -constprop -dce   -ptrArgReplace -mem2reg -instcombine -dce  -array-seg-normalize -global-constprop -deadargelim  -instcombine -dce  -pointer-simplify -dce  -data-pack -instcombine -dce   -loop-simplify -indvars -instcombine  -gvn -loop-simplify -mem2reg -dce -simplifycfg  -find-region -instcombine  -array-burst -dce  -inst-simplify  -interface-preproc  -indvars -auto-loop-unroll -loop-simplify -xunroll  -constprop -instcombine -simplifycfg -indvars  -simplifycfg -dce -globaldce  -gvn -disable-agg-range -inst-simplify  -constprop -simplifycfg -dce  -pointer-simplify -dce  -array-transform-check  -globalopt -constprop -dce  -array-promote -constprop -instcombine -dce -auto-par -array-partition -instcombine -dce  -global-constprop -deadargelim -ptrArgReplace -mem2reg  -func-legal -instcombine -dce  -array-reshape -instcombine -simplifycfg -dce   -mem-intrinsic-preproc -dce  -global-privatize  -mem2reg -globaldce  -promote-global-argument  -ptrArgReplace -mem2reg -instcombine -dce  -globalopt -mergereturn -simplify-global-access -mem2reg -dce  -pointer-simplify -dce  -functionattrs  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce  -inst-simplify -dce -norm-name  -function-inline  -func-inst -constprop -instcombine -simplifycfg -dce  -func-legal -dce   -directive-preproc -mem2reg -dse -dce  -loop-bound  -arraycheck -bitwidthmin -on-by-dataflow  -instcombine -simplifycfg -dce -loop-simplify -simplifycfg -loop-stream -instcombine -simplifycfg -dce -globaldce  -funstream-prep -function-stream -dce -globaldce  -array-streaming -instcombine -simplifycfg -dce      -group-axi-access  -simplifycfg -dce -loop-delete  -norm-name  /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/a.o.1.bc -o /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/a.o.1.tmp.bc -f
+@I [XFORM-502] Unrolling all sub-loops inside loop 'DCT_Outer_Loop' (../../project_documents/LabB/dct.cpp:18) in function 'dct_1d' for pipelining.
+@I [XFORM-501] Unrolling loop 'DCT_Inner_Loop' (../../project_documents/LabB/dct.cpp:20) in function 'dct_1d' completely.
+@I [XFORM-102] Partitioning array 'dct_coeff_table' in dimension 2 automatically.
+@I [XFORM-602] Inlining function 'read_data' into 'dct' (../../project_documents/LabB/dct.cpp:89) automatically.
+@I [XFORM-602] Inlining function 'write_data' into 'dct' (../../project_documents/LabB/dct.cpp:94) automatically.
+@I [HLS-0] Presyn 1 time: 0 seconds per iteration
+@I [HLS-0] presyn 2: transform -hls -keep-callgraph -scalarrepl -mem2reg  -indvars -loop-bound  -instcombine -dce  -merge-array-access -mem2reg -dce  -clean-region -mergereturn -if-conv  -instcombine -dce -constprop  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce  -scalarrepl -mem2reg  -global-constprop -deadargelim -deadargelim  -instcombine -dce -simplifycfg    -ptrArgReplace -mem2reg -function-inline  -mem2reg -instcombine -dce -expr-balance  -instcombine -dce  -bitwidthmin  -directive-preproc  -inst-rectify -instcombine -dce  -functionattrs  -constprop -instcombine -bit-constprop  -globalopt -globaldce  -inst-simplify -instcombine -elimdeaddata -dce  -loop-delete -simplifycfg   -norm-name /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/a.o.1.tmp.bc -o /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/a.o.2.bc -f  -phase presyn
+@I [XFORM-11] Balancing expressions in function 'dct_1d' (../../project_documents/LabB/dct.cpp:9)...8 expression(s) balanced.
+@I [HLS-0] Presyn 2 time: 0 seconds per iteration
+@I [HLS-0] build ssdm: transform -hls -function-uniquify -auto-function-inline  -loop-simplify -indvars -licm -loop-dep  -loop-bound -licm -loop-simplify -flattenloopnest  -array-flatten -gvn -instcombine -dce  -promote-global-argument  -array-map -dce -func-legal  -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify   -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn  -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce  -inst-simplify -dce  -array-streaming -instcombine  -dce   -deadargelim -doublePtrSimplify -doublePtrElim  -dce -doublePtrSimplify -promote-dbg-pointer -dce  -scalarrepl -mem2reg -disaggr -norm-name -mem2reg  -instcombine  -dse -adse -adce -ptrLegalization -dce -instcombine  -loop-rot -constprop -cfgopt -simplifycfg -indvars -pointer-simplify -dce -loop-bound  -loop-simplify -loop-preproc  -constprop -gvn -mem2reg -instcombine -dce  -loop-merge -dce  -bitwidthmin  -directive-preproc -inst-simplify -dce  -interface-gen -gvn -mem2reg -instcombine -dce -adse  -loop-bound  -instcombine -cfgopt -simplifycfg -loop-simplify  -clean-region -io-protocol  -find-region -mem2reg  -loop-simplify -phi-opt -bitop-raise  -inst-simplify -inst-rectify -instcombine -adce  -cfgopt -simplifycfg -strip-dead-prototypes  -interface-lower -bitop-lower -intrinsic-lower  -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa  -inst-simplify -simplifycfg   -mergereturn -inst-simplify -inst-rectify -dce -bitop-lower  -loop-rewind -cfgopt  -norm-name -legalize -read-loop-dep -dce -bitwidth   -cdfg-build  /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/a.o.2.bc -o /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/a.o.3.bc -f  -phase build-ssdm
+@I [XFORM-541] Flattening a loop nest 'RD_Loop_Row' (../../project_documents/LabB/dct.cpp:64) in function 'dct'.
+@I [XFORM-541] Flattening a loop nest 'WR_Loop_Row' (../../project_documents/LabB/dct.cpp:76) in function 'dct'.
+@I [XFORM-541] Flattening a loop nest 'Xpose_Row_Outer_Loop' (../../project_documents/LabB/dct.cpp:42) in function 'dct_2d'.
+@I [XFORM-541] Flattening a loop nest 'Xpose_Col_Outer_Loop' (../../project_documents/LabB/dct.cpp:53) in function 'dct_2d'.
+@I [HLS-0] Build ssdm time: 0 seconds per iteration
+@I [HLS-0] Finish building internal data model.
+@I [HLS-100] Command 'opt_and_import_c' returned 0; elapsed 2.87Total elapsed time: 12.984 sec.
+@I [HLS-111] Elapsed time: 4.74 seconds; current memory usage: 70.4 MB.
+@I [HLS-100] Command 'elaborate' returned 0; elapsed 4.09Total elapsed time: 12.985 sec.
+@I [HLS-100] Command "autosyn "
+@I [HLS-10] Starting hardware synthesis ...
+@0 [HLS-0] Starting hardware synthesis ...
+@I [HLS-0] Synthesizing C/C++ design ...
+@I [HLS-10] Synthesizing 'dct' ...
+@0 [HLS-0] Synthesizing 'dct' ...
+@I [HLS-100] Command "ap_set_top_model dct "
+@I [HLS-100] Command 'ap_set_top_model' returned 0; elapsed 0Total elapsed time: 12.986 sec.
+@I [HLS-100] Command "get_model_list dct -filter all-wo-channel -topdown "
+@I [HLS-100] Command 'get_model_list' returned 0; elapsed 0.01Total elapsed time: 12.986 sec.
+@I [HLS-100] Command "preproc_iomode -model dct "
+@I [HLS-100] Command 'preproc_iomode' returned 0; elapsed 0Total elapsed time: 12.986 sec.
+@I [HLS-100] Command "preproc_iomode -model dct_2d "
+@I [HLS-100] Command 'preproc_iomode' returned 0; elapsed 0Total elapsed time: 12.986 sec.
+@I [HLS-100] Command "preproc_iomode -model dct_1d "
+@I [HLS-100] Command 'preproc_iomode' returned 0; elapsed 0Total elapsed time: 12.987 sec.
+@I [HLS-100] Command "get_model_list dct -filter all-wo-channel "
+@I [HLS-100] Command 'get_model_list' returned 0; elapsed 0Total elapsed time: 12.987 sec.
+@I [HLS-0] Model list for configure: dct_1d dct_2d dct
+@I [HLS-0] Configuring Module : dct_1d ...
+@I [HLS-100] Command "set_default_model dct_1d "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 12.987 sec.
+@I [HLS-100] Command "apply_spec_resource_limit dct_1d "
+@I [HLS-100] Command 'apply_spec_resource_limit' returned 0; elapsed 0Total elapsed time: 12.987 sec.
+@I [HLS-0] Configuring Module : dct_2d ...
+@I [HLS-100] Command "set_default_model dct_2d "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 12.987 sec.
+@I [HLS-100] Command "apply_spec_resource_limit dct_2d "
+@I [HLS-100] Command 'apply_spec_resource_limit' returned 0; elapsed 0Total elapsed time: 12.988 sec.
+@I [HLS-0] Configuring Module : dct ...
+@I [HLS-100] Command "set_default_model dct "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 12.988 sec.
+@I [HLS-100] Command "apply_spec_resource_limit dct "
+@I [HLS-100] Command 'apply_spec_resource_limit' returned 0; elapsed 0Total elapsed time: 12.988 sec.
+@I [HLS-0] Model list for preprocess: dct_1d dct_2d dct
+@I [HLS-0] Preprocessing Module: dct_1d ...
+@I [HLS-100] Command "set_default_model dct_1d "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 12.988 sec.
+@I [HLS-100] Command "cdfg_preprocess -model dct_1d "
+@I [HLS-100] Command 'cdfg_preprocess' returned 0; elapsed 0Total elapsed time: 12.989 sec.
+@I [HLS-100] Command "rtl_gen_preprocess dct_1d "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 12.990 sec.
+@I [HLS-0] Preprocessing Module: dct_2d ...
+@I [HLS-100] Command "set_default_model dct_2d "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 12.990 sec.
+@I [HLS-100] Command "cdfg_preprocess -model dct_2d "
+@I [HLS-100] Command 'cdfg_preprocess' returned 0; elapsed 0Total elapsed time: 12.991 sec.
+@I [HLS-100] Command "rtl_gen_preprocess dct_2d "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 12.992 sec.
+@I [HLS-0] Preprocessing Module: dct ...
+@I [HLS-100] Command "set_default_model dct "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 12.992 sec.
+@I [HLS-100] Command "cdfg_preprocess -model dct "
+@I [HLS-100] Command 'cdfg_preprocess' returned 0; elapsed 0Total elapsed time: 12.992 sec.
+@I [HLS-100] Command "rtl_gen_preprocess dct "
+@W [RTGEN-101] Legalizing port name 'dct/input' to 'dct/input_r'.
+@W [RTGEN-101] Legalizing port name 'dct/output' to 'dct/output_r'.
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 12.993 sec.
+@I [HLS-0] Model list for synthesis: dct_1d dct_2d dct
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'dct_1d' 
+@0 [HLS-0] -- Scheduling module 'dct_1d' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model dct_1d "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 12.994 sec.
+@I [HLS-100] Command "schedule -model dct_1d "
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-61] Pipelining loop 'DCT_Outer_Loop'.
+@W [SCHED-69] Unable to schedule 'load' operation ('src_load_2', ../../project_documents/LabB/dct.cpp:22) on array 'src' due to limited memory ports.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 4, Depth: 8.
+@I [SCHED-11] Finished scheduling.
+@I [HLS-100] Command 'schedule' returned 0; elapsed 0.15Total elapsed time: 13.151 sec.
+@I [HLS-111] Elapsed time: 0.16 seconds; current memory usage: 71 MB.
+@I [HLS-100] Command "report -o /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/dct_1d.verbose.sched.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.01Total elapsed time: 13.181 sec.
+@I [HLS-100] Command "db_write -o /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/dct_1d.sched.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.01Total elapsed time: 13.240 sec.
+@I [HLS-0] Finish scheduling dct_1d.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'dct_1d' 
+@0 [HLS-0] -- Exploring micro-architecture for module 'dct_1d' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model dct_1d "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 13.252 sec.
+@I [HLS-100] Command "bind -model dct_1d "
+@I [BIND-110] clear=
+@I [BIND-110] debug=
+@I [BIND-110] drf=
+@I [BIND-110] effort=
+@I [BIND-110] fast_refine=
+@I [BIND-110] fu_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] global_opt=
+@I [BIND-110] gsearch=
+@I [BIND-110] help=
+@I [BIND-110] help-hidden=
+@I [BIND-110] min_mem_port=
+@I [BIND-110] min_op=
+@I [BIND-110] minreg=
+@I [BIND-110] ml=
+@I [BIND-110] model=dct_1d
+@I [BIND-110] no_false_path=
+@I [BIND-110] no_min_op=
+@I [BIND-110] normalize=
+@I [BIND-110] quiet=
+@I [BIND-110] refine=
+@I [BIND-110] reg_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] search=
+@I [BIND-110] tight_delay=
+@I [BIND-110] verbose=
+@I [BIND-110] wFF=
+@I [BIND-110] wFU=
+@I [BIND-110] wMUX=
+@I [BIND-110] wNET=
+@I [BIND-100] Starting micro-architecture generation ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding ...
+@I [BIND-100] Finished micro-architecture generation.
+@I [HLS-100] Command 'bind' returned 0; elapsed 0.02Total elapsed time: 13.269 sec.
+@I [HLS-111] Elapsed time: 0.04 seconds; current memory usage: 71.4 MB.
+@I [HLS-100] Command "report -o /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/dct_1d.verbose.bind.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.04Total elapsed time: 13.316 sec.
+@I [HLS-100] Command "db_write -o /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/dct_1d.bind.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0Total elapsed time: 13.361 sec.
+@I [HLS-0] Finish binding dct_1d.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'dct_2d' 
+@0 [HLS-0] -- Scheduling module 'dct_2d' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model dct_2d "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 13.362 sec.
+@I [HLS-100] Command "schedule -model dct_2d "
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-61] Pipelining loop 'Xpose_Row_Outer_Loop_Xpose_Row_Inner_Loop'.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 3.
+@I [SCHED-61] Pipelining loop 'Xpose_Col_Outer_Loop_Xpose_Col_Inner_Loop'.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 3.
+@I [SCHED-11] Finished scheduling.
+@I [HLS-100] Command 'schedule' returned 0; elapsed 0.06Total elapsed time: 13.428 sec.
+@I [HLS-111] Elapsed time: 0.1 seconds; current memory usage: 71.7 MB.
+@I [HLS-100] Command "report -o /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/dct_2d.verbose.sched.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.01Total elapsed time: 13.442 sec.
+@I [HLS-100] Command "db_write -o /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/dct_2d.sched.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.01Total elapsed time: 13.473 sec.
+@I [HLS-0] Finish scheduling dct_2d.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'dct_2d' 
+@0 [HLS-0] -- Exploring micro-architecture for module 'dct_2d' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model dct_2d "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 13.482 sec.
+@I [HLS-100] Command "bind -model dct_2d "
+@I [BIND-110] clear=
+@I [BIND-110] debug=
+@I [BIND-110] drf=
+@I [BIND-110] effort=
+@I [BIND-110] fast_refine=
+@I [BIND-110] fu_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] global_opt=
+@I [BIND-110] gsearch=
+@I [BIND-110] help=
+@I [BIND-110] help-hidden=
+@I [BIND-110] min_mem_port=
+@I [BIND-110] min_op=
+@I [BIND-110] minreg=
+@I [BIND-110] ml=
+@I [BIND-110] model=dct_2d
+@I [BIND-110] no_false_path=
+@I [BIND-110] no_min_op=
+@I [BIND-110] normalize=
+@I [BIND-110] quiet=
+@I [BIND-110] refine=
+@I [BIND-110] reg_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] search=
+@I [BIND-110] tight_delay=
+@I [BIND-110] verbose=
+@I [BIND-110] wFF=
+@I [BIND-110] wFU=
+@I [BIND-110] wMUX=
+@I [BIND-110] wNET=
+@I [BIND-100] Starting micro-architecture generation ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding ...
+@I [BIND-100] Finished micro-architecture generation.
+@I [HLS-100] Command 'bind' returned 0; elapsed 0.01Total elapsed time: 13.499 sec.
+@I [HLS-111] Elapsed time: 0.03 seconds; current memory usage: 72 MB.
+@I [HLS-100] Command "report -o /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/dct_2d.verbose.bind.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.03Total elapsed time: 13.549 sec.
+@I [HLS-100] Command "db_write -o /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/dct_2d.bind.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.01Total elapsed time: 13.587 sec.
+@I [HLS-0] Finish binding dct_2d.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'dct' 
+@0 [HLS-0] -- Scheduling module 'dct' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model dct "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 13.588 sec.
+@I [HLS-100] Command "schedule -model dct "
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-61] Pipelining loop 'RD_Loop_Row_RD_Loop_Col'.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 3.
+@I [SCHED-61] Pipelining loop 'WR_Loop_Row_WR_Loop_Col'.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 3.
+@I [SCHED-11] Finished scheduling.
+@I [HLS-100] Command 'schedule' returned 0; elapsed 0.05Total elapsed time: 13.652 sec.
+@I [HLS-111] Elapsed time: 0.09 seconds; current memory usage: 72.3 MB.
+@I [HLS-100] Command "report -o /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/dct.verbose.sched.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.01Total elapsed time: 13.665 sec.
+@I [HLS-100] Command "db_write -o /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/dct.sched.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.01Total elapsed time: 13.694 sec.
+@I [HLS-0] Finish scheduling dct.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'dct' 
+@0 [HLS-0] -- Exploring micro-architecture for module 'dct' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model dct "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 13.695 sec.
+@I [HLS-100] Command "bind -model dct "
+@I [BIND-110] clear=
+@I [BIND-110] debug=
+@I [BIND-110] drf=
+@I [BIND-110] effort=
+@I [BIND-110] fast_refine=
+@I [BIND-110] fu_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] global_opt=
+@I [BIND-110] gsearch=
+@I [BIND-110] help=
+@I [BIND-110] help-hidden=
+@I [BIND-110] min_mem_port=
+@I [BIND-110] min_op=
+@I [BIND-110] minreg=
+@I [BIND-110] ml=
+@I [BIND-110] model=dct
+@I [BIND-110] no_false_path=
+@I [BIND-110] no_min_op=
+@I [BIND-110] normalize=
+@I [BIND-110] quiet=
+@I [BIND-110] refine=
+@I [BIND-110] reg_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] search=
+@I [BIND-110] tight_delay=
+@I [BIND-110] verbose=
+@I [BIND-110] wFF=
+@I [BIND-110] wFU=
+@I [BIND-110] wMUX=
+@I [BIND-110] wNET=
+@I [BIND-100] Starting micro-architecture generation ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding ...
+@I [BIND-100] Finished micro-architecture generation.
+@I [HLS-100] Command 'bind' returned 0; elapsed 0.02Total elapsed time: 13.716 sec.
+@I [HLS-111] Elapsed time: 0.04 seconds; current memory usage: 72.6 MB.
+@I [HLS-100] Command "report -o /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/dct.verbose.bind.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.04Total elapsed time: 13.768 sec.
+@I [HLS-100] Command "db_write -o /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/dct.bind.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.01Total elapsed time: 13.808 sec.
+@I [HLS-0] Finish binding dct.
+@I [HLS-100] Command "get_model_list dct -filter all-wo-channel "
+@I [HLS-100] Command 'get_model_list' returned 0; elapsed 0Total elapsed time: 13.808 sec.
+@I [HLS-0] Preprocessing for RTLGen ...
+@I [HLS-100] Command "rtl_gen_preprocess dct_1d "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 13.809 sec.
+@I [HLS-100] Command "rtl_gen_preprocess dct_2d "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 13.810 sec.
+@I [HLS-100] Command "rtl_gen_preprocess dct "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 13.811 sec.
+@I [HLS-0] Model list for RTL generation: dct_1d dct_2d dct
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'dct_1d' 
+@0 [HLS-0] -- Generating RTL for module 'dct_1d' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "create_rtl_model dct_1d -vendor xilinx -mg_file /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/dct_1d.compgen.tcl "
+@I [RTGEN-100] Generating core module 'dct_mul_16s_14ns_29_3': 1 instance(s).
+@I [RTGEN-100] Generating core module 'dct_mul_16s_15s_29_3': 2 instance(s).
+@I [RTGEN-100] Finished creating RTL model for 'dct_1d'.
+@I [HLS-100] Command 'create_rtl_model' returned 0; elapsed 0.05Total elapsed time: 13.869 sec.
+@I [HLS-111] Elapsed time: 0.1 seconds; current memory usage: 73.3 MB.
+@I [HLS-100] Command "source /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/dct.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 13.877 sec.
+@I [HLS-100] Command "gen_rtl dct_1d -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/syn/systemc/dct_1d -synmodules dct_1d dct_2d dct "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 13.896 sec.
+@I [HLS-100] Command "gen_rtl dct_1d -style xilinx -f -lang vhdl -o /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/syn/vhdl/dct_1d "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.01Total elapsed time: 13.910 sec.
+@I [HLS-100] Command "gen_rtl dct_1d -style xilinx -f -lang vlog -o /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/syn/verilog/dct_1d "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 13.920 sec.
+@I [HLS-100] Command "gen_tb_info dct_1d -o /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/dct_1d -p /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db "
+@I [HLS-100] Command 'gen_tb_info' returned 0; elapsed 0Total elapsed time: 13.933 sec.
+@I [HLS-100] Command "report -model dct_1d -o /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/syn/report/dct_1d_csynth.rpt -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.02Total elapsed time: 13.951 sec.
+@I [HLS-100] Command "report -model dct_1d -o /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/syn/report/dct_1d_csynth.xml -f -x "
+@I [HLS-100] Command 'report' returned 0; elapsed 0Total elapsed time: 13.963 sec.
+@I [HLS-100] Command "report -model dct_1d -o /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/dct_1d.verbose.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.04Total elapsed time: 14.20 sec.
+@I [HLS-100] Command "db_write -model dct_1d -o /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/dct_1d.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.02Total elapsed time: 14.81 sec.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'dct_2d' 
+@0 [HLS-0] -- Generating RTL for module 'dct_2d' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "create_rtl_model dct_2d -vendor xilinx -mg_file /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/dct_2d.compgen.tcl "
+@I [RTGEN-100] Finished creating RTL model for 'dct_2d'.
+@I [HLS-100] Command 'create_rtl_model' returned 0; elapsed 0.04Total elapsed time: 14.209 sec.
+@I [HLS-111] Elapsed time: 0.16 seconds; current memory usage: 75.3 MB.
+@I [HLS-100] Command "source /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/dct.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 14.213 sec.
+@I [HLS-100] Command "gen_rtl dct_2d -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/syn/systemc/dct_2d -synmodules dct_1d dct_2d dct "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.01Total elapsed time: 14.229 sec.
+@I [HLS-100] Command "gen_rtl dct_2d -style xilinx -f -lang vhdl -o /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/syn/vhdl/dct_2d "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 14.239 sec.
+@I [HLS-100] Command "gen_rtl dct_2d -style xilinx -f -lang vlog -o /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/syn/verilog/dct_2d "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 14.249 sec.
+@I [HLS-100] Command "gen_tb_info dct_2d -o /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/dct_2d -p /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db "
+@I [HLS-100] Command 'gen_tb_info' returned 0; elapsed 0.01Total elapsed time: 14.262 sec.
+@I [HLS-100] Command "report -model dct_2d -o /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/syn/report/dct_2d_csynth.rpt -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.01Total elapsed time: 14.282 sec.
+@I [HLS-100] Command "report -model dct_2d -o /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/syn/report/dct_2d_csynth.xml -f -x "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.02Total elapsed time: 14.295 sec.
+@I [HLS-100] Command "report -model dct_2d -o /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/dct_2d.verbose.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.04Total elapsed time: 14.357 sec.
+@I [HLS-100] Command "db_write -model dct_2d -o /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/dct_2d.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.02Total elapsed time: 14.409 sec.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'dct' 
+@0 [HLS-0] -- Generating RTL for module 'dct' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "create_rtl_model dct -vendor xilinx -mg_file /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/dct.compgen.tcl "
+@I [RTGEN-500] Setting interface mode on port 'dct/input_r' to 'ap_memory'.
+@I [RTGEN-500] Setting interface mode on port 'dct/output_r' to 'ap_memory'.
+@I [RTGEN-500] Setting interface mode on function 'dct' to 'ap_ctrl_hs'.
+@I [RTGEN-100] Finished creating RTL model for 'dct'.
+@I [HLS-100] Command 'create_rtl_model' returned 0; elapsed 0.03Total elapsed time: 14.519 sec.
+@I [HLS-111] Elapsed time: 0.16 seconds; current memory usage: 77 MB.
+@I [HLS-100] Command "source /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/dct.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 14.523 sec.
+@I [HLS-100] Command "gen_rtl dct -istop -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/syn/systemc/dct -synmodules dct_1d dct_2d dct "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 14.538 sec.
+@I [HLS-100] Command "gen_rtl dct -istop -style xilinx -f -lang vhdl -o /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/syn/vhdl/dct "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.01Total elapsed time: 14.553 sec.
+@I [HLS-100] Command "gen_rtl dct -istop -style xilinx -f -lang vlog -o /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/syn/verilog/dct "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.01Total elapsed time: 14.598 sec.
+@I [HLS-100] Command "export_constraint_db -o /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/dct.constraint.tcl -f -tool general "
+@I [HLS-100] Command 'export_constraint_db' returned 0; elapsed 0Total elapsed time: 14.602 sec.
+@I [HLS-100] Command "report -model dct -o /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/dct.design.xml -verbose -f -dv "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.03Total elapsed time: 14.649 sec.
+@I [HLS-100] Command "gen_tb_info dct -o /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/dct -p /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db "
+@I [HLS-100] Command 'gen_tb_info' returned 0; elapsed 0Total elapsed time: 14.691 sec.
+@I [HLS-100] Command "report -model dct -o /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/syn/report/dct_csynth.rpt -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.02Total elapsed time: 14.713 sec.
+@I [HLS-100] Command "report -model dct -o /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/syn/report/dct_csynth.xml -f -x "
+@I [HLS-100] Command 'report' returned 0; elapsed 0Total elapsed time: 14.724 sec.
+@I [HLS-100] Command "report -model dct -o /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/dct.verbose.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.06Total elapsed time: 14.805 sec.
+@I [HLS-100] Command "db_write -model dct -o /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/dct.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.01Total elapsed time: 14.847 sec.
+@I [HLS-100] Command "sc_get_clocks dct "
+@I [HLS-100] Command 'sc_get_clocks' returned 0; elapsed 0Total elapsed time: 14.914 sec.
+@I [HLS-100] Command "sc_get_portdomain dct "
+@I [HLS-100] Command 'sc_get_portdomain' returned 0; elapsed 0Total elapsed time: 14.914 sec.
+@I [HLS-0] Model list for RTL component generation: dct_1d dct_2d dct
+@I [HLS-0] Handling components in module [dct_1d] ... 
+@I [HLS-100] Command "source /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/dct_1d.compgen.tcl "
+@I [HLS-0] Found component dct_mul_16s_14ns_29_3.
+@I [HLS-0] Append model dct_mul_16s_14ns_29_3
+@I [HLS-0] Found component dct_mul_16s_15s_29_3.
+@I [HLS-0] Append model dct_mul_16s_15s_29_3
+@I [HLS-0] Found component dct_1d_dct_coeff_table_0.
+@I [HLS-0] Append model dct_1d_dct_coeff_table_0
+@I [HLS-0] Found component dct_1d_dct_coeff_table_1.
+@I [HLS-0] Append model dct_1d_dct_coeff_table_1
+@I [HLS-0] Found component dct_1d_dct_coeff_table_2.
+@I [HLS-0] Append model dct_1d_dct_coeff_table_2
+@I [HLS-0] Found component dct_1d_dct_coeff_table_3.
+@I [HLS-0] Append model dct_1d_dct_coeff_table_3
+@I [HLS-0] Found component dct_1d_dct_coeff_table_4.
+@I [HLS-0] Append model dct_1d_dct_coeff_table_4
+@I [HLS-0] Found component dct_1d_dct_coeff_table_5.
+@I [HLS-0] Append model dct_1d_dct_coeff_table_5
+@I [HLS-0] Found component dct_1d_dct_coeff_table_6.
+@I [HLS-0] Append model dct_1d_dct_coeff_table_6
+@I [HLS-0] Found component dct_1d_dct_coeff_table_7.
+@I [HLS-0] Append model dct_1d_dct_coeff_table_7
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 14.929 sec.
+@I [HLS-0] Handling components in module [dct_2d] ... 
+@I [HLS-100] Command "source /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/dct_2d.compgen.tcl "
+@I [HLS-0] Found component dct_2d_row_outbuf.
+@I [HLS-0] Append model dct_2d_row_outbuf
+@I [HLS-0] Found component dct_2d_col_inbuf.
+@I [HLS-0] Append model dct_2d_col_inbuf
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 14.934 sec.
+@I [HLS-0] Handling components in module [dct] ... 
+@I [HLS-100] Command "source /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/dct.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 14.939 sec.
+@I [HLS-0] Append model dct_1d
+@I [HLS-0] Append model dct_2d
+@I [HLS-0] Append model dct
+@I [HLS-0] Generating RTL model list ...
+@I [HLS-0] All models in this session: dct_mul_16s_14ns_29_3 dct_mul_16s_15s_29_3 dct_1d_dct_coeff_table_0 dct_1d_dct_coeff_table_1 dct_1d_dct_coeff_table_2 dct_1d_dct_coeff_table_3 dct_1d_dct_coeff_table_4 dct_1d_dct_coeff_table_5 dct_1d_dct_coeff_table_6 dct_1d_dct_coeff_table_7 dct_2d_row_outbuf dct_2d_col_inbuf dct_1d dct_2d dct
+@I [HLS-0] To file: write model dct_mul_16s_14ns_29_3
+@I [HLS-0] To file: write model dct_mul_16s_15s_29_3
+@I [HLS-0] To file: write model dct_1d_dct_coeff_table_0
+@I [HLS-0] To file: write model dct_1d_dct_coeff_table_1
+@I [HLS-0] To file: write model dct_1d_dct_coeff_table_2
+@I [HLS-0] To file: write model dct_1d_dct_coeff_table_3
+@I [HLS-0] To file: write model dct_1d_dct_coeff_table_4
+@I [HLS-0] To file: write model dct_1d_dct_coeff_table_5
+@I [HLS-0] To file: write model dct_1d_dct_coeff_table_6
+@I [HLS-0] To file: write model dct_1d_dct_coeff_table_7
+@I [HLS-0] To file: write model dct_2d_row_outbuf
+@I [HLS-0] To file: write model dct_2d_col_inbuf
+@I [HLS-0] To file: write model dct_1d
+@I [HLS-0] To file: write model dct_2d
+@I [HLS-0] To file: write model dct
+@I [HLS-0] Finished generating RTL model list.
+
+
+@I [HLS-0] RTL Generation done.
+@I [HLS-0] CAS Generation done.
+@I [HLS-0] CBC Generation done.
+@I [HLS-100] Command "export_ssdm /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/a.export.ll "
+@I [HLS-100] Command 'export_ssdm' returned 0; elapsed 0Total elapsed time: 14.952 sec.
+@I [HLS-100] Command "source /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 14.962 sec.
+@I [HLS-100] Command "source /nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/generic/autopilot/common.gen "
+@I [HLS-100] Command "source /nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/generic/autopilot/APCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 15.1 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 15.1 sec.
+@I [HLS-100] Command "source /nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/generic/autopilot/op.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 15.3 sec.
+@I [HLS-100] Command "source /nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/generic/autopilot/op_simcore.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 15.5 sec.
+@I [HLS-100] Command "source /nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/generic/autopilot/interface.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 15.6 sec.
+@I [HLS-100] Command "source /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 15.9 sec.
+@I [HLS-100] Command "source /nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/xilinx/zynq/zynq.gen "
+@I [HLS-100] Command "source /nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/xilinx/common/virtex.gen "
+@I [HLS-100] Command "source /nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/xilinx/common/xilinx.gen "
+@I [HLS-100] Command "source /nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/xilinx/interface/plb46.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 15.15 sec.
+@I [HLS-100] Command "source /nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/xilinx/interface/fsl.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 15.16 sec.
+@I [HLS-100] Command "source /nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/xilinx/interface/axi4.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 15.20 sec.
+@I [HLS-100] Command "source /nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/xilinx/scripts/xilinxcoregen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 15.30 sec.
+@I [HLS-100] Command "source /nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/xilinx/interface/XilEDKCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 15.42 sec.
+@I [HLS-100] Command "source /nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/xilinx/ip/util.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 15.43 sec.
+@I [HLS-100] Command "source /nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/xilinx/ip/xfft.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.13Total elapsed time: 15.165 sec.
+@I [HLS-100] Command "source /nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/xilinx/ip/xfir.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.02Total elapsed time: 15.189 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.18Total elapsed time: 15.189 sec.
+@I [HLS-100] Command "source /nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/xilinx/common/dsp48.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 15.191 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.18Total elapsed time: 15.191 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.18Total elapsed time: 15.191 sec.
+@I [HLS-100] Command "source /nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/xilinx/zynq/zynq_fpv6.gen "
+@I [HLS-100] Command "source /nfs/tools/xilinx/Vivado_HLS/2013.3/common/technology/xilinx/common/xilinx_fpv6.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 15.194 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 15.194 sec.
+@I [HLS-100] Command "source /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 15.197 sec.
+@I [HLS-100] Command "source /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 15.200 sec.
+@I [HLS-100] Command "source /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/dct_1d.compgen.tcl "
+@I [RTMG-282] Generating pipelined core: 'dct_mul_16s_14ns_29_3_MAC3S_0'
+@I [RTMG-282] Generating pipelined core: 'dct_mul_16s_15s_29_3_MAC3S_1'
+@I [RTMG-279] Implementing memory 'dct_1d_dct_coeff_table_0_rom' using auto ROMs.
+@I [RTMG-279] Implementing memory 'dct_1d_dct_coeff_table_1_rom' using auto ROMs.
+@I [RTMG-279] Implementing memory 'dct_1d_dct_coeff_table_2_rom' using auto ROMs.
+@I [RTMG-279] Implementing memory 'dct_1d_dct_coeff_table_3_rom' using auto ROMs.
+@I [RTMG-279] Implementing memory 'dct_1d_dct_coeff_table_4_rom' using auto ROMs.
+@I [RTMG-279] Implementing memory 'dct_1d_dct_coeff_table_5_rom' using auto ROMs.
+@I [RTMG-279] Implementing memory 'dct_1d_dct_coeff_table_6_rom' using auto ROMs.
+@I [RTMG-279] Implementing memory 'dct_1d_dct_coeff_table_7_rom' using auto ROMs.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.12Total elapsed time: 15.833 sec.
+@I [HLS-100] Command "source /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/dct_2d.compgen.tcl "
+@I [RTMG-278] Implementing memory 'dct_2d_row_outbuf_ram' using block RAMs.
+@I [RTMG-278] Implementing memory 'dct_2d_col_inbuf_ram' using block RAMs.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.03Total elapsed time: 15.940 sec.
+@I [HLS-100] Command "source /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB/DCT_HLS_Project/solution3/.autopilot/db/dct.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 15.943 sec.
+@I [HLS-10] Finished generating all RTL models.
+@0 [HLS-0] Finished generating all RTL models.
+@I [WSYSC-301] Generating RTL SystemC for 'dct'.
+@I [WVHDL-304] Generating RTL VHDL for 'dct'.
+@I [WVLOG-307] Generating RTL Verilog for 'dct'.
+@I [HLS-100] Command 'autosyn' returned 0; elapsed 1.46Total elapsed time: 16.862 sec.
+@I [HLS-100] Command 'csynth_design' returned 0; elapsed 5.55Total elapsed time: 16.862 sec.
+@I [HLS-100] Command "cleanup_all "
+@I [HLS-100] Command 'cleanup_all' returned 0; elapsed 0.01Total elapsed time: 16.871 sec.

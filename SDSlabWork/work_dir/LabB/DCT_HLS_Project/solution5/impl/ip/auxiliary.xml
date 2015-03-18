@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xd" xd:functionName="dct" xd:componentRef="dct" xd:clockPeriod="8.000000">
+  <xd:controlReg xd:name="control" xd:interfaceRef="ap_ctrl" xd:busTypeRef="acc_handshake" xd:type="acc_handshake"/>
+  <xd:arg xd:name="input[]" xd:originalName="input" xd:direction="in" xd:interfaceRef="input_r_PORTA" xd:busTypeRef="bram"/>
+  <xd:arg xd:name="input[]" xd:originalName="input" xd:direction="in" xd:interfaceRef="input_r_PORTB" xd:busTypeRef="bram"/>
+  <xd:arg xd:name="output[]" xd:originalName="output" xd:direction="out" xd:interfaceRef="output_r_PORTA" xd:busTypeRef="bram"/>
+  <xd:arg xd:name="output[]" xd:originalName="output" xd:direction="out" xd:interfaceRef="output_r_PORTB" xd:busTypeRef="bram"/>
+  <xd:latencyEstimates xd:best-case="795" xd:worst-case="795" xd:average-case="795"/>
+  <xd:resourceEstimates xd:LUT="670" xd:FF="1008" xd:BRAM="26" xd:DSP="16"/>
+</xd:acceleratorMap>

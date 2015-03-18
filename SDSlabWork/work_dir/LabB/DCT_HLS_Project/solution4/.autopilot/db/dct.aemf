@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1426280945000">
+  <ports id="1" name="input_r" type="PortType" originalName="input" coreName="RAM" bitwidth="16" iftype="IfTypeRegister" arraysize="64">
+    <dataOutputObjs>call</dataOutputObjs>
+  </ports>
+  <ports id="2" name="output_r" type="PortType" originalName="output" coreName="RAM" bitwidth="16" direction="DirOut" iftype="IfTypeRegister" arraysize="64">
+    <dataInputObjs>call</dataInputObjs>
+  </ports>
+  <edges id="27" source_obj="//@ports.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.2"/>
+  <edges id="28" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.2"/>
+  <edges id="31" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="32" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="35" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="36" source_obj="//@regions.0/@basic_blocks.0/@node_objs.4" sink_obj="//@ports.1"/>
+  <edges id="37" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="38" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="39" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="40" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="41" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="42" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="43" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="44" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <regions anchor_node="-1" region_type="16" typeName="Dataflow" id="109" RegionName="dct">
+    <basic_blocks id="21" name="dct" type="BlockType">
+      <node_objs xsi:type="cdfg:CdfgNode" id="15" name="buf_2d_in" lineNumber="85" originalName="buf_2d_in" fileName="../../project_documents/LabB/dct.cpp" fileDirectory=".." rtlName="buf_2d_in_U" coreName="RAM" contextFuncName="dct" bitwidth="16" opcode="alloca">
+        <inlineStackInfo fileName="../../project_documents/LabB/dct.cpp" linenumber="85" fileDirectory="/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB" functionName="dct"/>
+        <dataOutputObjs>call</dataOutputObjs>
+        <dataOutputObjs>call</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="16" name="buf_2d_out" lineNumber="86" originalName="buf_2d_out" fileName="../../project_documents/LabB/dct.cpp" fileDirectory=".." rtlName="buf_2d_out_U" coreName="RAM" contextFuncName="dct" bitwidth="16" opcode="alloca">
+        <inlineStackInfo fileName="../../project_documents/LabB/dct.cpp" linenumber="86" fileDirectory="/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB" functionName="dct"/>
+        <dataOutputObjs>call</dataOutputObjs>
+        <dataOutputObjs>call</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="17" name="node_17" lineNumber="89" fileName="../../project_documents/LabB/dct.cpp" fileDirectory=".." rtlName="read_data_U0" contextFuncName="dct" opcode="call" nodeLatency="1">
+        <inlineStackInfo fileName="../../project_documents/LabB/dct.cpp" linenumber="89" fileDirectory="/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB" functionName="dct"/>
+        <dataInputObjs>input_r</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+        <constName>read_data</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="18" name="node_18" lineNumber="91" fileName="../../project_documents/LabB/dct.cpp" fileDirectory=".." rtlName="dct_2d_U0" contextFuncName="dct" opcode="call" nodeLabel="2" nodeLatency="1">
+        <inlineStackInfo fileName="../../project_documents/LabB/dct.cpp" linenumber="91" fileDirectory="/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB" functionName="dct"/>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+        <constName>dct_2d</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="19" name="node_19" lineNumber="94" fileName="../../project_documents/LabB/dct.cpp" fileDirectory=".." rtlName="write_data_U0" contextFuncName="dct" opcode="call" nodeLabel="4" nodeLatency="1">
+        <inlineStackInfo fileName="../../project_documents/LabB/dct.cpp" linenumber="94" fileDirectory="/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB" functionName="dct"/>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataOutputObjs>output_r</dataOutputObjs>
+        <constName>write_data</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="20" name="node_20" lineNumber="95" fileName="../../project_documents/LabB/dct.cpp" fileDirectory=".." contextFuncName="dct" opcode="ret" nodeLabel="5">
+        <inlineStackInfo fileName="../../project_documents/LabB/dct.cpp" linenumber="95" fileDirectory="/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB" functionName="dct"/>
+      </node_objs>
+      <fileValidLineNumbers fileName="../../project_documents/LabB/dct.cpp">
+        <validLinenumbers>85</validLinenumbers>
+        <validLinenumbers>86</validLinenumbers>
+        <validLinenumbers>89</validLinenumbers>
+        <validLinenumbers>91</validLinenumbers>
+        <validLinenumbers>94</validLinenumbers>
+        <validLinenumbers>95</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+  </regions>
+  <ScheduleInfo time="0"/>
+  <ScheduleInfo time="1"/>
+  <ScheduleInfo time="2"/>
+  <ScheduleInfo time="3"/>
+  <ScheduleInfo time="4"/>
+  <ScheduleInfo time="5"/>
+  <expressionNodes realName="buf_2d_in_alloca_fu_40">
+    <nodeIds>15</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="buf_2d_out_alloca_fu_44">
+    <nodeIds>16</nodeIds>
+  </expressionNodes>
+  <moduleNodes realName="grp_read_data_fu_78">
+    <nodeIds>17</nodeIds>
+  </moduleNodes>
+  <moduleNodes realName="grp_write_data_fu_71">
+    <nodeIds>19</nodeIds>
+  </moduleNodes>
+  <moduleNodes realName="grp_dct_2d_fu_49">
+    <nodeIds>18</nodeIds>
+  </moduleNodes>
+  <memoryPorts dataString="dct_coeff_table_0" portID="100">
+    <nodeIds>18</nodeIds>
+  </memoryPorts>
+  <memoryPorts dataString="dct_coeff_table_1" portID="100">
+    <nodeIds>18</nodeIds>
+  </memoryPorts>
+  <memoryPorts dataString="dct_coeff_table_2" portID="100">
+    <nodeIds>18</nodeIds>
+  </memoryPorts>
+  <memoryPorts dataString="dct_coeff_table_3" portID="100">
+    <nodeIds>18</nodeIds>
+  </memoryPorts>
+  <memoryPorts dataString="dct_coeff_table_4" portID="100">
+    <nodeIds>18</nodeIds>
+  </memoryPorts>
+  <memoryPorts dataString="dct_coeff_table_5" portID="100">
+    <nodeIds>18</nodeIds>
+  </memoryPorts>
+  <memoryPorts dataString="dct_coeff_table_6" portID="100">
+    <nodeIds>18</nodeIds>
+  </memoryPorts>
+  <memoryPorts dataString="dct_coeff_table_7" portID="100">
+    <nodeIds>18</nodeIds>
+  </memoryPorts>
+  <ioPorts name="input_r">
+    <contents name="call">
+      <nodeIds>17</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="output_r">
+    <contents name="call">
+      <nodeIds>19</nodeIds>
+    </contents>
+  </ioPorts>
+  <fsm>
+    <states id="1">
+      <operations id="15" stage="1" latency="1"/>
+      <operations id="16" stage="1" latency="1"/>
+      <operations id="17" stage="2" latency="2"/>
+    </states>
+    <states id="2">
+      <operations id="17" stage="1" latency="2"/>
+    </states>
+    <states id="3">
+      <operations id="18" stage="2" latency="2"/>
+    </states>
+    <states id="4">
+      <operations id="18" stage="1" latency="2"/>
+    </states>
+    <states id="5">
+      <operations id="19" stage="2" latency="2"/>
+    </states>
+    <states id="6">
+      <operations id="11" stage="1" latency="1"/>
+      <operations id="12" stage="1" latency="1"/>
+      <operations id="13" stage="1" latency="1"/>
+      <operations id="14" stage="1" latency="1"/>
+      <operations id="19" stage="1" latency="2"/>
+      <operations id="20" stage="1" latency="1"/>
+    </states>
+    <transitions inState="1" outState="2">
+      <condition/>
+    </transitions>
+    <transitions inState="2" outState="3">
+      <condition id="1"/>
+    </transitions>
+    <transitions inState="3" outState="4">
+      <condition id="2"/>
+    </transitions>
+    <transitions inState="4" outState="5">
+      <condition id="3"/>
+    </transitions>
+    <transitions inState="5" outState="6">
+      <condition id="4"/>
+    </transitions>
+  </fsm>
+  <CFGRegionsRoot>
+    <cfgRegions mId="1" mTag="dct" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="895" mMaxLatency="-1" mIsDfPipe="true">
+      <basicBlocks>21</basicBlocks>
+      <mDfPipe allPipePinInst="//@CFGRegionsRoot/@cfgRegions.0/@mDfPipe/@processe_list.0/@pins.0/@inst //@CFGRegionsRoot/@cfgRegions.0/@mDfPipe/@processe_list.1/@pins.0/@inst //@CFGRegionsRoot/@cfgRegions.0/@mDfPipe/@processe_list.2/@pins.0/@inst">
+        <processe_list name="read_data_U0" ssdmobj_id="17">
+          <pins>
+            <port name="input" dir="DirInOut"/>
+            <inst name="read_data_U0" ssdmobj_id="17" object_id="_42"/>
+          </pins>
+          <pins>
+            <port name="buf" dir="DirInOut" type="BUSType"/>
+            <inst name="read_data_U0" ssdmobj_id="17" object_id="_42"/>
+          </pins>
+        </processe_list>
+        <processe_list name="dct_2d_U0" ssdmobj_id="18">
+          <pins>
+            <port name="in_block" dir="DirInOut"/>
+            <inst name="dct_2d_U0" ssdmobj_id="18" object_id="_48"/>
+          </pins>
+          <pins>
+            <port name="out_block" dir="DirInOut" type="BUSType"/>
+            <inst name="dct_2d_U0" ssdmobj_id="18" object_id="_48"/>
+          </pins>
+          <pins>
+            <port name="dct_coeff_table_0" dir="DirInOut"/>
+            <inst name="dct_2d_U0" ssdmobj_id="18" object_id="_48"/>
+          </pins>
+          <pins>
+            <port name="dct_coeff_table_1" dir="DirInOut"/>
+            <inst name="dct_2d_U0" ssdmobj_id="18" object_id="_48"/>
+          </pins>
+          <pins>
+            <port name="dct_coeff_table_2" dir="DirInOut"/>
+            <inst name="dct_2d_U0" ssdmobj_id="18" object_id="_48"/>
+          </pins>
+          <pins>
+            <port name="dct_coeff_table_3" dir="DirInOut"/>
+            <inst name="dct_2d_U0" ssdmobj_id="18" object_id="_48"/>
+          </pins>
+          <pins>
+            <port name="dct_coeff_table_4" dir="DirInOut"/>
+            <inst name="dct_2d_U0" ssdmobj_id="18" object_id="_48"/>
+          </pins>
+          <pins>
+            <port name="dct_coeff_table_5" dir="DirInOut"/>
+            <inst name="dct_2d_U0" ssdmobj_id="18" object_id="_48"/>
+          </pins>
+          <pins>
+            <port name="dct_coeff_table_6" dir="DirInOut"/>
+            <inst name="dct_2d_U0" ssdmobj_id="18" object_id="_48"/>
+          </pins>
+          <pins>
+            <port name="dct_coeff_table_7" dir="DirInOut"/>
+            <inst name="dct_2d_U0" ssdmobj_id="18" object_id="_48"/>
+          </pins>
+        </processe_list>
+        <processe_list name="write_data_U0" ssdmobj_id="19">
+          <pins>
+            <port name="buf" dir="DirInOut"/>
+            <inst name="write_data_U0" ssdmobj_id="19" object_id="_70"/>
+          </pins>
+          <pins>
+            <port name="output" dir="DirInOut" type="BUSType"/>
+            <inst name="write_data_U0" ssdmobj_id="19" object_id="_70"/>
+          </pins>
+        </processe_list>
+        <channel_list depth="0" bitwidth="0" name="buf_2d_in" ssdmobj_id="15">
+          <source>
+            <port name="in" dir="DirEnd"/>
+            <inst name="read_data_U0" ssdmobj_id="17" object_id="_42"/>
+          </source>
+          <sink>
+            <port name="out" dir="DirEnd" type="BUSType"/>
+            <inst name="dct_2d_U0" ssdmobj_id="18" object_id="_48"/>
+          </sink>
+        </channel_list>
+        <channel_list depth="0" bitwidth="0" name="buf_2d_out" ssdmobj_id="16">
+          <source>
+            <port name="in" dir="DirEnd"/>
+            <inst name="dct_2d_U0" ssdmobj_id="18" object_id="_48"/>
+          </source>
+          <sink>
+            <port name="out" dir="DirEnd" type="BUSType"/>
+            <inst name="write_data_U0" ssdmobj_id="19" object_id="_70"/>
+          </sink>
+        </channel_list>
+      </mDfPipe>
+    </cfgRegions>
+  </CFGRegionsRoot>
+</cdfg:DBCdfg>

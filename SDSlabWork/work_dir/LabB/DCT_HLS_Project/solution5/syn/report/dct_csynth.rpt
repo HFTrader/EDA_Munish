@@ -1,0 +1,166 @@
+
+
+================================================================
+== Vivado HLS Report for 'dct'
+================================================================
+* Date:           Fri Mar 13 22:15:21 2015
+
+* Version:        2013.3 (build date: Wed Oct 16 18:12:55 PM 2013)
+* Project:        DCT_HLS_Project
+* Solution:       solution5
+* Product family: zynq zynq_fpv6 
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +---------+-------+----------+------------+
+    |  Clock  | Target| Estimated| Uncertainty|
+    +---------+-------+----------+------------+
+    |default  |   8.00|      6.38|        1.00|
+    +---------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+----------+
+    |  Latency  |  Interval | Pipeline |
+    | min | max | min | max |   Type   |
+    +-----+-----+-----+-----+----------+
+    |  795|  795|  262|  262| dataflow |
+    +-----+-----+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        +-----------------------------------------------+------------------------------------+-----+-----+-----+-----+---------+
+        |                                               |                                    |  Latency  |  Interval | Pipeline|
+        |                    Instance                   |               Module               | min | max | min | max |   Type  |
+        +-----------------------------------------------+------------------------------------+-----+-----+-----+-----+---------+
+        |grp_read_data_fu_118                           |read_data                           |   67|   67|   67|   67|   none  |
+        |grp_dct_Loop_Row_DCT_Loop_proc_fu_67           |dct_Loop_Row_DCT_Loop_proc          |  261|  261|  261|  261|   none  |
+        |grp_dct_Loop_Xpose_Row_Outer_Loop_proc_fu_126  |dct_Loop_Xpose_Row_Outer_Loop_proc  |   67|   67|   67|   67|   none  |
+        |grp_dct_Loop_Col_DCT_Loop_proc_fu_89           |dct_Loop_Col_DCT_Loop_proc          |  261|  261|  261|  261|   none  |
+        |grp_dct_Loop_Xpose_Col_Outer_Loop_proc_fu_132  |dct_Loop_Xpose_Col_Outer_Loop_proc  |   67|   67|   67|   67|   none  |
+        |grp_write_data_fu_111                          |write_data                          |   67|   67|   67|   67|   none  |
+        +-----------------------------------------------+------------------------------------+-----+-----+-----+-----+---------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|Expression       |        -|      -|       -|      -|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |       16|     16|    1002|    670|
+|Memory           |       10|      -|       0|      0|
+|Multiplexer      |        -|      -|       -|      -|
+|Register         |        -|      -|       6|      -|
+|ShiftMemory      |        -|      -|       -|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |       26|     16|    1008|    670|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        9|      7|   ~0   |      1|
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    +---------------------------------------+------------------------------------+---------+-------+-----+-----+
+    |                Instance               |               Module               | BRAM_18K| DSP48E|  FF | LUT |
+    +---------------------------------------+------------------------------------+---------+-------+-----+-----+
+    |dct_Loop_Col_DCT_Loop_proc_U0          |dct_Loop_Col_DCT_Loop_proc          |        8|      8|  425|  191|
+    |dct_Loop_Row_DCT_Loop_proc_U0          |dct_Loop_Row_DCT_Loop_proc          |        8|      8|  425|  191|
+    |dct_Loop_Xpose_Col_Outer_Loop_proc_U0  |dct_Loop_Xpose_Col_Outer_Loop_proc  |        0|      0|   39|   73|
+    |dct_Loop_Xpose_Row_Outer_Loop_proc_U0  |dct_Loop_Xpose_Row_Outer_Loop_proc  |        0|      0|   39|   73|
+    |read_data_U0                           |read_data                           |        0|      0|   36|   71|
+    |write_data_U0                          |write_data                          |        0|      0|   38|   71|
+    +---------------------------------------+------------------------------------+---------+-------+-----+-----+
+    |Total                                  |                                    |       16|     16| 1002|  670|
+    +---------------------------------------+------------------------------------+---------+-------+-----+-----+
+
+    * Memory: 
+    +--------------+----------------+---------+------+-----+------+-------------+
+    |    Memory    |     Module     | BRAM_18K| Words| Bits| Banks| W*Bits*Banks|
+    +--------------+----------------+---------+------+-----+------+-------------+
+    |buf_2d_in_U   |dct_buf_2d_in   |        2|    64|   16|     2|         2048|
+    |col_inbuf_U   |dct_buf_2d_in   |        2|    64|   16|     2|         2048|
+    |row_outbuf_U  |dct_row_outbuf  |        2|    64|   16|     2|         2048|
+    |col_outbuf_U  |dct_row_outbuf  |        2|    64|   16|     2|         2048|
+    |buf_2d_out_U  |dct_row_outbuf  |        2|    64|   16|     2|         2048|
+    +--------------+----------------+---------+------+-----+------+-------------+
+    |Total         |                |       10|   320|   80|    10|        10240|
+    +--------------+----------------+---------+------+-----+------+-------------+
+
+    * FIFO: 
+    N/A
+
+    * Shift register: 
+    N/A
+
+    * Expression: 
+    N/A
+
+    * Multiplexer: 
+    N/A
+
+    * Register: 
+    +-------------------------------------------------------+---+-----+-----------+
+    |                          Name                         | FF| Bits| Const Bits|
+    +-------------------------------------------------------+---+-----+-----------+
+    |ap_reg_procdone_dct_Loop_Col_DCT_Loop_proc_U0          |  1|    1|          0|
+    |ap_reg_procdone_dct_Loop_Row_DCT_Loop_proc_U0          |  1|    1|          0|
+    |ap_reg_procdone_dct_Loop_Xpose_Col_Outer_Loop_proc_U0  |  1|    1|          0|
+    |ap_reg_procdone_dct_Loop_Xpose_Row_Outer_Loop_proc_U0  |  1|    1|          0|
+    |ap_reg_procdone_read_data_U0                           |  1|    1|          0|
+    |ap_reg_procdone_write_data_U0                          |  1|    1|          0|
+    +-------------------------------------------------------+---+-----+-----------+
+    |Total                                                  |  6|    6|          0|
+    +-------------------------------------------------------+---+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-------------------+-----+-----+------------+--------------+--------------+
+|     RTL Ports     | Dir | Bits|  Protocol  | Source Object|    C Type    |
++-------------------+-----+-----+------------+--------------+--------------+
+|input_r_address0   | out |    6|  ap_memory |    input_r   |     array    |
+|input_r_ce0        | out |    1|  ap_memory |    input_r   |     array    |
+|input_r_d0         | out |   16|  ap_memory |    input_r   |     array    |
+|input_r_q0         |  in |   16|  ap_memory |    input_r   |     array    |
+|input_r_we0        | out |    1|  ap_memory |    input_r   |     array    |
+|input_r_address1   | out |    6|  ap_memory |    input_r   |     array    |
+|input_r_ce1        | out |    1|  ap_memory |    input_r   |     array    |
+|input_r_d1         | out |   16|  ap_memory |    input_r   |     array    |
+|input_r_q1         |  in |   16|  ap_memory |    input_r   |     array    |
+|input_r_we1        | out |    1|  ap_memory |    input_r   |     array    |
+|output_r_address0  | out |    6|  ap_memory |   output_r   |     array    |
+|output_r_ce0       | out |    1|  ap_memory |   output_r   |     array    |
+|output_r_d0        | out |   16|  ap_memory |   output_r   |     array    |
+|output_r_q0        |  in |   16|  ap_memory |   output_r   |     array    |
+|output_r_we0       | out |    1|  ap_memory |   output_r   |     array    |
+|output_r_address1  | out |    6|  ap_memory |   output_r   |     array    |
+|output_r_ce1       | out |    1|  ap_memory |   output_r   |     array    |
+|output_r_d1        | out |   16|  ap_memory |   output_r   |     array    |
+|output_r_q1        |  in |   16|  ap_memory |   output_r   |     array    |
+|output_r_we1       | out |    1|  ap_memory |   output_r   |     array    |
+|ap_clk             |  in |    1| ap_ctrl_hs |      dct     | return value |
+|ap_rst             |  in |    1| ap_ctrl_hs |      dct     | return value |
+|ap_done            | out |    1| ap_ctrl_hs |      dct     | return value |
+|ap_start           |  in |    1| ap_ctrl_hs |      dct     | return value |
+|ap_idle            | out |    1| ap_ctrl_hs |      dct     | return value |
+|ap_ready           | out |    1| ap_ctrl_hs |      dct     | return value |
++-------------------+-----+-----+------------+--------------+--------------+
+

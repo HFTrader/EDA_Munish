@@ -1,0 +1,826 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1426278923000">
+  <ports id="1" name="input_r" type="PortType" originalName="input" coreName="RAM" bitwidth="16" iftype="IfTypeRegister" arraysize="64">
+    <dataOutputObjs>load</dataOutputObjs>
+  </ports>
+  <ports id="2" name="output_r" type="PortType" originalName="output" coreName="RAM" bitwidth="16" direction="DirOut" iftype="IfTypeRegister" arraysize="64"/>
+  <edges id="87" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@blocks.0/@node_objs.2"/>
+  <edges id="90" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="91" source_obj="//@regions.0/@basic_blocks.0/@node_objs.4" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="92" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="95" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.1"/>
+  <edges id="96" source_obj="//@regions.0/@basic_blocks.1/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.1"/>
+  <edges id="97" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.1"/>
+  <edges id="99" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.2"/>
+  <edges id="100" source_obj="//@regions.0/@basic_blocks.1/@node_objs.8" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.2"/>
+  <edges id="101" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.2"/>
+  <edges id="102" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="105" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="108" source_obj="//@regions.0/@basic_blocks.0/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
+  <edges id="109" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
+  <edges id="110" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
+  <edges id="111" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="114" source_obj="//@regions.0/@basic_blocks.1/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.1"/>
+  <edges id="116" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.1"/>
+  <edges id="117" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.2"/>
+  <edges id="120" source_obj="//@regions.0/@basic_blocks.1/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.3"/>
+  <edges id="121" source_obj="//@regions.0/@basic_blocks.1/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.3"/>
+  <edges id="122" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.3"/>
+  <edges id="150" source_obj="//@regions.0/@basic_blocks.1/@node_objs.5" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.7"/>
+  <edges id="152" source_obj="//@regions.0/@basic_blocks.1/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.8"/>
+  <edges id="154" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.9"/>
+  <edges id="157" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@blocks.1/@node_objs.0"/>
+  <edges id="158" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@blocks.1/@node_objs.0"/>
+  <edges id="159" edge_type="CtrlEdge" source_obj="//@regions.1/@basic_blocks.0" sink_obj="//@blocks.1/@node_objs.1"/>
+  <edges id="161" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.0"/>
+  <edges id="162" source_obj="//@regions.1/@basic_blocks.0/@node_objs.4" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.0"/>
+  <edges id="163" edge_type="CtrlEdge" source_obj="//@regions.1/@basic_blocks.1" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.0"/>
+  <edges id="165" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.1"/>
+  <edges id="166" source_obj="//@regions.1/@basic_blocks.1/@node_objs.3" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.1"/>
+  <edges id="167" edge_type="CtrlEdge" source_obj="//@regions.1/@basic_blocks.1" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.1"/>
+  <edges id="169" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.2"/>
+  <edges id="170" source_obj="//@regions.1/@basic_blocks.1/@node_objs.8" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.2"/>
+  <edges id="171" edge_type="CtrlEdge" source_obj="//@regions.1/@basic_blocks.1" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.2"/>
+  <edges id="172" source_obj="//@regions.1/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.3"/>
+  <edges id="174" source_obj="//@regions.1/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.4"/>
+  <edges id="176" source_obj="//@regions.1/@basic_blocks.0/@node_objs.3" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.5"/>
+  <edges id="177" edge_type="CtrlEdge" source_obj="//@regions.1/@basic_blocks.1" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.5"/>
+  <edges id="178" edge_type="CtrlEdge" source_obj="//@blocks.2" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.5"/>
+  <edges id="179" source_obj="//@regions.1/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.0"/>
+  <edges id="181" source_obj="//@regions.1/@basic_blocks.1/@node_objs.0" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.1"/>
+  <edges id="183" source_obj="//@regions.1/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.1"/>
+  <edges id="184" source_obj="//@regions.1/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.2"/>
+  <edges id="186" source_obj="//@regions.1/@basic_blocks.1/@node_objs.0" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.3"/>
+  <edges id="187" source_obj="//@regions.1/@basic_blocks.1/@node_objs.2" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.3"/>
+  <edges id="188" source_obj="//@regions.1/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.3"/>
+  <edges id="212" source_obj="//@regions.1/@basic_blocks.1/@node_objs.5" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.7"/>
+  <edges id="214" source_obj="//@regions.1/@basic_blocks.1/@node_objs.1" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.8"/>
+  <edges id="216" edge_type="CtrlEdge" source_obj="//@regions.1/@basic_blocks.0" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.9"/>
+  <edges id="217" sink_obj="//@blocks.1/@node_objs.0"/>
+  <edges id="275" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@regions.0/@basic_blocks.0"/>
+  <edges id="276" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@blocks.1"/>
+  <edges id="277" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@regions.0/@basic_blocks.1"/>
+  <edges id="278" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.0"/>
+  <edges id="279" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@regions.1/@basic_blocks.0"/>
+  <edges id="280" edge_type="CtrlEdge" source_obj="//@regions.1/@basic_blocks.0" sink_obj="//@blocks.2"/>
+  <edges id="281" edge_type="CtrlEdge" source_obj="//@regions.1/@basic_blocks.0" sink_obj="//@regions.1/@basic_blocks.1"/>
+  <edges id="282" edge_type="CtrlEdge" source_obj="//@regions.1/@basic_blocks.1" sink_obj="//@regions.1/@basic_blocks.0"/>
+  <edges id="-1" source_obj="//@regions.0/@basic_blocks.1/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.4"/>
+  <edges id="-1" source_obj="//@regions.0/@basic_blocks.1/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.4"/>
+  <edges id="-1" source_obj="//@regions.0/@basic_blocks.1/@node_objs.4" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.5"/>
+  <edges id="-1" source_obj="//@ports.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.5"/>
+  <edges id="-1" source_obj="//@regions.0/@basic_blocks.1/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.6"/>
+  <edges id="-1" source_obj="//@regions.0/@basic_blocks.1/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.6"/>
+  <edges id="-1" source_obj="//@regions.0/@basic_blocks.1/@node_objs.6" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.7"/>
+  <edges id="-1" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.7"/>
+  <edges id="-1" source_obj="//@regions.1/@basic_blocks.1/@node_objs.3" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.6"/>
+  <edges id="-1" source_obj="//@regions.1/@basic_blocks.1/@node_objs.1" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.6"/>
+  <edges id="-1" source_obj="//@regions.1/@basic_blocks.1/@node_objs.1" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.4"/>
+  <edges id="-1" source_obj="//@regions.1/@basic_blocks.1/@node_objs.3" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.4"/>
+  <edges id="-1" source_obj="//@regions.1/@basic_blocks.1/@node_objs.4" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.5"/>
+  <edges id="-1" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.5"/>
+  <edges id="-1" source_obj="//@regions.1/@basic_blocks.1/@node_objs.6" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.7"/>
+  <blocks id="10" name="block_10" type="BlockType">
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>block_17</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="7" name="buf_2d_in" lineNumber="85" originalName="buf_2d_in" fileName="../../project_documents/LabB/dct.cpp" fileDirectory=".." rtlName="buf_2d_in_U" coreName="RAM" contextFuncName="dct" bitwidth="16" opcode="alloca">
+      <inlineStackInfo fileName="../../project_documents/LabB/dct.cpp" linenumber="85" fileDirectory="/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB" functionName="dct"/>
+      <dataOutputObjs>call</dataOutputObjs>
+      <dataOutputObjs>store</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="8" name="buf_2d_out" lineNumber="86" originalName="buf_2d_out" fileName="../../project_documents/LabB/dct.cpp" fileDirectory=".." rtlName="buf_2d_out_U" coreName="RAM" contextFuncName="dct" bitwidth="16" opcode="alloca">
+      <inlineStackInfo fileName="../../project_documents/LabB/dct.cpp" linenumber="86" fileDirectory="/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB" functionName="dct"/>
+      <dataOutputObjs>call</dataOutputObjs>
+      <dataOutputObjs>load</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="9" name="node_9" lineNumber="64" fileName="../../project_documents/LabB/dct.cpp" fileDirectory=".." contextFuncName="read_data" opcode="br">
+      <inlineStackInfo fileName="../../project_documents/LabB/dct.cpp" linenumber="89" fileDirectory="/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB" functionName="dct"/>
+      <inlineStackInfo fileName="../../project_documents/LabB/dct.cpp" linenumber="64" fileDirectory="/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB" functionName="read_data"/>
+      <controlInputObjs>block_17</controlInputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="../../project_documents/LabB/dct.cpp">
+      <validLinenumbers>85</validLinenumbers>
+      <validLinenumbers>86</validLinenumbers>
+      <validLinenumbers>64</validLinenumbers>
+      <validLinenumbers>89</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="47" name="read_data.exit" type="BlockType">
+    <controlInputObjs>block_17</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>block_54</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="45" name="node_45" lineNumber="91" fileName="../../project_documents/LabB/dct.cpp" fileDirectory=".." rtlName="grp_dct_2d_fu_185" contextFuncName="dct" opcode="call" nodeLabel="2" nodeLatency="1">
+      <inlineStackInfo fileName="../../project_documents/LabB/dct.cpp" linenumber="91" fileDirectory="/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB" functionName="dct"/>
+      <dataInputObjs>alloca</dataInputObjs>
+      <dataInputObjs>alloca</dataInputObjs>
+      <constName>dct_2d</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="46" name="node_46" lineNumber="76" fileName="../../project_documents/LabB/dct.cpp" fileDirectory=".." contextFuncName="write_data" opcode="br" nodeLabel="3">
+      <inlineStackInfo fileName="../../project_documents/LabB/dct.cpp" linenumber="94" fileDirectory="/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB" functionName="dct"/>
+      <inlineStackInfo fileName="../../project_documents/LabB/dct.cpp" linenumber="76" fileDirectory="/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB" functionName="write_data"/>
+      <controlInputObjs>block_54</controlInputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="../../project_documents/LabB/dct.cpp">
+      <validLinenumbers>91</validLinenumbers>
+      <validLinenumbers>76</validLinenumbers>
+      <validLinenumbers>94</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="83" name="write_data.exit" type="BlockType">
+    <controlInputObjs>block_54</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="82" name="node_82" lineNumber="95" fileName="../../project_documents/LabB/dct.cpp" fileDirectory=".." contextFuncName="dct" opcode="ret" nodeLabel="5">
+      <inlineStackInfo fileName="../../project_documents/LabB/dct.cpp" linenumber="95" fileDirectory="/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB" functionName="dct"/>
+    </node_objs>
+    <fileValidLineNumbers fileName="../../project_documents/LabB/dct.cpp">
+      <validLinenumbers>95</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <regions anchor_node="-1" region_type="8" interval="1" typeName="Pipeline" id="309" pipe_depth="3" RegionName="RD_Loop_Row_RD_Loop_Col">
+    <basic_blocks id="17" name="block_17" type="BlockType">
+      <controlInputObjs>block_10</controlInputObjs>
+      <controlInputObjs>.reset</controlInputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>read_data.exit</controlOutputObjs>
+      <controlOutputObjs>.reset</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="11" name="indvar_flatten" bitwidth="7" opcode="phi" nodeLabel="1">
+        <dataInputObjs>add</dataInputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+        <controlInputObjs>block_10</controlInputObjs>
+        <controlInputObjs>.reset</controlInputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="12" name="r_i" lineNumber="66" fileName="../../project_documents/LabB/dct.cpp" fileDirectory=".." contextFuncName="read_data" bitwidth="4" opcode="phi" nodeLabel="1">
+        <inlineStackInfo fileName="../../project_documents/LabB/dct.cpp" linenumber="89" fileDirectory="/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB" functionName="dct"/>
+        <inlineStackInfo fileName="../../project_documents/LabB/dct.cpp" linenumber="66" fileDirectory="/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB" functionName="read_data"/>
+        <dataInputObjs>select</dataInputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+        <controlInputObjs>block_10</controlInputObjs>
+        <controlInputObjs>.reset</controlInputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="13" name="c_i" originalName="c" bitwidth="4" opcode="phi" nodeLabel="1">
+        <dataInputObjs>add</dataInputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+        <controlInputObjs>block_10</controlInputObjs>
+        <controlInputObjs>.reset</controlInputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="14" name="exitcond_flatten" rtlName="exitcond_flatten_fu_193_p2" bitwidth="1" opcode="icmp" nodeLabel="1">
+        <dataInputObjs>phi</dataInputObjs>
+        <dataOutputObjs>br</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="15" name="indvar_flatten_next" rtlName="indvar_flatten_next_fu_199_p2" bitwidth="7" opcode="add" nodeLabel="1">
+        <dataInputObjs>phi</dataInputObjs>
+        <dataOutputObjs>phi</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="16" name="node_16" opcode="br" nodeLabel="1">
+        <dataInputObjs>icmp</dataInputObjs>
+        <controlInputObjs>.reset</controlInputObjs>
+        <controlInputObjs>read_data.exit</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="../../project_documents/LabB/dct.cpp">
+        <validLinenumbers>66</validLinenumbers>
+        <validLinenumbers>89</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+    <basic_blocks id="44" name=".reset" type="BlockType">
+      <controlInputObjs>block_17</controlInputObjs>
+      <controlOutputObjs>phi</controlOutputObjs>
+      <controlOutputObjs>phi</controlOutputObjs>
+      <controlOutputObjs>phi</controlOutputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>block_17</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="20" name="exitcond_i" lineNumber="66" fileName="../../project_documents/LabB/dct.cpp" fileDirectory=".." rtlName="exitcond_i_fu_205_p2" contextFuncName="read_data" bitwidth="1" opcode="icmp" nodeLabel="1">
+        <inlineStackInfo fileName="../../project_documents/LabB/dct.cpp" linenumber="89" fileDirectory="/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB" functionName="dct"/>
+        <inlineStackInfo fileName="../../project_documents/LabB/dct.cpp" linenumber="66" fileDirectory="/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB" functionName="read_data"/>
+        <dataInputObjs>phi</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="21" name="c_i_mid2" lineNumber="66" fileName="../../project_documents/LabB/dct.cpp" fileDirectory=".." rtlName="c_i_mid2_fu_211_p3" contextFuncName="read_data" bitwidth="4" opcode="select" nodeLabel="1">
+        <inlineStackInfo fileName="../../project_documents/LabB/dct.cpp" linenumber="89" fileDirectory="/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB" functionName="dct"/>
+        <inlineStackInfo fileName="../../project_documents/LabB/dct.cpp" linenumber="66" fileDirectory="/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB" functionName="read_data"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataInputObjs>phi</dataInputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="22" name="r" lineNumber="64" fileName="../../project_documents/LabB/dct.cpp" fileDirectory=".." rtlName="r_fu_225_p2" contextFuncName="read_data" bitwidth="4" opcode="add" nodeLabel="2">
+        <inlineStackInfo fileName="../../project_documents/LabB/dct.cpp" linenumber="89" fileDirectory="/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB" functionName="dct"/>
+        <inlineStackInfo fileName="../../project_documents/LabB/dct.cpp" linenumber="64" fileDirectory="/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB" functionName="read_data"/>
+        <dataInputObjs>phi</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="23" name="r_i_mid2" lineNumber="66" fileName="../../project_documents/LabB/dct.cpp" fileDirectory=".." rtlName="r_i_mid2_fu_231_p3" contextFuncName="read_data" bitwidth="4" opcode="select" nodeLabel="2">
+        <inlineStackInfo fileName="../../project_documents/LabB/dct.cpp" linenumber="89" fileDirectory="/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB" functionName="dct"/>
+        <inlineStackInfo fileName="../../project_documents/LabB/dct.cpp" linenumber="66" fileDirectory="/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB" functionName="read_data"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataInputObjs>add</dataInputObjs>
+        <dataInputObjs>phi</dataInputObjs>
+        <dataOutputObjs>phi</dataOutputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="30" name="tmp_5_i" lineNumber="67" fileName="../../project_documents/LabB/dct.cpp" fileDirectory=".." rtlName="tmp_5_i_fu_253_p2" contextFuncName="read_data" bitwidth="6" opcode="add" nodeLabel="2">
+        <inlineStackInfo fileName="../../project_documents/LabB/dct.cpp" linenumber="89" fileDirectory="/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB" functionName="dct"/>
+        <inlineStackInfo fileName="../../project_documents/LabB/dct.cpp" linenumber="67" fileDirectory="/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB" functionName="read_data"/>
+        <dataInputObjs>select</dataInputObjs>
+        <dataInputObjs>select</dataInputObjs>
+        <dataOutputObjs>load</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="33" name="input_load" lineNumber="67" fileName="../../project_documents/LabB/dct.cpp" fileDirectory=".." contextFuncName="read_data" bitwidth="16" opcode="load" nodeLabel="2" nodeLatency="1">
+        <inlineStackInfo fileName="../../project_documents/LabB/dct.cpp" linenumber="89" fileDirectory="/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB" functionName="dct"/>
+        <inlineStackInfo fileName="../../project_documents/LabB/dct.cpp" linenumber="67" fileDirectory="/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB" functionName="read_data"/>
+        <dataInputObjs>add</dataInputObjs>
+        <dataInputObjs>input_r</dataInputObjs>
+        <dataOutputObjs>store</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="37" name="p_addr1" lineNumber="67" fileName="../../project_documents/LabB/dct.cpp" fileDirectory=".." rtlName="p_addr1_fu_278_p2" contextFuncName="read_data" bitwidth="8" opcode="add" nodeLabel="3">
+        <inlineStackInfo fileName="../../project_documents/LabB/dct.cpp" linenumber="89" fileDirectory="/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB" functionName="dct"/>
+        <inlineStackInfo fileName="../../project_documents/LabB/dct.cpp" linenumber="67" fileDirectory="/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB" functionName="read_data"/>
+        <dataInputObjs>select</dataInputObjs>
+        <dataInputObjs>select</dataInputObjs>
+        <dataOutputObjs>store</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="40" name="node_40" lineNumber="67" fileName="../../project_documents/LabB/dct.cpp" fileDirectory=".." contextFuncName="read_data" opcode="store" nodeLabel="3">
+        <inlineStackInfo fileName="../../project_documents/LabB/dct.cpp" linenumber="89" fileDirectory="/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB" functionName="dct"/>
+        <inlineStackInfo fileName="../../project_documents/LabB/dct.cpp" linenumber="67" fileDirectory="/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB" functionName="read_data"/>
+        <dataInputObjs>load</dataInputObjs>
+        <dataInputObjs>add</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="42" name="c" lineNumber="66" originalName="c" fileName="../../project_documents/LabB/dct.cpp" fileDirectory=".." rtlName="c_fu_219_p2" contextFuncName="read_data" bitwidth="4" opcode="add" nodeLabel="1">
+        <inlineStackInfo fileName="../../project_documents/LabB/dct.cpp" linenumber="89" fileDirectory="/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB" functionName="dct"/>
+        <inlineStackInfo fileName="../../project_documents/LabB/dct.cpp" linenumber="66" fileDirectory="/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB" functionName="read_data"/>
+        <dataInputObjs>select</dataInputObjs>
+        <dataOutputObjs>phi</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="43" name="node_43" opcode="br" nodeLabel="3">
+        <controlInputObjs>block_17</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="../../project_documents/LabB/dct.cpp">
+        <validLinenumbers>66</validLinenumbers>
+        <validLinenumbers>64</validLinenumbers>
+        <validLinenumbers>67</validLinenumbers>
+        <validLinenumbers>89</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+  </regions>
+  <regions anchor_node="-1" region_type="8" interval="1" typeName="Pipeline" id="310" pipe_depth="3" RegionName="WR_Loop_Row_WR_Loop_Col">
+    <basic_blocks id="54" name="block_54" type="BlockType">
+      <controlInputObjs>read_data.exit</controlInputObjs>
+      <controlInputObjs>.reset10</controlInputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>write_data.exit</controlOutputObjs>
+      <controlOutputObjs>.reset10</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="48" name="indvar_flatten1" bitwidth="7" opcode="phi" nodeLabel="4">
+        <dataInputObjs>add</dataInputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+        <controlInputObjs>read_data.exit</controlInputObjs>
+        <controlInputObjs>.reset10</controlInputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="49" name="r_i2" lineNumber="78" fileName="../../project_documents/LabB/dct.cpp" fileDirectory=".." contextFuncName="write_data" bitwidth="4" opcode="phi" nodeLabel="4">
+        <inlineStackInfo fileName="../../project_documents/LabB/dct.cpp" linenumber="94" fileDirectory="/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB" functionName="dct"/>
+        <inlineStackInfo fileName="../../project_documents/LabB/dct.cpp" linenumber="78" fileDirectory="/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB" functionName="write_data"/>
+        <dataInputObjs>select</dataInputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+        <controlInputObjs>read_data.exit</controlInputObjs>
+        <controlInputObjs>.reset10</controlInputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="50" name="c_i6" originalName="c" bitwidth="4" opcode="phi" nodeLabel="4">
+        <dataInputObjs>add</dataInputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+        <controlInputObjs>read_data.exit</controlInputObjs>
+        <controlInputObjs>.reset10</controlInputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="51" name="exitcond_flatten1" rtlName="exitcond_flatten1_fu_289_p2" bitwidth="1" opcode="icmp" nodeLabel="4">
+        <dataInputObjs>phi</dataInputObjs>
+        <dataOutputObjs>br</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="52" name="indvar_flatten_next1" rtlName="indvar_flatten_next1_fu_295_p2" bitwidth="7" opcode="add" nodeLabel="4">
+        <dataInputObjs>phi</dataInputObjs>
+        <dataOutputObjs>phi</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="53" name="node_53" opcode="br" nodeLabel="4">
+        <dataInputObjs>icmp</dataInputObjs>
+        <controlInputObjs>.reset10</controlInputObjs>
+        <controlInputObjs>write_data.exit</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="../../project_documents/LabB/dct.cpp">
+        <validLinenumbers>78</validLinenumbers>
+        <validLinenumbers>94</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+    <basic_blocks id="81" name=".reset10" type="BlockType">
+      <controlInputObjs>block_54</controlInputObjs>
+      <controlOutputObjs>phi</controlOutputObjs>
+      <controlOutputObjs>phi</controlOutputObjs>
+      <controlOutputObjs>phi</controlOutputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>block_54</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="57" name="exitcond_i1" lineNumber="78" fileName="../../project_documents/LabB/dct.cpp" fileDirectory=".." rtlName="exitcond_i1_fu_301_p2" contextFuncName="write_data" bitwidth="1" opcode="icmp" nodeLabel="4">
+        <inlineStackInfo fileName="../../project_documents/LabB/dct.cpp" linenumber="94" fileDirectory="/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB" functionName="dct"/>
+        <inlineStackInfo fileName="../../project_documents/LabB/dct.cpp" linenumber="78" fileDirectory="/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB" functionName="write_data"/>
+        <dataInputObjs>phi</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="58" name="c_i6_mid2" lineNumber="78" fileName="../../project_documents/LabB/dct.cpp" fileDirectory=".." rtlName="c_i6_mid2_fu_307_p3" contextFuncName="write_data" bitwidth="4" opcode="select" nodeLabel="4">
+        <inlineStackInfo fileName="../../project_documents/LabB/dct.cpp" linenumber="94" fileDirectory="/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB" functionName="dct"/>
+        <inlineStackInfo fileName="../../project_documents/LabB/dct.cpp" linenumber="78" fileDirectory="/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB" functionName="write_data"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataInputObjs>phi</dataInputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="59" name="r_s" lineNumber="76" fileName="../../project_documents/LabB/dct.cpp" fileDirectory=".." rtlName="r_s_fu_321_p2" contextFuncName="write_data" bitwidth="4" opcode="add" nodeLabel="5">
+        <inlineStackInfo fileName="../../project_documents/LabB/dct.cpp" linenumber="94" fileDirectory="/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB" functionName="dct"/>
+        <inlineStackInfo fileName="../../project_documents/LabB/dct.cpp" linenumber="76" fileDirectory="/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB" functionName="write_data"/>
+        <dataInputObjs>phi</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="60" name="r_i2_mid2" lineNumber="78" fileName="../../project_documents/LabB/dct.cpp" fileDirectory=".." rtlName="r_i2_mid2_fu_327_p3" contextFuncName="write_data" bitwidth="4" opcode="select" nodeLabel="5">
+        <inlineStackInfo fileName="../../project_documents/LabB/dct.cpp" linenumber="94" fileDirectory="/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB" functionName="dct"/>
+        <inlineStackInfo fileName="../../project_documents/LabB/dct.cpp" linenumber="78" fileDirectory="/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB" functionName="write_data"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataInputObjs>add</dataInputObjs>
+        <dataInputObjs>phi</dataInputObjs>
+        <dataOutputObjs>phi</dataOutputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="70" name="p_addr3" lineNumber="79" fileName="../../project_documents/LabB/dct.cpp" fileDirectory=".." rtlName="p_addr3_fu_364_p2" contextFuncName="write_data" bitwidth="8" opcode="add" nodeLabel="5">
+        <inlineStackInfo fileName="../../project_documents/LabB/dct.cpp" linenumber="94" fileDirectory="/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB" functionName="dct"/>
+        <inlineStackInfo fileName="../../project_documents/LabB/dct.cpp" linenumber="79" fileDirectory="/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB" functionName="write_data"/>
+        <dataInputObjs>select</dataInputObjs>
+        <dataInputObjs>select</dataInputObjs>
+        <dataOutputObjs>load</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="73" name="buf_2d_out_load" lineNumber="79" fileName="../../project_documents/LabB/dct.cpp" fileDirectory=".." contextFuncName="write_data" bitwidth="16" opcode="load" nodeLabel="5" nodeLatency="1">
+        <inlineStackInfo fileName="../../project_documents/LabB/dct.cpp" linenumber="94" fileDirectory="/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB" functionName="dct"/>
+        <inlineStackInfo fileName="../../project_documents/LabB/dct.cpp" linenumber="79" fileDirectory="/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB" functionName="write_data"/>
+        <dataInputObjs>add</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataOutputObjs>store</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="74" name="tmp_9_i" lineNumber="79" fileName="../../project_documents/LabB/dct.cpp" fileDirectory=".." rtlName="tmp_9_i_fu_375_p2" contextFuncName="write_data" bitwidth="6" opcode="add" nodeLabel="5">
+        <inlineStackInfo fileName="../../project_documents/LabB/dct.cpp" linenumber="94" fileDirectory="/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB" functionName="dct"/>
+        <inlineStackInfo fileName="../../project_documents/LabB/dct.cpp" linenumber="79" fileDirectory="/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB" functionName="write_data"/>
+        <dataInputObjs>select</dataInputObjs>
+        <dataInputObjs>select</dataInputObjs>
+        <dataOutputObjs>store</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="77" name="node_77" lineNumber="79" fileName="../../project_documents/LabB/dct.cpp" fileDirectory=".." contextFuncName="write_data" opcode="store" nodeLabel="6">
+        <inlineStackInfo fileName="../../project_documents/LabB/dct.cpp" linenumber="94" fileDirectory="/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB" functionName="dct"/>
+        <inlineStackInfo fileName="../../project_documents/LabB/dct.cpp" linenumber="79" fileDirectory="/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB" functionName="write_data"/>
+        <dataInputObjs>load</dataInputObjs>
+        <dataInputObjs>add</dataInputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="79" name="c_1" lineNumber="78" originalName="c" fileName="../../project_documents/LabB/dct.cpp" fileDirectory=".." rtlName="c_1_fu_315_p2" contextFuncName="write_data" bitwidth="4" opcode="add" nodeLabel="4">
+        <inlineStackInfo fileName="../../project_documents/LabB/dct.cpp" linenumber="94" fileDirectory="/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB" functionName="dct"/>
+        <inlineStackInfo fileName="../../project_documents/LabB/dct.cpp" linenumber="78" fileDirectory="/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabB" functionName="write_data"/>
+        <dataInputObjs>select</dataInputObjs>
+        <dataOutputObjs>phi</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="80" name="node_80" opcode="br" nodeLabel="6">
+        <controlInputObjs>block_54</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="../../project_documents/LabB/dct.cpp">
+        <validLinenumbers>78</validLinenumbers>
+        <validLinenumbers>76</validLinenumbers>
+        <validLinenumbers>79</validLinenumbers>
+        <validLinenumbers>94</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+  </regions>
+  <ScheduleInfo time="0"/>
+  <ScheduleInfo time="1"/>
+  <ScheduleInfo time="2"/>
+  <ScheduleInfo time="3"/>
+  <ScheduleInfo time="4"/>
+  <ScheduleInfo time="5"/>
+  <ScheduleInfo time="6"/>
+  <regnodes realName="tmp_9_i_reg_456">
+    <nodeIds>74</nodeIds>
+  </regnodes>
+  <regnodes realName="input_addr_reg_416">
+    <nodeIds>32</nodeIds>
+  </regnodes>
+  <regnodes realName="indvar_flatten_reg_116">
+    <nodeIds>11</nodeIds>
+  </regnodes>
+  <regnodes realName="r_i2_reg_161">
+    <nodeIds>49</nodeIds>
+  </regnodes>
+  <regnodes realName="r_i2_mid2_reg_446">
+    <nodeIds>60</nodeIds>
+  </regnodes>
+  <regnodes realName="indvar_flatten_next1_reg_425">
+    <nodeIds>52</nodeIds>
+  </regnodes>
+  <regnodes realName="r_i_reg_127">
+    <nodeIds>12</nodeIds>
+  </regnodes>
+  <regnodes realName="indvar_flatten_next_reg_389">
+    <nodeIds>15</nodeIds>
+  </regnodes>
+  <regnodes realName="c_i_mid2_reg_399">
+    <nodeIds>21</nodeIds>
+  </regnodes>
+  <regnodes realName="indvar_flatten1_reg_150">
+    <nodeIds>48</nodeIds>
+  </regnodes>
+  <regnodes realName="c_i6_reg_173">
+    <nodeIds>50</nodeIds>
+  </regnodes>
+  <regnodes realName="exitcond_i1_reg_430">
+    <nodeIds>57</nodeIds>
+  </regnodes>
+  <regnodes realName="exitcond_flatten1_reg_421">
+    <nodeIds>51</nodeIds>
+  </regnodes>
+  <regnodes realName="c_i6_mid2_reg_435">
+    <nodeIds>58</nodeIds>
+  </regnodes>
+  <regnodes realName="r_i_mid2_reg_410">
+    <nodeIds>23</nodeIds>
+  </regnodes>
+  <regnodes realName="c_1_reg_441">
+    <nodeIds>79</nodeIds>
+  </regnodes>
+  <regnodes realName="c_i_reg_139">
+    <nodeIds>13</nodeIds>
+  </regnodes>
+  <regnodes realName="buf_2d_out_addr_reg_451">
+    <nodeIds>72</nodeIds>
+  </regnodes>
+  <regnodes realName="exitcond_flatten_reg_385">
+    <nodeIds>14</nodeIds>
+  </regnodes>
+  <regnodes realName="c_reg_405">
+    <nodeIds>42</nodeIds>
+  </regnodes>
+  <regnodes realName="exitcond_i_reg_394">
+    <nodeIds>20</nodeIds>
+  </regnodes>
+  <expressionNodes realName="c_i_mid2_fu_211">
+    <nodeIds>21</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp_i5_fu_338">
+    <nodeIds>62</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="output_addr_gep_fu_103">
+    <nodeIds>76</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="buf_2d_out_addr_gep_fu_92">
+    <nodeIds>72</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="r_i_phi_fu_131">
+    <nodeIds>12</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="r_i_mid2_fu_231">
+    <nodeIds>23</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="input_addr_gep_fu_68">
+    <nodeIds>32</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="r_i2_mid2_fu_327">
+    <nodeIds>60</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="buf_2d_in_addr_gep_fu_80">
+    <nodeIds>39</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="indvar_flatten_phi_fu_120">
+    <nodeIds>11</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="exitcond_flatten_fu_193">
+    <nodeIds>14</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="r_s_fu_321">
+    <nodeIds>59</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp_3_i_fu_381">
+    <nodeIds>75</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="buf_2d_out_alloca_fu_64">
+    <nodeIds>8</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="indvar_flatten1_phi_fu_154">
+    <nodeIds>48</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp_7_i_trn_cast_fu_264">
+    <nodeIds>34</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="r_fu_225">
+    <nodeIds>22</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="c_fu_219">
+    <nodeIds>42</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp_5_i_fu_253">
+    <nodeIds>30</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="c_i_cast6_fu_250">
+    <nodeIds>26</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp_8_i_trn_cast_fu_349">
+    <nodeIds>67</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="c_i6_mid2_fu_307">
+    <nodeIds>58</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp_fu_238">
+    <nodeIds>24</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="c_i_phi_fu_143">
+    <nodeIds>13</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="r_i2_phi_fu_165">
+    <nodeIds>49</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="exitcond_i1_fu_301">
+    <nodeIds>57</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="c_i6_cast2_fu_346">
+    <nodeIds>63</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="c_i6_phi_fu_177">
+    <nodeIds>50</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="buf_2d_in_alloca_fu_60">
+    <nodeIds>7</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp_9_i_fu_375">
+    <nodeIds>74</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp_4_fu_352">
+    <nodeIds>68</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp_6_i_fu_259">
+    <nodeIds>31</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="exitcond_flatten1_fu_289">
+    <nodeIds>51</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="p_addr1_fu_278">
+    <nodeIds>37</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="p_addr2_cast_fu_360">
+    <nodeIds>69</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="p_addr3_fu_364">
+    <nodeIds>70</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="c_1_fu_315">
+    <nodeIds>79</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp_5_fu_370">
+    <nodeIds>71</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp_3_fu_334">
+    <nodeIds>61</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp_i_fu_242">
+    <nodeIds>25</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp_2_fu_284">
+    <nodeIds>38</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="exitcond_i_fu_205">
+    <nodeIds>20</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="indvar_flatten_next1_fu_295">
+    <nodeIds>52</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp_1_fu_267">
+    <nodeIds>35</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="p_addr_cast_fu_274">
+    <nodeIds>36</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="indvar_flatten_next_fu_199">
+    <nodeIds>15</nodeIds>
+  </expressionNodes>
+  <moduleNodes realName="grp_dct_2d_fu_185">
+    <nodeIds>45</nodeIds>
+  </moduleNodes>
+  <memoryPorts dataString="buf_2d_in">
+    <nodeIds>40</nodeIds>
+  </memoryPorts>
+  <memoryPorts dataString="buf_2d_in" portID="100">
+    <nodeIds>45</nodeIds>
+  </memoryPorts>
+  <memoryPorts dataString="buf_2d_out">
+    <nodeIds>73</nodeIds>
+  </memoryPorts>
+  <memoryPorts dataString="buf_2d_out" portID="100">
+    <nodeIds>45</nodeIds>
+  </memoryPorts>
+  <memoryPorts dataString="dct_coeff_table" portID="100">
+    <nodeIds>45</nodeIds>
+  </memoryPorts>
+  <memoryPorts dataString="input_r">
+    <nodeIds>33</nodeIds>
+  </memoryPorts>
+  <memoryPorts dataString="output_r">
+    <nodeIds>77</nodeIds>
+  </memoryPorts>
+  <ioPorts name="input_r"/>
+  <ioPorts name="output_r"/>
+  <fsm>
+    <states id="1">
+      <operations id="4" stage="1" latency="1"/>
+      <operations id="5" stage="1" latency="1"/>
+      <operations id="6" stage="1" latency="1"/>
+      <operations id="7" stage="1" latency="1"/>
+      <operations id="8" stage="1" latency="1"/>
+      <operations id="9" stage="1" latency="1"/>
+    </states>
+    <states id="2">
+      <operations id="11" stage="1" latency="1"/>
+      <operations id="12" stage="1" latency="1"/>
+      <operations id="13" stage="1" latency="1"/>
+      <operations id="14" stage="1" latency="1"/>
+      <operations id="15" stage="1" latency="1"/>
+      <operations id="16" stage="1" latency="1"/>
+      <operations id="20" stage="1" latency="1"/>
+      <operations id="21" stage="1" latency="1"/>
+      <operations id="42" stage="1" latency="1"/>
+    </states>
+    <states id="3">
+      <operations id="22" stage="1" latency="1"/>
+      <operations id="23" stage="1" latency="1"/>
+      <operations id="24" stage="1" latency="1"/>
+      <operations id="25" stage="1" latency="1"/>
+      <operations id="26" stage="1" latency="1"/>
+      <operations id="30" stage="1" latency="1"/>
+      <operations id="31" stage="1" latency="1"/>
+      <operations id="32" stage="1" latency="1"/>
+      <operations id="33" stage="2" latency="2"/>
+    </states>
+    <states id="4">
+      <operations id="18" stage="1" latency="1"/>
+      <operations id="19" stage="1" latency="1"/>
+      <operations id="27" stage="1" latency="1"/>
+      <operations id="28" stage="1" latency="1"/>
+      <operations id="29" stage="1" latency="1"/>
+      <operations id="33" stage="1" latency="2"/>
+      <operations id="34" stage="1" latency="1"/>
+      <operations id="35" stage="1" latency="1"/>
+      <operations id="36" stage="1" latency="1"/>
+      <operations id="37" stage="1" latency="1"/>
+      <operations id="38" stage="1" latency="1"/>
+      <operations id="39" stage="1" latency="1"/>
+      <operations id="40" stage="1" latency="1"/>
+      <operations id="41" stage="1" latency="1"/>
+      <operations id="43" stage="1" latency="1"/>
+    </states>
+    <states id="5">
+      <operations id="45" stage="2" latency="2"/>
+    </states>
+    <states id="6">
+      <operations id="45" stage="1" latency="2"/>
+      <operations id="46" stage="1" latency="1"/>
+    </states>
+    <states id="7">
+      <operations id="48" stage="1" latency="1"/>
+      <operations id="49" stage="1" latency="1"/>
+      <operations id="50" stage="1" latency="1"/>
+      <operations id="51" stage="1" latency="1"/>
+      <operations id="52" stage="1" latency="1"/>
+      <operations id="53" stage="1" latency="1"/>
+      <operations id="57" stage="1" latency="1"/>
+      <operations id="58" stage="1" latency="1"/>
+      <operations id="79" stage="1" latency="1"/>
+    </states>
+    <states id="8">
+      <operations id="59" stage="1" latency="1"/>
+      <operations id="60" stage="1" latency="1"/>
+      <operations id="61" stage="1" latency="1"/>
+      <operations id="62" stage="1" latency="1"/>
+      <operations id="63" stage="1" latency="1"/>
+      <operations id="67" stage="1" latency="1"/>
+      <operations id="68" stage="1" latency="1"/>
+      <operations id="69" stage="1" latency="1"/>
+      <operations id="70" stage="1" latency="1"/>
+      <operations id="71" stage="1" latency="1"/>
+      <operations id="72" stage="1" latency="1"/>
+      <operations id="73" stage="2" latency="2"/>
+      <operations id="74" stage="1" latency="1"/>
+    </states>
+    <states id="9">
+      <operations id="55" stage="1" latency="1"/>
+      <operations id="56" stage="1" latency="1"/>
+      <operations id="64" stage="1" latency="1"/>
+      <operations id="65" stage="1" latency="1"/>
+      <operations id="66" stage="1" latency="1"/>
+      <operations id="73" stage="1" latency="2"/>
+      <operations id="75" stage="1" latency="1"/>
+      <operations id="76" stage="1" latency="1"/>
+      <operations id="77" stage="1" latency="1"/>
+      <operations id="78" stage="1" latency="1"/>
+      <operations id="80" stage="1" latency="1"/>
+    </states>
+    <states id="10">
+      <operations id="82" stage="1" latency="1"/>
+    </states>
+    <transitions inState="1" outState="2">
+      <condition id="45"/>
+    </transitions>
+    <transitions inState="5" outState="6">
+      <condition id="53"/>
+    </transitions>
+    <transitions inState="6" outState="7">
+      <condition id="55"/>
+    </transitions>
+    <transitions inState="3" outState="4">
+      <condition id="64"/>
+    </transitions>
+    <transitions inState="4" outState="2">
+      <condition id="65"/>
+    </transitions>
+    <transitions inState="2" outState="5">
+      <condition id="63"/>
+    </transitions>
+    <transitions inState="2" outState="3">
+      <condition id="66"/>
+    </transitions>
+    <transitions inState="8" outState="9">
+      <condition id="68"/>
+    </transitions>
+    <transitions inState="9" outState="7">
+      <condition id="69"/>
+    </transitions>
+    <transitions inState="7" outState="10">
+      <condition id="67"/>
+    </transitions>
+    <transitions inState="7" outState="8">
+      <condition id="70"/>
+    </transitions>
+  </fsm>
+  <CFGRegionsRoot>
+    <cfgRegions mId="1" mTag="dct" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="1982" mMaxLatency="-1">
+      <subRegions>2</subRegions>
+      <subRegions>3</subRegions>
+      <subRegions>4</subRegions>
+      <subRegions>5</subRegions>
+      <subRegions>6</subRegions>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="2" mTag="Entry" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMaxLatency="-1">
+      <basicBlocks>10</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="3" mTag="RD_Loop_Row_RD_Loop_Col" mII="1" mDepth="3" mMinTripCount="64" mMaxTripCount="64" mMinLatency="65" mMaxLatency="-1" mType="1">
+      <basicBlocks>17</basicBlocks>
+      <basicBlocks>44</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="4" mTag="Region 1" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="1848" mMaxLatency="-1">
+      <basicBlocks>47</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="5" mTag="WR_Loop_Row_WR_Loop_Col" mII="1" mDepth="3" mMinTripCount="64" mMaxTripCount="64" mMinLatency="65" mMaxLatency="-1" mType="1">
+      <basicBlocks>54</basicBlocks>
+      <basicBlocks>81</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="6" mTag="Return" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMaxLatency="-1">
+      <basicBlocks>83</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+  </CFGRegionsRoot>
+</cdfg:DBCdfg>

@@ -1,0 +1,1191 @@
+15:54:51 **** Build of project standalone_bsp_0 ****
+make -k all 
+libgen -hw ../videoProcessing_prj_hw_platform/system.xml\
+	       \
+	       -pe ps7_cortexa9_0 \
+	       -log libgen.log \
+	       system.mss
+libgen
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: libgen -hw ../videoProcessing_prj_hw_platform/system.xml -pe
+ps7_cortexa9_0 -log libgen.log system.mss 
+
+ERROR:EDK:410 - axidma -
+   /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK
+   _Workspace/standalone_bsp_0/system.mss line 33 - No IP instance named
+   axi_dma_spdif is present in the hardware!
+ERROR:EDK:410 - generic -
+   /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK
+   _Workspace/standalone_bsp_0/system.mss line 57 - No IP instance named
+   axi_spdif_tx_0 is present in the hardware!
+ERROR:EDK:1206 - Errors occured while parsing MSS file.
+make: *** [ps7_cortexa9_0/lib/libxil.a] Error 2
+make: Target `all' not remade because of errors.
+16:07:01 **** Build of project standalone_bsp_0 ****
+make -k all 
+libgen -hw ../videoProcessing_prj_hw_platform/system.xml\
+	       \
+	       -pe ps7_cortexa9_0 \
+	       -log libgen.log \
+	       system.mss
+libgen
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: libgen -hw ../videoProcessing_prj_hw_platform/system.xml -pe
+ps7_cortexa9_0 -log libgen.log system.mss 
+
+
+Staging source files.
+Running DRCs.
+Running generate.
+Running post_generate.
+Running include - 'gmake -s include "COMPILER=arm-xilinx-eabi-gcc"
+"ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS= -O2 -c"
+"EXTRA_COMPILER_FLAGS=-g"'.
+
+Running libs - 'gmake -s libs "COMPILER=arm-xilinx-eabi-gcc"
+"ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS= -O2 -c"
+"EXTRA_COMPILER_FLAGS=-g"'.
+Compiling common
+arm-xilinx-eabi-ar: creating ../../../lib/libxil.a
+Compiling standalone
+Compiling axidma
+Compiling iic
+Compiling axivdma
+Compiling devcfg
+Compiling dmaps
+Compiling emacps
+Compiling gpiops
+Compiling iicps
+Compiling qspips
+Compiling scugic
+Compiling scutimer
+Compiling scuwdt
+Compiling ttcps
+Compiling uartps
+Compiling usbps
+Compiling xadcps
+Compiling cpu_cortexa9
+Running execs_generate.
+Finished building libraries
+
+**** Build of configuration Debug for project video_filter_sw ****
+
+Nothing to build for project video_filter_sw
+16:12:27 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building file: ../src/axi_interrupt.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/axi_interrupt.d" -MT"src/axi_interrupt.d" -o "src/axi_interrupt.o" "../src/axi_interrupt.c"
+Finished building: ../src/axi_interrupt.c
+ 
+Building file: ../src/cf_hdmi.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/cf_hdmi.d" -MT"src/cf_hdmi.d" -o "src/cf_hdmi.o" "../src/cf_hdmi.c"
+Finished building: ../src/cf_hdmi.c
+ 
+Building file: ../src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c:14:26: fatal error: atv_platform.h: No such file or directory
+compilation terminated.
+make: *** [src/main.o] Error 1
+16:20:07 **** Clean-only build of configuration Debug for project video_filter_sw ****
+make clean 
+rm -rf  ./src/axi_interrupt.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o  ./src/axi_interrupt.d ./src/cf_hdmi.d ./src/main.d ./src/transmitter.d  video_filter_sw.elf.size  video_filter_sw.elf
+ 
+16:20:08 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building file: ../src/axi_interrupt.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/axi_interrupt.d" -MT"src/axi_interrupt.d" -o "src/axi_interrupt.o" "../src/axi_interrupt.c"
+Finished building: ../src/axi_interrupt.c
+ 
+Building file: ../src/cf_hdmi.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/cf_hdmi.d" -MT"src/cf_hdmi.d" -o "src/cf_hdmi.o" "../src/cf_hdmi.c"
+Finished building: ../src/cf_hdmi.c
+ 
+Building file: ../src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building file: ../src/transmitter.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/transmitter.d" -MT"src/transmitter.d" -o "src/transmitter.o" "../src/transmitter.c"
+Finished building: ../src/transmitter.c
+ 
+Building target: video_filter_sw.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw.elf"  ./src/axi_interrupt.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw.elf  |tee "video_filter_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  98680	   1888	  34412	 134980	  20f44	video_filter_sw.elf
+Finished building: video_filter_sw.elf.size
+ 
+16:27:31 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+17:40:24 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+17:54:19 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+17:58:50 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+17:59:02 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+18:10:57 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+18:21:32 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+18:26:18 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+19:15:49 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building file: ../src/axi_interrupt.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/axi_interrupt.d" -MT"src/axi_interrupt.d" -o "src/axi_interrupt.o" "../src/axi_interrupt.c"
+../src/axi_interrupt.c: In function 'AXI_INTERRUPT_VsyncIntr_Handler':
+../src/axi_interrupt.c:67:4: warning: implicit declaration of function 'convToGrayHLS' [-Wimplicit-function-declaration]
+Finished building: ../src/axi_interrupt.c
+ 
+Building file: ../src/sw_functions.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/sw_functions.d" -MT"src/sw_functions.d" -o "src/sw_functions.o" "../src/sw_functions.c"
+../src/sw_functions.c:4:1: warning: "/*" within comment [-Wcomment]
+../src/sw_functions.c: In function 'SampleFunction':
+../src/sw_functions.c:158:16: warning: unused variable 'VH_offset' [-Wunused-variable]
+Finished building: ../src/sw_functions.c
+ 
+Building target: video_filter_sw.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw.elf"  ./src/axi_interrupt.o ./src/cf_hdmi.o ./src/main.o ./src/sw_functions.o ./src/transmitter.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+./src/axi_interrupt.o: In function `AXI_INTERRUPT_VsyncIntr_Handler':
+/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/Debug/../src/axi_interrupt.c:67: undefined reference to `convToGrayHLS'
+collect2: error: ld returned 1 exit status
+make: *** [video_filter_sw.elf] Error 1
+19:16:13 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building file: ../src/axi_interrupt.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/axi_interrupt.d" -MT"src/axi_interrupt.d" -o "src/axi_interrupt.o" "../src/axi_interrupt.c"
+../src/axi_interrupt.c: In function 'AXI_INTERRUPT_VsyncIntr_Handler':
+../src/axi_interrupt.c:68:4: warning: implicit declaration of function 'convToGrayHLS' [-Wimplicit-function-declaration]
+Finished building: ../src/axi_interrupt.c
+ 
+Building target: video_filter_sw.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw.elf"  ./src/axi_interrupt.o ./src/cf_hdmi.o ./src/main.o ./src/sw_functions.o ./src/transmitter.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+./src/axi_interrupt.o: In function `AXI_INTERRUPT_VsyncIntr_Handler':
+/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/Debug/../src/axi_interrupt.c:68: undefined reference to `convToGrayHLS'
+collect2: error: ld returned 1 exit status
+make: *** [video_filter_sw.elf] Error 1
+19:18:05 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building target: video_filter_sw.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw.elf"  ./src/axi_interrupt.o ./src/cf_hdmi.o ./src/main.o ./src/sw_functions.o ./src/transmitter.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+./src/axi_interrupt.o: In function `AXI_INTERRUPT_VsyncIntr_Handler':
+/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/Debug/../src/axi_interrupt.c:68: undefined reference to `convToGrayHLS'
+collect2: error: ld returned 1 exit status
+make: *** [video_filter_sw.elf] Error 1
+19:18:18 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building target: video_filter_sw.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw.elf"  ./src/axi_interrupt.o ./src/cf_hdmi.o ./src/main.o ./src/sw_functions.o ./src/transmitter.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+./src/axi_interrupt.o: In function `AXI_INTERRUPT_VsyncIntr_Handler':
+/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/Debug/../src/axi_interrupt.c:68: undefined reference to `convToGrayHLS'
+collect2: error: ld returned 1 exit status
+make: *** [video_filter_sw.elf] Error 1
+19:18:49 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building file: ../src/axi_interrupt.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/axi_interrupt.d" -MT"src/axi_interrupt.d" -o "src/axi_interrupt.o" "../src/axi_interrupt.c"
+Finished building: ../src/axi_interrupt.c
+ 
+Building target: video_filter_sw.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw.elf"  ./src/axi_interrupt.o ./src/cf_hdmi.o ./src/main.o ./src/sw_functions.o ./src/transmitter.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw.elf  |tee "video_filter_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 101484	   1888	  34412	 137784	  21a38	video_filter_sw.elf
+Finished building: video_filter_sw.elf.size
+ 
+19:20:22 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+19:21:10 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building file: ../src/axi_interrupt.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/axi_interrupt.d" -MT"src/axi_interrupt.d" -o "src/axi_interrupt.o" "../src/axi_interrupt.c"
+Finished building: ../src/axi_interrupt.c
+ 
+Building target: video_filter_sw.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw.elf"  ./src/axi_interrupt.o ./src/cf_hdmi.o ./src/main.o ./src/sw_functions.o ./src/transmitter.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw.elf  |tee "video_filter_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 101540	   1888	  34412	 137840	  21a70	video_filter_sw.elf
+Finished building: video_filter_sw.elf.size
+ 
+19:21:16 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+19:22:06 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+19:23:30 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+19:25:06 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+19:27:31 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+19:28:28 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building file: ../src/axi_interrupt.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/axi_interrupt.d" -MT"src/axi_interrupt.d" -o "src/axi_interrupt.o" "../src/axi_interrupt.c"
+Finished building: ../src/axi_interrupt.c
+ 
+Building target: video_filter_sw.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw.elf"  ./src/axi_interrupt.o ./src/cf_hdmi.o ./src/main.o ./src/sw_functions.o ./src/transmitter.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw.elf  |tee "video_filter_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 101484	   1888	  34412	 137784	  21a38	video_filter_sw.elf
+Finished building: video_filter_sw.elf.size
+ 
+19:28:59 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+19:30:18 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building file: ../src/axi_interrupt.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/axi_interrupt.d" -MT"src/axi_interrupt.d" -o "src/axi_interrupt.o" "../src/axi_interrupt.c"
+Finished building: ../src/axi_interrupt.c
+ 
+Building target: video_filter_sw.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw.elf"  ./src/axi_interrupt.o ./src/cf_hdmi.o ./src/main.o ./src/sw_functions.o ./src/transmitter.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw.elf  |tee "video_filter_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 101540	   1888	  34412	 137840	  21a70	video_filter_sw.elf
+Finished building: video_filter_sw.elf.size
+ 
+19:30:44 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+19:31:24 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+19:41:13 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building file: ../src/axi_interrupt.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/axi_interrupt.d" -MT"src/axi_interrupt.d" -o "src/axi_interrupt.o" "../src/axi_interrupt.c"
+Finished building: ../src/axi_interrupt.c
+ 
+Building target: video_filter_sw.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw.elf"  ./src/axi_interrupt.o ./src/cf_hdmi.o ./src/main.o ./src/sw_functions.o ./src/transmitter.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw.elf  |tee "video_filter_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 101484	   1888	  34412	 137784	  21a38	video_filter_sw.elf
+Finished building: video_filter_sw.elf.size
+ 
+19:41:35 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+19:41:50 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building file: ../src/axi_interrupt.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/axi_interrupt.d" -MT"src/axi_interrupt.d" -o "src/axi_interrupt.o" "../src/axi_interrupt.c"
+Finished building: ../src/axi_interrupt.c
+ 
+Building target: video_filter_sw.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw.elf"  ./src/axi_interrupt.o ./src/cf_hdmi.o ./src/main.o ./src/sw_functions.o ./src/transmitter.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw.elf  |tee "video_filter_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 101484	   1888	  34412	 137784	  21a38	video_filter_sw.elf
+Finished building: video_filter_sw.elf.size
+ 
+19:48:19 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+19:52:32 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building file: ../src/axi_interrupt.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/axi_interrupt.d" -MT"src/axi_interrupt.d" -o "src/axi_interrupt.o" "../src/axi_interrupt.c"
+Finished building: ../src/axi_interrupt.c
+ 
+Building target: video_filter_sw.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw.elf"  ./src/axi_interrupt.o ./src/cf_hdmi.o ./src/main.o ./src/sw_functions.o ./src/transmitter.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw.elf  |tee "video_filter_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 101540	   1888	  34412	 137840	  21a70	video_filter_sw.elf
+Finished building: video_filter_sw.elf.size
+ 
+19:52:47 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+19:54:14 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building file: ../src/axi_interrupt.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/axi_interrupt.d" -MT"src/axi_interrupt.d" -o "src/axi_interrupt.o" "../src/axi_interrupt.c"
+Finished building: ../src/axi_interrupt.c
+ 
+Building target: video_filter_sw.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw.elf"  ./src/axi_interrupt.o ./src/cf_hdmi.o ./src/main.o ./src/sw_functions.o ./src/transmitter.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw.elf  |tee "video_filter_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 101540	   1888	  34412	 137840	  21a70	video_filter_sw.elf
+Finished building: video_filter_sw.elf.size
+ 
+19:56:20 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building file: ../src/axi_interrupt.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/axi_interrupt.d" -MT"src/axi_interrupt.d" -o "src/axi_interrupt.o" "../src/axi_interrupt.c"
+Finished building: ../src/axi_interrupt.c
+ 
+Building target: video_filter_sw.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw.elf"  ./src/axi_interrupt.o ./src/cf_hdmi.o ./src/main.o ./src/sw_functions.o ./src/transmitter.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw.elf  |tee "video_filter_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 101480	   1888	  34412	 137780	  21a34	video_filter_sw.elf
+Finished building: video_filter_sw.elf.size
+ 
+19:56:26 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+19:56:35 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+19:57:44 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building file: ../src/axi_interrupt.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/axi_interrupt.d" -MT"src/axi_interrupt.d" -o "src/axi_interrupt.o" "../src/axi_interrupt.c"
+Finished building: ../src/axi_interrupt.c
+ 
+Building target: video_filter_sw.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw.elf"  ./src/axi_interrupt.o ./src/cf_hdmi.o ./src/main.o ./src/sw_functions.o ./src/transmitter.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw.elf  |tee "video_filter_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 101616	   1888	  34412	 137916	  21abc	video_filter_sw.elf
+Finished building: video_filter_sw.elf.size
+ 
+19:57:59 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+19:58:11 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+19:58:21 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+19:59:57 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+20:03:17 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building file: ../src/cf_hdmi.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/cf_hdmi.d" -MT"src/cf_hdmi.d" -o "src/cf_hdmi.o" "../src/cf_hdmi.c"
+Finished building: ../src/cf_hdmi.c
+ 
+Building target: video_filter_sw.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw.elf"  ./src/axi_interrupt.o ./src/cf_hdmi.o ./src/main.o ./src/sw_functions.o ./src/transmitter.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw.elf  |tee "video_filter_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 101616	   1888	  34412	 137916	  21abc	video_filter_sw.elf
+Finished building: video_filter_sw.elf.size
+ 
+20:03:23 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+20:07:50 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building file: ../src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: video_filter_sw.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw.elf"  ./src/axi_interrupt.o ./src/cf_hdmi.o ./src/main.o ./src/sw_functions.o ./src/transmitter.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw.elf  |tee "video_filter_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 101640	   1888	  34412	 137940	  21ad4	video_filter_sw.elf
+Finished building: video_filter_sw.elf.size
+ 
+20:09:00 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building file: ../src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: video_filter_sw.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw.elf"  ./src/axi_interrupt.o ./src/cf_hdmi.o ./src/main.o ./src/sw_functions.o ./src/transmitter.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw.elf  |tee "video_filter_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 101640	   1888	  34412	 137940	  21ad4	video_filter_sw.elf
+Finished building: video_filter_sw.elf.size
+ 
+20:10:03 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+20:10:42 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+20:12:14 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+20:12:27 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+20:14:04 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building file: ../src/cf_hdmi.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/cf_hdmi.d" -MT"src/cf_hdmi.d" -o "src/cf_hdmi.o" "../src/cf_hdmi.c"
+Finished building: ../src/cf_hdmi.c
+ 
+Building target: video_filter_sw.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw.elf"  ./src/axi_interrupt.o ./src/cf_hdmi.o ./src/main.o ./src/sw_functions.o ./src/transmitter.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw.elf  |tee "video_filter_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 101688	   1888	  34412	 137988	  21b04	video_filter_sw.elf
+Finished building: video_filter_sw.elf.size
+ 
+20:14:49 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building file: ../src/cf_hdmi.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/cf_hdmi.d" -MT"src/cf_hdmi.d" -o "src/cf_hdmi.o" "../src/cf_hdmi.c"
+Finished building: ../src/cf_hdmi.c
+ 
+Building target: video_filter_sw.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw.elf"  ./src/axi_interrupt.o ./src/cf_hdmi.o ./src/main.o ./src/sw_functions.o ./src/transmitter.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw.elf  |tee "video_filter_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 101736	   1888	  34412	 138036	  21b34	video_filter_sw.elf
+Finished building: video_filter_sw.elf.size
+ 
+20:15:53 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building file: ../src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: video_filter_sw.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw.elf"  ./src/axi_interrupt.o ./src/cf_hdmi.o ./src/main.o ./src/sw_functions.o ./src/transmitter.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw.elf  |tee "video_filter_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 101760	   1888	  34412	 138060	  21b4c	video_filter_sw.elf
+Finished building: video_filter_sw.elf.size
+ 
+20:18:10 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building file: ../src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: video_filter_sw.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw.elf"  ./src/axi_interrupt.o ./src/cf_hdmi.o ./src/main.o ./src/sw_functions.o ./src/transmitter.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw.elf  |tee "video_filter_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 101760	   1888	  34412	 138060	  21b4c	video_filter_sw.elf
+Finished building: video_filter_sw.elf.size
+ 
+20:18:39 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+20:20:21 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building file: ../src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: video_filter_sw.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw.elf"  ./src/axi_interrupt.o ./src/cf_hdmi.o ./src/main.o ./src/sw_functions.o ./src/transmitter.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw.elf  |tee "video_filter_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 101796	   1888	  34412	 138096	  21b70	video_filter_sw.elf
+Finished building: video_filter_sw.elf.size
+ 
+20:20:46 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building file: ../src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'APP_ChangeResolution':
+../src/main.c:153:4: error: expected ';' before 'SetProcessingMode'
+make: *** [src/main.o] Error 1
+20:20:56 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building file: ../src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: video_filter_sw.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw.elf"  ./src/axi_interrupt.o ./src/cf_hdmi.o ./src/main.o ./src/sw_functions.o ./src/transmitter.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw.elf  |tee "video_filter_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 101832	   1888	  34412	 138132	  21b94	video_filter_sw.elf
+Finished building: video_filter_sw.elf.size
+ 
+20:21:24 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+20:25:44 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building file: ../src/cf_hdmi.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/cf_hdmi.d" -MT"src/cf_hdmi.d" -o "src/cf_hdmi.o" "../src/cf_hdmi.c"
+../src/cf_hdmi.c: In function 'InitHdmiVideoPcore':
+../src/cf_hdmi.c:288:22: error: invalid storage class for function 'CLKGEN_LookupFilter'
+../src/cf_hdmi.c:300:22: error: invalid storage class for function 'CLKGEN_LookupLock'
+../src/cf_hdmi.c:410:13: error: invalid storage class for function 'CLKGEN_Read'
+../src/cf_hdmi.c:498:1: error: expected declaration or statement at end of input
+make: *** [src/cf_hdmi.o] Error 1
+20:25:51 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building file: ../src/cf_hdmi.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/cf_hdmi.d" -MT"src/cf_hdmi.d" -o "src/cf_hdmi.o" "../src/cf_hdmi.c"
+Finished building: ../src/cf_hdmi.c
+ 
+Building target: video_filter_sw.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw.elf"  ./src/axi_interrupt.o ./src/cf_hdmi.o ./src/main.o ./src/sw_functions.o ./src/transmitter.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw.elf  |tee "video_filter_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 101852	   1888	  34412	 138152	  21ba8	video_filter_sw.elf
+Finished building: video_filter_sw.elf.size
+ 
+20:26:00 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+20:26:58 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building file: ../src/cf_hdmi.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/cf_hdmi.d" -MT"src/cf_hdmi.d" -o "src/cf_hdmi.o" "../src/cf_hdmi.c"
+Finished building: ../src/cf_hdmi.c
+ 
+Building target: video_filter_sw.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw.elf"  ./src/axi_interrupt.o ./src/cf_hdmi.o ./src/main.o ./src/sw_functions.o ./src/transmitter.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw.elf  |tee "video_filter_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 101832	   1888	  34412	 138132	  21b94	video_filter_sw.elf
+Finished building: video_filter_sw.elf.size
+ 
+20:27:15 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building file: ../src/cf_hdmi.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/cf_hdmi.d" -MT"src/cf_hdmi.d" -o "src/cf_hdmi.o" "../src/cf_hdmi.c"
+Finished building: ../src/cf_hdmi.c
+ 
+Building target: video_filter_sw.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw.elf"  ./src/axi_interrupt.o ./src/cf_hdmi.o ./src/main.o ./src/sw_functions.o ./src/transmitter.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw.elf  |tee "video_filter_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 101860	   1888	  34412	 138160	  21bb0	video_filter_sw.elf
+Finished building: video_filter_sw.elf.size
+ 
+20:27:37 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building file: ../src/cf_hdmi.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/cf_hdmi.d" -MT"src/cf_hdmi.d" -o "src/cf_hdmi.o" "../src/cf_hdmi.c"
+Finished building: ../src/cf_hdmi.c
+ 
+Building target: video_filter_sw.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw.elf"  ./src/axi_interrupt.o ./src/cf_hdmi.o ./src/main.o ./src/sw_functions.o ./src/transmitter.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw.elf  |tee "video_filter_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 101884	   1888	  34412	 138184	  21bc8	video_filter_sw.elf
+Finished building: video_filter_sw.elf.size
+ 
+20:27:47 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+20:28:22 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building file: ../src/cf_hdmi.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/cf_hdmi.d" -MT"src/cf_hdmi.d" -o "src/cf_hdmi.o" "../src/cf_hdmi.c"
+Finished building: ../src/cf_hdmi.c
+ 
+Building target: video_filter_sw.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw.elf"  ./src/axi_interrupt.o ./src/cf_hdmi.o ./src/main.o ./src/sw_functions.o ./src/transmitter.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw.elf  |tee "video_filter_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 101884	   1888	  34412	 138184	  21bc8	video_filter_sw.elf
+Finished building: video_filter_sw.elf.size
+ 
+20:28:38 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building file: ../src/cf_hdmi.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/cf_hdmi.d" -MT"src/cf_hdmi.d" -o "src/cf_hdmi.o" "../src/cf_hdmi.c"
+Finished building: ../src/cf_hdmi.c
+ 
+Building target: video_filter_sw.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw.elf"  ./src/axi_interrupt.o ./src/cf_hdmi.o ./src/main.o ./src/sw_functions.o ./src/transmitter.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw.elf  |tee "video_filter_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 101832	   1888	  34412	 138132	  21b94	video_filter_sw.elf
+Finished building: video_filter_sw.elf.size
+ 
+20:31:37 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building file: ../src/cf_hdmi.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/cf_hdmi.d" -MT"src/cf_hdmi.d" -o "src/cf_hdmi.o" "../src/cf_hdmi.c"
+Finished building: ../src/cf_hdmi.c
+ 
+Building target: video_filter_sw.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw.elf"  ./src/axi_interrupt.o ./src/cf_hdmi.o ./src/main.o ./src/sw_functions.o ./src/transmitter.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw.elf  |tee "video_filter_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 101784	   1888	  34412	 138084	  21b64	video_filter_sw.elf
+Finished building: video_filter_sw.elf.size
+ 
+20:34:27 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building file: ../src/cf_hdmi.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/cf_hdmi.d" -MT"src/cf_hdmi.d" -o "src/cf_hdmi.o" "../src/cf_hdmi.c"
+../src/cf_hdmi.c: In function 'SetProcessingMode':
+../src/cf_hdmi.c:280:20: error: 'horizontalActiveTime' undeclared (first use in this function)
+../src/cf_hdmi.c:280:20: note: each undeclared identifier is reported only once for each function it appears in
+../src/cf_hdmi.c:280:41: error: 'verticalActiveTime' undeclared (first use in this function)
+../src/cf_hdmi.c:281:13: error: 'displayConfiguratin' undeclared (first use in this function)
+make: *** [src/cf_hdmi.o] Error 1
+20:34:38 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building file: ../src/cf_hdmi.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/cf_hdmi.d" -MT"src/cf_hdmi.d" -o "src/cf_hdmi.o" "../src/cf_hdmi.c"
+../src/cf_hdmi.c: In function 'SetProcessingMode':
+../src/cf_hdmi.c:280:20: error: 'horizontalActiveTime' undeclared (first use in this function)
+../src/cf_hdmi.c:280:20: note: each undeclared identifier is reported only once for each function it appears in
+../src/cf_hdmi.c:280:41: error: 'verticalActiveTime' undeclared (first use in this function)
+make: *** [src/cf_hdmi.o] Error 1
+20:36:59 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building file: ../src/cf_hdmi.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/cf_hdmi.d" -MT"src/cf_hdmi.d" -o "src/cf_hdmi.o" "../src/cf_hdmi.c"
+../src/cf_hdmi.c: In function 'SetProcessingMode':
+../src/cf_hdmi.c:280:35: error: 'resolution' undeclared (first use in this function)
+../src/cf_hdmi.c:280:35: note: each undeclared identifier is reported only once for each function it appears in
+../src/cf_hdmi.c:284:20: error: 'horizontalActiveTime' undeclared (first use in this function)
+../src/cf_hdmi.c:284:41: error: 'verticalActiveTime' undeclared (first use in this function)
+make: *** [src/cf_hdmi.o] Error 1
+20:37:23 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building file: ../src/cf_hdmi.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/cf_hdmi.d" -MT"src/cf_hdmi.d" -o "src/cf_hdmi.o" "../src/cf_hdmi.c"
+../src/cf_hdmi.c: In function 'SetProcessingMode':
+../src/cf_hdmi.c:280:35: error: 'resolution' undeclared (first use in this function)
+../src/cf_hdmi.c:280:35: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [src/cf_hdmi.o] Error 1
+20:37:52 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building file: ../src/cf_hdmi.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/cf_hdmi.d" -MT"src/cf_hdmi.d" -o "src/cf_hdmi.o" "../src/cf_hdmi.c"
+../src/cf_hdmi.c:276:6: error: conflicting types for 'SetProcessingMode'
+In file included from ../src/cf_hdmi.c:47:0:
+../src/cf_hdmi.h:160:6: note: previous declaration of 'SetProcessingMode' was here
+../src/cf_hdmi.c: In function 'SetProcessingMode':
+../src/cf_hdmi.c:280:35: error: 'resolution' undeclared (first use in this function)
+../src/cf_hdmi.c:280:35: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [src/cf_hdmi.o] Error 1
+20:37:56 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building file: ../src/cf_hdmi.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/cf_hdmi.d" -MT"src/cf_hdmi.d" -o "src/cf_hdmi.o" "../src/cf_hdmi.c"
+../src/cf_hdmi.c:276:6: error: conflicting types for 'SetProcessingMode'
+In file included from ../src/cf_hdmi.c:47:0:
+../src/cf_hdmi.h:160:6: note: previous declaration of 'SetProcessingMode' was here
+make: *** [src/cf_hdmi.o] Error 1
+20:38:18 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building file: ../src/cf_hdmi.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/cf_hdmi.d" -MT"src/cf_hdmi.d" -o "src/cf_hdmi.o" "../src/cf_hdmi.c"
+Finished building: ../src/cf_hdmi.c
+ 
+Building target: video_filter_sw.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw.elf"  ./src/axi_interrupt.o ./src/cf_hdmi.o ./src/main.o ./src/sw_functions.o ./src/transmitter.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw.elf  |tee "video_filter_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 102088	   1888	  34412	 138388	  21c94	video_filter_sw.elf
+Finished building: video_filter_sw.elf.size
+ 
+20:40:57 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building file: ../src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'APP_ChangeResolution':
+../src/main.c:151:4: error: too few arguments to function 'SetProcessingMode'
+In file included from ../src/main.c:13:0:
+../src/cf_hdmi.h:160:6: note: declared here
+../src/main.c:155:4: error: too few arguments to function 'SetProcessingMode'
+In file included from ../src/main.c:13:0:
+../src/cf_hdmi.h:160:6: note: declared here
+../src/main.c: In function 'main':
+../src/main.c:212:2: warning: passing argument 2 of 'SetProcessingMode' makes integer from pointer without a cast [enabled by default]
+In file included from ../src/main.c:13:0:
+../src/cf_hdmi.h:160:6: note: expected 'unsigned char' but argument is of type 'char *'
+make: *** [src/main.o] Error 1
+20:41:57 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building file: ../src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'APP_ChangeResolution':
+../src/main.c:149:4: error: too few arguments to function 'SetProcessingMode'
+In file included from ../src/main.c:13:0:
+../src/cf_hdmi.h:160:6: note: declared here
+../src/main.c:153:4: error: too few arguments to function 'SetProcessingMode'
+In file included from ../src/main.c:13:0:
+../src/cf_hdmi.h:160:6: note: declared here
+../src/main.c: In function 'main':
+../src/main.c:210:23: error: 'current_resolution' undeclared (first use in this function)
+../src/main.c:210:23: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [src/main.o] Error 1
+20:42:14 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building file: ../src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'APP_ChangeResolution':
+../src/main.c:151:4: error: too few arguments to function 'SetProcessingMode'
+In file included from ../src/main.c:13:0:
+../src/cf_hdmi.h:160:6: note: declared here
+../src/main.c:155:4: error: too few arguments to function 'SetProcessingMode'
+In file included from ../src/main.c:13:0:
+../src/cf_hdmi.h:160:6: note: declared here
+make: *** [src/main.o] Error 1
+20:42:38 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building file: ../src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: video_filter_sw.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw.elf"  ./src/axi_interrupt.o ./src/cf_hdmi.o ./src/main.o ./src/sw_functions.o ./src/transmitter.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw.elf  |tee "video_filter_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 102136	   1888	  34412	 138436	  21cc4	video_filter_sw.elf
+Finished building: video_filter_sw.elf.size
+ 
+20:42:53 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building file: ../src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: video_filter_sw.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw.elf"  ./src/axi_interrupt.o ./src/cf_hdmi.o ./src/main.o ./src/sw_functions.o ./src/transmitter.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw.elf  |tee "video_filter_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 102152	   1888	  34412	 138452	  21cd4	video_filter_sw.elf
+Finished building: video_filter_sw.elf.size
+ 
+20:43:26 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building file: ../src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: video_filter_sw.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw.elf"  ./src/axi_interrupt.o ./src/cf_hdmi.o ./src/main.o ./src/sw_functions.o ./src/transmitter.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw.elf  |tee "video_filter_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 102176	   1888	  34412	 138476	  21cec	video_filter_sw.elf
+Finished building: video_filter_sw.elf.size
+ 
+20:43:48 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+18:06:37 **** Auto Build of project standalone_bsp_0 ****
+make -k all 
+Finished building libraries
+18:06:38 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+18:06:39 **** Auto Build of project standalone_bsp_0 ****
+make -k all 
+Finished building libraries
+18:08:56 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+18:09:54 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building file: ../src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabD/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building file: ../src/hw_config.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabD/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/hw_config.d" -MT"src/hw_config.d" -o "src/hw_config.o" "../src/hw_config.c"
+../src/hw_config.c: In function 'resetVDMA':
+../src/hw_config.c:69:13: error: 'XPAR_AXI_VDMA_1_BASEADDR' undeclared (first use in this function)
+../src/hw_config.c:69:13: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [src/hw_config.o] Error 1
+18:12:46 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building file: ../src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabD/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:197:45: error: 'XPAR_GRAY_SCALETOP_0_S_AXI_CONTROL_BUS_BASEADDR' undeclared (first use in this function)
+../src/main.c:197:45: note: each undeclared identifier is reported only once for each function it appears in
+../src/main.c:202:20: error: 'XPAR_AXI_VDMA_1_BASEADDR' undeclared (first use in this function)
+make: *** [src/main.o] Error 1
+18:14:18 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building file: ../src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabD/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building file: ../src/hw_config.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabD/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/hw_config.d" -MT"src/hw_config.d" -o "src/hw_config.o" "../src/hw_config.c"
+Finished building: ../src/hw_config.c
+ 
+Building file: ../inc/xgray_scale.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabD/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"inc/xgray_scale.d" -MT"inc/xgray_scale.d" -o "inc/xgray_scale.o" "../inc/xgray_scale.c"
+Finished building: ../inc/xgray_scale.c
+ 
+Building target: video_filter_sw.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabD/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw.elf"  ./src/axi_interrupt.o ./src/cf_hdmi.o ./src/hw_config.o ./src/main.o ./src/sw_functions.o ./src/transmitter.o  ./inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw.elf  |tee "video_filter_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107204	   1888	  34428	 143520	  230a0	video_filter_sw.elf
+Finished building: video_filter_sw.elf.size
+ 
+18:15:03 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+18:16:22 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+18:16:55 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building file: ../src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabD/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: video_filter_sw.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabD/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw.elf"  ./src/axi_interrupt.o ./src/cf_hdmi.o ./src/hw_config.o ./src/main.o ./src/sw_functions.o ./src/transmitter.o  ./inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw.elf  |tee "video_filter_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107124	   1888	  34428	 143440	  23050	video_filter_sw.elf
+Finished building: video_filter_sw.elf.size
+ 
+18:17:02 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+18:18:10 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+18:22:02 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building file: ../src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabD/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: video_filter_sw.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabD/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw.elf"  ./src/axi_interrupt.o ./src/cf_hdmi.o ./src/hw_config.o ./src/main.o ./src/sw_functions.o ./src/transmitter.o  ./inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw.elf  |tee "video_filter_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107164	   1888	  34428	 143480	  23078	video_filter_sw.elf
+Finished building: video_filter_sw.elf.size
+ 
+18:22:18 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+18:23:06 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+18:23:13 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+18:24:02 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+18:25:57 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+18:26:57 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+18:27:41 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building file: ../src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabD/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: video_filter_sw.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabD/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw.elf"  ./src/axi_interrupt.o ./src/cf_hdmi.o ./src/hw_config.o ./src/main.o ./src/sw_functions.o ./src/transmitter.o  ./inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw.elf  |tee "video_filter_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107244	   1888	  34428	 143560	  230c8	video_filter_sw.elf
+Finished building: video_filter_sw.elf.size
+ 
+18:30:59 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building file: ../src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabD/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: video_filter_sw.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabD/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw.elf"  ./src/axi_interrupt.o ./src/cf_hdmi.o ./src/hw_config.o ./src/main.o ./src/sw_functions.o ./src/transmitter.o  ./inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw.elf  |tee "video_filter_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107204	   1888	  34428	 143520	  230a0	video_filter_sw.elf
+Finished building: video_filter_sw.elf.size
+ 
+18:31:25 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+18:33:05 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+18:34:43 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+18:35:51 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+18:38:02 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+18:38:52 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+18:40:32 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+18:41:08 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+18:44:17 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+18:45:34 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+18:46:51 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+18:47:26 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+18:48:35 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+19:10:44 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+19:23:07 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building file: ../src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabD/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: video_filter_sw.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabD/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw.elf"  ./src/axi_interrupt.o ./src/cf_hdmi.o ./src/hw_config.o ./src/main.o ./src/sw_functions.o ./src/transmitter.o  ./inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw.elf  |tee "video_filter_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107204	   1888	  34428	 143520	  230a0	video_filter_sw.elf
+Finished building: video_filter_sw.elf.size
+ 

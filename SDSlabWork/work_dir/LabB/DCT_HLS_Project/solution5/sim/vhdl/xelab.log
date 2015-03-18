@@ -1,0 +1,83 @@
+Vivado Simulator 2013.3
+Copyright 1986-1999, 2001-2013 Xilinx, Inc. All Rights Reserved.
+Running: /nfs/tools/xilinx/Vivado/2013.3/bin/unwrapped/lnx64.o/xelab apatb_dct_top -prj dct.prj --lib ieee_proposed=./ieee_proposed -s dct 
+Determining compilation order of HDL files.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by Xilinx, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running fuse with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+INFO: [VRFC 10-163] Analyzing VHDL file "AESL_sim_pkg.vhd" into library work
+INFO: [VRFC 10-163] Analyzing VHDL file "dct.autotb.vhd" into library work
+INFO: [VRFC 10-163] Analyzing VHDL file "AESL_automem_input_r.vhd" into library work
+INFO: [VRFC 10-163] Analyzing VHDL file "AESL_automem_output_r.vhd" into library work
+INFO: [VRFC 10-163] Analyzing VHDL file "read_data.vhd" into library work
+INFO: [VRFC 10-163] Analyzing VHDL file "dct_Loop_Row_DCT_Loop_proc.vhd" into library work
+INFO: [VRFC 10-163] Analyzing VHDL file "dct_Loop_Xpose_Row_Outer_Loop_proc.vhd" into library work
+INFO: [VRFC 10-163] Analyzing VHDL file "dct_Loop_Col_DCT_Loop_proc.vhd" into library work
+INFO: [VRFC 10-163] Analyzing VHDL file "dct_Loop_Xpose_Col_Outer_Loop_proc.vhd" into library work
+INFO: [VRFC 10-163] Analyzing VHDL file "write_data.vhd" into library work
+INFO: [VRFC 10-163] Analyzing VHDL file "dct.vhd" into library work
+INFO: [VRFC 10-163] Analyzing VHDL file "dct_mul_16s_14ns_29_3.vhd" into library work
+INFO: [VRFC 10-163] Analyzing VHDL file "dct_mul_16s_15s_29_3.vhd" into library work
+INFO: [VRFC 10-163] Analyzing VHDL file "dct_Loop_Row_DCT_Loop_proc_dct_coeff_table_0.vhd" into library work
+INFO: [VRFC 10-163] Analyzing VHDL file "dct_Loop_Row_DCT_Loop_proc_dct_coeff_table_1.vhd" into library work
+INFO: [VRFC 10-163] Analyzing VHDL file "dct_Loop_Row_DCT_Loop_proc_dct_coeff_table_2.vhd" into library work
+INFO: [VRFC 10-163] Analyzing VHDL file "dct_Loop_Row_DCT_Loop_proc_dct_coeff_table_3.vhd" into library work
+INFO: [VRFC 10-163] Analyzing VHDL file "dct_Loop_Row_DCT_Loop_proc_dct_coeff_table_4.vhd" into library work
+INFO: [VRFC 10-163] Analyzing VHDL file "dct_Loop_Row_DCT_Loop_proc_dct_coeff_table_5.vhd" into library work
+INFO: [VRFC 10-163] Analyzing VHDL file "dct_Loop_Row_DCT_Loop_proc_dct_coeff_table_6.vhd" into library work
+INFO: [VRFC 10-163] Analyzing VHDL file "dct_Loop_Row_DCT_Loop_proc_dct_coeff_table_7.vhd" into library work
+INFO: [VRFC 10-163] Analyzing VHDL file "dct_buf_2d_in_memcore.vhd" into library work
+INFO: [VRFC 10-163] Analyzing VHDL file "dct_buf_2d_in.vhd" into library work
+INFO: [VRFC 10-163] Analyzing VHDL file "dct_row_outbuf_memcore.vhd" into library work
+INFO: [VRFC 10-163] Analyzing VHDL file "dct_row_outbuf.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package ieee.numeric_std
+Compiling package std.textio
+Compiling package ieee.std_logic_textio
+Compiling architecture behav of entity work.read_data [read_data_default]
+Compiling architecture rtl of entity work.dct_Loop_Row_DCT_Loop_proc_dct_coeff_table_0_rom [\dct_Loop_Row_DCT_Loop_proc_dct_...]
+Compiling architecture arch of entity work.dct_Loop_Row_DCT_Loop_proc_dct_coeff_table_0 [\dct_Loop_Row_DCT_Loop_proc_dct_...]
+Compiling architecture rtl of entity work.dct_Loop_Row_DCT_Loop_proc_dct_coeff_table_1_rom [\dct_Loop_Row_DCT_Loop_proc_dct_...]
+Compiling architecture arch of entity work.dct_Loop_Row_DCT_Loop_proc_dct_coeff_table_1 [\dct_Loop_Row_DCT_Loop_proc_dct_...]
+Compiling architecture rtl of entity work.dct_Loop_Row_DCT_Loop_proc_dct_coeff_table_2_rom [\dct_Loop_Row_DCT_Loop_proc_dct_...]
+Compiling architecture arch of entity work.dct_Loop_Row_DCT_Loop_proc_dct_coeff_table_2 [\dct_Loop_Row_DCT_Loop_proc_dct_...]
+Compiling architecture rtl of entity work.dct_Loop_Row_DCT_Loop_proc_dct_coeff_table_3_rom [\dct_Loop_Row_DCT_Loop_proc_dct_...]
+Compiling architecture arch of entity work.dct_Loop_Row_DCT_Loop_proc_dct_coeff_table_3 [\dct_Loop_Row_DCT_Loop_proc_dct_...]
+Compiling architecture rtl of entity work.dct_Loop_Row_DCT_Loop_proc_dct_coeff_table_4_rom [\dct_Loop_Row_DCT_Loop_proc_dct_...]
+Compiling architecture arch of entity work.dct_Loop_Row_DCT_Loop_proc_dct_coeff_table_4 [\dct_Loop_Row_DCT_Loop_proc_dct_...]
+Compiling architecture rtl of entity work.dct_Loop_Row_DCT_Loop_proc_dct_coeff_table_5_rom [\dct_Loop_Row_DCT_Loop_proc_dct_...]
+Compiling architecture arch of entity work.dct_Loop_Row_DCT_Loop_proc_dct_coeff_table_5 [\dct_Loop_Row_DCT_Loop_proc_dct_...]
+Compiling architecture rtl of entity work.dct_Loop_Row_DCT_Loop_proc_dct_coeff_table_6_rom [\dct_Loop_Row_DCT_Loop_proc_dct_...]
+Compiling architecture arch of entity work.dct_Loop_Row_DCT_Loop_proc_dct_coeff_table_6 [\dct_Loop_Row_DCT_Loop_proc_dct_...]
+Compiling architecture rtl of entity work.dct_Loop_Row_DCT_Loop_proc_dct_coeff_table_7_rom [\dct_Loop_Row_DCT_Loop_proc_dct_...]
+Compiling architecture arch of entity work.dct_Loop_Row_DCT_Loop_proc_dct_coeff_table_7 [\dct_Loop_Row_DCT_Loop_proc_dct_...]
+Compiling architecture behav of entity work.dct_mul_16s_14ns_29_3_MAC3S_0 [dct_mul_16s_14ns_29_3_mac3s_0_de...]
+Compiling architecture arch of entity work.dct_mul_16s_14ns_29_3 [\dct_mul_16s_14ns_29_3(3,3,16,14...]
+Compiling architecture behav of entity work.dct_mul_16s_15s_29_3_MAC3S_1 [dct_mul_16s_15s_29_3_mac3s_1_def...]
+Compiling architecture arch of entity work.dct_mul_16s_15s_29_3 [\dct_mul_16s_15s_29_3(4,3,16,15,...]
+Compiling architecture arch of entity work.dct_mul_16s_15s_29_3 [\dct_mul_16s_15s_29_3(5,3,16,15,...]
+Compiling architecture behav of entity work.dct_Loop_Row_DCT_Loop_proc [dct_loop_row_dct_loop_proc_defau...]
+Compiling architecture behav of entity work.dct_Loop_Xpose_Row_Outer_Loop_proc [dct_loop_xpose_row_outer_loop_pr...]
+Compiling architecture arch of entity work.dct_mul_16s_14ns_29_3 [\dct_mul_16s_14ns_29_3(18,3,16,1...]
+Compiling architecture arch of entity work.dct_mul_16s_15s_29_3 [\dct_mul_16s_15s_29_3(19,3,16,15...]
+Compiling architecture arch of entity work.dct_mul_16s_15s_29_3 [\dct_mul_16s_15s_29_3(20,3,16,15...]
+Compiling architecture behav of entity work.dct_Loop_Col_DCT_Loop_proc [dct_loop_col_dct_loop_proc_defau...]
+Compiling architecture behav of entity work.dct_Loop_Xpose_Col_Outer_Loop_proc [dct_loop_xpose_col_outer_loop_pr...]
+Compiling architecture behav of entity work.write_data [write_data_default]
+Compiling architecture rtl of entity work.dct_buf_2d_in_memcore_ram [\dct_buf_2d_in_memcore_ram("bloc...]
+Compiling architecture arch of entity work.dct_buf_2d_in_memcore [\dct_buf_2d_in_memcore(16,64,6)\]
+Compiling architecture rtl of entity work.dct_buf_2d_in [\dct_buf_2d_in(16,64,6,2,1)\]
+Compiling architecture rtl of entity work.dct_row_outbuf_memcore_ram [\dct_row_outbuf_memcore_ram("blo...]
+Compiling architecture arch of entity work.dct_row_outbuf_memcore [\dct_row_outbuf_memcore(16,128,7...]
+Compiling architecture rtl of entity work.dct_row_outbuf [\dct_row_outbuf(16,64,6,2,1)\]
+Compiling architecture behav of entity work.dct [dct_default]
+Compiling architecture behav of entity work.AESL_automem_input_r [\AESL_automem_input_r("../tv/cda...]
+Compiling architecture behav of entity work.AESL_automem_output_r [\AESL_automem_output_r("../tv/cd...]
+Compiling architecture behav of entity work.apatb_dct_top
+Built simulation snapshot dct

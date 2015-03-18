@@ -1,0 +1,465 @@
+
+
+================================================================
+== Vivado HLS Report for 'AXIvideo2Mat_32_1080_1920_32_s'
+================================================================
+* Date:           Tue Mar 17 17:04:34 2015
+
+* Version:        2013.3 (build date: Wed Oct 16 18:12:55 PM 2013)
+* Project:        grayscale_prj
+* Solution:       solution1
+* Product family: zynq zynq_fpv6 
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +---------+-------+----------+------------+
+    |  Clock  | Target| Estimated| Uncertainty|
+    +---------+-------+----------+------------+
+    |default  |   6.67|      4.65|        0.83|
+    +---------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+---------+-----+---------+---------+
+    |    Latency    |    Interval   | Pipeline|
+    | min |   max   | min |   max   |   Type  |
+    +-----+---------+-----+---------+---------+
+    |    3|  2080084|    3|  2080084|   none  |
+    +-----+---------+-----+---------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-----------------------+-----+---------+----------+-----------+-----------+----------+----------+
+        |                       |    Latency    | Iteration|  Initiation Interval  |   Trip   |          |
+        |       Loop Name       | min |   max   |  Latency |  achieved |   target  |   Count  | Pipelined|
+        +-----------------------+-----+---------+----------+-----------+-----------+----------+----------+
+        |- loop_wait_for_start  |    0|        1|         1|          1|          1|   0 ~ 1  |    yes   |
+        |- loop_height          |    0|  2080080| 5 ~ 1926 |          -|          -| 0 ~ 1080 |    no    |
+        | + loop_width          |    1|     1921|         2|          1|          1| 0 ~ 1920 |    yes   |
+        | + loop_wait_for_eol   |    0|        1|         1|          1|          1|   0 ~ 1  |    yes   |
+        +-----------------------+-----+---------+----------+-----------+-----------+----------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|Expression       |        -|      -|       -|      -|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |        -|      -|       -|      -|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|      -|
+|Register         |        -|      -|       -|      -|
+|ShiftMemory      |        -|      -|       -|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |        0|      0|       0|      0|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        0|      0|       0|      0|
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Shift register: 
+    N/A
+
+    * Expression: 
+    N/A
+
+    * Multiplexer: 
+    N/A
+
+    * Register: 
+    N/A
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
+N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 1
+  * Pipeline-1: initiation interval (II) = 1, depth = 2
+  * Pipeline-2: initiation interval (II) = 1, depth = 1
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 8
+* Pipeline: 3
+  Pipeline-0: II = 1, D = 1, States = { 2 }
+  Pipeline-1: II = 1, D = 2, States = { 5 6 }
+  Pipeline-2: II = 1, D = 1, States = { 7 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (sof)
+	2  / (!sof)
+3 --> 
+	4  / true
+4 --> 
+	5  / (!exitcond1)
+5 --> 
+	6  / true
+6 --> 
+	7  / (exitcond2)
+	5  / (!exitcond2)
+7 --> 
+	8  / (eol_3)
+	7  / (!eol_3)
+8 --> 
+	4  / true
+* FSM state operations: 
+
+ <State 1>: 1.30ns
+ST_1: empty [1/1] 0.00ns
+:0  %empty = call i32 (...)* @_ssdm_op_SpecFifo(i8* %img_data_stream_2_V, [8 x i8]* @str69, i32 0, i32 0, i32 0, [8 x i8]* @str69)
+
+ST_1: empty_67 [1/1] 0.00ns
+:1  %empty_67 = call i32 (...)* @_ssdm_op_SpecFifo(i8* %img_data_stream_1_V, [8 x i8]* @str66, i32 0, i32 0, i32 0, [8 x i8]* @str66)
+
+ST_1: empty_68 [1/1] 0.00ns
+:2  %empty_68 = call i32 (...)* @_ssdm_op_SpecFifo(i8* %img_data_stream_0_V, [8 x i8]* @str63, i32 0, i32 0, i32 0, [8 x i8]* @str63)
+
+ST_1: empty_69 [1/1] 0.00ns
+:3  %empty_69 = call i32 (...)* @_ssdm_op_SpecFifo(i1* %AXI_video_strm_V_dest_V, [8 x i8]* @str46, i32 0, i32 0, i32 0, [8 x i8]* @str46)
+
+ST_1: empty_70 [1/1] 0.00ns
+:4  %empty_70 = call i32 (...)* @_ssdm_op_SpecFifo(i1* %AXI_video_strm_V_id_V, [8 x i8]* @str45, i32 0, i32 0, i32 0, [8 x i8]* @str45)
+
+ST_1: empty_71 [1/1] 0.00ns
+:5  %empty_71 = call i32 (...)* @_ssdm_op_SpecFifo(i1* %AXI_video_strm_V_last_V, [8 x i8]* @str44, i32 0, i32 0, i32 0, [8 x i8]* @str44)
+
+ST_1: empty_72 [1/1] 0.00ns
+:6  %empty_72 = call i32 (...)* @_ssdm_op_SpecFifo(i1* %AXI_video_strm_V_user_V, [8 x i8]* @str43, i32 0, i32 0, i32 0, [8 x i8]* @str43)
+
+ST_1: empty_73 [1/1] 0.00ns
+:7  %empty_73 = call i32 (...)* @_ssdm_op_SpecFifo(i4* %AXI_video_strm_V_strb_V, [8 x i8]* @str42, i32 0, i32 0, i32 0, [8 x i8]* @str42)
+
+ST_1: empty_74 [1/1] 0.00ns
+:8  %empty_74 = call i32 (...)* @_ssdm_op_SpecFifo(i4* %AXI_video_strm_V_keep_V, [8 x i8]* @str41, i32 0, i32 0, i32 0, [8 x i8]* @str41)
+
+ST_1: empty_75 [1/1] 0.00ns
+:9  %empty_75 = call i32 (...)* @_ssdm_op_SpecFifo(i32* %AXI_video_strm_V_data_V, [8 x i8]* @str40, i32 0, i32 0, i32 0, [8 x i8]* @str40)
+
+ST_1: stg_19 [1/1] 0.00ns
+:10  call void (...)* @_ssdm_op_SpecIFCore(i32* %AXI_video_strm_V_data_V, i4* %AXI_video_strm_V_keep_V, i4* %AXI_video_strm_V_strb_V, i1* %AXI_video_strm_V_user_V, i1* %AXI_video_strm_V_last_V, i1* %AXI_video_strm_V_id_V, i1* %AXI_video_strm_V_dest_V, [1 x i8]* @p_str1805, [5 x i8]* @p_str1806, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805, [25 x i8]* @p_str1807)
+
+ST_1: img_cols_V_read_1 [1/1] 0.00ns
+:11  %img_cols_V_read_1 = call i12 @_ssdm_op_Read.ap_auto.i12(i12 %img_cols_V_read)
+
+ST_1: img_rows_V_read_1 [1/1] 0.00ns
+:12  %img_rows_V_read_1 = call i12 @_ssdm_op_Read.ap_auto.i12(i12 %img_rows_V_read)
+
+ST_1: stg_22 [1/1] 1.30ns
+:13  br label %1
+
+
+ <State 2>: 0.00ns
+ST_2: axi_4 [1/1] 0.00ns
+:0  %axi_4 = phi i1 [ undef, %0 ], [ %tmp_last_V, %2 ]
+
+ST_2: axi [1/1] 0.00ns
+:1  %axi = phi i32 [ undef, %0 ], [ %tmp_data_V, %2 ]
+
+ST_2: sof [1/1] 0.00ns
+:2  %sof = phi i1 [ false, %0 ], [ %tmp_user_V, %2 ]
+
+ST_2: stg_26 [1/1] 0.00ns
+:3  br i1 %sof, label %.preheader148.preheader, label %2
+
+ST_2: stg_27 [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_SpecLoopName([20 x i8]* @p_str1823) nounwind
+
+ST_2: tmp [1/1] 0.00ns
+:1  %tmp = call i32 (...)* @_ssdm_op_SpecRegionBegin([20 x i8]* @p_str1823)
+
+ST_2: stg_29 [1/1] 0.00ns
+:2  call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, [1 x i8]* @p_str1805) nounwind
+
+ST_2: stg_30 [1/1] 0.00ns
+:3  call void (...)* @_ssdm_op_SpecLoopTripCount(i32 0, i32 1, i32 1, [1 x i8]* @p_str1805) nounwind
+
+ST_2: empty_76 [1/1] 0.00ns
+:4  %empty_76 = call { i32, i4, i4, i1, i1, i1, i1 } @_ssdm_op_Read.ap_fifo.volatile.i32P.i4P.i4P.i1P.i1P.i1P.i1P(i32* %AXI_video_strm_V_data_V, i4* %AXI_video_strm_V_keep_V, i4* %AXI_video_strm_V_strb_V, i1* %AXI_video_strm_V_user_V, i1* %AXI_video_strm_V_last_V, i1* %AXI_video_strm_V_id_V, i1* %AXI_video_strm_V_dest_V)
+
+ST_2: tmp_data_V [1/1] 0.00ns
+:5  %tmp_data_V = extractvalue { i32, i4, i4, i1, i1, i1, i1 } %empty_76, 0
+
+ST_2: tmp_user_V [1/1] 0.00ns
+:6  %tmp_user_V = extractvalue { i32, i4, i4, i1, i1, i1, i1 } %empty_76, 3
+
+ST_2: tmp_last_V [1/1] 0.00ns
+:7  %tmp_last_V = extractvalue { i32, i4, i4, i1, i1, i1, i1 } %empty_76, 4
+
+ST_2: empty_77 [1/1] 0.00ns
+:8  %empty_77 = call i32 (...)* @_ssdm_op_SpecRegionEnd([20 x i8]* @p_str1823, i32 %tmp)
+
+ST_2: stg_36 [1/1] 0.00ns
+:9  br label %1
+
+
+ <State 3>: 1.57ns
+ST_3: sof_1 [1/1] 0.00ns
+.preheader148.preheader:0  %sof_1 = alloca i1, align 1
+
+ST_3: stg_38 [1/1] 1.30ns
+.preheader148.preheader:1  store i1 true, i1* %sof_1, align 1
+
+ST_3: stg_39 [1/1] 1.57ns
+.preheader148.preheader:2  br label %.preheader148
+
+
+ <State 4>: 2.14ns
+ST_4: axi_4_1 [1/1] 0.00ns
+.preheader148:0  %axi_4_1 = phi i1 [ %axi_4_4, %8 ], [ %axi_4, %.preheader148.preheader ]
+
+ST_4: axi_0_1 [1/1] 0.00ns
+.preheader148:1  %axi_0_1 = phi i32 [ %axi_0_4, %8 ], [ %axi, %.preheader148.preheader ]
+
+ST_4: p_s [1/1] 0.00ns
+.preheader148:2  %p_s = phi i12 [ %i_V, %8 ], [ 0, %.preheader148.preheader ]
+
+ST_4: exitcond1 [1/1] 2.14ns
+.preheader148:3  %exitcond1 = icmp eq i12 %p_s, %img_rows_V_read_1
+
+ST_4: i_V [1/1] 1.84ns
+.preheader148:4  %i_V = add i12 %p_s, 1
+
+ST_4: stg_45 [1/1] 0.00ns
+.preheader148:5  br i1 %exitcond1, label %9, label %3
+
+ST_4: stg_46 [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_SpecLoopName([12 x i8]* @p_str1815) nounwind
+
+ST_4: tmp_1 [1/1] 0.00ns
+:1  %tmp_1 = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str1815)
+
+ST_4: stg_48 [1/1] 0.00ns
+:2  call void (...)* @_ssdm_op_SpecLoopTripCount(i32 0, i32 1080, i32 0, [1 x i8]* @p_str1805) nounwind
+
+ST_4: stg_49 [1/1] 1.57ns
+:3  br label %4
+
+ST_4: stg_50 [1/1] 0.00ns
+:0  ret void
+
+
+ <State 5>: 2.14ns
+ST_5: p_1 [1/1] 0.00ns
+:2  %p_1 = phi i12 [ 0, %3 ], [ %j_V, %._crit_edge ]
+
+ST_5: exitcond2 [1/1] 2.14ns
+:4  %exitcond2 = icmp eq i12 %p_1, %img_cols_V_read_1
+
+ST_5: j_V [1/1] 1.84ns
+:5  %j_V = add i12 %p_1, 1
+
+ST_5: sof_1_load [1/1] 0.00ns
+:0  %sof_1_load = load i1* %sof_1, align 1
+
+ST_5: not_sof_2 [1/1] 1.37ns
+:6  %not_sof_2 = xor i1 %sof_1_load, true
+
+ST_5: stg_56 [1/1] 1.30ns
+._crit_edge:9  store i1 false, i1* %sof_1, align 1
+
+
+ <State 6>: 4.65ns
+ST_6: eol_1 [1/1] 0.00ns
+:0  %eol_1 = phi i1 [ %axi_4_1, %3 ], [ %eol_2, %._crit_edge ]
+
+ST_6: axi_0_2 [1/1] 0.00ns
+:1  %axi_0_2 = phi i32 [ %axi_0_1, %3 ], [ %p_Val2_s, %._crit_edge ]
+
+ST_6: eol [1/1] 0.00ns
+:3  %eol = phi i1 [ false, %3 ], [ %eol_2, %._crit_edge ]
+
+ST_6: stg_60 [1/1] 1.57ns
+:6  br i1 %exitcond2, label %.preheader, label %5
+
+ST_6: stg_61 [1/1] 0.00ns
+:1  call void (...)* @_ssdm_op_SpecLoopName([11 x i8]* @p_str1816) nounwind
+
+ST_6: tmp_2 [1/1] 0.00ns
+:2  %tmp_2 = call i32 (...)* @_ssdm_op_SpecRegionBegin([11 x i8]* @p_str1816)
+
+ST_6: stg_63 [1/1] 0.00ns
+:3  call void (...)* @_ssdm_op_SpecLoopTripCount(i32 0, i32 1920, i32 0, [1 x i8]* @p_str1805) nounwind
+
+ST_6: stg_64 [1/1] 0.00ns
+:4  call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, [1 x i8]* @p_str1805) nounwind
+
+ST_6: brmerge [1/1] 1.37ns
+:5  %brmerge = or i1 %sof_1_load, %eol
+
+ST_6: eol_1_mux [1/1] 1.37ns
+:7  %eol_1_mux = or i1 %eol_1, %not_sof_2
+
+ST_6: stg_67 [1/1] 1.57ns
+:8  br i1 %brmerge, label %._crit_edge, label %6
+
+ST_6: empty_78 [1/1] 0.00ns
+:0  %empty_78 = call { i32, i4, i4, i1, i1, i1, i1 } @_ssdm_op_Read.ap_fifo.volatile.i32P.i4P.i4P.i1P.i1P.i1P.i1P(i32* %AXI_video_strm_V_data_V, i4* %AXI_video_strm_V_keep_V, i4* %AXI_video_strm_V_strb_V, i1* %AXI_video_strm_V_user_V, i1* %AXI_video_strm_V_last_V, i1* %AXI_video_strm_V_id_V, i1* %AXI_video_strm_V_dest_V)
+
+ST_6: tmp_data_V_1 [1/1] 0.00ns
+:1  %tmp_data_V_1 = extractvalue { i32, i4, i4, i1, i1, i1, i1 } %empty_78, 0
+
+ST_6: tmp_last_V_1 [1/1] 0.00ns
+:2  %tmp_last_V_1 = extractvalue { i32, i4, i4, i1, i1, i1, i1 } %empty_78, 4
+
+ST_6: stg_71 [1/1] 1.57ns
+:3  br label %._crit_edge
+
+ST_6: p_Val2_s [1/1] 0.00ns
+._crit_edge:0  %p_Val2_s = phi i32 [ %tmp_data_V_1, %6 ], [ %axi_0_2, %5 ]
+
+ST_6: eol_2 [1/1] 0.00ns
+._crit_edge:1  %eol_2 = phi i1 [ %tmp_last_V_1, %6 ], [ %eol_1_mux, %5 ]
+
+ST_6: tmp_5 [1/1] 0.00ns
+._crit_edge:2  %tmp_5 = trunc i32 %p_Val2_s to i8
+
+ST_6: tmp_6 [1/1] 0.00ns
+._crit_edge:3  %tmp_6 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %p_Val2_s, i32 8, i32 15)
+
+ST_6: tmp_4 [1/1] 0.00ns
+._crit_edge:4  %tmp_4 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %p_Val2_s, i32 16, i32 23)
+
+ST_6: stg_77 [1/1] 1.70ns
+._crit_edge:5  call void @_ssdm_op_Write.ap_fifo.volatile.i8P(i8* %img_data_stream_0_V, i8 %tmp_5)
+
+ST_6: stg_78 [1/1] 1.70ns
+._crit_edge:6  call void @_ssdm_op_Write.ap_fifo.volatile.i8P(i8* %img_data_stream_1_V, i8 %tmp_6)
+
+ST_6: stg_79 [1/1] 1.70ns
+._crit_edge:7  call void @_ssdm_op_Write.ap_fifo.volatile.i8P(i8* %img_data_stream_2_V, i8 %tmp_4)
+
+ST_6: empty_79 [1/1] 0.00ns
+._crit_edge:8  %empty_79 = call i32 (...)* @_ssdm_op_SpecRegionEnd([11 x i8]* @p_str1816, i32 %tmp_2)
+
+ST_6: stg_81 [1/1] 0.00ns
+._crit_edge:10  br label %4
+
+
+ <State 7>: 0.00ns
+ST_7: axi_4_4 [1/1] 0.00ns
+.preheader:0  %axi_4_4 = phi i1 [ %tmp_last_V_2, %7 ], [ %eol_1, %4 ]
+
+ST_7: axi_0_4 [1/1] 0.00ns
+.preheader:1  %axi_0_4 = phi i32 [ %tmp_data_V_2, %7 ], [ %axi_0_2, %4 ]
+
+ST_7: eol_3 [1/1] 0.00ns
+.preheader:2  %eol_3 = phi i1 [ %tmp_last_V_2, %7 ], [ %eol, %4 ]
+
+ST_7: stg_85 [1/1] 0.00ns
+.preheader:3  br i1 %eol_3, label %8, label %7
+
+ST_7: stg_86 [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_SpecLoopName([18 x i8]* @p_str1824) nounwind
+
+ST_7: tmp_3 [1/1] 0.00ns
+:1  %tmp_3 = call i32 (...)* @_ssdm_op_SpecRegionBegin([18 x i8]* @p_str1824)
+
+ST_7: stg_88 [1/1] 0.00ns
+:2  call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, [1 x i8]* @p_str1805) nounwind
+
+ST_7: stg_89 [1/1] 0.00ns
+:3  call void (...)* @_ssdm_op_SpecLoopTripCount(i32 0, i32 1, i32 1, [1 x i8]* @p_str1805) nounwind
+
+ST_7: empty_80 [1/1] 0.00ns
+:4  %empty_80 = call { i32, i4, i4, i1, i1, i1, i1 } @_ssdm_op_Read.ap_fifo.volatile.i32P.i4P.i4P.i1P.i1P.i1P.i1P(i32* %AXI_video_strm_V_data_V, i4* %AXI_video_strm_V_keep_V, i4* %AXI_video_strm_V_strb_V, i1* %AXI_video_strm_V_user_V, i1* %AXI_video_strm_V_last_V, i1* %AXI_video_strm_V_id_V, i1* %AXI_video_strm_V_dest_V)
+
+ST_7: tmp_data_V_2 [1/1] 0.00ns
+:5  %tmp_data_V_2 = extractvalue { i32, i4, i4, i1, i1, i1, i1 } %empty_80, 0
+
+ST_7: tmp_last_V_2 [1/1] 0.00ns
+:6  %tmp_last_V_2 = extractvalue { i32, i4, i4, i1, i1, i1, i1 } %empty_80, 4
+
+ST_7: empty_81 [1/1] 0.00ns
+:7  %empty_81 = call i32 (...)* @_ssdm_op_SpecRegionEnd([18 x i8]* @p_str1824, i32 %tmp_3)
+
+ST_7: stg_94 [1/1] 0.00ns
+:8  br label %.preheader
+
+
+ <State 8>: 0.00ns
+ST_8: empty_82 [1/1] 0.00ns
+:0  %empty_82 = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str1815, i32 %tmp_1)
+
+ST_8: stg_96 [1/1] 0.00ns
+:1  br label %.preheader148
+
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A
