@@ -1,0 +1,14 @@
+After discussion with Munish, following tasks need to be carried out:
+
+-- Carry out Lab09 (dual processor SW developement) in trainig videos
+-- In SDSLabwork, we have done grayscale processing on realtime videos on single ARM core in a bare-metal application (no OS). Do the same application using
+   both ARM cores i.e both cores running the same application (1 core processing even frames; other core processing odd frames) independently and see 
+   performance advantages.
+-- Then use the same methodology for main video processing application (sobel + erode + grayscale) for pure SW architectures
+
+-- Then use the same methodology for main video processing application for architectures containing hardware accelerators. Now there are a lot of possibilities like
+   HAs with one core and no HA with the other; HAs with both cores etc   
+   
+   
+   
+-- After doing this corner (bare-metal + 2cores), move onto the next corner (OS (possibly Linux-SMP) + 2cores)   

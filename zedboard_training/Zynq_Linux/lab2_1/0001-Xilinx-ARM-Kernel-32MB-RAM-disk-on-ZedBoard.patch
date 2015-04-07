@@ -1,0 +1,30 @@
+From 38e2ed0538a9bfa0edd14e67ad43e35defd09fc1 Mon Sep 17 00:00:00 2001
+From: training <training@localhost.localdomain>
+Date: Wed, 12 Sep 2012 14:17:39 -0700
+Subject: [PATCH] Xilinx: ARM: Kernel 32MB RAM disk on ZedBoard
+
+This patch allows the kernel to use a 32MB RAM disk as the root file system on ZedBoard.
+
+Signed-off-by: Kevin Keryk <kevin.keryk@avnet.com>
+---
+ arch/arm/configs/xilinx_zynq_defconfig |    4 ++--
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/arch/arm/configs/xilinx_zynq_defconfig b/arch/arm/configs/xilinx_zynq_defconfig
+index 799bbfc..031235e 100644
+--- a/arch/arm/configs/xilinx_zynq_defconfig
++++ b/arch/arm/configs/xilinx_zynq_defconfig
+@@ -723,8 +723,8 @@ CONFIG_BLK_DEV_LOOP_MIN_COUNT=8
+ # CONFIG_BLK_DEV_NBD is not set
+ # CONFIG_BLK_DEV_UB is not set
+ CONFIG_BLK_DEV_RAM=y
+-CONFIG_BLK_DEV_RAM_COUNT=16
+-CONFIG_BLK_DEV_RAM_SIZE=16384
++CONFIG_BLK_DEV_RAM_COUNT=8
++CONFIG_BLK_DEV_RAM_SIZE=32768
+ # CONFIG_BLK_DEV_XIP is not set
+ # CONFIG_CDROM_PKTCDVD is not set
+ # CONFIG_ATA_OVER_ETH is not set
+-- 
+1.7.1
+

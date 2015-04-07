@@ -1,0 +1,46 @@
+From 61a379e689a8de369642d12380020725a15a8ef4 Mon Sep 17 00:00:00 2001
+From: Zed Hed <ZedHed@zedboard.org>
+Date: Wed, 12 Sep 2012 12:32:05 -0700
+Subject: [PATCH] Xilinx: ARM: Experimental 32MB Ramdisk on ZedBoard
+
+This patch allows for the use of a 32MB Ramdisk as the root file system on ZedBoard.
+
+Signed-off-by: Kevin Keryk <kevin.keryk@avnet.com>
+---
+ include/configs/zynq_zed.h |    8 +++-----
+ 1 file changed, 3 insertions(+), 5 deletions(-)
+
+diff --git a/include/configs/zynq_zed.h b/include/configs/zynq_zed.h
+index a6e2f66..bda3f02 100644
+--- a/include/configs/zynq_zed.h
++++ b/include/configs/zynq_zed.h
+@@ -38,23 +38,21 @@
+ #undef CONFIG_EXTRA_ENV_SETTINGS
+ #define CONFIG_EXTRA_ENV_SETTINGS 	\
+ 	"ethaddr=00:0a:35:00:01:22\0"	\
+-	"kernel_size=0x140000\0" 	\
+-	"ramdisk_size=0x200000\0" 	\
+ 	"qspiboot=sf probe 0 0 0;" \
+ 		"sf read 0x8000 0x100000 0x2c0000;" \
+ 		"sf read 0x1000000 0x3c0000 0x40000;" \
+-		"sf read 0x800000 0x400000 0x800000;" \
++		"sf read 0x2000000 0x400000 0x800000;" \
+ 		"go 0x8000\0" \
+ 	"sdboot=echo Copying Linux from SD to RAM...;" \
+ 		"mmcinfo;" \
+ 		"fatload mmc 0 0x8000 zImage;" \
+ 		"fatload mmc 0 0x1000000 devicetree.dtb;" \
+-		"fatload mmc 0 0x800000 ramdisk8M.image.gz;" \
++		"fatload mmc 0 0x2000000 ramdisk32M.image.gz;" \
+ 		"go 0x8000\0" \
+ 	"jtagboot=echo TFTPing Linux to RAM...;" \
+ 		"tftp 0x8000 zImage;" \
+ 		"tftp 0x1000000 devicetree.dtb;" \
+-		"tftp 0x800000 ramdisk8M.image.gz;" \
++		"tftp 0x2000000 ramdisk32M.image.gz;" \
+ 		"go 0x8000\0"
+ 
+ #include <config_cmd_default.h>
+-- 
+1.7.9.5
+

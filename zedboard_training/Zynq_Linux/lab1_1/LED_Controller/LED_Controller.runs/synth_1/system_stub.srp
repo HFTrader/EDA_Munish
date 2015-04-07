@@ -1,0 +1,509 @@
+Release 14.2 - xst P.28xd (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+--> 
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.17 secs
+ 
+--> Reading design: system_stub.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "system_stub.prj"
+
+---- Target Parameters
+Target Device                      : xc7z020clg484-1
+Output File Name                   : "system_stub.ngc"
+
+---- Source Options
+Top Module Name                    : system_stub
+
+---- General Options
+Optimization Goal                  : speed
+Optimization Effort                : 1
+Netlist Hierarchy                  : rebuilt
+
+---- Other Options
+Cores Search Directories           : {..\..\LED_Controller.srcs\sources_1\edk\system\implementation}
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "C:/Speedway/Fall_12/Zynq_Intro/LED_Controller/LED_Controller.srcs/sources_1/imports/support_documents/PWM_Controller.v" into library work
+Parsing module <PWM_Controller>.
+WARNING:HDLCompiler:751 - "C:/Speedway/Fall_12/Zynq_Intro/LED_Controller/LED_Controller.srcs/sources_1/imports/support_documents/PWM_Controller.v" Line 35: Redeclaration of ansi port PWM_out is not allowed
+Analyzing Verilog file "C:/Speedway/Fall_12/Zynq_Intro/LED_Controller/LED_Controller.srcs/sources_1/imports/support_documents/debouncer.v" into library work
+Parsing module <debouncer>.
+Analyzing Verilog file "C:/Speedway/Fall_12/Zynq_Intro/LED_Controller/LED_Controller.srcs/sources_1/edk/system/hdl/system.v" into library work
+Parsing module <system>.
+Parsing module <system_processing_system7_0_wrapper>.
+Parsing module <system_axi_gpio_0_wrapper>.
+Parsing module <system_axi_interconnect_1_wrapper>.
+Analyzing Verilog file "C:/Speedway/Fall_12/Zynq_Intro/LED_Controller/LED_Controller.srcs/sources_1/edk/system/system_stub.v" into library work
+Parsing module <system_stub>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <system_stub>.
+
+Elaborating module <system>.
+WARNING:HDLCompiler:1499 - "C:/Speedway/Fall_12/Zynq_Intro/LED_Controller/LED_Controller.srcs/sources_1/edk/system/hdl/system.v" Line 5: Empty module <system> remains a black box.
+
+Elaborating module <PWM_Controller>.
+WARNING:HDLCompiler:413 - "C:/Speedway/Fall_12/Zynq_Intro/LED_Controller/LED_Controller.srcs/sources_1/imports/support_documents/PWM_Controller.v" Line 38: Result of 21-bit expression is truncated to fit in 20-bit target.
+WARNING:HDLCompiler:91 - "C:/Speedway/Fall_12/Zynq_Intro/LED_Controller/LED_Controller.srcs/sources_1/imports/support_documents/PWM_Controller.v" Line 41: Signal <count> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+
+Elaborating module <debouncer>.
+WARNING:HDLCompiler:413 - "C:/Speedway/Fall_12/Zynq_Intro/LED_Controller/LED_Controller.srcs/sources_1/imports/support_documents/debouncer.v" Line 42: Result of 5-bit expression is truncated to fit in 4-bit target.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <system_stub>.
+    Related source file is "C:/Speedway/Fall_12/Zynq_Intro/LED_Controller/LED_Controller.srcs/sources_1/edk/system/system_stub.v".
+    Set property "BOX_TYPE = user_black_box" for instance <system_i>.
+    Summary:
+	no macro.
+Unit <system_stub> synthesized.
+
+Synthesizing Unit <PWM_Controller>.
+    Related source file is "C:/Speedway/Fall_12/Zynq_Intro/LED_Controller/LED_Controller.srcs/sources_1/imports/support_documents/PWM_Controller.v".
+        period = 20
+    Found 20-bit register for signal <count>.
+    Found 20-bit adder for signal <count[19]_GND_3_o_add_1_OUT> created at line 38.
+    Found 32-bit comparator greater for signal <GND_3_o_DutyCycle[31]_LessThan_4_o> created at line 41
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  20 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+Unit <PWM_Controller> synthesized.
+
+Synthesizing Unit <debouncer>.
+    Related source file is "C:/Speedway/Fall_12/Zynq_Intro/LED_Controller/LED_Controller.srcs/sources_1/imports/support_documents/debouncer.v".
+        depth_select = 4
+        data_width = 5
+    Found 1-bit register for signal <button_ff<0><2>>.
+    Found 1-bit register for signal <button_ff<0><1>>.
+    Found 1-bit register for signal <button_ff<0><0>>.
+    Found 1-bit register for signal <Buttons_out<0>>.
+    Found 1-bit register for signal <button_ff<1><3>>.
+    Found 1-bit register for signal <button_ff<1><2>>.
+    Found 1-bit register for signal <button_ff<1><1>>.
+    Found 1-bit register for signal <button_ff<1><0>>.
+    Found 1-bit register for signal <Buttons_out<1>>.
+    Found 1-bit register for signal <button_ff<2><3>>.
+    Found 1-bit register for signal <button_ff<2><2>>.
+    Found 1-bit register for signal <button_ff<2><1>>.
+    Found 1-bit register for signal <button_ff<2><0>>.
+    Found 1-bit register for signal <Buttons_out<2>>.
+    Found 1-bit register for signal <button_ff<3><3>>.
+    Found 1-bit register for signal <button_ff<3><2>>.
+    Found 1-bit register for signal <button_ff<3><1>>.
+    Found 1-bit register for signal <button_ff<3><0>>.
+    Found 1-bit register for signal <Buttons_out<3>>.
+    Found 1-bit register for signal <button_ff<4><3>>.
+    Found 1-bit register for signal <button_ff<4><2>>.
+    Found 1-bit register for signal <button_ff<4><1>>.
+    Found 1-bit register for signal <button_ff<4><0>>.
+    Found 1-bit register for signal <Buttons_out<4>>.
+    Found 4-bit register for signal <valid_state>.
+    Found 1-bit register for signal <button_ff<0><3>>.
+    Found 4-bit adder for signal <button_ff[0][3]_GND_4_o_add_2_OUT> created at line 42.
+    Found 4-bit adder for signal <button_ff[1][3]_GND_4_o_add_8_OUT> created at line 42.
+    Found 4-bit adder for signal <button_ff[2][3]_GND_4_o_add_14_OUT> created at line 42.
+    Found 4-bit adder for signal <button_ff[3][3]_GND_4_o_add_20_OUT> created at line 42.
+    Found 4-bit adder for signal <button_ff[4][3]_GND_4_o_add_26_OUT> created at line 42.
+    Found 4-bit comparator greater for signal <button_ff[0][3]_valid_state[3]_LessThan_2_o> created at line 41
+    Found 4-bit comparator equal for signal <button_ff[0][3]_valid_state[3]_equal_6_o> created at line 49
+    Found 4-bit comparator greater for signal <button_ff[1][3]_valid_state[3]_LessThan_8_o> created at line 41
+    Found 4-bit comparator equal for signal <button_ff[1][3]_valid_state[3]_equal_12_o> created at line 49
+    Found 4-bit comparator greater for signal <button_ff[2][3]_valid_state[3]_LessThan_14_o> created at line 41
+    Found 4-bit comparator equal for signal <button_ff[2][3]_valid_state[3]_equal_18_o> created at line 49
+    Found 4-bit comparator greater for signal <button_ff[3][3]_valid_state[3]_LessThan_20_o> created at line 41
+    Found 4-bit comparator equal for signal <button_ff[3][3]_valid_state[3]_equal_24_o> created at line 49
+    Found 4-bit comparator greater for signal <button_ff[4][3]_valid_state[3]_LessThan_26_o> created at line 41
+    Found 4-bit comparator equal for signal <button_ff[4][3]_valid_state[3]_equal_30_o> created at line 49
+    Summary:
+	inferred   5 Adder/Subtractor(s).
+	inferred  29 D-type flip-flop(s).
+	inferred  10 Comparator(s).
+Unit <debouncer> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 6
+ 20-bit adder                                          : 1
+ 4-bit adder                                           : 5
+# Registers                                            : 8
+ 20-bit register                                       : 1
+ 4-bit register                                        : 6
+ 5-bit register                                        : 1
+# Comparators                                          : 11
+ 32-bit comparator greater                             : 1
+ 4-bit comparator equal                                : 5
+ 4-bit comparator greater                              : 5
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Reading core <..\..\LED_Controller.srcs\sources_1\edk\system\implementation/system.ngc>.
+Reading core <..\..\LED_Controller.srcs\sources_1\edk\system\implementation/system_axi_gpio_0_wrapper.ngc>.
+Reading core <..\..\LED_Controller.srcs\sources_1\edk\system\implementation/system_processing_system7_0_wrapper.ngc>.
+Reading core <..\..\LED_Controller.srcs\sources_1\edk\system\implementation/system_axi_interconnect_1_wrapper.ngc>.
+Loading core <system_axi_gpio_0_wrapper> for timing and area information for instance <axi_gpio_0>.
+Loading core <system_processing_system7_0_wrapper> for timing and area information for instance <processing_system7_0>.
+Loading core <system_axi_interconnect_1_wrapper> for timing and area information for instance <axi_interconnect_1>.
+Loading core <system> for timing and area information for instance <system_i>.
+
+Synthesizing (advanced) Unit <PWM_Controller>.
+The following registers are absorbed into counter <count>: 1 register on signal <count>.
+Unit <PWM_Controller> synthesized (advanced).
+
+Synthesizing (advanced) Unit <debouncer>.
+The following registers are absorbed into counter <button_ff<1><3:0>>: 1 register on signal <button_ff<1><3:0>>.
+The following registers are absorbed into counter <button_ff<0><3:0>>: 1 register on signal <button_ff<0><3:0>>.
+The following registers are absorbed into counter <button_ff<2><3:0>>: 1 register on signal <button_ff<2><3:0>>.
+The following registers are absorbed into counter <button_ff<3><3:0>>: 1 register on signal <button_ff<3><3:0>>.
+The following registers are absorbed into counter <button_ff<4><3:0>>: 1 register on signal <button_ff<4><3:0>>.
+Unit <debouncer> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 6
+ 20-bit up counter                                     : 1
+ 4-bit up counter                                      : 5
+# Registers                                            : 9
+ Flip-Flops                                            : 9
+# Comparators                                          : 11
+ 32-bit comparator greater                             : 1
+ 4-bit comparator equal                                : 5
+ 4-bit comparator greater                              : 5
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <_i000035_0> (without init value) has a constant value of 1 in block <debouncer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <_i000035_1> (without init value) has a constant value of 1 in block <debouncer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <_i000035_2> (without init value) has a constant value of 1 in block <debouncer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <_i000035_3> (without init value) has a constant value of 1 in block <debouncer>. This FF/Latch will be trimmed during the optimization process.
+
+WARNING:Xst:528 - Multi-source in Unit <processing_system7_0> on signal <PS_SRSTB>; this signal is connected to multiple drivers.
+Drivers are: 
+   Primary input port <processing_system7_0_PS_SRSTB_pin>
+   Output port PS7:PSSRSTB of instance <system_i/processing_system7_0/processing_system7_0/PS7_i>
+
+WARNING:Xst:528 - Multi-source in Unit <processing_system7_0> on signal <PS_CLK>; this signal is connected to multiple drivers.
+Drivers are: 
+   Primary input port <processing_system7_0_PS_CLK_pin>
+   Output port PS7:PSCLK of instance <system_i/processing_system7_0/processing_system7_0/PS7_i>
+
+WARNING:Xst:528 - Multi-source in Unit <processing_system7_0> on signal <PS_PORB>; this signal is connected to multiple drivers.
+Drivers are: 
+   Primary input port <processing_system7_0_PS_PORB_pin>
+   Output port PS7:PSPORB of instance <system_i/processing_system7_0/processing_system7_0/PS7_i>
+
+Optimizing unit <system_stub> ...
+
+Optimizing unit <debouncer> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 0) on block system_stub, actual ratio is 0.
+INFO:Xst:2260 - The FF/Latch <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0> in Unit <axi_interconnect_1> is equivalent to the following FF/Latch : <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0_1> 
+INFO:Xst:2260 - The FF/Latch <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw> in Unit <axi_interconnect_1> is equivalent to the following FF/Latch : <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw_1> 
+INFO:Xst:2260 - The FF/Latch <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0> in Unit <axi_interconnect_1> is equivalent to the following FF/Latch : <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0_1> 
+INFO:Xst:2260 - The FF/Latch <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw> in Unit <axi_interconnect_1> is equivalent to the following FF/Latch : <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw_1> 
+INFO:Xst:2260 - The FF/Latch <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0> in Unit <axi_interconnect_1> is equivalent to the following FF/Latch : <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0_1> 
+INFO:Xst:2260 - The FF/Latch <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw> in Unit <axi_interconnect_1> is equivalent to the following FF/Latch : <axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw_1> 
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 45
+ Flip-Flops                                            : 45
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : system_stub.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 668
+#      GND                         : 5
+#      INV                         : 110
+#      LUT1                        : 19
+#      LUT2                        : 104
+#      LUT3                        : 36
+#      LUT4                        : 140
+#      LUT5                        : 61
+#      LUT6                        : 125
+#      MUXCY                       : 40
+#      MUXF7                       : 1
+#      VCC                         : 3
+#      XORCY                       : 24
+# FlipFlops/Latches                : 503
+#      FD                          : 129
+#      FDC                         : 6
+#      FDE                         : 98
+#      FDR                         : 105
+#      FDRE                        : 124
+#      FDS                         : 4
+#      FDSE                        : 37
+# Shift Registers                  : 37
+#      SRLC16E                     : 37
+# Clock Buffers                    : 1
+#      BUFG                        : 1
+# IO Buffers                       : 16
+#      IBUF                        : 8
+#      OBUF                        : 8
+# Others                           : 1
+#      PS7                         : 1
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 7z020clg484-1 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             503  out of  106400     0%  
+ Number of Slice LUTs:                  632  out of  53200     1%  
+    Number used as Logic:               595  out of  53200     1%  
+    Number used as Memory:               37  out of  17400     0%  
+       Number used as SRL:               37
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    791
+   Number with an unused Flip Flop:     288  out of    791    36%  
+   Number with an unused LUT:           159  out of    791    20%  
+   Number of fully used LUT-FF pairs:   344  out of    791    43%  
+   Number of unique control sets:        29
+
+IO Utilization: 
+ Number of IOs:                         143
+ Number of bonded IOBs:                  16  out of    200     8%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-------------------------------------------------------------------------+------------------------+-------+
+Clock Signal                                                             | Clock buffer(FF name)  | Load  |
+-------------------------------------------------------------------------+------------------------+-------+
+system_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>| BUFG                   | 540   |
+-------------------------------------------------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -1
+
+   Minimum period: 3.868ns (Maximum Frequency: 258.532MHz)
+   Minimum input arrival time before clock: 2.180ns
+   Maximum output required time after clock: 2.521ns
+   Maximum combinational path delay: 0.000ns
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'system_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>'
+  Clock period: 3.868ns (frequency: 258.532MHz)
+  Total number of paths / destination ports: 7357 / 971
+-------------------------------------------------------------------------
+Delay:               3.868ns (Levels of Logic = 8)
+  Source:            system_i/axi_gpio_0/axi_gpio_0/ip2bus_wrack_i_D1 (FF)
+  Destination:       system_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_grant_hot_i_0 (FF)
+  Source Clock:      system_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0> rising
+  Destination Clock: system_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0> rising
+
+  Data Path: system_i/axi_gpio_0/axi_gpio_0/ip2bus_wrack_i_D1 to system_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_grant_hot_i_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              4   0.282   0.505  axi_gpio_0/ip2bus_wrack_i_D1 (axi_gpio_0/ip2bus_wrack_i_D1)
+     LUT2:I0->O            5   0.053   0.662  axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/wr_done1 (S_AXI_WREADY)
+     end scope: 'system_i/axi_gpio_0:S_AXI_AWREADY'
+     begin scope: 'system_i/axi_interconnect_1:M_AXI_AWREADY<0>'
+     LUT5:I1->O            1   0.053   0.602  axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/_n011611_SW1_F (N31)
+     LUT3:I0->O            2   0.053   0.419  axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/_n011611_SW11 (N15)
+     LUT6:I5->O            1   0.053   0.000  axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.mi_awready_mux_inst/O1_G (N40)
+     MUXF7:I1->O           4   0.217   0.433  axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.mi_awready_mux_inst/O1 (axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/mi_awready_mux)
+     LUT6:I5->O            2   0.053   0.419  axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_aw/out1 (axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/aa_awready)
+     LUT6:I5->O            1   0.053   0.000  axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_grant_hot_i_0_glue_set (axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_grant_hot_i_0_glue_set)
+     FDR:D                     0.011          axi_interconnect_1/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_grant_hot_i_0
+    ----------------------------------------
+    Total                      3.868ns (0.828ns logic, 3.040ns route)
+                                       (21.4% logic, 78.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'system_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>'
+  Total number of paths / destination ports: 420 / 249
+-------------------------------------------------------------------------
+Offset:              2.180ns (Levels of Logic = 5)
+  Source:            system_i/processing_system7_0/processing_system7_0/PS7_i:MAXIGP0WVALID (PAD)
+  Destination:       system_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1 (FF)
+  Destination Clock: system_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0> rising
+
+  Data Path: system_i/processing_system7_0/processing_system7_0/PS7_i:MAXIGP0WVALID to system_i/axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+    PS7:MAXIGP0WVALID      4   0.000   0.000  processing_system7_0/PS7_i (M_AXI_GP0_WVALID)
+     end scope: 'system_i/processing_system7_0:M_AXI_GP0_WVALID'
+     begin scope: 'system_i/axi_interconnect_1:S_AXI_WVALID<0>'
+     LUT5:I1->O            3   0.053   0.616  axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/M_AXI_WVALID1 (DEBUG_MP_MR_WDATACONTROL<0>)
+     end scope: 'system_i/axi_interconnect_1:M_AXI_WVALID<0>'
+     begin scope: 'system_i/axi_gpio_0:S_AXI_WVALID'
+     LUT3:I0->O            1   0.053   0.739  axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1-In1 (axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1-In1)
+     LUT6:I0->O            1   0.053   0.000  axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1-In3 (axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1-In)
+     FDR:D                     0.011          axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1
+    ----------------------------------------
+    Total                      2.180ns (0.825ns logic, 1.355ns route)
+                                       (37.8% logic, 62.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'system_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>'
+  Total number of paths / destination ports: 869 / 75
+-------------------------------------------------------------------------
+Offset:              2.521ns (Levels of Logic = 18)
+  Source:            system_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_Out_31 (FF)
+  Destination:       LEDS<7> (PAD)
+  Source Clock:      system_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0> rising
+
+  Data Path: system_i/axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_Out_31 to LEDS<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q             2   0.282   0.641  axi_gpio_0/gpio_core_1/gpio_Data_Out_31 (GPIO_IO_O<0>)
+     end scope: 'system_i/axi_gpio_0:GPIO_IO_O<0>'
+     end scope: 'system_i:LED_DutyCycle<0>'
+     begin scope: 'pwm1:DutyCycle<0>'
+     LUT4:I0->O            1   0.053   0.000  Mcompar_GND_3_o_DutyCycle[31]_LessThan_4_o_lut<0> (Mcompar_GND_3_o_DutyCycle[31]_LessThan_4_o_lut<0>)
+     MUXCY:S->O            1   0.291   0.000  Mcompar_GND_3_o_DutyCycle[31]_LessThan_4_o_cy<0> (Mcompar_GND_3_o_DutyCycle[31]_LessThan_4_o_cy<0>)
+     MUXCY:CI->O           1   0.015   0.000  Mcompar_GND_3_o_DutyCycle[31]_LessThan_4_o_cy<1> (Mcompar_GND_3_o_DutyCycle[31]_LessThan_4_o_cy<1>)
+     MUXCY:CI->O           1   0.015   0.000  Mcompar_GND_3_o_DutyCycle[31]_LessThan_4_o_cy<2> (Mcompar_GND_3_o_DutyCycle[31]_LessThan_4_o_cy<2>)
+     MUXCY:CI->O           1   0.015   0.000  Mcompar_GND_3_o_DutyCycle[31]_LessThan_4_o_cy<3> (Mcompar_GND_3_o_DutyCycle[31]_LessThan_4_o_cy<3>)
+     MUXCY:CI->O           1   0.015   0.000  Mcompar_GND_3_o_DutyCycle[31]_LessThan_4_o_cy<4> (Mcompar_GND_3_o_DutyCycle[31]_LessThan_4_o_cy<4>)
+     MUXCY:CI->O           1   0.015   0.000  Mcompar_GND_3_o_DutyCycle[31]_LessThan_4_o_cy<5> (Mcompar_GND_3_o_DutyCycle[31]_LessThan_4_o_cy<5>)
+     MUXCY:CI->O           1   0.015   0.000  Mcompar_GND_3_o_DutyCycle[31]_LessThan_4_o_cy<6> (Mcompar_GND_3_o_DutyCycle[31]_LessThan_4_o_cy<6>)
+     MUXCY:CI->O           1   0.015   0.000  Mcompar_GND_3_o_DutyCycle[31]_LessThan_4_o_cy<7> (Mcompar_GND_3_o_DutyCycle[31]_LessThan_4_o_cy<7>)
+     MUXCY:CI->O           1   0.015   0.000  Mcompar_GND_3_o_DutyCycle[31]_LessThan_4_o_cy<8> (Mcompar_GND_3_o_DutyCycle[31]_LessThan_4_o_cy<8>)
+     MUXCY:CI->O           1   0.015   0.000  Mcompar_GND_3_o_DutyCycle[31]_LessThan_4_o_cy<9> (Mcompar_GND_3_o_DutyCycle[31]_LessThan_4_o_cy<9>)
+     MUXCY:CI->O           1   0.015   0.000  Mcompar_GND_3_o_DutyCycle[31]_LessThan_4_o_cy<10> (Mcompar_GND_3_o_DutyCycle[31]_LessThan_4_o_cy<10>)
+     MUXCY:CI->O           1   0.015   0.000  Mcompar_GND_3_o_DutyCycle[31]_LessThan_4_o_cy<11> (Mcompar_GND_3_o_DutyCycle[31]_LessThan_4_o_cy<11>)
+     MUXCY:CI->O           1   0.178   0.399  Mcompar_GND_3_o_DutyCycle[31]_LessThan_4_o_cy<12> (Mcompar_GND_3_o_DutyCycle[31]_LessThan_4_o_cy<12>)
+     INV:I->O              8   0.067   0.445  Mcompar_GND_3_o_DutyCycle[31]_LessThan_4_o_cy<12>_inv1_INV_0 (PWM_out<7>)
+     end scope: 'pwm1:PWM_out<7>'
+     OBUF:I->O                 0.000          LEDS_7_OBUF (LEDS<7>)
+    ----------------------------------------
+    Total                      2.521ns (1.036ns logic, 1.485ns route)
+                                       (41.1% logic, 58.9% route)
+
+=========================================================================
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock system_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>
+-------------------------------------------------------------------------+---------+---------+---------+---------+
+                                                                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                                             |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-------------------------------------------------------------------------+---------+---------+---------+---------+
+system_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>|    3.868|         |         |         |
+-------------------------------------------------------------------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 15.00 secs
+Total CPU time to Xst completion: 15.21 secs
+ 
+--> 
+
+Total memory usage is 462864 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   12 (   0 filtered)
+Number of infos    :    6 (   0 filtered)
+

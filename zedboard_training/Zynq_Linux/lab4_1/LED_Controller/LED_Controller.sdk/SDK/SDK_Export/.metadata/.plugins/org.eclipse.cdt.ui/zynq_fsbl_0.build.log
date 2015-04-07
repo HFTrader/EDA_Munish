@@ -1,0 +1,89 @@
+
+**** Build of configuration Debug for project zynq_fsbl_0 ****
+
+make all 
+Building file: ../src/ddr_init.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../zynq_fsbl_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/ddr_init.d" -MT"src/ddr_init.d" -o"src/ddr_init.o" "../src/ddr_init.c"
+Finished building: ../src/ddr_init.c
+' '
+Building file: ../src/ff.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../zynq_fsbl_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/ff.d" -MT"src/ff.d" -o"src/ff.o" "../src/ff.c"
+Finished building: ../src/ff.c
+' '
+Building file: ../src/fsbl_handoff.S
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../zynq_fsbl_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/fsbl_handoff.d" -MT"src/fsbl_handoff.d" -o"src/fsbl_handoff.o" "../src/fsbl_handoff.S"
+Finished building: ../src/fsbl_handoff.S
+' '
+Building file: ../src/image_mover.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../zynq_fsbl_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/image_mover.d" -MT"src/image_mover.d" -o"src/image_mover.o" "../src/image_mover.c"
+../src/image_mover.c: In function 'PartitionMove':
+../src/image_mover.c:257:9: warning: variable 'After' set but not used [-Wunused-but-set-variable]
+../src/image_mover.c:256:9: warning: variable 'Before' set but not used [-Wunused-but-set-variable]
+../src/image_mover.c:250:9: warning: variable 'TempValue' set but not used [-Wunused-but-set-variable]
+../src/image_mover.c:248:9: warning: variable 'PartitionLength' set but not used [-Wunused-but-set-variable]
+Finished building: ../src/image_mover.c
+' '
+Building file: ../src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../zynq_fsbl_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o"src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+' '
+Building file: ../src/mmc.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../zynq_fsbl_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/mmc.d" -MT"src/mmc.d" -o"src/mmc.o" "../src/mmc.c"
+Finished building: ../src/mmc.c
+' '
+Building file: ../src/nand.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../zynq_fsbl_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/nand.d" -MT"src/nand.d" -o"src/nand.o" "../src/nand.c"
+Finished building: ../src/nand.c
+' '
+Building file: ../src/nor.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../zynq_fsbl_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/nor.d" -MT"src/nor.d" -o"src/nor.o" "../src/nor.c"
+Finished building: ../src/nor.c
+' '
+Building file: ../src/pcap.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../zynq_fsbl_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/pcap.d" -MT"src/pcap.d" -o"src/pcap.o" "../src/pcap.c"
+../src/pcap.c: In function 'InitPcap':
+../src/pcap.c:345:6: warning: variable 'DcfgIntrId' set but not used [-Wunused-but-set-variable]
+Finished building: ../src/pcap.c
+' '
+Building file: ../src/ps7_init.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../zynq_fsbl_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/ps7_init.d" -MT"src/ps7_init.d" -o"src/ps7_init.o" "../src/ps7_init.c"
+Finished building: ../src/ps7_init.c
+' '
+Building file: ../src/qspi.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../zynq_fsbl_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/qspi.d" -MT"src/qspi.d" -o"src/qspi.o" "../src/qspi.c"
+Finished building: ../src/qspi.c
+' '
+Building file: ../src/sd.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../zynq_fsbl_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/sd.d" -MT"src/sd.d" -o"src/sd.o" "../src/sd.c"
+../src/sd.c: In function 'SDAccess':
+../src/sd.c:149:10: warning: variable 'len' set but not used [-Wunused-but-set-variable]
+Finished building: ../src/sd.c
+' '
+Building file: ../src/uart.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../zynq_fsbl_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/uart.d" -MT"src/uart.d" -o"src/uart.o" "../src/uart.c"
+Finished building: ../src/uart.c
+' '
+Building target: zynq_fsbl_0.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../zynq_fsbl_bsp_0/ps7_cortexa9_0/lib -o"zynq_fsbl_0.elf"  ./src/ddr_init.o ./src/ff.o ./src/fsbl_handoff.o ./src/image_mover.o ./src/main.o ./src/mmc.o ./src/nand.o ./src/nor.o ./src/pcap.o ./src/ps7_init.o ./src/qspi.o ./src/sd.o ./src/uart.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: zynq_fsbl_0.elf
+' '
+Invoking: ARM Print Size
+arm-xilinx-eabi-size zynq_fsbl_0.elf  |tee "zynq_fsbl_0.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  52116	   4272	  61704	 118092	  1cd4c	zynq_fsbl_0.elf
+Finished building: zynq_fsbl_0.elf.size
+' '

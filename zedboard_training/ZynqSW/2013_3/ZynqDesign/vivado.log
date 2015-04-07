@@ -1,0 +1,177 @@
+#-----------------------------------------------------------
+# Vivado v2013.3 (64-bit)
+# SW Build 329390 on Wed Oct 16 18:37:02 MDT 2013
+# IP Build 192953 on Wed Oct 16 08:44:02 MDT 2013
+# Start of session at: Tue Nov 19 18:58:10 2013
+# Process ID: 1988
+# Log file: C:/Speedway/ZynqHW/2013_3/ZynqDesign/vivado.log
+# Journal file: C:/Speedway/ZynqHW/2013_3/ZynqDesign\vivado.jou
+#-----------------------------------------------------------
+INFO: [Common 17-78] Attempting to get a license: Implementation
+INFO: [Common 17-81] Feature available: Implementation
+INFO: [Device 21-36] Loading parts and site information from C:/Xilinx/Vivado/2013.3/data/parts/arch.xml
+Parsing RTL primitives file [C:/Xilinx/Vivado/2013.3/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+Finished parsing RTL primitives file [C:/Xilinx/Vivado/2013.3/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+start_gui
+open_project {C:\Speedway\ZynqHW\2013_3\ZynqDesign\ZynqDesign.xpr}
+INFO: [Project 1-313] Project file moved from 'C:/Users/Gary/AppData/Local/Temp/.Xil_Gary/Vivado-6196-MININT-INSDLU0/PrjAr/_X_' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado repository 'C:/Xilinx/Vivado/2013.3/data/ip'.
+CRITICAL WARNING: [IP_Flow 19-2325] Could not find the IP definition for IP 'Z_system_PWM_w_Int_0_0' in the IP Catalog. Attempting to load the user repositories that were used when that IP was generated, to see if the definition is there. The user repositories being added are:
+    c:/Speedway/ZynqHW/2013_3/IP
+
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user repository 'c:/Speedway/ZynqHW/2013_3/IP'.
+CRITICAL WARNING: [IP_Flow 19-2326] Found the IP definition for IP 'Z_system_PWM_w_Int_0_0' from the user repositories that were used when the IP was generated.
+open_project: Time (s): cpu = 00:00:26 ; elapsed = 00:00:15 . Memory (MB): peak = 840.297 ; gain = 98.055
+open_bd_design {C:/Speedway/ZynqHW/2013_3/ZynqDesign/ZynqDesign.srcs/sources_1/bd/Z_system/Z_system.bd}
+Adding component instance block -- xilinx.com:ip:processing_system7:5.3 - processing_system7_0
+Adding component instance block -- xilinx.com:ip:axi_bram_ctrl:3.0 - axi_bram_ctrl_0
+Adding component instance block -- xilinx.com:ip:blk_mem_gen:8.0 - blk_mem_gen_0
+Adding component instance block -- Avnet:user:PWM_w_Int:1.0 - PWM_w_Int_0
+Adding component instance block -- xilinx.com:ip:ila:3.0 - ila_0
+INFO: [xilinx.com:ip:ila:3.0-345] Z_system_ila_0_0: Test 11
+Adding component instance block -- xilinx.com:ip:jtag_axi:1.0 - jtag_axi_0
+Adding component instance block -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding component instance block -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_ds
+Adding component instance block -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Adding component instance block -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_us
+Adding component instance block -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Adding component instance block -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_us
+Successfully read diagram <Z_system> from BD file <C:/Speedway/ZynqHW/2013_3/ZynqDesign/ZynqDesign.srcs/sources_1/bd/Z_system/Z_system.bd>
+open_bd_design: Time (s): cpu = 00:00:25 ; elapsed = 00:00:18 . Memory (MB): peak = 944.914 ; gain = 73.434
+regenerate_bd_layout
+delete_bd_objs [get_bd_nets pwm_w_int_0_leds]
+startgroup
+create_bd_port -dir O -from 7 -to 0 LEDs
+connect_bd_net [get_bd_pins /PWM_w_Int_0/LEDs] [get_bd_ports /LEDs]
+endgroup
+connect_bd_net -net [get_bd_nets pwm_w_int_0_leds] [get_bd_pins ila_0/probe0] [get_bd_pins PWM_w_Int_0/LEDs]
+save_bd_design
+Wrote  : <C:/Speedway/ZynqHW/2013_3/ZynqDesign/ZynqDesign.srcs/sources_1/bd/Z_system/Z_system.bd> 
+validate_bd_design
+INFO: [xilinx.com:ip:axi_bram_ctrl:3.0-99] Z_system_axi_bram_ctrl_0_0: value of PARAM_VALUE.SUPPORTS_NARROW_BURST = 1
+INFO: [BD 41-237] Bus Interface property ID_WIDTH does not match between /axi_interconnect_0/xbar/S00_AXI(1) and /axi_interconnect_0/s00_couplers/auto_us/M_AXI(0)
+INFO: [BD 41-237] Bus Interface property NUM_READ_OUTSTANDING does not match between /axi_interconnect_0/xbar/S00_AXI(2) and /axi_interconnect_0/s00_couplers/auto_us/M_AXI(8)
+INFO: [BD 41-237] Bus Interface property NUM_WRITE_OUTSTANDING does not match between /axi_interconnect_0/xbar/S00_AXI(2) and /axi_interconnect_0/s00_couplers/auto_us/M_AXI(8)
+INFO: [BD 41-237] Bus Interface property MAX_BURST_LENGTH does not match between /axi_interconnect_0/xbar/S00_AXI(256) and /axi_interconnect_0/s00_couplers/auto_us/M_AXI(16)
+INFO: [BD 41-237] Bus Interface property ID_WIDTH does not match between /axi_interconnect_0/xbar/S01_AXI(1) and /axi_interconnect_0/s01_couplers/auto_us/M_AXI(0)
+INFO: [BD 41-237] Bus Interface property SUPPORTS_NARROW_BURST does not match between /axi_interconnect_0/xbar/S01_AXI(1) and /axi_interconnect_0/s01_couplers/auto_us/M_AXI(0)
+INFO: [BD 41-237] Bus Interface property MAX_BURST_LENGTH does not match between /axi_interconnect_0/xbar/S01_AXI(256) and /axi_interconnect_0/s01_couplers/auto_us/M_AXI(128)
+validate_bd_design: Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 949.668 ; gain = 0.000
+success
+save_bd_design
+Wrote  : <C:/Speedway/ZynqHW/2013_3/ZynqDesign/ZynqDesign.srcs/sources_1/bd/Z_system/Z_system.bd> 
+add_files -fileset constrs_1 -norecurse C:/Speedway/ZynqHW/2013_3/Support_documents/Z_system_wrapper_ZB.xdc
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+INFO: [BD 41-237] Bus Interface property ID_WIDTH does not match between /axi_interconnect_0/xbar/S00_AXI(1) and /axi_interconnect_0/s00_couplers/auto_us/M_AXI(0)
+INFO: [BD 41-237] Bus Interface property NUM_READ_OUTSTANDING does not match between /axi_interconnect_0/xbar/S00_AXI(2) and /axi_interconnect_0/s00_couplers/auto_us/M_AXI(8)
+INFO: [BD 41-237] Bus Interface property NUM_WRITE_OUTSTANDING does not match between /axi_interconnect_0/xbar/S00_AXI(2) and /axi_interconnect_0/s00_couplers/auto_us/M_AXI(8)
+INFO: [BD 41-237] Bus Interface property MAX_BURST_LENGTH does not match between /axi_interconnect_0/xbar/S00_AXI(256) and /axi_interconnect_0/s00_couplers/auto_us/M_AXI(16)
+INFO: [BD 41-237] Bus Interface property ID_WIDTH does not match between /axi_interconnect_0/xbar/S01_AXI(1) and /axi_interconnect_0/s01_couplers/auto_us/M_AXI(0)
+INFO: [BD 41-237] Bus Interface property SUPPORTS_NARROW_BURST does not match between /axi_interconnect_0/xbar/S01_AXI(1) and /axi_interconnect_0/s01_couplers/auto_us/M_AXI(0)
+INFO: [BD 41-237] Bus Interface property MAX_BURST_LENGTH does not match between /axi_interconnect_0/xbar/S01_AXI(256) and /axi_interconnect_0/s01_couplers/auto_us/M_AXI(128)
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/blk_mem_gen_0/addra'(32) to net 'axi_bram_ctrl_0_bram_porta_ADDR'(13) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/blk_mem_gen_0/addrb'(32) to net 'axi_bram_ctrl_0_bram_portb_ADDR'(13) - Only lower order bits will be connected.
+Verilog Output written to : Z_system.v
+Verilog Output written to : Z_system_wrapper.v
+Wrote  : <C:/Speedway/ZynqHW/2013_3/ZynqDesign/ZynqDesign.srcs/sources_1/bd/Z_system/Z_system.bd> 
+INFO: [IP_Flow 19-1706] Not generating up to date 'Synthesis' target for IP 'Z_system_processing_system7_0_0'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /processing_system7_0 .
+INFO: [IP_Flow 19-1687] The current project language is set to Verilog. However IP 'Z_system_axi_bram_ctrl_0_0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+Delivering 'VHDL Synthesis' files for IP 'Z_system_axi_bram_ctrl_0_0'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /axi_bram_ctrl_0 .
+INFO: [IP_Flow 19-1706] Not generating up to date 'Synthesis' target for IP 'Z_system_blk_mem_gen_0_0'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /blk_mem_gen_0 .
+INFO: [IP_Flow 19-1706] Not generating up to date 'Synthesis' target for IP 'Z_system_PWM_w_Int_0_0'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /PWM_w_Int_0 .
+INFO: [IP_Flow 19-1706] Not generating up to date 'Synthesis' target for IP 'Z_system_xbar_0'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /axi_interconnect_0/xbar .
+INFO: [IP_Flow 19-1706] Not generating up to date 'Synthesis' target for IP 'Z_system_ila_0_0'.
+INFO: [IP_Flow 19-1706] Not generating up to date 'Synthesis Wrapper' target for IP 'Z_system_ila_0_0'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /ila_0 .
+INFO: [IP_Flow 19-1706] Not generating up to date 'Synthesis' target for IP 'Z_system_jtag_axi_0_0'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /jtag_axi_0 .
+Delivering 'Verilog Synthesis' files for IP 'Z_system_auto_ds_11'.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:11.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /axi_interconnect_0/m01_couplers/auto_ds .
+Delivering 'Verilog Synthesis' files for IP 'Z_system_auto_pc_8'.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:11.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /axi_interconnect_0/m01_couplers/auto_pc .
+Delivering 'Verilog Synthesis' files for IP 'Z_system_auto_pc_9'.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:11.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /axi_interconnect_0/s00_couplers/auto_pc .
+Delivering 'Verilog Synthesis' files for IP 'Z_system_auto_us_12'.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:11.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /axi_interconnect_0/s00_couplers/auto_us .
+Delivering 'Verilog Synthesis' files for IP 'Z_system_auto_us_13'.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:11.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /axi_interconnect_0/s01_couplers/auto_us .
+INFO: [BD 41-539] Not generating up to date 'Implementation' target for block design Z_system
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /axi_bram_ctrl_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /blk_mem_gen_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /PWM_w_Int_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /axi_interconnect_0/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /ila_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /jtag_axi_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /axi_interconnect_0/m01_couplers/auto_ds .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /axi_interconnect_0/m01_couplers/auto_pc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /axi_interconnect_0/s00_couplers/auto_pc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /axi_interconnect_0/s00_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /axi_interconnect_0/s01_couplers/auto_us .
+[Tue Nov 19 19:05:49 2013] Launched synth_1...
+Run output will be captured here: C:/Speedway/ZynqHW/2013_3/ZynqDesign/ZynqDesign.runs/synth_1/runme.log
+[Tue Nov 19 19:05:50 2013] Launched impl_1...
+Run output will be captured here: C:/Speedway/ZynqHW/2013_3/ZynqDesign/ZynqDesign.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:18 ; elapsed = 00:00:26 . Memory (MB): peak = 1054.859 ; gain = 40.945
+open_run impl_1
+INFO: [Netlist 29-17] Analyzing 298 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2013.3
+Loading clock regions from C:/Xilinx/Vivado/2013.3/data\parts/xilinx/zynq/zynq/xc7z020/ClockRegion.xml
+Loading clock buffers from C:/Xilinx/Vivado/2013.3/data\parts/xilinx/zynq/zynq/xc7z020/ClockBuffers.xml
+Loading clock placement rules from C:/Xilinx/Vivado/2013.3/data/parts/xilinx/zynq/ClockPlacerRules.xml
+Loading package pin functions from C:/Xilinx/Vivado/2013.3/data\parts/xilinx/zynq/PinFunctions.xml...
+Loading package from C:/Xilinx/Vivado/2013.3/data\parts/xilinx/zynq/zynq/xc7z020/clg484/Package.xml
+Loading io standards from C:/Xilinx/Vivado/2013.3/data\./parts/xilinx/zynq/IOStandards.xml
+INFO: [Opt 31-138] Pushed 0 inverter(s).
+INFO: [Common 17-78] Attempting to get a license: Internal_bitstream
+WARNING: [Common 17-301] Failed to get a license: Internal_bitstream
+Parsing XDC File [c:/Speedway/ZynqHW/2013_3/ZynqDesign/.Xil/Vivado-1988-USHOM00NBA28700/dcp/Z_system_wrapper.xdc]
+INFO: [Timing 38-35] Done setting XDC timing constraints. [C:/Speedway/ZynqHW/2013_3/ZynqDesign/ZynqDesign.runs/impl_1/.Xil/Vivado-10072-USHOM00NBA28700/dbg_hub_CV.xdc:6]
+Finished Parsing XDC File [c:/Speedway/ZynqHW/2013_3/ZynqDesign/.Xil/Vivado-1988-USHOM00NBA28700/dcp/Z_system_wrapper.xdc]
+Reading XDEF placement.
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.680 . Memory (MB): peak = 1631.320 ; gain = 7.309
+Restoring placement.
+Restored 2753 out of 2753 XDEF sites from archive | CPU: 2.000000 secs | Memory: 0.000000 MB |
+INFO: [Memdata 28-143] Successfully populated the BRAM INIT strings from the following elf files: 
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 294 instances were transformed.
+  CFGLUT5 => CFGLUT5 (SRLC32E, SRL16E): 64 instances
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 38 instances
+  RAM64M => RAM64M (RAMD64E, RAMD64E, RAMD64E, RAMD64E): 160 instances
+  RAM64X1D => RAM64X1D (RAMD64E, RAMD64E): 32 instances
+
+open_run: Time (s): cpu = 00:00:58 ; elapsed = 00:00:41 . Memory (MB): peak = 1878.496 ; gain = 820.391
+export_hardware [get_files C:/Speedway/ZynqHW/2013_3/ZynqDesign/ZynqDesign.srcs/sources_1/bd/Z_system/Z_system.bd] [get_runs impl_1] -bitstream -dir C:/Speedway/ZynqHW/2013_3/SDK_PWM
+WARNING: [Vivado 12-690] Backannotated BMM file does not exist in the run dir:C:/Speedway/ZynqHW/2013_3/ZynqDesign/ZynqDesign.runs/impl_1/Z_system_wrapper_bd.bmm
+Exporting to file C:/Speedway/ZynqHW/2013_3/SDK_PWM/hw/Z_system.xml
+INFO: [BD 41-436] exporting bit file 'C:/Speedway/ZynqHW/2013_3/ZynqDesign/ZynqDesign.runs/impl_1/Z_system_wrapper.bit'...
+export_hardware: Time (s): cpu = 00:00:17 ; elapsed = 00:00:16 . Memory (MB): peak = 1906.207 ; gain = 27.711
+launch_sdk -bit C:/Speedway/ZynqHW/2013_3/SDK_PWM/hw/Z_system_wrapper.bit -workspace C:/Speedway/ZynqHW/2013_3/SDK_PWM -hwspec C:/Speedway/ZynqHW/2013_3/SDK_PWM/hw/Z_system.xml
+INFO: [Vivado 12-393] Launching SDK...
+INFO: [Vivado 12-417] Running xsdk -bit C:/Speedway/ZynqHW/2013_3/SDK_PWM/hw/Z_system_wrapper.bit -workspace C:/Speedway/ZynqHW/2013_3/SDK_PWM -hwspec C:/Speedway/ZynqHW/2013_3/SDK_PWM/hw/Z_system.xml
+INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue Nov 19 19:30:04 2013...
