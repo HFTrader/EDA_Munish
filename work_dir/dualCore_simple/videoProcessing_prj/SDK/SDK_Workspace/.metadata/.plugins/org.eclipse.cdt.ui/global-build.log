@@ -1,0 +1,261 @@
+20:42:35 **** Clean-only build of configuration Debug for project app_cpu0 ****
+make clean 
+rm -rf  ./src/helloworld.o ./src/platform.o  ./src/helloworld.d ./src/platform.d  app_cpu0.elf.size  app_cpu0.elf
+ 
+20:42:35 **** Clean-only build of configuration Debug for project app_cpu1 ****
+make clean 
+rm -rf  ./src/helloworld.o ./src/platform.o  ./src/helloworld.d ./src/platform.d  app_cpu1.elf.size  app_cpu1.elf
+ 
+20:42:36 **** Clean-only build of project standalone_amp_bsp_0 ****
+20:42:36 **** Clean-only build of project standalone_bsp_0 ****
+make -k clean 
+make -k clean 
+rm -rf ps7_cortexa9_1
+rm -rf ps7_cortexa9_0
+20:42:37 **** Build of project standalone_amp_bsp_0 ****
+make -k all 
+libgen -hw ../videoProcessing_prj_hw_platform/system.xml\
+	       -lp /home/ga38qoh/EDA_Munish/zedboard_training/ZynqSW/2013_3/Support_documents/sdk_repo\
+	       -pe ps7_cortexa9_1 \
+	       -log libgen.log \
+	       system.mss
+libgen
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: libgen -hw ../videoProcessing_prj_hw_platform/system.xml -lp
+/home/ga38qoh/EDA_Munish/zedboard_training/ZynqSW/2013_3/Support_documents/sdk_r
+epo -pe ps7_cortexa9_1 -log libgen.log system.mss 
+
+
+Staging source files.
+Running DRCs.
+Running generate.
+Running post_generate.
+Running include - 'gmake -s include "COMPILER=arm-xilinx-eabi-gcc"
+"ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS= -O2 -c" "EXTRA_COMPILER_FLAGS=-g
+-DUSE_AMP=1"'.
+
+Running libs - 'gmake -s libs "COMPILER=arm-xilinx-eabi-gcc"
+"ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS= -O2 -c" "EXTRA_COMPILER_FLAGS=-g
+-DUSE_AMP=1"'.
+Compiling common
+arm-xilinx-eabi-ar: creating ../../../lib/libxil.a
+Compiling standalone
+Compiling axidma
+Compiling iic
+Compiling axivdma
+Compiling devcfg
+Compiling dmaps
+Compiling emacps
+Compiling gpiops
+Compiling iicps
+Compiling qspips
+Compiling scugic
+xscugic.c: In function 'DistInit':
+xscugic.c:127:3: warning: #warning "Building GIC for AMP" [-Wcpp]
+xscugic_hw.c: In function 'DistInit':
+xscugic_hw.c:123:3: warning: #warning "Building GIC for AMP" [-Wcpp]
+Compiling scutimer
+Compiling scuwdt
+Compiling ttcps
+Compiling uartps
+Compiling usbps
+Compiling xadcps
+Compiling cpu_cortexa9
+Running execs_generate.
+Finished building libraries
+20:43:12 **** Build of configuration Debug for project app_cpu1 ****
+make all 
+Building file: ../src/helloworld.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_amp_bsp_0/ps7_cortexa9_1/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+Finished building: ../src/helloworld.c
+ 
+Building file: ../src/platform.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_amp_bsp_0/ps7_cortexa9_1/include -MMD -MP -MF"src/platform.d" -MT"src/platform.d" -o "src/platform.o" "../src/platform.c"
+Finished building: ../src/platform.c
+ 
+Building target: app_cpu1.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_amp_bsp_0/ps7_cortexa9_1/lib -o "app_cpu1.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: app_cpu1.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size app_cpu1.elf  |tee "app_cpu1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  61668	   2264	  29852	  93784	  16e58	app_cpu1.elf
+Finished building: app_cpu1.elf.size
+ 
+20:43:12 **** Build of project standalone_bsp_0 ****
+make -k all 
+libgen -hw ../videoProcessing_prj_hw_platform/system.xml\
+	       -lp /home/ga38qoh/EDA_Munish/zedboard_training/ZynqSW/2013_3/Support_documents/sdk_repo\
+	       -pe ps7_cortexa9_0 \
+	       -log libgen.log \
+	       system.mss
+libgen
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: libgen -hw ../videoProcessing_prj_hw_platform/system.xml -lp
+/home/ga38qoh/EDA_Munish/zedboard_training/ZynqSW/2013_3/Support_documents/sdk_r
+epo -pe ps7_cortexa9_0 -log libgen.log system.mss 
+
+
+Staging source files.
+Running DRCs.
+Running generate.
+Running post_generate.
+Running include - 'gmake -s include "COMPILER=arm-xilinx-eabi-gcc"
+"ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS= -O2 -c"
+"EXTRA_COMPILER_FLAGS=-g"'.
+
+Running libs - 'gmake -s libs "COMPILER=arm-xilinx-eabi-gcc"
+"ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS= -O2 -c"
+"EXTRA_COMPILER_FLAGS=-g"'.
+Compiling common
+arm-xilinx-eabi-ar: creating ../../../lib/libxil.a
+Compiling standalone
+Compiling axidma
+Compiling iic
+Compiling axivdma
+Compiling devcfg
+Compiling dmaps
+Compiling emacps
+Compiling gpiops
+Compiling iicps
+Compiling qspips
+Compiling scugic
+Compiling scutimer
+Compiling scuwdt
+Compiling ttcps
+Compiling uartps
+Compiling usbps
+Compiling xadcps
+Compiling cpu_cortexa9
+Running execs_generate.
+Finished building libraries
+20:43:44 **** Build of configuration Debug for project app_cpu0 ****
+make all 
+Building file: ../src/helloworld.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:46:3: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat]
+../src/helloworld.c:46:3: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat]
+Finished building: ../src/helloworld.c
+ 
+Building file: ../src/platform.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.d" -o "src/platform.o" "../src/platform.c"
+Finished building: ../src/platform.c
+ 
+Building target: app_cpu0.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "app_cpu0.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: app_cpu0.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size app_cpu0.elf  |tee "app_cpu0.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  62332	   2264	  29852	  94448	  170f0	app_cpu0.elf
+Finished building: app_cpu0.elf.size
+ 
+20:45:22 **** Auto Build of configuration Debug for project app_cpu0 ****
+make all 
+Building file: ../src/helloworld.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+Finished building: ../src/helloworld.c
+ 
+Building target: app_cpu0.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "app_cpu0.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: app_cpu0.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size app_cpu0.elf  |tee "app_cpu0.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  62332	   2264	  29852	  94448	  170f0	app_cpu0.elf
+Finished building: app_cpu0.elf.size
+ 
+20:45:27 **** Incremental Build of configuration Debug for project app_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+20:45:28 **** Incremental Build of configuration Debug for project app_cpu0 ****
+make all 
+make: Nothing to be done for `all'.
+20:47:36 **** Auto Build of configuration Debug for project app_cpu0 ****
+make all 
+Building file: ../src/helloworld.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+Finished building: ../src/helloworld.c
+ 
+Building target: app_cpu0.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "app_cpu0.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: app_cpu0.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size app_cpu0.elf  |tee "app_cpu0.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  62332	   2264	  29852	  94448	  170f0	app_cpu0.elf
+Finished building: app_cpu0.elf.size
+ 
+20:47:42 **** Incremental Build of configuration Debug for project app_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+20:47:42 **** Incremental Build of configuration Debug for project app_cpu0 ****
+make all 
+make: Nothing to be done for `all'.
+20:48:20 **** Auto Build of configuration Debug for project app_cpu1 ****
+make all 
+Building file: ../src/helloworld.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_amp_bsp_0/ps7_cortexa9_1/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+Finished building: ../src/helloworld.c
+ 
+Building target: app_cpu1.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_amp_bsp_0/ps7_cortexa9_1/lib -o "app_cpu1.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: app_cpu1.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size app_cpu1.elf  |tee "app_cpu1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  61668	   2264	  29852	  93784	  16e58	app_cpu1.elf
+Finished building: app_cpu1.elf.size
+ 
+20:48:30 **** Incremental Build of configuration Debug for project app_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+20:48:30 **** Incremental Build of configuration Debug for project app_cpu0 ****
+make all 
+make: Nothing to be done for `all'.
+20:49:30 **** Auto Build of configuration Debug for project app_cpu1 ****
+make all 
+Building file: ../src/helloworld.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_amp_bsp_0/ps7_cortexa9_1/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+Finished building: ../src/helloworld.c
+ 
+Building target: app_cpu1.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_amp_bsp_0/ps7_cortexa9_1/lib -o "app_cpu1.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: app_cpu1.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size app_cpu1.elf  |tee "app_cpu1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  61668	   2264	  29852	  93784	  16e58	app_cpu1.elf
+Finished building: app_cpu1.elf.size
+ 
+20:49:34 **** Incremental Build of configuration Debug for project app_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+20:49:35 **** Incremental Build of configuration Debug for project app_cpu0 ****
+make all 
+make: Nothing to be done for `all'.

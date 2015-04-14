@@ -1,0 +1,14 @@
+set -tmpdir /ise_local2/umair_temp/SDS_Lab_14p7/project_documents/LabC/cf_adv7511_zed_edk_14_4_2013_02_05/videoProcessing_prj/synthesis/xst_temp_dir/
+run
+-opt_mode speed
+-netlist_hierarchy as_optimized
+-opt_level 1
+-p xc7z020clg484-1
+-top system_axi_dma_spdif_wrapper
+-ifmt MIXED
+-ifn system_axi_dma_spdif_wrapper_xst.prj
+-ofn ../implementation/system_axi_dma_spdif_wrapper.ngc
+-hierarchy_separator /
+-iobuf NO
+-sd {../implementation}
+-vlgincdir {"/ise_local2/umair_temp/SDS_Lab_14p7/project_documents/LabC/cf_adv7511_zed_edk_14_4_2013_02_05/videoProcessing_prj/pcores/" "/ise_local2/umair_temp/SDS_Lab_14p7/project_documents/LabC/cf_adv7511_zed_edk_14_4_2013_02_05/cf_lib/edk/pcores/" "/nfs/tools/xilinx/ise/14.7/ISE_DS/EDK/hw/XilinxBFMinterface/pcores/" "/nfs/tools/xilinx/ise/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/" }

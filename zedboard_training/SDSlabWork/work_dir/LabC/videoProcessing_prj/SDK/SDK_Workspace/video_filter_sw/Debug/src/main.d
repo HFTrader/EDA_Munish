@@ -11,12 +11,12 @@ src/main.d: ../src/main.c \
  ../../standalone_bsp_0/ps7_cortexa9_0/include/xparameters_ps.h \
  ../src/cf_hdmi.h \
  ../../standalone_bsp_0/ps7_cortexa9_0/include/xparameters.h \
- /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc/atv_platform.h \
- /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc/atv_types.h \
+ /home/ga38qoh/EDA_Munish/zedboard_training/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc/atv_platform.h \
+ /home/ga38qoh/EDA_Munish/zedboard_training/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc/atv_types.h \
  ../src/transmitter.h ../src/transmitter_defs.h \
- /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc/atv_types.h \
- /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc/tx_lib.h \
- /home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc/atv_common.h \
+ /home/ga38qoh/EDA_Munish/zedboard_training/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc/atv_types.h \
+ /home/ga38qoh/EDA_Munish/zedboard_training/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc/tx_lib.h \
+ /home/ga38qoh/EDA_Munish/zedboard_training/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc/atv_common.h \
  ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_exception.h \
  ../../standalone_bsp_0/ps7_cortexa9_0/include/xuartps.h \
  ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_assert.h \
@@ -54,19 +54,19 @@ src/main.d: ../src/main.c \
 
 ../../standalone_bsp_0/ps7_cortexa9_0/include/xparameters.h:
 
-/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc/atv_platform.h:
+/home/ga38qoh/EDA_Munish/zedboard_training/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc/atv_platform.h:
 
-/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc/atv_types.h:
+/home/ga38qoh/EDA_Munish/zedboard_training/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc/atv_types.h:
 
 ../src/transmitter.h:
 
 ../src/transmitter_defs.h:
 
-/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc/atv_types.h:
+/home/ga38qoh/EDA_Munish/zedboard_training/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc/atv_types.h:
 
-/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc/tx_lib.h:
+/home/ga38qoh/EDA_Munish/zedboard_training/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc/tx_lib.h:
 
-/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc/atv_common.h:
+/home/ga38qoh/EDA_Munish/zedboard_training/SDSlabWork/work_dir/LabC/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc/atv_common.h:
 
 ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_exception.h:
 

@@ -1,0 +1,94 @@
+20:24:30 **** Clean-only build of configuration Debug for project app_cpu0 ****
+make clean 
+rm -rf  ./src/app_cpu0.o  ./src/app_cpu0.d  app_cpu0.elf.size  app_cpu0.elf
+ 
+20:24:30 **** Clean-only build of configuration Debug for project app_cpu1 ****
+make clean 
+rm -rf  ./src/app_cpu1.o  ./src/app_cpu1.d  app_cpu1.elf.size  app_cpu1.elf
+ 
+20:24:30 **** Clean-only build of configuration Debug for project fsbl ****
+make clean 
+rm -rf  ./src/ddr_init.o ./src/ff.o ./src/fsbl_handoff.o ./src/fsbl_hooks.o ./src/image_mover.o ./src/main.o ./src/md5.o ./src/mmc.o ./src/nand.o ./src/nor.o ./src/pcap.o ./src/ps7_init.o ./src/qspi.o ./src/rsa.o ./src/sd.o  ./src/ddr_init.d ./src/ff.d ./src/fsbl_hooks.d ./src/image_mover.d ./src/main.d ./src/md5.d ./src/mmc.d ./src/nand.d ./src/nor.d ./src/pcap.d ./src/ps7_init.d ./src/qspi.d ./src/rsa.d ./src/sd.d  fsbl.elf.size  ./src/fsbl_handoff.d  fsbl.elf
+ 
+20:24:30 **** Clean-only build of project app_cpu0_bsp ****
+20:24:30 **** Clean-only build of project app_cpu1_bsp ****
+make -k clean 
+make -k clean 
+rm -rf ps7_cortexa9_0
+rm -rf ps7_cortexa9_1
+20:24:32 **** Build of project app_cpu0_bsp ****
+make -k all 
+libgen -hw ../ZynqHW/system.xml\
+	       -lp /home/ga38qoh/EDA_Munish/zedboard_training/ZynqSW/2013_3/Support_documents/sdk_repo\
+	       -pe ps7_cortexa9_0 \
+	       -log libgen.log \
+	       system.mss
+libgen
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: libgen -hw ../ZynqHW/system.xml -lp
+/home/ga38qoh/EDA_Munish/zedboard_training/ZynqSW/2013_3/Support_documents/sdk_r
+epo -pe ps7_cortexa9_0 -log libgen.log system.mss 
+
+ERROR:EDK:410 - generic -
+   /home/ga38qoh/EDA_Munish/zedboard_training/ZynqSW/2013_3/SDK_Workspace/app_cp
+make: *** [ps7_cortexa9_0/lib/libxil.a] Error 2
+   u0_bsp/system.mss line 21 - No IP instance named PWM_w_Int_0 is present in
+   the hardware!
+make: Target `all' not remade because of errors.
+ERROR:EDK:410 - bram -
+   /home/ga38qoh/EDA_Munish/zedboard_training/ZynqSW/2013_3/SDK_Workspace/app_cp
+   u0_bsp/system.mss line 27 - No IP instance named axi_bram_ctrl_0 is present
+   in the hardware!
+ERROR:EDK:1206 - Errors occured while parsing MSS file.
+20:24:33 **** Build of configuration Debug for project app_cpu0 ****
+make all 
+Building file: ../src/app_cpu0.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../app_cpu0_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/app_cpu0.d" -MT"src/app_cpu0.d" -o "src/app_cpu0.o" "../src/app_cpu0.c"
+../src/app_cpu0.c:69:20: fatal error: xil_io.h: No such file or directory
+compilation terminated.
+make: *** [src/app_cpu0.o] Error 1
+20:24:33 **** Build of project app_cpu1_bsp ****
+make -k all 
+libgen -hw ../ZynqHW/system.xml\
+	       -lp /home/ga38qoh/EDA_Munish/zedboard_training/ZynqSW/2013_3/Support_documents/sdk_repo\
+	       -pe ps7_cortexa9_1 \
+	       -log libgen.log \
+	       system.mss
+libgen
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: libgen -hw ../ZynqHW/system.xml -lp
+/home/ga38qoh/EDA_Munish/zedboard_training/ZynqSW/2013_3/Support_documents/sdk_r
+epo -pe ps7_cortexa9_1 -log libgen.log system.mss 
+
+ERROR:EDK:410 - generic -
+   /home/ga38qoh/EDA_Munish/zedboard_training/ZynqSW/2013_3/SDK_Workspace/app_cp
+   u1_bsp/system.mss line 22 - No IP instance named PWM_w_Int_0 is present in
+   the hardware!
+ERROR:EDK:410 - bram -
+   /home/ga38qoh/EDA_Munish/zedboard_training/ZynqSW/2013_3/SDK_Workspace/app_cp
+   u1_bsp/system.mss line 28 - No IP instance named axi_bram_ctrl_0 is present
+make: *** [ps7_cortexa9_1/lib/libxil.a] Error 2
+   in the hardware!
+make: Target `all' not remade because of errors.
+ERROR:EDK:1206 - Errors occured while parsing MSS file.
+20:24:35 **** Build of configuration Debug for project app_cpu1 ****
+make all 
+Building file: ../src/app_cpu1.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../app_cpu1_bsp/ps7_cortexa9_1/include -MMD -MP -MF"src/app_cpu1.d" -MT"src/app_cpu1.d" -o "src/app_cpu1.o" "../src/app_cpu1.c"
+../src/app_cpu1.c:68:25: fatal error: xparameters.h: No such file or directory
+compilation terminated.
+make: *** [src/app_cpu1.o] Error 1
+20:24:35 **** Build of configuration Debug for project fsbl ****
+make all 
+Building file: ../src/ddr_init.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../app_cpu0_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/ddr_init.d" -MT"src/ddr_init.d" -o "src/ddr_init.o" "../src/ddr_init.c"
+../src/ddr_init.c:62:20: fatal error: xil_io.h: No such file or directory
+compilation terminated.
+make: *** [src/ddr_init.o] Error 1
