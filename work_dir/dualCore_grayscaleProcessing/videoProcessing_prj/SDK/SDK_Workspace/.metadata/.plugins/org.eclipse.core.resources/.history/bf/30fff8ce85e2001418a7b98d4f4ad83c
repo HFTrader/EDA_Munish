@@ -208,22 +208,8 @@ int main()
      */
 	Xil_SetTlbAttributes(SHARED_OCM_MEMORY_BASE, 0x14de2);
 
-	UINT32 StartCount;
-	MajorRev     = 1;
-	MinorRev     = 1;
-	RcRev        = 1;
-	DriverEnable = TRUE;
-	LastEnable   = FALSE;
 
-	StartCount = HAL_GetCurrentMsCount();
-	ADIAPI_TransmitterMain();
-
-	/*Initialize the HDMI Core with default display settings*/
-	//SetVideoResolution(RESOLUTION_640x480);
-
-	//while (APP_ChangeResolution())
-	//TODO: make currentResolution variable shared between the two cores so that if cpu0 changes it then cpu1 should update its processing w.r.t it
-	while (1)
+	while (APP_ChangeResolution())
 	{
 		if (ATV_GetElapsedMs (StartCount, NULL) >= HDMI_CALL_INTERVAL_MS)
 		{

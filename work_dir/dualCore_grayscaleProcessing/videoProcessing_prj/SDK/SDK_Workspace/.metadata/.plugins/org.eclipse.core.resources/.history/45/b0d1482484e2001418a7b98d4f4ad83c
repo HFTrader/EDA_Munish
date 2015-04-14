@@ -20,32 +20,11 @@
 #include "xscugic.h"
 #include "xil_mmu.h"
 #include "sw_functions.h"
+#include "xpseudo_asm.h"
 
-
-/* Define a data memory space which is visible to both CPUs, the OCM is ideal
- * since it is the lowest latency memory which is visible to both ARM cores.
- */
-#define SHARED_OCM_MEMORY_BASE   0xFFFF0000
-/* Declare a value stored in OCM space which is visible to both CPUs. */
-#define SEMAPHORE_VALUE      (*(volatile unsigned long *)(SHARED_OCM_MEMORY_BASE))
-
-
-
-int semaphore_cpu1_signal()
-{
-	SEMAPHORE_VALUE = 0;
-
-	return 0;
-}
-
-int semaphore_cpu1_wait()
-{
-	while (SEMAPHORE_VALUE == 0) {};
-
-	return 0;
-}
-
-
+#define sev() __asm__("sev")
+#define CPU1_MEM_BASE        0x00200000
+#define CPU1_START_ADR       0xFFFFFFF0
 
 
 extern void delay_ms(u32 ms_count);
@@ -57,6 +36,13 @@ extern char inbyte(void);
 #define HDMI_CALL_INTERVAL_MS	10			/* Interval between two         */
 											/* iterations of the main loop  */
 #define DBG_MSG                 xil_printf
+
+/* Define a data memory space which is visible to both CPUs, the OCM is ideal
+ * since it is the lowest latency memory which is visible to both ARM cores.
+ */
+#define SHARED_OCM_MEMORY_BASE   0xFFFF0000
+/* Declare a value stored in OCM space which is visible to both CPUs. */
+#define SEMAPHORE_VALUE      (*(volatile unsigned long *)(SHARED_OCM_MEMORY_BASE))
 
 /******************************************************************************/
 /************************ Variables Definitions *******************************/
@@ -186,6 +172,28 @@ static int APP_ChangeResolution (void)
 }
 
 
+int semaphore_cpu0_init()
+{
+    /* Only CPU0 should be responsible for initializing the semaphore. */
+    SEMAPHORE_VALUE = 0;
+
+	return 0;
+}
+
+int semaphore_cpu0_signal()
+{
+	SEMAPHORE_VALUE = 1;
+
+	return 0;
+}
+
+int semaphore_cpu0_wait()
+{
+	while (SEMAPHORE_VALUE == 1) {};
+
+	return 0;
+}
+
 
 
 /***************************************************************************//**
@@ -195,69 +203,6 @@ static int APP_ChangeResolution (void)
 *******************************************************************************/
 int main()
 {
-
-	/* Disable caching on shared OCM data by setting the appropriate TLB
-     * attributes for the shared data space in OCM.
-     *
-     * S=b1
-     * TEX=b100
-     * AP=b11
-     * Domain=b1111
-     * C=b0
-     * B=b0
-     */
-	Xil_SetTlbAttributes(SHARED_OCM_MEMORY_BASE, 0x14de2);
-
-	UINT32 StartCount;
-	MajorRev     = 1;
-	MinorRev     = 1;
-	RcRev        = 1;
-	DriverEnable = TRUE;
-	LastEnable   = FALSE;
-
-	StartCount = HAL_GetCurrentMsCount();
-	ADIAPI_TransmitterMain();
-
-	/*Initialize the HDMI Core with default display settings*/
-	//SetVideoResolution(RESOLUTION_640x480);
-
-	//while (APP_ChangeResolution())
-	//TODO: make currentResolution variable shared between the two cores so that if cpu0 changes it then cpu1 should update its processing w.r.t it
-	while (1)
-	{
-		if (ATV_GetElapsedMs (StartCount, NULL) >= HDMI_CALL_INTERVAL_MS)
-		{
-			StartCount = HAL_GetCurrentMsCount();
-			if (APP_DriverEnabled())
-			{
-				ADIAPI_TransmitterMain();
-			}
-		}
-
-		semaphore_cpu1_wait();
-
-		// storing the current frame onto cpu0 memory space
-		DDRVideoWr(640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME]);
-
-		// grayscaling the captured image and writing to a separate memory region in ddr
-		ConvToGrayHLS(VIDEO_BASEADDR, PROC_VIDEO_BASEADDR, detailedTiming[currentResolution][H_ACTIVE_TIME]);
-
-		semaphore_cpu1_signal();
-	}
-
-    /*while(1) {
-    	semaphore_cpu1_wait();
-
-		// storing the current frame onto cpu0 memory space
-		DDRVideoWr(640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME]);
-
-		// grayscaling the captured image and writing to a separate memory region in ddr
-		ConvToGrayHLS(VIDEO_BASEADDR, PROC_VIDEO_BASEADDR, detailedTiming[currentResolution][H_ACTIVE_TIME]);
-
-		semaphore_cpu1_signal();
-    }*/
-
-#if 0
 	UINT32 StartCount;
 	int xstatus;
 	MajorRev     = 1;
@@ -265,6 +210,33 @@ int main()
 	RcRev        = 1;
 	DriverEnable = TRUE;
 	LastEnable   = FALSE;
+	//int delay = 100000;
+	//int delay_var = 0;
+
+	semaphore_cpu0_init();
+
+    /* Disable caching on shared OCM data by setting the appropriate TLB
+     * attributes for the shared data space in OCM.
+	 *
+     * S=b1
+     * TEX=b100
+     * AP=b11
+     * Domain=b1111
+     * C=b0
+     * B=b0
+	 */
+    Xil_SetTlbAttributes(SHARED_OCM_MEMORY_BASE, 0x14de2);
+#if 0
+    /* Set the CPU1 start address to match the beginning of the memory segment
+     * defined in the linker script.
+     */
+    printf("CPU0: Setting start address for cpu1 to 0x%08X\n\r", CPU1_MEM_BASE);
+    Xil_Out32(CPU1_START_ADR, CPU1_MEM_BASE);
+    dmb(); // Wait until memory write has finished.
+
+    print("CPU0: Using SEV to wake up CPU1\n\r");
+    sev();
+#endif
 
 	Xil_ICacheEnable();
 	Xil_DCacheEnable();
@@ -286,7 +258,7 @@ int main()
 	
 	/*Initialize the HDMI Core with default display settings*/
 	SetVideoResolution(RESOLUTION_640x480); 
-	
+
 	/* Initialize the interrupt controller */
 	xstatus = ScuGicInterrupt_Init();
 	if (xstatus != XST_SUCCESS) {
@@ -294,9 +266,11 @@ int main()
 	  		//return XST_FAILURE;
 	  	}
 
-	while(APP_ChangeResolution())
+	//ConfigHdmiVDMA(detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME], VIDEO_BASEADDR_CPU1);
+
+	while (APP_ChangeResolution())
 	{
-		while(FRAME_INTR == 0);
+		while (FRAME_INTR == 0);
 		FRAME_INTR = 0;
 
 		if (ATV_GetElapsedMs (StartCount, NULL) >= HDMI_CALL_INTERVAL_MS)
@@ -307,13 +281,47 @@ int main()
 				ADIAPI_TransmitterMain();
 			}
 		}
+
+
+/*		while (FRAME_INTR == 0);			// keep on waiting here until interrupt from camera is received
+
+		if (FRAME_INTR == 4) {
+			// frame interrupt for odd frame received.......
+
+			// configuring the hdmi core to show cpu1 frame
+			//ConfigHdmiVDMA(detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME], PROC_VIDEO_BASEADDR_CPU1);
+			ConfigHdmiVDMA(detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME], PROC_VIDEO_BASEADDR);
+
+			//for (delay_var = 0; delay_var < delay; delay_var++);
+			FRAME_INTR = 0;
+
+			// handle this frame on this core!!
+
+			// storing the current frame onto cpu0 memory space
+			DDRVideoWr(640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME]);
+			// grayscaling the captured image and writing to a separate memory region in ddr
+			ConvToGrayHLS(VIDEO_BASEADDR, PROC_VIDEO_BASEADDR, detailedTiming[currentResolution][H_ACTIVE_TIME]);
+
+		} else if (FRAME_INTR == 6) {
+			// frame interrupt for even frame received......
+
+
+			// configuring the hdmi core to show cpu0 frame
+			//ConfigHdmiVDMA(detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME], PROC_VIDEO_BASEADDR);
+			//for (delay_var = 0; delay_var < delay; delay_var++);
+			FRAME_INTR = 0;
+
+			// interrupt cpu1 to capture (+ process) this frame!!
+
+			semaphore_cpu0_signal();
+			// wait until the frame is completely processed by CPU1 core
+			semaphore_cpu0_wait();
+		} */
+
 	}
 
 	Xil_DCacheDisable();
 	Xil_ICacheDisable();
-#endif
-
-
 
 	return(0);
 }

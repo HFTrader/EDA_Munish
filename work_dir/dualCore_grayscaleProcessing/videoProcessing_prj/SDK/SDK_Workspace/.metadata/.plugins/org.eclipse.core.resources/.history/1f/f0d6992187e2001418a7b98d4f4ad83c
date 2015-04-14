@@ -222,7 +222,7 @@ int main()
 	//SetVideoResolution(RESOLUTION_640x480);
 
 	//while (APP_ChangeResolution())
-	//TODO: make currentResolution variable shared between the two cores so that if cpu0 changes it then cpu1 should update its processing w.r.t it
+	//TODO: make resolution variable shared between the two cores so that if cpu0 changes it then cpu1 should update its processing w.r.t it
 	while (1)
 	{
 		if (ATV_GetElapsedMs (StartCount, NULL) >= HDMI_CALL_INTERVAL_MS)

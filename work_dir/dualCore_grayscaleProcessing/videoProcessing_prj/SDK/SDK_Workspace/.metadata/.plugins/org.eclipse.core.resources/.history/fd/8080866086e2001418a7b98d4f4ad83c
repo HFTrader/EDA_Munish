@@ -95,13 +95,13 @@ void AXI_INTERRUPT_VsyncIntr_Handler(void * baseaddr_p)
   cnt++;
   if (cnt>1) {
 	  cnt = 0;
-	  ConfigHdmiVDMA (detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME], PROC_VIDEO_BASEADDR_CPU1);
+	  //ConfigHdmiVDMA (detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME], PROC_VIDEO_BASEADDR_CPU1);
 
 	  semaphore_cpu0_signal();
   } else {
 	  FRAME_INTR = 1;
 
-	  ConfigHdmiVDMA (detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME], PROC_VIDEO_BASEADDR);
+	  //ConfigHdmiVDMA (detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME], PROC_VIDEO_BASEADDR);
   }
 
 }
