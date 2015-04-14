@@ -29,6 +29,9 @@
 /* Declare a value stored in OCM space which is visible to both CPUs. */
 #define SEMAPHORE_VALUE      (*(volatile unsigned long *)(SHARED_OCM_MEMORY_BASE))
 
+// share the currentResolution variable so that it is visible to CPU1 as well
+#define shared_currentResolution (*(volatile unsigned char *)(SHARED_OCM_MEMORY_BASE + 100))
+
 
 
 int semaphore_cpu1_signal()
@@ -47,7 +50,7 @@ int semaphore_cpu1_wait()
 
 
 
-
+#if 0
 extern void delay_ms(u32 ms_count);
 extern char inbyte(void);
 
@@ -151,6 +154,7 @@ static BOOL APP_DriverEnabled (void)
     return (LastEnable);
 }
 
+
 /***************************************************************************//**
  * @brief Changes the video resolution depending on User input.
  *
@@ -184,8 +188,7 @@ static int APP_ChangeResolution (void)
 	}
 	return 1;
 }
-
-
+#endif
 
 
 /***************************************************************************//**
@@ -208,54 +211,17 @@ int main()
      */
 	Xil_SetTlbAttributes(SHARED_OCM_MEMORY_BASE, 0x14de2);
 
-	UINT32 StartCount;
-	MajorRev     = 1;
-	MinorRev     = 1;
-	RcRev        = 1;
-	DriverEnable = TRUE;
-	LastEnable   = FALSE;
-
-	StartCount = HAL_GetCurrentMsCount();
-	ADIAPI_TransmitterMain();
-
-	/*Initialize the HDMI Core with default display settings*/
-	//SetVideoResolution(RESOLUTION_640x480);
-
-	//while (APP_ChangeResolution())
-	//TODO: make currentResolution variable shared between the two cores so that if cpu0 changes it then cpu1 should update its processing w.r.t it
 	while (1)
 	{
-		if (ATV_GetElapsedMs (StartCount, NULL) >= HDMI_CALL_INTERVAL_MS)
-		{
-			StartCount = HAL_GetCurrentMsCount();
-			if (APP_DriverEnabled())
-			{
-				ADIAPI_TransmitterMain();
-			}
-		}
-
 		semaphore_cpu1_wait();
 
 		// storing the current frame onto cpu0 memory space
-		DDRVideoWr(640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME]);
-
+		DDRVideoWr(640, 480, detailedTiming[shared_currentResolution][H_ACTIVE_TIME], detailedTiming[shared_currentResolution][V_ACTIVE_TIME]);
 		// grayscaling the captured image and writing to a separate memory region in ddr
-		ConvToGrayHLS(VIDEO_BASEADDR, PROC_VIDEO_BASEADDR, detailedTiming[currentResolution][H_ACTIVE_TIME]);
+		ConvToGrayHLS(VIDEO_BASEADDR, PROC_VIDEO_BASEADDR, detailedTiming[shared_currentResolution][H_ACTIVE_TIME]);
 
 		semaphore_cpu1_signal();
 	}
-
-    /*while(1) {
-    	semaphore_cpu1_wait();
-
-		// storing the current frame onto cpu0 memory space
-		DDRVideoWr(640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME]);
-
-		// grayscaling the captured image and writing to a separate memory region in ddr
-		ConvToGrayHLS(VIDEO_BASEADDR, PROC_VIDEO_BASEADDR, detailedTiming[currentResolution][H_ACTIVE_TIME]);
-
-		semaphore_cpu1_signal();
-    }*/
 
 #if 0
 	UINT32 StartCount;

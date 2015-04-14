@@ -158,6 +158,7 @@ void ConfigHdmiVDMA (unsigned short horizontalActiveTime,
 		unsigned long vdmaVideoBaseAddress);
 
 void SetVideoResolution(unsigned char resolution);
+extern void set_sharedVideoResolution(unsigned char resolution);
 
 void InitHdmiAudioPcore(void);
 

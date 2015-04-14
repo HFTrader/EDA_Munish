@@ -257,6 +257,7 @@ void ConfigHdmiVDMA (unsigned short horizontalActiveTime, unsigned short vertica
 void SetVideoResolution(unsigned char resolution)
 {
 	currentResolution = resolution;
+	set_sharedVideoResolution(resolution);
 
 	CLKGEN_SetRate(detailedTiming[resolution][PIXEL_CLOCK], 200000000);
 	InitHdmiVideoPcore(detailedTiming[resolution][H_ACTIVE_TIME],

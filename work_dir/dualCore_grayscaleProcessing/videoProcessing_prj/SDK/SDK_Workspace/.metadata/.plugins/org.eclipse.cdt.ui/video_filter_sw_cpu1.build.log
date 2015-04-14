@@ -1,22 +1,6 @@
-11:17:54 **** Auto Build of configuration Debug for project video_filter_sw_cpu1 ****
+12:40:46 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
 make all 
-Building file: ../src/src/main.c
-Invoking: ARM gcc compiler
-arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_cpu1/src/inc" -c -fmessage-length=0 -I../../standalone_amp_bsp_0/ps7_cortexa9_1/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
-../src/src/main.c:159:12: warning: 'APP_ChangeResolution' defined but not used [-Wunused-function]
-Finished building: ../src/src/main.c
- 
-Building target: video_filter_sw_cpu1.elf
-Invoking: ARM gcc linker
-arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_cpu1/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_amp_bsp_0/ps7_cortexa9_1/lib -o "video_filter_sw_cpu1.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-Finished building target: video_filter_sw_cpu1.elf
- 
-Invoking: ARM Print Size
-arm-xilinx-eabi-size video_filter_sw_cpu1.elf  |tee "video_filter_sw_cpu1.elf.size"
-   text	   data	    bss	    dec	    hex	filename
- 100400	   1888	  34396	 136684	  215ec	video_filter_sw_cpu1.elf
-Finished building: video_filter_sw_cpu1.elf.size
- 
+make: Nothing to be done for `all'.
 
-11:17:55 Build Finished (took 1s.160ms)
+12:40:46 Build Finished (took 58ms)
 

@@ -43,6 +43,8 @@ extern char inbyte(void);
 #define SHARED_OCM_MEMORY_BASE   0xFFFF0000
 /* Declare a value stored in OCM space which is visible to both CPUs. */
 #define SEMAPHORE_VALUE      (*(volatile unsigned long *)(SHARED_OCM_MEMORY_BASE))
+// share the currentResolution variable so that it is visible to CPU1 as well
+#define shared_currentResolution (*(volatile unsigned char *)(SHARED_OCM_MEMORY_BASE + 100))
 
 /******************************************************************************/
 /************************ Variables Definitions *******************************/
@@ -194,7 +196,9 @@ int semaphore_cpu0_wait()
 	return 0;
 }
 
-
+void set_sharedVideoResolution(unsigned char resolution) {
+	shared_currentResolution = resolution;
+}
 
 /***************************************************************************//**
  * @brief Main function.
@@ -226,6 +230,7 @@ int main()
      * B=b0
 	 */
     Xil_SetTlbAttributes(SHARED_OCM_MEMORY_BASE, 0x14de2);
+
 #if 0
     /* Set the CPU1 start address to match the beginning of the memory segment
      * defined in the linker script.
@@ -286,42 +291,6 @@ int main()
 		DDRVideoWr(640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME]);
 		// grayscaling the captured image and writing to a separate memory region in ddr
 		ConvToGrayHLS(VIDEO_BASEADDR, PROC_VIDEO_BASEADDR, detailedTiming[currentResolution][H_ACTIVE_TIME]);
-
-/*		while (FRAME_INTR == 0);			// keep on waiting here until interrupt from camera is received
-
-		if (FRAME_INTR == 4) {
-			// frame interrupt for odd frame received.......
-
-			// configuring the hdmi core to show cpu1 frame
-			//ConfigHdmiVDMA(detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME], PROC_VIDEO_BASEADDR_CPU1);
-			ConfigHdmiVDMA(detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME], PROC_VIDEO_BASEADDR);
-
-			//for (delay_var = 0; delay_var < delay; delay_var++);
-			FRAME_INTR = 0;
-
-			// handle this frame on this core!!
-
-			// storing the current frame onto cpu0 memory space
-			DDRVideoWr(640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME]);
-			// grayscaling the captured image and writing to a separate memory region in ddr
-			ConvToGrayHLS(VIDEO_BASEADDR, PROC_VIDEO_BASEADDR, detailedTiming[currentResolution][H_ACTIVE_TIME]);
-
-		} else if (FRAME_INTR == 6) {
-			// frame interrupt for even frame received......
-
-
-			// configuring the hdmi core to show cpu0 frame
-			//ConfigHdmiVDMA(detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME], PROC_VIDEO_BASEADDR);
-			//for (delay_var = 0; delay_var < delay; delay_var++);
-			FRAME_INTR = 0;
-
-			// interrupt cpu1 to capture (+ process) this frame!!
-
-			semaphore_cpu0_signal();
-			// wait until the frame is completely processed by CPU1 core
-			semaphore_cpu0_wait();
-		} */
-
 	}
 
 	Xil_DCacheDisable();
