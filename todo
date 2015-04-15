@@ -12,3 +12,21 @@ After discussion with Munish, following tasks need to be carried out:
    
    
 -- After doing this corner (bare-metal + 2cores), move onto the next corner (OS (possibly Linux-SMP) + 2cores)   
+
+
+===================================================================================================================================================================================
+
+
+Progress log
+------------
+
+-- On 13/04/2015, the simple gray-scale multicore was developed. After discussion with Munish on 15/04/2015, it is decided that it is OK for both cores to write at the same memory  
+   locations and no need to alternate HDMI between two seperate memory regions.
+
+-- Next tasks
+   ----------
+	-- verify via some timestamps that indeed each frame is being proccessed by the core and no frame is being missed and 'writing of frame to location by one core' is not
+           overlapped with 'reading that frame for HDMI'
+        -- if verified, introduce Hardware accelerators into the system (like in labD)......1st use 2 HAs one for each core.......then see if it is possible to have one HA in the system
+           which is shared b/w the 2 cores via semaphore for grayscaling process
+

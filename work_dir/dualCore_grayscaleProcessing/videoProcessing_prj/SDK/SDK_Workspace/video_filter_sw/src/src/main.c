@@ -271,8 +271,6 @@ int main()
 	  		//return XST_FAILURE;
 	  	}
 
-	//ConfigHdmiVDMA(detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME], VIDEO_BASEADDR_CPU1);
-
 	while (APP_ChangeResolution())
 	{
 		if (ATV_GetElapsedMs (StartCount, NULL) >= HDMI_CALL_INTERVAL_MS)
