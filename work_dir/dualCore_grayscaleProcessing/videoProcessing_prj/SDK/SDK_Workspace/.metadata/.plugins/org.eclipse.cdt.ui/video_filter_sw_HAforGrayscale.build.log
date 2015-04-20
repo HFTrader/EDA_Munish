@@ -1,0 +1,16 @@
+18:07:36 **** Build of configuration Debug for project video_filter_sw_HAforGrayscale ****
+make all 
+Building target: video_filter_sw_HAforGrayscale.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_HAforGrayscale/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_HAforGrayscale.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_HAforGrayscale.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_HAforGrayscale.elf  |tee "video_filter_sw_HAforGrayscale.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 101616	   1888	  34412	 137916	  21abc	video_filter_sw_HAforGrayscale.elf
+Finished building: video_filter_sw_HAforGrayscale.elf.size
+ 
+
+18:07:36 Build Finished (took 326ms)
+

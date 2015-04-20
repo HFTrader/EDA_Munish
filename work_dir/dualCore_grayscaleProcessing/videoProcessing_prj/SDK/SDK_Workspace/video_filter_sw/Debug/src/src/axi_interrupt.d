@@ -19,7 +19,7 @@ src/src/axi_interrupt.d: ../src/src/axi_interrupt.c \
  /home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/src/inc/tx_lib.h \
  /home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/src/inc/atv_common.h \
  /home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/src/inc/atv_types.h \
- ../src/src/profile_cnt.h
+ ../src/src/profile_cnt.h ../src/src/global.h
 
 ../src/src/axi_interrupt.h:
 
@@ -64,3 +64,5 @@ src/src/axi_interrupt.d: ../src/src/axi_interrupt.c \
 /home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/src/inc/atv_types.h:
 
 ../src/src/profile_cnt.h:
+
+../src/src/global.h:

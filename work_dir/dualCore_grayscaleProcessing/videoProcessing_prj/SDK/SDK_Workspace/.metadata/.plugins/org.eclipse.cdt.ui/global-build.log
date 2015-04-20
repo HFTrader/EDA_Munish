@@ -1,36 +1,34 @@
-20:06:18 **** Incremental Build of configuration Debug for project video_filter_sw ****
+16:51:02 **** Incremental Build of configuration Debug for project video_filter_sw ****
 make all 
 make: Nothing to be done for `all'.
-20:06:18 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
+16:51:02 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
 make all 
 make: Nothing to be done for `all'.
-20:06:30 **** Incremental Build of configuration Debug for project app_cpu1 ****
+16:51:15 **** Incremental Build of configuration Debug for project app_cpu1 ****
 make all 
 make: Nothing to be done for `all'.
-20:06:30 **** Incremental Build of configuration Debug for project app_cpu0 ****
+16:51:15 **** Incremental Build of configuration Debug for project app_cpu0 ****
 make all 
 make: Nothing to be done for `all'.
-20:06:31 **** Incremental Build of configuration Debug for project video_filter_sw ****
+16:51:16 **** Incremental Build of configuration Debug for project video_filter_sw ****
 make all 
 make: Nothing to be done for `all'.
-20:06:31 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
+16:51:16 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
 make all 
 make: Nothing to be done for `all'.
-20:06:32 **** Incremental Build of configuration Debug for project video_filter_sw_orig ****
+16:51:17 **** Incremental Build of configuration Debug for project video_filter_sw_orig ****
 make all 
 make: Nothing to be done for `all'.
-20:06:54 **** Incremental Build of configuration Debug for project app_cpu1 ****
+18:07:36 **** Build of configuration Debug for project video_filter_sw_HAforGrayscale ****
 make all 
-make: Nothing to be done for `all'.
-20:06:54 **** Incremental Build of configuration Debug for project app_cpu0 ****
-make all 
-make: Nothing to be done for `all'.
-20:06:54 **** Incremental Build of configuration Debug for project video_filter_sw ****
-make all 
-make: Nothing to be done for `all'.
-20:06:55 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
-make all 
-make: Nothing to be done for `all'.
-20:06:55 **** Incremental Build of configuration Debug for project video_filter_sw_orig ****
-make all 
-make: Nothing to be done for `all'.
+Building target: video_filter_sw_HAforGrayscale.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_HAforGrayscale/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_HAforGrayscale.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_HAforGrayscale.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_HAforGrayscale.elf  |tee "video_filter_sw_HAforGrayscale.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 101616	   1888	  34412	 137916	  21abc	video_filter_sw_HAforGrayscale.elf
+Finished building: video_filter_sw_HAforGrayscale.elf.size
+ 

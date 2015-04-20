@@ -21,30 +21,17 @@
 #include "xil_mmu.h"
 #include "sw_functions.h"
 #include "xpseudo_asm.h"
+#include "global.h"
 
+
+
+#if 0
 #define sev() __asm__("sev")
 #define CPU1_MEM_BASE        0x00200000
 #define CPU1_START_ADR       0xFFFFFFF0
+#endif
 
 
-extern void delay_ms(u32 ms_count);
-extern char inbyte(void);
-
-/******************************************************************************/
-/************************** Macros Definitions ********************************/
-/******************************************************************************/
-#define HDMI_CALL_INTERVAL_MS	10			/* Interval between two         */
-											/* iterations of the main loop  */
-#define DBG_MSG                 xil_printf
-
-/* Define a data memory space which is visible to both CPUs, the OCM is ideal
- * since it is the lowest latency memory which is visible to both ARM cores.
- */
-#define SHARED_OCM_MEMORY_BASE   0xFFFF0000
-/* Declare a value stored in OCM space which is visible to both CPUs. */
-#define SEMAPHORE_VALUE      (*(volatile unsigned long *)(SHARED_OCM_MEMORY_BASE))
-// share the currentResolution variable so that it is visible to CPU1 as well
-#define shared_currentResolution (*(volatile unsigned char *)(SHARED_OCM_MEMORY_BASE + 100))
 
 /******************************************************************************/
 /************************ Variables Definitions *******************************/
@@ -54,7 +41,7 @@ static UCHAR    MinorRev;      /* Usually used for code-drops */
 static UCHAR    RcRev;         /* Release Candidate Number */
 static BOOL     DriverEnable;
 static BOOL     LastEnable;
-short int FRAME_INTR = 0 ;
+
 
 XScuGic InterruptController; /* Instance of the Interrupt Controller */
 static XScuGic_Config *GicConfig;/* The configuration parameters of the controller */
@@ -200,6 +187,8 @@ void set_sharedVideoResolution(unsigned char resolution) {
 	shared_currentResolution = resolution;
 }
 
+short int FRAME_INTR = 0;
+
 /***************************************************************************//**
  * @brief Main function.
  *
@@ -214,8 +203,6 @@ int main()
 	RcRev        = 1;
 	DriverEnable = TRUE;
 	LastEnable   = FALSE;
-	//int delay = 100000;
-	//int delay_var = 0;
 
 	semaphore_cpu0_init();
 
@@ -287,6 +274,10 @@ int main()
 
 		// storing the current frame onto cpu0 memory space
 		DDRVideoWr(640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME]);
+
+		//printf("DEBUG_CPU0: current frame captured by CPU0....now processing it! \n\r");
+		//debug_var = 0;
+
 		// grayscaling the captured image and writing to a separate memory region in ddr
 		ConvToGrayHLS(VIDEO_BASEADDR, PROC_VIDEO_BASEADDR, detailedTiming[currentResolution][H_ACTIVE_TIME]);
 	}

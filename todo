@@ -27,6 +27,10 @@ Progress log
    ----------
 	-- verify via some timestamps that indeed each frame is being proccessed by the core and no frame is being missed and 'writing of frame to location by one core' is not
            overlapped with 'reading that frame for HDMI'
+	   ( using the variable in the shared memory b/w the 2 cores, it is verified that each odd frame is being handled by CPU0 and each even frame by CPU1 within the same memory
+	     space without any conflicts! )
+	   DONE!!
+
         -- if verified, introduce Hardware accelerators into the system (like in labD)......1st use 2 HAs one for each core.......then see if it is possible to have one HA in the system
            which is shared b/w the 2 cores via semaphore for grayscaling process
 

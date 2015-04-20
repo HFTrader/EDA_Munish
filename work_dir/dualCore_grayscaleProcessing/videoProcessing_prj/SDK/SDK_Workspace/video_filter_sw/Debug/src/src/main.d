@@ -30,7 +30,8 @@ src/src/main.d: ../src/src/main.c \
  ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_exception.h \
  ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_mmu.h \
  ../src/src/sw_functions.h \
- ../../standalone_bsp_0/ps7_cortexa9_0/include/xpseudo_asm.h
+ ../../standalone_bsp_0/ps7_cortexa9_0/include/xpseudo_asm.h \
+ ../src/src/global.h
 
 ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_cache.h:
 
@@ -97,3 +98,5 @@ src/src/main.d: ../src/src/main.c \
 ../src/src/sw_functions.h:
 
 ../../standalone_bsp_0/ps7_cortexa9_0/include/xpseudo_asm.h:
+
+../src/src/global.h:

@@ -15,10 +15,8 @@
 #include "transmitter.h"
 
 #include "profile_cnt.h"
+#include "global.h"
 
-extern short int FRAME_INTR;
-extern int semaphore_cpu0_signal();
-extern int semaphore_cpu0_wait();
 
 /************************** Function Definitions ***************************/
 
@@ -65,17 +63,22 @@ unsigned int t=0;
 void AXI_INTERRUPT_VsyncIntr_Handler(void * baseaddr_p)
 {
   static int cnt = 0;
+  static int debug_frameNo = 0;
+
+  //printf("DEBUG_CPU0: debug_var = %d..........debug_frameNo=%d\n\r", debug_var, debug_frameNo);
 
   cnt++;
+  debug_frameNo++;
+
   if (cnt>1) {
 	  cnt = 0;
-	  //ConfigHdmiVDMA (detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME], PROC_VIDEO_BASEADDR_CPU1);
-
+	  // interrupt the CPU1 to handle this frame
 	  semaphore_cpu0_signal();
+	  //printf("DEBUG_CPU0: frame handled by cpu1...debug_frameNo=%d\n\r", debug_frameNo);
   } else {
+	  // interrupt the CPU0 (this core's main()) to handle this frame
 	  FRAME_INTR = 1;
-
-	  //ConfigHdmiVDMA (detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME], PROC_VIDEO_BASEADDR);
+	  //printf("DEBUG_CPU0: frame handled by cpu0...debug_frameNo=%d\n\r", debug_frameNo);
   }
 
 }
