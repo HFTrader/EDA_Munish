@@ -10,6 +10,7 @@ src/src/transmitter.d: ../src/src/transmitter.c \
  ../src/src/cf_hdmi.h \
  ../../standalone_bsp_0/ps7_cortexa9_0/include/xparameters.h \
  ../../standalone_bsp_0/ps7_cortexa9_0/include/xparameters_ps.h \
+ ../src/src/hw_config.h \
  ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_io.h \
  ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_types.h \
  ../../standalone_bsp_0/ps7_cortexa9_0/include/xpseudo_asm.h \
@@ -41,6 +42,8 @@ src/src/transmitter.d: ../src/src/transmitter.c \
 ../../standalone_bsp_0/ps7_cortexa9_0/include/xparameters.h:
 
 ../../standalone_bsp_0/ps7_cortexa9_0/include/xparameters_ps.h:
+
+../src/src/hw_config.h:
 
 ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_io.h:
 

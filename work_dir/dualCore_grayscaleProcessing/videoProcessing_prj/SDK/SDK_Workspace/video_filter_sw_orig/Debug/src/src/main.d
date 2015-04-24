@@ -11,6 +11,7 @@ src/src/main.d: ../src/src/main.c \
  ../../standalone_bsp_0/ps7_cortexa9_0/include/xparameters_ps.h \
  ../src/src/cf_hdmi.h \
  ../../standalone_bsp_0/ps7_cortexa9_0/include/xparameters.h \
+ ../src/src/hw_config.h \
  /home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_orig/src/inc/atv_platform.h \
  /home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_orig/src/inc/atv_types.h \
  ../src/src/transmitter.h ../src/src/transmitter_defs.h \
@@ -27,7 +28,11 @@ src/src/main.d: ../src/src/main.c \
  ../../standalone_bsp_0/ps7_cortexa9_0/include/xstatus.h \
  ../../standalone_bsp_0/ps7_cortexa9_0/include/xscugic.h \
  ../../standalone_bsp_0/ps7_cortexa9_0/include/xscugic_hw.h \
- ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_exception.h
+ ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_exception.h \
+ /home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_orig/src/inc/xgray_scale.h \
+ ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_types.h \
+ ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_assert.h \
+ /home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_orig/src/inc/xgray_scale_CONTROL_BUS.h
 
 ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_cache.h:
 
@@ -52,6 +57,8 @@ src/src/main.d: ../src/src/main.c \
 ../src/src/cf_hdmi.h:
 
 ../../standalone_bsp_0/ps7_cortexa9_0/include/xparameters.h:
+
+../src/src/hw_config.h:
 
 /home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_orig/src/inc/atv_platform.h:
 
@@ -88,3 +95,11 @@ src/src/main.d: ../src/src/main.c \
 ../../standalone_bsp_0/ps7_cortexa9_0/include/xscugic_hw.h:
 
 ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_exception.h:
+
+/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_orig/src/inc/xgray_scale.h:
+
+../../standalone_bsp_0/ps7_cortexa9_0/include/xil_types.h:
+
+../../standalone_bsp_0/ps7_cortexa9_0/include/xil_assert.h:
+
+/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_orig/src/inc/xgray_scale_CONTROL_BUS.h:

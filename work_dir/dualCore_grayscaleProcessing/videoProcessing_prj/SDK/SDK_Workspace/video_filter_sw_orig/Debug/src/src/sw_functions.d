@@ -8,7 +8,7 @@ src/src/sw_functions.d: ../src/src/sw_functions.c \
  ../../standalone_bsp_0/ps7_cortexa9_0/include/xparameters.h \
  ../../standalone_bsp_0/ps7_cortexa9_0/include/xparameters_ps.h \
  ../../standalone_bsp_0/ps7_cortexa9_0/include/xparameters.h \
- ../src/src/cf_hdmi.h ../src/src/sw_functions.h \
+ ../src/src/cf_hdmi.h ../src/src/hw_config.h ../src/src/sw_functions.h \
  ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_cache.h \
  ../../standalone_bsp_0/ps7_cortexa9_0/include/xdmaps.h \
  ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_assert.h \
@@ -36,6 +36,8 @@ src/src/sw_functions.d: ../src/src/sw_functions.c \
 ../../standalone_bsp_0/ps7_cortexa9_0/include/xparameters.h:
 
 ../src/src/cf_hdmi.h:
+
+../src/src/hw_config.h:
 
 ../src/src/sw_functions.h:
 

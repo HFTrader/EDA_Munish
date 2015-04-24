@@ -153,7 +153,33 @@ pcores/cam_interface_v1_00_a/hdl/vhdl/flag_crossing.vhd \
 pcores/cam_interface_v1_00_a/hdl/vhdl/ov7670_capture.vhd \
 pcores/cam_interface_v1_00_a/hdl/vhdl/ov7670cam_if.vhd \
 pcores/cam_interface_v1_00_a/hdl/vhdl/user_logic.vhd \
-pcores/cam_interface_v1_00_a/hdl/vhdl/cam_interface.vhd
+pcores/cam_interface_v1_00_a/hdl/vhdl/cam_interface.vhd \
+pcores/gray_scale_top_v1_00_a/synhdl/verilog/AXIvideo2Mat_32_1080_1920_32_s.v \
+pcores/gray_scale_top_v1_00_a/synhdl/verilog/gray_scale_mul_8ns_18ns_27_3.v \
+pcores/gray_scale_top_v1_00_a/synhdl/verilog/gray_scale_mul_8ns_20ns_28_3.v \
+pcores/gray_scale_top_v1_00_a/synhdl/verilog/gray_scale_mul_8ns_21ns_29_3.v \
+pcores/gray_scale_top_v1_00_a/synhdl/verilog/CvtColor_0_32_32_1080_1920_s.v \
+pcores/gray_scale_top_v1_00_a/synhdl/verilog/FIFO_gray_scale_img_0_cols_V.v \
+pcores/gray_scale_top_v1_00_a/synhdl/verilog/FIFO_gray_scale_img_0_cols_V_channel6.v \
+pcores/gray_scale_top_v1_00_a/synhdl/verilog/FIFO_gray_scale_img_0_data_stream_0_V.v \
+pcores/gray_scale_top_v1_00_a/synhdl/verilog/FIFO_gray_scale_img_0_data_stream_1_V.v \
+pcores/gray_scale_top_v1_00_a/synhdl/verilog/FIFO_gray_scale_img_0_data_stream_2_V.v \
+pcores/gray_scale_top_v1_00_a/synhdl/verilog/FIFO_gray_scale_img_0_rows_V.v \
+pcores/gray_scale_top_v1_00_a/synhdl/verilog/FIFO_gray_scale_img_0_rows_V_channel5.v \
+pcores/gray_scale_top_v1_00_a/synhdl/verilog/FIFO_gray_scale_img_1_cols_V.v \
+pcores/gray_scale_top_v1_00_a/synhdl/verilog/FIFO_gray_scale_img_1_data_stream_0_V.v \
+pcores/gray_scale_top_v1_00_a/synhdl/verilog/FIFO_gray_scale_img_1_data_stream_1_V.v \
+pcores/gray_scale_top_v1_00_a/synhdl/verilog/FIFO_gray_scale_img_1_data_stream_2_V.v \
+pcores/gray_scale_top_v1_00_a/synhdl/verilog/FIFO_gray_scale_img_1_rows_V.v \
+pcores/gray_scale_top_v1_00_a/synhdl/verilog/init.v \
+pcores/gray_scale_top_v1_00_a/synhdl/verilog/init_1.v \
+pcores/gray_scale_top_v1_00_a/synhdl/verilog/Mat2AXIvideo_32_1080_1920_32_s.v \
+pcores/gray_scale_top_v1_00_a/synhdl/verilog/gray_scale.v \
+pcores/gray_scale_top_v1_00_a/synhdl/verilog/gray_scale_ap_rst_if.v \
+pcores/gray_scale_top_v1_00_a/synhdl/verilog/gray_scale_CONTROL_BUS_if.v \
+pcores/gray_scale_top_v1_00_a/synhdl/verilog/gray_scale_INPUT_STREAM_if.v \
+pcores/gray_scale_top_v1_00_a/synhdl/verilog/gray_scale_OUTPUT_STREAM_if.v \
+pcores/gray_scale_top_v1_00_a/synhdl/verilog/gray_scale_top.v
 
 WRAPPER_NGC_FILES = implementation/system_processing_system7_0_wrapper.ngc \
 implementation/system_axi_vdma_0_wrapper.ngc \
@@ -168,7 +194,10 @@ implementation/system_util_vector_logic_0_wrapper.ngc \
 implementation/system_axi_i2s_adi_0_wrapper.ngc \
 implementation/system_util_i2c_mixer_0_wrapper.ngc \
 implementation/system_axi_dma_i2s_wrapper.ngc \
-implementation/system_cam_interface_0_wrapper.ngc
+implementation/system_cam_interface_0_wrapper.ngc \
+implementation/system_axi_interconnect_3_wrapper.ngc \
+implementation/system_axi_vdma_1_wrapper.ngc \
+implementation/system_gray_scale_top_0_wrapper.ngc
 
 POSTSYN_NETLIST = implementation/$(SYSTEM).ngc
 

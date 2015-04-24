@@ -18,6 +18,8 @@
 // for interrupt handling
 #include "axi_interrupt.h"
 #include "xscugic.h"
+#include "xgray_scale.h"
+#include "hw_config.h"
 
 extern void delay_ms(u32 ms_count);
 extern char inbyte(void);
@@ -156,6 +158,9 @@ static int APP_ChangeResolution (void)
 	return 1;
 }
 
+XGray_scale xGrayScaleFilter;
+
+
 /***************************************************************************//**
  * @brief Main function.
  *
@@ -179,6 +184,14 @@ int main()
 					 XPAR_SCUGIC_SINGLE_DEVICE_ID,
 					 XPAR_SCUTIMER_INTR);
 
+	xGrayScaleFilter.Control_bus_BaseAddress = XPAR_GRAY_SCALE_TOP_0_S_AXI_CONTROL_BUS_BASEADDR;
+	xGrayScaleFilter.IsReady = XIL_COMPONENT_IS_READY;
+	config_grayScaleFilter();
+
+	resetVDMA();
+	config_filterVDMA(XPAR_AXI_VDMA_1_BASEADDR, DMA_MEM_TO_DEV, VIDEO_BASEADDR);
+	config_filterVDMA(XPAR_AXI_VDMA_1_BASEADDR, DMA_DEV_TO_MEM, HWPROC_VIDEO_BASEADDR);
+
 	DBG_MSG("  To change the video resolution press:\r\n");
 	DBG_MSG("  '0' - 640x480;  '1' - 800x600;  '2' - 1024x768; '3' - 1280x720 \r\n");
 	DBG_MSG("  '4' - 1360x768; '5' - 1600x900; '6' - 1920x1080.\r\n");
@@ -198,6 +211,8 @@ int main()
 		xil_printf("Unable to initialize Interrupts");
 	  		//return XST_FAILURE;
 	  	}
+
+	ConfigHdmiVDMA ( detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME], HWPROC_VIDEO_BASEADDR);
 
 	while(APP_ChangeResolution())
 	{

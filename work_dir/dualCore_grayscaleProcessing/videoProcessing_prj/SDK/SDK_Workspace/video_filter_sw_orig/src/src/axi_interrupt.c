@@ -14,6 +14,8 @@
 
 #include "profile_cnt.h"
 
+#include <stdio.h>
+
 extern short int FRAME_INTR;
 
 /************************** Function Definitions ***************************/
@@ -65,11 +67,12 @@ void AXI_INTERRUPT_VsyncIntr_Handler(void * baseaddr_p)
   if (cnt > 1) {
 	  cnt = 0 ;
 	  DDRVideoWr(640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME]);
-	  ConvToGrayHLS (VIDEO_BASEADDR, PROC_VIDEO_BASEADDR, detailedTiming[currentResolution][H_ACTIVE_TIME]);
   }
   else {
 	  FRAME_INTR = 1;
   }
+
+  printf("haha\n\r");
 }
 
 void AXI_INTERRUPT_HrefIntr_Handler(void * baseaddr_p)

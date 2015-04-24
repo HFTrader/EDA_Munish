@@ -13,7 +13,8 @@ src/src/axi_interrupt.d: ../src/src/axi_interrupt.c \
  ../../standalone_bsp_0/ps7_cortexa9_0/include/xparameters_ps.h \
  ../src/src/cf_hdmi.h \
  ../../standalone_bsp_0/ps7_cortexa9_0/include/xparameters.h \
- ../src/src/sw_functions.h ../src/src/profile_cnt.h
+ ../src/src/hw_config.h ../src/src/sw_functions.h \
+ ../src/src/profile_cnt.h
 
 ../src/src/axi_interrupt.h:
 
@@ -42,6 +43,8 @@ src/src/axi_interrupt.d: ../src/src/axi_interrupt.c \
 ../src/src/cf_hdmi.h:
 
 ../../standalone_bsp_0/ps7_cortexa9_0/include/xparameters.h:
+
+../src/src/hw_config.h:
 
 ../src/src/sw_functions.h:
 

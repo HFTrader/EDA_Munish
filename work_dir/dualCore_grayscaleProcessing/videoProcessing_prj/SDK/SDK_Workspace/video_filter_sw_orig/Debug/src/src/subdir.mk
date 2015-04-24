@@ -6,6 +6,7 @@
 C_SRCS += \
 ../src/src/axi_interrupt.c \
 ../src/src/cf_hdmi.c \
+../src/src/hw_config.c \
 ../src/src/main.c \
 ../src/src/sw_functions.c \
 ../src/src/transmitter.c 
@@ -13,6 +14,7 @@ C_SRCS += \
 OBJS += \
 ./src/src/axi_interrupt.o \
 ./src/src/cf_hdmi.o \
+./src/src/hw_config.o \
 ./src/src/main.o \
 ./src/src/sw_functions.o \
 ./src/src/transmitter.o 
@@ -20,6 +22,7 @@ OBJS += \
 C_DEPS += \
 ./src/src/axi_interrupt.d \
 ./src/src/cf_hdmi.d \
+./src/src/hw_config.d \
 ./src/src/main.d \
 ./src/src/sw_functions.d \
 ./src/src/transmitter.d 

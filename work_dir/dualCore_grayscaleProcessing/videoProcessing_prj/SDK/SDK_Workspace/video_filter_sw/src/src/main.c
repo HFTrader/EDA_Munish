@@ -22,6 +22,8 @@
 #include "sw_functions.h"
 #include "xpseudo_asm.h"
 #include "global.h"
+#include "xgray_scale.h"
+#include "hw_config.h"
 
 
 
@@ -189,6 +191,10 @@ void set_sharedVideoResolution(unsigned char resolution) {
 
 short int FRAME_INTR = 0;
 
+
+XGray_scale xGrayScaleFilter;
+
+
 /***************************************************************************//**
  * @brief Main function.
  *
@@ -238,6 +244,13 @@ int main()
 					 XPAR_SCUGIC_SINGLE_DEVICE_ID,
 					 XPAR_SCUTIMER_INTR);
 
+	xGrayScaleFilter.Control_bus_BaseAddress = XPAR_GRAY_SCALE_TOP_0_S_AXI_CONTROL_BUS_BASEADDR;
+	xGrayScaleFilter.IsReady = XIL_COMPONENT_IS_READY;
+	config_grayScaleFilter();
+	resetVDMA();
+	config_filterVDMA(XPAR_AXI_VDMA_1_BASEADDR, DMA_MEM_TO_DEV, VIDEO_BASEADDR);
+	config_filterVDMA(XPAR_AXI_VDMA_1_BASEADDR, DMA_DEV_TO_MEM, HWPROC_VIDEO_BASEADDR);
+
 	DBG_MSG("  To change the video resolution press:\r\n");
 	DBG_MSG("  '0' - 640x480;  '1' - 800x600;  '2' - 1024x768; '3' - 1280x720 \r\n");
 	DBG_MSG("  '4' - 1360x768; '5' - 1600x900; '6' - 1920x1080.\r\n");
@@ -258,8 +271,19 @@ int main()
 	  		//return XST_FAILURE;
 	  	}
 
+	ConfigHdmiVDMA(detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME], HWPROC_VIDEO_BASEADDR);
+
 	while (APP_ChangeResolution())
 	{
+		while (FRAME_INTR == 0);
+		FRAME_INTR = 0;
+
+		//printf("DEBUG_CPU0: current frame captured by CPU0....now processing it! \n\r");
+		//debug_var = 0;
+
+		// grayscaling the captured image and writing to a separate memory region in ddr
+		//ConvToGrayHLS(VIDEO_BASEADDR, PROC_VIDEO_BASEADDR, detailedTiming[currentResolution][H_ACTIVE_TIME]);
+
 		if (ATV_GetElapsedMs (StartCount, NULL) >= HDMI_CALL_INTERVAL_MS)
 		{
 			StartCount = HAL_GetCurrentMsCount();
@@ -268,18 +292,6 @@ int main()
 				ADIAPI_TransmitterMain();
 			}
 		}
-
-		while (FRAME_INTR == 0);
-		FRAME_INTR = 0;
-
-		// storing the current frame onto cpu0 memory space
-		DDRVideoWr(640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME]);
-
-		//printf("DEBUG_CPU0: current frame captured by CPU0....now processing it! \n\r");
-		//debug_var = 0;
-
-		// grayscaling the captured image and writing to a separate memory region in ddr
-		ConvToGrayHLS(VIDEO_BASEADDR, PROC_VIDEO_BASEADDR, detailedTiming[currentResolution][H_ACTIVE_TIME]);
 	}
 
 	Xil_DCacheDisable();
