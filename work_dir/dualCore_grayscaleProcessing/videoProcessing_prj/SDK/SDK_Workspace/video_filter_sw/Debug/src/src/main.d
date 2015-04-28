@@ -31,12 +31,11 @@ src/src/main.d: ../src/src/main.c \
  ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_mmu.h \
  ../src/src/sw_functions.h \
  ../../standalone_bsp_0/ps7_cortexa9_0/include/xpseudo_asm.h \
- ../src/src/global.h \
+ ../src/src/global.h ../src/src/hw_config.h \
  /home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/src/inc/xgray_scale.h \
  ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_types.h \
  ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_assert.h \
- /home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/src/inc/xgray_scale_CONTROL_BUS.h \
- ../src/src/hw_config.h
+ /home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/src/inc/xgray_scale_CONTROL_BUS.h
 
 ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_cache.h:
 
@@ -106,6 +105,8 @@ src/src/main.d: ../src/src/main.c \
 
 ../src/src/global.h:
 
+../src/src/hw_config.h:
+
 /home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/src/inc/xgray_scale.h:
 
 ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_types.h:
@@ -113,5 +114,3 @@ src/src/main.d: ../src/src/main.c \
 ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_assert.h:
 
 /home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/src/inc/xgray_scale_CONTROL_BUS.h:
-
-../src/src/hw_config.h:

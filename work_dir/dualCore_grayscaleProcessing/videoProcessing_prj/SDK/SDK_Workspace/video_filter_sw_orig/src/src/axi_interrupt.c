@@ -71,8 +71,6 @@ void AXI_INTERRUPT_VsyncIntr_Handler(void * baseaddr_p)
   else {
 	  FRAME_INTR = 1;
   }
-
-  printf("haha\n\r");
 }
 
 void AXI_INTERRUPT_HrefIntr_Handler(void * baseaddr_p)

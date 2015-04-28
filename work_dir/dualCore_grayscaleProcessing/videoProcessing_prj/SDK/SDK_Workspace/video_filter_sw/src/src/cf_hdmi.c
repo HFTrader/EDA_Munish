@@ -228,7 +228,7 @@ void InitHdmiVideoPcore(unsigned short horizontalActiveTime,
 	Xil_Out32((CFV_BASEADDR + AXI_HDMI_REG_CTRL),
 			  0x00000001); // enable
 
-	ConfigHdmiVDMA ( horizontalActiveTime,verticalActiveTime, VIDEO_BASEADDR);
+	//ConfigHdmiVDMA ( horizontalActiveTime,verticalActiveTime, VIDEO_BASEADDR);
 }
 
 void ConfigHdmiVDMA (unsigned short horizontalActiveTime, unsigned short verticalActiveTime,

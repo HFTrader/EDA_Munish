@@ -8,6 +8,8 @@
 #ifndef HW_CONFIG_H_
 #define HW_CONFIG_H_
 
+#include "xgray_scale.h"
+
 #define AXI_FILTER_RX_CTRL 			0x00000030 
 #define AXI_FILTER_RX_START1 			0x000000A0 + 0x0000000C
 #define AXI_FILTER_RX_START2 			0x000000A0 + 0x0000000C + 0x4
@@ -50,10 +52,10 @@ enum dma_transfer_direction {
 	DMA_TRANS_NONE,
 };
 
-void config_grayScaleFilter();
+void config_grayScaleFilter(XGray_scale xGrayScaleFilter);
 
 void config_filterVDMA(int VDMA_baseAddr, int vdma_direction, unsigned long base_address);
 
-void resetVDMA();
+void resetVDMA(unsigned char VDMA_ID);
 
 #endif /* HW_CONFIG_H_ */

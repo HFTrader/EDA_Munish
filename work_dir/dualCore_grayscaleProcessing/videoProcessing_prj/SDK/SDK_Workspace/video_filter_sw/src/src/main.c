@@ -22,7 +22,7 @@
 #include "sw_functions.h"
 #include "xpseudo_asm.h"
 #include "global.h"
-#include "xgray_scale.h"
+//#include "xgray_scale.h"
 #include "hw_config.h"
 
 
@@ -192,7 +192,7 @@ void set_sharedVideoResolution(unsigned char resolution) {
 short int FRAME_INTR = 0;
 
 
-XGray_scale xGrayScaleFilter;
+XGray_scale xGrayScaleFilter1, xGrayScaleFilter2;
 
 
 /***************************************************************************//**
@@ -244,12 +244,25 @@ int main()
 					 XPAR_SCUGIC_SINGLE_DEVICE_ID,
 					 XPAR_SCUTIMER_INTR);
 
-	xGrayScaleFilter.Control_bus_BaseAddress = XPAR_GRAY_SCALE_TOP_0_S_AXI_CONTROL_BUS_BASEADDR;
-	xGrayScaleFilter.IsReady = XIL_COMPONENT_IS_READY;
-	config_grayScaleFilter();
-	resetVDMA();
+
+
+
+	xGrayScaleFilter1.Control_bus_BaseAddress = XPAR_GRAY_SCALE_TOP_0_S_AXI_CONTROL_BUS_BASEADDR;
+	xGrayScaleFilter1.IsReady = XIL_COMPONENT_IS_READY;
+	config_grayScaleFilter(xGrayScaleFilter1);
+	resetVDMA(1);
 	config_filterVDMA(XPAR_AXI_VDMA_1_BASEADDR, DMA_MEM_TO_DEV, VIDEO_BASEADDR);
 	config_filterVDMA(XPAR_AXI_VDMA_1_BASEADDR, DMA_DEV_TO_MEM, HWPROC_VIDEO_BASEADDR);
+
+	xGrayScaleFilter2.Control_bus_BaseAddress = XPAR_GRAY_SCALE_TOP_1_S_AXI_CONTROL_BUS_BASEADDR;
+	xGrayScaleFilter2.IsReady = XIL_COMPONENT_IS_READY;
+	config_grayScaleFilter(xGrayScaleFilter2);
+	resetVDMA(2);
+	config_filterVDMA(XPAR_AXI_VDMA_2_BASEADDR, DMA_MEM_TO_DEV, VIDEO_BASEADDR_CPU1);
+	config_filterVDMA(XPAR_AXI_VDMA_2_BASEADDR, DMA_DEV_TO_MEM, HWPROC_VIDEO_BASEADDR);
+
+
+
 
 	DBG_MSG("  To change the video resolution press:\r\n");
 	DBG_MSG("  '0' - 640x480;  '1' - 800x600;  '2' - 1024x768; '3' - 1280x720 \r\n");
@@ -276,7 +289,8 @@ int main()
 	while (APP_ChangeResolution())
 	{
 		while (FRAME_INTR == 0);
-		FRAME_INTR = 0;
+
+		DDRVideoWr(640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME]);
 
 		//printf("DEBUG_CPU0: current frame captured by CPU0....now processing it! \n\r");
 		//debug_var = 0;
@@ -292,6 +306,8 @@ int main()
 				ADIAPI_TransmitterMain();
 			}
 		}
+
+		FRAME_INTR = 0;
 	}
 
 	Xil_DCacheDisable();

@@ -47,7 +47,7 @@ void config_filterVDMA(int VDMA_baseAddr, int vdma_direction, unsigned long base
 
 }
 
-void config_grayScaleFilter()
+void config_grayScaleFilter(XGray_scale xGrayScaleFilter)
 {
 
 	XGray_scale_InterruptGlobalDisable(&xGrayScaleFilter);
@@ -63,11 +63,19 @@ void config_grayScaleFilter()
 	XGray_scale_Start(&xGrayScaleFilter);
 }
 
-void resetVDMA()
+void resetVDMA(unsigned char VDMA_ID)
 {
-	//RX: reset S2MM
-	Xil_Out32((XPAR_AXI_VDMA_1_BASEADDR + AXI_FILTER_RX_CTRL), 0x00000004);
+	if (VDMA_ID == 1) {
+		//RX: reset S2MM
+		Xil_Out32((XPAR_AXI_VDMA_1_BASEADDR + AXI_FILTER_RX_CTRL), 0x00000004);
 
-	//TX: reset MM2S
-	Xil_Out32((XPAR_AXI_VDMA_1_BASEADDR + AXI_FILTER_TX_CTRL), 0x00000004);
+		//TX: reset MM2S
+		Xil_Out32((XPAR_AXI_VDMA_1_BASEADDR + AXI_FILTER_TX_CTRL), 0x00000004);
+	} else if (VDMA_ID == 2) {
+		//RX: reset S2MM
+		Xil_Out32((XPAR_AXI_VDMA_2_BASEADDR + AXI_FILTER_RX_CTRL), 0x00000004);
+
+		//TX: reset MM2S
+		Xil_Out32((XPAR_AXI_VDMA_2_BASEADDR + AXI_FILTER_TX_CTRL), 0x00000004);
+	}
 }
