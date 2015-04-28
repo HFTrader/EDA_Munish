@@ -48,6 +48,13 @@ static BOOL     LastEnable;
 XScuGic InterruptController; /* Instance of the Interrupt Controller */
 static XScuGic_Config *GicConfig;/* The configuration parameters of the controller */
 
+
+short int FRAME_INTR = 0;
+
+XGray_scale xGrayScaleFilter1, xGrayScaleFilter2;
+
+
+
 int ScuGicInterrupt_Init()
 {
 	int Status;
@@ -128,6 +135,17 @@ static BOOL APP_DriverEnabled (void)
     return (LastEnable);
 }
 
+
+void configureGrayscaleFilter() {
+	xGrayScaleFilter1.Control_bus_BaseAddress = XPAR_GRAY_SCALE_TOP_0_S_AXI_CONTROL_BUS_BASEADDR;
+	xGrayScaleFilter1.IsReady = XIL_COMPONENT_IS_READY;
+	config_grayScaleFilter(xGrayScaleFilter1);
+	resetVDMA(1);
+	config_filterVDMA(XPAR_AXI_VDMA_1_BASEADDR, DMA_MEM_TO_DEV, VIDEO_BASEADDR);
+	config_filterVDMA(XPAR_AXI_VDMA_1_BASEADDR, DMA_DEV_TO_MEM, HWPROC_VIDEO_BASEADDR);
+}
+
+
 /***************************************************************************//**
  * @brief Changes the video resolution depending on User input.
  *
@@ -158,6 +176,8 @@ static int APP_ChangeResolution (void)
 				DBG_MSG("Resolution was changed to %s \r\n", resolutions[0]);
 			}
 		}
+
+		configureGrayscaleFilter();
 	}
 	return 1;
 }
@@ -185,14 +205,27 @@ int semaphore_cpu0_wait()
 	return 0;
 }
 
+
+// this function sets the shared variable for currentResolution b/w the cores to user's desired resolution
 void set_sharedVideoResolution(unsigned char resolution) {
 	shared_currentResolution = resolution;
 }
 
-short int FRAME_INTR = 0;
+
+// this function when called, leaves current core's frame and starts processing the other core's video frame!!
+void GrayscaleFilter_processVideoFrame() {
+	static unsigned char flag = 0;
+	flag++;
+	if (flag == 1) {
+		config_filterVDMA(XPAR_AXI_VDMA_1_BASEADDR, DMA_MEM_TO_DEV, VIDEO_BASEADDR_CPU1);
+	} else if (flag == 2) {
+		config_filterVDMA(XPAR_AXI_VDMA_1_BASEADDR, DMA_MEM_TO_DEV, VIDEO_BASEADDR);
+		flag = 0;
+	}
+
+}
 
 
-XGray_scale xGrayScaleFilter1, xGrayScaleFilter2;
 
 
 /***************************************************************************//**
@@ -247,7 +280,7 @@ int main()
 
 
 
-	xGrayScaleFilter1.Control_bus_BaseAddress = XPAR_GRAY_SCALE_TOP_0_S_AXI_CONTROL_BUS_BASEADDR;
+	/*xGrayScaleFilter1.Control_bus_BaseAddress = XPAR_GRAY_SCALE_TOP_0_S_AXI_CONTROL_BUS_BASEADDR;
 	xGrayScaleFilter1.IsReady = XIL_COMPONENT_IS_READY;
 	config_grayScaleFilter(xGrayScaleFilter1);
 	resetVDMA(1);
@@ -259,8 +292,9 @@ int main()
 	config_grayScaleFilter(xGrayScaleFilter2);
 	resetVDMA(2);
 	config_filterVDMA(XPAR_AXI_VDMA_2_BASEADDR, DMA_MEM_TO_DEV, VIDEO_BASEADDR_CPU1);
-	config_filterVDMA(XPAR_AXI_VDMA_2_BASEADDR, DMA_DEV_TO_MEM, HWPROC_VIDEO_BASEADDR);
+	config_filterVDMA(XPAR_AXI_VDMA_2_BASEADDR, DMA_DEV_TO_MEM, HWPROC_VIDEO_BASEADDR);*/
 
+	configureGrayscaleFilter();
 
 
 

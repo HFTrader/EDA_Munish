@@ -70,18 +70,18 @@ void AXI_INTERRUPT_VsyncIntr_Handler(void * baseaddr_p)
   cnt++;
   debug_frameNo++;
 
+  GrayscaleFilter_processVideoFrame();
+
   if (cnt>1) {
 	  // interrupt the CPU1 to handle this frame
 	  semaphore_cpu0_signal();
 
 	  //printf("DEBUG_CPU0: frame handled by cpu1...debug_frameNo=%d\n\r", debug_frameNo);
-
 	  cnt = 0;
   } else {
-	  //printf("DEBUG_CPU0: frame handled by cpu0...debug_frameNo=%d\n\r", debug_frameNo);
-
-	  //DDRVideoWr(640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME]);
 	  FRAME_INTR = 1;
+
+	  //printf("DEBUG_CPU0: frame handled by cpu0...debug_frameNo=%d\n\r", debug_frameNo);
   }
 
 }
