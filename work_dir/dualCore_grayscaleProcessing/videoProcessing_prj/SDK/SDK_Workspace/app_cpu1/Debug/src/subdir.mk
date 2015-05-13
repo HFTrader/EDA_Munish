@@ -4,19 +4,16 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../src/helloworld.c \
-../src/platform.c 
+../src/app_cpu1.c 
 
 LD_SRCS += \
 ../src/lscript.ld 
 
 OBJS += \
-./src/helloworld.o \
-./src/platform.o 
+./src/app_cpu1.o 
 
 C_DEPS += \
-./src/helloworld.d \
-./src/platform.d 
+./src/app_cpu1.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
