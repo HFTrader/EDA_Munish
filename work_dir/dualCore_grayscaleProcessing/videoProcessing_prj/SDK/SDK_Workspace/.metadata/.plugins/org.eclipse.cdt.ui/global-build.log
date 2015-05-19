@@ -1,120 +1,2164 @@
-22:50:01 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs ****
+22:21:13 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
 make all 
 make: Nothing to be done for `all'.
-22:55:45 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs ****
+22:23:58 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
 make all 
 Building file: ../src/src/main.c
 Invoking: ARM gcc compiler
-arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+../src/src/main.c: In function 'main':
+../src/src/main.c:207:9: warning: unused variable 'funcPtr_CPU1processFrame' [-Wunused-variable]
 Finished building: ../src/src/main.c
  
-Building target: video_filter_sw_bothCPUs.elf
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
 Invoking: ARM gcc linker
-arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-Finished building target: video_filter_sw_bothCPUs.elf
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
  
 Invoking: ARM Print Size
-arm-xilinx-eabi-size video_filter_sw_bothCPUs.elf  |tee "video_filter_sw_bothCPUs.elf.size"
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
    text	   data	    bss	    dec	    hex	filename
- 107236	   1888	  34428	 143552	  230c0	video_filter_sw_bothCPUs.elf
-Finished building: video_filter_sw_bothCPUs.elf.size
+ 107392	   1888	  34412	 143692	  2314c	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
  
-22:58:57 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs ****
+22:24:48 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
 make all 
 Building file: ../src/src/main.c
 Invoking: ARM gcc compiler
-arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
-../src/src/main.c: In function 'DDRVideoWr_CPU1':
-../src/src/main.c:203:25: error: 'width' undeclared (first use in this function)
-../src/src/main.c:203:25: note: each undeclared identifier is reported only once for each function it appears in
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+../src/src/main.c: In function 'main':
+../src/src/main.c:207:9: warning: unused variable 'funcPtr_CPU1processFrame' [-Wunused-variable]
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107392	   1888	  34412	 143692	  2314c	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
+ 
+22:27:27 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+../src/src/main.c: In function 'main':
+../src/src/main.c:207:9: warning: unused variable 'funcPtr_CPU1processFrame' [-Wunused-variable]
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107392	   1888	  34412	 143692	  2314c	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
+ 
+22:31:02 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+Building file: ../src/src/axi_interrupt.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/axi_interrupt.d" -MT"src/src/axi_interrupt.d" -o "src/src/axi_interrupt.o" "../src/src/axi_interrupt.c"
+Finished building: ../src/src/axi_interrupt.c
+ 
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107516	   1888	  34412	 143816	  231c8	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
+ 
+22:31:17 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+../src/src/main.c: In function 'main':
+../src/src/main.c:207:9: warning: unused variable 'funcPtr_CPU1processFrame' [-Wunused-variable]
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107320	   1888	  34412	 143620	  23104	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
+ 
+22:31:49 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+../src/src/main.c: In function 'main':
+../src/src/main.c:207:9: warning: unused variable 'funcPtr_CPU1processFrame' [-Wunused-variable]
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107320	   1888	  34412	 143620	  23104	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
+ 
+22:36:12 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+../src/src/main.c: In function 'main':
+../src/src/main.c:207:9: warning: unused variable 'funcPtr_CPU1processFrame' [-Wunused-variable]
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107176	   1888	  34412	 143476	  23074	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
+ 
+22:36:27 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+Building file: ../src/src/axi_interrupt.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/axi_interrupt.d" -MT"src/src/axi_interrupt.d" -o "src/src/axi_interrupt.o" "../src/src/axi_interrupt.c"
+Finished building: ../src/src/axi_interrupt.c
+ 
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107320	   1888	  34412	 143620	  23104	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
+ 
+22:41:54 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+Building file: ../src/src/axi_interrupt.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/axi_interrupt.d" -MT"src/src/axi_interrupt.d" -o "src/src/axi_interrupt.o" "../src/src/axi_interrupt.c"
+Finished building: ../src/src/axi_interrupt.c
+ 
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107052	   1888	  34412	 143352	  22ff8	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
+ 
+22:42:05 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+../src/src/main.c: In function 'main':
+../src/src/main.c:207:9: warning: unused variable 'funcPtr_CPU1processFrame' [-Wunused-variable]
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107392	   1888	  34412	 143692	  2314c	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
+ 
+22:42:40 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+../src/src/main.c: In function 'main':
+../src/src/main.c:207:9: warning: unused variable 'funcPtr_CPU1processFrame' [-Wunused-variable]
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107392	   1888	  34412	 143692	  2314c	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
+ 
+22:46:59 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+../src/src/main.c: In function 'main':
+../src/src/main.c:207:9: warning: unused variable 'funcPtr_CPU1processFrame' [-Wunused-variable]
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107392	   1888	  34412	 143692	  2314c	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
+ 
+22:50:39 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+../src/src/main.c: In function 'main':
+../src/src/main.c:207:9: warning: unused variable 'funcPtr_CPU1processFrame' [-Wunused-variable]
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107340	   1888	  34412	 143640	  23118	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
+ 
+22:51:02 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+../src/src/main.c: In function 'main':
+../src/src/main.c:207:9: warning: unused variable 'funcPtr_CPU1processFrame' [-Wunused-variable]
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107340	   1888	  34412	 143640	  23118	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
+ 
+22:54:35 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+../src/src/main.c: In function 'main':
+../src/src/main.c:207:9: warning: unused variable 'funcPtr_CPU1processFrame' [-Wunused-variable]
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107340	   1888	  34412	 143640	  23118	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
+ 
+22:54:48 **** Incremental Build of configuration Debug for project app_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+22:54:49 **** Incremental Build of configuration Debug for project app_cpu0 ****
+make all 
+make: Nothing to be done for `all'.
+22:54:50 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+22:54:50 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+make: Nothing to be done for `all'.
+22:54:51 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+make: Nothing to be done for `all'.
+22:54:52 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+22:54:52 **** Incremental Build of configuration Debug for project video_filter_sw_orig ****
+make all 
+make: Nothing to be done for `all'.
+22:54:53 **** Incremental Build of configuration Debug for project zynq_fsbl_0 ****
+make all 
+make: Nothing to be done for `all'.
+22:56:07 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+../src/src/main.c: In function 'main':
+../src/src/main.c:207:9: warning: unused variable 'funcPtr_CPU1processFrame' [-Wunused-variable]
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107392	   1888	  34412	 143692	  2314c	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
+ 
+22:56:28 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+Building file: ../src/src/cf_hdmi.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/cf_hdmi.d" -MT"src/src/cf_hdmi.d" -o "src/src/cf_hdmi.o" "../src/src/cf_hdmi.c"
+Finished building: ../src/src/cf_hdmi.c
+ 
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107400	   1888	  34412	 143700	  23154	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
+ 
+22:56:37 **** Incremental Build of configuration Debug for project app_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+22:56:38 **** Incremental Build of configuration Debug for project app_cpu0 ****
+make all 
+make: Nothing to be done for `all'.
+22:56:38 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+22:56:38 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+make: Nothing to be done for `all'.
+22:56:39 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+make: Nothing to be done for `all'.
+22:56:39 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+22:56:40 **** Incremental Build of configuration Debug for project video_filter_sw_orig ****
+make all 
+make: Nothing to be done for `all'.
+22:56:40 **** Incremental Build of configuration Debug for project zynq_fsbl_0 ****
+make all 
+make: Nothing to be done for `all'.
+22:57:33 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+../src/src/main.c: In function 'main':
+../src/src/main.c:207:9: warning: unused variable 'funcPtr_CPU1processFrame' [-Wunused-variable]
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107400	   1888	  34412	 143700	  23154	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
+ 
+22:57:36 **** Incremental Build of configuration Debug for project app_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+22:57:36 **** Incremental Build of configuration Debug for project app_cpu0 ****
+make all 
+make: Nothing to be done for `all'.
+22:57:36 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+22:57:37 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+make: Nothing to be done for `all'.
+22:57:37 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+make: Nothing to be done for `all'.
+22:57:38 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+22:57:38 **** Incremental Build of configuration Debug for project video_filter_sw_orig ****
+make all 
+make: Nothing to be done for `all'.
+22:57:38 **** Incremental Build of configuration Debug for project zynq_fsbl_0 ****
+make all 
+make: Nothing to be done for `all'.
+22:58:33 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+Building file: ../src/src/cf_hdmi.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/cf_hdmi.d" -MT"src/src/cf_hdmi.d" -o "src/src/cf_hdmi.o" "../src/src/cf_hdmi.c"
+Finished building: ../src/src/cf_hdmi.c
+ 
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107404	   1888	  34412	 143704	  23158	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
+ 
+22:58:36 **** Incremental Build of configuration Debug for project app_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+22:58:36 **** Incremental Build of configuration Debug for project app_cpu0 ****
+make all 
+make: Nothing to be done for `all'.
+22:58:36 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+22:58:37 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+make: Nothing to be done for `all'.
+22:58:37 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+make: Nothing to be done for `all'.
+22:58:38 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+22:58:38 **** Incremental Build of configuration Debug for project video_filter_sw_orig ****
+make all 
+make: Nothing to be done for `all'.
+22:58:39 **** Incremental Build of configuration Debug for project zynq_fsbl_0 ****
+make all 
+make: Nothing to be done for `all'.
+22:59:23 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+../src/src/main.c: In function 'main':
+../src/src/main.c:207:9: warning: unused variable 'funcPtr_CPU1processFrame' [-Wunused-variable]
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107404	   1888	  34412	 143704	  23158	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
+ 
+22:59:36 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+../src/src/main.c: In function 'main':
+../src/src/main.c:207:9: warning: unused variable 'funcPtr_CPU1processFrame' [-Wunused-variable]
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107404	   1888	  34412	 143704	  23158	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
+ 
+22:59:49 **** Incremental Build of configuration Debug for project app_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+22:59:49 **** Incremental Build of configuration Debug for project app_cpu0 ****
+make all 
+make: Nothing to be done for `all'.
+22:59:49 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+22:59:50 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+make: Nothing to be done for `all'.
+22:59:50 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+make: Nothing to be done for `all'.
+22:59:51 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+22:59:51 **** Incremental Build of configuration Debug for project video_filter_sw_orig ****
+make all 
+make: Nothing to be done for `all'.
+22:59:52 **** Incremental Build of configuration Debug for project zynq_fsbl_0 ****
+make all 
+make: Nothing to be done for `all'.
+23:00:34 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+../src/src/main.c: In function 'main':
+../src/src/main.c:263:117: error: 'PROC_VIDEO_BASEADDR_odd' undeclared (first use in this function)
+../src/src/main.c:263:117: note: each undeclared identifier is reported only once for each function it appears in
+../src/src/main.c:207:9: warning: unused variable 'funcPtr_CPU1processFrame' [-Wunused-variable]
 make: *** [src/src/main.o] Error 1
-22:59:06 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs ****
+23:00:45 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
 make all 
 Building file: ../src/src/main.c
 Invoking: ARM gcc compiler
-arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+../src/src/main.c: In function 'main':
+../src/src/main.c:207:9: warning: unused variable 'funcPtr_CPU1processFrame' [-Wunused-variable]
 Finished building: ../src/src/main.c
  
-Building target: video_filter_sw_bothCPUs.elf
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
 Invoking: ARM gcc linker
-arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-Finished building target: video_filter_sw_bothCPUs.elf
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
  
 Invoking: ARM Print Size
-arm-xilinx-eabi-size video_filter_sw_bothCPUs.elf  |tee "video_filter_sw_bothCPUs.elf.size"
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
    text	   data	    bss	    dec	    hex	filename
- 107588	   1888	  34428	 143904	  23220	video_filter_sw_bothCPUs.elf
-Finished building: video_filter_sw_bothCPUs.elf.size
+ 107404	   1888	  34412	 143704	  23158	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
  
-23:01:24 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs ****
+23:01:21 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
 make all 
 Building file: ../src/src/main.c
 Invoking: ARM gcc compiler
-arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
 Finished building: ../src/src/main.c
  
-Building target: video_filter_sw_bothCPUs.elf
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
 Invoking: ARM gcc linker
-arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-Finished building target: video_filter_sw_bothCPUs.elf
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
  
 Invoking: ARM Print Size
-arm-xilinx-eabi-size video_filter_sw_bothCPUs.elf  |tee "video_filter_sw_bothCPUs.elf.size"
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
    text	   data	    bss	    dec	    hex	filename
- 107236	   1888	  34428	 143552	  230c0	video_filter_sw_bothCPUs.elf
-Finished building: video_filter_sw_bothCPUs.elf.size
+ 107428	   1888	  34412	 143728	  23170	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
  
-23:04:50 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs ****
+23:01:44 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
 make all 
 Building file: ../src/src/main.c
 Invoking: ARM gcc compiler
-arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
 Finished building: ../src/src/main.c
  
-Building target: video_filter_sw_bothCPUs.elf
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
 Invoking: ARM gcc linker
-arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-Finished building target: video_filter_sw_bothCPUs.elf
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
  
 Invoking: ARM Print Size
-arm-xilinx-eabi-size video_filter_sw_bothCPUs.elf  |tee "video_filter_sw_bothCPUs.elf.size"
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
    text	   data	    bss	    dec	    hex	filename
- 107236	   1888	  34428	 143552	  230c0	video_filter_sw_bothCPUs.elf
-Finished building: video_filter_sw_bothCPUs.elf.size
+ 107632	   1888	  34412	 143932	  2323c	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
  
-23:16:12 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs ****
+23:02:00 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+Building file: ../src/src/sw_functions.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/sw_functions.d" -MT"src/src/sw_functions.d" -o "src/src/sw_functions.o" "../src/src/sw_functions.c"
+../src/src/sw_functions.c:4:1: warning: "/*" within comment [-Wcomment]
+../src/src/sw_functions.c: In function 'SampleFunction':
+../src/src/sw_functions.c:158:16: warning: unused variable 'VH_offset' [-Wunused-variable]
+Finished building: ../src/src/sw_functions.c
+ 
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107632	   1888	  34412	 143932	  2323c	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
+ 
+23:07:05 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
 make all 
 Building file: ../src/src/main.c
 Invoking: ARM gcc compiler
-arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
 Finished building: ../src/src/main.c
  
-Building target: video_filter_sw_bothCPUs.elf
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
 Invoking: ARM gcc linker
-arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-Finished building target: video_filter_sw_bothCPUs.elf
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
  
 Invoking: ARM Print Size
-arm-xilinx-eabi-size video_filter_sw_bothCPUs.elf  |tee "video_filter_sw_bothCPUs.elf.size"
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
    text	   data	    bss	    dec	    hex	filename
- 107352	   1888	  34428	 143668	  23134	video_filter_sw_bothCPUs.elf
-Finished building: video_filter_sw_bothCPUs.elf.size
+ 107832	   1888	  34412	 144132	  23304	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
  
-23:17:05 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs ****
+23:10:27 **** Incremental Build of configuration Debug for project app_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+23:10:28 **** Incremental Build of configuration Debug for project app_cpu0 ****
+make all 
+make: Nothing to be done for `all'.
+23:10:29 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+23:10:29 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+make: Nothing to be done for `all'.
+23:10:30 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+make: Nothing to be done for `all'.
+23:10:30 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+23:10:31 **** Incremental Build of configuration Debug for project video_filter_sw_orig ****
+make all 
+make: Nothing to be done for `all'.
+23:10:32 **** Incremental Build of configuration Debug for project zynq_fsbl_0 ****
+make all 
+make: Nothing to be done for `all'.
+23:14:34 **** Incremental Build of configuration Debug for project app_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+23:14:34 **** Incremental Build of configuration Debug for project app_cpu0 ****
+make all 
+make: Nothing to be done for `all'.
+23:14:34 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+23:14:35 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+make: Nothing to be done for `all'.
+23:14:35 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+make: Nothing to be done for `all'.
+23:14:36 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+23:14:36 **** Incremental Build of configuration Debug for project video_filter_sw_orig ****
+make all 
+make: Nothing to be done for `all'.
+23:14:37 **** Incremental Build of configuration Debug for project zynq_fsbl_0 ****
+make all 
+make: Nothing to be done for `all'.
+23:16:45 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
 make all 
 Building file: ../src/src/main.c
 Invoking: ARM gcc compiler
-arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
 Finished building: ../src/src/main.c
  
-Building target: video_filter_sw_bothCPUs.elf
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
 Invoking: ARM gcc linker
-arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-Finished building target: video_filter_sw_bothCPUs.elf
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
  
 Invoking: ARM Print Size
-arm-xilinx-eabi-size video_filter_sw_bothCPUs.elf  |tee "video_filter_sw_bothCPUs.elf.size"
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
    text	   data	    bss	    dec	    hex	filename
- 107352	   1888	  34428	 143668	  23134	video_filter_sw_bothCPUs.elf
-Finished building: video_filter_sw_bothCPUs.elf.size
+ 107408	   1888	  34412	 143708	  2315c	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
  
+23:16:53 **** Incremental Build of configuration Debug for project app_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+23:16:53 **** Incremental Build of configuration Debug for project app_cpu0 ****
+make all 
+make: Nothing to be done for `all'.
+23:16:54 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+23:16:54 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+make: Nothing to be done for `all'.
+23:16:55 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+make: Nothing to be done for `all'.
+23:16:55 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+23:16:56 **** Incremental Build of configuration Debug for project video_filter_sw_orig ****
+make all 
+make: Nothing to be done for `all'.
+23:16:56 **** Incremental Build of configuration Debug for project zynq_fsbl_0 ****
+make all 
+make: Nothing to be done for `all'.
+23:18:56 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+../src/src/main.c: In function 'CPU1processFrame':
+../src/src/main.c:190:12: warning: unused variable 'c' [-Wunused-variable]
+../src/src/main.c:190:10: warning: unused variable 'r' [-Wunused-variable]
+../src/src/main.c:190:8: warning: unused variable 'g' [-Wunused-variable]
+../src/src/main.c:190:6: warning: unused variable 'b' [-Wunused-variable]
+../src/src/main.c:189:6: warning: unused variable '_d' [-Wunused-variable]
+../src/src/main.c:188:6: warning: unused variable '_s' [-Wunused-variable]
+../src/src/main.c:186:9: warning: unused variable '_par' [-Wunused-variable]
+../src/src/main.c:185:9: warning: unused variable 'rows' [-Wunused-variable]
+../src/src/main.c:184:10: warning: unused variable 'cols' [-Wunused-variable]
+../src/src/main.c:183:11: warning: variable 'V_offset' set but not used [-Wunused-but-set-variable]
+../src/src/main.c:183:9: warning: unused variable 'j' [-Wunused-variable]
+../src/src/main.c:183:7: warning: unused variable 'i' [-Wunused-variable]
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107468	   1888	  34412	 143768	  23198	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
+ 
+23:19:06 **** Incremental Build of configuration Debug for project app_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+23:19:07 **** Incremental Build of configuration Debug for project app_cpu0 ****
+make all 
+make: Nothing to be done for `all'.
+23:19:07 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+23:19:08 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+make: Nothing to be done for `all'.
+23:19:08 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+make: Nothing to be done for `all'.
+23:19:09 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+23:19:09 **** Incremental Build of configuration Debug for project video_filter_sw_orig ****
+make all 
+make: Nothing to be done for `all'.
+23:19:10 **** Incremental Build of configuration Debug for project zynq_fsbl_0 ****
+make all 
+make: Nothing to be done for `all'.
+23:20:39 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+../src/src/main.c: In function 'CPU1processFrame':
+../src/src/main.c:190:12: warning: unused variable 'c' [-Wunused-variable]
+../src/src/main.c:190:10: warning: unused variable 'r' [-Wunused-variable]
+../src/src/main.c:190:8: warning: unused variable 'g' [-Wunused-variable]
+../src/src/main.c:190:6: warning: unused variable 'b' [-Wunused-variable]
+../src/src/main.c:189:6: warning: unused variable '_d' [-Wunused-variable]
+../src/src/main.c:188:6: warning: variable '_s' set but not used [-Wunused-but-set-variable]
+../src/src/main.c:186:9: warning: unused variable '_par' [-Wunused-variable]
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107596	   1888	  34412	 143896	  23218	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
+ 
+23:20:56 **** Incremental Build of configuration Debug for project app_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+23:20:56 **** Incremental Build of configuration Debug for project app_cpu0 ****
+make all 
+make: Nothing to be done for `all'.
+23:20:57 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+23:20:57 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+make: Nothing to be done for `all'.
+23:20:58 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+make: Nothing to be done for `all'.
+23:20:58 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+23:20:58 **** Incremental Build of configuration Debug for project video_filter_sw_orig ****
+make all 
+make: Nothing to be done for `all'.
+23:20:59 **** Incremental Build of configuration Debug for project zynq_fsbl_0 ****
+make all 
+make: Nothing to be done for `all'.
+23:22:07 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+../src/src/main.c: In function 'CPU1processFrame':
+../src/src/main.c:189:6: warning: variable '_d' set but not used [-Wunused-but-set-variable]
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107792	   1888	  34412	 144092	  232dc	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
+ 
+23:22:09 **** Incremental Build of configuration Debug for project app_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+23:22:09 **** Incremental Build of configuration Debug for project app_cpu0 ****
+make all 
+make: Nothing to be done for `all'.
+23:22:10 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+23:22:10 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+make: Nothing to be done for `all'.
+23:22:11 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+make: Nothing to be done for `all'.
+23:22:11 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+23:22:12 **** Incremental Build of configuration Debug for project video_filter_sw_orig ****
+make all 
+make: Nothing to be done for `all'.
+23:22:12 **** Incremental Build of configuration Debug for project zynq_fsbl_0 ****
+make all 
+make: Nothing to be done for `all'.
+23:24:48 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+../src/src/main.c: In function 'CPU1processFrame':
+../src/src/main.c:190:12: warning: unused variable 'c' [-Wunused-variable]
+../src/src/main.c:190:8: warning: unused variable 'g' [-Wunused-variable]
+../src/src/main.c:190:6: warning: unused variable 'b' [-Wunused-variable]
+../src/src/main.c:189:6: warning: unused variable '_d' [-Wunused-variable]
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107688	   1888	  34412	 143988	  23274	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
+ 
+23:24:52 **** Incremental Build of configuration Debug for project app_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+23:24:52 **** Incremental Build of configuration Debug for project app_cpu0 ****
+make all 
+make: Nothing to be done for `all'.
+23:24:53 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+23:24:53 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+make: Nothing to be done for `all'.
+23:24:53 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+make: Nothing to be done for `all'.
+23:24:54 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+23:24:54 **** Incremental Build of configuration Debug for project video_filter_sw_orig ****
+make all 
+make: Nothing to be done for `all'.
+23:24:55 **** Incremental Build of configuration Debug for project zynq_fsbl_0 ****
+make all 
+make: Nothing to be done for `all'.
+23:26:18 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+../src/src/main.c: In function 'CPU1processFrame':
+../src/src/main.c:190:12: warning: unused variable 'c' [-Wunused-variable]
+../src/src/main.c:190:10: warning: unused variable 'r' [-Wunused-variable]
+../src/src/main.c:190:8: warning: unused variable 'g' [-Wunused-variable]
+../src/src/main.c:190:6: warning: unused variable 'b' [-Wunused-variable]
+../src/src/main.c:189:6: warning: unused variable '_d' [-Wunused-variable]
+../src/src/main.c:188:6: warning: variable '_s' set but not used [-Wunused-but-set-variable]
+../src/src/main.c:186:9: warning: unused variable '_par' [-Wunused-variable]
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107628	   1888	  34412	 143928	  23238	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
+ 
+23:26:28 **** Incremental Build of configuration Debug for project app_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+23:26:29 **** Incremental Build of configuration Debug for project app_cpu0 ****
+make all 
+make: Nothing to be done for `all'.
+23:26:29 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+23:26:30 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+make: Nothing to be done for `all'.
+23:26:30 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+make: Nothing to be done for `all'.
+23:26:31 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+23:26:31 **** Incremental Build of configuration Debug for project video_filter_sw_orig ****
+make all 
+make: Nothing to be done for `all'.
+23:26:32 **** Incremental Build of configuration Debug for project zynq_fsbl_0 ****
+make all 
+make: Nothing to be done for `all'.
+23:27:55 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+../src/src/main.c: In function 'CPU1processFrame':
+../src/src/main.c:190:12: warning: unused variable 'c' [-Wunused-variable]
+../src/src/main.c:190:10: warning: variable 'r' set but not used [-Wunused-but-set-variable]
+../src/src/main.c:190:8: warning: unused variable 'g' [-Wunused-variable]
+../src/src/main.c:190:6: warning: unused variable 'b' [-Wunused-variable]
+../src/src/main.c:189:6: warning: unused variable '_d' [-Wunused-variable]
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107660	   1888	  34412	 143960	  23258	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
+ 
+23:28:01 **** Incremental Build of configuration Debug for project app_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+23:28:01 **** Incremental Build of configuration Debug for project app_cpu0 ****
+make all 
+make: Nothing to be done for `all'.
+23:28:02 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+23:28:02 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+make: Nothing to be done for `all'.
+23:28:03 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+make: Nothing to be done for `all'.
+23:28:03 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+23:28:03 **** Incremental Build of configuration Debug for project video_filter_sw_orig ****
+make all 
+make: Nothing to be done for `all'.
+23:28:04 **** Incremental Build of configuration Debug for project zynq_fsbl_0 ****
+make all 
+make: Nothing to be done for `all'.
+23:30:31 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+../src/src/main.c: In function 'CPU1processFrame':
+../src/src/main.c:190:12: warning: unused variable 'c' [-Wunused-variable]
+../src/src/main.c:190:10: warning: variable 'r' set but not used [-Wunused-but-set-variable]
+../src/src/main.c:190:8: warning: variable 'g' set but not used [-Wunused-but-set-variable]
+../src/src/main.c:190:6: warning: variable 'b' set but not used [-Wunused-but-set-variable]
+../src/src/main.c:189:6: warning: unused variable '_d' [-Wunused-variable]
+../src/src/main.c:186:9: warning: unused variable '_par' [-Wunused-variable]
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107664	   1888	  34412	 143964	  2325c	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
+ 
+23:30:39 **** Incremental Build of configuration Debug for project app_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+23:30:39 **** Incremental Build of configuration Debug for project app_cpu0 ****
+make all 
+make: Nothing to be done for `all'.
+23:30:39 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+23:30:40 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+make: Nothing to be done for `all'.
+23:30:40 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+make: Nothing to be done for `all'.
+23:30:40 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+23:30:41 **** Incremental Build of configuration Debug for project video_filter_sw_orig ****
+make all 
+make: Nothing to be done for `all'.
+23:30:41 **** Incremental Build of configuration Debug for project zynq_fsbl_0 ****
+make all 
+make: Nothing to be done for `all'.
+23:32:14 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+../src/src/main.c: In function 'CPU1processFrame':
+../src/src/main.c:192:12: warning: unused variable 'c' [-Wunused-variable]
+../src/src/main.c:192:10: warning: variable 'r' set but not used [-Wunused-but-set-variable]
+../src/src/main.c:192:8: warning: variable 'g' set but not used [-Wunused-but-set-variable]
+../src/src/main.c:192:6: warning: variable 'b' set but not used [-Wunused-but-set-variable]
+../src/src/main.c:191:6: warning: unused variable '_d' [-Wunused-variable]
+../src/src/main.c:188:9: warning: unused variable '_par' [-Wunused-variable]
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107664	   1888	  34412	 143964	  2325c	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
+ 
+23:34:33 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+../src/src/main.c: In function 'CPU1processFrame':
+../src/src/main.c:192:12: warning: unused variable 'c' [-Wunused-variable]
+../src/src/main.c:192:10: warning: variable 'r' set but not used [-Wunused-but-set-variable]
+../src/src/main.c:192:8: warning: variable 'g' set but not used [-Wunused-but-set-variable]
+../src/src/main.c:192:6: warning: variable 'b' set but not used [-Wunused-but-set-variable]
+../src/src/main.c:191:6: warning: unused variable '_d' [-Wunused-variable]
+../src/src/main.c:188:9: warning: unused variable '_par' [-Wunused-variable]
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107664	   1888	  34412	 143964	  2325c	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
+ 
+23:35:39 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+../src/src/main.c: In function 'CPU1processFrame':
+../src/src/main.c:188:9: warning: unused variable '_par' [-Wunused-variable]
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107784	   1888	  34412	 144084	  232d4	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
+ 
+23:35:42 **** Incremental Build of configuration Debug for project app_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+23:35:42 **** Incremental Build of configuration Debug for project app_cpu0 ****
+make all 
+make: Nothing to be done for `all'.
+23:35:42 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+23:35:43 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+make: Nothing to be done for `all'.
+23:35:43 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+make: Nothing to be done for `all'.
+23:35:44 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+23:35:44 **** Incremental Build of configuration Debug for project video_filter_sw_orig ****
+make all 
+make: Nothing to be done for `all'.
+23:35:44 **** Incremental Build of configuration Debug for project zynq_fsbl_0 ****
+make all 
+make: Nothing to be done for `all'.
+23:37:44 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+../src/src/main.c: In function 'CPU1processFrame':
+../src/src/main.c:188:9: warning: unused variable '_par' [-Wunused-variable]
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107848	   1888	  34412	 144148	  23314	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
+ 
+23:39:25 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+../src/src/main.c: In function 'CPU1processFrame':
+../src/src/main.c:188:9: warning: unused variable '_par' [-Wunused-variable]
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 108128	   1888	  34412	 144428	  2342c	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
+ 
+23:39:46 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+../src/src/main.c: In function 'CPU1processFrame':
+../src/src/main.c:188:9: warning: unused variable '_par' [-Wunused-variable]
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 108128	   1888	  34412	 144428	  2342c	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
+ 
+23:39:53 **** Incremental Build of configuration Debug for project app_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+23:39:53 **** Incremental Build of configuration Debug for project app_cpu0 ****
+make all 
+make: Nothing to be done for `all'.
+23:39:53 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+23:39:54 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+make: Nothing to be done for `all'.
+23:39:54 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+make: Nothing to be done for `all'.
+23:39:55 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+23:39:55 **** Incremental Build of configuration Debug for project video_filter_sw_orig ****
+make all 
+make: Nothing to be done for `all'.
+23:39:55 **** Incremental Build of configuration Debug for project zynq_fsbl_0 ****
+make all 
+make: Nothing to be done for `all'.
+23:41:59 **** Incremental Build of configuration Debug for project app_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+23:41:59 **** Incremental Build of configuration Debug for project app_cpu0 ****
+make all 
+make: Nothing to be done for `all'.
+23:42:00 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+23:42:00 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+make: Nothing to be done for `all'.
+23:42:00 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+make: Nothing to be done for `all'.
+23:42:01 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+23:42:01 **** Incremental Build of configuration Debug for project video_filter_sw_orig ****
+make all 
+make: Nothing to be done for `all'.
+23:42:02 **** Incremental Build of configuration Debug for project zynq_fsbl_0 ****
+make all 
+make: Nothing to be done for `all'.
+23:43:40 **** Incremental Build of configuration Debug for project app_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+23:43:41 **** Incremental Build of configuration Debug for project app_cpu0 ****
+make all 
+make: Nothing to be done for `all'.
+23:43:41 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+23:43:42 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+make: Nothing to be done for `all'.
+23:43:42 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+make: Nothing to be done for `all'.
+23:43:43 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+23:43:43 **** Incremental Build of configuration Debug for project video_filter_sw_orig ****
+make all 
+make: Nothing to be done for `all'.
+23:43:43 **** Incremental Build of configuration Debug for project zynq_fsbl_0 ****
+make all 
+make: Nothing to be done for `all'.
+23:54:22 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+../src/src/main.c: In function 'CPU1processFrame':
+../src/src/main.c:188:9: warning: unused variable '_par' [-Wunused-variable]
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 108152	   1888	  34412	 144452	  23444	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
+ 
+23:54:31 **** Incremental Build of configuration Debug for project app_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+23:54:31 **** Incremental Build of configuration Debug for project app_cpu0 ****
+make all 
+make: Nothing to be done for `all'.
+23:54:32 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+23:54:32 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+make: Nothing to be done for `all'.
+23:54:33 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+make: Nothing to be done for `all'.
+23:54:33 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+23:54:34 **** Incremental Build of configuration Debug for project video_filter_sw_orig ****
+make all 
+make: Nothing to be done for `all'.
+23:54:34 **** Incremental Build of configuration Debug for project zynq_fsbl_0 ****
+make all 
+make: Nothing to be done for `all'.
+00:00:36 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+Building file: ../src/src/cf_hdmi.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/cf_hdmi.d" -MT"src/src/cf_hdmi.d" -o "src/src/cf_hdmi.o" "../src/src/cf_hdmi.c"
+Finished building: ../src/src/cf_hdmi.c
+ 
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 108136	   1888	  34412	 144436	  23434	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
+ 
+00:00:45 **** Incremental Build of configuration Debug for project app_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+00:00:45 **** Incremental Build of configuration Debug for project app_cpu0 ****
+make all 
+make: Nothing to be done for `all'.
+00:00:46 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+00:00:47 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+make: Nothing to be done for `all'.
+00:00:48 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+make: Nothing to be done for `all'.
+00:00:48 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+00:00:49 **** Incremental Build of configuration Debug for project video_filter_sw_orig ****
+make all 
+make: Nothing to be done for `all'.
+00:00:49 **** Incremental Build of configuration Debug for project zynq_fsbl_0 ****
+make all 
+make: Nothing to be done for `all'.
+00:01:57 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+../src/src/main.c: In function 'CPU1processFrame':
+../src/src/main.c:188:9: warning: unused variable '_par' [-Wunused-variable]
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 108136	   1888	  34412	 144436	  23434	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
+ 
+00:02:02 **** Incremental Build of configuration Debug for project app_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+00:02:03 **** Incremental Build of configuration Debug for project app_cpu0 ****
+make all 
+make: Nothing to be done for `all'.
+00:02:04 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+00:02:05 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+make: Nothing to be done for `all'.
+00:02:06 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+make: Nothing to be done for `all'.
+00:02:06 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+00:02:07 **** Incremental Build of configuration Debug for project video_filter_sw_orig ****
+make all 
+make: Nothing to be done for `all'.
+00:02:08 **** Incremental Build of configuration Debug for project zynq_fsbl_0 ****
+make all 
+make: Nothing to be done for `all'.
+00:03:14 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+../src/src/main.c: In function 'CPU1processFrame':
+../src/src/main.c:188:9: warning: unused variable '_par' [-Wunused-variable]
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 108136	   1888	  34412	 144436	  23434	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
+ 
+00:03:49 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+Building file: ../src/src/cf_hdmi.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/cf_hdmi.d" -MT"src/src/cf_hdmi.d" -o "src/src/cf_hdmi.o" "../src/src/cf_hdmi.c"
+Finished building: ../src/src/cf_hdmi.c
+ 
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 108152	   1888	  34412	 144452	  23444	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
+ 
+00:03:55 **** Incremental Build of configuration Debug for project app_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+00:03:55 **** Incremental Build of configuration Debug for project app_cpu0 ****
+make all 
+make: Nothing to be done for `all'.
+00:03:56 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+00:03:57 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+make: Nothing to be done for `all'.
+00:03:58 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+make: Nothing to be done for `all'.
+00:03:58 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+00:03:59 **** Incremental Build of configuration Debug for project video_filter_sw_orig ****
+make all 
+make: Nothing to be done for `all'.
+00:04:00 **** Incremental Build of configuration Debug for project zynq_fsbl_0 ****
+make all 
+make: Nothing to be done for `all'.
+00:04:53 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+../src/src/main.c: In function 'CPU1processFrame':
+../src/src/main.c:188:9: warning: unused variable '_par' [-Wunused-variable]
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 108152	   1888	  34412	 144452	  23444	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
+ 
+00:05:13 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+../src/src/main.c: In function 'CPU1processFrame':
+../src/src/main.c:188:9: warning: unused variable '_par' [-Wunused-variable]
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107980	   1888	  34412	 144280	  23398	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
+ 
+00:05:22 **** Incremental Build of configuration Debug for project app_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+00:05:23 **** Incremental Build of configuration Debug for project app_cpu0 ****
+make all 
+make: Nothing to be done for `all'.
+00:05:24 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+00:05:25 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+make: Nothing to be done for `all'.
+00:05:25 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+make: Nothing to be done for `all'.
+00:05:26 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+00:05:27 **** Incremental Build of configuration Debug for project video_filter_sw_orig ****
+make all 
+make: Nothing to be done for `all'.
+00:05:28 **** Incremental Build of configuration Debug for project zynq_fsbl_0 ****
+make all 
+make: Nothing to be done for `all'.
+00:08:19 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+../src/src/main.c: In function 'CPU1processFrame':
+../src/src/main.c:188:9: warning: unused variable '_par' [-Wunused-variable]
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107980	   1888	  34412	 144280	  23398	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
+ 
+00:09:41 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+../src/src/main.c: In function 'CPU1processFrame':
+../src/src/main.c:188:9: warning: unused variable '_par' [-Wunused-variable]
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 108004	   1888	  34412	 144304	  233b0	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
+ 
+00:09:45 **** Incremental Build of configuration Debug for project app_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+00:09:46 **** Incremental Build of configuration Debug for project app_cpu0 ****
+make all 
+make: Nothing to be done for `all'.
+00:09:46 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+00:09:47 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+make: Nothing to be done for `all'.
+00:09:47 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+make: Nothing to be done for `all'.
+00:09:48 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+00:09:49 **** Incremental Build of configuration Debug for project video_filter_sw_orig ****
+make all 
+make: Nothing to be done for `all'.
+00:09:49 **** Incremental Build of configuration Debug for project zynq_fsbl_0 ****
+make all 
+make: Nothing to be done for `all'.
+00:14:29 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+../src/src/main.c: In function 'CPU1processFrame':
+../src/src/main.c:188:9: warning: unused variable '_par' [-Wunused-variable]
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 108152	   1888	  34412	 144452	  23444	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
+ 
+00:14:45 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+../src/src/main.c: In function 'CPU1processFrame':
+../src/src/main.c:191:6: warning: variable '_d' set but not used [-Wunused-but-set-variable]
+../src/src/main.c:188:9: warning: unused variable '_par' [-Wunused-variable]
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 108072	   1888	  34412	 144372	  233f4	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
+ 
+00:14:48 **** Incremental Build of configuration Debug for project app_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+00:14:49 **** Incremental Build of configuration Debug for project app_cpu0 ****
+make all 
+make: Nothing to be done for `all'.
+00:14:49 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+00:14:50 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+make: Nothing to be done for `all'.
+00:14:50 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+make: Nothing to be done for `all'.
+00:14:51 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+00:14:51 **** Incremental Build of configuration Debug for project video_filter_sw_orig ****
+make all 
+make: Nothing to be done for `all'.
+00:14:52 **** Incremental Build of configuration Debug for project zynq_fsbl_0 ****
+make all 
+make: Nothing to be done for `all'.
+00:15:24 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+../src/src/main.c: In function 'CPU1processFrame':
+../src/src/main.c:188:9: warning: unused variable '_par' [-Wunused-variable]
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 108112	   1888	  34412	 144412	  2341c	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
+ 
+00:15:31 **** Incremental Build of configuration Debug for project app_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+00:15:35 **** Incremental Build of configuration Debug for project app_cpu0 ****
+make all 
+make: Nothing to be done for `all'.
+00:15:35 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+00:15:36 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+make: Nothing to be done for `all'.
+00:15:36 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+make: Nothing to be done for `all'.
+00:15:37 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+00:15:38 **** Incremental Build of configuration Debug for project video_filter_sw_orig ****
+make all 
+make: Nothing to be done for `all'.
+00:15:39 **** Incremental Build of configuration Debug for project zynq_fsbl_0 ****
+make all 
+make: Nothing to be done for `all'.
+00:16:32 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+../src/src/main.c: In function 'CPU1processFrame':
+../src/src/main.c:188:9: warning: unused variable '_par' [-Wunused-variable]
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 108112	   1888	  34412	 144412	  2341c	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
+ 
+00:16:38 **** Incremental Build of configuration Debug for project app_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+00:16:39 **** Incremental Build of configuration Debug for project app_cpu0 ****
+make all 
+make: Nothing to be done for `all'.
+00:16:39 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+00:16:40 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+make: Nothing to be done for `all'.
+00:16:40 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+make: Nothing to be done for `all'.
+00:16:41 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+00:16:41 **** Incremental Build of configuration Debug for project video_filter_sw_orig ****
+make all 
+make: Nothing to be done for `all'.
+00:16:42 **** Incremental Build of configuration Debug for project zynq_fsbl_0 ****
+make all 
+make: Nothing to be done for `all'.
+00:17:24 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+../src/src/main.c: In function 'CPU1processFrame':
+../src/src/main.c:188:9: warning: unused variable '_par' [-Wunused-variable]
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 108152	   1888	  34412	 144452	  23444	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
+ 
+00:17:29 **** Incremental Build of configuration Debug for project app_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+00:17:29 **** Incremental Build of configuration Debug for project app_cpu0 ****
+make all 
+make: Nothing to be done for `all'.
+00:17:30 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+00:17:30 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+make: Nothing to be done for `all'.
+00:17:31 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+make: Nothing to be done for `all'.
+00:17:31 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+00:17:32 **** Incremental Build of configuration Debug for project video_filter_sw_orig ****
+make all 
+make: Nothing to be done for `all'.
+00:17:36 **** Incremental Build of configuration Debug for project zynq_fsbl_0 ****
+make all 
+make: Nothing to be done for `all'.
+00:20:07 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+Building file: ../src/src/cf_hdmi.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/cf_hdmi.d" -MT"src/src/cf_hdmi.d" -o "src/src/cf_hdmi.o" "../src/src/cf_hdmi.c"
+Finished building: ../src/src/cf_hdmi.c
+ 
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 108140	   1888	  34412	 144440	  23438	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
+ 
+00:20:11 **** Incremental Build of configuration Debug for project app_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+00:20:12 **** Incremental Build of configuration Debug for project app_cpu0 ****
+make all 
+make: Nothing to be done for `all'.
+00:20:12 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+00:20:13 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+make: Nothing to be done for `all'.
+00:20:13 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+make: Nothing to be done for `all'.
+00:20:14 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+00:20:14 **** Incremental Build of configuration Debug for project video_filter_sw_orig ****
+make all 
+make: Nothing to be done for `all'.
+00:20:15 **** Incremental Build of configuration Debug for project zynq_fsbl_0 ****
+make all 
+make: Nothing to be done for `all'.
+00:21:39 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+../src/src/main.c: In function 'CPU1processFrame':
+../src/src/main.c:189:9: warning: unused variable '_par' [-Wunused-variable]
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 108140	   1888	  34412	 144440	  23438	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
+ 
+00:21:41 **** Incremental Build of configuration Debug for project app_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+00:21:41 **** Incremental Build of configuration Debug for project app_cpu0 ****
+make all 
+make: Nothing to be done for `all'.
+00:21:42 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+00:21:42 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+make: Nothing to be done for `all'.
+00:21:43 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+make: Nothing to be done for `all'.
+00:21:43 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+00:21:44 **** Incremental Build of configuration Debug for project video_filter_sw_orig ****
+make all 
+make: Nothing to be done for `all'.
+00:21:44 **** Incremental Build of configuration Debug for project zynq_fsbl_0 ****
+make all 
+make: Nothing to be done for `all'.
+00:23:12 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+../src/src/main.c: In function 'CPU1processFrame':
+../src/src/main.c:189:9: warning: unused variable '_par' [-Wunused-variable]
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 108140	   1888	  34412	 144440	  23438	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
+ 
+00:23:15 **** Incremental Build of configuration Debug for project app_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+00:23:16 **** Incremental Build of configuration Debug for project app_cpu0 ****
+make all 
+make: Nothing to be done for `all'.
+00:23:16 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+00:23:17 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+make: Nothing to be done for `all'.
+00:23:17 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+make: Nothing to be done for `all'.
+00:23:18 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+00:23:18 **** Incremental Build of configuration Debug for project video_filter_sw_orig ****
+make all 
+make: Nothing to be done for `all'.
+00:23:18 **** Incremental Build of configuration Debug for project zynq_fsbl_0 ****
+make all 
+make: Nothing to be done for `all'.
+00:23:52 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+../src/src/main.c: In function 'CPU1processFrame':
+../src/src/main.c:189:9: warning: unused variable '_par' [-Wunused-variable]
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 108140	   1888	  34412	 144440	  23438	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
+ 
+00:23:54 **** Incremental Build of configuration Debug for project app_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+00:23:54 **** Incremental Build of configuration Debug for project app_cpu0 ****
+make all 
+make: Nothing to be done for `all'.
+00:23:55 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+00:23:55 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+make: Nothing to be done for `all'.
+00:23:56 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+make: Nothing to be done for `all'.
+00:23:56 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+00:23:57 **** Incremental Build of configuration Debug for project video_filter_sw_orig ****
+make all 
+make: Nothing to be done for `all'.
+00:23:57 **** Incremental Build of configuration Debug for project zynq_fsbl_0 ****
+make all 
+make: Nothing to be done for `all'.
+00:25:39 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+../src/src/main.c: In function 'CPU1processFrame':
+../src/src/main.c:189:9: warning: unused variable '_par' [-Wunused-variable]
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 108140	   1888	  34412	 144440	  23438	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
+ 
+00:26:00 **** Incremental Build of configuration Debug for project app_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+00:26:01 **** Incremental Build of configuration Debug for project app_cpu0 ****
+make all 
+make: Nothing to be done for `all'.
+00:26:01 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+00:26:02 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+make: Nothing to be done for `all'.
+00:26:02 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+make: Nothing to be done for `all'.
+00:26:03 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+00:26:03 **** Incremental Build of configuration Debug for project video_filter_sw_orig ****
+make all 
+make: Nothing to be done for `all'.
+00:26:03 **** Incremental Build of configuration Debug for project zynq_fsbl_0 ****
+make all 
+make: Nothing to be done for `all'.
+00:26:50 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+../src/src/main.c: In function 'CPU1processFrame':
+../src/src/main.c:189:9: warning: unused variable '_par' [-Wunused-variable]
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 108140	   1888	  34412	 144440	  23438	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
+ 
+00:26:51 **** Incremental Build of configuration Debug for project app_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+00:26:51 **** Incremental Build of configuration Debug for project app_cpu0 ****
+make all 
+make: Nothing to be done for `all'.
+00:26:52 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+00:26:52 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+make: Nothing to be done for `all'.
+00:26:53 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+make: Nothing to be done for `all'.
+00:26:53 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+00:26:54 **** Incremental Build of configuration Debug for project video_filter_sw_orig ****
+make all 
+make: Nothing to be done for `all'.
+00:26:54 **** Incremental Build of configuration Debug for project zynq_fsbl_0 ****
+make all 
+make: Nothing to be done for `all'.
+00:28:02 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+../src/src/main.c: In function 'CPU1processFrame':
+../src/src/main.c:189:9: warning: unused variable '_par' [-Wunused-variable]
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 108140	   1888	  34412	 144440	  23438	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
+ 
+00:28:04 **** Incremental Build of configuration Debug for project app_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+00:28:04 **** Incremental Build of configuration Debug for project app_cpu0 ****
+make all 
+make: Nothing to be done for `all'.
+00:28:05 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+00:28:05 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+make: Nothing to be done for `all'.
+00:28:06 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+make: Nothing to be done for `all'.
+00:28:06 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+00:28:07 **** Incremental Build of configuration Debug for project video_filter_sw_orig ****
+make all 
+make: Nothing to be done for `all'.
+00:28:07 **** Incremental Build of configuration Debug for project zynq_fsbl_0 ****
+make all 
+make: Nothing to be done for `all'.
+00:28:57 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+../src/src/main.c: In function 'CPU1processFrame':
+../src/src/main.c:189:9: warning: unused variable '_par' [-Wunused-variable]
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs_otherApproach.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs_otherApproach/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs_otherApproach.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs_otherApproach.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs_otherApproach.elf  |tee "video_filter_sw_bothCPUs_otherApproach.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 108140	   1888	  34412	 144440	  23438	video_filter_sw_bothCPUs_otherApproach.elf
+Finished building: video_filter_sw_bothCPUs_otherApproach.elf.size
+ 
+00:28:59 **** Incremental Build of configuration Debug for project app_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+00:28:59 **** Incremental Build of configuration Debug for project app_cpu0 ****
+make all 
+make: Nothing to be done for `all'.
+00:29:00 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+00:29:00 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+make: Nothing to be done for `all'.
+00:29:01 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+make: Nothing to be done for `all'.
+00:29:01 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+00:29:01 **** Incremental Build of configuration Debug for project video_filter_sw_orig ****
+make all 
+make: Nothing to be done for `all'.
+00:29:02 **** Incremental Build of configuration Debug for project zynq_fsbl_0 ****
+make all 
+make: Nothing to be done for `all'.

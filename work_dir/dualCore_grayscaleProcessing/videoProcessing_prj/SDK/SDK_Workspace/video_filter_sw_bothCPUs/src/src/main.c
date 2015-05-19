@@ -189,26 +189,21 @@ void GrayscaleFilter_processVideoFrame() {
 }
 
 
-void DDRVideoWr_CPU1() {
-	//using the common function for capturing the camera frame into memory
-	DDRVideoWr(640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME], VIDEO_BASEADDR_CPU1);
+void CPU1_init() {
+	Xil_ICacheEnable();
+	Xil_DCacheEnable();
+	// duplicating the initial boot code for CPU1 into ddr and then jumping to that boot code!
+	Xil_Out32((u32) 0x06000000, (u32) 0xe3e0000f);
+	Xil_Out32((u32) 0x06000004, (u32) 0xe3a01000);
+	Xil_Out32((u32) 0x06000008, (u32) 0xe5801000);
+	Xil_Out32((u32) 0x0600000c, (u32) 0xe320f002);
+	Xil_Out32((u32) 0x06000010, (u32) 0xe5902000);
+	Xil_Out32((u32) 0x06000014, (u32) 0xe1520001);
+	Xil_Out32((u32) 0x06000018, (u32) 0x0afffffb);
+	Xil_Out32((u32) 0x0600001c, (u32) 0xe1a0f002);
 
-	// after storing the frame completely, parking CPU1 back to initial sleep state!
-	Xil_Out32((u32) 0xffffff00, (u32) 0xe3e0000f);
-	Xil_Out32((u32) 0xffffff04, (u32) 0xe3a01000);
-	Xil_Out32((u32) 0xffffff08, (u32) 0xe5801000);
-	Xil_Out32((u32) 0xffffff0c, (u32) 0xe320f002);
-	Xil_Out32((u32) 0xffffff10, (u32) 0xe5902000);
-	Xil_Out32((u32) 0xffffff14, (u32) 0xe1520001);
-	Xil_Out32((u32) 0xffffff18, (u32) 0x0afffffb);
-	Xil_Out32((u32) 0xffffff1c, (u32) 0xe1a0f002);
-
-	Xil_Out32((u32) 0xfffffff0, (u32) 0x0);
-	asm volatile("bx %0" : : "r" (CPU1_SLEEP_ADDR));
+	asm volatile("bx %0" : : "r" (0x06000000));
 }
-
-
-
 
 /***************************************************************************//**
  * @brief Main function.
@@ -219,11 +214,14 @@ int main()
 {
 	UINT32 StartCount;
 	int xstatus;
+	int delay;
 	MajorRev     = 1;
 	MinorRev     = 1;
 	RcRev        = 1;
 	DriverEnable = TRUE;
 	LastEnable   = FALSE;
+
+	void (*funcPtr_CPU1init)() = CPU1_init;
 
     /* Disable caching on shared OCM data by setting the appropriate TLB
      * attributes for the shared data space in OCM.
@@ -276,6 +274,19 @@ int main()
 	/*Initialize the HDMI Core with default display settings*/
 	SetVideoResolution(RESOLUTION_640x480); 
 
+
+
+
+	// initializing cpu1
+	Xil_Out32(0xfffffff0, (u32) funcPtr_CPU1init);
+	dmb(); // Wait until memory write has finished.
+	sev();
+
+	for (delay=0; delay<10000000; delay++);			//sufficient delay to ensure cpu1 has been initialized!! better way could be use semaphore for inter cpu communuication
+
+
+
+
 	/* Initialize the interrupt controller */
 	xstatus = ScuGicInterrupt_Init();
 	if (xstatus != XST_SUCCESS) {
@@ -284,6 +295,7 @@ int main()
 	  	}
 
 	ConfigHdmiVDMA(detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME], HWPROC_VIDEO_BASEADDR);
+
 
 	while (APP_ChangeResolution())
 	{
