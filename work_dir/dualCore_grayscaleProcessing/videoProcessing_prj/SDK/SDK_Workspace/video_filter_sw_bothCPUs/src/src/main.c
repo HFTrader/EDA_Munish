@@ -190,8 +190,7 @@ void GrayscaleFilter_processVideoFrame() {
 
 
 void CPU1_init() {
-	Xil_ICacheEnable();
-	Xil_DCacheEnable();
+
 	// duplicating the initial boot code for CPU1 into ddr and then jumping to that boot code!
 	Xil_Out32((u32) 0x06000000, (u32) 0xe3e0000f);
 	Xil_Out32((u32) 0x06000004, (u32) 0xe3a01000);
@@ -202,7 +201,7 @@ void CPU1_init() {
 	Xil_Out32((u32) 0x06000018, (u32) 0x0afffffb);
 	Xil_Out32((u32) 0x0600001c, (u32) 0xe1a0f002);
 
-	asm volatile("bx %0" : : "r" (0x06000000));
+	asm volatile ("bx %0" : : "r" (0x00100114));		// execute CPU0 initial startup code provided by BSP!
 }
 
 /***************************************************************************//**
@@ -212,16 +211,33 @@ void CPU1_init() {
 *******************************************************************************/
 int main()
 {
+	// check if CPU1 is executing this code.....if it is then move to 0x06000000 for its initial parking code
+	u32 reg_val;
+	asm volatile ("mrc p15,0,%0,c0,c0,5\n" : "=r" (reg_val));
+	if (reg_val == 0x80000001) {
+		asm volatile ("bx %0" : : "r" (0x06000000));
+	}
+
+
+	void (*funcPtr_CPU1init)() = CPU1_init;
+	int delay;
+	// initializing cpu1
+	Xil_Out32(0xfffffff0, (u32) funcPtr_CPU1init);
+	dmb(); // Wait until memory write has finished.
+	sev();
+	for (delay=0; delay<100000; delay++);			//sufficient delay to ensure cpu1 has been initialized!! better way could be use semaphore for inter cpu communuication*/
+
+
+
+
+	// elsif continue normal execution for CPU0
 	UINT32 StartCount;
 	int xstatus;
-	int delay;
 	MajorRev     = 1;
 	MinorRev     = 1;
 	RcRev        = 1;
 	DriverEnable = TRUE;
 	LastEnable   = FALSE;
-
-	void (*funcPtr_CPU1init)() = CPU1_init;
 
     /* Disable caching on shared OCM data by setting the appropriate TLB
      * attributes for the shared data space in OCM.
@@ -275,16 +291,8 @@ int main()
 	SetVideoResolution(RESOLUTION_640x480); 
 
 
-
-
-	// initializing cpu1
-	Xil_Out32(0xfffffff0, (u32) funcPtr_CPU1init);
-	dmb(); // Wait until memory write has finished.
-	sev();
-
-	for (delay=0; delay<10000000; delay++);			//sufficient delay to ensure cpu1 has been initialized!! better way could be use semaphore for inter cpu communuication
-
-
+	//ConfigHdmiVDMA(detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME], HWPROC_VIDEO_BASEADDR);
+	ConfigHdmiVDMA(detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME], VIDEO_BASEADDR_CPU1);
 
 
 	/* Initialize the interrupt controller */
@@ -293,8 +301,6 @@ int main()
 		xil_printf("Unable to initialize Interrupts");
 	  		//return XST_FAILURE;
 	  	}
-
-	ConfigHdmiVDMA(detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME], HWPROC_VIDEO_BASEADDR);
 
 
 	while (APP_ChangeResolution())
