@@ -145,7 +145,6 @@ _start:
 	mov	r0, #0
 	mov	r1, #0
 
-
 	/* Let her rip */
 	bl	main
 

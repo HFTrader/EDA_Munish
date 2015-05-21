@@ -12,6 +12,7 @@
 #include "xil_mmu.h"
 #include "sw_functions.h"
 #include "global.h"
+#include "xil_cache.h"
 
 
 int semaphore_cpu1_signal()
@@ -49,6 +50,10 @@ int main()
      * B=b0
      */
 	Xil_SetTlbAttributes(SHARED_OCM_MEMORY_BASE, 0x14de2);
+	Xil_DCacheDisable();
+	Xil_ICacheDisable();
+	Xil_ICacheEnable();
+	Xil_DCacheEnable();
 
 	while (1)
 	{

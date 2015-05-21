@@ -70,7 +70,7 @@ void AXI_INTERRUPT_VsyncIntr_Handler(void * baseaddr_p)
   cnt++;
   debug_frameNo++;
 
-  GrayscaleFilter_processVideoFrame();
+  //GrayscaleFilter_processVideoFrame();
 
   if (cnt>1) {
 	  // interrupt the CPU1 to handle this frame

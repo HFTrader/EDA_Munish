@@ -132,8 +132,7 @@ void configureGrayscaleFilter() {
 	xGrayScaleFilter1.IsReady = XIL_COMPONENT_IS_READY;
 	config_grayScaleFilter(xGrayScaleFilter1);
 	resetVDMA(1);
-	//config_filterVDMA(XPAR_AXI_VDMA_1_BASEADDR, DMA_MEM_TO_DEV, VIDEO_BASEADDR);
-	config_filterVDMA(XPAR_AXI_VDMA_1_BASEADDR, DMA_MEM_TO_DEV, VIDEO_BASEADDR_CPU1);
+	config_filterVDMA(XPAR_AXI_VDMA_1_BASEADDR, DMA_MEM_TO_DEV, VIDEO_BASEADDR);
 	config_filterVDMA(XPAR_AXI_VDMA_1_BASEADDR, DMA_DEV_TO_MEM, HWPROC_VIDEO_BASEADDR);
 }
 
@@ -201,7 +200,11 @@ void CPU1_init() {
 	Xil_Out32((u32) 0x06000018, (u32) 0x0afffffb);
 	Xil_Out32((u32) 0x0600001c, (u32) 0xe1a0f002);
 
+	Xil_SetTlbAttributes(SHARED_OCM_MEMORY_BASE, 0x14de2);
+
+	Xil_Out32((u32) 0xffff0000, (u32) 0xa0a0a050);
 	asm volatile ("bx %0" : : "r" (0x00100114));		// execute CPU0 initial startup code provided by BSP!
+	//asm volatile ("bx %0" : : "r" (0x06000000));
 }
 
 /***************************************************************************//**
@@ -219,18 +222,11 @@ int main()
 	}
 
 
-	void (*funcPtr_CPU1init)() = CPU1_init;
-	int delay;
-	// initializing cpu1
-	Xil_Out32(0xfffffff0, (u32) funcPtr_CPU1init);
-	dmb(); // Wait until memory write has finished.
-	sev();
-	for (delay=0; delay<100000; delay++);			//sufficient delay to ensure cpu1 has been initialized!! better way could be use semaphore for inter cpu communuication*/
-
-
 
 
 	// elsif continue normal execution for CPU0
+
+
 	UINT32 StartCount;
 	int xstatus;
 	MajorRev     = 1;
@@ -238,6 +234,10 @@ int main()
 	RcRev        = 1;
 	DriverEnable = TRUE;
 	LastEnable   = FALSE;
+	void (*funcPtr_CPU1init)() = CPU1_init;
+	void (*funcPtr_DDRVideoWrCPU1)() = DDRVideoWr_CPU1;
+	int delay;
+
 
     /* Disable caching on shared OCM data by setting the appropriate TLB
      * attributes for the shared data space in OCM.
@@ -250,6 +250,25 @@ int main()
      * B=b0
 	 */
     Xil_SetTlbAttributes(SHARED_OCM_MEMORY_BASE, 0x14de2);
+
+    if (Xil_In32((u32) 0xffff0000) != 0xa0a0a0a0)
+    	Xil_Out32((u32) 0xffff0000, (u32) 0x50505050);
+
+
+
+
+	if (Xil_In32((u32) 0xffff0000) == 0x50505050) {
+		// initializing cpu1
+		Xil_Out32(0xfffffff0, (u32) funcPtr_CPU1init);
+		dmb(); // Wait until memory write has finished.
+		sev();
+		for (delay=0; delay<100000; delay++);			//sufficient delay to ensure cpu1 has been initialized!! better way could be use semaphore for inter cpu communuication*/
+
+		Xil_Out32((u32) 0xffff0000, (u32) 0xa0a0a0a0);
+		// going back to execute the startup code
+		asm volatile ("bx %0" : : "r" (0x00100000));
+	}
+
 
 	Xil_ICacheEnable();
 	Xil_DCacheEnable();
@@ -288,11 +307,20 @@ int main()
 	ADIAPI_TransmitterMain();
 	
 	/*Initialize the HDMI Core with default display settings*/
-	SetVideoResolution(RESOLUTION_640x480); 
+	SetVideoResolution(RESOLUTION_640x480);
 
 
 	//ConfigHdmiVDMA(detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME], HWPROC_VIDEO_BASEADDR);
 	ConfigHdmiVDMA(detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME], VIDEO_BASEADDR_CPU1);
+
+	if (ATV_GetElapsedMs (StartCount, NULL) >= HDMI_CALL_INTERVAL_MS)
+	{
+		StartCount = HAL_GetCurrentMsCount();
+		if (APP_DriverEnabled())
+		{
+			ADIAPI_TransmitterMain();
+		}
+	}
 
 
 	/* Initialize the interrupt controller */
@@ -305,13 +333,6 @@ int main()
 
 	while (APP_ChangeResolution())
 	{
-		while (FRAME_INTR == 0);
-
-		//printf("DEBUG_CPU0: current frame captured by CPU0....now processing it! \n\r");
-		//debug_var = 0;
-		// grayscaling the captured image and writing to a separate memory region in ddr
-		//ConvToGrayHLS(VIDEO_BASEADDR, PROC_VIDEO_BASEADDR, detailedTiming[currentResolution][H_ACTIVE_TIME]);
-
 		if (ATV_GetElapsedMs (StartCount, NULL) >= HDMI_CALL_INTERVAL_MS)
 		{
 			StartCount = HAL_GetCurrentMsCount();
@@ -321,6 +342,13 @@ int main()
 			}
 		}
 
+		while (FRAME_INTR == 0);
+
+		Xil_Out32(0xfffffff0, (u32) funcPtr_DDRVideoWrCPU1);
+		sev();
+
+		GrayscaleFilter_processVideoFrame();				// alternately process each core's frame
+
 		FRAME_INTR = 0;
 	}
 
@@ -329,3 +357,14 @@ int main()
 
 	return(0);
 }
+
+
+
+
+//ISSUES:
+// with the approach of cpu1 executing cpu0 startup code provided by standalone BSP after cpu0 has executed it
+// the program exhibits unpredictable behavior which most likely end up being cpu0 aborting its execution (crash)....the crash point varying and also sometimes no crash occurs but this is rare........investigate this unpredictability
+
+
+
+

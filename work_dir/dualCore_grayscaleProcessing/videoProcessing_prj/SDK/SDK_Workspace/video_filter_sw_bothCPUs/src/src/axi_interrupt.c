@@ -63,28 +63,15 @@ unsigned int t=0;
 void AXI_INTERRUPT_VsyncIntr_Handler(void * baseaddr_p)
 {
   static int cnt = 0;
-  static int debug_frameNo = 0;
-  void (*funcPtr_DDRVideoWrCPU1)() = DDRVideoWr_CPU1;
-
-  //printf("DEBUG_CPU0: debug_var = %d..........debug_frameNo=%d\n\r", debug_var, debug_frameNo);
-
+  int i;
   cnt++;
-  debug_frameNo++;
-
-  //GrayscaleFilter_processVideoFrame();				// alternately process each core's frame
 
   if (cnt>1) {
-	  //printf("DEBUG_CPU0: frame handled by cpu1...debug_frameNo=%d\n\r", debug_frameNo);
-
-	  Xil_Out32(0xfffffff0, (u32) funcPtr_DDRVideoWrCPU1);
-	  dmb(); // Wait until memory write has finished.
-	  sev();
-
+	  DDRVideoWr(640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME], VIDEO_BASEADDR);
 	  cnt = 0;
   } else {
+	  for (i=0; i<1500000; i++);
 	  FRAME_INTR = 1;
-	  //printf("DEBUG_CPU0: frame handled by cpu0...debug_frameNo=%d\n\r", debug_frameNo);
-	  //DDRVideoWr(640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME], VIDEO_BASEADDR);
   }
 
 }

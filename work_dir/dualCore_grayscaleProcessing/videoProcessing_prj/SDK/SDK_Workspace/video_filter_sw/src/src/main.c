@@ -141,7 +141,8 @@ void configureGrayscaleFilter() {
 	xGrayScaleFilter1.IsReady = XIL_COMPONENT_IS_READY;
 	config_grayScaleFilter(xGrayScaleFilter1);
 	resetVDMA(1);
-	config_filterVDMA(XPAR_AXI_VDMA_1_BASEADDR, DMA_MEM_TO_DEV, VIDEO_BASEADDR);
+	//config_filterVDMA(XPAR_AXI_VDMA_1_BASEADDR, DMA_MEM_TO_DEV, VIDEO_BASEADDR);
+	config_filterVDMA(XPAR_AXI_VDMA_1_BASEADDR, DMA_MEM_TO_DEV, VIDEO_BASEADDR_CPU1);
 	config_filterVDMA(XPAR_AXI_VDMA_1_BASEADDR, DMA_DEV_TO_MEM, HWPROC_VIDEO_BASEADDR);
 }
 
@@ -324,7 +325,7 @@ int main()
 	{
 		while (FRAME_INTR == 0);
 
-		DDRVideoWr(640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME]);
+		//DDRVideoWr(640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME]);
 
 		//printf("DEBUG_CPU0: current frame captured by CPU0....now processing it! \n\r");
 		//debug_var = 0;

@@ -131,7 +131,31 @@ void DDRVideoWr(unsigned short width, unsigned short height, unsigned short hori
 
 void DDRVideoWr_CPU1() {
 	//using the common function for capturing the camera frame into memory
-	DDRVideoWr(640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME], VIDEO_BASEADDR_CPU1);
+	//DDRVideoWr(640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME], VIDEO_BASEADDR_CPU1);
+	//ISSUE: in using the common function......on its return CPU1 crashes (maybe b/c of two CPUs PC clash for same code)!!
+	//so right now this function has its own code!!
+
+	u32 row,col;
+	u32 V_offset;
+	u32 pixel_val1,pixel_val2;
+
+	for (row = 0; row < 480; row++) {
+	  V_offset = row * 640;
+	  if (row % 2 == 0){
+		  for (col = 0; col < 640; col++) {
+			  pixel_val1 = Xil_In32(CAM_MEM_BUFF0_BASEADDR+(col * 4));
+			  pixel_val2 = ((pixel_val1 & 0xf) << 4) | ((pixel_val1 & 0xf0 ) << 8) | ((pixel_val1 & 0xf00) << 12); //expanding 12 to 24 bit
+			  Xil_Out32((0x03000000 + ((V_offset + col) * 4) ), pixel_val2 );
+		  }
+	  }
+	  else{
+		  for (col = 0; col < 640; col++) {
+			  pixel_val1 = Xil_In32(CAM_MEM_BUFF1_BASEADDR+(col * 4));
+			  pixel_val2 = ((pixel_val1 & 0xf) << 4) | ((pixel_val1 & 0xf0 )<< 8) | ((pixel_val1 & 0xf00) << 12); //expanding 12 to 24 bit
+			  Xil_Out32((0x03000000 + ((V_offset + col) * 4) ), pixel_val2 );
+		  }
+	  }
+	}
 
 	Xil_Out32((u32) 0xfffffff0, (u32) 0x0);
 	asm volatile("bx %0" : : "r" (0x06000000));
@@ -239,7 +263,6 @@ void InitHdmiVideoPcore(unsigned short horizontalActiveTime,
 			  0x00000000); // disable
 	Xil_Out32((CFV_BASEADDR + AXI_HDMI_REG_CTRL),
 			  0x00000001); // enable
-
 	//ConfigHdmiVDMA ( horizontalActiveTime,verticalActiveTime, VIDEO_BASEADDR);
 }
 
