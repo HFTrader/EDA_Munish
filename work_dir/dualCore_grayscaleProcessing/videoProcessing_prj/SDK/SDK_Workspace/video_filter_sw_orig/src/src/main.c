@@ -20,6 +20,7 @@
 #include "xscugic.h"
 #include "xgray_scale.h"
 #include "hw_config.h"
+#include "profile_cnt.h"
 
 extern void delay_ms(u32 ms_count);
 extern char inbyte(void);
@@ -178,6 +179,9 @@ int main()
 
 	Xil_ICacheEnable();
 	Xil_DCacheEnable();
+
+	EnablePerfCounters();
+	init_perfcounters(1, 0);
 
 	HAL_PlatformInit(XPAR_AXI_IIC_0_BASEADDR,	/* Perform any required platform init */
 					 XPAR_SCUTIMER_DEVICE_ID,	/* including hardware reset to HDMI devices */

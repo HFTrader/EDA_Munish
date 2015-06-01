@@ -24,6 +24,8 @@
 #include "global.h"
 //#include "xgray_scale.h"
 #include "hw_config.h"
+#include "profile_cnt.h"
+
 
 
 /******************************************************************************/
@@ -42,7 +44,8 @@ static XScuGic_Config *GicConfig;/* The configuration parameters of the controll
 
 short int FRAME_INTR = 0;
 
-XGray_scale xGrayScaleFilter1, xGrayScaleFilter2;
+XGray_scale xGrayScaleFilter1;
+//XGray_scale xGrayScaleFilter2;
 
 
 
@@ -187,7 +190,8 @@ void GrayscaleFilter_processVideoFrame() {
 
 }
 
-
+// this function contains cpu1 startup code to boot it with MMU, cache enabled
+// the initial boot code (wait for SEV from cpu0 code) is copied to DDR memory as it was found that it got corrupted in shared memory
 void CPU1_init() {
 
 	// duplicating the initial boot code for CPU1 into ddr and then jumping to that boot code!
@@ -200,12 +204,133 @@ void CPU1_init() {
 	Xil_Out32((u32) 0x06000018, (u32) 0x0afffffb);
 	Xil_Out32((u32) 0x0600001c, (u32) 0xe1a0f002);
 
-	Xil_SetTlbAttributes(SHARED_OCM_MEMORY_BASE, 0x14de2);
 
-	Xil_Out32((u32) 0xffff0000, (u32) 0xa0a0a050);
-	asm volatile ("bx %0" : : "r" (0x00100114));		// execute CPU0 initial startup code provided by BSP!
-	//asm volatile ("bx %0" : : "r" (0x06000000));
+    // BSP startup code!!
+
+	asm volatile (
+						/* Write to ACTLR */
+						"mrc	p15, 0, r0, c1, c0, 1		/* Read ACTLR*/\n"
+						"orr	r0, r0, #(0x01 << 6)		/* set SMP bit */\n"
+						"orr	r0, r0, #(0x01 )		/* */\n"
+						"mcr	p15, 0, r0, c1, c0, 1		/* Write ACTLR*/\n"
+
+
+
+						/* Invalidate caches and TLBs */
+						"mov	r0,#0				/* r0 = 0  */\n"
+						"mcr	p15, 0, r0, c8, c7, 0		/* invalidate TLBs */\n"
+						"mcr	p15, 0, r0, c7, c5, 0		/* invalidate icache */\n"
+						"mcr	p15, 0, r0, c7, c5, 6		/* Invalidate branch predictor array */\n"
+						"bl	invalidate_dcache		/* invalidate dcache */\n"
+
+						/* Disable MMU, if enabled */
+						"mrc	p15, 0, r0, c1, c0, 0		/* read CP15 register 1 */\n"
+						"bic	r0, r0, #0x1			/* clear bit 0 */\n"
+						"mcr	p15, 0, r0, c1, c0, 0		/* write value back */\n"
+
+
+						/* setup stack pointer for cpu1*/
+						"mrs	r0, cpsr			/* get the current PSR */\n"
+						"mvn	r1, #0x1f			/* set up the system stack pointer */\n"
+						"and	r2, r1, r0\n"
+						"orr	r2, r2, #0x1F			/* SYS mode */\n"
+						"msr	cpsr, r2\n"
+						"ldr	r13,=__stack1			/* SYS stack pointer */\n"
+
+
+
+
+						/* enable MMU and cache */
+						"ldr	r0,=MMUTable			/* Load MMU translation table base */\n"
+						"orr	r0, r0, #0x5B			/* Outer-cacheable, WB */\n"
+						"mcr	15, 0, r0, c2, c0, 0		/* TTB0 */\n"
+
+						"mvn	r0,#0				/* Load MMU domains -- all ones=manager */\n"
+						"mcr	p15,0,r0,c3,c0,0\n"
+						/* Enable mmu, icahce and dcache */
+						"ldr	r0,=0b01000000000101\n"
+
+						"mcr	p15,0,r0,c1,c0,0		/* Enable cache and MMU */\n"
+						"dsb					/* dsb	allow the MMU to start up */\n"
+
+						"isb					/* isb	flush prefetch buffer */\n"
+
+
+
+
+
+
+						"mrc	p15,0,r0,c1,c0,0		/* flow prediction enable */\n"
+						"orr	r0, r0, #(0x01 << 11)		/* #0x8000 */\n"
+						"mcr	p15,0,r0,c1,c0,0\n"
+
+						"mrc	p15,0,r0,c1,c0,1		/* read Auxiliary Control Register */\n"
+						"orr	r0, r0, #(0x1 << 2)		/* enable Dside prefetch */\n"
+						"orr	r0, r0, #(0x1 << 1)		/* enable L2 Prefetch hint */\n"
+						"mcr	p15,0,r0,c1,c0,1		/* write Auxiliary Control Register */\n"
+
+
+
+
+
+						// CPU1 powering down (will then be waiting for sev from CPU0)
+						"movw r0, 0x0000\n"
+						"movt r0, 0x0600\n"
+						"bx r0\n"
+
+
+
+
+						"invalidate_dcache:\n"
+						"	mrc	p15, 1, r0, c0, c0, 1		/* read CLIDR */\n"
+						"	ands	r3, r0, #0x7000000\n"
+						"	mov	r3, r3, lsr #23			/* cache level value (naturally aligned) */\n"
+						"	beq	finished\n"
+						"	mov	r10, #0				/* start with level 0 */\n"
+						"loop1:\n"
+						"	add	r2, r10, r10, lsr #1		/* work out 3xcachelevel */\n"
+						"	mov	r1, r0, lsr r2			/* bottom 3 bits are the Cache type for this level */\n"
+						"	and	r1, r1, #7			/* get those 3 bits alone */\n"
+						"	cmp	r1, #2\n"
+						"	blt	skip				/* no cache or only instruction cache at this level */\n"
+						"	mcr	p15, 2, r10, c0, c0, 0		/* write the Cache Size selection register */\n"
+						"	isb					/* isb to sync the change to the CacheSizeID reg */\n"
+						"	mrc	p15, 1, r1, c0, c0, 0		/* reads current Cache Size ID register */\n"
+						"	and	r2, r1, #7			/* extract the line length field */\n"
+						"	add	r2, r2, #4			/* add 4 for the line length offset (log2 16 bytes) */\n"
+						"	ldr	r4, =0x3ff\n"
+						"	ands	r4, r4, r1, lsr #3		/* r4 is the max number on the way size (right aligned) */\n"
+						"	clz	r5, r4				/* r5 is the bit position of the way size increment */\n"
+						"	ldr	r7, =0x7fff\n"
+						"	ands	r7, r7, r1, lsr #13		/* r7 is the max number of the index size (right aligned) */\n"
+						"loop2:\n"
+						"	mov	r9, r4				/* r9 working copy of the max way size (right aligned) */\n"
+						"loop3:\n"
+						"	orr	r11, r10, r9, lsl r5		/* factor in the way number and cache number into r11 */\n"
+						"	orr	r11, r11, r7, lsl r2		/* factor in the index number */\n"
+						"	mcr	p15, 0, r11, c7, c14, 2		/* clean & invalidate by set/way */\n"
+						"	subs	r9, r9, #1			/* decrement the way number */\n"
+						"	bge	loop3\n"
+						"	subs	r7, r7, #1			/* decrement the index */\n"
+						"	bge	loop2\n"
+						"skip:\n"
+						"	add	r10, r10, #2			/* increment the cache number */\n"
+						"	cmp	r3, r10\n"
+						"	bgt	loop1\n"
+
+						"finished:\n"
+						"	mov	r10, #0				/* swith back to cache level 0 */\n"
+						"	mcr	p15, 2, r10, c0, c0, 0		/* select current cache level in cssr */\n"
+						"	dsb\n"
+						"	isb\n"
+
+						"	bx	lr\n"
+				);
+
+
 }
+
+
 
 /***************************************************************************//**
  * @brief Main function.
@@ -214,19 +339,6 @@ void CPU1_init() {
 *******************************************************************************/
 int main()
 {
-	// check if CPU1 is executing this code.....if it is then move to 0x06000000 for its initial parking code
-	u32 reg_val;
-	asm volatile ("mrc p15,0,%0,c0,c0,5\n" : "=r" (reg_val));
-	if (reg_val == 0x80000001) {
-		asm volatile ("bx %0" : : "r" (0x06000000));
-	}
-
-
-
-
-	// elsif continue normal execution for CPU0
-
-
 	UINT32 StartCount;
 	int xstatus;
 	MajorRev     = 1;
@@ -235,7 +347,6 @@ int main()
 	DriverEnable = TRUE;
 	LastEnable   = FALSE;
 	void (*funcPtr_CPU1init)() = CPU1_init;
-	void (*funcPtr_DDRVideoWrCPU1)() = DDRVideoWr_CPU1;
 	int delay;
 
 
@@ -250,28 +361,21 @@ int main()
      * B=b0
 	 */
     Xil_SetTlbAttributes(SHARED_OCM_MEMORY_BASE, 0x14de2);
-
-    if (Xil_In32((u32) 0xffff0000) != 0xa0a0a0a0)
-    	Xil_Out32((u32) 0xffff0000, (u32) 0x50505050);
-
-
-
-
-	if (Xil_In32((u32) 0xffff0000) == 0x50505050) {
-		// initializing cpu1
-		Xil_Out32(0xfffffff0, (u32) funcPtr_CPU1init);
-		dmb(); // Wait until memory write has finished.
-		sev();
-		for (delay=0; delay<100000; delay++);			//sufficient delay to ensure cpu1 has been initialized!! better way could be use semaphore for inter cpu communuication*/
-
-		Xil_Out32((u32) 0xffff0000, (u32) 0xa0a0a0a0);
-		// going back to execute the startup code
-		asm volatile ("bx %0" : : "r" (0x00100000));
-	}
-
-
 	Xil_ICacheEnable();
 	Xil_DCacheEnable();
+
+
+	// interrupting cpu1 to run startup code
+	Xil_Out32(0xfffffff0, (u32) funcPtr_CPU1init);
+	dmb();
+	sev();
+	for (delay=0; delay<100000; delay++);
+
+
+
+
+	EnablePerfCounters();
+	init_perfcounters(1, 0);
 
 	HAL_PlatformInit(XPAR_AXI_IIC_0_BASEADDR,	/* Perform any required platform init */
 					 XPAR_SCUTIMER_DEVICE_ID,	/* including hardware reset to HDMI devices */
@@ -310,17 +414,7 @@ int main()
 	SetVideoResolution(RESOLUTION_640x480);
 
 
-	//ConfigHdmiVDMA(detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME], HWPROC_VIDEO_BASEADDR);
-	ConfigHdmiVDMA(detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME], VIDEO_BASEADDR_CPU1);
-
-	if (ATV_GetElapsedMs (StartCount, NULL) >= HDMI_CALL_INTERVAL_MS)
-	{
-		StartCount = HAL_GetCurrentMsCount();
-		if (APP_DriverEnabled())
-		{
-			ADIAPI_TransmitterMain();
-		}
-	}
+	ConfigHdmiVDMA(detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME], HWPROC_VIDEO_BASEADDR);
 
 
 	/* Initialize the interrupt controller */
@@ -342,13 +436,10 @@ int main()
 			}
 		}
 
+		ADIAPI_TransmitterMain();
 		while (FRAME_INTR == 0);
 
-		Xil_Out32(0xfffffff0, (u32) funcPtr_DDRVideoWrCPU1);
-		sev();
-
-		GrayscaleFilter_processVideoFrame();				// alternately process each core's frame
-
+		DDRVideoWr(640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME], VIDEO_BASEADDR);
 		FRAME_INTR = 0;
 	}
 
@@ -361,9 +452,7 @@ int main()
 
 
 
-//ISSUES:
-// with the approach of cpu1 executing cpu0 startup code provided by standalone BSP after cpu0 has executed it
-// the program exhibits unpredictable behavior which most likely end up being cpu0 aborting its execution (crash)....the crash point varying and also sometimes no crash occurs but this is rare........investigate this unpredictability
+
 
 
 

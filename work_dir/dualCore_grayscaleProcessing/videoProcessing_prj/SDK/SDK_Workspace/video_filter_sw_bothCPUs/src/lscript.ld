@@ -256,15 +256,19 @@ _SDA2_BASE_ = __sdata2_start + ((__sbss2_end - __sdata2_start) / 2 );
    _stack_end = .;
    . += _STACK_SIZE;
    _stack = .;
-   __stack = _stack;
-   . = ALIGN(16);
+   __stack = _stack;     
+	. = ALIGN(16);
+   _stack1_end = .;
+   . += _STACK_SIZE;
+   __stack1 = .;   
    _irq_stack_end = .;
    . += _STACK_SIZE;
+   . = ALIGN(16);
    __irq_stack = .;
    _supervisor_stack_end = .;
    . += _SUPERVISOR_STACK_SIZE;
    . = ALIGN(16);
-   __supervisor_stack = .;
+   __supervisor_stack = .; 
    _abort_stack_end = .;
    . += _ABORT_STACK_SIZE;
    . = ALIGN(16);
@@ -277,8 +281,10 @@ _SDA2_BASE_ = __sdata2_start + ((__sbss2_end - __sdata2_start) / 2 );
    . += _UNDEF_STACK_SIZE;
    . = ALIGN(16);
    __undef_stack = .;
+   
 } > ps7_ddr_0_S_AXI_BASEADDR
 
 _end = .;
 }
+
 

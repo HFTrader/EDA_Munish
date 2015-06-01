@@ -62,15 +62,20 @@ void AXI_INTERRUPT_EnableInterrupt(void * baseaddr_p)
 unsigned int t=0;
 void AXI_INTERRUPT_VsyncIntr_Handler(void * baseaddr_p)
 {
-  static int cnt = 0;
-  cnt++;
-  if (cnt > 1) {
-	  cnt = 0 ;
-	  DDRVideoWr(640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME]);
-  }
-  else {
-	  FRAME_INTR = 1;
-  }
+	static int frame_no = 0;
+	printf("frame2frame cycle count = %d.......frame_no=%d\n\r", get_cyclecount(), frame_no++);
+	init_perfcounters(1, 0);
+
+
+	static int cnt = 0;
+	cnt++;
+	if (cnt > 1) {
+		cnt = 0 ;
+		DDRVideoWr(640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME]);
+	}
+	else {
+		FRAME_INTR = 1;
+	}
 }
 
 void AXI_INTERRUPT_HrefIntr_Handler(void * baseaddr_p)

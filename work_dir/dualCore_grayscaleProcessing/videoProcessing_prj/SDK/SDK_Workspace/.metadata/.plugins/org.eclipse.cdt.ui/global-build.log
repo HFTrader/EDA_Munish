@@ -1,67 +1,31 @@
-23:42:27 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs ****
+20:50:59 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs ****
 make all 
 make: Nothing to be done for `all'.
-23:42:29 **** Incremental Build of configuration Debug for project app_cpu1 ****
+20:51:02 **** Incremental Build of configuration Debug for project app_cpu1 ****
 make all 
 make: Nothing to be done for `all'.
-23:42:29 **** Incremental Build of configuration Debug for project app_cpu0 ****
+20:51:02 **** Incremental Build of configuration Debug for project app_cpu0 ****
 make all 
 make: Nothing to be done for `all'.
-23:42:30 **** Incremental Build of configuration Debug for project video_filter_sw ****
+20:51:03 **** Incremental Build of configuration Debug for project video_filter_sw ****
 make all 
 make: Nothing to be done for `all'.
-23:42:30 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs ****
+20:51:03 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs ****
 make all 
 make: Nothing to be done for `all'.
-23:42:31 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+20:51:04 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
 make all 
 make: Nothing to be done for `all'.
-23:42:31 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
+20:51:05 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
 make all 
 make: Nothing to be done for `all'.
-23:42:32 **** Incremental Build of configuration Debug for project video_filter_sw_orig ****
+20:51:05 **** Incremental Build of configuration Debug for project video_filter_sw_orig ****
 make all 
 make: Nothing to be done for `all'.
-23:42:32 **** Incremental Build of configuration Debug for project zynq_fsbl_0 ****
+20:51:06 **** Incremental Build of configuration Debug for project zynq_fsbl_0 ****
 make all 
 make: Nothing to be done for `all'.
-23:44:19 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs ****
-make all 
-Building file: ../src/src/axi_interrupt.c
-Invoking: ARM gcc compiler
-arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/axi_interrupt.d" -MT"src/src/axi_interrupt.d" -o "src/src/axi_interrupt.o" "../src/src/axi_interrupt.c"
-Finished building: ../src/src/axi_interrupt.c
- 
-Building target: video_filter_sw_bothCPUs.elf
-Invoking: ARM gcc linker
-arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-Finished building target: video_filter_sw_bothCPUs.elf
- 
-Invoking: ARM Print Size
-arm-xilinx-eabi-size video_filter_sw_bothCPUs.elf  |tee "video_filter_sw_bothCPUs.elf.size"
-   text	   data	    bss	    dec	    hex	filename
- 108156	   1888	  34428	 144472	  23458	video_filter_sw_bothCPUs.elf
-Finished building: video_filter_sw_bothCPUs.elf.size
- 
-23:44:26 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs ****
-make all 
-Building file: ../src/src/axi_interrupt.c
-Invoking: ARM gcc compiler
-arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/axi_interrupt.d" -MT"src/src/axi_interrupt.d" -o "src/src/axi_interrupt.o" "../src/src/axi_interrupt.c"
-Finished building: ../src/src/axi_interrupt.c
- 
-Building target: video_filter_sw_bothCPUs.elf
-Invoking: ARM gcc linker
-arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-Finished building target: video_filter_sw_bothCPUs.elf
- 
-Invoking: ARM Print Size
-arm-xilinx-eabi-size video_filter_sw_bothCPUs.elf  |tee "video_filter_sw_bothCPUs.elf.size"
-   text	   data	    bss	    dec	    hex	filename
- 108012	   1888	  34428	 144328	  233c8	video_filter_sw_bothCPUs.elf
-Finished building: video_filter_sw_bothCPUs.elf.size
- 
-23:44:37 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs ****
+20:52:57 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs ****
 make all 
 Building file: ../src/src/main.c
 Invoking: ARM gcc compiler
@@ -76,160 +40,10 @@ Finished building target: video_filter_sw_bothCPUs.elf
 Invoking: ARM Print Size
 arm-xilinx-eabi-size video_filter_sw_bothCPUs.elf  |tee "video_filter_sw_bothCPUs.elf.size"
    text	   data	    bss	    dec	    hex	filename
- 108012	   1888	  34428	 144328	  233c8	video_filter_sw_bothCPUs.elf
+ 108416	   1888	  42620	 152924	  2555c	video_filter_sw_bothCPUs.elf
 Finished building: video_filter_sw_bothCPUs.elf.size
  
-23:44:42 **** Incremental Build of configuration Debug for project app_cpu1 ****
-make all 
-make: Nothing to be done for `all'.
-23:44:42 **** Incremental Build of configuration Debug for project app_cpu0 ****
-make all 
-make: Nothing to be done for `all'.
-23:44:43 **** Incremental Build of configuration Debug for project video_filter_sw ****
-make all 
-make: Nothing to be done for `all'.
-23:44:43 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs ****
-make all 
-make: Nothing to be done for `all'.
-23:44:44 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
-make all 
-make: Nothing to be done for `all'.
-23:44:44 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
-make all 
-make: Nothing to be done for `all'.
-23:44:45 **** Incremental Build of configuration Debug for project video_filter_sw_orig ****
-make all 
-make: Nothing to be done for `all'.
-23:44:45 **** Incremental Build of configuration Debug for project zynq_fsbl_0 ****
-make all 
-make: Nothing to be done for `all'.
-23:44:58 **** Incremental Build of configuration Debug for project app_cpu1 ****
-make all 
-make: Nothing to be done for `all'.
-23:44:58 **** Incremental Build of configuration Debug for project app_cpu0 ****
-make all 
-make: Nothing to be done for `all'.
-23:44:59 **** Incremental Build of configuration Debug for project video_filter_sw ****
-make all 
-make: Nothing to be done for `all'.
-23:44:59 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs ****
-make all 
-make: Nothing to be done for `all'.
-23:45:00 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
-make all 
-make: Nothing to be done for `all'.
-23:45:00 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
-make all 
-make: Nothing to be done for `all'.
-23:45:01 **** Incremental Build of configuration Debug for project video_filter_sw_orig ****
-make all 
-make: Nothing to be done for `all'.
-23:45:01 **** Incremental Build of configuration Debug for project zynq_fsbl_0 ****
-make all 
-make: Nothing to be done for `all'.
-23:47:37 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs ****
-make all 
-Building file: ../src/src/axi_interrupt.c
-Invoking: ARM gcc compiler
-arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/axi_interrupt.d" -MT"src/src/axi_interrupt.d" -o "src/src/axi_interrupt.o" "../src/src/axi_interrupt.c"
-Finished building: ../src/src/axi_interrupt.c
- 
-Building target: video_filter_sw_bothCPUs.elf
-Invoking: ARM gcc linker
-arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-Finished building target: video_filter_sw_bothCPUs.elf
- 
-Invoking: ARM Print Size
-arm-xilinx-eabi-size video_filter_sw_bothCPUs.elf  |tee "video_filter_sw_bothCPUs.elf.size"
-   text	   data	    bss	    dec	    hex	filename
- 108056	   1888	  34428	 144372	  233f4	video_filter_sw_bothCPUs.elf
-Finished building: video_filter_sw_bothCPUs.elf.size
- 
-23:47:48 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs ****
-make all 
-Building file: ../src/src/axi_interrupt.c
-Invoking: ARM gcc compiler
-arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/axi_interrupt.d" -MT"src/src/axi_interrupt.d" -o "src/src/axi_interrupt.o" "../src/src/axi_interrupt.c"
-Finished building: ../src/src/axi_interrupt.c
- 
-Building target: video_filter_sw_bothCPUs.elf
-Invoking: ARM gcc linker
-arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-Finished building target: video_filter_sw_bothCPUs.elf
- 
-Invoking: ARM Print Size
-arm-xilinx-eabi-size video_filter_sw_bothCPUs.elf  |tee "video_filter_sw_bothCPUs.elf.size"
-   text	   data	    bss	    dec	    hex	filename
- 108200	   1888	  34428	 144516	  23484	video_filter_sw_bothCPUs.elf
-Finished building: video_filter_sw_bothCPUs.elf.size
- 
-23:48:01 **** Incremental Build of configuration Debug for project app_cpu1 ****
-make all 
-make: Nothing to be done for `all'.
-23:48:01 **** Incremental Build of configuration Debug for project app_cpu0 ****
-make all 
-make: Nothing to be done for `all'.
-23:48:02 **** Incremental Build of configuration Debug for project video_filter_sw ****
-make all 
-make: Nothing to be done for `all'.
-23:48:02 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs ****
-make all 
-make: Nothing to be done for `all'.
-23:48:03 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
-make all 
-make: Nothing to be done for `all'.
-23:48:04 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
-make all 
-make: Nothing to be done for `all'.
-23:48:04 **** Incremental Build of configuration Debug for project video_filter_sw_orig ****
-make all 
-make: Nothing to be done for `all'.
-23:48:05 **** Incremental Build of configuration Debug for project zynq_fsbl_0 ****
-make all 
-make: Nothing to be done for `all'.
-23:49:53 **** Incremental Build of configuration Debug for project app_cpu1 ****
-make all 
-make: Nothing to be done for `all'.
-23:49:54 **** Incremental Build of configuration Debug for project app_cpu0 ****
-make all 
-make: Nothing to be done for `all'.
-23:49:54 **** Incremental Build of configuration Debug for project video_filter_sw ****
-make all 
-make: Nothing to be done for `all'.
-23:49:54 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs ****
-make all 
-make: Nothing to be done for `all'.
-23:49:55 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
-make all 
-make: Nothing to be done for `all'.
-23:49:55 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
-make all 
-make: Nothing to be done for `all'.
-23:49:56 **** Incremental Build of configuration Debug for project video_filter_sw_orig ****
-make all 
-make: Nothing to be done for `all'.
-23:49:56 **** Incremental Build of configuration Debug for project zynq_fsbl_0 ****
-make all 
-make: Nothing to be done for `all'.
-00:04:27 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs ****
-make all 
-Building file: ../src/src/axi_interrupt.c
-Invoking: ARM gcc compiler
-arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/axi_interrupt.d" -MT"src/src/axi_interrupt.d" -o "src/src/axi_interrupt.o" "../src/src/axi_interrupt.c"
-Finished building: ../src/src/axi_interrupt.c
- 
-Building target: video_filter_sw_bothCPUs.elf
-Invoking: ARM gcc linker
-arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-Finished building target: video_filter_sw_bothCPUs.elf
- 
-Invoking: ARM Print Size
-arm-xilinx-eabi-size video_filter_sw_bothCPUs.elf  |tee "video_filter_sw_bothCPUs.elf.size"
-   text	   data	    bss	    dec	    hex	filename
- 108084	   1888	  34428	 144400	  23410	video_filter_sw_bothCPUs.elf
-Finished building: video_filter_sw_bothCPUs.elf.size
- 
-00:05:21 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs ****
+20:53:22 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs ****
 make all 
 Building file: ../src/src/main.c
 Invoking: ARM gcc compiler
@@ -244,39 +58,39 @@ Finished building target: video_filter_sw_bothCPUs.elf
 Invoking: ARM Print Size
 arm-xilinx-eabi-size video_filter_sw_bothCPUs.elf  |tee "video_filter_sw_bothCPUs.elf.size"
    text	   data	    bss	    dec	    hex	filename
- 108080	   1888	  34428	 144396	  2340c	video_filter_sw_bothCPUs.elf
+ 108416	   1888	  42620	 152924	  2555c	video_filter_sw_bothCPUs.elf
 Finished building: video_filter_sw_bothCPUs.elf.size
  
-00:05:27 **** Incremental Build of configuration Debug for project app_cpu1 ****
+20:54:35 **** Incremental Build of configuration Debug for project app_cpu1 ****
 make all 
 make: Nothing to be done for `all'.
-00:05:27 **** Incremental Build of configuration Debug for project app_cpu0 ****
+20:54:36 **** Incremental Build of configuration Debug for project app_cpu0 ****
 make all 
 make: Nothing to be done for `all'.
-00:05:28 **** Incremental Build of configuration Debug for project video_filter_sw ****
+20:54:36 **** Incremental Build of configuration Debug for project video_filter_sw ****
 make all 
 make: Nothing to be done for `all'.
-00:05:29 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs ****
+20:54:37 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs ****
 make all 
 make: Nothing to be done for `all'.
-00:05:30 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+20:54:37 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
 make all 
 make: Nothing to be done for `all'.
-00:05:31 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
+20:54:38 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
 make all 
 make: Nothing to be done for `all'.
-00:05:32 **** Incremental Build of configuration Debug for project video_filter_sw_orig ****
+20:54:38 **** Incremental Build of configuration Debug for project video_filter_sw_orig ****
 make all 
 make: Nothing to be done for `all'.
-00:05:33 **** Incremental Build of configuration Debug for project zynq_fsbl_0 ****
+20:54:39 **** Incremental Build of configuration Debug for project zynq_fsbl_0 ****
 make all 
 make: Nothing to be done for `all'.
-00:08:37 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs ****
+20:58:02 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs ****
 make all 
-Building file: ../src/src/axi_interrupt.c
+Building file: ../src/src/main.c
 Invoking: ARM gcc compiler
-arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/axi_interrupt.d" -MT"src/src/axi_interrupt.d" -o "src/src/axi_interrupt.o" "../src/src/axi_interrupt.c"
-Finished building: ../src/src/axi_interrupt.c
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+Finished building: ../src/src/main.c
  
 Building target: video_filter_sw_bothCPUs.elf
 Invoking: ARM gcc linker
@@ -286,39 +100,15 @@ Finished building target: video_filter_sw_bothCPUs.elf
 Invoking: ARM Print Size
 arm-xilinx-eabi-size video_filter_sw_bothCPUs.elf  |tee "video_filter_sw_bothCPUs.elf.size"
    text	   data	    bss	    dec	    hex	filename
- 108120	   1888	  34428	 144436	  23434	video_filter_sw_bothCPUs.elf
+ 108416	   1888	  42620	 152924	  2555c	video_filter_sw_bothCPUs.elf
 Finished building: video_filter_sw_bothCPUs.elf.size
  
-00:08:40 **** Incremental Build of configuration Debug for project app_cpu1 ****
+20:58:11 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs ****
 make all 
-make: Nothing to be done for `all'.
-00:08:41 **** Incremental Build of configuration Debug for project app_cpu0 ****
-make all 
-make: Nothing to be done for `all'.
-00:08:42 **** Incremental Build of configuration Debug for project video_filter_sw ****
-make all 
-make: Nothing to be done for `all'.
-00:08:42 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs ****
-make all 
-make: Nothing to be done for `all'.
-00:08:43 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
-make all 
-make: Nothing to be done for `all'.
-00:08:44 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
-make all 
-make: Nothing to be done for `all'.
-00:08:44 **** Incremental Build of configuration Debug for project video_filter_sw_orig ****
-make all 
-make: Nothing to be done for `all'.
-00:08:45 **** Incremental Build of configuration Debug for project zynq_fsbl_0 ****
-make all 
-make: Nothing to be done for `all'.
-00:09:19 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs ****
-make all 
-Building file: ../src/src/axi_interrupt.c
+Building file: ../src/src/main.c
 Invoking: ARM gcc compiler
-arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/axi_interrupt.d" -MT"src/src/axi_interrupt.d" -o "src/src/axi_interrupt.o" "../src/src/axi_interrupt.c"
-Finished building: ../src/src/axi_interrupt.c
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+Finished building: ../src/src/main.c
  
 Building target: video_filter_sw_bothCPUs.elf
 Invoking: ARM gcc linker
@@ -328,39 +118,15 @@ Finished building target: video_filter_sw_bothCPUs.elf
 Invoking: ARM Print Size
 arm-xilinx-eabi-size video_filter_sw_bothCPUs.elf  |tee "video_filter_sw_bothCPUs.elf.size"
    text	   data	    bss	    dec	    hex	filename
- 108124	   1888	  34428	 144440	  23438	video_filter_sw_bothCPUs.elf
+ 108364	   1888	  42620	 152872	  25528	video_filter_sw_bothCPUs.elf
 Finished building: video_filter_sw_bothCPUs.elf.size
  
-00:09:22 **** Incremental Build of configuration Debug for project app_cpu1 ****
+20:58:30 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs ****
 make all 
-make: Nothing to be done for `all'.
-00:09:23 **** Incremental Build of configuration Debug for project app_cpu0 ****
-make all 
-make: Nothing to be done for `all'.
-00:09:23 **** Incremental Build of configuration Debug for project video_filter_sw ****
-make all 
-make: Nothing to be done for `all'.
-00:09:24 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs ****
-make all 
-make: Nothing to be done for `all'.
-00:09:24 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
-make all 
-make: Nothing to be done for `all'.
-00:09:25 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
-make all 
-make: Nothing to be done for `all'.
-00:09:26 **** Incremental Build of configuration Debug for project video_filter_sw_orig ****
-make all 
-make: Nothing to be done for `all'.
-00:09:27 **** Incremental Build of configuration Debug for project zynq_fsbl_0 ****
-make all 
-make: Nothing to be done for `all'.
-00:11:48 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs ****
-make all 
-Building file: ../src/src/axi_interrupt.c
+Building file: ../src/src/main.c
 Invoking: ARM gcc compiler
-arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/axi_interrupt.d" -MT"src/src/axi_interrupt.d" -o "src/src/axi_interrupt.o" "../src/src/axi_interrupt.c"
-Finished building: ../src/src/axi_interrupt.c
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+Finished building: ../src/src/main.c
  
 Building target: video_filter_sw_bothCPUs.elf
 Invoking: ARM gcc linker
@@ -370,39 +136,15 @@ Finished building target: video_filter_sw_bothCPUs.elf
 Invoking: ARM Print Size
 arm-xilinx-eabi-size video_filter_sw_bothCPUs.elf  |tee "video_filter_sw_bothCPUs.elf.size"
    text	   data	    bss	    dec	    hex	filename
- 108124	   1888	  34428	 144440	  23438	video_filter_sw_bothCPUs.elf
+ 108372	   1888	  42620	 152880	  25530	video_filter_sw_bothCPUs.elf
 Finished building: video_filter_sw_bothCPUs.elf.size
  
-00:11:50 **** Incremental Build of configuration Debug for project app_cpu1 ****
+20:58:51 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs ****
 make all 
-make: Nothing to be done for `all'.
-00:11:51 **** Incremental Build of configuration Debug for project app_cpu0 ****
-make all 
-make: Nothing to be done for `all'.
-00:11:51 **** Incremental Build of configuration Debug for project video_filter_sw ****
-make all 
-make: Nothing to be done for `all'.
-00:11:52 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs ****
-make all 
-make: Nothing to be done for `all'.
-00:11:52 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
-make all 
-make: Nothing to be done for `all'.
-00:11:53 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
-make all 
-make: Nothing to be done for `all'.
-00:11:54 **** Incremental Build of configuration Debug for project video_filter_sw_orig ****
-make all 
-make: Nothing to be done for `all'.
-00:11:54 **** Incremental Build of configuration Debug for project zynq_fsbl_0 ****
-make all 
-make: Nothing to be done for `all'.
-00:13:42 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs ****
-make all 
-Building file: ../src/src/axi_interrupt.c
+Building file: ../src/src/main.c
 Invoking: ARM gcc compiler
-arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/axi_interrupt.d" -MT"src/src/axi_interrupt.d" -o "src/src/axi_interrupt.o" "../src/src/axi_interrupt.c"
-Finished building: ../src/src/axi_interrupt.c
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+Finished building: ../src/src/main.c
  
 Building target: video_filter_sw_bothCPUs.elf
 Invoking: ARM gcc linker
@@ -412,39 +154,15 @@ Finished building target: video_filter_sw_bothCPUs.elf
 Invoking: ARM Print Size
 arm-xilinx-eabi-size video_filter_sw_bothCPUs.elf  |tee "video_filter_sw_bothCPUs.elf.size"
    text	   data	    bss	    dec	    hex	filename
- 108124	   1888	  34428	 144440	  23438	video_filter_sw_bothCPUs.elf
+ 108372	   1888	  42620	 152880	  25530	video_filter_sw_bothCPUs.elf
 Finished building: video_filter_sw_bothCPUs.elf.size
  
-00:13:49 **** Incremental Build of configuration Debug for project app_cpu1 ****
+20:59:06 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs ****
 make all 
-make: Nothing to be done for `all'.
-00:13:51 **** Incremental Build of configuration Debug for project app_cpu0 ****
-make all 
-make: Nothing to be done for `all'.
-00:13:52 **** Incremental Build of configuration Debug for project video_filter_sw ****
-make all 
-make: Nothing to be done for `all'.
-00:13:54 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs ****
-make all 
-make: Nothing to be done for `all'.
-00:13:55 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
-make all 
-make: Nothing to be done for `all'.
-00:13:56 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
-make all 
-make: Nothing to be done for `all'.
-00:13:59 **** Incremental Build of configuration Debug for project video_filter_sw_orig ****
-make all 
-make: Nothing to be done for `all'.
-00:14:01 **** Incremental Build of configuration Debug for project zynq_fsbl_0 ****
-make all 
-make: Nothing to be done for `all'.
-00:14:46 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs ****
-make all 
-Building file: ../src/src/axi_interrupt.c
+Building file: ../src/src/main.c
 Invoking: ARM gcc compiler
-arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/axi_interrupt.d" -MT"src/src/axi_interrupt.d" -o "src/src/axi_interrupt.o" "../src/src/axi_interrupt.c"
-Finished building: ../src/src/axi_interrupt.c
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+Finished building: ../src/src/main.c
  
 Building target: video_filter_sw_bothCPUs.elf
 Invoking: ARM gcc linker
@@ -454,30 +172,459 @@ Finished building target: video_filter_sw_bothCPUs.elf
 Invoking: ARM Print Size
 arm-xilinx-eabi-size video_filter_sw_bothCPUs.elf  |tee "video_filter_sw_bothCPUs.elf.size"
    text	   data	    bss	    dec	    hex	filename
- 108124	   1888	  34428	 144440	  23438	video_filter_sw_bothCPUs.elf
+ 108372	   1888	  42620	 152880	  25530	video_filter_sw_bothCPUs.elf
 Finished building: video_filter_sw_bothCPUs.elf.size
  
-00:14:55 **** Incremental Build of configuration Debug for project app_cpu1 ****
+20:59:37 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs.elf  |tee "video_filter_sw_bothCPUs.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 108372	   1888	  42620	 152880	  25530	video_filter_sw_bothCPUs.elf
+Finished building: video_filter_sw_bothCPUs.elf.size
+ 
+21:00:54 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs.elf  |tee "video_filter_sw_bothCPUs.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 108372	   1888	  42620	 152880	  25530	video_filter_sw_bothCPUs.elf
+Finished building: video_filter_sw_bothCPUs.elf.size
+ 
+21:01:05 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs.elf  |tee "video_filter_sw_bothCPUs.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 108372	   1888	  42620	 152880	  25530	video_filter_sw_bothCPUs.elf
+Finished building: video_filter_sw_bothCPUs.elf.size
+ 
+21:01:20 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs.elf  |tee "video_filter_sw_bothCPUs.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 108332	   1888	  42620	 152840	  25508	video_filter_sw_bothCPUs.elf
+Finished building: video_filter_sw_bothCPUs.elf.size
+ 
+21:01:43 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs.elf  |tee "video_filter_sw_bothCPUs.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 108332	   1888	  42620	 152840	  25508	video_filter_sw_bothCPUs.elf
+Finished building: video_filter_sw_bothCPUs.elf.size
+ 
+21:01:50 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs.elf  |tee "video_filter_sw_bothCPUs.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 108332	   1888	  42620	 152840	  25508	video_filter_sw_bothCPUs.elf
+Finished building: video_filter_sw_bothCPUs.elf.size
+ 
+21:02:00 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs.elf  |tee "video_filter_sw_bothCPUs.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 108332	   1888	  42620	 152840	  25508	video_filter_sw_bothCPUs.elf
+Finished building: video_filter_sw_bothCPUs.elf.size
+ 
+21:02:02 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs.elf  |tee "video_filter_sw_bothCPUs.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 108332	   1888	  42620	 152840	  25508	video_filter_sw_bothCPUs.elf
+Finished building: video_filter_sw_bothCPUs.elf.size
+ 
+21:02:04 **** Incremental Build of configuration Debug for project app_cpu1 ****
 make all 
 make: Nothing to be done for `all'.
-00:14:57 **** Incremental Build of configuration Debug for project app_cpu0 ****
+21:02:04 **** Incremental Build of configuration Debug for project app_cpu0 ****
 make all 
 make: Nothing to be done for `all'.
-00:15:04 **** Incremental Build of configuration Debug for project video_filter_sw ****
+21:02:05 **** Incremental Build of configuration Debug for project video_filter_sw ****
 make all 
 make: Nothing to be done for `all'.
-00:15:09 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs ****
+21:02:06 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs ****
 make all 
 make: Nothing to be done for `all'.
-00:15:11 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+21:02:06 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
 make all 
 make: Nothing to be done for `all'.
-00:15:13 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
+21:02:07 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
 make all 
 make: Nothing to be done for `all'.
-00:15:14 **** Incremental Build of configuration Debug for project video_filter_sw_orig ****
+21:02:08 **** Incremental Build of configuration Debug for project video_filter_sw_orig ****
 make all 
 make: Nothing to be done for `all'.
-00:15:15 **** Incremental Build of configuration Debug for project zynq_fsbl_0 ****
+21:02:08 **** Incremental Build of configuration Debug for project zynq_fsbl_0 ****
 make all 
 make: Nothing to be done for `all'.
+21:02:31 **** Incremental Build of configuration Debug for project app_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+21:02:32 **** Incremental Build of configuration Debug for project app_cpu0 ****
+make all 
+make: Nothing to be done for `all'.
+21:02:32 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+21:02:33 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+make: Nothing to be done for `all'.
+21:02:33 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+make: Nothing to be done for `all'.
+21:02:34 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+21:02:34 **** Incremental Build of configuration Debug for project video_filter_sw_orig ****
+make all 
+make: Nothing to be done for `all'.
+21:02:35 **** Incremental Build of configuration Debug for project zynq_fsbl_0 ****
+make all 
+make: Nothing to be done for `all'.
+21:04:44 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs.elf  |tee "video_filter_sw_bothCPUs.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 108336	   1888	  42620	 152844	  2550c	video_filter_sw_bothCPUs.elf
+Finished building: video_filter_sw_bothCPUs.elf.size
+ 
+21:04:58 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs.elf  |tee "video_filter_sw_bothCPUs.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 108336	   1888	  42620	 152844	  2550c	video_filter_sw_bothCPUs.elf
+Finished building: video_filter_sw_bothCPUs.elf.size
+ 
+21:05:05 **** Incremental Build of configuration Debug for project app_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+21:05:06 **** Incremental Build of configuration Debug for project app_cpu0 ****
+make all 
+make: Nothing to be done for `all'.
+21:05:07 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+21:05:07 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+make: Nothing to be done for `all'.
+21:05:08 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+make: Nothing to be done for `all'.
+21:05:08 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+21:05:09 **** Incremental Build of configuration Debug for project video_filter_sw_orig ****
+make all 
+make: Nothing to be done for `all'.
+21:05:10 **** Incremental Build of configuration Debug for project zynq_fsbl_0 ****
+make all 
+make: Nothing to be done for `all'.
+21:05:43 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs.elf  |tee "video_filter_sw_bothCPUs.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 108336	   1888	  42620	 152844	  2550c	video_filter_sw_bothCPUs.elf
+Finished building: video_filter_sw_bothCPUs.elf.size
+ 
+21:05:47 **** Incremental Build of configuration Debug for project app_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+21:05:47 **** Incremental Build of configuration Debug for project app_cpu0 ****
+make all 
+make: Nothing to be done for `all'.
+21:05:48 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+21:05:48 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+make: Nothing to be done for `all'.
+21:05:49 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+make: Nothing to be done for `all'.
+21:05:49 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+21:05:50 **** Incremental Build of configuration Debug for project video_filter_sw_orig ****
+make all 
+make: Nothing to be done for `all'.
+21:05:51 **** Incremental Build of configuration Debug for project zynq_fsbl_0 ****
+make all 
+make: Nothing to be done for `all'.
+21:07:16 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs.elf  |tee "video_filter_sw_bothCPUs.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 108336	   1888	  42620	 152844	  2550c	video_filter_sw_bothCPUs.elf
+Finished building: video_filter_sw_bothCPUs.elf.size
+ 
+21:08:04 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs.elf  |tee "video_filter_sw_bothCPUs.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 108336	   1888	  42604	 152828	  254fc	video_filter_sw_bothCPUs.elf
+Finished building: video_filter_sw_bothCPUs.elf.size
+ 
+21:10:27 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+Building file: ../src/src/cf_hdmi.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/cf_hdmi.d" -MT"src/src/cf_hdmi.d" -o "src/src/cf_hdmi.o" "../src/src/cf_hdmi.c"
+Finished building: ../src/src/cf_hdmi.c
+ 
+Building target: video_filter_sw_bothCPUs.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs.elf  |tee "video_filter_sw_bothCPUs.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 108100	   1888	  42604	 152592	  25410	video_filter_sw_bothCPUs.elf
+Finished building: video_filter_sw_bothCPUs.elf.size
+ 
+21:10:29 **** Incremental Build of configuration Debug for project app_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+21:10:30 **** Incremental Build of configuration Debug for project app_cpu0 ****
+make all 
+make: Nothing to be done for `all'.
+21:10:31 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+21:10:31 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+make: Nothing to be done for `all'.
+21:10:32 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs_otherApproach ****
+make all 
+make: Nothing to be done for `all'.
+21:10:32 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+21:10:33 **** Incremental Build of configuration Debug for project video_filter_sw_orig ****
+make all 
+make: Nothing to be done for `all'.
+21:10:34 **** Incremental Build of configuration Debug for project zynq_fsbl_0 ****
+make all 
+make: Nothing to be done for `all'.
+21:12:47 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+Building file: ../src/src/cf_hdmi.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/cf_hdmi.d" -MT"src/src/cf_hdmi.d" -o "src/src/cf_hdmi.o" "../src/src/cf_hdmi.c"
+Finished building: ../src/src/cf_hdmi.c
+ 
+Building target: video_filter_sw_bothCPUs.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs.elf  |tee "video_filter_sw_bothCPUs.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 108100	   1888	  42604	 152592	  25410	video_filter_sw_bothCPUs.elf
+Finished building: video_filter_sw_bothCPUs.elf.size
+ 
+21:13:22 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+../src/src/main.c: In function 'main':
+../src/src/main.c:208:31: error: 'CPU1_init' undeclared (first use in this function)
+../src/src/main.c:208:31: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [src/src/main.o] Error 1
+21:13:41 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs.elf  |tee "video_filter_sw_bothCPUs.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 108100	   1888	  42604	 152592	  25410	video_filter_sw_bothCPUs.elf
+Finished building: video_filter_sw_bothCPUs.elf.size
+ 
+21:14:05 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+Building file: ../src/src/cf_hdmi.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/cf_hdmi.d" -MT"src/src/cf_hdmi.d" -o "src/src/cf_hdmi.o" "../src/src/cf_hdmi.c"
+Finished building: ../src/src/cf_hdmi.c
+ 
+Building target: video_filter_sw_bothCPUs.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs.elf  |tee "video_filter_sw_bothCPUs.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 108100	   1888	  42604	 152592	  25410	video_filter_sw_bothCPUs.elf
+Finished building: video_filter_sw_bothCPUs.elf.size
+ 
+21:16:56 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw_bothCPUs.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs.elf  |tee "video_filter_sw_bothCPUs.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 108100	   1888	  42604	 152592	  25410	video_filter_sw_bothCPUs.elf
+Finished building: video_filter_sw_bothCPUs.elf.size
+ 
