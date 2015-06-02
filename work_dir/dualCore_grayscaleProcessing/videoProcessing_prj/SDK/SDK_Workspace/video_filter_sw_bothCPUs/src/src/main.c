@@ -156,6 +156,7 @@ static int APP_ChangeResolution (void)
 		if((receivedChar >= 0x30) && (receivedChar <= 0x36))
 		{
 			SetVideoResolution(receivedChar - 0x30);
+			configureGrayscaleFilter();
 			DBG_MSG("Resolution was changed to %s \r\n", resolutions[receivedChar - 0x30]);
 		}
 		else if (receivedChar == 'q') {
@@ -167,11 +168,10 @@ static int APP_ChangeResolution (void)
 			if((receivedChar != 0x0A) && (receivedChar != 0x0D))
 			{
 				SetVideoResolution(RESOLUTION_640x480);
+				configureGrayscaleFilter();
 				DBG_MSG("Resolution was changed to %s \r\n", resolutions[0]);
 			}
 		}
-
-		//configureGrayscaleFilter();
 	}
 	return 1;
 }
@@ -411,9 +411,6 @@ int main()
 	
 	/*Initialize the HDMI Core with default display settings*/
 	SetVideoResolution(RESOLUTION_640x480);
-
-
-	ConfigHdmiVDMA(detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME], HWPROC_VIDEO_BASEADDR);
 
 
 	/* Initialize the interrupt controller */
