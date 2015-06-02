@@ -8,10 +8,15 @@ src/src/cf_hdmi.d: ../src/src/cf_hdmi.c \
  ../../standalone_bsp_0/ps7_cortexa9_0/include/xparameters.h \
  ../../standalone_bsp_0/ps7_cortexa9_0/include/xparameters_ps.h \
  ../../standalone_bsp_0/ps7_cortexa9_0/include/xparameters.h \
- ../src/src/cf_hdmi.h \
+ ../src/src/cf_hdmi.h ../src/src/hw_config.h \
+ /home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/inc/xgray_scale.h \
+ ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_types.h \
+ ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_assert.h \
+ ../../standalone_bsp_0/ps7_cortexa9_0/include/xstatus.h \
+ ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_assert.h \
+ /home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/inc/xgray_scale_CONTROL_BUS.h \
  ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_cache.h \
  ../../standalone_bsp_0/ps7_cortexa9_0/include/xdmaps.h \
- ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_assert.h \
  ../../standalone_bsp_0/ps7_cortexa9_0/include/xstatus.h \
  ../../standalone_bsp_0/ps7_cortexa9_0/include/xdmaps_hw.h \
  ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_io.h \
@@ -37,11 +42,23 @@ src/src/cf_hdmi.d: ../src/src/cf_hdmi.c \
 
 ../src/src/cf_hdmi.h:
 
+../src/src/hw_config.h:
+
+/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/inc/xgray_scale.h:
+
+../../standalone_bsp_0/ps7_cortexa9_0/include/xil_types.h:
+
+../../standalone_bsp_0/ps7_cortexa9_0/include/xil_assert.h:
+
+../../standalone_bsp_0/ps7_cortexa9_0/include/xstatus.h:
+
+../../standalone_bsp_0/ps7_cortexa9_0/include/xil_assert.h:
+
+/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/inc/xgray_scale_CONTROL_BUS.h:
+
 ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_cache.h:
 
 ../../standalone_bsp_0/ps7_cortexa9_0/include/xdmaps.h:
-
-../../standalone_bsp_0/ps7_cortexa9_0/include/xil_assert.h:
 
 ../../standalone_bsp_0/ps7_cortexa9_0/include/xstatus.h:
 

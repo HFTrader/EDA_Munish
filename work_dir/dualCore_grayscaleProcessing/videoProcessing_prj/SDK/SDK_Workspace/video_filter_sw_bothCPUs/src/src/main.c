@@ -171,7 +171,7 @@ static int APP_ChangeResolution (void)
 			}
 		}
 
-		configureGrayscaleFilter();
+		//configureGrayscaleFilter();
 	}
 	return 1;
 }
@@ -271,12 +271,11 @@ void CPU1_init() {
 
 
 
-
-
 						// CPU1 powering down (will then be waiting for sev from CPU0)
 						"movw r0, 0x0000\n"
 						"movt r0, 0x0600\n"
 						"bx r0\n"
+
 
 
 

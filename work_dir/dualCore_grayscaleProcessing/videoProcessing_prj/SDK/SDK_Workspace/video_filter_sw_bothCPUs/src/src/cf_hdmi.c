@@ -129,13 +129,31 @@ void DDRVideoWr(unsigned short width, unsigned short height, unsigned short hori
 }
 
 
+
+
+
+// this function is designed to be run by cpu1 only!!
 void DDRVideoWr_CPU1() {
 	//using the common function for capturing the camera frame into memory
 	DDRVideoWr(640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME], VIDEO_BASEADDR_CPU1);
 
 	Xil_Out32((u32) 0xfffffff0, (u32) 0x0);
+	// should reset stack here and return to 0x06000000 to stop the CPU1 stack buffer to overflow (No return statement at the end of this function to pop stack!!)
+	asm volatile (
+						"mrs	r0, cpsr			/* get the current PSR */\n"
+						"mvn	r1, #0x1f			/* set up the system stack pointer */\n"
+						"and	r2, r1, r0\n"
+						"orr	r2, r2, #0x1F			/* SYS mode */\n"
+						"msr	cpsr, r2\n"
+						"ldr	r13,=__stack1			/* SYS stack pointer */\n"
+				   );
+	// branching to initial boot code (waiting for sev from cpu 0)
 	asm volatile("bx %0" : : "r" (0x06000000));
 }
+
+
+
+
 
 
 
@@ -161,7 +179,7 @@ void DDRLineWrite(unsigned short horizontalActiveTime,
 			pixel_val1 = Xil_In32(CAM_MEM_BUFF1_BASEADDR + (col * 4));
 			pixel_val2 = ((pixel_val1 & 0xf) << 4) | ((pixel_val1 & 0xf0) << 8)| ((pixel_val1 & 0xf00) << 12 ) ; //expanding 12 to 24 bit
 			Xil_Out32(( VIDEO_BASEADDR + ((V_offset + col) * 4) ), pixel_val2 );
-			  }
+		  }
 }
 
 
