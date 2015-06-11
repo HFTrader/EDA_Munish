@@ -43,8 +43,9 @@ static XScuGic_Config *GicConfig;/* The configuration parameters of the controll
 
 
 short int FRAME_INTR = 0;
+short int debug_frameNo = 0;
 
-XGray_scale xGrayScaleFilter1;
+//XGray_scale xGrayScaleFilter1;
 //XGray_scale xGrayScaleFilter2;
 
 
@@ -130,14 +131,14 @@ static BOOL APP_DriverEnabled (void)
 }
 
 
-void configureGrayscaleFilter() {
+/*void configureGrayscaleFilter() {
 	xGrayScaleFilter1.Control_bus_BaseAddress = XPAR_GRAY_SCALE_TOP_0_S_AXI_CONTROL_BUS_BASEADDR;
 	xGrayScaleFilter1.IsReady = XIL_COMPONENT_IS_READY;
 	config_grayScaleFilter(xGrayScaleFilter1);
 	resetVDMA(1);
 	config_filterVDMA(XPAR_AXI_VDMA_1_BASEADDR, DMA_MEM_TO_DEV, VIDEO_BASEADDR);
 	config_filterVDMA(XPAR_AXI_VDMA_1_BASEADDR, DMA_DEV_TO_MEM, HWPROC_VIDEO_BASEADDR);
-}
+}*/
 
 
 /***************************************************************************//**
@@ -156,7 +157,7 @@ static int APP_ChangeResolution (void)
 		if((receivedChar >= 0x30) && (receivedChar <= 0x36))
 		{
 			SetVideoResolution(receivedChar - 0x30);
-			configureGrayscaleFilter();
+			//configureGrayscaleFilter();
 			DBG_MSG("Resolution was changed to %s \r\n", resolutions[receivedChar - 0x30]);
 		}
 		else if (receivedChar == 'q') {
@@ -168,7 +169,7 @@ static int APP_ChangeResolution (void)
 			if((receivedChar != 0x0A) && (receivedChar != 0x0D))
 			{
 				SetVideoResolution(RESOLUTION_640x480);
-				configureGrayscaleFilter();
+				//configureGrayscaleFilter();
 				DBG_MSG("Resolution was changed to %s \r\n", resolutions[0]);
 			}
 		}
@@ -176,7 +177,7 @@ static int APP_ChangeResolution (void)
 	return 1;
 }
 
-
+/*
 // this function when called, leaves current core's frame and starts processing the other core's video frame!!
 void GrayscaleFilter_processVideoFrame() {
 	static unsigned char flag = 0;
@@ -188,7 +189,7 @@ void GrayscaleFilter_processVideoFrame() {
 		flag = 0;
 	}
 
-}
+}*/
 
 // this function contains cpu1 startup code to boot it with MMU, cache enabled
 // the initial boot code (wait for SEV from cpu0 code) is copied to DDR memory as it was found that it got corrupted in shared memory
@@ -395,7 +396,7 @@ int main()
 	config_filterVDMA(XPAR_AXI_VDMA_2_BASEADDR, DMA_MEM_TO_DEV, VIDEO_BASEADDR_CPU1);
 	config_filterVDMA(XPAR_AXI_VDMA_2_BASEADDR, DMA_DEV_TO_MEM, HWPROC_VIDEO_BASEADDR);*/
 
-	configureGrayscaleFilter();
+	//configureGrayscaleFilter();
 
 
 
@@ -432,10 +433,12 @@ int main()
 			}
 		}
 
-		ADIAPI_TransmitterMain();
 		while (FRAME_INTR == 0);
 
 		DDRVideoWr(640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME], VIDEO_BASEADDR);
+		// frame processing (pure SW implementation) on this CPU0!!
+		ConvToGrayHLS(VIDEO_BASEADDR, PROC_VIDEO_BASEADDR, detailedTiming[currentResolution][H_ACTIVE_TIME]);
+
 		FRAME_INTR = 0;
 	}
 

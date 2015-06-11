@@ -133,9 +133,11 @@ void DDRVideoWr(unsigned short width, unsigned short height, unsigned short hori
 
 
 // this function is designed to be run by cpu1 only!!
-void DDRVideoWr_CPU1() {
+void CPU1_Process() {
 	//using the common function for capturing the camera frame into memory
 	DDRVideoWr(640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME], VIDEO_BASEADDR_CPU1);
+	ConvToGrayHLS(VIDEO_BASEADDR_CPU1, PROC_VIDEO_BASEADDR, detailedTiming[currentResolution][H_ACTIVE_TIME]);
+
 
 	Xil_Out32((u32) 0xfffffff0, (u32) 0x0);
 	// should reset stack here and return to 0x06000000 to stop the CPU1 stack buffer to overflow (No return statement at the end of this function to pop stack!!)
@@ -257,7 +259,9 @@ void InitHdmiVideoPcore(unsigned short horizontalActiveTime,
 			  0x00000000); // disable
 	Xil_Out32((CFV_BASEADDR + AXI_HDMI_REG_CTRL),
 			  0x00000001); // enable
-	ConfigHdmiVDMA ( horizontalActiveTime,verticalActiveTime, HWPROC_VIDEO_BASEADDR);
+
+	ConfigHdmiVDMA ( horizontalActiveTime,verticalActiveTime, PROC_VIDEO_BASEADDR);
+	//ConfigHdmiVDMA ( horizontalActiveTime,verticalActiveTime, VIDEO_BASEADDR);
 }
 
 void ConfigHdmiVDMA (unsigned short horizontalActiveTime, unsigned short verticalActiveTime,

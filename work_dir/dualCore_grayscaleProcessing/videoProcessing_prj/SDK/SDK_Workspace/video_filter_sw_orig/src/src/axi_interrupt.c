@@ -63,7 +63,7 @@ unsigned int t=0;
 void AXI_INTERRUPT_VsyncIntr_Handler(void * baseaddr_p)
 {
 	static int frame_no = 0;
-	printf("frame2frame cycle count = %d.......frame_no=%d\n\r", get_cyclecount(), frame_no++);
+	//printf("frame2frame cycle count = %d.......frame_no=%d\n\r", get_cyclecount(), frame_no++);
 	init_perfcounters(1, 0);
 
 

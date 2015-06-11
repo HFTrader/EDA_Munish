@@ -24,6 +24,7 @@ extern char inbyte(void);
 #define sev() __asm__("sev")
 
 extern short int FRAME_INTR;
+//extern short int debug_frameNo;
 
 
 #endif

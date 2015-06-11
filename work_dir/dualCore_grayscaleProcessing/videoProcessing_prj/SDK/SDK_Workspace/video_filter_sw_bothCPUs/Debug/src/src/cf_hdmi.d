@@ -15,6 +15,7 @@ src/src/cf_hdmi.d: ../src/src/cf_hdmi.c \
  ../../standalone_bsp_0/ps7_cortexa9_0/include/xstatus.h \
  ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_assert.h \
  /home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/inc/xgray_scale_CONTROL_BUS.h \
+ ../src/src/sw_functions.h \
  ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_cache.h \
  ../../standalone_bsp_0/ps7_cortexa9_0/include/xdmaps.h \
  ../../standalone_bsp_0/ps7_cortexa9_0/include/xstatus.h \
@@ -55,6 +56,8 @@ src/src/cf_hdmi.d: ../src/src/cf_hdmi.c \
 ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_assert.h:
 
 /home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/inc/xgray_scale_CONTROL_BUS.h:
+
+../src/src/sw_functions.h:
 
 ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_cache.h:
 

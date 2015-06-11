@@ -1,56 +1,6 @@
-19:20:28 **** Build of project standalone_amp_bsp_0 ****
+15:59:58 **** Build of project standalone_amp_bsp_0 ****
 make -k all 
-libgen -hw ../videoProcessing_prj_hw_platform/system.xml\
-	       -lp /home/ga38qoh/EDA_Munish/zedboard_training/ZynqSW/2013_3/Support_documents/sdk_repo\
-	       -pe ps7_cortexa9_1 \
-	       -log libgen.log \
-	       system.mss
-libgen
-Xilinx EDK 14.7 Build EDK_P.20131013
-Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
-
-Command Line: libgen -hw ../videoProcessing_prj_hw_platform/system.xml -lp
-/home/ga38qoh/EDA_Munish/zedboard_training/ZynqSW/2013_3/Support_documents/sdk_r
-epo -pe ps7_cortexa9_1 -log libgen.log system.mss 
-
-
-Staging source files.
-Running DRCs.
-Running generate.
-Running post_generate.
-Running include - 'gmake -s include "COMPILER=arm-xilinx-eabi-gcc"
-"ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS= -O2 -c" "EXTRA_COMPILER_FLAGS=-g
--DUSE_AMP=1"'.
-
-Running libs - 'gmake -s libs "COMPILER=arm-xilinx-eabi-gcc"
-"ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS= -O2 -c" "EXTRA_COMPILER_FLAGS=-g
--DUSE_AMP=1"'.
-Compiling common
-arm-xilinx-eabi-ar: creating ../../../lib/libxil.a
-Compiling standalone
-Compiling axidma
-Compiling iic
-Compiling axivdma
-Compiling devcfg
-Compiling dmaps
-Compiling emacps
-Compiling gpiops
-Compiling iicps
-Compiling qspips
-Compiling scugic
-xscugic.c: In function 'DistInit':
-xscugic.c:127:3: warning: #warning "Building GIC for AMP" [-Wcpp]
-xscugic_hw.c: In function 'DistInit':
-xscugic_hw.c:123:3: warning: #warning "Building GIC for AMP" [-Wcpp]
-Compiling scutimer
-Compiling scuwdt
-Compiling ttcps
-Compiling uartps
-Compiling usbps
-Compiling xadcps
-Compiling cpu_cortexa9
-Running execs_generate.
 Finished building libraries
 
-19:20:56 Build Finished (took 27s.852ms)
+15:59:58 Build Finished (took 129ms)
 

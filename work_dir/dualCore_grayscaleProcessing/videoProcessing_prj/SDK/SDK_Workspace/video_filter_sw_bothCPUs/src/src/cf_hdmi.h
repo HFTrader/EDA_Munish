@@ -46,6 +46,7 @@
 /******************************************************************************/
 #include "xparameters.h"
 #include "hw_config.h"
+#include "sw_functions.h"
 
 /******************************************************************************/
 /************************** Macros Definitions ********************************/
@@ -169,7 +170,7 @@ unsigned long CLKGEN_GetRate(unsigned long parent_rate);
 void DDRVideoWr(unsigned short width, unsigned short height, unsigned short horizontalActiveTime,
 				unsigned short verticalActiveTime, int frame_memBase);
 
-void DDRVideoWr_CPU1();
+void CPU1_Process();
 
 void DDRLineWrite(unsigned short horizontalActiveTime, unsigned short verticalActiveTime);
 
