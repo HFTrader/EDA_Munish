@@ -87,7 +87,6 @@
     
 	.globl	_start
 _start:
-#if 0
 	bl      __cpu_init		/* Initialize the CPU first (BSP provides this) */
 
 	mov	r0, #0
@@ -165,6 +164,3 @@ _start:
 
 .Lstart:
 	.size	_start,.Lstart-_start
-#endif	
-    bl main
-	

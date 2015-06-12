@@ -261,6 +261,7 @@ void InitHdmiVideoPcore(unsigned short horizontalActiveTime,
 			  0x00000001); // enable
 
 	ConfigHdmiVDMA ( horizontalActiveTime,verticalActiveTime, PROC_VIDEO_BASEADDR);
+	//ConfigHdmiVDMA ( horizontalActiveTime,verticalActiveTime, VIDEO_BASEADDR);
 }
 
 void ConfigHdmiVDMA (unsigned short horizontalActiveTime, unsigned short verticalActiveTime,

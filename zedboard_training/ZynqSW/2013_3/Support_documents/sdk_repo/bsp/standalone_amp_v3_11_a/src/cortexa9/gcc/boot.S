@@ -143,35 +143,179 @@
 _prestart:
 _boot:
 
+#if XPAR_CPU_ID==0
+/* only allow cpu0 through */
+	mrc	p15,0,r1,c0,c0,5
+	and	r1, r1, #0xf
+	cmp	r1, #0
+	beq	OKToRun
+EndlessLoop0:
+	wfe
+	b	EndlessLoop0
+
+#elif XPAR_CPU_ID==1
+/* only allow cpu1 through */
+	mrc	p15,0,r1,c0,c0,5
+	and	r1, r1, #0xf
+	cmp	r1, #1
+	beq	OKToRun
+EndlessLoop1:
+	wfe
+	b	EndlessLoop1
+#endif
+
+OKToRun:
+	mrc     p15, 0, r0, c0, c0, 0		/* Get the revision */
+	and     r5, r0, #0x00f00000 
+	and     r6, r0, #0x0000000f
+	orr     r6, r6, r5, lsr #20-4
+
+#ifdef CONFIG_ARM_ERRATA_742230
+        cmp     r6, #0x22                       /* only present up to r2p2 */
+        mrcle   p15, 0, r10, c15, c0, 1         /* read diagnostic register */
+        orrle   r10, r10, #1 << 4               /* set bit #4 */
+        mcrle   p15, 0, r10, c15, c0, 1         /* write diagnostic register */
+#endif
+
+#ifdef CONFIG_ARM_ERRATA_743622
+	teq     r5, #0x00200000                 /* only present in r2p* */
+	mrceq   p15, 0, r10, c15, c0, 1         /* read diagnostic register */
+	orreq   r10, r10, #1 << 6               /* set bit #6 */
+	mcreq   p15, 0, r10, c15, c0, 1         /* write diagnostic register */
+#endif
+
+	/* set VBAR to the _vector_table address in linker script */
+	ldr	r0, =vector_base
+	mcr	p15, 0, r0, c12, c0, 0
+
+	/*set scu enable bit in scu*/
+	ldr	r7, =0xf8f00000
+	ldr	r0, [r7]
+	orr	r0, r0, #0x1  
+	str	r0, [r7]
+
+	/*invalidate scu*/
+	ldr	r7, =0xf8f0000c
+	ldr	r6, =0xffff
+	str	r6, [r7]
+
 	/* Write to ACTLR */
 	mrc	p15, 0, r0, c1, c0, 1		/* Read ACTLR*/
 	orr	r0, r0, #(0x01 << 6)		/* set SMP bit */
 	orr	r0, r0, #(0x01 )		/* */		
 	mcr	p15, 0, r0, c1, c0, 1		/* Write ACTLR*/
 
-
-
-
-
-
-
-
-
-    /* Invalidate caches and TLBs */
+/* Invalidate caches and TLBs */
 	mov	r0,#0				/* r0 = 0  */
 	mcr	p15, 0, r0, c8, c7, 0		/* invalidate TLBs */
 	mcr	p15, 0, r0, c7, c5, 0		/* invalidate icache */
 	mcr	p15, 0, r0, c7, c5, 6		/* Invalidate branch predictor array */
 	bl	invalidate_dcache		/* invalidate dcache */
 
+/* Invalidate L2c Cache */
+/* For AMP, assume running on CPU1. Don't initialize L2 Cache (up to Linux) */
+#if USE_AMP!=1
+	ldr	r0,=L2CCCrtl			/* Load L2CC base address base + control register */
+	mov	r1, #0				/* force the disable bit */
+	str	r1, [r0]			/* disable the L2 Caches */
+
+	ldr	r0,=L2CCAuxCrtl			/* Load L2CC base address base + Aux control register */
+	ldr	r1,[r0]				/* read the register */
+	ldr	r2,=L2CCAuxControl		/* set the default bits */
+	orr	r1,r1,r2
+	str	r1, [r0]			/* store the Aux Control Register */
+
+	ldr	r0,=L2CCTAGLatReg		/* Load L2CC base address base + TAG Latency address */
+	ldr	r1,=L2CCTAGLatency		/* set the latencies for the TAG*/
+	str	r1, [r0]			/* store the TAG Latency register Register */
+
+	ldr	r0,=L2CCDataLatReg		/* Load L2CC base address base + Data Latency address */
+	ldr	r1,=L2CCDataLatency		/* set the latencies for the Data*/
+	str	r1, [r0]			/* store the Data Latency register Register */
+
+	ldr	r0,=L2CCWay			/* Load L2CC base address base + way register*/
+	ldr	r2, =0xFFFF
+	str	r2, [r0]			/* force invalidate */
+
+	ldr	r0,=L2CCSync			/* need to poll 0x730, PSS_L2CC_CACHE_SYNC_OFFSET */
+						/* Load L2CC base address base + sync register*/
+	/* poll for completion */
+Sync:	ldr	r1, [r0]
+	cmp	r1, #0
+	bne	Sync
+
+	ldr	r0,=L2CCIntRaw			/* clear pending interrupts */
+	ldr	r1,[r0]
+	ldr	r0,=L2CCIntClear	
+	str	r1,[r0]
+#endif
+
 	/* Disable MMU, if enabled */
 	mrc	p15, 0, r0, c1, c0, 0		/* read CP15 register 1 */
 	bic	r0, r0, #0x1			/* clear bit 0 */
 	mcr	p15, 0, r0, c1, c0, 0		/* write value back */
 
+#ifdef SHAREABLE_DDR
+	/* Mark the entire DDR memory as shareable */
+	ldr	r3, =0x3ff			/* 1024 entries to cover 1G DDR */
+	ldr	r0, =TblBase			/* MMU Table address in memory */
+	ldr	r2, =0x15de6			/* S=b1 TEX=b101 AP=b11, Domain=b1111, C=b0, B=b1 */
+shareable_loop:
+	str	r2, [r0]			/* write the entry to MMU table */
+	add	r0, r0, #0x4			/* next entry in the table */
+	add	r2, r2, #0x100000		/* next section */
+	subs	r3, r3, #1
+	bge	shareable_loop			/* loop till 1G is covered */
+#endif
 
+	/* In case of AMP, map virtual address 0x20000000 to 0x00000000  and mark it as non-cacheable */
+##if USE_AMP==1
+#	ldr	r3, =0x1ff			/* 512 entries to cover 512MB DDR */
+#	ldr	r0, =TblBase			/* MMU Table address in memory */
+#	add	r0, r0, #0x800			/* Address of entry in MMU table, for 0x20000000 */
+#	ldr	r2, =0x0c02			/* S=b0 TEX=b000 AP=b11, Domain=b0, C=b0, B=b0 */
+#mmu_loop:
+#	str	r2, [r0]			/* write the entry to MMU table */
+#	add	r0, r0, #0x4			/* next entry in the table */
+#	add	r2, r2, #0x100000		/* next section */
+#	subs	r3, r3, #1
+#	bge	mmu_loop			/* loop till 512MB is covered */
+##endif
 
+	mrs	r0, cpsr			/* get the current PSR */
+	mvn	r1, #0x1f			/* set up the irq stack pointer */
+	and	r2, r1, r0
+	orr	r2, r2, #0x12			/* IRQ mode */
+	msr	cpsr, r2
+	ldr	r13,=IRQ_stack			/* IRQ stack pointer */
 
+	mrs	r0, cpsr			/* get the current PSR */
+	mvn	r1, #0x1f			/* set up the supervisor stack pointer */
+	and	r2, r1, r0
+	orr	r2, r2, #0x13			/* supervisor mode */
+	msr	cpsr, r2
+	ldr	r13,=SPV_stack			/* Supervisor stack pointer */
+
+	mrs	r0, cpsr			/* get the current PSR */
+	mvn	r1, #0x1f			/* set up the Abort  stack pointer */
+	and	r2, r1, r0
+	orr	r2, r2, #0x17			/* Abort mode */
+	msr	cpsr, r2
+	ldr	r13,=Abort_stack		/* Abort stack pointer */
+
+	mrs	r0, cpsr			/* get the current PSR */
+	mvn	r1, #0x1f			/* set up the FIQ stack pointer */
+	and	r2, r1, r0
+	orr	r2, r2, #0x11			/* FIQ mode */
+	msr	cpsr, r2
+	ldr	r13,=FIQ_stack			/* FIQ stack pointer */
+
+	mrs	r0, cpsr			/* get the current PSR */
+	mvn	r1, #0x1f			/* set up the Undefine stack pointer */
+	and	r2, r1, r0
+	orr	r2, r2, #0x1b			/* Undefine mode */
+	msr	cpsr, r2
+	ldr	r13,=Undef_stack		/* Undefine stack pointer */
 
 	mrs	r0, cpsr			/* get the current PSR */
 	mvn	r1, #0x1f			/* set up the system stack pointer */
@@ -179,7 +323,6 @@ _boot:
 	orr	r2, r2, #0x1F			/* SYS mode */
 	msr	cpsr, r2
 	ldr	r13,=SYS_stack			/* SYS stack pointer */
-       
 
 	/* enable MMU and cache */
 
@@ -199,10 +342,36 @@ _boot:
 
 	isb					/* isb	flush prefetch buffer */
 
+/* For AMP, assume running on CPU1. Don't initialize L2 Cache (up to Linux) */
+#if USE_AMP!=1
+	ldr	r0,=SLCRUnlockReg		/* Load SLCR base address base + unlock register */
+	ldr	r1,=SLCRUnlockKey	    /* set unlock key */
+	str	r1, [r0]		    /* Unlock SLCR */
 
+   	ldr	r0,=SLCRL2cRamReg		/* Load SLCR base address base + l2c Ram Control register */
+	ldr	r1,=SLCRL2cRamConfig        /* set the configuration value */
+	str	r1, [r0]	        /* store the L2c Ram Control Register */
 
+   	ldr	r0,=SLCRlockReg         /* Load SLCR base address base + lock register */
+	ldr	r1,=SLCRlockKey	        /* set lock key */
+	str	r1, [r0]	        /* lock SLCR */
 
+	ldr	r0,=L2CCCrtl			/* Load L2CC base address base + control register */
+	ldr	r1,[r0]				/* read the register */
+	mov	r2, #L2CCControl		/* set the enable bit */
+	orr	r1,r1,r2
+	str	r1, [r0]			/* enable the L2 Caches */
+#endif
 
+	mov	r0, r0
+	mrc	p15, 0, r1, c1, c0, 2		/* read cp access control register (CACR) into r1 */
+	orr	r1, r1, #(0xf << 20)		/* enable full access for p10 & p11 */
+	mcr	p15, 0, r1, c1, c0, 2		/* write back into CACR */
+
+	/* enable vfp */
+	fmrx	r1, FPEXC			/* read the exception register */
+	orr	r1,r1, #FPEXC_EN		/* set VFP enable bit, leave the others in orig state */
+	fmxr	FPEXC, r1			/* write back the exception register */
 
 	mrc	p15,0,r0,c1,c0,0		/* flow prediction enable */
 	orr	r0, r0, #(0x01 << 11)		/* #0x8000 */		
@@ -213,14 +382,10 @@ _boot:
 	orr	r0, r0, #(0x1 << 1)		/* enable L2 Prefetch hint */
 	mcr	p15,0,r0,c1,c0,1		/* write Auxiliary Control Register */
 
-
-
-
-
-
 	b	_start				/* jump to C startup code */
-
-
+	and	r0, r0, r0			/* no op */
+	
+.Ldone:	b	.Ldone				/* Paranoia: we should never get here */
 
 
 /*

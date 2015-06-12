@@ -257,15 +257,8 @@ void CPU1_init() {
 						"isb					/* isb	flush prefetch buffer */\n"
 
 
-						/* enable FPU */
-						"mov	r0, r0\n"
-						"mrc	p15, 0, r1, c1, c0, 2		/* read cp access control register (CACR) into r1 */\n"
-						"orr	r1, r1, #(0xf << 20)		/* enable full access for p10 & p11 */\n"
-						"mcr	p15, 0, r1, c1, c0, 2		/* write back into CACR */\n"
-						/* enable vfp*/
-						"fmrx	r1, FPEXC			/* read the exception register */\n"
-						"orr	r1,r1, #0x40000000		/* set VFP enable bit, leave the others in orig state */\n"
-						"fmxr	FPEXC, r1			/* write back the exception register */\n"
+
+
 
 
 						"mrc	p15,0,r0,c1,c0,0		/* flow prediction enable */\n"
