@@ -1,0 +1,26 @@
+23:44:58 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
+make all 
+Building file: ../src/src/transmitter.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/uzair-sharif/EDA_Munish/work_dir/dualCore_SOGRER/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_cpu1/src/inc" -c -fmessage-length=0 -I../../standalone_amp_bsp_0/ps7_cortexa9_1/include -MMD -MP -MF"src/src/transmitter.d" -MT"src/src/transmitter.d" -o "src/src/transmitter.o" "../src/src/transmitter.c"
+Finished building: ../src/src/transmitter.c
+ 
+Building file: ../src/inc/xgray_scale.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/uzair-sharif/EDA_Munish/work_dir/dualCore_SOGRER/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_cpu1/src/inc" -c -fmessage-length=0 -I../../standalone_amp_bsp_0/ps7_cortexa9_1/include -MMD -MP -MF"src/inc/xgray_scale.d" -MT"src/inc/xgray_scale.d" -o "src/inc/xgray_scale.o" "../src/inc/xgray_scale.c"
+Finished building: ../src/inc/xgray_scale.c
+ 
+Building target: video_filter_sw_cpu1.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/uzair-sharif/EDA_Munish/work_dir/dualCore_SOGRER/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_cpu1/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_amp_bsp_0/ps7_cortexa9_1/lib -o "video_filter_sw_cpu1.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_cpu1.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_cpu1.elf  |tee "video_filter_sw_cpu1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 101296	    808	  34368	 136472	  21518	video_filter_sw_cpu1.elf
+Finished building: video_filter_sw_cpu1.elf.size
+ 
+
+23:44:59 Build Finished (took 409ms)
+

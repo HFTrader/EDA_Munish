@@ -1,0 +1,17 @@
+set -xsthdpdir "./_gc1/_dbg/system_axi_interconnect_1_wrapper_fifo_generator_v9_1_xsd"
+run
+-ifn "./_gc1/_dbg/system_axi_interconnect_1_wrapper_fifo_generator_v9_1.prj"
+-ifmt VHDL
+-ofmt NGC
+-ofn "./_gc1/_dbg/system_axi_interconnect_1_wrapper_fifo_generator_v9_1.ngc"
+-p xc7z010-3clg400
+-iobuf NO
+-work_lib work
+-ent system_axi_interconnect_1_wrapper_fifo_generator_v9_1
+-arch zynq
+-top system_axi_interconnect_1_wrapper_fifo_generator_v9_1
+-bus_delimiter <>
+-lso "./_gc1/_dbg/_default.lso"
+-hdl_compilation_order user
+-ifmt mixed
+-iob False

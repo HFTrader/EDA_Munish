@@ -1,0 +1,548 @@
+Release 14.7 par P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+prakt9::  Sun Oct 05 23:28:19 2014
+
+par -w -ol high system_map.ncd system.ncd system.pcf 
+
+
+Constraints file: system.pcf.
+Loading device for application Rf_Device from file '7z020.nph' in environment /nfs/tools/xilinx/ise/14.7/ISE_DS/ISE/.
+   "system" is an NCD, version 3.2, device xc7z020, package clg484, speed -1
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+INFO:Security:67 - XILINXD_LICENSE_FILE is set to
+'/nfs/tools/xilinx/Vivado/2013.4/data/ip/core_licenses:2100@refile:/nfs/labs/hwswc/tools/Xilinx_EDK_82i/data/core_licens
+es' in /home/ga46sam/.flexlmrc.
+INFO:Security:51 - The XILINXD_LICENSE_FILE environment variable is not set.
+INFO:Security:52 - The LM_LICENSE_FILE environment variable is set to
+':5280@refile:27000@refile:2100@refile:1717@refile:27001@refile:5281@refile:28000@mlm3.rbg.tum.de:1720@license.lrz-muenc
+hen.de'.
+INFO:Security:54 - 'xc7z020' is a WebPack part.
+WARNING:Security:43 - No license file was found in the standard Xilinx license directory.
+WARNING:Security:44 - Since no license file was found,
+       please run the Xilinx License Configuration Manager
+       (xlcm or "Manage Xilinx Licenses")
+       to assist in obtaining a license.
+WARNING:Security:42 - Your software subscription period has lapsed. Your current version of Xilinx tools will continue
+to function, but you no longer qualify for Xilinx software updates or new releases.
+
+----------------------------------------------------------------------
+
+Initializing temperature to 85.000 Celsius. (default - Range: 0.000 to 85.000 Celsius)
+Initializing voltage to 0.950 Volts. (default - Range: 0.950 to 1.050 Volts)
+
+
+Device speed data version:  "PRODUCTION 1.08 2013-10-13".
+
+
+
+Device Utilization Summary:
+
+   Number of BUFGs                          13 out of 32     40%
+   Number of External IOB33s                52 out of 200    26%
+      Number of LOCed IOB33s                52 out of 52    100%
+
+   Number of External IOPADs               130 out of 130   100%
+      Number of LOCed IOPADs               130 out of 130   100%
+
+   Number of MMCME2_ADVs                     3 out of 4      75%
+   Number of OLOGICE2s                      23 out of 200    11%
+   Number of PS7s                            1 out of 1     100%
+   Number of RAMB18E1s                      16 out of 280     5%
+   Number of RAMB36E1s                      15 out of 140    10%
+   Number of Slices                      10859 out of 13300  81%
+   Number of Slice Registers             30280 out of 106400 28%
+      Number used as Flip Flops          30280
+      Number used as Latches                 0
+      Number used as LatchThrus              0
+
+   Number of Slice LUTS                  27656 out of 53200  51%
+   Number of Slice LUT-Flip Flop pairs   33866 out of 53200  63%
+
+
+Overall effort level (-ol):   High 
+Router effort level (-rl):    High 
+
+INFO:Timing:3386 - Intersecting Constraints found and resolved.  For more information, see the TSI report.  Please consult the Xilinx
+   Command Line Tools User Guide for information on generating a TSI report.
+Starting initial Timing Analysis.  REAL time: 49 secs 
+Finished initial Timing Analysis.  REAL time: 49 secs 
+
+WARNING:Par:288 - The signal
+   axi_interconnect_0/axi_interconnect_0/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axi3.axi3_conv_inst/USE_WRIT
+   E.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mra
+   m_RAM_RAMD_D1_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal
+   axi_interconnect_0/axi_interconnect_0/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axi3.axi3_conv_inst/USE_WRIT
+   E.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM
+   1_RAMD_D1_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal
+   axi_interconnect_3/axi_interconnect_3/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axi3.axi3_conv_inst/USE_WRIT
+   E.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mra
+   m_RAM_RAMD_D1_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal
+   axi_interconnect_2/axi_interconnect_2/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axi3.axi3_conv_inst/USE_WRIT
+   E.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mra
+   m_RAM_RAMD_D1_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal
+   axi_perf_mon_0/axi_perf_mon_0/mon_fifo_inst_0/USE_MON_FIFO.async_fifo_inst/U0/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo
+   .mem/gdm.dm/Mram_RAM2_RAMB_D1_DPO has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal
+   axi_perf_mon_0/axi_perf_mon_0/mon_fifo_inst_0/USE_MON_FIFO.async_fifo_inst/U0/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo
+   .mem/gdm.dm/Mram_RAM2_RAMC_D1_DPO has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal
+   axi_perf_mon_0/axi_perf_mon_0/mon_fifo_inst_0/USE_MON_FIFO.async_fifo_inst/U0/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo
+   .mem/gdm.dm/Mram_RAM2_RAMD_D1_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal axi_spdif_tx_0/axi_spdif_tx_0/USER_LOGIC_I/Mram_audio_fifo12_RAMD_O has no load.  PAR will not attempt to route
+   this signal.
+WARNING:Par:288 - The signal
+   axi_perf_mon_0/axi_perf_mon_0/mon_fifo_inst_0/USE_MON_FIFO.async_fifo_inst/U0/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo
+   .mem/gdm.dm/Mram_RAM10_RAMB_D1_DPO has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal
+   axi_perf_mon_0/axi_perf_mon_0/mon_fifo_inst_0/USE_MON_FIFO.async_fifo_inst/U0/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo
+   .mem/gdm.dm/Mram_RAM10_RAMC_D1_DPO has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal
+   axi_perf_mon_0/axi_perf_mon_0/mon_fifo_inst_0/USE_MON_FIFO.async_fifo_inst/U0/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo
+   .mem/gdm.dm/Mram_RAM10_RAMD_D1_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal axi_spdif_tx_0/axi_spdif_tx_0/USER_LOGIC_I/Mram_audio_fifo3_RAMD_O has no load.  PAR will not attempt to route
+   this signal.
+WARNING:Par:288 - The signal axi_spdif_tx_0/axi_spdif_tx_0/USER_LOGIC_I/Mram_audio_fifo1_RAMD_O has no load.  PAR will not attempt to route
+   this signal.
+WARNING:Par:288 - The signal
+   axi_perf_mon_0/axi_perf_mon_0/mon_fifo_inst_0/USE_MON_FIFO.async_fifo_inst/U0/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo
+   .mem/gdm.dm/Mram_RAM1_RAMC_D1_DPO has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal
+   axi_perf_mon_0/axi_perf_mon_0/mon_fifo_inst_0/USE_MON_FIFO.async_fifo_inst/U0/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo
+   .mem/gdm.dm/Mram_RAM1_RAMD_D1_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal axi_spdif_tx_0/axi_spdif_tx_0/USER_LOGIC_I/Mram_audio_fifo20_RAMD_O has no load.  PAR will not attempt to route
+   this signal.
+WARNING:Par:288 - The signal axi_spdif_tx_0/axi_spdif_tx_0/USER_LOGIC_I/Mram_audio_fifo19_RAMD_O has no load.  PAR will not attempt to route
+   this signal.
+WARNING:Par:288 - The signal
+   axi_interconnect_3/axi_interconnect_3/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axi3.axi3_conv_inst/USE_WRIT
+   E.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM
+   _RAMD_D1_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal axi_spdif_tx_0/axi_spdif_tx_0/USER_LOGIC_I/Mram_audio_fifo4_RAMD_O has no load.  PAR will not attempt to route
+   this signal.
+WARNING:Par:288 - The signal axi_spdif_tx_0/axi_spdif_tx_0/USER_LOGIC_I/Mram_audio_fifo11_RAMD_O has no load.  PAR will not attempt to route
+   this signal.
+WARNING:Par:288 - The signal axi_spdif_tx_0/axi_spdif_tx_0/USER_LOGIC_I/Mram_audio_fifo2_RAMD_O has no load.  PAR will not attempt to route
+   this signal.
+WARNING:Par:288 - The signal axi_spdif_tx_0/axi_spdif_tx_0/USER_LOGIC_I/Mram_audio_fifo14_RAMD_O has no load.  PAR will not attempt to route
+   this signal.
+WARNING:Par:288 - The signal axi_spdif_tx_0/axi_spdif_tx_0/USER_LOGIC_I/Mram_audio_fifo13_RAMD_O has no load.  PAR will not attempt to route
+   this signal.
+WARNING:Par:288 - The signal
+   axi_perf_mon_0/axi_perf_mon_0/mon_fifo_inst_0/USE_MON_FIFO.async_fifo_inst/U0/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo
+   .mem/gdm.dm/Mram_RAM11_RAMD_D1_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal axi_spdif_tx_0/axi_spdif_tx_0/USER_LOGIC_I/Mram_audio_fifo9_RAMD_O has no load.  PAR will not attempt to route
+   this signal.
+WARNING:Par:288 - The signal
+   axi_interconnect_3/axi_interconnect_3/si_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xst_fifo_generator/gaxi
+   _full_lite.gread_ch.grach2.axi_rach/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM1_RAMA_D1_DPO has no load.  PAR will not attempt to route
+   this signal.
+WARNING:Par:288 - The signal
+   axi_interconnect_3/axi_interconnect_3/si_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xst_fifo_generator/gaxi
+   _full_lite.gread_ch.grach2.axi_rach/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM1_RAMB_D1_DPO has no load.  PAR will not attempt to route
+   this signal.
+WARNING:Par:288 - The signal
+   axi_interconnect_3/axi_interconnect_3/si_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xst_fifo_generator/gaxi
+   _full_lite.gread_ch.grach2.axi_rach/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM1_RAMD_D1_O has no load.  PAR will not attempt to route
+   this signal.
+WARNING:Par:288 - The signal
+   axi_interconnect_3/axi_interconnect_3/si_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xst_fifo_generator/gaxi
+   _full_lite.gread_ch.grach2.axi_rach/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM2_RAMD_D1_O has no load.  PAR will not attempt to route
+   this signal.
+WARNING:Par:288 - The signal
+   axi_perf_mon_0/axi_perf_mon_0/mon_fifo_inst_0/USE_MON_FIFO.async_fifo_inst/U0/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo
+   .mem/gdm.dm/Mram_RAM12_RAMD_D1_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal axi_spdif_tx_0/axi_spdif_tx_0/USER_LOGIC_I/Mram_audio_fifo10_RAMD_O has no load.  PAR will not attempt to route
+   this signal.
+WARNING:Par:288 - The signal
+   axi_interconnect_1/axi_interconnect_1/mi_converter_bank/gen_conv_slot[10].clock_conv_inst/gen_async_readwrite.asyncfifo_rw/U0/xst_fifo_ge
+   nerator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM7_RAMB_D1_DPO has no load.  PAR will not
+   attempt to route this signal.
+WARNING:Par:288 - The signal
+   axi_interconnect_1/axi_interconnect_1/mi_converter_bank/gen_conv_slot[10].clock_conv_inst/gen_async_readwrite.asyncfifo_rw/U0/xst_fifo_ge
+   nerator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM7_RAMC_D1_DPO has no load.  PAR will not
+   attempt to route this signal.
+WARNING:Par:288 - The signal
+   axi_interconnect_1/axi_interconnect_1/mi_converter_bank/gen_conv_slot[10].clock_conv_inst/gen_async_readwrite.asyncfifo_rw/U0/xst_fifo_ge
+   nerator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM7_RAMD_D1_O has no load.  PAR will not
+   attempt to route this signal.
+WARNING:Par:288 - The signal
+   axi_interconnect_3/axi_interconnect_3/si_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xst_fifo_generator/gaxi
+   _full_lite.gread_ch.grach2.axi_rach/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM3_RAMD_D1_O has no load.  PAR will not attempt to route
+   this signal.
+WARNING:Par:288 - The signal
+   axi_dma_i2s/axi_dma_i2s/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/I_XD_FIFO/S6.I_SYNC_FIFOG
+   EN_FIFO/V6_S6_AND_LATER.I_SYNC_FIFO_BRAM/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM1_RAMD_D1_O has
+   no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal axi_spdif_tx_0/axi_spdif_tx_0/USER_LOGIC_I/Mram_audio_fifo6_RAMD_O has no load.  PAR will not attempt to route
+   this signal.
+WARNING:Par:288 - The signal axi_spdif_tx_0/axi_spdif_tx_0/USER_LOGIC_I/Mram_audio_fifo5_RAMD_O has no load.  PAR will not attempt to route
+   this signal.
+WARNING:Par:288 - The signal axi_spdif_tx_0/axi_spdif_tx_0/USER_LOGIC_I/Mram_audio_fifo15_RAMD_O has no load.  PAR will not attempt to route
+   this signal.
+WARNING:Par:288 - The signal axi_spdif_tx_0/axi_spdif_tx_0/USER_LOGIC_I/Mram_audio_fifo16_RAMD_O has no load.  PAR will not attempt to route
+   this signal.
+WARNING:Par:288 - The signal
+   axi_interconnect_1/axi_interconnect_1/mi_converter_bank/gen_conv_slot[10].clock_conv_inst/gen_async_readwrite.asyncfifo_rw/U0/xst_fifo_ge
+   nerator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM6_RAMD_D1_O has no load.  PAR will not
+   attempt to route this signal.
+WARNING:Par:288 - The signal
+   axi_interconnect_1/axi_interconnect_1/mi_converter_bank/gen_conv_slot[10].clock_conv_inst/gen_async_readwrite.asyncfifo_rw/U0/xst_fifo_ge
+   nerator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM1_RAMA_D1_DPO has no load.  PAR will not
+   attempt to route this signal.
+WARNING:Par:288 - The signal
+   axi_interconnect_1/axi_interconnect_1/mi_converter_bank/gen_conv_slot[10].clock_conv_inst/gen_async_readwrite.asyncfifo_rw/U0/xst_fifo_ge
+   nerator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM1_RAMD_D1_O has no load.  PAR will not
+   attempt to route this signal.
+WARNING:Par:288 - The signal axi_spdif_tx_0/axi_spdif_tx_0/USER_LOGIC_I/Mram_audio_fifo18_RAMD_O has no load.  PAR will not attempt to route
+   this signal.
+WARNING:Par:288 - The signal axi_spdif_tx_0/axi_spdif_tx_0/USER_LOGIC_I/Mram_audio_fifo17_RAMD_O has no load.  PAR will not attempt to route
+   this signal.
+WARNING:Par:288 - The signal axi_spdif_tx_0/axi_spdif_tx_0/USER_LOGIC_I/Mram_audio_fifo8_RAMD_O has no load.  PAR will not attempt to route
+   this signal.
+WARNING:Par:288 - The signal axi_spdif_tx_0/axi_spdif_tx_0/USER_LOGIC_I/Mram_audio_fifo7_RAMD_O has no load.  PAR will not attempt to route
+   this signal.
+WARNING:Par:288 - The signal
+   axi_interconnect_1/axi_interconnect_1/mi_converter_bank/gen_conv_slot[10].clock_conv_inst/gen_async_readwrite.asyncfifo_rw/U0/xst_fifo_ge
+   nerator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM2_RAMD_D1_O has no load.  PAR will not
+   attempt to route this signal.
+WARNING:Par:288 - The signal
+   axi_interconnect_1/axi_interconnect_1/mi_converter_bank/gen_conv_slot[10].clock_conv_inst/gen_async_readwrite.asyncfifo_rw/U0/xst_fifo_ge
+   nerator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM5_RAMD_D1_O has no load.  PAR will not
+   attempt to route this signal.
+WARNING:Par:288 - The signal
+   axi_interconnect_3/axi_interconnect_3/si_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xst_fifo_generator/gaxi
+   _full_lite.gread_ch.grach2.axi_rach/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM7_RAMD_D1_O has no load.  PAR will not attempt to route
+   this signal.
+WARNING:Par:288 - The signal
+   axi_interconnect_3/axi_interconnect_3/si_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xst_fifo_generator/gaxi
+   _full_lite.gwrite_ch.gwach2.axi_wach/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM2_RAMD_D1_O has no load.  PAR will not attempt to route
+   this signal.
+WARNING:Par:288 - The signal
+   axi_interconnect_1/axi_interconnect_1/mi_converter_bank/gen_conv_slot[10].clock_conv_inst/gen_async_readwrite.asyncfifo_rw/U0/xst_fifo_ge
+   nerator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM6_RAMD_D1_O has no load.  PAR will not
+   attempt to route this signal.
+WARNING:Par:288 - The signal
+   axi_interconnect_1/axi_interconnect_1/mi_converter_bank/gen_conv_slot[10].clock_conv_inst/gen_async_readwrite.asyncfifo_rw/U0/xst_fifo_ge
+   nerator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM3_RAMD_D1_O has no load.  PAR will not
+   attempt to route this signal.
+WARNING:Par:288 - The signal
+   axi_interconnect_1/axi_interconnect_1/mi_converter_bank/gen_conv_slot[10].clock_conv_inst/gen_async_readwrite.asyncfifo_rw/U0/xst_fifo_ge
+   nerator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM3_RAMD_D1_O has no load.  PAR will not
+   attempt to route this signal.
+WARNING:Par:288 - The signal
+   axi_interconnect_3/axi_interconnect_3/si_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xst_fifo_generator/gaxi
+   _full_lite.gread_ch.grach2.axi_rach/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM8_RAMD_D1_O has no load.  PAR will not attempt to route
+   this signal.
+WARNING:Par:288 - The signal
+   axi_interconnect_3/axi_interconnect_3/si_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xst_fifo_generator/gaxi
+   _full_lite.gread_ch.grach2.axi_rach/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM4_RAMD_D1_O has no load.  PAR will not attempt to route
+   this signal.
+WARNING:Par:288 - The signal
+   axi_interconnect_3/axi_interconnect_3/si_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xst_fifo_generator/gaxi
+   _full_lite.gwrite_ch.gwach2.axi_wach/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM5_RAMD_D1_O has no load.  PAR will not attempt to route
+   this signal.
+WARNING:Par:288 - The signal
+   axi_interconnect_1/axi_interconnect_1/mi_converter_bank/gen_conv_slot[10].clock_conv_inst/gen_async_readwrite.asyncfifo_rw/U0/xst_fifo_ge
+   nerator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM5_RAMD_D1_O has no load.  PAR will not
+   attempt to route this signal.
+WARNING:Par:288 - The signal
+   axi_interconnect_1/axi_interconnect_1/mi_converter_bank/gen_conv_slot[10].clock_conv_inst/gen_async_readwrite.asyncfifo_rw/U0/xst_fifo_ge
+   nerator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM4_RAMD_D1_O has no load.  PAR will not
+   attempt to route this signal.
+WARNING:Par:288 - The signal
+   axi_interconnect_1/axi_interconnect_1/mi_converter_bank/gen_conv_slot[10].clock_conv_inst/gen_async_readwrite.asyncfifo_rw/U0/xst_fifo_ge
+   nerator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM1_RAMD_D1_O has no load.  PAR will not
+   attempt to route this signal.
+WARNING:Par:288 - The signal
+   axi_interconnect_3/axi_interconnect_3/si_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xst_fifo_generator/gaxi
+   _full_lite.gread_ch.grach2.axi_rach/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM6_RAMD_D1_O has no load.  PAR will not attempt to route
+   this signal.
+WARNING:Par:288 - The signal
+   axi_interconnect_3/axi_interconnect_3/si_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xst_fifo_generator/gaxi
+   _full_lite.gread_ch.grach2.axi_rach/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM9_RAMD_D1_O has no load.  PAR will not attempt to route
+   this signal.
+WARNING:Par:288 - The signal
+   axi_interconnect_3/axi_interconnect_3/si_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xst_fifo_generator/gaxi
+   _full_lite.gwrite_ch.gwach2.axi_wach/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM3_RAMD_D1_O has no load.  PAR will not attempt to route
+   this signal.
+WARNING:Par:288 - The signal
+   axi_interconnect_3/axi_interconnect_3/si_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xst_fifo_generator/gaxi
+   _full_lite.gwrite_ch.gwach2.axi_wach/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM1_RAMA_D1_DPO has no load.  PAR will not attempt to
+   route this signal.
+WARNING:Par:288 - The signal
+   axi_interconnect_3/axi_interconnect_3/si_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xst_fifo_generator/gaxi
+   _full_lite.gwrite_ch.gwach2.axi_wach/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM1_RAMB_D1_DPO has no load.  PAR will not attempt to
+   route this signal.
+WARNING:Par:288 - The signal
+   axi_interconnect_3/axi_interconnect_3/si_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xst_fifo_generator/gaxi
+   _full_lite.gwrite_ch.gwach2.axi_wach/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM1_RAMD_D1_O has no load.  PAR will not attempt to route
+   this signal.
+WARNING:Par:288 - The signal
+   axi_interconnect_3/axi_interconnect_3/si_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xst_fifo_generator/gaxi
+   _full_lite.gwrite_ch.gwach2.axi_wach/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM4_RAMD_D1_O has no load.  PAR will not attempt to route
+   this signal.
+WARNING:Par:288 - The signal
+   axi_interconnect_3/axi_interconnect_3/si_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xst_fifo_generator/gaxi
+   _full_lite.gwrite_ch.gwach2.axi_wach/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM6_RAMD_D1_O has no load.  PAR will not attempt to route
+   this signal.
+WARNING:Par:288 - The signal
+   axi_interconnect_3/axi_interconnect_3/si_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xst_fifo_generator/gaxi
+   _full_lite.gwrite_ch.gwach2.axi_wach/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM10_RAMD_D1_O has no load.  PAR will not attempt to route
+   this signal.
+WARNING:Par:288 - The signal
+   axi_interconnect_1/axi_interconnect_1/mi_converter_bank/gen_conv_slot[10].clock_conv_inst/gen_async_readwrite.asyncfifo_rw/U0/xst_fifo_ge
+   nerator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM4_RAMD_D1_O has no load.  PAR will not
+   attempt to route this signal.
+WARNING:Par:288 - The signal
+   axi_interconnect_1/axi_interconnect_1/mi_converter_bank/gen_conv_slot[10].clock_conv_inst/gen_async_readwrite.asyncfifo_rw/U0/xst_fifo_ge
+   nerator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM2_RAMD_D1_O has no load.  PAR will not
+   attempt to route this signal.
+WARNING:Par:288 - The signal
+   axi_interconnect_1/axi_interconnect_1/mi_converter_bank/gen_conv_slot[10].clock_conv_inst/gen_async_readwrite.asyncfifo_rw/U0/xst_fifo_ge
+   nerator/gaxi_full_lite.gwrite_ch.gwach2.axi_wach/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM6_RAMD_D1_O has no load.  PAR will not
+   attempt to route this signal.
+WARNING:Par:288 - The signal
+   axi_interconnect_1/axi_interconnect_1/mi_converter_bank/gen_conv_slot[10].clock_conv_inst/gen_async_readwrite.asyncfifo_rw/U0/xst_fifo_ge
+   nerator/gaxi_full_lite.gwrite_ch.gwach2.axi_wach/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM11_RAMA_D1_DPO has no load.  PAR will not
+   attempt to route this signal.
+WARNING:Par:288 - The signal
+   axi_interconnect_1/axi_interconnect_1/mi_converter_bank/gen_conv_slot[10].clock_conv_inst/gen_async_readwrite.asyncfifo_rw/U0/xst_fifo_ge
+   nerator/gaxi_full_lite.gwrite_ch.gwach2.axi_wach/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM11_RAMD_D1_O has no load.  PAR will not
+   attempt to route this signal.
+WARNING:Par:288 - The signal
+   axi_interconnect_3/axi_interconnect_3/si_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xst_fifo_generator/gaxi
+   _full_lite.gwrite_ch.gwach2.axi_wach/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM8_RAMD_D1_O has no load.  PAR will not attempt to route
+   this signal.
+WARNING:Par:288 - The signal
+   axi_interconnect_3/axi_interconnect_3/si_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xst_fifo_generator/gaxi
+   _full_lite.gwrite_ch.gwach2.axi_wach/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM7_RAMD_D1_O has no load.  PAR will not attempt to route
+   this signal.
+WARNING:Par:288 - The signal
+   axi_interconnect_3/axi_interconnect_3/si_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xst_fifo_generator/gaxi
+   _full_lite.gwrite_ch.gwach2.axi_wach/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM9_RAMD_D1_O has no load.  PAR will not attempt to route
+   this signal.
+WARNING:Par:288 - The signal
+   axi_interconnect_1/axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[10].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.ax
+   ilite_conv_inst/s_axid<1> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal
+   axi_interconnect_1/axi_interconnect_1/mi_protocol_conv_bank/gen_protocol_slot[10].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.ax
+   ilite_conv_inst/s_axid<3> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal
+   axi_interconnect_1/axi_interconnect_1/mi_converter_bank/gen_conv_slot[10].clock_conv_inst/gen_async_readwrite.asyncfifo_rw/U0/xst_fifo_ge
+   nerator/gaxi_full_lite.gwrite_ch.gwrch2.axi_wrch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM1_RAMB_D1_DPO has no load.  PAR will not
+   attempt to route this signal.
+WARNING:Par:288 - The signal
+   axi_interconnect_1/axi_interconnect_1/mi_converter_bank/gen_conv_slot[10].clock_conv_inst/gen_async_readwrite.asyncfifo_rw/U0/xst_fifo_ge
+   nerator/gaxi_full_lite.gwrite_ch.gwrch2.axi_wrch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM1_RAMC_D1_DPO has no load.  PAR will not
+   attempt to route this signal.
+WARNING:Par:288 - The signal
+   axi_interconnect_1/axi_interconnect_1/mi_converter_bank/gen_conv_slot[10].clock_conv_inst/gen_async_readwrite.asyncfifo_rw/U0/xst_fifo_ge
+   nerator/gaxi_full_lite.gwrite_ch.gwrch2.axi_wrch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM1_RAMD_D1_O has no load.  PAR will not
+   attempt to route this signal.
+WARNING:Par:288 - The signal
+   axi_interconnect_3/axi_interconnect_3/si_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xst_fifo_generator/gaxi
+   _full_lite.gread_ch.grach2.axi_rach/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM5_RAMD_D1_O has no load.  PAR will not attempt to route
+   this signal.
+WARNING:Par:288 - The signal
+   axi_interconnect_3/axi_interconnect_3/si_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xst_fifo_generator/gaxi
+   _full_lite.gread_ch.grach2.axi_rach/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM10_RAMD_D1_O has no load.  PAR will not attempt to route
+   this signal.
+WARNING:Par:288 - The signal
+   axi_interconnect_1/axi_interconnect_1/mi_converter_bank/gen_conv_slot[10].clock_conv_inst/gen_async_readwrite.asyncfifo_rw/U0/xst_fifo_ge
+   nerator/gaxi_full_lite.gread_ch.grach2.axi_rach/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM6_RAMD_D1_O has no load.  PAR will not
+   attempt to route this signal.
+WARNING:Par:288 - The signal
+   axi_interconnect_1/axi_interconnect_1/mi_converter_bank/gen_conv_slot[10].clock_conv_inst/gen_async_readwrite.asyncfifo_rw/U0/xst_fifo_ge
+   nerator/gaxi_full_lite.gread_ch.grach2.axi_rach/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM11_RAMA_D1_DPO has no load.  PAR will not
+   attempt to route this signal.
+WARNING:Par:288 - The signal
+   axi_interconnect_1/axi_interconnect_1/mi_converter_bank/gen_conv_slot[10].clock_conv_inst/gen_async_readwrite.asyncfifo_rw/U0/xst_fifo_ge
+   nerator/gaxi_full_lite.gread_ch.grach2.axi_rach/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM11_RAMD_D1_O has no load.  PAR will not
+   attempt to route this signal.
+WARNING:Par:288 - The signal
+   axi_interconnect_2/axi_interconnect_2/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axi3.axi3_conv_inst/USE_WRIT
+   E.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM
+   _RAMD_D1_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal
+   axi_vdma_2/axi_vdma_2/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/I_XD_FIFO/S6.I_SYNC_FIFOGEN
+   _FIFO/V6_S6_AND_LATER.I_SYNC_FIFO_BRAM/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM1_RAMD_D1_O has no
+   load.  PAR will not attempt to route this signal.
+Starting Router
+
+
+Phase  1  : 178443 unrouted;      REAL time: 54 secs 
+
+Phase  2  : 152074 unrouted;      REAL time: 1 mins 4 secs 
+
+Phase  3  : 61032 unrouted;      REAL time: 1 mins 46 secs 
+
+Phase  4  : 61032 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 1 mins 50 secs 
+
+Updating file: system.ncd with current fully routed design.
+
+Phase  5  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 2 mins 43 secs 
+
+Phase  6  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 2 mins 43 secs 
+
+Phase  7  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 2 mins 43 secs 
+
+Phase  8  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 2 mins 43 secs 
+
+Phase  9  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 2 mins 45 secs 
+Total REAL time to Router completion: 2 mins 45 secs 
+Total CPU time to Router completion: 2 mins 44 secs 
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+Generating "PAR" statistics.
+
+**************************
+Generating Clock Report
+**************************
+
++---------------------+--------------+------+------+------------+-------------+
+|        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
++---------------------+--------------+------+------+------------+-------------+
+|processing_system7_0 |              |      |      |            |             |
+|          _FCLK_CLK0 |BUFGCTRL_X0Y16| No   | 5578 |  0.426     |  2.045      |
++---------------------+--------------+------+------+------------+-------------+
+|processing_system7_0 |              |      |      |            |             |
+|          _FCLK_CLK3 |BUFGCTRL_X0Y19| No   | 2406 |  0.424     |  2.058      |
++---------------------+--------------+------+------+------------+-------------+
+|processing_system7_0 |              |      |      |            |             |
+|          _FCLK_CLK1 |BUFGCTRL_X0Y26| No   |  829 |  0.424     |  2.056      |
++---------------------+--------------+------+------+------------+-------------+
+|axi_hdmi_tx_16b_0_hd |              |      |      |            |             |
+|          mi_ref_clk |BUFGCTRL_X0Y23| No   |  363 |  0.263     |  1.905      |
++---------------------+--------------+------+------+------------+-------------+
+|cam_mem_0/cam_mem_0/ |              |      |      |            |             |
+|USER_LOGIC_I/cam_if/ |              |      |      |            |             |
+|               clk50 |BUFGCTRL_X0Y10| No   |   32 |  0.133     |  1.859      |
++---------------------+--------------+------+------+------------+-------------+
+|axi_i2s_adi_0_MCLK_p |              |      |      |            |             |
+|             in_OBUF |BUFGCTRL_X0Y13| No   |    9 |  0.229     |  1.887      |
++---------------------+--------------+------+------+------------+-------------+
+|cam_mem_0_OV7670_PCL |              |      |      |            |             |
+|        K_IBUFG_BUFG |BUFGCTRL_X0Y24| No   |   20 |  0.047     |  1.699      |
++---------------------+--------------+------+------+------------+-------------+
+|cam_mem_0/cam_mem_0/ |              |      |      |            |             |
+|USER_LOGIC_I/capture |              |      |      |            |             |
+|                _clk |BUFGCTRL_X0Y25| No   |    2 |  0.000     |  1.886      |
++---------------------+--------------+------+------+------------+-------------+
+|axi_clkgen_0/axi_clk |              |      |      |            |             |
+|gen_0/USER_LOGIC_I/i |              |      |      |            |             |
+|_clkgen/buf_fb_clk_s |              |      |      |            |             |
+|                     |BUFGCTRL_X0Y29| No   |    1 |  0.000     |  1.788      |
++---------------------+--------------+------+------+------------+-------------+
+|cam_mem_0/cam_mem_0/ |              |      |      |            |             |
+|USER_LOGIC_I/cam_if/ |              |      |      |            |             |
+|your_instance_name/c |              |      |      |            |             |
+|         lkfbout_buf | BUFGCTRL_X0Y3| No   |    1 |  0.000     |  1.759      |
++---------------------+--------------+------+------+------------+-------------+
+|processing_system7_0 |              |      |      |            |             |
+|          _FCLK_CLK2 |BUFGCTRL_X0Y27| No   |    2 |  0.018     |  1.806      |
++---------------------+--------------+------+------+------------+-------------+
+|cam_mem_0/cam_mem_0/ |              |      |      |            |             |
+|USER_LOGIC_I/cam_if/ |              |      |      |            |             |
+|your_instance_name/c |              |      |      |            |             |
+|               lkin1 |         Local|      |    1 |  0.000     |  1.285      |
++---------------------+--------------+------+------+------------+-------------+
+|clock_generator_0/cl |              |      |      |            |             |
+|ock_generator_0/SIG_ |              |      |      |            |             |
+|      MMCM1_CLKFBOUT |         Local|      |    1 |  0.000     |  0.014      |
++---------------------+--------------+------+------+------------+-------------+
+
+* Net Skew is the difference between the minimum and maximum routing
+only delays for the net. Note this is different from Clock Skew which
+is reported in TRCE timing report. Clock Skew is the difference between
+the minimum and maximum path delays which includes logic delays.
+
+* The fanout is the number of component pins not the individual BEL loads,
+for example SLICE loads not FF loads.
+
+Timing Score: 0 (Setup: 0, Hold: 0, Component Switching Limit: 0)
+
+Asterisk (*) preceding a constraint indicates it was not met.
+   This may be due to a setup or hold violation.
+
+----------------------------------------------------------------------------------------------------------
+  Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
+                                            |             |    Slack   | Achievable | Errors |    Score   
+----------------------------------------------------------------------------------------------------------
+  TS_axi_interconnect_1_async_clock_conv =  | SETUP       |     7.042ns|     2.958ns|       0|           0
+  MAXDELAY FROM TIMEGRP "RAMS" TO         T | HOLD        |     0.449ns|            |       0|           0
+  IMEGRP "axi_interconnect_1_async_clock_co |             |            |            |        |            
+  nv_FFDEST" 10 ns         DATAPATHONLY     |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+  PATH "TS_axi_vdma_2_cdc_tig_v_path" TIG   | SETUP       |         N/A|     5.735ns|     N/A|           0
+----------------------------------------------------------------------------------------------------------
+  PATH "TS_axi_vdma_2_cdc_from_2_cdc_to_pat | SETUP       |         N/A|     2.307ns|     N/A|           0
+  h" TIG                                    |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+  PATH "TS_axi_vdma_0_cdc_tig_v_path" TIG   | SETUP       |         N/A|    11.437ns|     N/A|           0
+----------------------------------------------------------------------------------------------------------
+  PATH "TS_axi_vdma_0_cdc_from_2_cdc_to_pat | SETUP       |         N/A|     1.886ns|     N/A|           0
+  h" TIG                                    |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+  PATH "TS_AXI_CORE_FP_axi_perf_mon_0_path" | SETUP       |         N/A|     4.646ns|     N/A|           0
+   TIG                                      |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+  PATH "TS_CORE_AXI_FP_axi_perf_mon_0_path" | SETUP       |         N/A|     5.617ns|     N/A|           0
+   TIG                                      |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+  PATH "TS_axi_interconnect_3_reset_resync_ | SETUP       |         N/A|     1.118ns|     N/A|           0
+  path" TIG                                 |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+  PATH "TS_axi_interconnect_0_reset_resync_ | SETUP       |         N/A|     1.118ns|     N/A|           0
+  path" TIG                                 |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+  PATH "TS_axi_interconnect_2_reset_resync_ | SETUP       |         N/A|     1.055ns|     N/A|           0
+  path" TIG                                 |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+  PATH "TS_axi_interconnect_1_reset_resync_ | SETUP       |         N/A|     1.096ns|     N/A|           0
+  path" TIG                                 |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+
+
+All constraints were met.
+INFO:Timing:2761 - N/A entries in the Constraints List may indicate that the 
+   constraint is not analyzed due to the following: No paths covered by this 
+   constraint; Other constraints intersect with this constraint; or This 
+   constraint was disabled by a Path Tracing Control. Please run the Timespec 
+   Interaction Report (TSI) via command line (trce tsi) or Timing Analyzer GUI.
+
+
+Generating Pad Report.
+
+All signals are completely routed.
+
+WARNING:Par:283 - There are 89 loadless signals in this design. This design will cause Bitgen to issue DRC warnings.
+
+Total REAL time to PAR completion: 2 mins 53 secs 
+Total CPU time to PAR completion: 2 mins 52 secs 
+
+Peak Memory Usage:  1418 MB
+
+Placer: Placement generated during map.
+Routing: Completed - No errors found.
+Timing: Completed - No errors found.
+
+Number of error messages: 0
+Number of warning messages: 91
+Number of info messages: 1
+
+Writing design to file system.ncd
+
+
+
+PAR done!
