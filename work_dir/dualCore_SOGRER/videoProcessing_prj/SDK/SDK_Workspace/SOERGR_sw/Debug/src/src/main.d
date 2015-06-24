@@ -35,11 +35,11 @@ src/src/main.d: ../src/src/main.c \
  ../../standalone_bsp_0/ps7_cortexa9_0/include/xuartps_hw.h \
  ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_io.h \
  ../src/src/axi_interrupt.h \
+ ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_mmu.h \
+ ../../standalone_bsp_0/ps7_cortexa9_0/include/xpseudo_asm.h \
  ../../standalone_bsp_0/ps7_cortexa9_0/include/xscugic.h \
  ../../standalone_bsp_0/ps7_cortexa9_0/include/xscugic_hw.h \
  ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_exception.h \
- ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_mmu.h \
- ../../standalone_bsp_0/ps7_cortexa9_0/include/xpseudo_asm.h \
  ../src/src/profile_cnt.h
 
 ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_cache.h:
@@ -118,14 +118,14 @@ src/src/main.d: ../src/src/main.c \
 
 ../src/src/axi_interrupt.h:
 
+../../standalone_bsp_0/ps7_cortexa9_0/include/xil_mmu.h:
+
+../../standalone_bsp_0/ps7_cortexa9_0/include/xpseudo_asm.h:
+
 ../../standalone_bsp_0/ps7_cortexa9_0/include/xscugic.h:
 
 ../../standalone_bsp_0/ps7_cortexa9_0/include/xscugic_hw.h:
 
 ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_exception.h:
-
-../../standalone_bsp_0/ps7_cortexa9_0/include/xil_mmu.h:
-
-../../standalone_bsp_0/ps7_cortexa9_0/include/xpseudo_asm.h:
 
 ../src/src/profile_cnt.h:

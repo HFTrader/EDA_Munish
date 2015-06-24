@@ -132,57 +132,10 @@ void DDRVideoWr(unsigned short width, unsigned short height, unsigned short hori
 
 
 
-#ifdef USE_CPU1
-
-// this function is designed to be run by cpu1 only!!
-void CPU1_Process() {
-	//printf("cpu1: debugframeNo = %d\n\r", debug_frameNo);
-	// capturing the frame pixels from camera line buffers onto DDR memory
-	DDRVideoWr(640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME], VIDEO_BASEADDR_CPU1);
-	// frame processing (pure SW implementation) on this CPU0!!
-#ifndef SOBEL_HA
-	//------------ SOBEL Software ------------------//
-	EdgeDetection(VIDEO_BASEADDR_CPU1, SOBEL_BASEADDR_CPU1, 640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME]);
-#endif
-
-#ifndef ERODE_HA
-	//------------ ERODE Software ------------------//
-	Erode(SOBEL_BASEADDR_CPU1, ERODE_BASEADDR_CPU1, 640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME]);
-#endif
-
-#ifndef GRAYSCALE_HA
-	//------------ Grayscale Filtering SW ----------//
-	ConvToGray(ERODE_BASEADDR_CPU1, PROC_VIDEO_BASEADDR, detailedTiming[currentResolution][H_ACTIVE_TIME]);
-#endif
-
-	// should reset stack here and return to 0x09000000 to stop the CPU1 stack buffer to overflow (No return statement at the end of this function to pop stack!!)
-	asm volatile (
-						"mrs	r0, cpsr			/* get the current PSR */\n"
-						"mvn	r1, #0x1f			/* set up the system stack pointer */\n"
-						"and	r2, r1, r0\n"
-						"orr	r2, r2, #0x1F			/* SYS mode */\n"
-						"msr	cpsr, r2\n"
-						"ldr	r13,=__stack1			/* SYS stack pointer */\n"
-				   );
-	// branching to initial boot code (waiting for sev from cpu 0)
-	Xil_Out32((u32) 0xfffffff0, (u32) 0x0);
-#ifdef USE_CPU1
-	cpu1_busy_capturing_frame = 0;
-#endif
-	asm volatile("bx %0" : : "r" (0x09000000));
-}
-
-
-#endif
-
-
-
-
-
 /* this function would write to the DDR image space
  * one line from HW line buffers
  */
-void DDRLineWrite(unsigned short horizontalActiveTime,
+void DDRLineWrite(unsigned int VIDEO_BASEADDR, unsigned short horizontalActiveTime,
 		unsigned short verticalActiveTime)
 {
 	u32 V_offset,col;
@@ -207,7 +160,7 @@ void DDRLineWrite(unsigned short horizontalActiveTime,
 /* Reset memory so that background is cleared when
  * image is not present there
  */
-void ResetImageSpace(unsigned short horizontalActiveTime,
+void ResetImageSpace(unsigned int VIDEO_BASEADDR, unsigned short horizontalActiveTime,
 		unsigned short verticalActiveTime)
 {
 	u32 row,col,V_offset;
@@ -215,16 +168,18 @@ void ResetImageSpace(unsigned short horizontalActiveTime,
 		V_offset = row * horizontalActiveTime;
 		for (col = 0; col < horizontalActiveTime ;col++) {
 			Xil_Out32( VIDEO_BASEADDR + ((V_offset + col ) * 4) , 0xffff );
-			Xil_Out32( PROC_VIDEO_BASEADDR + ((V_offset + col ) * 4) , 0xffff );
+			Xil_Out32( (VIDEO_BASEADDR+3*FRAME_SIZE) + ((V_offset + col ) * 4) , 0xffff );
 		}
 	}
 
 }
 
+
 /***************************************************************************//**
  * @brief InitHdmiVideoPcore.
 *******************************************************************************/
-void InitHdmiVideoPcore(unsigned short horizontalActiveTime,
+void InitHdmiVideoPcore(
+						unsigned short horizontalActiveTime,
 						unsigned short horizontalBlankingTime,
 						unsigned short horizontalSyncOffset,
 						unsigned short horizontalSyncPulseWidth,
@@ -242,9 +197,16 @@ void InitHdmiVideoPcore(unsigned short horizontalActiveTime,
 	unsigned short verticalDeMin	   = 0;
 	unsigned short verticalDeMax	   = 0;
 
-	ResetImageSpace(horizontalActiveTime, verticalActiveTime);
+	unsigned char num_cpus = (unsigned char) NUM_CPUS;
+	unsigned int baseAddr = VIDEO_BASEADDR_CPU0;
 
-	DDRVideoWr(640,480,horizontalActiveTime, verticalActiveTime, VIDEO_BASEADDR);
+	int i;
+	for (i=0; i<num_cpus; i++) {
+		ResetImageSpace(baseAddr + 4*FRAME_SIZE*i, horizontalActiveTime, verticalActiveTime);
+		DDRVideoWr(640,480,horizontalActiveTime, verticalActiveTime, baseAddr + 4*FRAME_SIZE*i);
+	}
+
+
 
 	horizontalCount = horizontalActiveTime +
 					  horizontalBlankingTime;
@@ -278,9 +240,6 @@ void InitHdmiVideoPcore(unsigned short horizontalActiveTime,
 			  0x00000000); // disable
 	Xil_Out32((CFV_BASEADDR + AXI_HDMI_REG_CTRL),
 			  0x00000001); // enable
-
-	ConfigHdmiVDMA ( horizontalActiveTime,verticalActiveTime, PROC_VIDEO_BASEADDR);
-	//ConfigHdmiVDMA ( horizontalActiveTime,verticalActiveTime, ERODE_BASEADDR);
 }
 
 void ConfigHdmiVDMA (unsigned short horizontalActiveTime, unsigned short verticalActiveTime,

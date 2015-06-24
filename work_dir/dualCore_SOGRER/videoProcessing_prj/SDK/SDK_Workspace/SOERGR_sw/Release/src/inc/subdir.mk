@@ -4,13 +4,19 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../src/inc/xgray_scale.c 
+../src/inc/xgray_scale.c \
+../src/inc/ximage_filter.c \
+../src/inc/xsobel_filter.c 
 
 OBJS += \
-./src/inc/xgray_scale.o 
+./src/inc/xgray_scale.o \
+./src/inc/ximage_filter.o \
+./src/inc/xsobel_filter.o 
 
 C_DEPS += \
-./src/inc/xgray_scale.d 
+./src/inc/xgray_scale.d \
+./src/inc/ximage_filter.d \
+./src/inc/xsobel_filter.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

@@ -3,9 +3,7 @@
 
 *******************************************************************************/
 
-/******************************************************************************/
-/***************************** Include Files **********************************/
-/******************************************************************************/
+// include files
 #include <stdio.h>
 #include "xil_cache.h"
 #include "xbasic_types.h"
@@ -17,46 +15,174 @@
 #include "xuartps.h"
 // for interrupt handling
 #include "axi_interrupt.h"
-#include "xscugic.h"
 #include "xil_mmu.h"
 #include "sw_functions.h"
 #include "xpseudo_asm.h"
-#include "global.h"
+#include "xscugic.h"
 #include "hw_config.h"
 #include "profile_cnt.h"
+#include "global.h"
 
 
 
-/******************************************************************************/
-/************************ Variables Definitions *******************************/
-/******************************************************************************/
-static UCHAR    MajorRev;      /* Major Release Number */
-static UCHAR    MinorRev;      /* Usually used for code-drops */
-static UCHAR    RcRev;         /* Release Candidate Number */
-static BOOL     DriverEnable;
-static BOOL     LastEnable;
+// macros
+#define HDMI_CALL_INTERVAL_MS	10
 
 
-XScuGic InterruptController; /* Instance of the Interrupt Controller */
+// global variables only to be used in main.c file
+static unsigned char    MajorRev;      /* Major Release Number */
+static unsigned char    MinorRev;      /* Usually used for code-drops */
+static unsigned char    RcRev;         /* Release Candidate Number */
+static unsigned char    DriverEnable;
+static unsigned char    LastEnable;
+
 static XScuGic_Config *GicConfig;/* The configuration parameters of the controller */
 
 
-short int FRAME_INTR = 0;
-short int GRAY_INTR = 0;
-short int debug_frameNo = 0;
-short int cpu0_busy_capturing_frame = 0;
 
-#ifdef GRAYSCALE_HA
+XScuGic InterruptController; /* Instance of the Interrupt Controller */
 XGray_scale xGrayScaleFilter;
+XSobel_filter xSobelFilter;
+XImage_filter xErodeFilter;
+
+
+
+
+// functions declarations
+int ScuGicInterrupt_Init();
+void delay_us(u32 us_count);
+void APP_EnableDriver (BOOL Enable);
+static BOOL APP_DriverEnabled (void);
+extern char inbyte(void);
+int APP_ChangeResolution();
+void processFrame(unsigned char CPU_id);
+void InitSobelFilter();
+void InitErodeFilter();
+void InitGrayscaleFilter();
+
+void CPU1_ISR();
+void CPU1_init();
+void Xil_SetTlbAttributes_CPU1();
+
+
+
+
+
+/***************************************************************************//**
+ * @brief Main function.
+ *
+ * @return Returns 0.
+*******************************************************************************/
+int main()
+{
+	UINT32 StartCount;
+	int xstatus;
+	MajorRev     = 1;
+	MinorRev     = 1;
+	RcRev        = 1;
+	DriverEnable = TRUE;
+	LastEnable   = FALSE;
+
+#if NUM_CPUS == 2
+	int delay;
+	void (*funcPtr_CPU1init)() = CPU1_init;
+	void (*funcPtr_Xil_SetTlbAttributes_CPU1)() = Xil_SetTlbAttributes_CPU1;
 #endif
+
+
+
+    /* Disable caching on shared OCM data by setting the appropriate TLB
+     * attributes for the shared data space in OCM.
+	 *
+     * S=b1
+     * TEX=b100
+     * AP=b11
+     * Domain=b1111
+     * C=b0
+     * B=b0
+	 */
+    Xil_SetTlbAttributes(SHARED_OCM_MEMORY_BASE, 0x14de2);
+	Xil_ICacheEnable();
+	Xil_DCacheEnable();
+
+
+#if NUM_CPUS == 2
+	// interrupting cpu1 to run startup code
+	Xil_Out32(0xfffffff0, (u32) funcPtr_CPU1init);
+	dmb();
+	sev();
+	for (delay=0; delay<100000; delay++);
+	// disabling caching on shared OCM data on CPU1 as well!!
+	Xil_Out32(0xfffffff0, (u32) funcPtr_Xil_SetTlbAttributes_CPU1);
+	dmb();
+	sev();
+	for (delay=0; delay<100000; delay++);
+#endif
+
+	cpu0_busy_processing_frame = 0;
+	cpu1_busy_processing_frame = 0;
+
+	HAL_PlatformInit(XPAR_AXI_IIC_0_BASEADDR,	/* Perform any required platform init */
+					 XPAR_SCUTIMER_DEVICE_ID,	/* including hardware reset to HDMI devices */
+					 XPAR_SCUGIC_SINGLE_DEVICE_ID,
+					 XPAR_SCUTIMER_INTR);
 
 #ifdef SOBEL_HA
-XSobel_filter xSobelFilter;
+	InitSobelFilter();
+#endif
+#ifdef ERODE_HA
+	InitErodeFilter();
+#endif
+#ifdef GRAYSCALE_HA
+	InitGrayscaleFilter();
 #endif
 
-#ifdef ERODE_HA
-XImage_filter xErodeFilter;
-#endif
+	DBG_MSG("  To change the video resolution press:\r\n");
+	DBG_MSG("  '0' - 640x480;  '1' - 800x600;  '2' - 1024x768; '3' - 1280x720 \r\n");
+	DBG_MSG("  '4' - 1360x768; '5' - 1600x900; '6' - 1920x1080.\r\n");
+
+	ADIAPI_TransmitterInit();   /* Initialize ADI repeater software and h/w */
+	ADIAPI_TransmitterSetPowerMode(REP_POWER_UP);
+
+	StartCount = HAL_GetCurrentMsCount();
+	ADIAPI_TransmitterMain();
+
+	/*Initialize the HDMI Core with default display settings*/
+	SetVideoResolution(RESOLUTION_640x480);
+
+
+	/* Initialize the interrupt controller */
+	xstatus = ScuGicInterrupt_Init();
+	if (xstatus != XST_SUCCESS) {
+		xil_printf("Unable to initialize Interrupts");
+	  		//return XST_FAILURE;
+	  	}
+
+	EnablePerfCounters();
+
+	while (APP_ChangeResolution())
+	{
+		if (ATV_GetElapsedMs (StartCount, NULL) >= HDMI_CALL_INTERVAL_MS)
+		{
+			StartCount = HAL_GetCurrentMsCount();
+			if (APP_DriverEnabled())
+			{
+				ADIAPI_TransmitterMain();
+			}
+		}
+
+		FRAME_INTR = 0;
+		while (FRAME_INTR == 0);
+
+		processFrame(0);
+	}
+
+	Xil_DCacheDisable();
+	Xil_ICacheDisable();
+
+	return(0);
+}
+
 
 
 int ScuGicInterrupt_Init()
@@ -151,39 +277,96 @@ static BOOL APP_DriverEnabled (void)
 }
 
 
-#ifdef SOBEL_HA
-void configureSobelFilter() {
+
+void InitSobelFilter() {
 	xSobelFilter.Control_bus_BaseAddress = XPAR_SOBEL_FILTER_TOP_0_S_AXI_CONTROL_BUS_BASEADDR;
 	xSobelFilter.IsReady = XIL_COMPONENT_IS_READY;
 	config_sobelfilter(xSobelFilter);
 	resetVDMA(XPAR_AXI_VDMA_2_BASEADDR);
-	config_filterVDMA(XPAR_AXI_VDMA_2_BASEADDR, DMA_MEM_TO_DEV, VIDEO_BASEADDR);
-	config_filterVDMA(XPAR_AXI_VDMA_2_BASEADDR, DMA_DEV_TO_MEM, SOBEL_BASEADDR);
+	config_filterVDMA(XPAR_AXI_VDMA_2_BASEADDR, DMA_MEM_TO_DEV, VIDEO_BASEADDR_CPU0);
+	config_filterVDMA(XPAR_AXI_VDMA_2_BASEADDR, DMA_DEV_TO_MEM, VIDEO_BASEADDR_CPU0 + FRAME_SIZE);
 }
-#endif
 
-#ifdef ERODE_HA
-void configureErodeFilter() {
+
+
+void InitErodeFilter() {
 	xErodeFilter.Control_bus_BaseAddress = XPAR_IMAGE_FILTER_TOP_0_S_AXI_CONTROL_BUS_BASEADDR;
 	xErodeFilter.IsReady = XIL_COMPONENT_IS_READY;
 	config_erodefilter(xErodeFilter);
 	resetVDMA(XPAR_AXI_VDMA_3_BASEADDR);
-	config_filterVDMA(XPAR_AXI_VDMA_3_BASEADDR, DMA_MEM_TO_DEV, SOBEL_BASEADDR);
-	config_filterVDMA(XPAR_AXI_VDMA_3_BASEADDR, DMA_DEV_TO_MEM, ERODE_BASEADDR);
+	config_filterVDMA(XPAR_AXI_VDMA_3_BASEADDR, DMA_MEM_TO_DEV, VIDEO_BASEADDR_CPU0 + FRAME_SIZE);
+	config_filterVDMA(XPAR_AXI_VDMA_3_BASEADDR, DMA_DEV_TO_MEM, VIDEO_BASEADDR_CPU0 + FRAME_SIZE*2);
 }
-#endif
 
 
-#ifdef GRAYSCALE_HA
-void configureGrayscaleFilter() {
+
+
+void InitGrayscaleFilter() {
 	xGrayScaleFilter.Control_bus_BaseAddress = XPAR_GRAY_SCALE_TOP_0_S_AXI_CONTROL_BUS_BASEADDR;
 	xGrayScaleFilter.IsReady = XIL_COMPONENT_IS_READY;
 	config_grayScaleFilter(xGrayScaleFilter);
 	resetVDMA(XPAR_AXI_VDMA_1_BASEADDR);
-	config_filterVDMA(XPAR_AXI_VDMA_1_BASEADDR, DMA_MEM_TO_DEV, ERODE_BASEADDR);
-	config_filterVDMA(XPAR_AXI_VDMA_1_BASEADDR, DMA_DEV_TO_MEM, PROC_VIDEO_BASEADDR);
+	config_filterVDMA(XPAR_AXI_VDMA_1_BASEADDR, DMA_MEM_TO_DEV, VIDEO_BASEADDR_CPU0 + FRAME_SIZE*2);
+	config_filterVDMA(XPAR_AXI_VDMA_1_BASEADDR, DMA_DEV_TO_MEM, VIDEO_BASEADDR_CPU0 + FRAME_SIZE*3);
 }
+
+
+
+void processFrame(unsigned char CPU_id) {
+	unsigned int frameBaseaddr;
+	if (CPU_id == 0) {
+		cpu0_busy_processing_frame = 1;
+		frameBaseaddr = VIDEO_BASEADDR_CPU0;
+	} else if (CPU_id == 1) {
+		cpu1_busy_processing_frame = 1;
+		frameBaseaddr = VIDEO_BASEADDR_CPU1;
+	} //else (.......for more CPUs.......)
+
+	// capturing the frame pixels from camera line buffers onto DDR memory
+	DDRVideoWr(640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME], frameBaseaddr);
+
+	// sobel filtering (edge detection)
+#ifdef SOBEL_HA
+	//TODO: check if this accelerator is busy!! only if it is free then configure it
+	config_filterVDMA(XPAR_AXI_VDMA_2_BASEADDR, DMA_MEM_TO_DEV, frameBaseaddr);
+	config_filterVDMA(XPAR_AXI_VDMA_2_BASEADDR, DMA_DEV_TO_MEM, frameBaseaddr + FRAME_SIZE);
+#else
+	// SW implementation
+	EdgeDetection(frameBaseaddr, frameBaseaddr + FRAME_SIZE, 640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME]);
 #endif
+	frameBaseaddr += FRAME_SIZE;
+
+	// erode filtering
+#ifdef ERODE_HA
+	//TODO: check if this accelerator is busy!! only if it is free then configure it
+	config_filterVDMA(XPAR_AXI_VDMA_3_BASEADDR, DMA_MEM_TO_DEV, frameBaseaddr);
+	config_filterVDMA(XPAR_AXI_VDMA_3_BASEADDR, DMA_DEV_TO_MEM, frameBaseaddr + FRAME_SIZE);
+#else
+	// SW implementation
+	Erode(frameBaseaddr, frameBaseaddr + FRAME_SIZE, 640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME]);
+#endif
+	frameBaseaddr += FRAME_SIZE;
+
+	// grayscale filtering
+#ifdef GRAYSCALE_HA
+	//TODO: check if this accelerator is busy!! only if it is free then configure it
+	config_filterVDMA(XPAR_AXI_VDMA_1_BASEADDR, DMA_MEM_TO_DEV, frameBaseaddr);
+	config_filterVDMA(XPAR_AXI_VDMA_1_BASEADDR, DMA_DEV_TO_MEM, frameBaseaddr + FRAME_SIZE);
+#else
+	// SW implementation
+	ConvToGray(frameBaseaddr, frameBaseaddr + FRAME_SIZE, detailedTiming[currentResolution][H_ACTIVE_TIME]);
+#endif
+	frameBaseaddr += FRAME_SIZE;
+
+
+	ConfigHdmiVDMA (detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME], frameBaseaddr);
+
+	if (CPU_id == 0) {
+		cpu0_busy_processing_frame = 0;
+	} else if (CPU_id == 1) {
+		cpu1_busy_processing_frame = 0;
+	} //else (.......for more CPUs.......)
+}
 
 
 /***************************************************************************//**
@@ -191,7 +374,7 @@ void configureGrayscaleFilter() {
  *
  * @return None.
 *******************************************************************************/
-static int APP_ChangeResolution (void)
+int APP_ChangeResolution (void)
 {
 	char *resolutions[7] = {"640x480", "800x600", "1024x768", "1280x720", "1360x768", "1600x900", "1920x1080"};
 	char receivedChar    = 0;
@@ -202,7 +385,17 @@ static int APP_ChangeResolution (void)
 		if((receivedChar >= 0x30) && (receivedChar <= 0x36))
 		{
 			SetVideoResolution(receivedChar - 0x30);
-			//configureGrayscaleFilter();
+
+#ifdef SOBEL_HA
+			config_sobelfilter(xSobelFilter);
+#endif
+#ifdef ERODE_HA
+			config_erodefilter(xErodeFilter);
+#endif
+#ifdef GRAYSCALE_HA
+			config_grayScaleFilter(xGrayScaleFilter);
+#endif
+
 			DBG_MSG("Resolution was changed to %s \r\n", resolutions[receivedChar - 0x30]);
 		}
 		else if (receivedChar == 'q') {
@@ -211,10 +404,19 @@ static int APP_ChangeResolution (void)
 		    }
 		else
 		{
-			if((receivedChar != 0x0A) && (receivedChar != 0x0D))
 			{
 				SetVideoResolution(RESOLUTION_640x480);
-				//configureGrayscaleFilter();
+
+#ifdef SOBEL_HA
+				config_sobelfilter(xSobelFilter);
+#endif
+#ifdef ERODE_HA
+				config_erodefilter(xErodeFilter);
+#endif
+#ifdef GRAYSCALE_HA
+				config_grayScaleFilter(xGrayScaleFilter);
+#endif
+
 				DBG_MSG("Resolution was changed to %s \r\n", resolutions[0]);
 			}
 		}
@@ -224,24 +426,21 @@ static int APP_ChangeResolution (void)
 
 
 
-#ifdef USE_CPU1
+
 // this function contains cpu1 startup code to boot it with MMU, cache enabled
 // the initial boot code (wait for SEV from cpu0 code) is copied to DDR memory as it was found that it got corrupted in shared memory
 void CPU1_init() {
-
 	// duplicating the initial boot code for CPU1 into ddr and then jumping to that boot code!
-	Xil_Out32((u32) 0x09000000, (u32) 0xe3e0000f);
-	Xil_Out32((u32) 0x09000004, (u32) 0xe3a01000);
-	Xil_Out32((u32) 0x09000008, (u32) 0xe5801000);
-	Xil_Out32((u32) 0x0900000c, (u32) 0xe320f002);
-	Xil_Out32((u32) 0x09000010, (u32) 0xe5902000);
-	Xil_Out32((u32) 0x09000014, (u32) 0xe1520001);
-	Xil_Out32((u32) 0x09000018, (u32) 0x0afffffb);
-	Xil_Out32((u32) 0x0900001c, (u32) 0xe1a0f002);
-
+	Xil_Out32((u32) 0x10000000, (u32) 0xe3e0000f);
+	Xil_Out32((u32) 0x10000004, (u32) 0xe3a01000);
+	Xil_Out32((u32) 0x10000008, (u32) 0xe5801000);
+	Xil_Out32((u32) 0x1000000c, (u32) 0xe320f002);
+	Xil_Out32((u32) 0x10000010, (u32) 0xe5902000);
+	Xil_Out32((u32) 0x10000014, (u32) 0xe1520001);
+	Xil_Out32((u32) 0x10000018, (u32) 0x0afffffb);
+	Xil_Out32((u32) 0x1000001c, (u32) 0xe1a0f002);
 
     // BSP startup code!!
-
 	asm volatile (
 						/* Write to ACTLR */
 						"mrc	p15, 0, r0, c1, c0, 1		/* Read ACTLR*/\n"
@@ -312,10 +511,10 @@ void CPU1_init() {
 						"mcr	p15,0,r0,c1,c0,1		/* write Auxiliary Control Register */\n"
 
 
-
+//TODO: jump to CPU_SLEEP_ADDRESS in instruction memory in a parametrized way rather than using hardcoded approach!!
 						// CPU1 powering down (will then be waiting for sev from CPU0)
 						"movw r0, 0x0000\n"
-						"movt r0, 0x0900\n"
+						"movt r0, 0x1000\n"
 						"bx r0\n"
 
 
@@ -396,157 +595,26 @@ void Xil_SetTlbAttributes_CPU1() {
 				   );
 	// branching to initial boot code (waiting for sev from cpu 0)
 	Xil_Out32((u32) 0xfffffff0, (u32) 0x0);
-	asm volatile("bx %0" : : "r" (0x09000000));
-}
-
-#endif
-
-
-
-
-
-/***************************************************************************//**
- * @brief Main function.
- *
- * @return Returns 0.
-*******************************************************************************/
-int main()
-{
-	UINT32 StartCount;
-	int xstatus;
-	MajorRev     = 1;
-	MinorRev     = 1;
-	RcRev        = 1;
-	DriverEnable = TRUE;
-	LastEnable   = FALSE;
-
-#ifdef USE_CPU1
-	int delay;
-	void (*funcPtr_CPU1init)() = CPU1_init;
-	void (*funcPtr_Xil_SetTlbAttributes_CPU1)() = Xil_SetTlbAttributes_CPU1;
-#endif
-
-
-
-    /* Disable caching on shared OCM data by setting the appropriate TLB
-     * attributes for the shared data space in OCM.
-	 *
-     * S=b1
-     * TEX=b100
-     * AP=b11
-     * Domain=b1111
-     * C=b0
-     * B=b0
-	 */
-    Xil_SetTlbAttributes(SHARED_OCM_MEMORY_BASE, 0x14de2);
-	Xil_ICacheEnable();
-	Xil_DCacheEnable();
-
-#ifdef USE_CPU1
-	// interrupting cpu1 to run startup code
-	Xil_Out32(0xfffffff0, (u32) funcPtr_CPU1init);
-	dmb();
-	sev();
-	for (delay=0; delay<100000; delay++);
-	// disabling caching on shared OCM data on CPU1 as well!!
-	Xil_Out32(0xfffffff0, (u32) funcPtr_Xil_SetTlbAttributes_CPU1);
-	dmb();
-	sev();
-	for (delay=0; delay<100000; delay++);
-
-	cpu1_busy_capturing_frame = 0;
-#endif
-
-
-	EnablePerfCounters();
-
-
-	HAL_PlatformInit(XPAR_AXI_IIC_0_BASEADDR,	/* Perform any required platform init */
-					 XPAR_SCUTIMER_DEVICE_ID,	/* including hardware reset to HDMI devices */
-					 XPAR_SCUGIC_SINGLE_DEVICE_ID,
-					 XPAR_SCUTIMER_INTR);
-
-
-#ifdef SOBEL_HA
-	configureSobelFilter();
-#endif
-
-#ifdef ERODE_HA
-	configureErodeFilter();
-#endif
-
-#ifdef GRAYSCALE_HA
-	configureGrayscaleFilter();
-#endif
-
-
-
-	DBG_MSG("  To change the video resolution press:\r\n");
-	DBG_MSG("  '0' - 640x480;  '1' - 800x600;  '2' - 1024x768; '3' - 1280x720 \r\n");
-	DBG_MSG("  '4' - 1360x768; '5' - 1600x900; '6' - 1920x1080.\r\n");
-
-	ADIAPI_TransmitterInit();   /* Initialize ADI repeater software and h/w */
-	ADIAPI_TransmitterSetPowerMode(REP_POWER_UP);
-
-	StartCount = HAL_GetCurrentMsCount();
-	ADIAPI_TransmitterMain();
-	
-	/*Initialize the HDMI Core with default display settings*/
-	SetVideoResolution(RESOLUTION_640x480);
-
-
-	/* Initialize the interrupt controller */
-	xstatus = ScuGicInterrupt_Init();
-	if (xstatus != XST_SUCCESS) {
-		xil_printf("Unable to initialize Interrupts");
-	  		//return XST_FAILURE;
-	  	}
-
-
-	while (APP_ChangeResolution())
-	{
-		if (ATV_GetElapsedMs (StartCount, NULL) >= HDMI_CALL_INTERVAL_MS)
-		{
-			StartCount = HAL_GetCurrentMsCount();
-			if (APP_DriverEnabled())
-			{
-				ADIAPI_TransmitterMain();
-			}
-		}
-
-		FRAME_INTR = 0;
-		while (FRAME_INTR == 0);
-		printf("cpu0: debugframeNo = %d\n\r", debug_frameNo);
-		// capturing the frame pixels from camera line buffers onto DDR memory
-		DDRVideoWr(640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME], VIDEO_BASEADDR);
-
-
-		// frame processing (pure SW implementation) on this CPU0!!
-#ifndef SOBEL_HA
-		//------------ SOBEL Software ------------------//
-		//EdgeDetection(VIDEO_BASEADDR, SOBEL_BASEADDR, 640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME]);
-#endif
-
-#ifndef ERODE_HA
-		//------------ ERODE Software ------------------//
-		//Erode(SOBEL_BASEADDR, ERODE_BASEADDR, 640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME]);
-#endif
-
-#ifndef GRAYSCALE_HA
-		//------------ Grayscale Filtering SW ----------//
-		//ConvToGray(ERODE_BASEADDR, PROC_VIDEO_BASEADDR, detailedTiming[currentResolution][H_ACTIVE_TIME]);
-#endif
-
-		cpu0_busy_capturing_frame = 0;
-	}
-
-	Xil_DCacheDisable();
-	Xil_ICacheDisable();
-
-	return(0);
+	asm volatile("bx %0" : : "r" (CPU1_SLEEP_ADDR));
 }
 
 
+void CPU1_ISR() {
+	processFrame(1);
+
+	// should reset stack here and return to 0x09000000 to stop the CPU1 stack buffer to overflow (No return statement at the end of this function to pop stack!!)
+	asm volatile (
+						"mrs	r0, cpsr			/* get the current PSR */\n"
+						"mvn	r1, #0x1f			/* set up the system stack pointer */\n"
+						"and	r2, r1, r0\n"
+						"orr	r2, r2, #0x1F			/* SYS mode */\n"
+						"msr	cpsr, r2\n"
+						"ldr	r13,=__stack1			/* SYS stack pointer */\n"
+				   );
+	// branching to initial boot code (waiting for sev from cpu 0)
+	Xil_Out32((u32) 0xfffffff0, (u32) 0x0);
+	asm volatile("bx %0" : : "r" (CPU1_SLEEP_ADDR));
+}
 
 
 

@@ -13,6 +13,7 @@
 #include "xbasic_types.h"
 #include "xstatus.h"
 #include "xil_io.h"
+#include "global.h"
 
 /************************** Constant Definitions ***************************/
 
@@ -226,10 +227,7 @@ void AXI_INTERRUPT_HrefIntr_Handler(void * baseaddr_p);
 
 void AXI_INTERRUPT__VDMA1_S2MMIntr_Handler(void * baseaddr_p);
 
-extern void GrayscaleFilter_processVideoFrame();
-
-extern void DDRVideoWr_CPU1();
-
+extern void CPU1_ISR();
 
 
 #endif /** AXI_INTERRUPT_H */

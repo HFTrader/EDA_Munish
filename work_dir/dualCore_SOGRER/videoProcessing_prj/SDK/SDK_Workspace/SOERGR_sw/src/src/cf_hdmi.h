@@ -60,13 +60,15 @@
 #define ADMA_DEVICE_ID		XPAR_XDMAPS_1_DEVICE_ID
 #define IIC_BASEADDR       XPS_I2C0_BASEADDR
 
-#define VIDEO_BASEADDR				DDR_BASEADDR + 0x2000000
-#define SOBEL_BASEADDR				DDR_BASEADDR + 0x3000000
-#define ERODE_BASEADDR				DDR_BASEADDR + 0x4000000
-#define PROC_VIDEO_BASEADDR			DDR_BASEADDR + 0x5000000
+
+#define VIDEO_BASEADDR_CPU0			DDR_BASEADDR + 0x2000000
+//#define SOBEL_BASEADDR_CPU0			DDR_BASEADDR + 0x3000000
+//#define ERODE_BASEADDR_CPU0			DDR_BASEADDR + 0x4000000
+//#define PROC_VIDEO_BASEADDR			DDR_BASEADDR + 0x5000000
 #define VIDEO_BASEADDR_CPU1		    DDR_BASEADDR + 0x6000000
-#define SOBEL_BASEADDR_CPU1			DDR_BASEADDR + 0x7000000
-#define ERODE_BASEADDR_CPU1			DDR_BASEADDR + 0x8000000
+//#define SOBEL_BASEADDR_CPU1			DDR_BASEADDR + 0x7000000
+//#define ERODE_BASEADDR_CPU1			DDR_BASEADDR + 0x8000000
+//#define PROC_VIDEO_BASEADDR			DDR_BASEADDR + 0x9000000
 
 #define A_SAMPLE_FREQ      48000
 #define A_FREQ             1400
@@ -177,12 +179,8 @@ unsigned long CLKGEN_GetRate(unsigned long parent_rate);
 void DDRVideoWr(unsigned short width, unsigned short height, unsigned short horizontalActiveTime,
 				unsigned short verticalActiveTime, int frame_memBase);
 
-#ifdef USE_CPU1
-void CPU1_Process();
-#endif
+void DDRLineWrite(unsigned int VIDEO_BASEADDR, unsigned short horizontalActiveTime, unsigned short verticalActiveTime);
 
-void DDRLineWrite(unsigned short horizontalActiveTime, unsigned short verticalActiveTime);
-
-void ResetImageSpace(unsigned short horizontalActiveTime, unsigned short verticalActiveTime);
+void ResetImageSpace(unsigned int VIDEO_BASEADDR, unsigned short horizontalActiveTime, unsigned short verticalActiveTime);
 
 #endif /* CF_HDMI_H_ */

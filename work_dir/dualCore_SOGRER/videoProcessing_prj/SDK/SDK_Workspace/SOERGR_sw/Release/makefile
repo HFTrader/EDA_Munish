@@ -26,29 +26,29 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 ELFSIZE += \
-video_filter_sw.elf.size \
+SOERGR_sw.elf.size \
 
 
 # All Target
-all: video_filter_sw.elf secondary-outputs
+all: SOERGR_sw.elf secondary-outputs
 
 # Tool invocations
-video_filter_sw.elf: $(OBJS) ../src/lscript.ld $(USER_OBJS)
+SOERGR_sw.elf: $(OBJS) ../src/lscript.ld $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: ARM gcc linker'
-	arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw.elf" $(OBJS) $(USER_OBJS) $(LIBS)
+	arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "SOERGR_sw.elf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
-video_filter_sw.elf.size: video_filter_sw.elf
+SOERGR_sw.elf.size: SOERGR_sw.elf
 	@echo 'Invoking: ARM Print Size'
-	arm-xilinx-eabi-size video_filter_sw.elf  |tee "video_filter_sw.elf.size"
+	arm-xilinx-eabi-size SOERGR_sw.elf  |tee "SOERGR_sw.elf.size"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(OBJS)$(C_DEPS)$(EXECUTABLES)$(ELFSIZE)$(S_UPPER_DEPS) video_filter_sw.elf
+	-$(RM) $(OBJS)$(C_DEPS)$(EXECUTABLES)$(ELFSIZE)$(S_UPPER_DEPS) SOERGR_sw.elf
 	-@echo ' '
 
 secondary-outputs: $(ELFSIZE)

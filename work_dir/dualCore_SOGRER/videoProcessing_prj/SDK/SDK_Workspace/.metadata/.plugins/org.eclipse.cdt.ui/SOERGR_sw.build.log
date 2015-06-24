@@ -1,6 +1,21 @@
-13:14:11 **** Incremental Build of configuration Debug for project SOERGR_sw ****
+22:29:34 **** Auto Build of configuration Debug for project SOERGR_sw ****
 make all 
-make: Nothing to be done for `all'.
+Building file: ../src/src/cf_hdmi.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/cf_hdmi.d" -MT"src/src/cf_hdmi.d" -o "src/src/cf_hdmi.o" "../src/src/cf_hdmi.c"
+Finished building: ../src/src/cf_hdmi.c
+ 
+Building target: SOERGR_sw.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "SOERGR_sw.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o ./src/inc/ximage_filter.o ./src/inc/xsobel_filter.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: SOERGR_sw.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size SOERGR_sw.elf  |tee "SOERGR_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 118088	   1888	  22412	 142388	  22c34	SOERGR_sw.elf
+Finished building: SOERGR_sw.elf.size
+ 
 
-13:14:11 Build Finished (took 63ms)
+22:29:35 Build Finished (took 273ms)
 
