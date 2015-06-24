@@ -128,7 +128,7 @@ int main()
 					 XPAR_SCUTIMER_INTR);
 
 #ifdef SOBEL_HA
-	InitSobelFilter();
+	//InitSobelFilter();
 #endif
 #ifdef ERODE_HA
 	InitErodeFilter();
@@ -296,7 +296,7 @@ int APP_ChangeResolution (void)
 			SetVideoResolution(receivedChar - 0x30);
 
 #ifdef SOBEL_HA
-			config_sobelfilter(xSobelFilter);
+			//config_sobelfilter(xSobelFilter);
 #endif
 #ifdef ERODE_HA
 			config_erodefilter(xErodeFilter);
@@ -317,7 +317,7 @@ int APP_ChangeResolution (void)
 				SetVideoResolution(RESOLUTION_640x480);
 
 #ifdef SOBEL_HA
-				config_sobelfilter(xSobelFilter);
+				//config_sobelfilter(xSobelFilter);
 #endif
 #ifdef ERODE_HA
 				config_erodefilter(xErodeFilter);

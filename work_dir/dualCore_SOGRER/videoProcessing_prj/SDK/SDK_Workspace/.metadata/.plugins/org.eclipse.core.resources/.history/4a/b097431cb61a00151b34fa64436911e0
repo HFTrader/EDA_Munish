@@ -76,10 +76,6 @@ void config_erodefilter(XImage_filter xErodeFilter){
 }
 
 void config_sobelfilter(XSobel_filter xSobelFilter){
-	XSobel_filter_InterruptGlobalDisable(&xSobelFilter);
-	XSobel_filter_InterruptDisable(&xSobelFilter, 1);
-	XSobel_filter_DisableAutoRestart(&xSobelFilter);
-
 	XSobel_filter_SetRows(&xSobelFilter, detailedTiming[currentResolution][V_ACTIVE_TIME]);
 	XSobel_filter_SetCols(&xSobelFilter, detailedTiming[currentResolution][H_ACTIVE_TIME]);
 //	XSobel_filter_InterruptGlobalEnable(&xSobelFilter);

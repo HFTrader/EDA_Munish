@@ -49,6 +49,7 @@ void config_filterVDMA(int VDMA_baseAddr, int vdma_direction, unsigned long base
 
 void config_grayScaleFilter(XGray_scale xGrayScaleFilter)
 {
+
 	XGray_scale_InterruptGlobalDisable(&xGrayScaleFilter);
 	XGray_scale_InterruptDisable(&xGrayScaleFilter, 1);
 	XGray_scale_DisableAutoRestart(&xGrayScaleFilter);
@@ -63,10 +64,6 @@ void config_grayScaleFilter(XGray_scale xGrayScaleFilter)
 }
 
 void config_erodefilter(XImage_filter xErodeFilter){
-	XImage_filter_InterruptGlobalDisable(&xErodeFilter);
-	XImage_filter_InterruptDisable(&xErodeFilter, 1);
-	XImage_filter_DisableAutoRestart(&xErodeFilter);
-
 	XImage_filter_SetRows(&xErodeFilter, detailedTiming[currentResolution][V_ACTIVE_TIME]);
 	XImage_filter_SetCols(&xErodeFilter, detailedTiming[currentResolution][H_ACTIVE_TIME]);
 	//	XImage_filter_InterruptGlobalEnable(&xfilter);
@@ -76,10 +73,6 @@ void config_erodefilter(XImage_filter xErodeFilter){
 }
 
 void config_sobelfilter(XSobel_filter xSobelFilter){
-	XSobel_filter_InterruptGlobalDisable(&xSobelFilter);
-	XSobel_filter_InterruptDisable(&xSobelFilter, 1);
-	XSobel_filter_DisableAutoRestart(&xSobelFilter);
-
 	XSobel_filter_SetRows(&xSobelFilter, detailedTiming[currentResolution][V_ACTIVE_TIME]);
 	XSobel_filter_SetCols(&xSobelFilter, detailedTiming[currentResolution][H_ACTIVE_TIME]);
 //	XSobel_filter_InterruptGlobalEnable(&xSobelFilter);

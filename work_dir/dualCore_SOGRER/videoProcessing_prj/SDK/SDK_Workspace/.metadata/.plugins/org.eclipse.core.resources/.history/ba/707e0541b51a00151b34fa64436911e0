@@ -128,10 +128,10 @@ int main()
 					 XPAR_SCUTIMER_INTR);
 
 #ifdef SOBEL_HA
-	InitSobelFilter();
+	//InitSobelFilter();
 #endif
 #ifdef ERODE_HA
-	InitErodeFilter();
+	//InitErodeFilter();
 #endif
 #ifdef GRAYSCALE_HA
 	InitGrayscaleFilter();
@@ -296,10 +296,10 @@ int APP_ChangeResolution (void)
 			SetVideoResolution(receivedChar - 0x30);
 
 #ifdef SOBEL_HA
-			config_sobelfilter(xSobelFilter);
+			//config_sobelfilter(xSobelFilter);
 #endif
 #ifdef ERODE_HA
-			config_erodefilter(xErodeFilter);
+			//config_erodefilter(xErodeFilter);
 #endif
 #ifdef GRAYSCALE_HA
 			config_grayScaleFilter(xGrayScaleFilter);
@@ -317,10 +317,10 @@ int APP_ChangeResolution (void)
 				SetVideoResolution(RESOLUTION_640x480);
 
 #ifdef SOBEL_HA
-				config_sobelfilter(xSobelFilter);
+				//config_sobelfilter(xSobelFilter);
 #endif
 #ifdef ERODE_HA
-				config_erodefilter(xErodeFilter);
+				//config_erodefilter(xErodeFilter);
 #endif
 #ifdef GRAYSCALE_HA
 				config_grayScaleFilter(xGrayScaleFilter);
@@ -393,7 +393,7 @@ void processFrame(unsigned char CPU_id) {
 	// SW implementation
 	EdgeDetection(frameBaseaddr, frameBaseaddr + FRAME_SIZE, 640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME]);
 #endif
-	frameBaseaddr += FRAME_SIZE;
+	//frameBaseaddr += FRAME_SIZE;
 
 	// erode filtering
 #ifdef ERODE_HA
@@ -404,7 +404,7 @@ void processFrame(unsigned char CPU_id) {
 	// SW implementation
 	Erode(frameBaseaddr, frameBaseaddr + FRAME_SIZE, 640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME]);
 #endif
-	frameBaseaddr += FRAME_SIZE;
+	//frameBaseaddr += FRAME_SIZE;
 
 	// grayscale filtering
 #ifdef GRAYSCALE_HA
