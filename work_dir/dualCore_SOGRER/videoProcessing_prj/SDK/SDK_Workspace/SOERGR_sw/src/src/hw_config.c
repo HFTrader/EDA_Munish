@@ -10,7 +10,7 @@
 #include "cf_hdmi.h"
 
 extern unsigned char currentResolution;
-extern XGray_scale	xGrayScaleFilter;
+
 
 void config_filterVDMA(int VDMA_baseAddr, int vdma_direction, unsigned long base_address)
 {
@@ -63,14 +63,14 @@ void config_grayScaleFilter(XGray_scale xGrayScaleFilter)
 	XGray_scale_Start(&xGrayScaleFilter);
 }
 
-/*void config_erodefilter(){
+void config_erodefilter(XImage_filter xErodeFilter){
 	XImage_filter_SetRows(&xErodeFilter, detailedTiming[currentResolution][V_ACTIVE_TIME]);
 	XImage_filter_SetCols(&xErodeFilter, detailedTiming[currentResolution][H_ACTIVE_TIME]);
 	//	XImage_filter_InterruptGlobalEnable(&xfilter);
 	//	XImage_filter_InterruptEnable(&xfilter, 3);
 	XImage_filter_EnableAutoRestart(&xErodeFilter);
 	XImage_filter_Start(&xErodeFilter);
-}*/
+}
 
 void config_sobelfilter(XSobel_filter xSobelFilter){
 	XSobel_filter_SetRows(&xSobelFilter, detailedTiming[currentResolution][V_ACTIVE_TIME]);

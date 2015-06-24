@@ -62,17 +62,21 @@ void AXI_INTERRUPT_EnableInterrupt(void * baseaddr_p)
 unsigned int t=0;
 void AXI_INTERRUPT_VsyncIntr_Handler(void * baseaddr_p)
 {
+#ifdef USE_CPU1
 	static void (*funcPtr_CPU1proc)() = CPU1_Process;
+#endif
 	debug_frameNo++;
 
 	if (debug_frameNo > 5) {				// ignoring some initial frames to make sure that CPU0, CPU1 are both ready to capture the frames
 		if (cpu0_busy_capturing_frame == 1) {
+#ifdef USE_CPU1
 			if (cpu1_busy_capturing_frame == 0) {
-				/*// interrupt cpu1 to start processing this frame
+				// interrupt cpu1 to start processing this frame
 				Xil_Out32(0xfffffff0, (u32) funcPtr_CPU1proc);
 				sev();
-				cpu1_busy_capturing_frame = 1;*/
+				cpu1_busy_capturing_frame = 1;
 			} // else skip frame
+#endif
 		} else {
 			// interrupt cpu0 to start processing this frame
 			FRAME_INTR = 1;

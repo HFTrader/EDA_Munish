@@ -1,4 +1,4 @@
-16:36:57 **** Build of project standalone_bsp_0 ****
+13:07:30 **** Build of project standalone_bsp_0 ****
 make -k all 
 libgen -hw ../videoProcessing_prj_hw_platform/system.xml\
 	       -lp /home/ga38qoh/EDA_Munish/zedboard_training/ZynqSW/2013_3/Support_documents/sdk_repo\
@@ -13,6 +13,28 @@ Command Line: libgen -hw ../videoProcessing_prj_hw_platform/system.xml -lp
 /home/ga38qoh/EDA_Munish/zedboard_training/ZynqSW/2013_3/Support_documents/sdk_r
 epo -pe ps7_cortexa9_0 -log libgen.log system.mss 
 
+WARNING:EDK:469 -
+   /nfs/tools/xilinx/ise/14.7/ISE_DS/EDK/sw/XilinxProcessorIPLib/drivers/axivdma
+   _v4_06_a/data/axivdma_v2_1_0.mdd line 46 - Driver axivdma 4.06.a does not
+   support peripheral axi_vdma 5.04.a PARAMETER C_INCLUDE_SG = 0. List of
+   peripherals supported by driver "axivdma" are :
+   "axi_vdma_v[4-9]_[0-9][0-9]_[a-z] axi_vdma_v[4-9]_[0-9] " !
+WARNING:EDK:468 -
+   /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/w
+   ork_dir/dualCore_SOGRER/videoProcessing_prj/SDK/SDK_Workspace/standalone_bsp_
+   0/system.mss line 66 - Driver "axivdma" does not support Hardware Instance
+   "axi_vdma_2" !
+WARNING:EDK:469 -
+   /nfs/tools/xilinx/ise/14.7/ISE_DS/EDK/sw/XilinxProcessorIPLib/drivers/axivdma
+   _v4_06_a/data/axivdma_v2_1_0.mdd line 46 - Driver axivdma 4.06.a does not
+   support peripheral axi_vdma 5.04.a PARAMETER C_INCLUDE_SG = 0. List of
+   peripherals supported by driver "axivdma" are :
+   "axi_vdma_v[4-9]_[0-9][0-9]_[a-z] axi_vdma_v[4-9]_[0-9] " !
+WARNING:EDK:468 -
+   /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/w
+   ork_dir/dualCore_SOGRER/videoProcessing_prj/SDK/SDK_Workspace/standalone_bsp_
+   0/system.mss line 72 - Driver "axivdma" does not support Hardware Instance
+   "axi_vdma_3" !
 
 Staging source files.
 Running DRCs.
@@ -48,5 +70,5 @@ Compiling cpu_cortexa9
 Running execs_generate.
 Finished building libraries
 
-16:37:27 Build Finished (took 30s.640ms)
+13:08:52 Build Finished (took 1m:21s.982ms)
 

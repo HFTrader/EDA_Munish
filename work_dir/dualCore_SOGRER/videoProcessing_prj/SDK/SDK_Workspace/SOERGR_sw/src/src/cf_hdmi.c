@@ -132,7 +132,7 @@ void DDRVideoWr(unsigned short width, unsigned short height, unsigned short hori
 
 
 
-
+#ifdef USE_CPU1
 
 // this function is designed to be run by cpu1 only!!
 void CPU1_Process() {
@@ -166,12 +166,14 @@ void CPU1_Process() {
 				   );
 	// branching to initial boot code (waiting for sev from cpu 0)
 	Xil_Out32((u32) 0xfffffff0, (u32) 0x0);
+#ifdef USE_CPU1
 	cpu1_busy_capturing_frame = 0;
+#endif
 	asm volatile("bx %0" : : "r" (0x09000000));
 }
 
 
-
+#endif
 
 
 
@@ -278,6 +280,7 @@ void InitHdmiVideoPcore(unsigned short horizontalActiveTime,
 			  0x00000001); // enable
 
 	ConfigHdmiVDMA ( horizontalActiveTime,verticalActiveTime, PROC_VIDEO_BASEADDR);
+	//ConfigHdmiVDMA ( horizontalActiveTime,verticalActiveTime, ERODE_BASEADDR);
 }
 
 void ConfigHdmiVDMA (unsigned short horizontalActiveTime, unsigned short verticalActiveTime,

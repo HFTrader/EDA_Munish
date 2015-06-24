@@ -111,7 +111,7 @@ entity system_axi_vdma_2_wrapper is
   );
 
   attribute x_core_info : STRING;
-  attribute x_core_info of system_axi_vdma_2_wrapper : entity is "axi_vdma_v5_04_a";
+  attribute x_core_info of system_axi_vdma_2_wrapper : entity is "axi_vdma_v5_04_a PARAMETER C_INCLUDE_SG = 0";
 
 end system_axi_vdma_2_wrapper;
 

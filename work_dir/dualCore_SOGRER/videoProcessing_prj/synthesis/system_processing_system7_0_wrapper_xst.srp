@@ -1,11 +1,11 @@
 Release 14.7 - xst P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> 
-Parameter TMPDIR set to /nfs/TUEIEDAprojects/SystemDesign/work/zynq/uzair-sharif/EDA_Munish/work_dir/dualCore_SOGRER/videoProcessing_prj/synthesis/xst_temp_dir/
+Parameter TMPDIR set to /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER/videoProcessing_prj/synthesis/xst_temp_dir/
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.07 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.05 secs
  
 --> 
 
@@ -37,7 +37,7 @@ TABLE OF CONTENTS
 ---- Source Parameters
 Input Format                       : MIXED
 Input File Name                    : "system_processing_system7_0_wrapper_xst.prj"
-Verilog Include Directory          : {"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/uzair-sharif/EDA_Munish/work_dir/dualCore_SOGRER/videoProcessing_prj/pcores/" "/nfs/TUEIEDAprojects/SystemDesign/work/zynq/uzair-sharif/EDA_Munish/work_dir/dualCore_SOGRER/cf_lib/edk/pcores/" "/nfs/tools/xilinx/ise/14.7/ISE_DS/EDK/hw/XilinxBFMinterface/pcores/" "/nfs/tools/xilinx/ise/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/" }
+Verilog Include Directory          : {"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER/videoProcessing_prj/pcores/" "/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER/cf_lib/edk/pcores/" "/nfs/tools/xilinx/ise/14.7/ISE_DS/EDK/hw/XilinxBFMinterface/pcores/" "/nfs/tools/xilinx/ise/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/" }
 
 ---- Target Parameters
 Target Device                      : xc7z020clg484-1
@@ -74,7 +74,7 @@ Analyzing Verilog file "/nfs/tools/xilinx/ise/14.7/ISE_DS/EDK/hw/XilinxProcessor
 Parsing module <atc>.
 Analyzing Verilog file "/nfs/tools/xilinx/ise/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/processing_system7_v3_00_a/hdl/verilog/processing_system7.v" into library processing_system7_v3_00_a
 Parsing module <processing_system7>.
-Analyzing Verilog file "/nfs/TUEIEDAprojects/SystemDesign/work/zynq/uzair-sharif/EDA_Munish/work_dir/dualCore_SOGRER/videoProcessing_prj/hdl/system_processing_system7_0_wrapper.v" into library work
+Analyzing Verilog file "/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER/videoProcessing_prj/hdl/system_processing_system7_0_wrapper.v" into library work
 Parsing module <system_processing_system7_0_wrapper>.
 
 =========================================================================
@@ -83,7 +83,7 @@ Parsing module <system_processing_system7_0_wrapper>.
 
 Elaborating module <system_processing_system7_0_wrapper>.
 
-Elaborating module <processing_system7(C_EMIO_GPIO_WIDTH=64,C_INCLUDE_ACP_TRANS_CHECK=0,C_M_AXI_GP0_ID_WIDTH=6,C_M_AXI_GP0_ENABLE_STATIC_REMAP=1,C_M_AXI_GP1_ID_WIDTH=6,C_M_AXI_GP1_ENABLE_STATIC_REMAP=1,C_S_AXI_GP0_ID_WIDTH=6,C_S_AXI_GP1_ID_WIDTH=6,C_S_AXI_ACP_ID_WIDTH=3,C_S_AXI_HP0_ID_WIDTH=1,C_S_AXI_HP0_DATA_WIDTH=64,C_S_AXI_HP1_ID_WIDTH=2,C_S_AXI_HP1_DATA_WIDTH=64,C_S_AXI_HP2_ID_WIDTH=2,C_S_AXI_HP2_DATA_WIDTH=64,C_S_AXI_HP3_ID_WIDTH=6,C_S_AXI_HP3_DATA_WIDTH=64,C_NUM_F2P_INTR_INPUTS=15,C_FCLK_CLK0_BUF="TRUE",C_FCLK_CLK1_BUF="TRUE",C_FCLK_CLK2_BUF="TRUE",C_FCLK_CLK3_BUF="TRUE")>.
+Elaborating module <processing_system7(C_EMIO_GPIO_WIDTH=64,C_INCLUDE_ACP_TRANS_CHECK=0,C_M_AXI_GP0_ID_WIDTH=6,C_M_AXI_GP0_ENABLE_STATIC_REMAP=1,C_M_AXI_GP1_ID_WIDTH=6,C_M_AXI_GP1_ENABLE_STATIC_REMAP=1,C_S_AXI_GP0_ID_WIDTH=6,C_S_AXI_GP1_ID_WIDTH=6,C_S_AXI_ACP_ID_WIDTH=3,C_S_AXI_HP0_ID_WIDTH=1,C_S_AXI_HP0_DATA_WIDTH=64,C_S_AXI_HP1_ID_WIDTH=3,C_S_AXI_HP1_DATA_WIDTH=64,C_S_AXI_HP2_ID_WIDTH=2,C_S_AXI_HP2_DATA_WIDTH=64,C_S_AXI_HP3_ID_WIDTH=6,C_S_AXI_HP3_DATA_WIDTH=64,C_NUM_F2P_INTR_INPUTS=16,C_FCLK_CLK0_BUF="TRUE",C_FCLK_CLK1_BUF="TRUE",C_FCLK_CLK2_BUF="TRUE",C_FCLK_CLK3_BUF="TRUE")>.
 
 Elaborating module <BUFG>.
 
@@ -91,16 +91,15 @@ Elaborating module <PS7>.
 WARNING:HDLCompiler:1127 - "/nfs/tools/xilinx/ise/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/processing_system7_v3_00_a/hdl/verilog/processing_system7.v" Line 2172: Assignment to IRQ_P2F_GPI ignored, since the identifier is never used
 WARNING:HDLCompiler:189 - "/nfs/tools/xilinx/ise/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/processing_system7_v3_00_a/hdl/verilog/processing_system7.v" Line 2294: Size mismatch in connection of port <SAXIHP1WACOUNT>. Formal port size is 6-bit while actual signal size is 8-bit.
 WARNING:HDLCompiler:189 - "/nfs/tools/xilinx/ise/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/processing_system7_v3_00_a/hdl/verilog/processing_system7.v" Line 2310: Size mismatch in connection of port <SAXIHP2WACOUNT>. Formal port size is 6-bit while actual signal size is 8-bit.
-WARNING:HDLCompiler:189 - "/nfs/TUEIEDAprojects/SystemDesign/work/zynq/uzair-sharif/EDA_Munish/work_dir/dualCore_SOGRER/videoProcessing_prj/hdl/system_processing_system7_0_wrapper.v" Line 1792: Size mismatch in connection of port <S_AXI_HP1_WACOUNT>. Formal port size is 8-bit while actual signal size is 6-bit.
-WARNING:HDLCompiler:189 - "/nfs/TUEIEDAprojects/SystemDesign/work/zynq/uzair-sharif/EDA_Munish/work_dir/dualCore_SOGRER/videoProcessing_prj/hdl/system_processing_system7_0_wrapper.v" Line 1838: Size mismatch in connection of port <S_AXI_HP2_WACOUNT>. Formal port size is 8-bit while actual signal size is 6-bit.
-WARNING:HDLCompiler:189 - "/nfs/TUEIEDAprojects/SystemDesign/work/zynq/uzair-sharif/EDA_Munish/work_dir/dualCore_SOGRER/videoProcessing_prj/hdl/system_processing_system7_0_wrapper.v" Line 1975: Size mismatch in connection of port <IRQ_F2P>. Formal port size is 16-bit while actual signal size is 15-bit.
+WARNING:HDLCompiler:189 - "/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER/videoProcessing_prj/hdl/system_processing_system7_0_wrapper.v" Line 1792: Size mismatch in connection of port <S_AXI_HP1_WACOUNT>. Formal port size is 8-bit while actual signal size is 6-bit.
+WARNING:HDLCompiler:189 - "/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER/videoProcessing_prj/hdl/system_processing_system7_0_wrapper.v" Line 1838: Size mismatch in connection of port <S_AXI_HP2_WACOUNT>. Formal port size is 8-bit while actual signal size is 6-bit.
 
 =========================================================================
 *                           HDL Synthesis                               *
 =========================================================================
 
 Synthesizing Unit <system_processing_system7_0_wrapper>.
-    Related source file is "/nfs/TUEIEDAprojects/SystemDesign/work/zynq/uzair-sharif/EDA_Munish/work_dir/dualCore_SOGRER/videoProcessing_prj/hdl/system_processing_system7_0_wrapper.v".
+    Related source file is "/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER/videoProcessing_prj/hdl/system_processing_system7_0_wrapper.v".
     Summary:
 	no macro.
 Unit <system_processing_system7_0_wrapper> synthesized.
@@ -114,7 +113,7 @@ Synthesizing Unit <processing_system7>.
         C_S_AXI_GP0_ID_WIDTH = 6
         C_S_AXI_GP1_ID_WIDTH = 6
         C_S_AXI_HP0_ID_WIDTH = 1
-        C_S_AXI_HP1_ID_WIDTH = 2
+        C_S_AXI_HP1_ID_WIDTH = 3
         C_S_AXI_HP2_ID_WIDTH = 2
         C_S_AXI_HP3_ID_WIDTH = 6
         C_S_AXI_ACP_ID_WIDTH = 3
@@ -123,7 +122,7 @@ Synthesizing Unit <processing_system7>.
         C_S_AXI_HP2_DATA_WIDTH = 64
         C_S_AXI_HP3_DATA_WIDTH = 64
         C_INCLUDE_ACP_TRANS_CHECK = 0
-        C_NUM_F2P_INTR_INPUTS = 15
+        C_NUM_F2P_INTR_INPUTS = 16
         C_FCLK_CLK0_BUF = "TRUE"
         C_FCLK_CLK1_BUF = "TRUE"
         C_FCLK_CLK2_BUF = "TRUE"
@@ -141,7 +140,6 @@ WARNING:Xst:647 - Input <S_AXI_HP2_ARSIZE<2:2>> is never used. This port will be
 WARNING:Xst:647 - Input <S_AXI_HP2_AWSIZE<2:2>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <S_AXI_HP3_ARSIZE<2:2>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <S_AXI_HP3_AWSIZE<2:2>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <IRQ_F2P<15:15>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 1-bit register for signal <ENET0_GMII_TX_EN>.
     Found 1-bit register for signal <ENET0_GMII_TX_ER>.
     Found 1-bit register for signal <ENET0_GMII_COL_i>.
@@ -322,7 +320,7 @@ Slice Logic Distribution:
    Number of unique control sets:         5
 
 IO Utilization: 
- Number of IOs:                        3197
+ Number of IOs:                        3203
  Number of bonded IOBs:                   0  out of    200     0%  
 
 Specific Feature Utilization:
@@ -561,7 +559,7 @@ Offset:              0.681ns (Levels of Logic = 0)
 
 =========================================================================
 Timing constraint: Default path analysis
-  Total number of paths / destination ports: 6017 / 3117
+  Total number of paths / destination ports: 6023 / 3123
 -------------------------------------------------------------------------
 Delay:               3.353ns (Levels of Logic = 5)
   Source:            processing_system7_0/PS7_i:MAXIGP0ARID3 (PAD)
@@ -575,7 +573,7 @@ Delay:               3.353ns (Levels of Logic = 5)
      LUT3:I0->O            2   0.053   0.731  processing_system7_0/out831 (processing_system7_0/out83)
      LUT6:I1->O            1   0.053   0.485  processing_system7_0/out2 (processing_system7_0/out6)
      LUT5:I3->O            1   0.053   0.413  processing_system7_0/out3 (processing_system7_0/out7)
-     LUT5:I4->O            6   0.053   0.772  processing_system7_0/out7 (processing_system7_0/n0165)
+     LUT5:I4->O            6   0.053   0.772  processing_system7_0/out7 (processing_system7_0/n0164)
      LUT6:I0->O            0   0.053   0.000  processing_system7_0/M_AXI_GP0_ARID<6>6 (M_AXI_GP0_ARID<0>)
     ----------------------------------------
     Total                      3.353ns (0.265ns logic, 3.088ns route)
@@ -590,14 +588,14 @@ Cross Clock Domains Report:
 
 
 Total REAL time to Xst completion: 13.00 secs
-Total CPU time to Xst completion: 12.22 secs
+Total CPU time to Xst completion: 12.31 secs
  
 --> 
 
 
-Total memory usage is 515584 kilobytes
+Total memory usage is 515716 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   19 (   0 filtered)
+Number of warnings :   17 (   0 filtered)
 Number of infos    :    5 (   0 filtered)
 

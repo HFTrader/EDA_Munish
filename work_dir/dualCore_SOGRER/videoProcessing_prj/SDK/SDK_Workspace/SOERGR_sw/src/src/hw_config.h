@@ -10,6 +10,7 @@
 
 #include "xgray_scale.h"
 #include "xsobel_filter.h"
+#include "ximage_filter.h"
 
 #define AXI_FILTER_RX_CTRL 			0x00000030 
 #define AXI_FILTER_RX_START1 			0x000000A0 + 0x0000000C
@@ -53,11 +54,12 @@ enum dma_transfer_direction {
 	DMA_TRANS_NONE,
 };
 
-void config_grayScaleFilter(XGray_scale xGrayScaleFilter);
+
 
 void config_filterVDMA(int VDMA_baseAddr, int vdma_direction, unsigned long base_address);
-//void config_erodefilter();
-void config_sobelfilter();
+void config_sobelfilter(XSobel_filter xSobelFilter);
+void config_erodefilter(XImage_filter xErodeFilter);
+void config_grayScaleFilter(XGray_scale xGrayScaleFilter);
 
 void resetVDMA(int VDMA_baseAddr);
 
