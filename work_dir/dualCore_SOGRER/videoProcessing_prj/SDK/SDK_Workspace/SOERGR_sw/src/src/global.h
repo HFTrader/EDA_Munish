@@ -9,9 +9,9 @@
 #define CPU1_SLEEP_ADDR			  0x10000000
 #define sev() __asm__("sev")
 #define NUM_CPUS 2
-#define SOBEL_HA
-#define ERODE_HA
-#define GRAYSCALE_HA
+//#define SOBEL_HA
+//#define ERODE_HA
+//#define GRAYSCALE_HA
 #define FRAME_SIZE 0x1000000
 
 

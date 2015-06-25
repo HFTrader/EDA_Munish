@@ -9,16 +9,16 @@ src/src/cf_hdmi.d: ../src/src/cf_hdmi.c \
  ../../standalone_bsp_0/ps7_cortexa9_0/include/xparameters_ps.h \
  ../../standalone_bsp_0/ps7_cortexa9_0/include/xparameters.h \
  ../src/src/cf_hdmi.h ../src/src/hw_config.h \
- /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc/xgray_scale.h \
+ /media/uzleo/data/Study/TUM/EDA_Munish/work_dir/dualCore_SOGRER/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc/xgray_scale.h \
  ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_types.h \
  ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_assert.h \
  ../../standalone_bsp_0/ps7_cortexa9_0/include/xstatus.h \
  ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_assert.h \
- /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc/xgray_scale_CONTROL_BUS.h \
- /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc/xsobel_filter.h \
- /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc/xsobel_filter_CONTROL_BUS.h \
- /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc/ximage_filter.h \
- /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc/ximage_filter_CONTROL_BUS.h \
+ /media/uzleo/data/Study/TUM/EDA_Munish/work_dir/dualCore_SOGRER/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc/xgray_scale_CONTROL_BUS.h \
+ /media/uzleo/data/Study/TUM/EDA_Munish/work_dir/dualCore_SOGRER/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc/xsobel_filter.h \
+ /media/uzleo/data/Study/TUM/EDA_Munish/work_dir/dualCore_SOGRER/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc/xsobel_filter_CONTROL_BUS.h \
+ /media/uzleo/data/Study/TUM/EDA_Munish/work_dir/dualCore_SOGRER/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc/ximage_filter.h \
+ /media/uzleo/data/Study/TUM/EDA_Munish/work_dir/dualCore_SOGRER/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc/ximage_filter_CONTROL_BUS.h \
  ../src/src/sw_functions.h ../src/src/global.h \
  ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_cache.h \
  ../../standalone_bsp_0/ps7_cortexa9_0/include/xdmaps.h \
@@ -49,7 +49,7 @@ src/src/cf_hdmi.d: ../src/src/cf_hdmi.c \
 
 ../src/src/hw_config.h:
 
-/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc/xgray_scale.h:
+/media/uzleo/data/Study/TUM/EDA_Munish/work_dir/dualCore_SOGRER/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc/xgray_scale.h:
 
 ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_types.h:
 
@@ -59,15 +59,15 @@ src/src/cf_hdmi.d: ../src/src/cf_hdmi.c \
 
 ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_assert.h:
 
-/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc/xgray_scale_CONTROL_BUS.h:
+/media/uzleo/data/Study/TUM/EDA_Munish/work_dir/dualCore_SOGRER/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc/xgray_scale_CONTROL_BUS.h:
 
-/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc/xsobel_filter.h:
+/media/uzleo/data/Study/TUM/EDA_Munish/work_dir/dualCore_SOGRER/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc/xsobel_filter.h:
 
-/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc/xsobel_filter_CONTROL_BUS.h:
+/media/uzleo/data/Study/TUM/EDA_Munish/work_dir/dualCore_SOGRER/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc/xsobel_filter_CONTROL_BUS.h:
 
-/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc/ximage_filter.h:
+/media/uzleo/data/Study/TUM/EDA_Munish/work_dir/dualCore_SOGRER/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc/ximage_filter.h:
 
-/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc/ximage_filter_CONTROL_BUS.h:
+/media/uzleo/data/Study/TUM/EDA_Munish/work_dir/dualCore_SOGRER/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc/ximage_filter_CONTROL_BUS.h:
 
 ../src/src/sw_functions.h:
 

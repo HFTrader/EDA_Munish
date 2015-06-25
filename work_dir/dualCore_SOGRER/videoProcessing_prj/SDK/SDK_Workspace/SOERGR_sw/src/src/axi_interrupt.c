@@ -11,7 +11,6 @@
 #include "axi_interrupt.h"
 #include "cf_hdmi.h"
 #include "sw_functions.h"
-#include "stdio.h"
 #include "transmitter.h"
 
 #include "profile_cnt.h"
@@ -69,12 +68,14 @@ void AXI_INTERRUPT_VsyncIntr_Handler(void * baseaddr_p)
 	if (cpu0_busy_processing_frame == 1) {
 #if NUM_CPUS==2
 		if (cpu1_busy_processing_frame == 0) {
+			cpu1_busy_processing_frame = 1;
 			// interrupt cpu1 to start processing this frame
 			Xil_Out32(0xfffffff0, (u32) funcPtr_CPU1proc);
 			sev();
 		} // else skip frame
 #endif
 	} else {
+		cpu0_busy_processing_frame = 1;
 		// interrupt cpu0 to start processing this frame
 		FRAME_INTR = 1;
 	}

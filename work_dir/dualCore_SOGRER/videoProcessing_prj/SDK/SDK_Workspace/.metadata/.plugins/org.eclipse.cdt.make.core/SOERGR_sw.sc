@@ -4,6 +4,9 @@
 <scannerInfo id="org.eclipse.cdt.make.core.discoveredScannerInfo">
 <instance id="xilinx.gnu.arm.exe.debug.1057771641;xilinx.gnu.arm.exe.debug.1057771641.;xilinx.gnu.arm.c.toolchain.compiler.debug.442198182;xilinx.gnu.arm.c.compiler.input.2048530803">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
+<includePath path="/opt/Xilinx/14.7/ISE_DS/EDK/gnu/arm/lin/bin/../lib/gcc/arm-xilinx-eabi/4.7.3/include"/>
+<includePath path="/opt/Xilinx/14.7/ISE_DS/EDK/gnu/arm/lin/bin/../lib/gcc/arm-xilinx-eabi/4.7.3/include-fixed"/>
+<includePath path="/opt/Xilinx/14.7/ISE_DS/EDK/gnu/arm/lin/bin/../lib/gcc/arm-xilinx-eabi/4.7.3/../../../../arm-xilinx-eabi/include"/>
 <includePath path="/nfs/tools/xilinx/ise/14.7/ISE_DS/EDK/gnu/arm/lin/bin/../lib/gcc/arm-xilinx-eabi/4.7.3/include"/>
 <includePath path="/nfs/tools/xilinx/ise/14.7/ISE_DS/EDK/gnu/arm/lin/bin/../lib/gcc/arm-xilinx-eabi/4.7.3/include-fixed"/>
 <includePath path="/nfs/tools/xilinx/ise/14.7/ISE_DS/EDK/gnu/arm/lin/bin/../lib/gcc/arm-xilinx-eabi/4.7.3/../../../../arm-xilinx-eabi/include"/>
@@ -350,6 +353,9 @@
 </instance>
 <instance id="xilinx.gnu.arm.exe.debug.1057771641;xilinx.gnu.arm.exe.debug.1057771641.">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
+<includePath path="/opt/Xilinx/14.7/ISE_DS/EDK/gnu/arm/lin/bin/../lib/gcc/arm-xilinx-eabi/4.7.3/include"/>
+<includePath path="/opt/Xilinx/14.7/ISE_DS/EDK/gnu/arm/lin/bin/../lib/gcc/arm-xilinx-eabi/4.7.3/include-fixed"/>
+<includePath path="/opt/Xilinx/14.7/ISE_DS/EDK/gnu/arm/lin/bin/../lib/gcc/arm-xilinx-eabi/4.7.3/../../../../arm-xilinx-eabi/include"/>
 <includePath path="/nfs/tools/xilinx/ise/14.7/ISE_DS/EDK/gnu/arm/lin/bin/../lib/gcc/arm-xilinx-eabi/4.7.3/include"/>
 <includePath path="/nfs/tools/xilinx/ise/14.7/ISE_DS/EDK/gnu/arm/lin/bin/../lib/gcc/arm-xilinx-eabi/4.7.3/include-fixed"/>
 <includePath path="/nfs/tools/xilinx/ise/14.7/ISE_DS/EDK/gnu/arm/lin/bin/../lib/gcc/arm-xilinx-eabi/4.7.3/../../../../arm-xilinx-eabi/include"/>

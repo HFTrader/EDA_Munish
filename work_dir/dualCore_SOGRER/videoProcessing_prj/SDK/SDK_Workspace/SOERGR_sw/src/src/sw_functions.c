@@ -15,42 +15,74 @@
 
 #define ABS(x)		(x < 0 ? -x : x)
 
-/* ******************* ConvToGrayHLS *******************
- * Imitating the Vivado_HLS implementation of grayscale conversion
- * Reads an Image frame from DDR memory, Converts the Raw image
- * to Gray scale and writes back to DDR memory at a different location 
+/* Takes the Raw image from DDR image space
+ * converts it to Gray scale and writes back to DDR
+ * at a different location
  */
- void ConvToGray(unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr,unsigned short horizontalActiveTime)
+void ConvToGray(unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr,
+		unsigned short width, unsigned short height,
+		unsigned short horizontalActiveTime)
 {
-	int 	i,j,V_offset;
-	int    	cols = 640;
-	int   	rows = 480;
-	float 	_par[3] = {0.114,0.587,0.299};
+	u32 row,col;
+	u32 V_offset, VH_offset;
+	u32 pixel_color,pixel_temp,pixel_gray;
+
+	  for (row = 0; row < height ;row++) {
+		  V_offset = row * horizontalActiveTime;
+
+	  	  for (col = 0; col < width ;col++) {
+	  		{
+					pixel_color	= Xil_In32(ImgIn_BaseAddr + (V_offset + col) * 4); //Get the colored image
+					pixel_temp 	= (int)(((pixel_color & 0xff) + ((pixel_color & 0xff00)>>8) + ((pixel_color & 0xff0000)>>16))/3); // convert to gray
+					pixel_gray 	= (pixel_temp & 0xff) | ((pixel_temp & 0xff)<<8) | ((pixel_temp & 0xff)<<16) ;
+					Xil_Out32( ImgOut_BaseAddr + ((V_offset+col) * 4) , pixel_gray ); // write to another location
+	  		}
+	  	  }
+	  	}
+}
+/* *** Imititating the Vivado_HLS implementation of grayscale conversion
+ * Converts the Raw image to Gray scale and writes back to DDR
+ * at a different location
+ */
+void ConvToGrayHLS(unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr,unsigned short horizontalActiveTime)
+{
+	int i,j,V_offset;
+	//kernel_CvtColor<CONVERSION>  kernel_opr;
+	int    	cols=640;
+	int   	rows=480;
+	float 	par[3] = {0.114,0.587,0.299};
 
 	int _s;	// src pixel
 	int _d;	// dst pixel
-	int b,g,r,c;
-
-	V_offset = 0;
-	for(i = 0; i < rows; i++) {
-		for (j = 0; j < cols; j++) {
-			_s = Xil_In32(ImgIn_BaseAddr + ((V_offset + j) * 4) ); //Get the colored image pixel
-			//apply kernel
-			r = _par[0] * ( _s & 0xff );
-			b = _par[1] * ((_s & 0xff00) >> 8);
-			g = _par[2] * ((_s & 0xff0000) >> 16);
-			c = r + g + b;
-			if(c>255)
-			{
-				c=255;
-			}
-			_d = (c & 0xff) | ((c & 0xff) << 8) | ((c & 0xff) << 16) ;
-			Xil_Out32( ImgOut_BaseAddr + ((V_offset + j) * 4 ), _d ); //write to another location gray pixel
+	for(i= 0; i < rows; i++) {
+		V_offset = i * horizontalActiveTime;
+		for (j= 0; j < cols; j++) {
+			_s	= Xil_In32(ImgIn_BaseAddr + (V_offset + j) * 4); //Get the colored image pixel
+			kernel_apply(&_s,&_d, par);
+			Xil_Out32( ImgOut_BaseAddr + ((V_offset+j) * 4) , _d ); // write to another locationgray pixel
 		}
-		V_offset = V_offset + horizontalActiveTime;
 	}
 }
+
+
+
+void kernel_apply(int* _src, int* _dst,float _par[3])
+{
+	int b,g,r;
+	r=_par[0]*( *_src & 0xff		);				//_src.val[2];
+	b=_par[1]*((*_src & 0xff00	) >> 8);	//_src.val[1];
+	g=_par[2]*((*_src & 0xff0000) >> 16);	//_src.val[0];
+	int c;
+	c=r+g+b;
+	if(c>255)
+	{
+		c=255;
+	}
+	*_dst = (c & 0xff) | ((c & 0xff)<<8) | ((c & 0xff)<<16) ;
+
+}
  
+
  /* Get an Image frame from DDR memory and perform Edge Detection on this
   * Store the processed Image back to DDR at a different location
   * ImgIn_BaseAddr	: VIDEO_BASEADDR

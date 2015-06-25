@@ -374,10 +374,10 @@ void InitGrayscaleFilter() {
 void processFrame(unsigned char CPU_id) {
 	unsigned int frameBaseaddr;
 	if (CPU_id == 0) {
-		cpu0_busy_processing_frame = 1;
+		//cpu0_busy_processing_frame = 1;
 		frameBaseaddr = VIDEO_BASEADDR_CPU0;
 	} else if (CPU_id == 1) {
-		cpu1_busy_processing_frame = 1;
+		//cpu1_busy_processing_frame = 1;
 		frameBaseaddr = VIDEO_BASEADDR_CPU1;
 	} //else (.......for more CPUs.......)
 
@@ -413,7 +413,7 @@ void processFrame(unsigned char CPU_id) {
 	config_filterVDMA(XPAR_AXI_VDMA_1_BASEADDR, DMA_DEV_TO_MEM, frameBaseaddr + FRAME_SIZE);
 #else
 	// SW implementation
-	ConvToGray(frameBaseaddr, frameBaseaddr + FRAME_SIZE, detailedTiming[currentResolution][H_ACTIVE_TIME]);
+	ConvToGray(frameBaseaddr, frameBaseaddr + FRAME_SIZE, 640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME]);
 #endif
 	frameBaseaddr += FRAME_SIZE;
 
