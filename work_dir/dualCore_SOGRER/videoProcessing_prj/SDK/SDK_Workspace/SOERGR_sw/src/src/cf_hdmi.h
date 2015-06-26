@@ -133,7 +133,7 @@ enum detailedTimingElement
 	V_SYNC_WIDTH_PULSE
 };
 
-enum imageToDisplay // TODO
+enum imageToDisplay
 {
 	Original,
 	Processed

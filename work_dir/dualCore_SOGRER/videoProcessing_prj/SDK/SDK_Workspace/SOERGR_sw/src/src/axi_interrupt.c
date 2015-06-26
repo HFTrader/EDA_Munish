@@ -62,7 +62,6 @@ void AXI_INTERRUPT_EnableInterrupt(void * baseaddr_p)
 unsigned int t=0;
 void AXI_INTERRUPT_VsyncIntr_Handler(void * baseaddr_p)
 {
-
 	static void (*funcPtr_CPU1proc)() = CPU1_ISR;
 	debug_frameNo++;
 
@@ -73,14 +72,19 @@ void AXI_INTERRUPT_VsyncIntr_Handler(void * baseaddr_p)
 
 			// interrupt cpu1 to start processing this frame
 			Xil_Out32(0xfffffff0, (u32) funcPtr_CPU1proc);
+			dmb();		// wait for memory write to finish!...........very important before issuing SEV().......DON'T REMOVE THIS!!
 			sev();
-		} // else skip frame
+		} else {// else skip frame
+			printf("skipping frame=%d\n\r", debug_frameNo);
+		}
+#else
+		printf("skipping frame=%d\n\r", debug_frameNo);
 #endif
 	} else if (FRAME_INTR == 0) {
 		cpu0_busy_processing_frame = 1;
 
 		// interrupt cpu0 to start processing this frame
-		//FRAME_INTR = 1;
+		FRAME_INTR = 1;
 	}
 
 }
@@ -100,5 +104,6 @@ void AXI_INTERRUPT__VDMA1_S2MMIntr_Handler(void * baseaddr_p)
 	Xil_Out32((XPAR_AXI_VDMA_1_BASEADDR + AXI_FILTER_RX_CTRL), 0x00000004); // Mun
 	GRAY_INTR = 1;
 }
+
 
 

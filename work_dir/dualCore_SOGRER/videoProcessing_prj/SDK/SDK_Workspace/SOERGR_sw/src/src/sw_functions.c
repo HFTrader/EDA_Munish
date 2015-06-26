@@ -24,7 +24,7 @@ void ConvToGray(unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr,
 		unsigned short horizontalActiveTime)
 {
 	u32 row,col;
-	u32 V_offset, VH_offset;
+	u32 V_offset;
 	u32 pixel_color,pixel_temp,pixel_gray;
 
 	  for (row = 0; row < height ;row++) {
@@ -251,7 +251,7 @@ void SampleFunction(unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr,
 		unsigned short horizontalActiveTime)
 {
 	u32 row,col;
-	u32 V_offset, VH_offset;
+	u32 V_offset;
 	u32 pixel_color,pixel_temp,pixel_gray;
 
 	  for (row = 0; row < 480 ;row++) {
