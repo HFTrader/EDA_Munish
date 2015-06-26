@@ -24,6 +24,9 @@ short int cpu0_busy_processing_frame;
 short int cpu1_busy_processing_frame;
 
 
+extern void CPU1_ISR();
+
+
 
 #endif
 
