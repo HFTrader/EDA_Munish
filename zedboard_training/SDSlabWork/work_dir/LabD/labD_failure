@@ -1,3 +1,0 @@
--- After following all the steps as mentioned in the labmanual, burnt the HW, SW on FPGA but image processing application fail to execute
--- Debugged the code in detail...turns out that the code gets stuck at SetVideoResolution(...) -> CLKGEN_SetRate(...) -> CLKGEN_Write(...) -> Xil_Out32(...) function where 
-   apparently it seems that the code gets into an exception handler and gets into a deadlock waiting for some event to occur which doesnt happen

@@ -11,7 +11,7 @@
 #define NUM_CPUS 1
 //#define SOBEL_HA
 //#define ERODE_HA
-//#define GRAYSCALE_HA
+#define GRAYSCALE_HA
 #define FRAME_SIZE 0x1000000
 
 

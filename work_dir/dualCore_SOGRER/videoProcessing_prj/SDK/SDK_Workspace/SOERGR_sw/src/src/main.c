@@ -361,7 +361,7 @@ void InitErodeFilter() {
 
 
 void InitGrayscaleFilter() {
-	xGrayScaleFilter.Control_bus_BaseAddress = XPAR_GRAY_SCALE_TOP_0_S_AXI_CONTROL_BUS_BASEADDR;
+	xGrayScaleFilter.Control_bus_BaseAddress = XPAR_CONVERT_TO_GRAY_TOP_0_S_AXI_CONTROL_BUS_BASEADDR;
 	xGrayScaleFilter.IsReady = XIL_COMPONENT_IS_READY;
 	config_grayScaleFilter(xGrayScaleFilter);
 	resetVDMA(XPAR_AXI_VDMA_1_BASEADDR);
@@ -427,8 +427,7 @@ void processFrame(unsigned char CPU_id) {
 	} //else (.......for more CPUs.......)
 
 
-	//ConfigHdmiVDMA (detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME], frameBaseaddr);
-	ConfigHdmiVDMA (detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME], 0x2000000);
+	ConfigHdmiVDMA (detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME], frameBaseaddr);
 }
 
 

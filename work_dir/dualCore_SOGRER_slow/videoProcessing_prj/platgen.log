@@ -18,11 +18,11 @@ WARNING:EDK:4088 - IPNAME: processing_system7, INSTANCE: processing_system7_0 -
 WARNING:EDK:4092 - IPNAME: clock_generator, INSTANCE: clock_generator_0 -
    Pre-Production version not verified on hardware for architecture 'zynq' -
    /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/w
-   ork_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 261 
+   ork_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 258 
 WARNING:EDK:4088 - IPNAME: axi_dma, INSTANCE: axi_dma_i2s - Superseded core for
    architecture 'zynq' -
    /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/w
-   ork_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 314 
+   ork_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 311 
 WARNING:EDK:4088 - IPNAME: processing_system7, INSTANCE: processing_system7_0 -
    Superseded core for architecture 'zynq' -
    /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/w
@@ -30,11 +30,11 @@ WARNING:EDK:4088 - IPNAME: processing_system7, INSTANCE: processing_system7_0 -
 WARNING:EDK:4092 - IPNAME: clock_generator, INSTANCE: clock_generator_0 -
    Pre-Production version not verified on hardware for architecture 'zynq' -
    /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/w
-   ork_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 261 
+   ork_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 258 
 WARNING:EDK:4088 - IPNAME: axi_dma, INSTANCE: axi_dma_i2s - Superseded core for
    architecture 'zynq' -
    /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/w
-   ork_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 314 
+   ork_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 311 
 
 Overriding IP level properties ...
 INFO:EDK:4130 - IPNAME: processing_system7, INSTANCE:processing_system7_0 - tcl
@@ -57,16 +57,17 @@ INFO:EDK:4130 - IPNAME: axi_interconnect, INSTANCE:axi_interconnect_3 - tcl is
    overriding PARAMETER C_BASEFAMILY value to zynq -
    /nfs/tools/xilinx/ise/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_inte
    rconnect_v1_06_a/data/axi_interconnect_v2_1_0.mpd line 81 
-INFO:EDK:4130 - IPNAME: axi_interconnect, INSTANCE:axi_interconnect_4 - tcl is
-   overriding PARAMETER C_BASEFAMILY value to zynq -
-   /nfs/tools/xilinx/ise/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_inte
-   rconnect_v1_06_a/data/axi_interconnect_v2_1_0.mpd line 81 
 
 Computing clock values...
 INFO:EDK:1432 - Frequency for Top-Level Input Clock 'cam_interface_0_clk100_pin'
    is not specified. Clock DRCs will not be performed for IPs connected to that
    clock port, unless they are connected through the clock generator IP. 
 
+INFO:EDK:3716 - IPNAME: axi_vdma, INSTANCE: axi_vdma_1 - Tools are updating the
+   value of the parameter C_INTERCONNECT_S_AXI_LITE_IS_ACLK_ASYNC to '1'. 
+INFO:EDK:3716 - IPNAME: gray_scale_top, INSTANCE: gray_scale_top_0 - Tools are
+   updating the value of the parameter
+   C_INTERCONNECT_S_AXI_CONTROL_BUS_IS_ACLK_ASYNC to '1'. 
 
 Performing IP level DRCs on properties...
 
@@ -74,27 +75,25 @@ Running DRC Tcl procedures for OPTION IPLEVEL_DRC_PROC...
 Address Map for Processor processing_system7_0
   (0x40400000-0x4040ffff) axi_dma_i2s	axi_interconnect_1
   (0x41600000-0x4160ffff) axi_iic_0	axi_interconnect_1
-  (0x43000000-0x4300ffff) axi_vdma_0	axi_interconnect_1
+  (0x43000000-0x4300ffff) axi_vdma_1	axi_interconnect_1
+  (0x43020000-0x4302ffff) axi_vdma_0	axi_interconnect_1
   (0x61600000-0x6160ffff) cam_interface_0	axi_interconnect_1
   (0x61620000-0x6162ffff) cam_interface_0	axi_interconnect_1
+  (0x67c00000-0x67c0ffff) gray_scale_top_0	axi_interconnect_1
   (0x70e00000-0x70e0ffff) axi_hdmi_tx_16b_0	axi_interconnect_1
   (0x77600000-0x7760ffff) axi_i2s_adi_0	axi_interconnect_1
   (0x79000000-0x7900ffff) axi_clkgen_0	axi_interconnect_1
-  (0x83000000-0x8300ffff) axi_vdma_1	axi_interconnect_4
-  (0xa7c00000-0xa7c0ffff) gray_scale_top_0	axi_interconnect_4
 
 Checking platform address map ...
 
 Checking platform configuration ...
-IPNAME: axi_interconnect, INSTANCE: axi_interconnect_1 - 1 master(s) : 7
+IPNAME: axi_interconnect, INSTANCE: axi_interconnect_1 - 1 master(s) : 9
 slave(s) 
 IPNAME: axi_interconnect, INSTANCE: axi_interconnect_2 - 1 master(s) : 1
 slave(s) 
 IPNAME: axi_interconnect, INSTANCE: axi_interconnect_0 - 3 master(s) : 1
 slave(s) 
 IPNAME: axi_interconnect, INSTANCE: axi_interconnect_3 - 2 master(s) : 1
-slave(s) 
-IPNAME: axi_interconnect, INSTANCE: axi_interconnect_4 - 1 master(s) : 2
 slave(s) 
 
 Checking port drivers...
@@ -125,7 +124,7 @@ WARNING:EDK:4181 - PORT: util_vector_logic_0_Op1_pin, CONNECTOR:
 WARNING:EDK:4181 - PORT: FCLK_RESET2_N, CONNECTOR:
    processing_system7_0_FCLK_RESET2_N - floating connection -
    /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/w
-   ork_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 161 
+   ork_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 159 
 WARNING:EDK:4181 - PORT: m_axis_mm2s_tuser, CONNECTOR:
    axi_vdma_0_M_AXIS_MM2S_TUSER - floating connection -
    /nfs/tools/xilinx/ise/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_vdma
@@ -133,7 +132,7 @@ WARNING:EDK:4181 - PORT: m_axis_mm2s_tuser, CONNECTOR:
 WARNING:EDK:4181 - PORT: s2mm_introut, CONNECTOR: axi_vdma_0_s2mm_introut -
    floating connection -
    /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/w
-   ork_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 186 
+   ork_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 183 
 WARNING:EDK:4181 - PORT: mm2s_prmry_reset_out_n, CONNECTOR: RESET_OUT_N -
    floating connection -
    /nfs/tools/xilinx/ise/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_dma_
@@ -157,7 +156,7 @@ WARNING:EDK:4181 - PORT: m_axis_mm2s_tkeep, CONNECTOR:
 WARNING:EDK:4181 - PORT: href_posedge, CONNECTOR: cam_interface_0_href_posedge -
    floating connection -
    /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/w
-   ork_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 359 
+   ork_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 356 
 WARNING:EDK:4181 - PORT: OUTPUT_STREAM_TSTRB, CONNECTOR:
    gray_scale_top_0_OUTPUT_STREAM_TSTRB - floating connection -
    /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/w
@@ -207,12 +206,6 @@ INFO:EDK:4130 - IPNAME: axi_interconnect, INSTANCE:axi_interconnect_3 - tcl is
    /nfs/tools/xilinx/ise/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_inte
    rconnect_v1_06_a/data/axi_interconnect_v2_1_0.mpd line 149 
 
-INFO: Setting C_RANGE_CHECK = ON for axi_interconnect axi_interconnect_4.
-INFO:EDK:4130 - IPNAME: axi_interconnect, INSTANCE:axi_interconnect_4 - tcl is
-   overriding PARAMETER C_RANGE_CHECK value to 1 -
-   /nfs/tools/xilinx/ise/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_inte
-   rconnect_v1_06_a/data/axi_interconnect_v2_1_0.mpd line 149 
-
 Running system level update procedures...
 
 Running UPDATE Tcl procedures for OPTION SYSLEVEL_UPDATE_PROC...
@@ -224,11 +217,11 @@ Performing System level DRCs on properties...
 Running DRC Tcl procedures for OPTION SYSLEVEL_DRC_PROC...
 
 Running UPDATE Tcl procedures for OPTION PLATGEN_SYSLEVEL_UPDATE_PROC...
-INFO: No asynchronous clock conversions in axi_interconnect axi_interconnect_1.
+INFO: Generating core-level timing constraints for asynchronous clock
+conversions in axi_interconnect axi_interconnect_1.
 INFO: No asynchronous clock conversions in axi_interconnect axi_interconnect_2.
 INFO: No asynchronous clock conversions in axi_interconnect axi_interconnect_0.
 INFO: No asynchronous clock conversions in axi_interconnect axi_interconnect_3.
-INFO: No asynchronous clock conversions in axi_interconnect axi_interconnect_4.
 
 Modify defaults ...
 
@@ -248,69 +241,65 @@ _dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 56 - Copying cache
 implementation netlist
 IPNAME:axi_vdma INSTANCE:axi_vdma_0 -
 /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
-_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 165 - Copying
-cache implementation netlist
-IPNAME:axi_interconnect INSTANCE:axi_interconnect_1 -
-/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
-_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 189 - Copying
+_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 162 - Copying
 cache implementation netlist
 IPNAME:axi_interconnect INSTANCE:axi_interconnect_2 -
 /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
-_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 197 - Copying
+_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 194 - Copying
 cache implementation netlist
 IPNAME:axi_hdmi_tx_16b INSTANCE:axi_hdmi_tx_16b_0 -
 /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
-_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 205 - Copying
+_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 202 - Copying
 cache implementation netlist
 IPNAME:axi_interconnect INSTANCE:axi_interconnect_0 -
 /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
-_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 226 - Copying
+_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 223 - Copying
 cache implementation netlist
 IPNAME:axi_iic INSTANCE:axi_iic_0 -
 /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
-_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 233 - Copying
+_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 230 - Copying
 cache implementation netlist
 IPNAME:axi_clkgen INSTANCE:axi_clkgen_0 -
 /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
-_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 250 - Copying
+_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 247 - Copying
 cache implementation netlist
 IPNAME:util_vector_logic INSTANCE:util_vector_logic_0 -
 /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
-_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 271 - Copying
+_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 268 - Copying
 cache implementation netlist
 IPNAME:axi_i2s_adi INSTANCE:axi_i2s_adi_0 -
 /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
-_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 280 - Copying
+_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 277 - Copying
 cache implementation netlist
 IPNAME:util_i2c_mixer INSTANCE:util_i2c_mixer_0 -
 /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
-_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 301 - Copying
+_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 298 - Copying
 cache implementation netlist
 IPNAME:axi_dma INSTANCE:axi_dma_i2s -
 /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
-_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 314 - Copying
+_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 311 - Copying
 cache implementation netlist
 IPNAME:cam_interface INSTANCE:cam_interface_0 -
 /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
-_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 338 - Copying
+_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 335 - Copying
 cache implementation netlist
 IPNAME:axi_interconnect INSTANCE:axi_interconnect_3 -
 /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
-_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 364 - Copying
+_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 361 - Copying
 cache implementation netlist
-IPNAME:axi_interconnect INSTANCE:axi_interconnect_4 -
+IPNAME:axi_vdma INSTANCE:axi_vdma_1 -
 /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
-_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 371 - Copying
+_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 368 - Copying
 cache implementation netlist
 IPNAME:gray_scale_top INSTANCE:gray_scale_top_0 -
 /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
-_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 437 - Copying
+_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 426 - Copying
 cache implementation netlist
 
 Elaborating instances ...
 IPNAME:clock_generator INSTANCE:clock_generator_0 -
 /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
-_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 261 - elaborating
+_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 258 - elaborating
 IP
 ClkGen elaborate status: PASSED
 ----------------------------------------
@@ -322,7 +311,7 @@ Inserting wrapper level ...
 Completion time: 0.00 seconds
 
 Constructing platform-level connectivity ...
-Completion time: 0.00 seconds
+Completion time: 1.00 seconds
 
 Writing (top-level) BMM ...
 
@@ -335,47 +324,47 @@ Running XST synthesis ...
 INFO:EDK:4211 - The following instances are synthesized with XST. The MPD option
    IMP_NETLIST=TRUE indicates that a NGC file is to be produced using XST
    synthesis. IMP_NETLIST=FALSE (default) instances are not synthesized. 
+INSTANCE:axi_interconnect_1 -
+/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
+_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 186 - Running XST
+synthesis
 INSTANCE:axi_hdmi_tx_16b_0 -
 /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
-_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 205 - Running XST
+_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 202 - Running XST
 synthesis
 INSTANCE:axi_clkgen_0 -
 /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
-_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 250 - Running XST
+_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 247 - Running XST
 synthesis
 INSTANCE:clock_generator_0 -
 /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
-_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 261 - Running XST
+_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 258 - Running XST
 synthesis
 INSTANCE:axi_i2s_adi_0 -
 /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
-_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 280 - Running XST
+_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 277 - Running XST
 synthesis
 INSTANCE:util_i2c_mixer_0 -
 /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
-_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 301 - Running XST
+_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 298 - Running XST
 synthesis
 INSTANCE:cam_interface_0 -
 /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
-_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 338 - Running XST
-synthesis
-INSTANCE:axi_vdma_1 -
-/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
-_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 379 - Running XST
+_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 335 - Running XST
 synthesis
 INSTANCE:gray_scale_top_0 -
 /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
-_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 437 - Running XST
+_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 426 - Running XST
 synthesis
 
 Running NGCBUILD ...
+IPNAME:system_axi_interconnect_1_wrapper INSTANCE:axi_interconnect_1 -
+/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
+_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 186 - Running
+NGCBUILD
 IPNAME:system_clock_generator_0_wrapper INSTANCE:clock_generator_0 -
 /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
-_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 261 - Running
-NGCBUILD
-IPNAME:system_axi_vdma_1_wrapper INSTANCE:axi_vdma_1 -
-/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
-_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 379 - Running
+_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 258 - Running
 NGCBUILD
 INFO:EDK:3509 - NCF files should not be modified as they will be regenerated.
    If any constraint needs to be overridden, this should be done by modifying
@@ -383,4 +372,4 @@ INFO:EDK:3509 - NCF files should not be modified as they will be regenerated.
 
 Rebuilding cache ...
 
-Total run time: 698.00 seconds
+Total run time: 363.00 seconds

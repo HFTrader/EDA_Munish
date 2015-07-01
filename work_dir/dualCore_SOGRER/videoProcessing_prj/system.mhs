@@ -151,7 +151,7 @@ BEGIN processing_system7
  PORT M_AXI_GP0_ACLK = processing_system7_0_FCLK_CLK0
  PORT S_AXI_HP0_ACLK = processing_system7_0_FCLK_CLK1
  PORT S_AXI_HP2_ACLK = processing_system7_0_FCLK_CLK0
- PORT IRQ_F2P = axi_vdma_0_mm2s_introut & hdmi_int & axi_iic_0_IIC2INTC_Irpt & axi_dma_i2s_mm2s_introut & cam_interface_0_href_negedge & cam_interface_0_vsync_negedge & gray_scale_top_0_interrupt & axi_vdma_1_mm2s_introut & axi_vdma_1_s2mm_introut & sobel_filter_top_0_interrupt & axi_vdma_2_mm2s_introut & axi_vdma_2_s2mm_introut & axi_dma_i2s_s2mm_introut & image_filter_top_0_interrupt & axi_vdma_3_s2mm_introut & axi_vdma_3_mm2s_introut
+ PORT IRQ_F2P = axi_vdma_0_mm2s_introut & hdmi_int & axi_iic_0_IIC2INTC_Irpt & axi_dma_i2s_mm2s_introut & cam_interface_0_href_negedge & cam_interface_0_vsync_negedge & axi_vdma_1_mm2s_introut & axi_vdma_1_s2mm_introut & sobel_filter_top_0_interrupt & axi_vdma_2_mm2s_introut & axi_vdma_2_s2mm_introut & axi_dma_i2s_s2mm_introut & image_filter_top_0_interrupt & axi_vdma_3_s2mm_introut & axi_vdma_3_mm2s_introut & convert_to_gray_top_0_interrupt
  PORT USB0_VBUS_PWRFAULT = util_vector_logic_0_Res
  PORT FCLK_CLK3 = processing_system7_0_FCLK_CLK3
  PORT FCLK_RESET3_N = processing_system7_0_FCLK_RESET3_N
@@ -334,10 +334,10 @@ END
 BEGIN cam_interface
  PARAMETER INSTANCE = cam_interface_0
  PARAMETER HW_VER = 1.00.a
- PARAMETER C_S_AXI_MEM0_BASEADDR = 0x61600000
- PARAMETER C_S_AXI_MEM0_HIGHADDR = 0x6160ffff
- PARAMETER C_S_AXI_MEM1_BASEADDR = 0x61620000
- PARAMETER C_S_AXI_MEM1_HIGHADDR = 0x6162ffff
+ PARAMETER C_S_AXI_MEM0_BASEADDR = 0x61620000
+ PARAMETER C_S_AXI_MEM0_HIGHADDR = 0x6162ffff
+ PARAMETER C_S_AXI_MEM1_BASEADDR = 0x61600000
+ PARAMETER C_S_AXI_MEM1_HIGHADDR = 0x6160ffff
  BUS_INTERFACE S_AXI = axi_interconnect_1
  PORT S_AXI_ACLK = processing_system7_0_FCLK_CLK0
  PORT clk100 = cam_interface_0_clk100
@@ -380,8 +380,7 @@ BEGIN axi_vdma
  PARAMETER C_INTERCONNECT_M_AXI_S2MM_W_REGISTER = 8
  PARAMETER C_INTERCONNECT_M_AXI_S2MM_R_REGISTER = 8
  PARAMETER C_INTERCONNECT_M_AXI_S2MM_B_REGISTER = 8
- PARAMETER C_USE_FSYNC = 1
- PARAMETER C_FLUSH_ON_FSYNC = 1
+ PARAMETER C_USE_FSYNC = 0
  PARAMETER C_INCLUDE_S2MM_SF = 0
  PARAMETER C_INCLUDE_MM2S_SF = 0
  PARAMETER C_PRMRY_IS_ACLK_ASYNC = 1
@@ -392,9 +391,9 @@ BEGIN axi_vdma
  PARAMETER C_INTERCONNECT_S_AXI_LITE_W_REGISTER = 8
  PARAMETER C_INTERCONNECT_S_AXI_LITE_R_REGISTER = 8
  PARAMETER C_INTERCONNECT_S_AXI_LITE_B_REGISTER = 8
- PARAMETER C_S2MM_LINEBUFFER_DEPTH = 4096
+ PARAMETER C_S2MM_LINEBUFFER_DEPTH = 2048
  PARAMETER C_S2MM_MAX_BURST_LENGTH = 16
- PARAMETER C_MM2S_LINEBUFFER_DEPTH = 4096
+ PARAMETER C_MM2S_LINEBUFFER_DEPTH = 2048
  PARAMETER C_MM2S_MAX_BURST_LENGTH = 16
  PARAMETER C_INTERCONNECT_M_AXI_S2MM_WRITE_FIFO_DEPTH = 512
  PARAMETER C_INTERCONNECT_M_AXI_S2MM_WRITE_ISSUING = 8
@@ -412,29 +411,15 @@ BEGIN axi_vdma
  BUS_INTERFACE S_AXI_LITE = axi_interconnect_1
  BUS_INTERFACE M_AXI_MM2S = axi_interconnect_3
  BUS_INTERFACE M_AXI_S2MM = axi_interconnect_3
- BUS_INTERFACE S_AXIS_S2MM = gray_scale_top_0_OUTPUT_STREAM
  BUS_INTERFACE M_AXIS_MM2S = axi_vdma_1_M_AXIS_MM2S
+ BUS_INTERFACE S_AXIS_S2MM = convert_to_gray_top_0_OUTPUT_STREAM
  PORT m_axis_mm2s_aclk = processing_system7_0_FCLK_CLK3
  PORT s_axis_s2mm_aclk = processing_system7_0_FCLK_CLK3
  PORT s_axi_lite_aclk = processing_system7_0_FCLK_CLK0
  PORT m_axi_mm2s_aclk = processing_system7_0_FCLK_CLK3
  PORT m_axi_s2mm_aclk = processing_system7_0_FCLK_CLK3
- PORT mm2s_fsync = axi_vdma_0_mm2s_fsync_out
- PORT s2mm_fsync = axi_vdma_0_mm2s_fsync_out
  PORT mm2s_introut = axi_vdma_1_mm2s_introut
  PORT s2mm_introut = axi_vdma_1_s2mm_introut
-END
-
-BEGIN gray_scale_top
- PARAMETER INSTANCE = gray_scale_top_0
- PARAMETER HW_VER = 1.00.a
- PARAMETER C_S_AXI_CONTROL_BUS_BASEADDR = 0x67c00000
- PARAMETER C_S_AXI_CONTROL_BUS_HIGHADDR = 0x67c0ffff
- BUS_INTERFACE S_AXI_CONTROL_BUS = axi_interconnect_1
- BUS_INTERFACE OUTPUT_STREAM = gray_scale_top_0_OUTPUT_STREAM
- BUS_INTERFACE INPUT_STREAM = axi_vdma_1_M_AXIS_MM2S
- PORT aclk = processing_system7_0_FCLK_CLK3
- PORT interrupt = gray_scale_top_0_interrupt
 END
 
 BEGIN sobel_filter_top
@@ -451,7 +436,8 @@ END
 
 BEGIN axi_vdma
  PARAMETER INSTANCE = axi_vdma_2
- PARAMETER HW_VER = 5.04.a PARAMETER C_INCLUDE_SG = 0
+ PARAMETER HW_VER = 5.04.a
+ PARAMETER C_INCLUDE_SG = 0
  PARAMETER C_INCLUDE_MM2S = 1
  PARAMETER C_M_AXI_S2MM_DATA_WIDTH = 64
  PARAMETER C_M_AXI_MM2S_DATA_WIDTH = 64
@@ -508,7 +494,8 @@ END
 
 BEGIN axi_vdma
  PARAMETER INSTANCE = axi_vdma_3
- PARAMETER HW_VER = 5.04.a PARAMETER C_INCLUDE_SG = 0
+ PARAMETER HW_VER = 5.04.a
+ PARAMETER C_INCLUDE_SG = 0
  PARAMETER C_INCLUDE_MM2S = 1
  PARAMETER C_M_AXI_S2MM_DATA_WIDTH = 64
  PARAMETER C_M_AXI_MM2S_DATA_WIDTH = 64
@@ -573,5 +560,17 @@ BEGIN image_filter_top
  BUS_INTERFACE INPUT_STREAM = axi_vdma_3_M_AXIS_MM2S
  PORT aclk = processing_system7_0_FCLK_CLK3
  PORT interrupt = image_filter_top_0_interrupt
+END
+
+BEGIN convert_to_gray_top
+ PARAMETER INSTANCE = convert_to_gray_top_0
+ PARAMETER HW_VER = 1.02.a
+ PARAMETER C_S_AXI_CONTROL_BUS_BASEADDR = 0x6e800000
+ PARAMETER C_S_AXI_CONTROL_BUS_HIGHADDR = 0x6e80ffff
+ BUS_INTERFACE S_AXI_CONTROL_BUS = axi_interconnect_1
+ BUS_INTERFACE INPUT_STREAM = axi_vdma_1_M_AXIS_MM2S
+ BUS_INTERFACE OUTPUT_STREAM = convert_to_gray_top_0_OUTPUT_STREAM
+ PORT interrupt = convert_to_gray_top_0_interrupt
+ PORT aclk = processing_system7_0_FCLK_CLK3
 END
 

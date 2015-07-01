@@ -193,7 +193,6 @@ implementation/system_util_i2c_mixer_0_wrapper.ngc \
 implementation/system_axi_dma_i2s_wrapper.ngc \
 implementation/system_cam_interface_0_wrapper.ngc \
 implementation/system_axi_interconnect_3_wrapper.ngc \
-implementation/system_axi_interconnect_4_wrapper.ngc \
 implementation/system_axi_vdma_1_wrapper.ngc \
 implementation/system_gray_scale_top_0_wrapper.ngc
 

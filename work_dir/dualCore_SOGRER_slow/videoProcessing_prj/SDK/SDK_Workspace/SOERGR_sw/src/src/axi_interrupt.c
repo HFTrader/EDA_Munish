@@ -75,10 +75,10 @@ void AXI_INTERRUPT_VsyncIntr_Handler(void * baseaddr_p)
 			dmb();		// wait for memory write to finish!...........very important before issuing SEV().......DON'T REMOVE THIS!!
 			sev();
 		} else {// else skip frame
-			printf("skipping frame=%d\n\r", debug_frameNo);
+			//printf("skipping frame=%d\n\r", debug_frameNo);
 		}
 #else
-		printf("skipping frame=%d\n\r", debug_frameNo);
+		//printf("skipping frame=%d\n\r", debug_frameNo);
 #endif
 	} else if (FRAME_INTR == 0) {
 		cpu0_busy_processing_frame = 1;

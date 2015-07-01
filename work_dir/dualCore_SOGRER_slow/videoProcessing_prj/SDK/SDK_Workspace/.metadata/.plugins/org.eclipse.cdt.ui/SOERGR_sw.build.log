@@ -1,23 +1,6 @@
-04:36:03 **** Auto Build of configuration Debug for project SOERGR_sw ****
+20:20:54 **** Incremental Build of configuration Debug for project SOERGR_sw ****
 make all 
-make: Warning: File `.metadata/.plugins/org.eclipse.cdt.make.core/subdir.mk' has modification time 0.8 s in the future
-Building file: ../src/src/main.c
-Invoking: ARM gcc compiler
-arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER_slow/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
-Finished building: ../src/src/main.c
- 
-Building target: SOERGR_sw.elf
-Invoking: ARM gcc linker
-arm-xilinx-eabi-gcc -L"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER_slow/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "SOERGR_sw.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o ./src/inc/ximage_filter.o ./src/inc/xsobel_filter.o  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-make: warning:  Clock skew detected.  Your build may be incomplete.
-Finished building target: SOERGR_sw.elf
- 
-Invoking: ARM Print Size
-arm-xilinx-eabi-size SOERGR_sw.elf  |tee "SOERGR_sw.elf.size"
-   text	   data	    bss	    dec	    hex	filename
- 152568	   3056	  22476	 178100	  2b7b4	SOERGR_sw.elf
-Finished building: SOERGR_sw.elf.size
- 
+make: Nothing to be done for `all'.
 
-04:36:03 Build Finished (took 311ms)
+20:20:54 Build Finished (took 108ms)
 

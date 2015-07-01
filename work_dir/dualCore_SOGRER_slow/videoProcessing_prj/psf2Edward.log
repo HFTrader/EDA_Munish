@@ -5,11 +5,11 @@ WARNING:EDK:4088 - IPNAME: processing_system7, INSTANCE: processing_system7_0 -
 WARNING:EDK:4092 - IPNAME: clock_generator, INSTANCE: clock_generator_0 -
    Pre-Production version not verified on hardware for architecture 'zynq' -
    /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/w
-   ork_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 261 
+   ork_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 258 
 WARNING:EDK:4088 - IPNAME: axi_dma, INSTANCE: axi_dma_i2s - Superseded core for
    architecture 'zynq' -
    /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/w
-   ork_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 314 
+   ork_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 311 
 WARNING:EDK:4088 - IPNAME: processing_system7, INSTANCE: processing_system7_0 -
    Superseded core for architecture 'zynq' -
    /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/w
@@ -17,11 +17,11 @@ WARNING:EDK:4088 - IPNAME: processing_system7, INSTANCE: processing_system7_0 -
 WARNING:EDK:4092 - IPNAME: clock_generator, INSTANCE: clock_generator_0 -
    Pre-Production version not verified on hardware for architecture 'zynq' -
    /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/w
-   ork_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 261 
+   ork_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 258 
 WARNING:EDK:4088 - IPNAME: axi_dma, INSTANCE: axi_dma_i2s - Superseded core for
    architecture 'zynq' -
    /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/w
-   ork_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 314 
+   ork_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 311 
 WARNING:EDK:4088 - IPNAME: processing_system7, INSTANCE: processing_system7_0 -
    Superseded core for architecture 'zynq' -
    /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/w
@@ -29,11 +29,11 @@ WARNING:EDK:4088 - IPNAME: processing_system7, INSTANCE: processing_system7_0 -
 WARNING:EDK:4092 - IPNAME: clock_generator, INSTANCE: clock_generator_0 -
    Pre-Production version not verified on hardware for architecture 'zynq' -
    /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/w
-   ork_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 261 
+   ork_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 258 
 WARNING:EDK:4088 - IPNAME: axi_dma, INSTANCE: axi_dma_i2s - Superseded core for
    architecture 'zynq' -
    /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/w
-   ork_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 314 
+   ork_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 311 
 WARNING:EDK:4088 - IPNAME: processing_system7, INSTANCE: processing_system7_0 -
    Superseded core for architecture 'zynq' -
    /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/w
@@ -41,11 +41,11 @@ WARNING:EDK:4088 - IPNAME: processing_system7, INSTANCE: processing_system7_0 -
 WARNING:EDK:4092 - IPNAME: clock_generator, INSTANCE: clock_generator_0 -
    Pre-Production version not verified on hardware for architecture 'zynq' -
    /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/w
-   ork_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 261 
+   ork_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 258 
 WARNING:EDK:4088 - IPNAME: axi_dma, INSTANCE: axi_dma_i2s - Superseded core for
    architecture 'zynq' -
    /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/w
-   ork_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 314 
+   ork_dir/dualCore_SOGRER_slow/videoProcessing_prj/system.mhs line 311 
 WARNING:EDK -
    /nfs/tools/xilinx/ise/14.7/ISE_DS/ISE/data/zynqconfig/ps7_internals/pcores/ps
    7_i2c_v1_00_a/data/ps7_i2c_v2_1_0.mpd line 108	Unknown PORT subproperty IIC
@@ -519,20 +519,20 @@ Address Map for Processor ps7_cortexa9_0
   (0x00100000-0x1fffffff) ps7_ddr_0	ps7_axi_interconnect_0
   (0x40400000-0x4040ffff) axi_dma_i2s	ps7_axi_interconnect_0->axi_interconnect_1
   (0x41600000-0x4160ffff) axi_iic_0	ps7_axi_interconnect_0->axi_interconnect_1
-  (0x43000000-0x4300ffff) axi_vdma_0	ps7_axi_interconnect_0->axi_interconnect_1
+  (0x43000000-0x4300ffff) axi_vdma_1	ps7_axi_interconnect_0->axi_interconnect_1
+  (0x43020000-0x4302ffff) axi_vdma_0	ps7_axi_interconnect_0->axi_interconnect_1
   (0x61600000-0x6160ffff)
 cam_interface_0	ps7_axi_interconnect_0->axi_interconnect_1
   (0x61620000-0x6162ffff)
 cam_interface_0	ps7_axi_interconnect_0->axi_interconnect_1
+  (0x67c00000-0x67c0ffff)
+gray_scale_top_0	ps7_axi_interconnect_0->axi_interconnect_1
   (0x70e00000-0x70e0ffff)
 axi_hdmi_tx_16b_0	ps7_axi_interconnect_0->axi_interconnect_1
   (0x77600000-0x7760ffff)
 axi_i2s_adi_0	ps7_axi_interconnect_0->axi_interconnect_1
   (0x79000000-0x7900ffff)
 axi_clkgen_0	ps7_axi_interconnect_0->axi_interconnect_1
-  (0x83000000-0x8300ffff) axi_vdma_1	ps7_axi_interconnect_0->axi_interconnect_4
-  (0xa7c00000-0xa7c0ffff)
-gray_scale_top_0	ps7_axi_interconnect_0->axi_interconnect_4
   (0xe0001000-0xe0001fff) ps7_uart_1	ps7_axi_interconnect_0
   (0xe0002000-0xe0002fff) ps7_usb_0	ps7_axi_interconnect_0
   (0xe0004000-0xe0004fff) ps7_i2c_0	ps7_axi_interconnect_0
@@ -569,20 +569,20 @@ Address Map for Processor ps7_cortexa9_1
   (0x00100000-0x1fffffff) ps7_ddr_0	ps7_axi_interconnect_0
   (0x40400000-0x4040ffff) axi_dma_i2s	ps7_axi_interconnect_0->axi_interconnect_1
   (0x41600000-0x4160ffff) axi_iic_0	ps7_axi_interconnect_0->axi_interconnect_1
-  (0x43000000-0x4300ffff) axi_vdma_0	ps7_axi_interconnect_0->axi_interconnect_1
+  (0x43000000-0x4300ffff) axi_vdma_1	ps7_axi_interconnect_0->axi_interconnect_1
+  (0x43020000-0x4302ffff) axi_vdma_0	ps7_axi_interconnect_0->axi_interconnect_1
   (0x61600000-0x6160ffff)
 cam_interface_0	ps7_axi_interconnect_0->axi_interconnect_1
   (0x61620000-0x6162ffff)
 cam_interface_0	ps7_axi_interconnect_0->axi_interconnect_1
+  (0x67c00000-0x67c0ffff)
+gray_scale_top_0	ps7_axi_interconnect_0->axi_interconnect_1
   (0x70e00000-0x70e0ffff)
 axi_hdmi_tx_16b_0	ps7_axi_interconnect_0->axi_interconnect_1
   (0x77600000-0x7760ffff)
 axi_i2s_adi_0	ps7_axi_interconnect_0->axi_interconnect_1
   (0x79000000-0x7900ffff)
 axi_clkgen_0	ps7_axi_interconnect_0->axi_interconnect_1
-  (0x83000000-0x8300ffff) axi_vdma_1	ps7_axi_interconnect_0->axi_interconnect_4
-  (0xa7c00000-0xa7c0ffff)
-gray_scale_top_0	ps7_axi_interconnect_0->axi_interconnect_4
   (0xe0001000-0xe0001fff) ps7_uart_1	ps7_axi_interconnect_0
   (0xe0002000-0xe0002fff) ps7_usb_0	ps7_axi_interconnect_0
   (0xe0004000-0xe0004fff) ps7_i2c_0	ps7_axi_interconnect_0

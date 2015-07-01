@@ -63,14 +63,14 @@ INFO:EDK:1432 - Frequency for Top-Level Input Clock 'cam_interface_0_clk100_pin'
    is not specified. Clock DRCs will not be performed for IPs connected to that
    clock port, unless they are connected through the clock generator IP. 
 
-INFO:EDK:3716 - IPNAME: gray_scale_top, INSTANCE: gray_scale_top_0 - Tools are
-   updating the value of the parameter
-   C_INTERCONNECT_S_AXI_CONTROL_BUS_IS_ACLK_ASYNC to '1'. 
 INFO:EDK:3716 - IPNAME: sobel_filter_top, INSTANCE: sobel_filter_top_0 - Tools
    are updating the value of the parameter
    C_INTERCONNECT_S_AXI_CONTROL_BUS_IS_ACLK_ASYNC to '1'. 
 INFO:EDK:3716 - IPNAME: image_filter_top, INSTANCE: image_filter_top_0 - Tools
    are updating the value of the parameter
+   C_INTERCONNECT_S_AXI_CONTROL_BUS_IS_ACLK_ASYNC to '1'. 
+INFO:EDK:3716 - IPNAME: convert_to_gray_top, INSTANCE: convert_to_gray_top_0 -
+   Tools are updating the value of the parameter
    C_INTERCONNECT_S_AXI_CONTROL_BUS_IS_ACLK_ASYNC to '1'. 
 WARNING:EDK:4058 - INSTANCE: axi_vdma_2, BUS_INTERFACE: M_AXI_MM2S -  is not
    connected to any slave. 
@@ -93,7 +93,7 @@ Address Map for Processor processing_system7_0
   (0x43060000-0x4306ffff) axi_vdma_0	axi_interconnect_1
   (0x61600000-0x6160ffff) cam_interface_0	axi_interconnect_1
   (0x61620000-0x6162ffff) cam_interface_0	axi_interconnect_1
-  (0x67c00000-0x67c0ffff) gray_scale_top_0	axi_interconnect_1
+  (0x6e800000-0x6e80ffff) convert_to_gray_top_0	axi_interconnect_1
   (0x70e00000-0x70e0ffff) axi_hdmi_tx_16b_0	axi_interconnect_1
   (0x71800000-0x7180ffff) sobel_filter_top_0	axi_interconnect_1
   (0x77600000-0x7760ffff) axi_i2s_adi_0	axi_interconnect_1
@@ -118,21 +118,6 @@ WARNING:EDK:4180 - PORT: ARESETN, CONNECTOR: axi_dma_i2s_M_AXIS_MM2S_ARESETN -
    /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/w
    ork_dir/dualCore_SOGRER/cf_lib/edk/pcores/axi_i2s_adi_v1_00_a/data/axi_i2s_ad
    i_v2_1_0.mpd line 59 
-WARNING:EDK:4180 - PORT: INPUT_STREAM_TSTRB, CONNECTOR:
-   axi_vdma_1_M_AXIS_MM2S_TSTRB - No driver found. Port will be driven to GND -
-   /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/w
-   ork_dir/dualCore_SOGRER/videoProcessing_prj/pcores/gray_scale_top_v1_00_a/dat
-   a/gray_scale_top_v2_1_0.mpd line 67 
-WARNING:EDK:4180 - PORT: INPUT_STREAM_TID, CONNECTOR: axi_vdma_1_M_AXIS_MM2S_TID
-   - No driver found. Port will be driven to GND -
-   /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/w
-   ork_dir/dualCore_SOGRER/videoProcessing_prj/pcores/gray_scale_top_v1_00_a/dat
-   a/gray_scale_top_v2_1_0.mpd line 70 
-WARNING:EDK:4180 - PORT: INPUT_STREAM_TDEST, CONNECTOR:
-   axi_vdma_1_M_AXIS_MM2S_TDEST - No driver found. Port will be driven to GND -
-   /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/w
-   ork_dir/dualCore_SOGRER/videoProcessing_prj/pcores/gray_scale_top_v1_00_a/dat
-   a/gray_scale_top_v2_1_0.mpd line 71 
 WARNING:EDK:4180 - PORT: INPUT_STREAM_TSTRB, CONNECTOR:
    axi_vdma_2_M_AXIS_MM2S_TSTRB - No driver found. Port will be driven to GND -
    /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/w
@@ -163,6 +148,21 @@ WARNING:EDK:4180 - PORT: INPUT_STREAM_TDEST, CONNECTOR:
    /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/w
    ork_dir/dualCore_SOGRER/videoProcessing_prj/pcores/image_filter_top_v1_00_a/d
    ata/image_filter_top_v2_1_0.mpd line 71 
+WARNING:EDK:4180 - PORT: INPUT_STREAM_TSTRB, CONNECTOR:
+   axi_vdma_1_M_AXIS_MM2S_TSTRB - No driver found. Port will be driven to GND -
+   /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/w
+   ork_dir/dualCore_SOGRER/videoProcessing_prj/pcores/convert_to_gray_top_v1_02_
+   a/data/convert_to_gray_top_v2_1_0.mpd line 53 
+WARNING:EDK:4180 - PORT: INPUT_STREAM_TID, CONNECTOR: axi_vdma_1_M_AXIS_MM2S_TID
+   - No driver found. Port will be driven to GND -
+   /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/w
+   ork_dir/dualCore_SOGRER/videoProcessing_prj/pcores/convert_to_gray_top_v1_02_
+   a/data/convert_to_gray_top_v2_1_0.mpd line 56 
+WARNING:EDK:4180 - PORT: INPUT_STREAM_TDEST, CONNECTOR:
+   axi_vdma_1_M_AXIS_MM2S_TDEST - No driver found. Port will be driven to GND -
+   /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/w
+   ork_dir/dualCore_SOGRER/videoProcessing_prj/pcores/convert_to_gray_top_v1_02_
+   a/data/convert_to_gray_top_v2_1_0.mpd line 57 
 WARNING:EDK:4181 - PORT: util_vector_logic_0_Op1_pin, CONNECTOR:
    net_util_vector_logic_0_Op1_pin - floating connection -
    /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/w
@@ -200,21 +200,6 @@ WARNING:EDK:4181 - PORT: href_posedge, CONNECTOR: cam_interface_0_href_posedge -
    /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/w
    ork_dir/dualCore_SOGRER/videoProcessing_prj/system.mhs line 355 
 WARNING:EDK:4181 - PORT: OUTPUT_STREAM_TSTRB, CONNECTOR:
-   gray_scale_top_0_OUTPUT_STREAM_TSTRB - floating connection -
-   /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/w
-   ork_dir/dualCore_SOGRER/videoProcessing_prj/pcores/gray_scale_top_v1_00_a/dat
-   a/gray_scale_top_v2_1_0.mpd line 85 
-WARNING:EDK:4181 - PORT: OUTPUT_STREAM_TID, CONNECTOR:
-   gray_scale_top_0_OUTPUT_STREAM_TID - floating connection -
-   /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/w
-   ork_dir/dualCore_SOGRER/videoProcessing_prj/pcores/gray_scale_top_v1_00_a/dat
-   a/gray_scale_top_v2_1_0.mpd line 88 
-WARNING:EDK:4181 - PORT: OUTPUT_STREAM_TDEST, CONNECTOR:
-   gray_scale_top_0_OUTPUT_STREAM_TDEST - floating connection -
-   /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/w
-   ork_dir/dualCore_SOGRER/videoProcessing_prj/pcores/gray_scale_top_v1_00_a/dat
-   a/gray_scale_top_v2_1_0.mpd line 89 
-WARNING:EDK:4181 - PORT: OUTPUT_STREAM_TSTRB, CONNECTOR:
    sobel_filter_top_0_OUTPUT_STREAM_TSTRB - floating connection -
    /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/w
    ork_dir/dualCore_SOGRER/videoProcessing_prj/pcores/sobel_filter_top_v1_01_a/d
@@ -243,6 +228,21 @@ WARNING:EDK:4181 - PORT: OUTPUT_STREAM_TDEST, CONNECTOR:
    /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/w
    ork_dir/dualCore_SOGRER/videoProcessing_prj/pcores/image_filter_top_v1_00_a/d
    ata/image_filter_top_v2_1_0.mpd line 89 
+WARNING:EDK:4181 - PORT: OUTPUT_STREAM_TSTRB, CONNECTOR:
+   convert_to_gray_top_0_OUTPUT_STREAM_TSTRB - floating connection -
+   /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/w
+   ork_dir/dualCore_SOGRER/videoProcessing_prj/pcores/convert_to_gray_top_v1_02_
+   a/data/convert_to_gray_top_v2_1_0.mpd line 35 
+WARNING:EDK:4181 - PORT: OUTPUT_STREAM_TID, CONNECTOR:
+   convert_to_gray_top_0_OUTPUT_STREAM_TID - floating connection -
+   /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/w
+   ork_dir/dualCore_SOGRER/videoProcessing_prj/pcores/convert_to_gray_top_v1_02_
+   a/data/convert_to_gray_top_v2_1_0.mpd line 38 
+WARNING:EDK:4181 - PORT: OUTPUT_STREAM_TDEST, CONNECTOR:
+   convert_to_gray_top_0_OUTPUT_STREAM_TDEST - floating connection -
+   /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/w
+   ork_dir/dualCore_SOGRER/videoProcessing_prj/pcores/convert_to_gray_top_v1_02_
+   a/data/convert_to_gray_top_v2_1_0.mpd line 39 
 
 Performing Clock DRCs...
 
@@ -314,10 +314,6 @@ IPNAME:axi_vdma INSTANCE:axi_vdma_0 -
 /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
 _dir/dualCore_SOGRER/videoProcessing_prj/system.mhs line 161 - Copying cache
 implementation netlist
-IPNAME:axi_interconnect INSTANCE:axi_interconnect_1 -
-/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
-_dir/dualCore_SOGRER/videoProcessing_prj/system.mhs line 185 - Copying cache
-implementation netlist
 IPNAME:axi_interconnect INSTANCE:axi_interconnect_2 -
 /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
 _dir/dualCore_SOGRER/videoProcessing_prj/system.mhs line 193 - Copying cache
@@ -354,10 +350,6 @@ IPNAME:axi_dma INSTANCE:axi_dma_i2s -
 /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
 _dir/dualCore_SOGRER/videoProcessing_prj/system.mhs line 310 - Copying cache
 implementation netlist
-IPNAME:cam_interface INSTANCE:cam_interface_0 -
-/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
-_dir/dualCore_SOGRER/videoProcessing_prj/system.mhs line 334 - Copying cache
-implementation netlist
 IPNAME:axi_interconnect INSTANCE:axi_interconnect_3 -
 /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
 _dir/dualCore_SOGRER/videoProcessing_prj/system.mhs line 360 - Copying cache
@@ -366,17 +358,21 @@ IPNAME:axi_vdma INSTANCE:axi_vdma_1 -
 /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
 _dir/dualCore_SOGRER/videoProcessing_prj/system.mhs line 367 - Copying cache
 implementation netlist
-IPNAME:gray_scale_top INSTANCE:gray_scale_top_0 -
-/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
-_dir/dualCore_SOGRER/videoProcessing_prj/system.mhs line 428 - Copying cache
-implementation netlist
 IPNAME:sobel_filter_top INSTANCE:sobel_filter_top_0 -
 /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
-_dir/dualCore_SOGRER/videoProcessing_prj/system.mhs line 440 - Copying cache
+_dir/dualCore_SOGRER/videoProcessing_prj/system.mhs line 425 - Copying cache
+implementation netlist
+IPNAME:axi_vdma INSTANCE:axi_vdma_2 -
+/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
+_dir/dualCore_SOGRER/videoProcessing_prj/system.mhs line 437 - Copying cache
+implementation netlist
+IPNAME:axi_vdma INSTANCE:axi_vdma_3 -
+/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
+_dir/dualCore_SOGRER/videoProcessing_prj/system.mhs line 495 - Copying cache
 implementation netlist
 IPNAME:image_filter_top INSTANCE:image_filter_top_0 -
 /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
-_dir/dualCore_SOGRER/videoProcessing_prj/system.mhs line 566 - Copying cache
+_dir/dualCore_SOGRER/videoProcessing_prj/system.mhs line 553 - Copying cache
 implementation netlist
 
 Elaborating instances ...
@@ -390,10 +386,10 @@ ClkGen elaborate status: PASSED
 Writing HDL for elaborated instances ...
 
 Inserting wrapper level ...
-Completion time: 0.00 seconds
+Completion time: 1.00 seconds
 
 Constructing platform-level connectivity ...
-Completion time: 1.00 seconds
+Completion time: 0.00 seconds
 
 Writing (top-level) BMM ...
 
@@ -406,6 +402,10 @@ Running XST synthesis ...
 INFO:EDK:4211 - The following instances are synthesized with XST. The MPD option
    IMP_NETLIST=TRUE indicates that a NGC file is to be produced using XST
    synthesis. IMP_NETLIST=FALSE (default) instances are not synthesized. 
+INSTANCE:axi_interconnect_1 -
+/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
+_dir/dualCore_SOGRER/videoProcessing_prj/system.mhs line 185 - Running XST
+synthesis
 INSTANCE:axi_hdmi_tx_16b_0 -
 /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
 _dir/dualCore_SOGRER/videoProcessing_prj/system.mhs line 201 - Running XST
@@ -430,41 +430,30 @@ INSTANCE:cam_interface_0 -
 /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
 _dir/dualCore_SOGRER/videoProcessing_prj/system.mhs line 334 - Running XST
 synthesis
-INSTANCE:gray_scale_top_0 -
-/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
-_dir/dualCore_SOGRER/videoProcessing_prj/system.mhs line 428 - Running XST
-synthesis
 INSTANCE:sobel_filter_top_0 -
 /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
-_dir/dualCore_SOGRER/videoProcessing_prj/system.mhs line 440 - Running XST
-synthesis
-INSTANCE:axi_vdma_2 -
-/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
-_dir/dualCore_SOGRER/videoProcessing_prj/system.mhs line 452 - Running XST
-synthesis
-INSTANCE:axi_vdma_3 -
-/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
-_dir/dualCore_SOGRER/videoProcessing_prj/system.mhs line 509 - Running XST
+_dir/dualCore_SOGRER/videoProcessing_prj/system.mhs line 425 - Running XST
 synthesis
 INSTANCE:image_filter_top_0 -
 /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
-_dir/dualCore_SOGRER/videoProcessing_prj/system.mhs line 566 - Running XST
+_dir/dualCore_SOGRER/videoProcessing_prj/system.mhs line 553 - Running XST
+synthesis
+INSTANCE:convert_to_gray_top_0 -
+/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
+_dir/dualCore_SOGRER/videoProcessing_prj/system.mhs line 565 - Running XST
 synthesis
 
 Running NGCBUILD ...
+IPNAME:system_axi_interconnect_1_wrapper INSTANCE:axi_interconnect_1 -
+/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
+_dir/dualCore_SOGRER/videoProcessing_prj/system.mhs line 185 - Running NGCBUILD
 IPNAME:system_clock_generator_0_wrapper INSTANCE:clock_generator_0 -
 /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
 _dir/dualCore_SOGRER/videoProcessing_prj/system.mhs line 257 - Running NGCBUILD
-IPNAME:system_axi_vdma_2_wrapper INSTANCE:axi_vdma_2 -
-/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
-_dir/dualCore_SOGRER/videoProcessing_prj/system.mhs line 452 - Running NGCBUILD
-IPNAME:system_axi_vdma_3_wrapper INSTANCE:axi_vdma_3 -
-/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
-_dir/dualCore_SOGRER/videoProcessing_prj/system.mhs line 509 - Running NGCBUILD
 INFO:EDK:3509 - NCF files should not be modified as they will be regenerated.
    If any constraint needs to be overridden, this should be done by modifying
    the data/system.ucf file.
 
 Rebuilding cache ...
 
-Total run time: 1131.00 seconds
+Total run time: 329.00 seconds
