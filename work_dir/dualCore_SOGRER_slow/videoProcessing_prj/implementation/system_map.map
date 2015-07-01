@@ -1,0 +1,578 @@
+Release 14.7 Map P.20131013 (lin64)
+Xilinx Map Application Log File for Design 'system'
+
+Design Information
+------------------
+Command Line   : map -o system_map.ncd -w -pr b -ol high -timing -detail
+system.ngd system.pcf 
+Target Device  : xc7z020
+Target Package : clg484
+Target Speed   : -1
+Mapper Version : zynq -- $Revision: 1.55 $
+Mapped Date    : Wed Jul  1 02:56:07 2015
+
+Mapping design into LUTs...
+Writing file system_map.ngm...
+Running directed packing...
+Running delay-based LUT packing...
+Updating timing models...
+INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
+   (.mrp).
+Running timing-driven placement...
+Total REAL time at the beginning of Placer: 1 mins 11 secs 
+Total CPU  time at the beginning of Placer: 1 mins 
+
+Phase 1.1  Initial Placement Analysis
+Phase 1.1  Initial Placement Analysis (Checksum:d4f184d) REAL time: 1 mins 18 secs 
+
+Phase 2.7  Design Feasibility Check
+WARNING:Place:838 - An IO Bus with more than one IO standard is found.
+   Components associated with this bus are as follows: 
+   	 Comp: util_i2c_mixer_0_downstream_scl_pin<0>   IOSTANDARD = LVCMOS25
+   	 Comp: util_i2c_mixer_0_downstream_scl_pin<1>   IOSTANDARD = LVTTL
+
+
+WARNING:Place:838 - An IO Bus with more than one IO standard is found.
+   Components associated with this bus are as follows: 
+   	 Comp: util_i2c_mixer_0_downstream_sda_pin<0>   IOSTANDARD = LVCMOS25
+   	 Comp: util_i2c_mixer_0_downstream_sda_pin<1>   IOSTANDARD = LVTTL
+
+
+Phase 2.7  Design Feasibility Check (Checksum:d4f184d) REAL time: 1 mins 20 secs 
+
+Phase 3.31  Local Placement Optimization
+Phase 3.31  Local Placement Optimization (Checksum:d4f184d) REAL time: 1 mins 20 secs 
+
+Phase 4.2  Initial Placement for Architecture Specific Features
+
+..........
+WARNING:Place:1399 - A clock IOB / BUFGCTRL clock component pair have been found
+   that are not placed at an optimal clock IOB / BUFGCTRL site pair. The clock
+   IOB component <cam_interface_0_OV7670_PCLK_pin> is placed at site <W10>. The
+   corresponding BUFGCTRL component <cam_interface_0_OV7670_PCLK_pin_IBUFG_BUFG>
+   is placed at site <BUFGCTRL_X0Y17>. The clock IO can use the fast path
+   between the IOB and the Clock Buffer if the IOB is placed on a Clock Capable
+   IOB site that has dedicated fast path to BUFGCTRL sites in its half of the
+   device (TOP or BOTTOM). You may want to analyze why this problem exists and
+   correct it. This is normally an ERROR but the CLOCK_DEDICATED_ROUTE
+   constraint was applied on COMP.PIN <cam_interface_0_OV7670_PCLK_pin.PAD>
+   allowing your design to continue. This constraint disables all clock placer
+   rules related to the specified COMP.PIN. The use of this override is highly
+   discouraged as it may lead to very poor timing results. It is recommended
+   that this error condition be corrected in the design.
+Phase 4.2  Initial Placement for Architecture Specific Features
+(Checksum:a1591d73) REAL time: 1 mins 28 secs 
+
+...........................
+......................................................................................................................................................................................
+Phase 5.30  Global Clock Region Assignment
+
+
+######################################################################################
+# GLOBAL CLOCK NET DISTRIBUTION UCF REPORT:
+#
+# Number of Global Clock Regions : 6
+# Number of Global Clock Networks: 13
+#
+# Clock Region Assignment: SUCCESSFUL
+
+# Location of Clock Components
+INST "cam_interface_0/cam_interface_0/USER_LOGIC_I/cam_if/BUFG_pclk" LOC = "BUFGCTRL_X0Y16" ;
+INST "axi_clkgen_0/axi_clkgen_0/USER_LOGIC_I/i_clkgen/i_fb_buf" LOC = "BUFGCTRL_X0Y20" ;
+INST "clock_generator_0/clock_generator_0/MMCM1_CLKOUT0_BUFG_INST" LOC = "BUFGCTRL_X0Y13" ;
+INST "cam_interface_0/cam_interface_0/USER_LOGIC_I/cam_if/your_instance_name/clkout1_buf" LOC = "BUFGCTRL_X0Y10" ;
+INST "cam_interface_0/cam_interface_0/USER_LOGIC_I/cam_if/your_instance_name/clkf_buf" LOC = "BUFGCTRL_X0Y7" ;
+INST "axi_i2s_adi_0/axi_i2s_adi_0/BUFG_inst_LRCLK" LOC = "BUFGCTRL_X0Y31" ;
+INST "processing_system7_0/processing_system7_0/buffer_fclk_clk_3.FCLK_CLK_3_BUFG" LOC = "BUFGCTRL_X0Y29" ;
+INST "cam_interface_0_OV7670_PCLK_pin_IBUFG_BUFG" LOC = "BUFGCTRL_X0Y17" ;
+INST "axi_i2s_adi_0/axi_i2s_adi_0/BUFG_inst_BCLK" LOC = "BUFGCTRL_X0Y8" ;
+INST "processing_system7_0/processing_system7_0/buffer_fclk_clk_1.FCLK_CLK_1_BUFG" LOC = "BUFGCTRL_X0Y21" ;
+INST "axi_clkgen_0/axi_clkgen_0/USER_LOGIC_I/i_clkgen/i_buf" LOC = "BUFGCTRL_X0Y19" ;
+INST "processing_system7_0/processing_system7_0/buffer_fclk_clk_2.FCLK_CLK_2_BUFG" LOC = "BUFGCTRL_X0Y18" ;
+INST "processing_system7_0/processing_system7_0/buffer_fclk_clk_0.FCLK_CLK_0_BUFG" LOC = "BUFGCTRL_X0Y22" ;
+INST "cam_interface_0_OV7670_PCLK_pin" LOC = "W10" ;
+INST "cam_interface_0_clk100_pin" LOC = "Y9" ;
+INST "axi_clkgen_0/axi_clkgen_0/USER_LOGIC_I/i_clkgen/i_mmcm" LOC = "MMCME2_ADV_X1Y2" ;
+INST "cam_interface_0/cam_interface_0/USER_LOGIC_I/cam_if/your_instance_name/mmcm_adv_inst" LOC = "MMCME2_ADV_X0Y0" ;
+INST "clock_generator_0/clock_generator_0/MMCM1_INST/MMCM_ADV_inst" LOC = "MMCME2_ADV_X1Y0" ;
+INST "processing_system7_0/processing_system7_0/PS7_i" LOC = "PS7_X0Y0" ;
+
+# cam_interface_0/cam_interface_0/USER_LOGIC_I/capture_clk driven by BUFGCTRL_X0Y16
+NET "cam_interface_0/cam_interface_0/USER_LOGIC_I/capture_clk" TNM_NET = "TN_cam_interface_0/cam_interface_0/USER_LOGIC_I/capture_clk" ;
+TIMEGRP "TN_cam_interface_0/cam_interface_0/USER_LOGIC_I/capture_clk" AREA_GROUP = "CLKAG_cam_interface_0/cam_interface_0/USER_LOGIC_I/capture_clk" ;
+AREA_GROUP "CLKAG_cam_interface_0/cam_interface_0/USER_LOGIC_I/capture_clk" RANGE =   CLOCKREGION_X0Y0, CLOCKREGION_X1Y0, CLOCKREGION_X0Y1, CLOCKREGION_X1Y1, CLOCKREGION_X0Y2, CLOCKREGION_X1Y2 ;
+
+# axi_clkgen_0/axi_clkgen_0/USER_LOGIC_I/i_clkgen/buf_fb_clk_s driven by BUFGCTRL_X0Y20
+NET "axi_clkgen_0/axi_clkgen_0/USER_LOGIC_I/i_clkgen/buf_fb_clk_s" TNM_NET = "TN_axi_clkgen_0/axi_clkgen_0/USER_LOGIC_I/i_clkgen/buf_fb_clk_s" ;
+TIMEGRP "TN_axi_clkgen_0/axi_clkgen_0/USER_LOGIC_I/i_clkgen/buf_fb_clk_s" AREA_GROUP = "CLKAG_axi_clkgen_0/axi_clkgen_0/USER_LOGIC_I/i_clkgen/buf_fb_clk_s" ;
+AREA_GROUP "CLKAG_axi_clkgen_0/axi_clkgen_0/USER_LOGIC_I/i_clkgen/buf_fb_clk_s" RANGE =   CLOCKREGION_X0Y2, CLOCKREGION_X1Y2 ;
+
+# axi_i2s_adi_0_MCLK_pin_OBUF driven by BUFGCTRL_X0Y13
+NET "axi_i2s_adi_0_MCLK_pin_OBUF" TNM_NET = "TN_axi_i2s_adi_0_MCLK_pin_OBUF" ;
+TIMEGRP "TN_axi_i2s_adi_0_MCLK_pin_OBUF" AREA_GROUP = "CLKAG_axi_i2s_adi_0_MCLK_pin_OBUF" ;
+AREA_GROUP "CLKAG_axi_i2s_adi_0_MCLK_pin_OBUF" RANGE =   CLOCKREGION_X0Y0, CLOCKREGION_X1Y0, CLOCKREGION_X0Y1, CLOCKREGION_X1Y1, CLOCKREGION_X0Y2, CLOCKREGION_X1Y2 ;
+
+# cam_interface_0/cam_interface_0/USER_LOGIC_I/cam_if/clk50 driven by BUFGCTRL_X0Y10
+NET "cam_interface_0/cam_interface_0/USER_LOGIC_I/cam_if/clk50" TNM_NET = "TN_cam_interface_0/cam_interface_0/USER_LOGIC_I/cam_if/clk50" ;
+TIMEGRP "TN_cam_interface_0/cam_interface_0/USER_LOGIC_I/cam_if/clk50" AREA_GROUP = "CLKAG_cam_interface_0/cam_interface_0/USER_LOGIC_I/cam_if/clk50" ;
+AREA_GROUP "CLKAG_cam_interface_0/cam_interface_0/USER_LOGIC_I/cam_if/clk50" RANGE =   CLOCKREGION_X0Y0, CLOCKREGION_X1Y0, CLOCKREGION_X0Y1, CLOCKREGION_X1Y1, CLOCKREGION_X0Y2, CLOCKREGION_X1Y2 ;
+
+# cam_interface_0/cam_interface_0/USER_LOGIC_I/cam_if/your_instance_name/clkfbout_buf driven by BUFGCTRL_X0Y7
+NET "cam_interface_0/cam_interface_0/USER_LOGIC_I/cam_if/your_instance_name/clkfbout_buf" TNM_NET = "TN_cam_interface_0/cam_interface_0/USER_LOGIC_I/cam_if/your_instance_name/clkfbout_buf" ;
+TIMEGRP "TN_cam_interface_0/cam_interface_0/USER_LOGIC_I/cam_if/your_instance_name/clkfbout_buf" AREA_GROUP = "CLKAG_cam_interface_0/cam_interface_0/USER_LOGIC_I/cam_if/your_instance_name/clkfbout_buf" ;
+AREA_GROUP "CLKAG_cam_interface_0/cam_interface_0/USER_LOGIC_I/cam_if/your_instance_name/clkfbout_buf" RANGE =   CLOCKREGION_X0Y0, CLOCKREGION_X1Y0, CLOCKREGION_X0Y1, CLOCKREGION_X1Y1, CLOCKREGION_X0Y2, CLOCKREGION_X1Y2 ;
+
+# axi_i2s_adi_0_BCLK_O_pin_OBUF driven by BUFGCTRL_X0Y31
+NET "axi_i2s_adi_0_BCLK_O_pin_OBUF" TNM_NET = "TN_axi_i2s_adi_0_BCLK_O_pin_OBUF" ;
+TIMEGRP "TN_axi_i2s_adi_0_BCLK_O_pin_OBUF" AREA_GROUP = "CLKAG_axi_i2s_adi_0_BCLK_O_pin_OBUF" ;
+AREA_GROUP "CLKAG_axi_i2s_adi_0_BCLK_O_pin_OBUF" RANGE =   CLOCKREGION_X0Y0, CLOCKREGION_X1Y0, CLOCKREGION_X0Y1, CLOCKREGION_X1Y1, CLOCKREGION_X0Y2, CLOCKREGION_X1Y2 ;
+
+# processing_system7_0_FCLK_CLK3 driven by BUFGCTRL_X0Y29
+NET "processing_system7_0_FCLK_CLK3" TNM_NET = "TN_processing_system7_0_FCLK_CLK3" ;
+TIMEGRP "TN_processing_system7_0_FCLK_CLK3" AREA_GROUP = "CLKAG_processing_system7_0_FCLK_CLK3" ;
+AREA_GROUP "CLKAG_processing_system7_0_FCLK_CLK3" RANGE =   CLOCKREGION_X0Y0, CLOCKREGION_X1Y0, CLOCKREGION_X0Y1, CLOCKREGION_X1Y1, CLOCKREGION_X0Y2, CLOCKREGION_X1Y2 ;
+
+# cam_interface_0_OV7670_PCLK_pin_IBUFG_BUFG driven by BUFGCTRL_X0Y17
+NET "cam_interface_0_OV7670_PCLK_pin_IBUFG_BUFG" TNM_NET = "TN_cam_interface_0_OV7670_PCLK_pin_IBUFG_BUFG" ;
+TIMEGRP "TN_cam_interface_0_OV7670_PCLK_pin_IBUFG_BUFG" AREA_GROUP = "CLKAG_cam_interface_0_OV7670_PCLK_pin_IBUFG_BUFG" ;
+AREA_GROUP "CLKAG_cam_interface_0_OV7670_PCLK_pin_IBUFG_BUFG" RANGE =   CLOCKREGION_X0Y0, CLOCKREGION_X1Y0, CLOCKREGION_X0Y1, CLOCKREGION_X1Y1, CLOCKREGION_X0Y2, CLOCKREGION_X1Y2 ;
+
+# axi_i2s_adi_0_LRCLK_O_pin_OBUF driven by BUFGCTRL_X0Y8
+NET "axi_i2s_adi_0_LRCLK_O_pin_OBUF" TNM_NET = "TN_axi_i2s_adi_0_LRCLK_O_pin_OBUF" ;
+TIMEGRP "TN_axi_i2s_adi_0_LRCLK_O_pin_OBUF" AREA_GROUP = "CLKAG_axi_i2s_adi_0_LRCLK_O_pin_OBUF" ;
+AREA_GROUP "CLKAG_axi_i2s_adi_0_LRCLK_O_pin_OBUF" RANGE =   CLOCKREGION_X0Y0, CLOCKREGION_X1Y0, CLOCKREGION_X0Y1, CLOCKREGION_X1Y1 ;
+
+# processing_system7_0_FCLK_CLK1 driven by BUFGCTRL_X0Y21
+NET "processing_system7_0_FCLK_CLK1" TNM_NET = "TN_processing_system7_0_FCLK_CLK1" ;
+TIMEGRP "TN_processing_system7_0_FCLK_CLK1" AREA_GROUP = "CLKAG_processing_system7_0_FCLK_CLK1" ;
+AREA_GROUP "CLKAG_processing_system7_0_FCLK_CLK1" RANGE =   CLOCKREGION_X0Y0, CLOCKREGION_X1Y0, CLOCKREGION_X0Y1, CLOCKREGION_X1Y1, CLOCKREGION_X0Y2, CLOCKREGION_X1Y2 ;
+
+# axi_hdmi_tx_16b_0_hdmi_ref_clk driven by BUFGCTRL_X0Y19
+NET "axi_hdmi_tx_16b_0_hdmi_ref_clk" TNM_NET = "TN_axi_hdmi_tx_16b_0_hdmi_ref_clk" ;
+TIMEGRP "TN_axi_hdmi_tx_16b_0_hdmi_ref_clk" AREA_GROUP = "CLKAG_axi_hdmi_tx_16b_0_hdmi_ref_clk" ;
+AREA_GROUP "CLKAG_axi_hdmi_tx_16b_0_hdmi_ref_clk" RANGE =   CLOCKREGION_X0Y0, CLOCKREGION_X1Y0, CLOCKREGION_X0Y1, CLOCKREGION_X1Y1, CLOCKREGION_X0Y2, CLOCKREGION_X1Y2 ;
+
+# processing_system7_0_FCLK_CLK2 driven by BUFGCTRL_X0Y18
+NET "processing_system7_0_FCLK_CLK2" TNM_NET = "TN_processing_system7_0_FCLK_CLK2" ;
+TIMEGRP "TN_processing_system7_0_FCLK_CLK2" AREA_GROUP = "CLKAG_processing_system7_0_FCLK_CLK2" ;
+AREA_GROUP "CLKAG_processing_system7_0_FCLK_CLK2" RANGE =   CLOCKREGION_X0Y0, CLOCKREGION_X1Y0, CLOCKREGION_X0Y1, CLOCKREGION_X1Y1, CLOCKREGION_X0Y2, CLOCKREGION_X1Y2 ;
+
+# processing_system7_0_FCLK_CLK0 driven by BUFGCTRL_X0Y22
+NET "processing_system7_0_FCLK_CLK0" TNM_NET = "TN_processing_system7_0_FCLK_CLK0" ;
+TIMEGRP "TN_processing_system7_0_FCLK_CLK0" AREA_GROUP = "CLKAG_processing_system7_0_FCLK_CLK0" ;
+AREA_GROUP "CLKAG_processing_system7_0_FCLK_CLK0" RANGE =   CLOCKREGION_X0Y0, CLOCKREGION_X1Y0, CLOCKREGION_X0Y1, CLOCKREGION_X1Y1, CLOCKREGION_X0Y2, CLOCKREGION_X1Y2 ;
+
+# NOTE: 
+# This report is provided to help reproduce successful clock-region 
+# assignments. The report provides range constraints for all global 
+# clock networks, in a format that is directly usable in ucf files. 
+#
+#END of Global Clock Net Distribution UCF Constraints
+######################################################################################
+
+
+######################################################################################
+GLOBAL CLOCK NET LOADS DISTRIBUTION REPORT:
+
+Number of Global Clock Regions : 6
+Number of Global Clock Networks: 13
+
+Clock Region Assignment: SUCCESSFUL
+
+Clock-Region: <CLOCKREGION_X0Y0> 
+ key resource utilizations (used/available): global-clocks - 6/12 ;
+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+----------------------------------------
+   BRAM |   MMCM |     GT |    IOB | ILOGIC | OLOGIC |   MULT |   BUFG |    PS7 |   PCIE | IDLYCT | LUTRAM |     FF | <- (Types of Resources in this  Region)
+   FIFO |        |        |        |        |        |        |        |        |        |        |        |        |
+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+----------------------------------------
+     90 |      0 |      0 |      0 |      0 |      0 |     60 |     16 |      0 |      0 |      1 |   8000 |  20000 | <- (Available Resources in this Region)
+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+----------------------------------------
+        |        |        |        |        |        |        |        |        |        |        |        |        | <Global clock Net Name>
+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+----------------------------------------
+      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      4 |     39 |axi_hdmi_tx_16b_0_hdmi_ref_clk
+      1 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |     79 |cam_interface_0/cam_interface_0/USER_LOGIC_I/cam_if/clk50
+      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      3 |cam_interface_0_OV7670_PCLK_pin_IBUFG_BUFG
+      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |    253 |processing_system7_0_FCLK_CLK0
+      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      9 |processing_system7_0_FCLK_CLK1
+     11 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |    500 |   3889 |processing_system7_0_FCLK_CLK3
+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+----------------------------------------
+     12 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |    504 |   4272 | Total 
+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+----------------------------------------
+
+
+Clock-Region: <CLOCKREGION_X1Y0> 
+ key resource utilizations (used/available): global-clocks - 5/12 ;
+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+----------------------------------------
+   BRAM |   MMCM |     GT |    IOB | ILOGIC | OLOGIC |   MULT |   BUFG |    PS7 |   PCIE | IDLYCT | LUTRAM |     FF | <- (Types of Resources in this  Region)
+   FIFO |        |        |        |        |        |        |        |        |        |        |        |        |
+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+----------------------------------------
+     90 |      0 |      0 |      0 |      0 |      0 |     40 |      0 |      0 |      0 |      1 |   6800 |  25600 | <- (Available Resources in this Region)
+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+----------------------------------------
+        |        |        |        |        |        |        |        |        |        |        |        |        | <Global clock Net Name>
+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+----------------------------------------
+      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |    346 |   1136 |axi_hdmi_tx_16b_0_hdmi_ref_clk
+      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |     25 |cam_interface_0/cam_interface_0/USER_LOGIC_I/cam_if/clk50
+      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      2 |   2747 |processing_system7_0_FCLK_CLK0
+      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |     62 |processing_system7_0_FCLK_CLK1
+      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |    440 |    930 |processing_system7_0_FCLK_CLK3
+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+----------------------------------------
+      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |    788 |   4900 | Total 
+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+----------------------------------------
+
+
+Clock-Region: <CLOCKREGION_X0Y1> 
+ key resource utilizations (used/available): global-clocks - 7/12 ;
+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+----------------------------------------
+   BRAM |   MMCM |     GT |    IOB | ILOGIC | OLOGIC |   MULT |   BUFG |    PS7 |   PCIE | IDLYCT | LUTRAM |     FF | <- (Types of Resources in this  Region)
+   FIFO |        |        |        |        |        |        |        |        |        |        |        |        |
+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+----------------------------------------
+     30 |      0 |      0 |      0 |      0 |      0 |     20 |     16 |      0 |      0 |      0 |   3200 |   9600 | <- (Available Resources in this Region)
+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+----------------------------------------
+        |        |        |        |        |        |        |        |        |        |        |        |        | <Global clock Net Name>
+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+----------------------------------------
+      1 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |     29 |axi_hdmi_tx_16b_0_hdmi_ref_clk
+      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      7 |axi_i2s_adi_0_MCLK_pin_OBUF
+      2 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |cam_interface_0/cam_interface_0/USER_LOGIC_I/capture_clk
+      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |     15 |     41 |cam_interface_0_OV7670_PCLK_pin_IBUFG_BUFG
+      2 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      2 |    581 |processing_system7_0_FCLK_CLK0
+      3 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |     26 |    507 |processing_system7_0_FCLK_CLK1
+      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |    190 |   1311 |processing_system7_0_FCLK_CLK3
+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+----------------------------------------
+      8 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |    233 |   2476 | Total 
+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+----------------------------------------
+
+
+Clock-Region: <CLOCKREGION_X1Y1> 
+ key resource utilizations (used/available): global-clocks - 3/12 ;
+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+----------------------------------------
+   BRAM |   MMCM |     GT |    IOB | ILOGIC | OLOGIC |   MULT |   BUFG |    PS7 |   PCIE | IDLYCT | LUTRAM |     FF | <- (Types of Resources in this  Region)
+   FIFO |        |        |        |        |        |        |        |        |        |        |        |        |
+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+----------------------------------------
+     90 |      0 |      0 |      0 |      0 |      0 |     40 |      0 |      0 |      0 |      1 |   6800 |  20800 | <- (Available Resources in this Region)
+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+----------------------------------------
+        |        |        |        |        |        |        |        |        |        |        |        |        | <Global clock Net Name>
+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+----------------------------------------
+      1 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |    138 |   3040 |processing_system7_0_FCLK_CLK0
+      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |    202 |   1087 |processing_system7_0_FCLK_CLK1
+      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |    169 |    312 |processing_system7_0_FCLK_CLK3
+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+----------------------------------------
+      1 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |    509 |   4439 | Total 
+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+----------------------------------------
+
+
+Clock-Region: <CLOCKREGION_X0Y2> 
+ key resource utilizations (used/available): global-clocks - 3/12 ;
+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+----------------------------------------
+   BRAM |   MMCM |     GT |    IOB | ILOGIC | OLOGIC |   MULT |   BUFG |    PS7 |   PCIE | IDLYCT | LUTRAM |     FF | <- (Types of Resources in this  Region)
+   FIFO |        |        |        |        |        |        |        |        |        |        |        |        |
+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+----------------------------------------
+     30 |      0 |      0 |      0 |      0 |      0 |     20 |      0 |      1 |      0 |      0 |   3200 |   9600 | <- (Available Resources in this Region)
+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+----------------------------------------
+        |        |        |        |        |        |        |        |        |        |        |        |        | <Global clock Net Name>
+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+----------------------------------------
+      1 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      1 |      0 |      0 |    144 |   2480 |processing_system7_0_FCLK_CLK0
+      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      1 |      0 |      0 |     38 |    108 |processing_system7_0_FCLK_CLK1
+      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      1 |      0 |      0 |     16 |     36 |processing_system7_0_FCLK_CLK3
+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+----------------------------------------
+      1 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      3 |      0 |      0 |    198 |   2624 | Total 
+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+----------------------------------------
+
+
+Clock-Region: <CLOCKREGION_X1Y2> 
+ key resource utilizations (used/available): global-clocks - 2/12 ;
+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+----------------------------------------
+   BRAM |   MMCM |     GT |    IOB | ILOGIC | OLOGIC |   MULT |   BUFG |    PS7 |   PCIE | IDLYCT | LUTRAM |     FF | <- (Types of Resources in this  Region)
+   FIFO |        |        |        |        |        |        |        |        |        |        |        |        |
+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+----------------------------------------
+     90 |      0 |      0 |      0 |      0 |      0 |     40 |      0 |      0 |      0 |      1 |   6800 |  20800 | <- (Available Resources in this Region)
+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+----------------------------------------
+        |        |        |        |        |        |        |        |        |        |        |        |        | <Global clock Net Name>
+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+----------------------------------------
+      3 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |    537 |   4921 |processing_system7_0_FCLK_CLK0
+      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      2 |      0 |processing_system7_0_FCLK_CLK1
+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+----------------------------------------
+      3 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |      0 |    539 |   4921 | Total 
+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+----------------------------------------
+
+NOTE:
+The above detailed report is the initial placement of the logic after the clock region assignment. The final placement
+may be significantly different because of the various optimization steps which will follow. Specifically, logic blocks
+maybe moved to adjacent clock-regions as long as the "number of clocks per region" constraint is not violated.
+
+
+# END of Global Clock Net Loads Distribution Report:
+######################################################################################
+
+
+Phase 5.30  Global Clock Region Assignment (Checksum:a1591d73) REAL time: 1 mins 52 secs 
+
+Phase 6.3  Local Placement Optimization
+Phase 6.3  Local Placement Optimization (Checksum:a1591d73) REAL time: 1 mins 52 secs 
+
+Phase 7.5  Local Placement Optimization
+Phase 7.5  Local Placement Optimization (Checksum:a1591d73) REAL time: 1 mins 52 secs 
+
+Phase 8.8  Global Placement
+..........................
+............................................................................................................................................
+......................................................................................................................................................................................
+...................................................................................................................................................................
+Phase 8.8  Global Placement (Checksum:bd4aaca5) REAL time: 2 mins 57 secs 
+
+Phase 9.5  Local Placement Optimization
+Phase 9.5  Local Placement Optimization (Checksum:bd4aaca5) REAL time: 2 mins 57 secs 
+
+Phase 10.18  Placement Optimization
+Phase 10.18  Placement Optimization (Checksum:fe6feea9) REAL time: 3 mins 23 secs 
+
+Phase 11.5  Local Placement Optimization
+Phase 11.5  Local Placement Optimization (Checksum:fe6feea9) REAL time: 3 mins 23 secs 
+
+Phase 12.34  Placement Validation
+Phase 12.34  Placement Validation (Checksum:fe6feea9) REAL time: 3 mins 23 secs 
+
+Total REAL time to Placer completion: 3 mins 25 secs 
+Total CPU  time to Placer completion: 3 mins 12 secs 
+Running post-placement packing...
+Writing output files...
+WARNING:PhysDesignRules:367 - The signal
+   <axi_interconnect_3/axi_interconnect_3/si_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xs
+   t_fifo_generator/gaxi_full_lite.gwrite_ch.gwach2.axi_wach/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM7_RAMD_D1_O> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <axi_interconnect_3/axi_interconnect_3/si_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xs
+   t_fifo_generator/gaxi_full_lite.gwrite_ch.gwach2.axi_wach/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM5_RAMD_D1_O> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <axi_interconnect_3/axi_interconnect_3/si_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xs
+   t_fifo_generator/gaxi_full_lite.gwrite_ch.gwach2.axi_wach/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM8_RAMD_D1_O> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <axi_interconnect_3/axi_interconnect_3/si_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xs
+   t_fifo_generator/gaxi_full_lite.gwrite_ch.gwach2.axi_wach/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM10_RAMD_D1_O>
+   is incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <axi_interconnect_3/axi_interconnect_3/si_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xs
+   t_fifo_generator/gaxi_full_lite.gwrite_ch.gwach2.axi_wach/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM4_RAMD_D1_O> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <axi_interconnect_3/axi_interconnect_3/si_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xs
+   t_fifo_generator/gaxi_full_lite.gwrite_ch.gwach2.axi_wach/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM1_RAMA_D1_DPO>
+   is incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <axi_interconnect_3/axi_interconnect_3/si_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xs
+   t_fifo_generator/gaxi_full_lite.gwrite_ch.gwach2.axi_wach/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM1_RAMB_D1_DPO>
+   is incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <axi_interconnect_3/axi_interconnect_3/si_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xs
+   t_fifo_generator/gaxi_full_lite.gwrite_ch.gwach2.axi_wach/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM1_RAMD_D1_O> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <axi_interconnect_3/axi_interconnect_3/si_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xs
+   t_fifo_generator/gaxi_full_lite.gwrite_ch.gwach2.axi_wach/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM2_RAMD_D1_O> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <axi_interconnect_3/axi_interconnect_3/si_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xs
+   t_fifo_generator/gaxi_full_lite.gwrite_ch.gwach2.axi_wach/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM6_RAMD_D1_O> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <axi_vdma_1/axi_vdma_1/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/I_XD_F
+   IFO/S6.I_SYNC_FIFOGEN_FIFO/V6_S6_AND_LATER.I_SYNC_FIFO_BRAM/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fi
+   fo.mem/gdm.dm/Mram_RAM1_RAMD_D1_O> is incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <axi_interconnect_3/axi_interconnect_3/si_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xs
+   t_fifo_generator/gaxi_full_lite.gwrite_ch.gwach2.axi_wach/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM9_RAMD_D1_O> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <axi_interconnect_3/axi_interconnect_3/si_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xs
+   t_fifo_generator/gaxi_full_lite.gwrite_ch.gwach2.axi_wach/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM3_RAMD_D1_O> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <axi_interconnect_2/axi_interconnect_2/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axi3.ax
+   i3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/U0/xst_fifo_generator/gconvfifo.rf/grf
+   .rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM_RAMD_D1_O> is incomplete. The signal does not drive any load pins in the
+   design.
+WARNING:PhysDesignRules:367 - The signal
+   <axi_interconnect_3/axi_interconnect_3/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axi3.ax
+   i3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/U0/xst_fifo_generator/gconvfifo.rf/grf
+   .rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM_RAMD_D1_O> is incomplete. The signal does not drive any load pins in the
+   design.
+WARNING:PhysDesignRules:367 - The signal
+   <axi_interconnect_0/axi_interconnect_0/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axi3.ax
+   i3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/U0/xst_fifo_generator/gconvfifo.rf/grf
+   .rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM_RAMD_D1_O> is incomplete. The signal does not drive any load pins in the
+   design.
+WARNING:PhysDesignRules:367 - The signal
+   <axi_interconnect_0/axi_interconnect_0/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axi3.ax
+   i3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/U0/xst_fifo_generator/gconvfifo.r
+   f/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM_RAMD_D1_O> is incomplete. The signal does not drive any load pins in
+   the design.
+WARNING:PhysDesignRules:367 - The signal
+   <axi_interconnect_2/axi_interconnect_2/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axi3.ax
+   i3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/U0/xst_fifo_generator/gconvfifo.r
+   f/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM_RAMD_D1_O> is incomplete. The signal does not drive any load pins in
+   the design.
+WARNING:PhysDesignRules:367 - The signal
+   <axi_interconnect_3/axi_interconnect_3/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axi3.ax
+   i3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/U0/xst_fifo_generator/gconvfifo.r
+   f/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM_RAMD_D1_O> is incomplete. The signal does not drive any load pins in
+   the design.
+WARNING:PhysDesignRules:367 - The signal
+   <axi_interconnect_3/axi_interconnect_3/si_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xs
+   t_fifo_generator/gaxi_full_lite.gread_ch.grach2.axi_rach/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM7_RAMD_D1_O> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <axi_interconnect_3/axi_interconnect_3/si_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xs
+   t_fifo_generator/gaxi_full_lite.gread_ch.grach2.axi_rach/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM2_RAMD_D1_O> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <axi_interconnect_3/axi_interconnect_3/si_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xs
+   t_fifo_generator/gaxi_full_lite.gread_ch.grach2.axi_rach/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM3_RAMD_D1_O> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <axi_interconnect_3/axi_interconnect_3/si_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xs
+   t_fifo_generator/gaxi_full_lite.gread_ch.grach2.axi_rach/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM1_RAMA_D1_DPO>
+   is incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <axi_interconnect_3/axi_interconnect_3/si_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xs
+   t_fifo_generator/gaxi_full_lite.gread_ch.grach2.axi_rach/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM1_RAMB_D1_DPO>
+   is incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <axi_interconnect_3/axi_interconnect_3/si_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xs
+   t_fifo_generator/gaxi_full_lite.gread_ch.grach2.axi_rach/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM1_RAMD_D1_O> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <axi_dma_i2s/axi_dma_i2s/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/I_XD
+   _FIFO/S6.I_SYNC_FIFOGEN_FIFO/V6_S6_AND_LATER.I_SYNC_FIFO_BRAM/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_
+   fifo.mem/gdm.dm/Mram_RAM1_RAMD_D1_O> is incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <axi_interconnect_3/axi_interconnect_3/si_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xs
+   t_fifo_generator/gaxi_full_lite.gread_ch.grach2.axi_rach/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM8_RAMD_D1_O> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <axi_interconnect_3/axi_interconnect_3/si_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xs
+   t_fifo_generator/gaxi_full_lite.gread_ch.grach2.axi_rach/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM9_RAMD_D1_O> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <axi_interconnect_3/axi_interconnect_3/si_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xs
+   t_fifo_generator/gaxi_full_lite.gread_ch.grach2.axi_rach/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM10_RAMD_D1_O> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <axi_interconnect_3/axi_interconnect_3/si_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xs
+   t_fifo_generator/gaxi_full_lite.gread_ch.grach2.axi_rach/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM6_RAMD_D1_O> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <axi_interconnect_3/axi_interconnect_3/si_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xs
+   t_fifo_generator/gaxi_full_lite.gread_ch.grach2.axi_rach/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM5_RAMD_D1_O> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <axi_interconnect_3/axi_interconnect_3/si_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xs
+   t_fifo_generator/gaxi_full_lite.gread_ch.grach2.axi_rach/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM4_RAMD_D1_O> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:781 - PULLUP on an active net. PULLUP of comp ProtoComp2663.PULL is set but the tri state is not
+   configured. 
+
+Design Summary
+--------------
+
+Design Summary:
+Number of errors:      0
+Number of warnings:   36
+Slice Logic Utilization:
+  Number of Slice Registers:                23,724 out of 106,400   22%
+    Number used as Flip Flops:              23,680
+    Number used as Latches:                      0
+    Number used as Latch-thrus:                  0
+    Number used as AND/OR logics:               44
+  Number of Slice LUTs:                     22,493 out of  53,200   42%
+    Number used as logic:                   20,208 out of  53,200   37%
+      Number using O6 output only:          14,412
+      Number using O5 output only:             293
+      Number using O5 and O6:                5,503
+      Number used as ROM:                        0
+    Number used as Memory:                   1,328 out of  17,400    7%
+      Number used as Dual Port RAM:            134
+        Number using O6 output only:            14
+        Number using O5 output only:            11
+        Number using O5 and O6:                109
+      Number used as Single Port RAM:            0
+      Number used as Shift Register:         1,194
+        Number using O6 output only:         1,177
+        Number using O5 output only:             0
+        Number using O5 and O6:                 17
+    Number used exclusively as route-thrus:    957
+      Number with same-slice register load:    784
+      Number with same-slice carry load:       172
+      Number with other load:                    1
+
+Slice Logic Distribution:
+  Number of occupied Slices:                 8,794 out of  13,300   66%
+  Number of LUT Flip Flop pairs used:       26,915
+    Number with an unused Flip Flop:         7,255 out of  26,915   26%
+    Number with an unused LUT:               4,422 out of  26,915   16%
+    Number of fully used LUT-FF pairs:      15,238 out of  26,915   56%
+    Number of unique control sets:           1,174
+    Number of slice register sites lost
+      to control set restrictions:           3,586 out of 106,400    3%
+
+  A LUT Flip Flop pair for this architecture represents one LUT paired with
+  one Flip Flop within a slice.  A control set is a unique combination of
+  clock, reset, set, and enable signals for a registered element.
+  The Slice Logic Distribution report is not meaningful if the design is
+  over-mapped for a non-slice resource or if Placement fails.
+  OVERMAPPING of BRAM resources should be ignored if the design is
+  over-mapped for a non-BRAM resource or if placement fails.
+
+IO Utilization:
+  Number of bonded IOBs:                        51 out of     200   25%
+    Number of LOCed IOBs:                       51 out of      51  100%
+  Number of bonded IOPAD:                      130 out of     130  100%
+    IOB Flip Flops:                             22
+
+Specific Feature Utilization:
+  Number of RAMB36E1/FIFO36E1s:                 13 out of     140    9%
+    Number using RAMB36E1 only:                 13
+    Number using FIFO36E1 only:                  0
+  Number of RAMB18E1/FIFO18E1s:                  9 out of     280    3%
+    Number using RAMB18E1 only:                  9
+    Number using FIFO18E1 only:                  0
+  Number of BUFG/BUFGCTRLs:                     13 out of      32   40%
+    Number used as BUFGs:                       13
+    Number used as BUFGCTRLs:                    0
+  Number of IDELAYE2/IDELAYE2_FINEDELAYs:        0 out of     200    0%
+  Number of ILOGICE2/ILOGICE3/ISERDESE2s:        0 out of     200    0%
+  Number of ODELAYE2/ODELAYE2_FINEDELAYs:        0
+  Number of OLOGICE2/OLOGICE3/OSERDESE2s:       22 out of     200   11%
+    Number used as OLOGICE2s:                   22
+    Number used as OLOGICE3s:                    0
+    Number used as OSERDESE2s:                   0
+  Number of PHASER_IN/PHASER_IN_PHYs:            0 out of      16    0%
+  Number of PHASER_OUT/PHASER_OUT_PHYs:          0 out of      16    0%
+  Number of BSCANs:                              0 out of       4    0%
+  Number of BUFHCEs:                             0 out of      72    0%
+  Number of BUFRs:                               0 out of      16    0%
+  Number of CAPTUREs:                            0 out of       1    0%
+  Number of DNA_PORTs:                           0 out of       1    0%
+  Number of DSP48E1s:                            3 out of     220    1%
+  Number of EFUSE_USRs:                          0 out of       1    0%
+  Number of FRAME_ECCs:                          0 out of       1    0%
+  Number of ICAPs:                               0 out of       2    0%
+  Number of IDELAYCTRLs:                         0 out of       4    0%
+  Number of IN_FIFOs:                            0 out of      16    0%
+  Number of MMCME2_ADVs:                         3 out of       4   75%
+  Number of OUT_FIFOs:                           0 out of      16    0%
+  Number of PHASER_REFs:                         0 out of       4    0%
+  Number of PHY_CONTROLs:                        0 out of       4    0%
+  Number of PLLE2_ADVs:                          0 out of       4    0%
+  Number of PS7s:                                1 out of       1  100%
+  Number of STARTUPs:                            0 out of       1    0%
+  Number of XADCs:                               0 out of       1    0%
+
+Average Fanout of Non-Clock Nets:                4.05
+
+Peak Memory Usage:  1687 MB
+Total REAL time to MAP completion:  3 mins 42 secs 
+Total CPU time to MAP completion:   3 mins 30 secs 
+
+Mapping completed.
+See MAP report file "system_map.mrp" for details.
