@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Wed Jul 01 02:59:42 2015
+// Written by: Map P.20131013 on Wed Jul 01 04:27:15 2015
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -541,158 +541,6 @@ TIMEGRP TNM_axi_vdma_0_cdc_from = BEL
         "axi_vdma_0/axi_vdma_0/GEN_SPRT_FOR_MM2S.MM2S_LINEBUFFER_I/GEN_LINEBUF_FLUSH_SOF.GEN_FOR_ASYNC.SHUTDOWN_RST_CDC_I/GENERATE_LEVEL_P_S_CDC.p_level_in_d1_cdc_from"
         BEL
         "axi_vdma_0/axi_vdma_0/GEN_SPRT_FOR_MM2S.MM2S_LINEBUFFER_I/GEN_LINEBUF_FLUSH_SOF.GEN_FOR_ASYNC.ALL_LINES_XFRED_P_S_CDC_I/GENERATE_LEVEL_P_S_CDC.p_level_in_d1_cdc_from";
-TIMEGRP TNM_axi_vdma_1_cdc_from = BEL
-        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_S2MM.GEN_FLUSH_SOF_TREADY.GEN_FOR_ASYNC_FLUSH_SOF.SOF_LATE_CDC_I/GENERATE_LEVEL_S_P_CDC.s_level_in_d1_cdc_from"
-        BEL
-        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_S2MM.GEN_FLUSH_SOF_TREADY.GEN_FOR_ASYNC_FLUSH_SOF.S2MM_HALTED_CDC_I/GENERATE_LEVEL_P_S_CDC.p_level_in_d1_cdc_from"
-        BEL
-        "axi_vdma_1/axi_vdma_1/AXI_LITE_REG_INTERFACE_I/GEN_AXI_LITE_IF.AXI_LITE_IF_I/GEN_LITE_IS_ASYNC.GEN_ASYNC_LITE_ACCESS.LITE_WVALID_S2MM_CDC_I/GENERATE_PULSE_P_S_CDC_OPEN_ENDED.p_in_d1_cdc_from"
-        BEL
-        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_S2MM.GEN_FLUSH_SOF_TREADY.GEN_FOR_ASYNC_FLUSH_SOF.S2MM_PRM_UPDT_CDC_I/GENERATE_PULSE_P_S_CDC_OPEN_ENDED.p_in_d1_cdc_from"
-        BEL
-        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_S2MM.S2MM_VID_CDC_I/GEN_CDC_FOR_ASYNC.FSYNC_OUT_CDC_I/GENERATE_PULSE_P_S_CDC_OPEN_ENDED.p_in_d1_cdc_from"
-        BEL
-        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_MM2S.MM2S_VID_CDC_I/GEN_CDC_FOR_ASYNC.FSYNC_OUT_CDC_I/GENERATE_PULSE_P_S_CDC_OPEN_ENDED.p_in_d1_cdc_from"
-        BEL
-        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_MM2S.MM2S_VID_CDC_I/GEN_CDC_FOR_ASYNC.OTHR_FSYNC_CDC_I/GENERATE_PULSE_S_P_CDC_OPEN_ENDED.s_in_d1_cdc_from"
-        BEL
-        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_MM2S.MM2S_VID_CDC_I/GEN_CDC_FOR_ASYNC.SOF_CDC_I/GENERATE_PULSE_S_P_CDC_OPEN_ENDED.s_in_d1_cdc_from"
-        BEL
-        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_S2MM.S2MM_VID_CDC_I/GEN_CDC_FOR_ASYNC.OTHR_FSYNC_CDC_I/GENERATE_PULSE_S_P_CDC_OPEN_ENDED.s_in_d1_cdc_from"
-        BEL
-        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_S2MM.S2MM_VID_CDC_I/GEN_CDC_FOR_ASYNC.SOF_CDC_I/GENERATE_PULSE_S_P_CDC_OPEN_ENDED.s_in_d1_cdc_from"
-        BEL
-        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GEN_MIN_FOR_ASYNC.LITE_MIN_CDC_I/GENERATE_LEVEL_S_P_CDC_NO_RST.s_level_in_d1_cdc_from"
-        BEL
-        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GEN_MIN_FOR_ASYNC.AXIS_MIN_CDC_I/GENERATE_LEVEL_S_P_CDC_NO_RST.s_level_in_d1_cdc_from"
-        BEL
-        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GEN_RESET_FOR_ASYNC.HARD_RESET_CDC_I/GENERATE_LEVEL_P_S_CDC_NO_RST.p_level_in_d1_cdc_from"
-        BEL
-        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GEN_RESET_FOR_ASYNC.AXIS_RESET_CDC_I/GENERATE_LEVEL_P_S_CDC_NO_RST.p_level_in_d1_cdc_from"
-        BEL
-        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GEN_MIN_FOR_ASYNC.LITE_RESET_CDC_I/GENERATE_PULSE_P_S_CDC_OPEN_ENDED_NO_RST.p_in_d1_cdc_from"
-        BEL
-        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GEN_MIN_FOR_ASYNC.LITE_CLR_CDC_I/GENERATE_PULSE_P_S_CDC_OPEN_ENDED_NO_RST.p_in_d1_cdc_from"
-        BEL
-        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GEN_MIN_FOR_ASYNC.AXIS_RESET_CDC_I/GENERATE_PULSE_P_S_CDC_OPEN_ENDED_NO_RST.p_in_d1_cdc_from"
-        BEL
-        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GEN_MIN_FOR_ASYNC.AXIS_CLR_CDC_I/GENERATE_PULSE_P_S_CDC_OPEN_ENDED_NO_RST.p_in_d1_cdc_from"
-        BEL
-        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_S2MM.RESET_I/GEN_MIN_FOR_ASYNC.LITE_MIN_CDC_I/GENERATE_LEVEL_S_P_CDC_NO_RST.s_level_in_d1_cdc_from"
-        BEL
-        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_S2MM.RESET_I/GEN_MIN_FOR_ASYNC.AXIS_MIN_CDC_I/GENERATE_LEVEL_S_P_CDC_NO_RST.s_level_in_d1_cdc_from"
-        BEL
-        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_S2MM.RESET_I/GEN_RESET_FOR_ASYNC.HARD_RESET_CDC_I/GENERATE_LEVEL_P_S_CDC_NO_RST.p_level_in_d1_cdc_from"
-        BEL
-        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_S2MM.RESET_I/GEN_RESET_FOR_ASYNC.AXIS_RESET_CDC_I/GENERATE_LEVEL_P_S_CDC_NO_RST.p_level_in_d1_cdc_from"
-        BEL
-        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_S2MM.RESET_I/GEN_MIN_FOR_ASYNC.LITE_RESET_CDC_I/GENERATE_PULSE_P_S_CDC_OPEN_ENDED_NO_RST.p_in_d1_cdc_from"
-        BEL
-        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_S2MM.RESET_I/GEN_MIN_FOR_ASYNC.LITE_CLR_CDC_I/GENERATE_PULSE_P_S_CDC_OPEN_ENDED_NO_RST.p_in_d1_cdc_from"
-        BEL
-        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_S2MM.RESET_I/GEN_MIN_FOR_ASYNC.AXIS_RESET_CDC_I/GENERATE_PULSE_P_S_CDC_OPEN_ENDED_NO_RST.p_in_d1_cdc_from"
-        BEL
-        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_S2MM.RESET_I/GEN_MIN_FOR_ASYNC.AXIS_CLR_CDC_I/GENERATE_PULSE_P_S_CDC_OPEN_ENDED_NO_RST.p_in_d1_cdc_from"
-        BEL
-        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_MM2S.MM2S_LINEBUFFER_I/GEN_LINEBUF_FLUSH_SOF.GEN_FOR_ASYNC.MM2S_FSIZE_ERR_CDC_I/GENERATE_PULSE_P_S_CDC_OPEN_ENDED.p_in_d1_cdc_from"
-        BEL
-        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_MM2S.MM2S_LINEBUFFER_I/GEN_LINEBUF_FLUSH_SOF.GEN_FOR_ASYNC.MM2S_FSYNC_OUT_CDC_I_FLUSH_SOF/GENERATE_PULSE_P_S_CDC_OPEN_ENDED.p_in_d1_cdc_from"
-        BEL
-        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_MM2S.MM2S_LINEBUFFER_I/GEN_LINEBUF_FLUSH_SOF.GEN_FOR_ASYNC.HALT_CDC_I/GENERATE_LEVEL_S_P_CDC.s_level_in_d1_cdc_from"
-        BEL
-        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_MM2S.MM2S_LINEBUFFER_I/GEN_LINEBUF_FLUSH_SOF.GEN_FOR_ASYNC.SHUTDOWN_RST_CDC_I/GENERATE_LEVEL_P_S_CDC.p_level_in_d1_cdc_from"
-        BEL
-        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_MM2S.MM2S_LINEBUFFER_I/GEN_LINEBUF_FLUSH_SOF.GEN_FOR_ASYNC.ALL_LINES_XFRED_P_S_CDC_I/GENERATE_LEVEL_P_S_CDC.p_level_in_d1_cdc_from"
-        BEL
-        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_S2MM.S2MM_LINEBUFFER_I/GEN_S2MM_FLUSH_SOF_LOGIC.GEN_FOR_ASYNC_FLUSH_SOF.FSYNC_OUT_CDC_I_FLUSH_SOF/GENERATE_PULSE_S_P_CDC_OPEN_ENDED.s_in_d1_cdc_from"
-        BEL
-        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_S2MM.S2MM_LINEBUFFER_I/GEN_S2MM_FLUSH_SOF_LOGIC.GEN_FOR_ASYNC_FLUSH_SOF.GEN_FOR_ASYNC_CROSS_FSYNC.CROSS_FSYNC_CDC_I_FLUSH_SOF/GENERATE_PULSE_P_S_CDC_OPEN_ENDED.p_in_d1_cdc_from"
-        BEL
-        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_S2MM.S2MM_LINEBUFFER_I/GEN_S2MM_FLUSH_SOF_LOGIC.GEN_FOR_ASYNC_FLUSH_SOF.STRM_WR_HALT_CDC_I/GENERATE_LEVEL_P_S_CDC.p_level_in_d1_cdc_from"
-        BEL
-        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_S2MM.S2MM_LINEBUFFER_I/GEN_S2MM_FLUSH_SOF_LOGIC.GEN_FOR_ASYNC_FLUSH_SOF.RUNSTOP_AXIS_0_CDC_I_FLUSH_SOF/GENERATE_LEVEL_P_S_CDC.p_level_in_d1_cdc_from"
-        BEL
-        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_S2MM.S2MM_LINEBUFFER_I/GEN_S2MM_FLUSH_SOF_LOGIC.GEN_FOR_ASYNC_FLUSH_SOF.MMAP_NOT_FINISHED_CDC_I_FLUSH_SOF/GENERATE_LEVEL_P_S_CDC.p_level_in_d1_cdc_from"
-        BEL
-        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_S2MM.I_S2MM_DMA_MNGR/I_SM/GEN_FSIZE_MISMATCH.GEN_S2MM_MISMATCH_FLUSH_SOF.GEN_FOR_ASYNC.FSIZE_MISMATCH_CDC_I_FLUSH_SOF/GENERATE_PULSE_S_P_CDC_OPEN_ENDED.s_in_d1_cdc_from";
-TIMEGRP TNM_axi_vdma_1_cdc_to = BEL
-        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_S2MM.GEN_FLUSH_SOF_TREADY.GEN_FOR_ASYNC_FLUSH_SOF.SOF_LATE_CDC_I/GENERATE_LEVEL_S_P_CDC.p_level_out_d1_cdc_to"
-        BEL
-        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_S2MM.GEN_FLUSH_SOF_TREADY.GEN_FOR_ASYNC_FLUSH_SOF.S2MM_HALTED_CDC_I/GENERATE_LEVEL_P_S_CDC.s_level_out_d1_cdc_to"
-        BEL
-        "axi_vdma_1/axi_vdma_1/AXI_LITE_REG_INTERFACE_I/GEN_AXI_LITE_IF.AXI_LITE_IF_I/GEN_LITE_IS_ASYNC.GEN_ASYNC_LITE_ACCESS.LITE_WVALID_S2MM_CDC_I/GENERATE_PULSE_P_S_CDC_OPEN_ENDED.s_out_d1_cdc_to"
-        BEL
-        "axi_vdma_1/axi_vdma_1/AXI_LITE_REG_INTERFACE_I/GEN_AXI_LITE_IF.AXI_LITE_IF_I/GEN_LITE_IS_ASYNC.GEN_ASYNC_LITE_ACCESS.LITE_WVALID_MM2S_CDC_I/GENERATE_PULSE_P_S_CDC_OPEN_ENDED.s_out_d1_cdc_to"
-        BEL
-        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_S2MM.GEN_FLUSH_SOF_TREADY.GEN_FOR_ASYNC_FLUSH_SOF.S2MM_PRM_UPDT_CDC_I/GENERATE_PULSE_P_S_CDC_OPEN_ENDED.s_out_d1_cdc_to"
-        BEL
-        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_S2MM.S2MM_VID_CDC_I/GEN_CDC_FOR_ASYNC.FSYNC_OUT_CDC_I/GENERATE_PULSE_P_S_CDC_OPEN_ENDED.s_out_d1_cdc_to"
-        BEL
-        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_MM2S.MM2S_VID_CDC_I/GEN_CDC_FOR_ASYNC.FSYNC_OUT_CDC_I/GENERATE_PULSE_P_S_CDC_OPEN_ENDED.s_out_d1_cdc_to"
-        BEL
-        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_MM2S.MM2S_VID_CDC_I/GEN_CDC_FOR_ASYNC.FSYNC_IN_CDC_I/GENERATE_PULSE_S_P_CDC_OPEN_ENDED.p_out_d1_cdc_to"
-        BEL
-        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_MM2S.MM2S_VID_CDC_I/GEN_CDC_FOR_ASYNC.SOF_CDC_I/GENERATE_PULSE_S_P_CDC_OPEN_ENDED.p_out_d1_cdc_to"
-        BEL
-        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_S2MM.S2MM_VID_CDC_I/GEN_CDC_FOR_ASYNC.FSYNC_IN_CDC_I/GENERATE_PULSE_S_P_CDC_OPEN_ENDED.p_out_d1_cdc_to"
-        BEL
-        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_S2MM.S2MM_VID_CDC_I/GEN_CDC_FOR_ASYNC.SOF_CDC_I/GENERATE_PULSE_S_P_CDC_OPEN_ENDED.p_out_d1_cdc_to"
-        BEL
-        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GEN_MIN_FOR_ASYNC.LITE_MIN_CDC_I/GENERATE_LEVEL_S_P_CDC_NO_RST.p_level_out_d1_cdc_to"
-        BEL
-        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GEN_MIN_FOR_ASYNC.AXIS_MIN_CDC_I/GENERATE_LEVEL_S_P_CDC_NO_RST.p_level_out_d1_cdc_to"
-        BEL
-        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GEN_RESET_FOR_ASYNC.HARD_RESET_CDC_I/GENERATE_LEVEL_P_S_CDC_NO_RST.s_level_out_d1_cdc_to"
-        BEL
-        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GEN_RESET_FOR_ASYNC.AXIS_RESET_CDC_I/GENERATE_LEVEL_P_S_CDC_NO_RST.s_level_out_d1_cdc_to"
-        BEL
-        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GEN_MIN_FOR_ASYNC.LITE_RESET_CDC_I/GENERATE_PULSE_P_S_CDC_OPEN_ENDED_NO_RST.s_out_d1_cdc_to"
-        BEL
-        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GEN_MIN_FOR_ASYNC.LITE_CLR_CDC_I/GENERATE_PULSE_P_S_CDC_OPEN_ENDED_NO_RST.s_out_d1_cdc_to"
-        BEL
-        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GEN_MIN_FOR_ASYNC.AXIS_RESET_CDC_I/GENERATE_PULSE_P_S_CDC_OPEN_ENDED_NO_RST.s_out_d1_cdc_to"
-        BEL
-        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GEN_MIN_FOR_ASYNC.AXIS_CLR_CDC_I/GENERATE_PULSE_P_S_CDC_OPEN_ENDED_NO_RST.s_out_d1_cdc_to"
-        BEL
-        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_S2MM.RESET_I/GEN_MIN_FOR_ASYNC.LITE_MIN_CDC_I/GENERATE_LEVEL_S_P_CDC_NO_RST.p_level_out_d1_cdc_to"
-        BEL
-        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_S2MM.RESET_I/GEN_MIN_FOR_ASYNC.AXIS_MIN_CDC_I/GENERATE_LEVEL_S_P_CDC_NO_RST.p_level_out_d1_cdc_to"
-        BEL
-        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_S2MM.RESET_I/GEN_RESET_FOR_ASYNC.HARD_RESET_CDC_I/GENERATE_LEVEL_P_S_CDC_NO_RST.s_level_out_d1_cdc_to"
-        BEL
-        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_S2MM.RESET_I/GEN_RESET_FOR_ASYNC.AXIS_RESET_CDC_I/GENERATE_LEVEL_P_S_CDC_NO_RST.s_level_out_d1_cdc_to"
-        BEL
-        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_S2MM.RESET_I/GEN_MIN_FOR_ASYNC.LITE_RESET_CDC_I/GENERATE_PULSE_P_S_CDC_OPEN_ENDED_NO_RST.s_out_d1_cdc_to"
-        BEL
-        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_S2MM.RESET_I/GEN_MIN_FOR_ASYNC.LITE_CLR_CDC_I/GENERATE_PULSE_P_S_CDC_OPEN_ENDED_NO_RST.s_out_d1_cdc_to"
-        BEL
-        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_S2MM.RESET_I/GEN_MIN_FOR_ASYNC.AXIS_RESET_CDC_I/GENERATE_PULSE_P_S_CDC_OPEN_ENDED_NO_RST.s_out_d1_cdc_to"
-        BEL
-        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_S2MM.RESET_I/GEN_MIN_FOR_ASYNC.AXIS_CLR_CDC_I/GENERATE_PULSE_P_S_CDC_OPEN_ENDED_NO_RST.s_out_d1_cdc_to"
-        BEL
-        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_MM2S.MM2S_LINEBUFFER_I/GEN_LINEBUF_FLUSH_SOF.GEN_FOR_ASYNC.MM2S_FSIZE_ERR_CDC_I/GENERATE_PULSE_P_S_CDC_OPEN_ENDED.s_out_d1_cdc_to"
-        BEL
-        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_MM2S.MM2S_LINEBUFFER_I/GEN_LINEBUF_FLUSH_SOF.GEN_FOR_ASYNC.MM2S_FSYNC_OUT_CDC_I_FLUSH_SOF/GENERATE_PULSE_P_S_CDC_OPEN_ENDED.s_out_d1_cdc_to"
-        BEL
-        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_MM2S.MM2S_LINEBUFFER_I/GEN_LINEBUF_FLUSH_SOF.GEN_FOR_ASYNC.MM2S_RUN_STOP_CDC_I/GENERATE_LEVEL_S_P_CDC.p_level_out_d1_cdc_to"
-        BEL
-        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_MM2S.MM2S_LINEBUFFER_I/GEN_LINEBUF_FLUSH_SOF.GEN_FOR_ASYNC.HALT_CDC_I/GENERATE_LEVEL_S_P_CDC.p_level_out_d1_cdc_to"
-        BEL
-        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_MM2S.MM2S_LINEBUFFER_I/GEN_LINEBUF_FLUSH_SOF.GEN_FOR_ASYNC.SHUTDOWN_RST_CDC_I/GENERATE_LEVEL_P_S_CDC.s_level_out_d1_cdc_to"
-        BEL
-        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_MM2S.MM2S_LINEBUFFER_I/GEN_LINEBUF_FLUSH_SOF.GEN_FOR_ASYNC.ALL_LINES_XFRED_P_S_CDC_I/GENERATE_LEVEL_P_S_CDC.s_level_out_d1_cdc_to"
-        BEL
-        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_S2MM.S2MM_LINEBUFFER_I/GEN_S2MM_FLUSH_SOF_LOGIC.GEN_FOR_ASYNC_FLUSH_SOF.FSYNC_OUT_CDC_I_FLUSH_SOF/GENERATE_PULSE_S_P_CDC_OPEN_ENDED.p_out_d1_cdc_to"
-        BEL
-        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_S2MM.S2MM_LINEBUFFER_I/GEN_S2MM_FLUSH_SOF_LOGIC.GEN_FOR_ASYNC_FLUSH_SOF.GEN_FOR_ASYNC_CROSS_FSYNC.CROSS_FSYNC_CDC_I_FLUSH_SOF/GENERATE_PULSE_P_S_CDC_OPEN_ENDED.s_out_d1_cdc_to"
-        BEL
-        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_S2MM.S2MM_LINEBUFFER_I/GEN_S2MM_FLUSH_SOF_LOGIC.GEN_FOR_ASYNC_FLUSH_SOF.STRM_WR_HALT_CDC_I/GENERATE_LEVEL_P_S_CDC.s_level_out_d1_cdc_to"
-        BEL
-        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_S2MM.S2MM_LINEBUFFER_I/GEN_S2MM_FLUSH_SOF_LOGIC.GEN_FOR_ASYNC_FLUSH_SOF.RUNSTOP_AXIS_0_CDC_I_FLUSH_SOF/GENERATE_LEVEL_P_S_CDC.s_level_out_d1_cdc_to"
-        BEL
-        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_S2MM.S2MM_LINEBUFFER_I/GEN_S2MM_FLUSH_SOF_LOGIC.GEN_FOR_ASYNC_FLUSH_SOF.MMAP_NOT_FINISHED_CDC_I_FLUSH_SOF/GENERATE_LEVEL_P_S_CDC.s_level_out_d1_cdc_to"
-        BEL
-        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_S2MM.I_S2MM_DMA_MNGR/I_SM/GEN_FSIZE_MISMATCH.GEN_S2MM_MISMATCH_FLUSH_SOF.GEN_FOR_ASYNC.FSIZE_MISMATCH_CDC_I_FLUSH_SOF/GENERATE_PULSE_S_P_CDC_OPEN_ENDED.p_out_d1_cdc_to";
 TIMEGRP TNM_axi_vdma_1_cdc_tig_v = BEL
         "axi_vdma_1/axi_vdma_1/AXI_LITE_REG_INTERFACE_I/s2mm_ip2axi_introut_cdc_tig"
         BEL
@@ -779,32 +627,6 @@ TIMEGRP TNM_axi_vdma_1_cdc_tig_v = BEL
         "axi_vdma_1/axi_vdma_1/AXI_LITE_REG_INTERFACE_I/s2mm_ip2axi_frame_ptr_ref_cdc_tig_1"
         BEL
         "axi_vdma_1/axi_vdma_1/AXI_LITE_REG_INTERFACE_I/s2mm_ip2axi_frame_ptr_ref_cdc_tig_0"
-        BEL
-        "axi_vdma_1/axi_vdma_1/AXI_LITE_REG_INTERFACE_I/s2mm_capture_dm_done_vsize_counter_cdc_tig_12"
-        BEL
-        "axi_vdma_1/axi_vdma_1/AXI_LITE_REG_INTERFACE_I/s2mm_capture_dm_done_vsize_counter_cdc_tig_11"
-        BEL
-        "axi_vdma_1/axi_vdma_1/AXI_LITE_REG_INTERFACE_I/s2mm_capture_dm_done_vsize_counter_cdc_tig_10"
-        BEL
-        "axi_vdma_1/axi_vdma_1/AXI_LITE_REG_INTERFACE_I/s2mm_capture_dm_done_vsize_counter_cdc_tig_9"
-        BEL
-        "axi_vdma_1/axi_vdma_1/AXI_LITE_REG_INTERFACE_I/s2mm_capture_dm_done_vsize_counter_cdc_tig_8"
-        BEL
-        "axi_vdma_1/axi_vdma_1/AXI_LITE_REG_INTERFACE_I/s2mm_capture_dm_done_vsize_counter_cdc_tig_7"
-        BEL
-        "axi_vdma_1/axi_vdma_1/AXI_LITE_REG_INTERFACE_I/s2mm_capture_dm_done_vsize_counter_cdc_tig_6"
-        BEL
-        "axi_vdma_1/axi_vdma_1/AXI_LITE_REG_INTERFACE_I/s2mm_capture_dm_done_vsize_counter_cdc_tig_5"
-        BEL
-        "axi_vdma_1/axi_vdma_1/AXI_LITE_REG_INTERFACE_I/s2mm_capture_dm_done_vsize_counter_cdc_tig_4"
-        BEL
-        "axi_vdma_1/axi_vdma_1/AXI_LITE_REG_INTERFACE_I/s2mm_capture_dm_done_vsize_counter_cdc_tig_3"
-        BEL
-        "axi_vdma_1/axi_vdma_1/AXI_LITE_REG_INTERFACE_I/s2mm_capture_dm_done_vsize_counter_cdc_tig_2"
-        BEL
-        "axi_vdma_1/axi_vdma_1/AXI_LITE_REG_INTERFACE_I/s2mm_capture_dm_done_vsize_counter_cdc_tig_1"
-        BEL
-        "axi_vdma_1/axi_vdma_1/AXI_LITE_REG_INTERFACE_I/s2mm_capture_dm_done_vsize_counter_cdc_tig_0"
         BEL
         "axi_vdma_1/axi_vdma_1/AXI_LITE_REG_INTERFACE_I/mm2s_ip2axi_frame_ptr_ref_cdc_tig_4"
         BEL
@@ -1176,14 +998,6 @@ TIMEGRP TNM_axi_vdma_1_cdc_tig_v = BEL
         BEL
         "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_MM2S.MM2S_LINEBUFFER_I/crnt_vsize_cdc_tig_0"
         BEL
-        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_MM2S.MM2S_LINEBUFFER_I/GEN_LINEBUF_FLUSH_SOF.fsync_src_select_cdc_tig_1"
-        BEL
-        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_MM2S.MM2S_LINEBUFFER_I/GEN_LINEBUF_FLUSH_SOF.fsync_src_select_cdc_tig_0"
-        BEL
-        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_S2MM.S2MM_LINEBUFFER_I/GEN_S2MM_FLUSH_SOF_LOGIC.fsync_src_select_cdc_tig_1"
-        BEL
-        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_S2MM.S2MM_LINEBUFFER_I/GEN_S2MM_FLUSH_SOF_LOGIC.fsync_src_select_cdc_tig_0"
-        BEL
         "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_S2MM.S2MM_LINEBUFFER_I/crnt_vsize_cdc_tig_12"
         BEL
         "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_S2MM.S2MM_LINEBUFFER_I/crnt_vsize_cdc_tig_11"
@@ -1209,6 +1023,112 @@ TIMEGRP TNM_axi_vdma_1_cdc_tig_v = BEL
         "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_S2MM.S2MM_LINEBUFFER_I/crnt_vsize_cdc_tig_1"
         BEL
         "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_S2MM.S2MM_LINEBUFFER_I/crnt_vsize_cdc_tig_0";
+TIMEGRP TNM_axi_vdma_1_cdc_to = BEL
+        "axi_vdma_1/axi_vdma_1/AXI_LITE_REG_INTERFACE_I/GEN_AXI_LITE_IF.AXI_LITE_IF_I/GEN_LITE_IS_ASYNC.GEN_ASYNC_LITE_ACCESS.LITE_WVALID_S2MM_CDC_I/GENERATE_PULSE_P_S_CDC_OPEN_ENDED.s_out_d1_cdc_to"
+        BEL
+        "axi_vdma_1/axi_vdma_1/AXI_LITE_REG_INTERFACE_I/GEN_AXI_LITE_IF.AXI_LITE_IF_I/GEN_LITE_IS_ASYNC.GEN_ASYNC_LITE_ACCESS.LITE_WVALID_MM2S_CDC_I/GENERATE_PULSE_P_S_CDC_OPEN_ENDED.s_out_d1_cdc_to"
+        BEL
+        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_S2MM.S2MM_VID_CDC_I/GEN_CDC_FOR_ASYNC.FSYNC_OUT_CDC_I/GENERATE_PULSE_P_S_CDC_OPEN_ENDED.s_out_d1_cdc_to"
+        BEL
+        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_MM2S.MM2S_VID_CDC_I/GEN_CDC_FOR_ASYNC.FSYNC_OUT_CDC_I/GENERATE_PULSE_P_S_CDC_OPEN_ENDED.s_out_d1_cdc_to"
+        BEL
+        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_MM2S.MM2S_VID_CDC_I/GEN_CDC_FOR_ASYNC.SOF_CDC_I/GENERATE_PULSE_S_P_CDC_OPEN_ENDED.p_out_d1_cdc_to"
+        BEL
+        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_S2MM.S2MM_VID_CDC_I/GEN_CDC_FOR_ASYNC.SOF_CDC_I/GENERATE_PULSE_S_P_CDC_OPEN_ENDED.p_out_d1_cdc_to"
+        BEL
+        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GEN_MIN_FOR_ASYNC.LITE_MIN_CDC_I/GENERATE_LEVEL_S_P_CDC_NO_RST.p_level_out_d1_cdc_to"
+        BEL
+        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GEN_MIN_FOR_ASYNC.AXIS_MIN_CDC_I/GENERATE_LEVEL_S_P_CDC_NO_RST.p_level_out_d1_cdc_to"
+        BEL
+        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GEN_RESET_FOR_ASYNC.HARD_RESET_CDC_I/GENERATE_LEVEL_P_S_CDC_NO_RST.s_level_out_d1_cdc_to"
+        BEL
+        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GEN_RESET_FOR_ASYNC.AXIS_RESET_CDC_I/GENERATE_LEVEL_P_S_CDC_NO_RST.s_level_out_d1_cdc_to"
+        BEL
+        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GEN_MIN_FOR_ASYNC.LITE_RESET_CDC_I/GENERATE_PULSE_P_S_CDC_OPEN_ENDED_NO_RST.s_out_d1_cdc_to"
+        BEL
+        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GEN_MIN_FOR_ASYNC.LITE_CLR_CDC_I/GENERATE_PULSE_P_S_CDC_OPEN_ENDED_NO_RST.s_out_d1_cdc_to"
+        BEL
+        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GEN_MIN_FOR_ASYNC.AXIS_RESET_CDC_I/GENERATE_PULSE_P_S_CDC_OPEN_ENDED_NO_RST.s_out_d1_cdc_to"
+        BEL
+        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GEN_MIN_FOR_ASYNC.AXIS_CLR_CDC_I/GENERATE_PULSE_P_S_CDC_OPEN_ENDED_NO_RST.s_out_d1_cdc_to"
+        BEL
+        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_S2MM.RESET_I/GEN_MIN_FOR_ASYNC.LITE_MIN_CDC_I/GENERATE_LEVEL_S_P_CDC_NO_RST.p_level_out_d1_cdc_to"
+        BEL
+        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_S2MM.RESET_I/GEN_MIN_FOR_ASYNC.AXIS_MIN_CDC_I/GENERATE_LEVEL_S_P_CDC_NO_RST.p_level_out_d1_cdc_to"
+        BEL
+        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_S2MM.RESET_I/GEN_RESET_FOR_ASYNC.HARD_RESET_CDC_I/GENERATE_LEVEL_P_S_CDC_NO_RST.s_level_out_d1_cdc_to"
+        BEL
+        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_S2MM.RESET_I/GEN_RESET_FOR_ASYNC.AXIS_RESET_CDC_I/GENERATE_LEVEL_P_S_CDC_NO_RST.s_level_out_d1_cdc_to"
+        BEL
+        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_S2MM.RESET_I/GEN_MIN_FOR_ASYNC.LITE_RESET_CDC_I/GENERATE_PULSE_P_S_CDC_OPEN_ENDED_NO_RST.s_out_d1_cdc_to"
+        BEL
+        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_S2MM.RESET_I/GEN_MIN_FOR_ASYNC.LITE_CLR_CDC_I/GENERATE_PULSE_P_S_CDC_OPEN_ENDED_NO_RST.s_out_d1_cdc_to"
+        BEL
+        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_S2MM.RESET_I/GEN_MIN_FOR_ASYNC.AXIS_RESET_CDC_I/GENERATE_PULSE_P_S_CDC_OPEN_ENDED_NO_RST.s_out_d1_cdc_to"
+        BEL
+        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_S2MM.RESET_I/GEN_MIN_FOR_ASYNC.AXIS_CLR_CDC_I/GENERATE_PULSE_P_S_CDC_OPEN_ENDED_NO_RST.s_out_d1_cdc_to"
+        BEL
+        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_MM2S.MM2S_LINEBUFFER_I/GEN_LINEBUF_NO_SOF.GEN_FOR_ASYNC.HALT_CDC_I/GENERATE_LEVEL_S_P_CDC.p_level_out_d1_cdc_to"
+        BEL
+        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_MM2S.MM2S_LINEBUFFER_I/GEN_LINEBUF_NO_SOF.GEN_FOR_ASYNC.SHUTDOWN_RST_CDC_I/GENERATE_LEVEL_P_S_CDC.s_level_out_d1_cdc_to"
+        BEL
+        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_MM2S.MM2S_LINEBUFFER_I/GEN_LINEBUF_NO_SOF.GEN_FOR_ASYNC.ALL_LINES_XFRED_P_S_CDC_I/GENERATE_LEVEL_P_S_CDC.s_level_out_d1_cdc_to"
+        BEL
+        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_S2MM.S2MM_LINEBUFFER_I/GEN_NO_FSYNC_LOGIC.GEN_FOR_ASYNC.FSYNC_OUT_CDC_I/GENERATE_PULSE_S_P_CDC_OPEN_ENDED.p_out_d1_cdc_to"
+        BEL
+        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_S2MM.S2MM_LINEBUFFER_I/GEN_NO_FSYNC_LOGIC.GEN_FOR_ASYNC.STRM_WR_HALT_CDC_I/GENERATE_LEVEL_P_S_CDC.s_level_out_d1_cdc_to";
+TIMEGRP TNM_axi_vdma_1_cdc_from = BEL
+        "axi_vdma_1/axi_vdma_1/AXI_LITE_REG_INTERFACE_I/GEN_AXI_LITE_IF.AXI_LITE_IF_I/GEN_LITE_IS_ASYNC.GEN_ASYNC_LITE_ACCESS.LITE_WVALID_S2MM_CDC_I/GENERATE_PULSE_P_S_CDC_OPEN_ENDED.p_in_d1_cdc_from"
+        BEL
+        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_S2MM.S2MM_VID_CDC_I/GEN_CDC_FOR_ASYNC.FSYNC_OUT_CDC_I/GENERATE_PULSE_P_S_CDC_OPEN_ENDED.p_in_d1_cdc_from"
+        BEL
+        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_MM2S.MM2S_VID_CDC_I/GEN_CDC_FOR_ASYNC.FSYNC_OUT_CDC_I/GENERATE_PULSE_P_S_CDC_OPEN_ENDED.p_in_d1_cdc_from"
+        BEL
+        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_MM2S.MM2S_VID_CDC_I/GEN_CDC_FOR_ASYNC.SOF_CDC_I/GENERATE_PULSE_S_P_CDC_OPEN_ENDED.s_in_d1_cdc_from"
+        BEL
+        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_S2MM.S2MM_VID_CDC_I/GEN_CDC_FOR_ASYNC.SOF_CDC_I/GENERATE_PULSE_S_P_CDC_OPEN_ENDED.s_in_d1_cdc_from"
+        BEL
+        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GEN_MIN_FOR_ASYNC.LITE_MIN_CDC_I/GENERATE_LEVEL_S_P_CDC_NO_RST.s_level_in_d1_cdc_from"
+        BEL
+        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GEN_MIN_FOR_ASYNC.AXIS_MIN_CDC_I/GENERATE_LEVEL_S_P_CDC_NO_RST.s_level_in_d1_cdc_from"
+        BEL
+        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GEN_RESET_FOR_ASYNC.HARD_RESET_CDC_I/GENERATE_LEVEL_P_S_CDC_NO_RST.p_level_in_d1_cdc_from"
+        BEL
+        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GEN_RESET_FOR_ASYNC.AXIS_RESET_CDC_I/GENERATE_LEVEL_P_S_CDC_NO_RST.p_level_in_d1_cdc_from"
+        BEL
+        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GEN_MIN_FOR_ASYNC.LITE_RESET_CDC_I/GENERATE_PULSE_P_S_CDC_OPEN_ENDED_NO_RST.p_in_d1_cdc_from"
+        BEL
+        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GEN_MIN_FOR_ASYNC.LITE_CLR_CDC_I/GENERATE_PULSE_P_S_CDC_OPEN_ENDED_NO_RST.p_in_d1_cdc_from"
+        BEL
+        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GEN_MIN_FOR_ASYNC.AXIS_RESET_CDC_I/GENERATE_PULSE_P_S_CDC_OPEN_ENDED_NO_RST.p_in_d1_cdc_from"
+        BEL
+        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GEN_MIN_FOR_ASYNC.AXIS_CLR_CDC_I/GENERATE_PULSE_P_S_CDC_OPEN_ENDED_NO_RST.p_in_d1_cdc_from"
+        BEL
+        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_S2MM.RESET_I/GEN_MIN_FOR_ASYNC.LITE_MIN_CDC_I/GENERATE_LEVEL_S_P_CDC_NO_RST.s_level_in_d1_cdc_from"
+        BEL
+        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_S2MM.RESET_I/GEN_MIN_FOR_ASYNC.AXIS_MIN_CDC_I/GENERATE_LEVEL_S_P_CDC_NO_RST.s_level_in_d1_cdc_from"
+        BEL
+        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_S2MM.RESET_I/GEN_RESET_FOR_ASYNC.HARD_RESET_CDC_I/GENERATE_LEVEL_P_S_CDC_NO_RST.p_level_in_d1_cdc_from"
+        BEL
+        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_S2MM.RESET_I/GEN_RESET_FOR_ASYNC.AXIS_RESET_CDC_I/GENERATE_LEVEL_P_S_CDC_NO_RST.p_level_in_d1_cdc_from"
+        BEL
+        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_S2MM.RESET_I/GEN_MIN_FOR_ASYNC.LITE_RESET_CDC_I/GENERATE_PULSE_P_S_CDC_OPEN_ENDED_NO_RST.p_in_d1_cdc_from"
+        BEL
+        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_S2MM.RESET_I/GEN_MIN_FOR_ASYNC.LITE_CLR_CDC_I/GENERATE_PULSE_P_S_CDC_OPEN_ENDED_NO_RST.p_in_d1_cdc_from"
+        BEL
+        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_S2MM.RESET_I/GEN_MIN_FOR_ASYNC.AXIS_RESET_CDC_I/GENERATE_PULSE_P_S_CDC_OPEN_ENDED_NO_RST.p_in_d1_cdc_from"
+        BEL
+        "axi_vdma_1/axi_vdma_1/I_RST_MODULE/GEN_RESET_FOR_S2MM.RESET_I/GEN_MIN_FOR_ASYNC.AXIS_CLR_CDC_I/GENERATE_PULSE_P_S_CDC_OPEN_ENDED_NO_RST.p_in_d1_cdc_from"
+        BEL
+        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_MM2S.MM2S_LINEBUFFER_I/GEN_LINEBUF_NO_SOF.GEN_FOR_ASYNC.HALT_CDC_I/GENERATE_LEVEL_S_P_CDC.s_level_in_d1_cdc_from"
+        BEL
+        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_MM2S.MM2S_LINEBUFFER_I/GEN_LINEBUF_NO_SOF.GEN_FOR_ASYNC.SHUTDOWN_RST_CDC_I/GENERATE_LEVEL_P_S_CDC.p_level_in_d1_cdc_from"
+        BEL
+        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_MM2S.MM2S_LINEBUFFER_I/GEN_LINEBUF_NO_SOF.GEN_FOR_ASYNC.ALL_LINES_XFRED_P_S_CDC_I/GENERATE_LEVEL_P_S_CDC.p_level_in_d1_cdc_from"
+        BEL
+        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_S2MM.S2MM_LINEBUFFER_I/GEN_NO_FSYNC_LOGIC.GEN_FOR_ASYNC.FSYNC_OUT_CDC_I/GENERATE_PULSE_S_P_CDC_OPEN_ENDED.s_in_d1_cdc_from"
+        BEL
+        "axi_vdma_1/axi_vdma_1/GEN_SPRT_FOR_S2MM.S2MM_LINEBUFFER_I/GEN_NO_FSYNC_LOGIC.GEN_FOR_ASYNC.STRM_WR_HALT_CDC_I/GENERATE_LEVEL_P_S_CDC.p_level_in_d1_cdc_from";
 TIMEGRP axi_interconnect_1_reset_source = FFS(*) PADS(*);
 TIMEGRP axi_interconnect_4_reset_source = FFS(*) PADS(*);
 TIMEGRP axi_interconnect_2_reset_source = FFS(*) PADS(*);

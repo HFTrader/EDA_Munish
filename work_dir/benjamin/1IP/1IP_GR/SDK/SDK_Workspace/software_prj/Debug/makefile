@@ -36,7 +36,7 @@ all: software_prj.elf secondary-outputs
 software_prj.elf: $(OBJS) ../src/lscript.ld $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: ARM gcc linker'
-	arm-xilinx-eabi-gcc -L"/nfs/TUEIEDAprojects/SystemDesign/work/ipxact/benjamin-bordes/DSE/1IP/1IP_GR/SDK/SDK_Workspace/software_prj/lib" -L"/nfs/TUEIEDAprojects/SystemDesign/work/ipxact/benjamin-bordes/DSE/1IP/1IP_GR/SDK/SDK_Workspace/standalone_bsp_0/ps7_cortexa9_0/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "software_prj.elf" $(OBJS) $(USER_OBJS) $(LIBS)
+	arm-xilinx-eabi-gcc -L"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/benjamin/1IP/1IP_GR/SDK/SDK_Workspace/software_prj/lib" -L"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/benjamin/1IP/1IP_GR/SDK/SDK_Workspace/standalone_bsp_0/ps7_cortexa9_0/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "software_prj.elf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 

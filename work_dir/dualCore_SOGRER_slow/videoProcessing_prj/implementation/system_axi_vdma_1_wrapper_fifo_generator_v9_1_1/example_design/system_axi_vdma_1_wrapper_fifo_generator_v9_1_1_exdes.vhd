@@ -75,8 +75,8 @@ entity system_axi_vdma_1_wrapper_fifo_generator_v9_1_1_exdes is
    PORT (
            WR_CLK                    : IN  std_logic;
      	   RD_CLK                    : IN  std_logic;
-     	   WR_DATA_COUNT             : OUT std_logic_vector(10-1 DOWNTO 0);
-           RD_DATA_COUNT             : OUT std_logic_vector(10-1 DOWNTO 0);
+     	   WR_DATA_COUNT             : OUT std_logic_vector(9-1 DOWNTO 0);
+           RD_DATA_COUNT             : OUT std_logic_vector(9-1 DOWNTO 0);
            RST                       : IN  std_logic;
            WR_EN 		     : IN  std_logic;
            RD_EN                     : IN  std_logic;
@@ -100,8 +100,8 @@ architecture xilinx of system_axi_vdma_1_wrapper_fifo_generator_v9_1_1_exdes is
    PORT (
            WR_CLK                    : IN  std_logic;
      	   RD_CLK                    : IN  std_logic;
-     	   WR_DATA_COUNT             : OUT std_logic_vector(10-1 DOWNTO 0);
-           RD_DATA_COUNT             : OUT std_logic_vector(10-1 DOWNTO 0);
+     	   WR_DATA_COUNT             : OUT std_logic_vector(9-1 DOWNTO 0);
+           RD_DATA_COUNT             : OUT std_logic_vector(9-1 DOWNTO 0);
            RST                       : IN  std_logic;
            WR_EN 		     : IN  std_logic;
            RD_EN                     : IN  std_logic;

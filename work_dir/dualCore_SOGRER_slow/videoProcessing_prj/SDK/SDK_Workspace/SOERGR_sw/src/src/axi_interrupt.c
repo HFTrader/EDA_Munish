@@ -101,7 +101,7 @@ void AXI_INTERRUPT_HrefIntr_Handler(void * baseaddr_p)
 
 void AXI_INTERRUPT__VDMA1_S2MMIntr_Handler(void * baseaddr_p)
 {
-	//Xil_Out32((XPAR_AXI_VDMA_1_BASEADDR + AXI_FILTER_RX_CTRL), 0x00000004); // Mun
+	Xil_Out32((XPAR_AXI_VDMA_1_BASEADDR + AXI_FILTER_RX_CTRL), 0x00000004); // Mun
 	GRAY_INTR = 1;
 }
 
