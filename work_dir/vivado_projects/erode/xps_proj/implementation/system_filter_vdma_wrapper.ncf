@@ -1,0 +1,11 @@
+## INFO: AXI-Lite to&fro MMAP clock domain Crossings in FILTER_VDMA
+INST "FILTER_VDMA/*cdc_tig*" TNM = FFS "TNM_FILTER_VDMA_cdc_tig_v";
+TIMESPEC TS_FILTER_VDMA_cdc_tig_v = TO "TNM_FILTER_VDMA_cdc_tig_v" TIG;
+## INFO: CDC Crossings in FILTER_VDMA
+INST "FILTER_VDMA/*cdc_from*" TNM = FFS "TNM_FILTER_VDMA_cdc_from";
+INST "FILTER_VDMA/*cdc_to*" TNM = FFS "TNM_FILTER_VDMA_cdc_to";
+TIMESPEC TS_FILTER_VDMA_cdc_from_2_cdc_to = FROM "TNM_FILTER_VDMA_cdc_from" TO "TNM_FILTER_VDMA_cdc_to" TIG;
+#
+#
+
+

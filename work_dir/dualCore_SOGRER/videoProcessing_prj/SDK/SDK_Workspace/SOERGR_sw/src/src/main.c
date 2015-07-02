@@ -238,7 +238,6 @@ int ScuGicInterrupt_Init()
 
 	//Only used for edge sensitive Interrupts
 	XScuGic_SetPriorityTriggerType(&InterruptController, XPAR_FABRIC_CAM_INTERFACE_0_VSYNC_NEGEDGE_INTR, 0xa0, 3);
-	XScuGic_SetPriorityTriggerType(&InterruptController, XPAR_FABRIC_AXI_VDMA_1_S2MM_INTROUT_INTR, 0xa0, 3);
 
 	if (Status != XST_SUCCESS) {
 		return XST_FAILURE;
@@ -366,10 +365,8 @@ void InitGrayscaleFilter() {
 	xGrayScaleFilter.IsReady = XIL_COMPONENT_IS_READY;
 	config_grayScaleFilter(xGrayScaleFilter);
 	resetVDMA(XPAR_AXI_VDMA_1_BASEADDR);
-	//config_filterVDMA(XPAR_AXI_VDMA_1_BASEADDR, DMA_MEM_TO_DEV, VIDEO_BASEADDR_CPU0 + FRAME_SIZE*2);
-	//config_filterVDMA(XPAR_AXI_VDMA_1_BASEADDR, DMA_DEV_TO_MEM, VIDEO_BASEADDR_CPU0 + FRAME_SIZE*3);
-	config_filterVDMA(XPAR_AXI_VDMA_1_BASEADDR, DMA_MEM_TO_DEV, VIDEO_BASEADDR_CPU0);
-	config_filterVDMA(XPAR_AXI_VDMA_1_BASEADDR, DMA_DEV_TO_MEM, VIDEO_BASEADDR_CPU0 + FRAME_SIZE);
+	config_filterVDMA(XPAR_AXI_VDMA_1_BASEADDR, DMA_MEM_TO_DEV, VIDEO_BASEADDR_CPU0 + FRAME_SIZE*2);
+	config_filterVDMA(XPAR_AXI_VDMA_1_BASEADDR, DMA_DEV_TO_MEM, VIDEO_BASEADDR_CPU0 + FRAME_SIZE*3);	
 }
 
 
@@ -397,9 +394,9 @@ void processFrame(unsigned char CPU_id) {
 	config_filterVDMA(XPAR_AXI_VDMA_2_BASEADDR, DMA_DEV_TO_MEM, frameBaseaddr + FRAME_SIZE);
 #else
 	// SW implementation
-	//EdgeDetection(frameBaseaddr, frameBaseaddr + FRAME_SIZE, 640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME]);
+	EdgeDetection(frameBaseaddr, frameBaseaddr + FRAME_SIZE, 640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME]);
 #endif
-	//frameBaseaddr += FRAME_SIZE;
+	frameBaseaddr += FRAME_SIZE;
 
 	// erode filtering
 #ifdef ERODE_HA
@@ -408,15 +405,14 @@ void processFrame(unsigned char CPU_id) {
 	config_filterVDMA(XPAR_AXI_VDMA_3_BASEADDR, DMA_DEV_TO_MEM, frameBaseaddr + FRAME_SIZE);
 #else
 	// SW implementation
-	//Erode(frameBaseaddr, frameBaseaddr + FRAME_SIZE, 640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME]);
+	Erode(frameBaseaddr, frameBaseaddr + FRAME_SIZE, 640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME]);
 #endif
-	//frameBaseaddr += FRAME_SIZE;
+	frameBaseaddr += FRAME_SIZE;
 
 	// grayscale filtering
 #ifdef GRAYSCALE_HA
 	//TODO: check if this accelerator is busy!! only if it is free then configure it
 	GRAY_INTR = 0;
-	resetVDMA(XPAR_AXI_VDMA_1_BASEADDR);
 	config_filterVDMA(XPAR_AXI_VDMA_1_BASEADDR, DMA_MEM_TO_DEV, frameBaseaddr);
 	config_filterVDMA(XPAR_AXI_VDMA_1_BASEADDR, DMA_DEV_TO_MEM, frameBaseaddr + FRAME_SIZE);
 	while(GRAY_INTR == 0);

@@ -1,0 +1,969 @@
+@I [HLS-0] Workspace /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1 opened at Mon Oct 07 15:14:47 CEST 2013
+@I [HLS-100] Command "config_clock -quiet -name - -period 6.666666666666667 -unit ns -default=false "
+@I [SYN-201] Setting up clock with a period of 6.66667ns.
+@I [HLS-100] Command 'config_clock' returned 0; elapsed 0Total elapsed time: 0.544 sec.
+@I [HLS-100] Command "open_platform DefaultPlatform "
+@I [HLS-100] Command 'open_platform' returned 0; elapsed 0Total elapsed time: 0.585 sec.
+@I [HLS-100] Command "import_lib /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/zynq/zynq "
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/common/xilinx.lib "
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/interface/xilinx_interface.lib "
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/interface/plb46.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.633 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/interface/fsl.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.638 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/interface/axi4.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.641 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.642 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/common/dsp48.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.642 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 0.644 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/common/xilinx_old.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.662 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/common/xilinx.hlp "
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/common/target_info.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.692 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/common/dsp48.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.701 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.702 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/zynq/dsp48e1.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.710 sec.
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 0.710 sec.
+@I [HLS-100] Command "config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 0.710 sec.
+@I [HLS-100] Command "config_chip_info -quiet -speed medium "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 0.710 sec.
+@I [HLS-100] Command 'import_lib' returned 0; elapsed 0.02Total elapsed time: 0.712 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/zynq/zynq.gen "
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/common/virtex.gen "
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/common/xilinx.gen "
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/interface/plb46.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.737 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/interface/fsl.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.741 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/interface/axi4.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 0.750 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/scripts/xilinxcoregen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 0.782 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/interface/XilEDKCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 0.813 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.03Total elapsed time: 0.813 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/common/dsp48.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.815 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.03Total elapsed time: 0.815 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.03Total elapsed time: 0.815 sec.
+@I [HLS-100] Command "open_platform DefaultPlatform "
+@I [HLS-100] Command 'open_platform' returned 0; elapsed 0Total elapsed time: 0.815 sec.
+@I [HLS-100] Command "import_lib /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/zynq/zynq_fpv6 "
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/common/xilinx_fpv7.lib "
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/common/xilinx_fpv6.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.817 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.819 sec.
+@I [HLS-100] Command 'import_lib' returned 0; elapsed 0.02Total elapsed time: 0.845 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/zynq/zynq_fpv6.gen "
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/common/xilinx_fpv6.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.847 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.847 sec.
+@I [HLS-100] Command "set_part xc7z020clg484-2 "
+@I [HLS-100] Command "add_library xilinx/zynq/zynq:xc7z020:clg484:-2 "
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 0.855 sec.
+@I [HLS-100] Command "license_exists VIVADO_HLS "
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0Total elapsed time: 0.855 sec.
+@I [HLS-100] Command "license_exists AUTOESL_NI "
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0Total elapsed time: 0.855 sec.
+@I [HLS-100] Command "license_exists HLS "
+@I [HLS-100] Command 'license_exists' returned 0; elapsed 0Total elapsed time: 0.855 sec.
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 0.859 sec.
+@I [HLS-100] Command "config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 0.859 sec.
+@I [HLS-100] Command "config_chip_info -quiet -speed medium "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 0.859 sec.
+@I [HLS-100] Command 'add_library' returned 0; elapsed 0.01Total elapsed time: 0.864 sec.
+@I [HLS-100] Command "add_library xilinx/zynq/zynq_fpv6 "
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 0.866 sec.
+@I [HLS-100] Command "license_exists VIVADO_HLS "
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0Total elapsed time: 0.866 sec.
+@I [HLS-100] Command "license_exists AUTOESL_NI "
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0Total elapsed time: 0.866 sec.
+@I [HLS-100] Command "license_exists HLS "
+@I [HLS-100] Command 'license_exists' returned 0; elapsed 0Total elapsed time: 0.866 sec.
+@I [HLS-100] Command 'add_library' returned 0; elapsed 0Total elapsed time: 0.870 sec.
+@I [HLS-10] Setting target device to 'xc7z020clg484-2'
+@I [HLS-100] Command 'set_part' returned 0; elapsed 0.01Total elapsed time: 0.870 sec.
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 0.870 sec.
+@I [HLS-100] Command "config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 0.870 sec.
+@I [HLS-100] Command "config_chip_info -quiet -speed medium "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 0.870 sec.
+@I [HLS-100] Command 'open_solution' returned 0; elapsed 0.09Total elapsed time: 0.873 sec.
+@I [HLS-100] Command "set_part xc7z020clg484-2 "
+@I [HLS-100] Command "add_library xilinx/zynq/zynq:xc7z020:clg484:-2 "
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 0.876 sec.
+@I [HLS-100] Command "license_exists VIVADO_HLS "
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0Total elapsed time: 0.876 sec.
+@I [HLS-100] Command "license_exists AUTOESL_NI "
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0Total elapsed time: 0.876 sec.
+@I [HLS-100] Command "license_exists HLS "
+@I [HLS-100] Command 'license_exists' returned 0; elapsed 0Total elapsed time: 0.876 sec.
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 0.880 sec.
+@I [HLS-100] Command "config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 0.880 sec.
+@I [HLS-100] Command "config_chip_info -quiet -speed medium "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 0.880 sec.
+@I [HLS-100] Command 'add_library' returned 0; elapsed 0Total elapsed time: 0.884 sec.
+@I [HLS-100] Command "add_library xilinx/zynq/zynq_fpv6 "
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 0.886 sec.
+@I [HLS-100] Command "license_exists VIVADO_HLS "
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0Total elapsed time: 0.886 sec.
+@I [HLS-100] Command "license_exists AUTOESL_NI "
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0Total elapsed time: 0.886 sec.
+@I [HLS-100] Command "license_exists HLS "
+@I [HLS-100] Command 'license_exists' returned 0; elapsed 0Total elapsed time: 0.886 sec.
+@I [HLS-100] Command 'add_library' returned 0; elapsed 0Total elapsed time: 0.890 sec.
+@I [HLS-100] Command 'set_part' returned 0; elapsed 0Total elapsed time: 0.890 sec.
+@I [HLS-100] Command "create_clock -period 150MHz "
+@I [HLS-100] Command 'create_clock' returned 0; elapsed 0Total elapsed time: 0.896 sec.
+@I [HLS-100] Command "source ./prj/solution1/directives.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.898 sec.
+@I [HLS-100] Command "csynth_design "
+@I [HLS-100] Command "elaborate -effort=medium -skip_syncheck=0 -lm=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 "
+@I [HLS-10] Importing test bench file 'test_1080p.bmp' ... 
+@0 [HLS-0] Importing test bench file 'test_1080p.bmp' ... 
+@I [HLS-10] Importing test bench file 'opencv_top.cpp' ... 
+@0 [HLS-0] Importing test bench file 'opencv_top.cpp' ... 
+@I [HLS-10] Importing test bench file 'test.cpp' ... 
+@0 [HLS-0] Importing test bench file 'test.cpp' ... 
+@I [HLS-10] Analyzing design file 'top.cpp' ... 
+@0 [HLS-0] Analyzing design file 'top.cpp' ... 
+@I [HLS-0] Compiling one TU...
+@I [HLS-0] 
+Checking before pre-process: exec llvm-gcc -fno-builtin-isinf -fno-builtin-isnan    -D "__asm__(...)=" -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit   -I "/ise_local2/umair_temp/Vivado_HLS/2013.1/Linux_x86_64/tools/systemc/include" -I "/ise_local2/umair_temp/Vivado_HLS/2013.1/include" -I "/ise_local2/umair_temp/Vivado_HLS/2013.1/include/ap_sysc" -fexceptions "top.cpp"  -o "/nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/top.pp.00.o"
+
+@I [HLS-0] Syntax Checker time: 5 seconds per iteration
+@I [HLS-0] 
+Source preprocessing: exec llvm-gcc  -fno-builtin-isinf -fno-builtin-isnan -CC -E "top.cpp"     -D "__asm__(...)=" -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/autopilot" -I "/ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D "__asm__(...)="  -o "/nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/top.pp.0.cpp"
+
+@I [HLS-0] GCC PP time: 0 seconds per iteration
+@I [HLS-0] Marker-Pragma convertor: /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/top.pp.0.cpp /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/top.pp.0.cpp.ap-line.cpp /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/top.pp.0.cpp.ap-line.cpp.CXX 1
+@I [HLS-0] 
+Source processor: exec /ise_local2/umair_temp/Vivado_HLS/2013.1/Linux_x86_64/tools/jre/bin/java -Xmx512m -classpath   "/ise_local2/umair_temp/Vivado_HLS/2013.1/common/lib/autopilot.sourceprocessor.jar:/ise_local2/umair_temp/Vivado_HLS/2013.1/common/lib/org.eclipse.cdt.core_5.3.0.xilinx_patch.jar:/ise_local2/umair_temp/Vivado_HLS/2013.1/common/lib/org.eclipse.core.runtime_3.7.0.v20110110.jar:/ise_local2/umair_temp/Vivado_HLS/2013.1/common/lib/org.eclipse.equinox.common_3.6.0.v20110523.jar:/ise_local2/umair_temp/Vivado_HLS/2013.1/common/lib/com.ibm.icu_4.4.2.v20110208.jar:/ise_local2/umair_temp/Vivado_HLS/2013.1/common/lib/jargs.jar:/ise_local2/umair_temp/Vivado_HLS/2013.1/Linux_x86_64/tools/eclipse/plugins/org.eclipse.emf.common_2.7.0.v20120127-1122.jar:/ise_local2/umair_temp/Vivado_HLS/2013.1/Linux_x86_64/tools/eclipse/plugins/org.eclipse.emf.ecore_2.7.0.v20120127-1122.jar:/ise_local2/umair_temp/Vivado_HLS/2013.1/Linux_x86_64/tools/eclipse/plugins/org.eclipse.emf.ecore.xmi_2.7.0.v20120127-1122.jar:/ise_local2/umair_temp/Vivado_HLS/2013.1/Linux_x86_64/tools/eclipse/plugins/com.autoesl.autopilot.ui.directiveFileModel_1.0.0.jar:/ise_local2/umair_temp/Vivado_HLS/2013.1/Linux_x86_64/tools/eclipse/plugins/com.autoesl.autopilot.ui.common_1.0.0.jar"  autopilot.sourceprocessor.CParser  "/nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/top.pp.0.cpp.ap-line.cpp"  -m image_filter -o "/nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/top.pp.0.cpp.ap-cdt.cpp" --ad --pc --pp --directive /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/solution1.directive --source /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/top.cpp --error /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db --ce --tcl /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db --ve --vetcl /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db --lp --ca --es --gf --nk --df --pd --p2d /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db --sd --scff /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/.systemc_flag
+
+@I [HLS-0] Marker-Pragma convertor: /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/top.pp.0.cpp.ap-cdt.cpp /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/top.pragma.0.cpp /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/top.pragma.0.cpp.ap-line.CXX 0
+@I [HLS-100] Command "source /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/pragma.status.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 113.448 sec.
+@I [HLS-0] CDT processor time: 106 seconds per iteration
+@I [HLS-0] Pragma handling time: 1 seconds per iteration
+@I [HLS-0] 
+Source preprocessing: exec llvm-gcc  -fno-builtin-isinf -fno-builtin-isnan -CC -E "/nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/top.pragma.1.cpp"     -D "__asm__(...)=" -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/autopilot" -I "/ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D "__asm__(...)="  -o "/nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/top.pragma.2.cpp"
+
+@I [HLS-0] exec llvm-gcc  -w -fno-builtin-isinf -fno-builtin-isnan  "/nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/top.pragma.2.cpp"    -D "__asm__(...)=" -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/autopilot" -I "/ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -g -o "/nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/top.g.bc"
+@I [HLS-100] Command "source /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/ve_warning.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 136.655 sec.
+@I [HLS-10] Validating synthesis directives ...
+@0 [HLS-0] Validating synthesis directives ...
+@I [HLS-100] Command "source /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/pragma.status.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 136.658 sec.
+@I [HLS-0] Linking all ...
+@I [HLS-0] exec llvm-ld  "/nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/top.bc"  -disable-opt  -L/ise_local2/umair_temp/Vivado_HLS/2013.1/Linux_x86_64/lib -lm_basic -o "/nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/a.o"
+@I [HLS-0] Link time: 0 seconds per iteration
+@I [HLS-0] Linking all ...
+@I [HLS-0] exec llvm-ld  "/nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/top.g.bc"  -disable-opt  -L/ise_local2/umair_temp/Vivado_HLS/2013.1/Linux_x86_64/lib -lm_basic -o "/nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/a.g"
+@I [HLS-0] Link time: 0 seconds per iteration
+@I [HLS-100] Command "opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 "
+@I [HLS-100] Command "cleanup_all_models "
+@I [HLS-100] Command 'cleanup_all_models' returned 0; elapsed 0Total elapsed time: 137.89 sec.
+@I [HLS-10] Checking synthesizability ...
+@0 [HLS-0] Checking synthesizability ...
+@I [HLS-0] std xform: transform -share-std-xform -always-inline -promote-dbg-pointer  -interface-preproc  -scalarrepl -mem2reg -keep-read-access -instcombine -dce  -promote-dbg-pointer  -bitop-raise  -simplifycfg -mem2reg -globalopt  -global-constprop -deadargelim -instcombine -simplifycfg  -prune-eh -simplifycfg  -scalarrepl -instcombine -reassociate -licm  -simplifycfg -loopsimplify -indvars -instcombine  -simplifycfg -mem2reg -loopsimplify -indvars -instcombine  -gvn -gvn -instcombine -dse -adce  -break-crit-edges -deadtypeelim -simplifycfg -loop-delete  -global-array-opt  -find-syn-modules -top image_filter  -deadtypeelim -deadargelim  -mem2reg -instcombine -dce  -presyn-prepare -auto-rom-infer  -syn-check -check-rec-only  -find-region -simplifycfg -func-extr -function-inline  -mem2reg -instcombine -dce   -gvn -adce -adse  -constprop -instcombine -bit-constprop  -instcombine -dce -simplifycfg -bitop-raise  -simplifycfg -dce -loop-delete  -globalopt -global-privatize -mem2reg -dce  -global-constprop -pointer-simplify -constprop -dce  -promote-dbg-pointer  -norm-name   /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/a.g.bc -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/a.g.1.bc -f  -phase std-opt
+@I [HLS-0] Std xform time: 0 seconds per iteration
+@I [HLS-0] syn check 1/2: transform -syn-check -check-rec-only -disaggr -norm-name -deadtypeelim -dce  -mem2reg -instcombine  -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce  -array-normalize -instcombine -dce  -array-seg-normalize -instcombine -dce  -array-flatten -instcombine -dce  -array-burst  -deadargelim -promote-global-argument  -doublePtrSimplify -doublePtrElim -dce  -doublePtrSimplify -promote-dbg-pointer  -dce -scalarrepl -dse -adse -instcombine  -ptrLegalization  -simplifycfg -dce -instcombine  -pointer-simplify -ptrArgReplace -dce -instcombine   -disaggr -norm-name -deadtypeelim -dce  -mem2reg -instcombine  -directive-preproc -mem2reg -dse -dce  -interface-gen -constprop -dse -dce  -globaldce    /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/a.g.1.bc -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/a.g.2.prechk.bc -f
+@I [HLS-0] Syn check 1/2 time: 0 seconds per iteration
+@I [HLS-0] syn check 2/2: transform -syn-check   /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/a.g.2.prechk.bc -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/a.g.2.bc -f  -phase syn-check
+@W [SYNCHK-23] hls_video_io.h:138: variable-indexed range selection may cause suboptimal QoR.
+@I [SYNCHK-10] 0 error(s), 1 warning(s).
+@I [HLS-0] Syn check 2/2 time: 0 seconds per iteration
+@I [HLS-10] Starting code transformations ...
+@0 [HLS-0] Starting code transformations ...
+@I [HLS-0] Compiler optimizing ...
+@I [HLS-0] Share syncheck's 1.bc for syn flow: copy /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/a.g.1.bc to /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/a.o.1.bc
+@I [HLS-0] presyn 1: transform  -directive-preproc -mem2reg -dse -dce  -disaggr -norm-name -deadtypeelim -deadargelim  -mem2reg -instcombine -dce -auto-rom-infer -dce  -directive-preproc -mem2reg -dse -dce  -func-buffer -dce -array-normalize  -func-legal -instcombine -gvn -constprop -dce   -ptrArgReplace -mem2reg -instcombine -dce  -array-seg-normalize -global-constprop -deadargelim  -instcombine -dce  -pointer-simplify -dce  -data-pack -instcombine -dce   -loopsimplify -indvars -instcombine  -gvn -loopsimplify -mem2reg -dce -simplifycfg  -find-region -instcombine  -inst-simplify  -indvars -auto-loop-unroll -loopsimplify -xunroll  -constprop -instcombine -simplifycfg -indvars  -simplifycfg -dce -globaldce  -gvn -disable-agg-range -inst-simplify  -constprop -simplifycfg -dce  -pointer-simplify -dce  -array-transform-check  -globalopt -constprop -dce  -array-promote -constprop -instcombine -dce -auto-par -array-partition -instcombine -dce  -global-constprop -deadargelim -ptrArgReplace -mem2reg  -func-legal -instcombine -dce  -array-reshape -instcombine -simplifycfg -dce   -mem-intrinsic-preproc -dce  -global-privatize  -mem2reg -globaldce  -promote-global-argument  -ptrArgReplace -mem2reg -function-inline  -mem2reg -instcombine -dce  -globalopt -mergereturn -simplify-global-access -mem2reg -dce  -pointer-simplify -dce  -functionattrs  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce  -inst-simplify -dce  -func-inst -constprop -instcombine -simplifycfg -dce  -func-legal -dce   -directive-preproc -mem2reg -dse -dce  -arraycheck -bitwidthmin -on-by-dataflow  -instcombine -simplifycfg -dce -loopsimplify -simplifycfg -loop-stream -instcombine -simplifycfg -dce  -function-stream -dce -globaldce  -array-streaming -instcombine -simplifycfg -dce      -simplifycfg -dce -loop-delete  -norm-name  /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/a.o.1.bc -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/a.o.1.tmp.bc -f
+@I [XFORM-502] Unrolling all sub-loops inside loop 'Loop-2.1' in function 'hls::AXIvideo2Mat<64, 1080, 1920, 16>' for pipelining.
+@I [XFORM-502] Unrolling all sub-loops inside loop 'Loop-1.1' in function 'hls::Mat2AXIvideo<64, 1080, 1920, 16>' for pipelining.
+@I [XFORM-501] Unrolling loop 'Loop-2.1.1' in function 'hls::AXIvideo2Mat<64, 1080, 1920, 16>' completely.
+@I [XFORM-501] Unrolling loop 'Loop-2.1.2' in function 'hls::AXIvideo2Mat<64, 1080, 1920, 16>' completely.
+@I [XFORM-501] Unrolling loop 'Loop-1.1.1' in function 'hls::Mat2AXIvideo<64, 1080, 1920, 16>' completely.
+@I [XFORM-501] Unrolling loop 'Loop-1.1.2' in function 'hls::Mat2AXIvideo<64, 1080, 1920, 16>' completely.
+@I [XFORM-102] Partitioning array 's.val.assign.1' automatically.
+@I [XFORM-102] Partitioning array 's.val.assign' automatically.
+@I [XFORM-102] Partitioning array 'memtmp.i' automatically.
+@I [XFORM-102] Automatically partitioning streamed array 'img_0.data_stream.V' (top.cpp:77) .
+@I [XFORM-101] Partitioning array 'pix.val' (top.cpp:79) in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'img_0.data_stream.V' (top.cpp:77) in dimension 1 completely.
+@I [XFORM-712] Applying dataflow to function 'image_filter' (top.cpp:65), detected/extracted 4 process function(s): 'hls::Mat<1080, 1920, 16>::init', 'hls::Mat<1080, 1920, 16>::init', 'hls::AXIvideo2Mat<64, 1080, 1920, 16>' and 'hls::Mat2AXIvideo<64, 1080, 1920, 16>'.
+@I [HLS-0] Presyn 1 time: 1 seconds per iteration
+@I [HLS-0] presyn 2: transform -keep-callgraph -scalarrepl -mem2reg  -indvars -loop-bound  -instcombine -dce  -merge-array-access -mem2reg -dce  -clean-region -mergereturn -if-conv  -instcombine -dce -constprop  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce  -scalarrepl -mem2reg  -global-constprop -deadargelim -deadargelim  -instcombine -dce -simplifycfg    -ptrArgReplace -mem2reg -function-inline  -mem2reg -instcombine -dce -expr-balance  -instcombine -dce  -bitwidthmin  -directive-preproc  -inst-rectify -instcombine -dce  -functionattrs  -constprop -instcombine -bit-constprop  -globalopt -globaldce  -inst-simplify -instcombine -elimdeaddata -dce  -loop-delete -simplifycfg   -norm-name /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/a.o.1.tmp.bc -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/a.o.2.bc -f  -phase presyn
+@I [XFORM-11] Balancing expressions in function 'hls::Mat<1080, 1920, 16>::init.1'...3 expression(s) balanced.
+@I [XFORM-11] Balancing expressions in function 'hls::Mat<1080, 1920, 16>::init'...3 expression(s) balanced.
+@I [HLS-0] Presyn 2 time: 1 seconds per iteration
+@I [HLS-0] build ssdm: transform -function-uniquify -auto-function-inline  -loopsimplify -indvars -licm -loop-dep  -loop-bound -licm -loopsimplify -flattenloopnest  -array-flatten -gvn -instcombine -dce  -array-burst  -array-map -dce -func-legal  -gvn -adce -instcombine -cfgopt -simplifycfg -loopsimplify   -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn  -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce  -inst-simplify -dce  -array-streaming -instcombine  -dce   -deadargelim -doublePtrSimplify -doublePtrElim  -dce -doublePtrSimplify -promote-dbg-pointer -dce  -scalarrepl -mem2reg -disaggr -norm-name -mem2reg  -instcombine  -dse -adse -adce -ptrLegalization -dce -instcombine  -loop-rot -constprop -cfgopt -simplifycfg -indvars -pointer-simplify -dce -loop-bound  -loopsimplify -loop-preproc  -constprop -gvn -mem2reg -instcombine -dce  -loop-merge -dce  -bitwidthmin  -directive-preproc -inst-simplify -dce  -interface-gen -gvn -mem2reg -instcombine -dce -adse  -loop-bound  -instcombine -cfgopt -simplifycfg -loopsimplify  -clean-region -io-protocol  -find-region -mem2reg  -loopsimplify -phi-opt  -inst-simplify -inst-rectify -adce -cfgopt -simplifycfg  -strip-dead-prototypes  -interface-lower -bitop-lower -directive-lower  -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa  -inst-simplify -simplifycfg   -mergereturn -inst-simplify -inst-rectify -dce -bitop-lower  -loop-rewind -cfgopt  -norm-name -legalize -read-loop-dep -dce -bitwidth   -cdfg-build  /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/a.o.2.bc -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/a.o.3.bc -f  -phase build-ssdm
+@W [SYN-210] Renamed object name 'init_U0' to 'init_U0'
+@W [SYN-210] Renamed object name 'init.1_U0' to 'init_1_U0'
+@W [SYN-210] Renamed object name 'AXIvideo2Mat<64,1080,1920,16>_U0' to 'AXIvideo2Mat_64_1080_1920_16_U0'
+@W [SYN-210] Renamed object name 'Mat2AXIvideo<64,1080,1920,16>_U0' to 'Mat2AXIvideo_64_1080_1920_16_U0'
+@W [SYN-210] Renamed object name 'AP_FIFO_img_0_rows_V_U0' to 'img_0_rows_V'
+@W [SYN-210] Renamed object name 'AP_FIFO_img_0_rows_V_channel_U0' to 'img_0_rows_V_channel'
+@W [SYN-210] Renamed object name 'AP_FIFO_img_0_cols_V_U0' to 'img_0_cols_V'
+@W [SYN-210] Renamed object name 'AP_FIFO_img_0_cols_V_channel_U0' to 'img_0_cols_V_channel'
+@W [SYN-210] Renamed object name 'AP_FIFO_img_0_data_stream_0_V_U0' to 'img_0_data_stream_0_V'
+@W [SYN-210] Renamed object name 'AP_FIFO_img_0_data_stream_1_V_U0' to 'img_0_data_stream_1_V'
+@W [SYN-210] Renamed object name 'AP_FIFO_img_0_data_stream_2_V_U0' to 'img_0_data_stream_2_V'
+@I [HLS-0] Build ssdm time: 1 seconds per iteration
+@I [HLS-0] Finish building internal data model.
+@I [HLS-100] Command 'opt_and_import_c' returned 0; elapsed 4.82Total elapsed time: 142.842 sec.
+@I [HLS-111] Elapsed time: 8.65 seconds; current memory usage: 74.2 MB.
+@I [HLS-100] Command 'elaborate' returned 0; elapsed 8.33Total elapsed time: 142.843 sec.
+@I [HLS-100] Command "autosyn "
+@I [HLS-10] Starting hardware synthesis ...
+@0 [HLS-0] Starting hardware synthesis ...
+@I [HLS-0] Synthesizing C/C++ design ...
+@I [HLS-10] Synthesizing 'image_filter' ...
+@0 [HLS-0] Synthesizing 'image_filter' ...
+@I [HLS-100] Command "ap_set_top_model image_filter "
+@W [SYN-103] Legalizing function name 'init.1' to 'init_1'.
+@W [SYN-103] Legalizing function name 'AXIvideo2Mat<64,1080,1920,16>' to 'AXIvideo2Mat_64_1080_1920_16_s'.
+@W [SYN-103] Legalizing function name 'Mat2AXIvideo<64,1080,1920,16>' to 'Mat2AXIvideo_64_1080_1920_16_s'.
+@I [HLS-100] Command 'ap_set_top_model' returned 0; elapsed 0Total elapsed time: 142.844 sec.
+@I [HLS-100] Command "get_model_list image_filter -filter all-wo-channel -topdown "
+@I [HLS-100] Command 'get_model_list' returned 0; elapsed 0Total elapsed time: 142.844 sec.
+@I [HLS-100] Command "preproc_iomode -model image_filter "
+@I [HLS-100] Command 'preproc_iomode' returned 0; elapsed 0Total elapsed time: 142.874 sec.
+@I [HLS-100] Command "preproc_iomode -model Mat2AXIvideo<64,1080,1920,16> "
+@I [HLS-100] Command 'preproc_iomode' returned 0; elapsed 0Total elapsed time: 142.874 sec.
+@I [HLS-100] Command "preproc_iomode -model AXIvideo2Mat<64,1080,1920,16> "
+@I [HLS-100] Command 'preproc_iomode' returned 0; elapsed 0Total elapsed time: 142.874 sec.
+@I [HLS-100] Command "preproc_iomode -model init.1 "
+@I [HLS-100] Command 'preproc_iomode' returned 0; elapsed 0Total elapsed time: 142.874 sec.
+@I [HLS-100] Command "preproc_iomode -model init "
+@I [HLS-100] Command 'preproc_iomode' returned 0; elapsed 0Total elapsed time: 142.875 sec.
+@I [HLS-100] Command "get_model_list image_filter -filter all-wo-channel "
+@I [HLS-100] Command 'get_model_list' returned 0; elapsed 0Total elapsed time: 142.875 sec.
+@I [HLS-0] Model list for configure: init init.1 AXIvideo2Mat<64,1080,1920,16> Mat2AXIvideo<64,1080,1920,16> image_filter
+@I [HLS-0] Configuring Module : init ...
+@I [HLS-100] Command "set_default_model init "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 142.876 sec.
+@I [HLS-100] Command "apply_spec_resource_limit init "
+@I [HLS-100] Command 'apply_spec_resource_limit' returned 0; elapsed 0Total elapsed time: 142.876 sec.
+@I [HLS-0] Configuring Module : init.1 ...
+@I [HLS-100] Command "set_default_model init.1 "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 142.876 sec.
+@I [HLS-100] Command "apply_spec_resource_limit init.1 "
+@I [HLS-100] Command 'apply_spec_resource_limit' returned 0; elapsed 0Total elapsed time: 142.876 sec.
+@I [HLS-0] Configuring Module : AXIvideo2Mat<64,1080,1920,16> ...
+@I [HLS-100] Command "set_default_model AXIvideo2Mat<64,1080,1920,16> "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 142.876 sec.
+@I [HLS-100] Command "apply_spec_resource_limit AXIvideo2Mat<64,1080,1920,16> "
+@I [HLS-100] Command 'apply_spec_resource_limit' returned 0; elapsed 0Total elapsed time: 142.876 sec.
+@I [HLS-0] Configuring Module : Mat2AXIvideo<64,1080,1920,16> ...
+@I [HLS-100] Command "set_default_model Mat2AXIvideo<64,1080,1920,16> "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 142.876 sec.
+@I [HLS-100] Command "apply_spec_resource_limit Mat2AXIvideo<64,1080,1920,16> "
+@I [HLS-100] Command 'apply_spec_resource_limit' returned 0; elapsed 0Total elapsed time: 142.876 sec.
+@I [HLS-0] Configuring Module : image_filter ...
+@I [HLS-100] Command "set_default_model image_filter "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 142.876 sec.
+@I [HLS-100] Command "apply_spec_resource_limit image_filter "
+@I [HLS-100] Command 'apply_spec_resource_limit' returned 0; elapsed 0Total elapsed time: 142.876 sec.
+@I [HLS-0] Model list for preprocess: init init.1 AXIvideo2Mat<64,1080,1920,16> Mat2AXIvideo<64,1080,1920,16> image_filter
+@I [HLS-0] Preprocessing Module: init ...
+@I [HLS-100] Command "set_default_model init "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 142.877 sec.
+@I [HLS-100] Command "cdfg_preprocess -model init "
+@I [HLS-100] Command 'cdfg_preprocess' returned 0; elapsed 0Total elapsed time: 143.38 sec.
+@I [HLS-100] Command "rtl_gen_preprocess init "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 143.39 sec.
+@I [HLS-0] Preprocessing Module: init.1 ...
+@I [HLS-100] Command "set_default_model init.1 "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 143.39 sec.
+@I [HLS-100] Command "cdfg_preprocess -model init.1 "
+@I [HLS-100] Command 'cdfg_preprocess' returned 0; elapsed 0Total elapsed time: 143.39 sec.
+@I [HLS-100] Command "rtl_gen_preprocess init.1 "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 143.40 sec.
+@I [HLS-0] Preprocessing Module: AXIvideo2Mat<64,1080,1920,16> ...
+@I [HLS-100] Command "set_default_model AXIvideo2Mat<64,1080,1920,16> "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 143.40 sec.
+@I [HLS-100] Command "cdfg_preprocess -model AXIvideo2Mat<64,1080,1920,16> "
+@I [HLS-100] Command 'cdfg_preprocess' returned 0; elapsed 0Total elapsed time: 143.41 sec.
+@I [HLS-100] Command "rtl_gen_preprocess AXIvideo2Mat<64,1080,1920,16> "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 143.42 sec.
+@I [HLS-0] Preprocessing Module: Mat2AXIvideo<64,1080,1920,16> ...
+@I [HLS-100] Command "set_default_model Mat2AXIvideo<64,1080,1920,16> "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 143.42 sec.
+@I [HLS-100] Command "cdfg_preprocess -model Mat2AXIvideo<64,1080,1920,16> "
+@I [HLS-100] Command 'cdfg_preprocess' returned 0; elapsed 0Total elapsed time: 143.43 sec.
+@I [HLS-100] Command "rtl_gen_preprocess Mat2AXIvideo<64,1080,1920,16> "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 143.44 sec.
+@I [HLS-0] Preprocessing Module: image_filter ...
+@I [HLS-100] Command "set_default_model image_filter "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 143.44 sec.
+@I [HLS-100] Command "cdfg_preprocess -model image_filter "
+@I [HLS-100] Command 'cdfg_preprocess' returned 0; elapsed 0Total elapsed time: 143.44 sec.
+@I [HLS-100] Command "rtl_gen_preprocess image_filter "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 143.45 sec.
+@I [HLS-0] Model list for synthesis: init init.1 AXIvideo2Mat<64,1080,1920,16> Mat2AXIvideo<64,1080,1920,16> image_filter
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'init' 
+@0 [HLS-0] -- Scheduling module 'init' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model init "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 143.46 sec.
+@I [HLS-100] Command "schedule -model init "
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-11] Finished scheduling.
+@I [HLS-100] Command 'schedule' returned 0; elapsed 0.03Total elapsed time: 143.195 sec.
+@I [HLS-111] Elapsed time: 0.03 seconds; current memory usage: 74.4 MB.
+@I [HLS-100] Command "report -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/init.verbose.sched.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.01Total elapsed time: 143.251 sec.
+@I [HLS-100] Command "db_write -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/init.sched.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0Total elapsed time: 143.271 sec.
+@I [HLS-0] Finish scheduling init.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'init' 
+@0 [HLS-0] -- Exploring micro-architecture for module 'init' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model init "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 143.287 sec.
+@I [HLS-100] Command "bind -model init "
+@I [BIND-110] clear=
+@I [BIND-110] debug=
+@I [BIND-110] drf=
+@I [BIND-110] effort=
+@I [BIND-110] fast_refine=
+@I [BIND-110] fu_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] global_opt=
+@I [BIND-110] gsearch=
+@I [BIND-110] help=
+@I [BIND-110] help-hidden=
+@I [BIND-110] min_mem_port=
+@I [BIND-110] min_op=
+@I [BIND-110] minreg=
+@I [BIND-110] ml=
+@I [BIND-110] model=init
+@I [BIND-110] no_false_path=
+@I [BIND-110] no_min_op=
+@I [BIND-110] normalize=
+@I [BIND-110] quiet=
+@I [BIND-110] refine=
+@I [BIND-110] reg_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] search=
+@I [BIND-110] tight_delay=
+@I [BIND-110] verbose=
+@I [BIND-110] wFF=
+@I [BIND-110] wFU=
+@I [BIND-110] wMUX=
+@I [BIND-110] wNET=
+@I [BIND-100] Starting micro-architecture binding ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding resource limited operations ...
+@I [BIND-100] Finished micro-architecture binding.
+@I [HLS-100] Command 'bind' returned 0; elapsed 0Total elapsed time: 143.326 sec.
+@I [HLS-111] Elapsed time: 0.01 seconds; current memory usage: 74.5 MB.
+@I [HLS-100] Command "report -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/init.verbose.bind.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0Total elapsed time: 143.339 sec.
+@I [HLS-100] Command "db_write -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/init.bind.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.01Total elapsed time: 143.349 sec.
+@I [HLS-0] Finish binding init.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'init_1' 
+@0 [HLS-0] -- Scheduling module 'init_1' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model init.1 "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 143.349 sec.
+@I [HLS-100] Command "schedule -model init.1 "
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-11] Finished scheduling.
+@I [HLS-100] Command 'schedule' returned 0; elapsed 0Total elapsed time: 143.357 sec.
+@I [HLS-111] Elapsed time: 0.01 seconds; current memory usage: 74.5 MB.
+@I [HLS-100] Command "report -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/init_1.verbose.sched.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0Total elapsed time: 143.373 sec.
+@I [HLS-100] Command "db_write -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/init_1.sched.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0Total elapsed time: 143.379 sec.
+@I [HLS-0] Finish scheduling init.1.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'init_1' 
+@0 [HLS-0] -- Exploring micro-architecture for module 'init_1' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model init.1 "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 143.380 sec.
+@I [HLS-100] Command "bind -model init.1 "
+@I [BIND-110] clear=
+@I [BIND-110] debug=
+@I [BIND-110] drf=
+@I [BIND-110] effort=
+@I [BIND-110] fast_refine=
+@I [BIND-110] fu_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] global_opt=
+@I [BIND-110] gsearch=
+@I [BIND-110] help=
+@I [BIND-110] help-hidden=
+@I [BIND-110] min_mem_port=
+@I [BIND-110] min_op=
+@I [BIND-110] minreg=
+@I [BIND-110] ml=
+@I [BIND-110] model=init.1
+@I [BIND-110] no_false_path=
+@I [BIND-110] no_min_op=
+@I [BIND-110] normalize=
+@I [BIND-110] quiet=
+@I [BIND-110] refine=
+@I [BIND-110] reg_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] search=
+@I [BIND-110] tight_delay=
+@I [BIND-110] verbose=
+@I [BIND-110] wFF=
+@I [BIND-110] wFU=
+@I [BIND-110] wMUX=
+@I [BIND-110] wNET=
+@I [BIND-100] Starting micro-architecture binding ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding resource limited operations ...
+@I [BIND-100] Finished micro-architecture binding.
+@I [HLS-100] Command 'bind' returned 0; elapsed 0Total elapsed time: 143.381 sec.
+@I [HLS-111] Elapsed time: 0.01 seconds; current memory usage: 74.6 MB.
+@I [HLS-100] Command "report -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/init_1.verbose.bind.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0Total elapsed time: 143.388 sec.
+@I [HLS-100] Command "db_write -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/init_1.bind.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0Total elapsed time: 143.395 sec.
+@I [HLS-0] Finish binding init.1.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'AXIvideo2Mat_64_1080_1920_16_s' 
+@0 [HLS-0] -- Scheduling module 'AXIvideo2Mat_64_1080_1920_16_s' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model AXIvideo2Mat<64,1080,1920,16> "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 143.395 sec.
+@I [HLS-100] Command "schedule -model AXIvideo2Mat<64,1080,1920,16> "
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-61] Pipelining loop 'Loop 1'.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 1.
+@I [SCHED-61] Pipelining loop 'Loop 2.1'.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 2.
+@I [SCHED-61] Pipelining loop 'Loop 2.2'.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 1.
+@I [SCHED-11] Finished scheduling.
+@I [HLS-100] Command 'schedule' returned 0; elapsed 0.11Total elapsed time: 143.505 sec.
+@I [HLS-111] Elapsed time: 0.11 seconds; current memory usage: 74.9 MB.
+@I [HLS-100] Command "report -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/AXIvideo2Mat_64_1080_1920_16_s.verbose.sched.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0Total elapsed time: 143.520 sec.
+@I [HLS-100] Command "db_write -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/AXIvideo2Mat_64_1080_1920_16_s.sched.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.01Total elapsed time: 143.538 sec.
+@I [HLS-0] Finish scheduling AXIvideo2Mat<64,1080,1920,16>.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'AXIvideo2Mat_64_1080_1920_16_s' 
+@0 [HLS-0] -- Exploring micro-architecture for module 'AXIvideo2Mat_64_1080_1920_16_s' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model AXIvideo2Mat<64,1080,1920,16> "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 143.542 sec.
+@I [HLS-100] Command "bind -model AXIvideo2Mat<64,1080,1920,16> "
+@I [BIND-110] clear=
+@I [BIND-110] debug=
+@I [BIND-110] drf=
+@I [BIND-110] effort=
+@I [BIND-110] fast_refine=
+@I [BIND-110] fu_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] global_opt=
+@I [BIND-110] gsearch=
+@I [BIND-110] help=
+@I [BIND-110] help-hidden=
+@I [BIND-110] min_mem_port=
+@I [BIND-110] min_op=
+@I [BIND-110] minreg=
+@I [BIND-110] ml=
+@I [BIND-110] model=AXIvideo2Mat<64,1080,1920,16>
+@I [BIND-110] no_false_path=
+@I [BIND-110] no_min_op=
+@I [BIND-110] normalize=
+@I [BIND-110] quiet=
+@I [BIND-110] refine=
+@I [BIND-110] reg_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] search=
+@I [BIND-110] tight_delay=
+@I [BIND-110] verbose=
+@I [BIND-110] wFF=
+@I [BIND-110] wFU=
+@I [BIND-110] wMUX=
+@I [BIND-110] wNET=
+@I [BIND-100] Starting micro-architecture binding ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding resource limited operations ...
+@I [BIND-100] Finished micro-architecture binding.
+@I [HLS-100] Command 'bind' returned 0; elapsed 0.01Total elapsed time: 143.548 sec.
+@I [HLS-111] Elapsed time: 0.02 seconds; current memory usage: 75.3 MB.
+@I [HLS-100] Command "report -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/AXIvideo2Mat_64_1080_1920_16_s.verbose.bind.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.02Total elapsed time: 143.574 sec.
+@I [HLS-100] Command "db_write -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/AXIvideo2Mat_64_1080_1920_16_s.bind.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.01Total elapsed time: 143.608 sec.
+@I [HLS-0] Finish binding AXIvideo2Mat<64,1080,1920,16>.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'Mat2AXIvideo_64_1080_1920_16_s' 
+@0 [HLS-0] -- Scheduling module 'Mat2AXIvideo_64_1080_1920_16_s' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model Mat2AXIvideo<64,1080,1920,16> "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 143.609 sec.
+@I [HLS-100] Command "schedule -model Mat2AXIvideo<64,1080,1920,16> "
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-61] Pipelining loop 'Loop 1.1'.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 2.
+@I [SCHED-11] Finished scheduling.
+@I [HLS-100] Command 'schedule' returned 0; elapsed 0.07Total elapsed time: 143.687 sec.
+@I [HLS-111] Elapsed time: 0.1 seconds; current memory usage: 75.4 MB.
+@I [HLS-100] Command "report -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/Mat2AXIvideo_64_1080_1920_16_s.verbose.sched.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0Total elapsed time: 143.700 sec.
+@I [HLS-100] Command "db_write -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/Mat2AXIvideo_64_1080_1920_16_s.sched.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.01Total elapsed time: 143.732 sec.
+@I [HLS-0] Finish scheduling Mat2AXIvideo<64,1080,1920,16>.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'Mat2AXIvideo_64_1080_1920_16_s' 
+@0 [HLS-0] -- Exploring micro-architecture for module 'Mat2AXIvideo_64_1080_1920_16_s' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model Mat2AXIvideo<64,1080,1920,16> "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 143.732 sec.
+@I [HLS-100] Command "bind -model Mat2AXIvideo<64,1080,1920,16> "
+@I [BIND-110] clear=
+@I [BIND-110] debug=
+@I [BIND-110] drf=
+@I [BIND-110] effort=
+@I [BIND-110] fast_refine=
+@I [BIND-110] fu_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] global_opt=
+@I [BIND-110] gsearch=
+@I [BIND-110] help=
+@I [BIND-110] help-hidden=
+@I [BIND-110] min_mem_port=
+@I [BIND-110] min_op=
+@I [BIND-110] minreg=
+@I [BIND-110] ml=
+@I [BIND-110] model=Mat2AXIvideo<64,1080,1920,16>
+@I [BIND-110] no_false_path=
+@I [BIND-110] no_min_op=
+@I [BIND-110] normalize=
+@I [BIND-110] quiet=
+@I [BIND-110] refine=
+@I [BIND-110] reg_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] search=
+@I [BIND-110] tight_delay=
+@I [BIND-110] verbose=
+@I [BIND-110] wFF=
+@I [BIND-110] wFU=
+@I [BIND-110] wMUX=
+@I [BIND-110] wNET=
+@I [BIND-100] Starting micro-architecture binding ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding resource limited operations ...
+@I [BIND-100] Finished micro-architecture binding.
+@I [HLS-100] Command 'bind' returned 0; elapsed 0.01Total elapsed time: 143.736 sec.
+@I [HLS-111] Elapsed time: 0.02 seconds; current memory usage: 75.7 MB.
+@I [HLS-100] Command "report -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/Mat2AXIvideo_64_1080_1920_16_s.verbose.bind.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.01Total elapsed time: 143.755 sec.
+@I [HLS-100] Command "db_write -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/Mat2AXIvideo_64_1080_1920_16_s.bind.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.01Total elapsed time: 143.771 sec.
+@I [HLS-0] Finish binding Mat2AXIvideo<64,1080,1920,16>.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'image_filter' 
+@0 [HLS-0] -- Scheduling module 'image_filter' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model image_filter "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 143.772 sec.
+@I [HLS-100] Command "schedule -model image_filter "
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-11] Finished scheduling.
+@I [HLS-100] Command 'schedule' returned 0; elapsed 0.06Total elapsed time: 143.838 sec.
+@I [HLS-111] Elapsed time: 0.08 seconds; current memory usage: 75.8 MB.
+@I [HLS-100] Command "report -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/image_filter.verbose.sched.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.01Total elapsed time: 143.850 sec.
+@I [HLS-100] Command "db_write -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/image_filter.sched.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0Total elapsed time: 143.862 sec.
+@I [HLS-0] Finish scheduling image_filter.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'image_filter' 
+@0 [HLS-0] -- Exploring micro-architecture for module 'image_filter' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model image_filter "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 143.862 sec.
+@I [HLS-100] Command "bind -model image_filter "
+@I [BIND-110] clear=
+@I [BIND-110] debug=
+@I [BIND-110] drf=
+@I [BIND-110] effort=
+@I [BIND-110] fast_refine=
+@I [BIND-110] fu_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] global_opt=
+@I [BIND-110] gsearch=
+@I [BIND-110] help=
+@I [BIND-110] help-hidden=
+@I [BIND-110] min_mem_port=
+@I [BIND-110] min_op=
+@I [BIND-110] minreg=
+@I [BIND-110] ml=
+@I [BIND-110] model=image_filter
+@I [BIND-110] no_false_path=
+@I [BIND-110] no_min_op=
+@I [BIND-110] normalize=
+@I [BIND-110] quiet=
+@I [BIND-110] refine=
+@I [BIND-110] reg_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] search=
+@I [BIND-110] tight_delay=
+@I [BIND-110] verbose=
+@I [BIND-110] wFF=
+@I [BIND-110] wFU=
+@I [BIND-110] wMUX=
+@I [BIND-110] wNET=
+@I [BIND-100] Starting micro-architecture binding ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding resource limited operations ...
+@I [BIND-100] Finished micro-architecture binding.
+@I [HLS-100] Command 'bind' returned 0; elapsed 0.02Total elapsed time: 143.881 sec.
+@I [HLS-111] Elapsed time: 0.03 seconds; current memory usage: 76.1 MB.
+@I [HLS-100] Command "report -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/image_filter.verbose.bind.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.02Total elapsed time: 143.917 sec.
+@I [HLS-100] Command "db_write -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/image_filter.bind.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.01Total elapsed time: 143.932 sec.
+@I [HLS-0] Finish binding image_filter.
+@I [HLS-100] Command "get_model_list image_filter -filter all-wo-channel "
+@I [HLS-100] Command 'get_model_list' returned 0; elapsed 0Total elapsed time: 143.932 sec.
+@I [HLS-0] Preprocessing for RTLGen ...
+@I [HLS-100] Command "rtl_gen_preprocess init "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 143.933 sec.
+@I [HLS-100] Command "rtl_gen_preprocess init.1 "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 143.933 sec.
+@I [HLS-100] Command "rtl_gen_preprocess AXIvideo2Mat<64,1080,1920,16> "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 143.934 sec.
+@I [HLS-100] Command "rtl_gen_preprocess Mat2AXIvideo<64,1080,1920,16> "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 143.935 sec.
+@I [HLS-100] Command "rtl_gen_preprocess image_filter "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 143.935 sec.
+@I [HLS-0] Model list for RTL generation: init init.1 AXIvideo2Mat<64,1080,1920,16> Mat2AXIvideo<64,1080,1920,16> image_filter
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'init' 
+@0 [HLS-0] -- Generating RTL for module 'init' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "create_rtl_model init -vendor xilinx -mg_file /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/init.compgen.tcl "
+@I [RTGEN-100] Finished creating RTL model for 'init'.
+@I [HLS-100] Command 'create_rtl_model' returned 0; elapsed 0Total elapsed time: 143.973 sec.
+@I [HLS-111] Elapsed time: 0.04 seconds; current memory usage: 76.2 MB.
+@I [HLS-100] Command "source /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/image_filter.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 143.990 sec.
+@I [HLS-100] Command "gen_rtl init -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/syn/systemc/init -synmodules init init.1 AXIvideo2Mat<64,1080,1920,16> Mat2AXIvideo<64,1080,1920,16> image_filter "
+@I [WSYSC-301] Generating RTL SystemC for 'init'.
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 144.26 sec.
+@I [HLS-100] Command "gen_rtl init -style xilinx -f -lang vhdl -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/syn/vhdl/init "
+@I [WVHDL-304] Generating RTL VHDL for 'init'.
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 144.31 sec.
+@I [HLS-100] Command "gen_rtl init -style xilinx -f -lang vlog -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/syn/verilog/init "
+@I [WVLOG-307] Generating RTL Verilog for 'init'.
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 144.34 sec.
+@I [HLS-100] Command "gen_tb_info init -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/init -p /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db "
+@I [HLS-100] Command 'gen_tb_info' returned 0; elapsed 0Total elapsed time: 144.44 sec.
+@I [HLS-100] Command "report -model init -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/syn/report/init_csynth.rpt -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0Total elapsed time: 144.52 sec.
+@I [HLS-100] Command "report -model init -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/syn/report/init_csynth.xml -f -x "
+@I [HLS-100] Command 'report' returned 0; elapsed 0Total elapsed time: 144.68 sec.
+@I [HLS-100] Command "report -model init -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/init.verbose.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.01Total elapsed time: 144.104 sec.
+@I [HLS-100] Command "db_write -model init -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/init.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0Total elapsed time: 144.114 sec.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'init_1' 
+@0 [HLS-0] -- Generating RTL for module 'init_1' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "create_rtl_model init.1 -vendor xilinx -mg_file /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/init_1.compgen.tcl "
+@I [RTGEN-100] Finished creating RTL model for 'init_1'.
+@I [HLS-100] Command 'create_rtl_model' returned 0; elapsed 0.01Total elapsed time: 144.118 sec.
+@I [HLS-111] Elapsed time: 0.03 seconds; current memory usage: 76.4 MB.
+@I [HLS-100] Command "source /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/image_filter.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 144.122 sec.
+@I [HLS-100] Command "gen_rtl init.1 -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/syn/systemc/init_1 -synmodules init init.1 AXIvideo2Mat<64,1080,1920,16> Mat2AXIvideo<64,1080,1920,16> image_filter "
+@I [WSYSC-301] Generating RTL SystemC for 'init_1'.
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 144.135 sec.
+@I [HLS-100] Command "gen_rtl init.1 -style xilinx -f -lang vhdl -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/syn/vhdl/init_1 "
+@I [WVHDL-304] Generating RTL VHDL for 'init_1'.
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 144.177 sec.
+@I [HLS-100] Command "gen_rtl init.1 -style xilinx -f -lang vlog -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/syn/verilog/init_1 "
+@I [WVLOG-307] Generating RTL Verilog for 'init_1'.
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 144.187 sec.
+@I [HLS-100] Command "gen_tb_info init.1 -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/init_1 -p /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db "
+@I [HLS-100] Command 'gen_tb_info' returned 0; elapsed 0Total elapsed time: 144.200 sec.
+@I [HLS-100] Command "report -model init.1 -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/syn/report/init_1_csynth.rpt -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0Total elapsed time: 144.206 sec.
+@I [HLS-100] Command "report -model init.1 -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/syn/report/init_1_csynth.xml -f -x "
+@I [HLS-100] Command 'report' returned 0; elapsed 0Total elapsed time: 144.210 sec.
+@I [HLS-100] Command "report -model init.1 -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/init_1.verbose.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.01Total elapsed time: 144.220 sec.
+@I [HLS-100] Command "db_write -model init.1 -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/init_1.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0Total elapsed time: 144.230 sec.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'AXIvideo2Mat_64_1080_1920_16_s' 
+@0 [HLS-0] -- Generating RTL for module 'AXIvideo2Mat_64_1080_1920_16_s' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "create_rtl_model AXIvideo2Mat<64,1080,1920,16> -vendor xilinx -mg_file /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/AXIvideo2Mat_64_1080_1920_16_s.compgen.tcl "
+@I [RTGEN-100] Finished creating RTL model for 'AXIvideo2Mat_64_1080_1920_16_s'.
+@I [HLS-100] Command 'create_rtl_model' returned 0; elapsed 0.02Total elapsed time: 144.265 sec.
+@I [HLS-111] Elapsed time: 0.03 seconds; current memory usage: 76.7 MB.
+@I [HLS-100] Command "source /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/image_filter.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 144.269 sec.
+@I [HLS-100] Command "gen_rtl AXIvideo2Mat<64,1080,1920,16> -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/syn/systemc/AXIvideo2Mat_64_1080_1920_16_s -synmodules init init.1 AXIvideo2Mat<64,1080,1920,16> Mat2AXIvideo<64,1080,1920,16> image_filter "
+@I [WSYSC-301] Generating RTL SystemC for 'AXIvideo2Mat_64_1080_1920_16_s'.
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 144.277 sec.
+@I [HLS-100] Command "gen_rtl AXIvideo2Mat<64,1080,1920,16> -style xilinx -f -lang vhdl -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/syn/vhdl/AXIvideo2Mat_64_1080_1920_16_s "
+@I [WVHDL-304] Generating RTL VHDL for 'AXIvideo2Mat_64_1080_1920_16_s'.
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 144.282 sec.
+@I [HLS-100] Command "gen_rtl AXIvideo2Mat<64,1080,1920,16> -style xilinx -f -lang vlog -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/syn/verilog/AXIvideo2Mat_64_1080_1920_16_s "
+@I [WVLOG-307] Generating RTL Verilog for 'AXIvideo2Mat_64_1080_1920_16_s'.
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 144.312 sec.
+@I [HLS-100] Command "gen_tb_info AXIvideo2Mat<64,1080,1920,16> -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/AXIvideo2Mat_64_1080_1920_16_s -p /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db "
+@I [HLS-100] Command 'gen_tb_info' returned 0; elapsed 0Total elapsed time: 144.354 sec.
+@I [HLS-100] Command "report -model AXIvideo2Mat<64,1080,1920,16> -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/syn/report/AXIvideo2Mat_64_1080_1920_16_s_csynth.rpt -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.01Total elapsed time: 144.368 sec.
+@I [HLS-100] Command "report -model AXIvideo2Mat<64,1080,1920,16> -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/syn/report/AXIvideo2Mat_64_1080_1920_16_s_csynth.xml -f -x "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.01Total elapsed time: 144.378 sec.
+@I [HLS-100] Command "report -model AXIvideo2Mat<64,1080,1920,16> -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/AXIvideo2Mat_64_1080_1920_16_s.verbose.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.03Total elapsed time: 144.417 sec.
+@I [HLS-100] Command "db_write -model AXIvideo2Mat<64,1080,1920,16> -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/AXIvideo2Mat_64_1080_1920_16_s.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.02Total elapsed time: 144.448 sec.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'Mat2AXIvideo_64_1080_1920_16_s' 
+@0 [HLS-0] -- Generating RTL for module 'Mat2AXIvideo_64_1080_1920_16_s' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "create_rtl_model Mat2AXIvideo<64,1080,1920,16> -vendor xilinx -mg_file /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/Mat2AXIvideo_64_1080_1920_16_s.compgen.tcl "
+@I [RTGEN-100] Finished creating RTL model for 'Mat2AXIvideo_64_1080_1920_16_s'.
+@I [HLS-100] Command 'create_rtl_model' returned 0; elapsed 0.02Total elapsed time: 144.465 sec.
+@I [HLS-111] Elapsed time: 0.1 seconds; current memory usage: 77 MB.
+@I [HLS-100] Command "source /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/image_filter.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 144.469 sec.
+@I [HLS-100] Command "gen_rtl Mat2AXIvideo<64,1080,1920,16> -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/syn/systemc/Mat2AXIvideo_64_1080_1920_16_s -synmodules init init.1 AXIvideo2Mat<64,1080,1920,16> Mat2AXIvideo<64,1080,1920,16> image_filter "
+@I [WSYSC-301] Generating RTL SystemC for 'Mat2AXIvideo_64_1080_1920_16_s'.
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 144.479 sec.
+@I [HLS-100] Command "gen_rtl Mat2AXIvideo<64,1080,1920,16> -style xilinx -f -lang vhdl -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/syn/vhdl/Mat2AXIvideo_64_1080_1920_16_s "
+@I [WVHDL-304] Generating RTL VHDL for 'Mat2AXIvideo_64_1080_1920_16_s'.
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 144.484 sec.
+@I [HLS-100] Command "gen_rtl Mat2AXIvideo<64,1080,1920,16> -style xilinx -f -lang vlog -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/syn/verilog/Mat2AXIvideo_64_1080_1920_16_s "
+@I [WVLOG-307] Generating RTL Verilog for 'Mat2AXIvideo_64_1080_1920_16_s'.
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 144.488 sec.
+@I [HLS-100] Command "gen_tb_info Mat2AXIvideo<64,1080,1920,16> -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/Mat2AXIvideo_64_1080_1920_16_s -p /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db "
+@I [HLS-100] Command 'gen_tb_info' returned 0; elapsed 0Total elapsed time: 144.498 sec.
+@I [HLS-100] Command "report -model Mat2AXIvideo<64,1080,1920,16> -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/syn/report/Mat2AXIvideo_64_1080_1920_16_s_csynth.rpt -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.02Total elapsed time: 144.510 sec.
+@I [HLS-100] Command "report -model Mat2AXIvideo<64,1080,1920,16> -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/syn/report/Mat2AXIvideo_64_1080_1920_16_s_csynth.xml -f -x "
+@I [HLS-100] Command 'report' returned 0; elapsed 0Total elapsed time: 144.519 sec.
+@I [HLS-100] Command "report -model Mat2AXIvideo<64,1080,1920,16> -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/Mat2AXIvideo_64_1080_1920_16_s.verbose.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.02Total elapsed time: 144.565 sec.
+@I [HLS-100] Command "db_write -model Mat2AXIvideo<64,1080,1920,16> -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/Mat2AXIvideo_64_1080_1920_16_s.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.01Total elapsed time: 144.588 sec.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'image_filter' 
+@0 [HLS-0] -- Generating RTL for module 'image_filter' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "create_rtl_model image_filter -vendor xilinx -mg_file /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/image_filter.compgen.tcl "
+@I [RTGEN-500] Setting interface mode on port 'image_filter/input_V_data_V' to 'ap_fifo'.
+@I [RTGEN-500] Setting interface mode on port 'image_filter/input_V_keep_V' to 'ap_fifo'.
+@I [RTGEN-500] Setting interface mode on port 'image_filter/input_V_strb_V' to 'ap_fifo'.
+@I [RTGEN-500] Setting interface mode on port 'image_filter/input_V_user_V' to 'ap_fifo'.
+@I [RTGEN-500] Setting interface mode on port 'image_filter/input_V_last_V' to 'ap_fifo'.
+@I [RTGEN-500] Setting interface mode on port 'image_filter/input_V_id_V' to 'ap_fifo'.
+@I [RTGEN-500] Setting interface mode on port 'image_filter/input_V_dest_V' to 'ap_fifo'.
+@I [RTGEN-500] Setting interface mode on port 'image_filter/output_V_data_V' to 'ap_fifo'.
+@I [RTGEN-500] Setting interface mode on port 'image_filter/output_V_keep_V' to 'ap_fifo'.
+@I [RTGEN-500] Setting interface mode on port 'image_filter/output_V_strb_V' to 'ap_fifo'.
+@I [RTGEN-500] Setting interface mode on port 'image_filter/output_V_user_V' to 'ap_fifo'.
+@I [RTGEN-500] Setting interface mode on port 'image_filter/output_V_last_V' to 'ap_fifo'.
+@I [RTGEN-500] Setting interface mode on port 'image_filter/output_V_id_V' to 'ap_fifo'.
+@I [RTGEN-500] Setting interface mode on port 'image_filter/output_V_dest_V' to 'ap_fifo'.
+@I [RTGEN-500] Setting interface mode on port 'image_filter/rows' to 'ap_stable'.
+@I [RTGEN-500] Setting interface mode on port 'image_filter/cols' to 'ap_stable'.
+@I [RTGEN-100] Finished creating RTL model for 'image_filter'.
+@I [HLS-100] Command 'create_rtl_model' returned 0; elapsed 0.01Total elapsed time: 144.614 sec.
+@I [HLS-111] Elapsed time: 0.06 seconds; current memory usage: 77.7 MB.
+@I [HLS-100] Command "source /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/image_filter.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 144.634 sec.
+@I [HLS-100] Command "gen_rtl image_filter -istop -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/syn/systemc/image_filter -synmodules init init.1 AXIvideo2Mat<64,1080,1920,16> Mat2AXIvideo<64,1080,1920,16> image_filter "
+@I [WSYSC-301] Generating RTL SystemC for 'image_filter'.
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 144.666 sec.
+@I [HLS-100] Command "gen_rtl image_filter -istop -style xilinx -f -lang vhdl -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/syn/vhdl/image_filter "
+@I [WVHDL-304] Generating RTL VHDL for 'image_filter'.
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.02Total elapsed time: 144.690 sec.
+@I [HLS-100] Command "gen_rtl image_filter -istop -style xilinx -f -lang vlog -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/syn/verilog/image_filter "
+@I [WVLOG-307] Generating RTL Verilog for 'image_filter'.
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.02Total elapsed time: 144.723 sec.
+@I [HLS-100] Command "export_constraint_db -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/image_filter.constraint.tcl -f -tool general "
+@I [HLS-100] Command 'export_constraint_db' returned 0; elapsed 0Total elapsed time: 144.729 sec.
+@I [HLS-100] Command "report -model image_filter -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/image_filter.design.xml -verbose -f -dv "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.05Total elapsed time: 144.784 sec.
+@I [HLS-100] Command "gen_tb_info image_filter -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/image_filter -p /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db "
+@I [HLS-100] Command 'gen_tb_info' returned 0; elapsed 0Total elapsed time: 144.811 sec.
+@I [HLS-100] Command "report -model image_filter -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/syn/report/image_filter_csynth.rpt -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.02Total elapsed time: 144.836 sec.
+@I [HLS-100] Command "report -model image_filter -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/syn/report/image_filter_csynth.xml -f -x "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.01Total elapsed time: 144.856 sec.
+@I [HLS-100] Command "report -model image_filter -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/image_filter.verbose.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.05Total elapsed time: 144.906 sec.
+@I [HLS-100] Command "db_write -model image_filter -o /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/image_filter.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.02Total elapsed time: 144.938 sec.
+@I [HLS-100] Command "sc_get_clocks image_filter "
+@I [HLS-100] Command 'sc_get_clocks' returned 0; elapsed 0Total elapsed time: 144.940 sec.
+@I [HLS-100] Command "sc_get_portdomain image_filter "
+@I [HLS-100] Command 'sc_get_portdomain' returned 0; elapsed 0Total elapsed time: 144.940 sec.
+@I [HLS-0] Model list for RTL component generation: init init.1 AXIvideo2Mat<64,1080,1920,16> Mat2AXIvideo<64,1080,1920,16> image_filter
+@I [HLS-0] Handling components in module [init] ... 
+@I [HLS-100] Command "source /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/init.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 144.948 sec.
+@I [HLS-0] Handling components in module [init_1] ... 
+@I [HLS-100] Command "source /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/init_1.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 144.952 sec.
+@I [HLS-0] Handling components in module [AXIvideo2Mat_64_1080_1920_16_s] ... 
+@I [HLS-100] Command "source /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/AXIvideo2Mat_64_1080_1920_16_s.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 144.957 sec.
+@I [HLS-0] Handling components in module [Mat2AXIvideo_64_1080_1920_16_s] ... 
+@I [HLS-100] Command "source /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/Mat2AXIvideo_64_1080_1920_16_s.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 144.962 sec.
+@I [HLS-0] Handling components in module [image_filter] ... 
+@I [HLS-100] Command "source /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/image_filter.compgen.tcl "
+@I [HLS-0] Found component FIFO_image_filter_img_0_rows_V.
+@I [HLS-0] Append model FIFO_image_filter_img_0_rows_V
+@I [HLS-0] Found component FIFO_image_filter_img_0_rows_V_channel.
+@I [HLS-0] Append model FIFO_image_filter_img_0_rows_V_channel
+@I [HLS-0] Found component FIFO_image_filter_img_0_cols_V.
+@I [HLS-0] Append model FIFO_image_filter_img_0_cols_V
+@I [HLS-0] Found component FIFO_image_filter_img_0_cols_V_channel.
+@I [HLS-0] Append model FIFO_image_filter_img_0_cols_V_channel
+@I [HLS-0] Found component FIFO_image_filter_img_0_data_stream_0_V.
+@I [HLS-0] Append model FIFO_image_filter_img_0_data_stream_0_V
+@I [HLS-0] Found component FIFO_image_filter_img_0_data_stream_1_V.
+@I [HLS-0] Append model FIFO_image_filter_img_0_data_stream_1_V
+@I [HLS-0] Found component FIFO_image_filter_img_0_data_stream_2_V.
+@I [HLS-0] Append model FIFO_image_filter_img_0_data_stream_2_V
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 144.968 sec.
+@I [HLS-10] Finished generating all RTL models.
+@0 [HLS-0] Finished generating all RTL models.
+@I [HLS-0] Append model init
+@I [HLS-0] Append model init_1
+@I [HLS-0] Append model AXIvideo2Mat_64_1080_1920_16_s
+@I [HLS-0] Append model Mat2AXIvideo_64_1080_1920_16_s
+@I [HLS-0] Append model image_filter
+@I [HLS-0] Generating RTL model list ...
+@I [HLS-0] All models in this session: FIFO_image_filter_img_0_rows_V FIFO_image_filter_img_0_rows_V_channel FIFO_image_filter_img_0_cols_V FIFO_image_filter_img_0_cols_V_channel FIFO_image_filter_img_0_data_stream_0_V FIFO_image_filter_img_0_data_stream_1_V FIFO_image_filter_img_0_data_stream_2_V init init_1 AXIvideo2Mat_64_1080_1920_16_s Mat2AXIvideo_64_1080_1920_16_s image_filter
+@I [HLS-0] To file: write model FIFO_image_filter_img_0_rows_V
+@I [HLS-0] To file: write model FIFO_image_filter_img_0_rows_V_channel
+@I [HLS-0] To file: write model FIFO_image_filter_img_0_cols_V
+@I [HLS-0] To file: write model FIFO_image_filter_img_0_cols_V_channel
+@I [HLS-0] To file: write model FIFO_image_filter_img_0_data_stream_0_V
+@I [HLS-0] To file: write model FIFO_image_filter_img_0_data_stream_1_V
+@I [HLS-0] To file: write model FIFO_image_filter_img_0_data_stream_2_V
+@I [HLS-0] To file: write model init
+@I [HLS-0] To file: write model init_1
+@I [HLS-0] To file: write model AXIvideo2Mat_64_1080_1920_16_s
+@I [HLS-0] To file: write model Mat2AXIvideo_64_1080_1920_16_s
+@I [HLS-0] To file: write model image_filter
+@I [HLS-0] Finished generating RTL model list.
+
+
+@I [HLS-100] Command "export_ssdm /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/a.export.ll "
+@I [HLS-100] Command 'export_ssdm' returned 0; elapsed 0Total elapsed time: 144.985 sec.
+@I [HLS-100] Command "source /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 144.995 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/generic/autopilot/common.gen "
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/generic/autopilot/APCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 145.90 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 145.91 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/generic/autopilot/op.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 145.97 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/generic/autopilot/op_simcore.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 145.100 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/generic/autopilot/interface.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 145.100 sec.
+@I [HLS-100] Command "source /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 145.108 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/zynq/zynq.gen "
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/common/virtex.gen "
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/common/xilinx.gen "
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/interface/plb46.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 145.111 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/interface/fsl.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 145.112 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/interface/axi4.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 145.115 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/scripts/xilinxcoregen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 145.126 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/interface/XilEDKCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 145.138 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.02Total elapsed time: 145.138 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/common/dsp48.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 145.139 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.02Total elapsed time: 145.139 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.02Total elapsed time: 145.139 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/zynq/zynq_fpv6.gen "
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/common/xilinx_fpv6.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 145.141 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 145.141 sec.
+@I [HLS-100] Command "source /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 145.151 sec.
+@I [HLS-100] Command "source /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 145.155 sec.
+@I [HLS-100] Command "source /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/init.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 145.164 sec.
+@I [HLS-100] Command "source /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/init_1.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 145.167 sec.
+@I [HLS-100] Command "source /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/AXIvideo2Mat_64_1080_1920_16_s.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 145.170 sec.
+@I [HLS-100] Command "source /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/Mat2AXIvideo_64_1080_1920_16_s.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 145.172 sec.
+@I [HLS-100] Command "source /nfs/TUEIEDAprojects/SystemDesign/work/zynq/umair-razzaq/xapp1167/sw/erode/prj/solution1/.autopilot/db/image_filter.compgen.tcl "
+@I [IMPL-285] Implementing FIFO 'FIFO_image_filter_img_0_rows_V' as shiftReg.
+@I [IMPL-285] Implementing FIFO 'FIFO_image_filter_img_0_rows_V_channel' as shiftReg.
+@I [IMPL-285] Implementing FIFO 'FIFO_image_filter_img_0_cols_V' as shiftReg.
+@I [IMPL-285] Implementing FIFO 'FIFO_image_filter_img_0_cols_V_channel' as shiftReg.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.05Total elapsed time: 145.392 sec.
+@I [HLS-100] Command 'autosyn' returned 0; elapsed 1.02Total elapsed time: 145.639 sec.
+@I [HLS-100] Command 'csynth_design' returned 0; elapsed 9.35Total elapsed time: 145.639 sec.
+@I [HLS-100] Command "cleanup_all "
+@I [HLS-100] Command 'cleanup_all' returned 0; elapsed 0Total elapsed time: 145.646 sec.

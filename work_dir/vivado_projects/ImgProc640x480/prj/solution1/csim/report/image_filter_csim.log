@@ -1,0 +1,18 @@
+   Generating csim.exe
+/ise_local2/umair_temp/vivado_projects/erode/prj/solution1/csim/build/obj/opencv_top.o: In function `opencv_image_filter(_IplImage*, _IplImage*)':
+/home/ga73koz/thesis/xapp1167/sw/erode/opencv_top.cpp:46: undefined reference to `cvErode'
+/ise_local2/umair_temp/vivado_projects/erode/prj/solution1/csim/build/obj/test.o: In function `main':
+/home/ga73koz/thesis/xapp1167/sw/erode/test.cpp:49: undefined reference to `cvLoadImage'
+/home/ga73koz/thesis/xapp1167/sw/erode/test.cpp:50: undefined reference to `cvGetSize'
+/home/ga73koz/thesis/xapp1167/sw/erode/test.cpp:50: undefined reference to `cvCreateImage'
+/home/ga73koz/thesis/xapp1167/sw/erode/test.cpp:59: undefined reference to `cvSaveImage'
+/home/ga73koz/thesis/xapp1167/sw/erode/test.cpp:62: undefined reference to `cvSaveImage'
+/home/ga73koz/thesis/xapp1167/sw/erode/test.cpp:64: undefined reference to `cvReleaseImage'
+/home/ga73koz/thesis/xapp1167/sw/erode/test.cpp:65: undefined reference to `cvReleaseImage'
+/ise_local2/umair_temp/vivado_projects/erode/prj/solution1/csim/build/obj/test.o: In function `void IplImage2AXIvideo<32>(_IplImage*, hls::stream<ap_axiu<32, 1, 1, 1> >&)':
+/ise_local2/umair_temp/Vivado_HLS/2013.1/include/hls_opencv.h:129: undefined reference to `cvGet2D'
+/ise_local2/umair_temp/vivado_projects/erode/prj/solution1/csim/build/obj/test.o: In function `void AXIvideo2IplImage<32>(hls::stream<ap_axiu<32, 1, 1, 1> >&, _IplImage*)':
+/ise_local2/umair_temp/Vivado_HLS/2013.1/include/hls_opencv.h:235: undefined reference to `cvSet2D'
+collect2: ld returned 1 exit status
+make: *** [csim.exe] Error 1
+@E [SIM-1] CSim file generation failed: compilation error(s).

@@ -1,5 +1,5 @@
 
-<EDKSYSTEM EDKVERSION="14.7" EDWVERSION="1.2" TIMESTAMP="Thu Jul  2 01:00:58 2015">
+<EDKSYSTEM EDKVERSION="14.7" EDWVERSION="1.2" TIMESTAMP="Thu Jul  2 13:05:47 2015">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="xc7z020" PACKAGE="clg484" PART="xc7z020clg484-1" SOURCE="/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER/videoProcessing_prj/system.xmp" SPEEDGRADE="-1"/>
 
@@ -378,6 +378,7 @@
             <SIGNAL NAME="image_filter_top_0_interrupt"/>
             <SIGNAL NAME="axi_vdma_3_s2mm_introut"/>
             <SIGNAL NAME="axi_vdma_3_mm2s_introut"/>
+            <SIGNAL NAME="convert_to_gray_top_0_interrupt"/>
           </SIGNALS>
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_vdma_0_mm2s_introut &amp; hdmi_int &amp; axi_iic_0_IIC2INTC_Irpt &amp; axi_dma_i2s_mm2s_introut &amp; cam_interface_0_href_negedge &amp; cam_interface_0_vsync_negedge &amp; axi_vdma_1_mm2s_introut &amp; axi_vdma_1_s2mm_introut &amp; sobel_filter_top_0_interrupt &amp; axi_vdma_2_mm2s_introut &amp; axi_vdma_2_s2mm_introut &amp; axi_dma_i2s_s2mm_introut &amp; image_filter_top_0_interrupt &amp; axi_vdma_3_s2mm_introut &amp; axi_vdma_3_mm2s_introut &amp; convert_to_gray_top_0_interrupt"/>
@@ -11759,7 +11760,12 @@
         <PARAMETER ASSIGNMENT="CONSTANT" MPD_INDEX="6" NAME="C_S_AXI_CONTROL_BUS_PROTOCOL" TYPE="STRING" VALUE="AXI4LITE"/>
       </PARAMETERS>
       <PORTS>
-        <PORT BUS="S_AXI_CONTROL_BUS:INPUT_STREAM:OUTPUT_STREAM" CLKFREQUENCY="142857132" DEF_SIGNAME="__BUS__" DIR="I" IS_INSTANTIATED="TRUE" MPD_INDEX="0" NAME="aclk" SIGIS="CLK" SIGNAME="processing_system7_0_FCLK_CLK3">
+        <PORT DIR="O" IS_INSTANTIATED="TRUE" MHS_INDEX="0" MPD_INDEX="37" NAME="interrupt" SENSITIVITY="LEVEL_HIGH" SIGIS="INTERRUPT" SIGNAME="convert_to_gray_top_0_interrupt">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="IRQ_F2P"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT BUS="S_AXI_CONTROL_BUS:INPUT_STREAM:OUTPUT_STREAM" CLKFREQUENCY="142857132" DEF_SIGNAME="__BUS__" DIR="I" IS_INSTANTIATED="TRUE" MHS_INDEX="1" MPD_INDEX="0" NAME="aclk" SIGIS="CLK" SIGNAME="processing_system7_0_FCLK_CLK3">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK3"/>
           </CONNECTIONS>
@@ -11930,11 +11936,6 @@
         <PORT BUS="S_AXI_CONTROL_BUS" DEF_SIGNAME="axi_interconnect_1_M_RREADY" DIR="I" MPD_INDEX="36" NAME="s_axi_CONTROL_BUS_RREADY" SIGNAME="axi_interconnect_1_M_RREADY">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_interconnect_1" PORT="M_AXI_RREADY"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" IS_INSTANTIATED="TRUE" MPD_INDEX="37" NAME="interrupt" SENSITIVITY="LEVEL_HIGH" SIGIS="INTERRUPT" SIGNAME="convert_to_gray_top_0_interrupt">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="IRQ_F2P"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>

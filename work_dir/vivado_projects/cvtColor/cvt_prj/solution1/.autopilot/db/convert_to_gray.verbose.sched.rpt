@@ -1,0 +1,343 @@
+
+
+================================================================
+== Vivado HLS Report for 'convert_to_gray'
+================================================================
+* Date:           Wed Oct  9 17:36:42 2013
+
+* Version:        2013.1 (build date: Thu Mar 21 12:53:03 PM 2013)
+* Project:        cvt_prj
+* Solution:       solution1
+* Product family: zynq zynq_fpv6 
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +---------+-------+----------+------------+
+    |  Clock  | Target| Estimated| Uncertainty|
+    +---------+-------+----------+------------+
+    |default  |  10.00|      8.36|        1.25|
+    +---------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+----------+
+    |  Latency  |  Interval | Pipeline |
+    | min | max | min | max |   Type   |
+    +-----+-----+-----+-----+----------+
+    |    ?|    ?|    ?|    ?| dataflow |
+    +-----+-----+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|Expression       |        -|      -|       -|      -|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |        -|      -|       -|      -|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|      -|
+|Register         |        -|      -|       -|      -|
+|ShiftMemory      |        -|      -|       -|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |        0|      0|       0|      0|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        0|      0|       0|      0|
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Shift register: 
+    N/A
+
+    * Expression: 
+    N/A
+
+    * Multiplexer: 
+    N/A
+
+    * Register: 
+    N/A
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
+N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 6
+* Pipeline: 0
+* Dataflow Pipeline: 1
+  DF-Pipeline-0: Size = 6, States = { 1 2 3 4 5 6 }
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+* FSM state operations: 
+
+ <State 1>: 0.00ns
+ST_1: cols_read [1/1] 0.00ns
+entry:15  %cols_read = call i32 @_ssdm_op_WireRead.i32(i32 %cols) ; <i32> [#uses=2]
+
+ST_1: rows_read [1/1] 0.00ns
+entry:16  %rows_read = call i32 @_ssdm_op_WireRead.i32(i32 %rows) ; <i32> [#uses=2]
+
+ST_1: img_0_data_stream_0_V [1/1] 0.00ns
+entry:17  %img_0_data_stream_0_V = alloca i8, align 1     ; <i8*> [#uses=5]
+
+ST_1: img_0_data_stream_1_V [1/1] 0.00ns
+entry:20  %img_0_data_stream_1_V = alloca i8, align 1     ; <i8*> [#uses=5]
+
+ST_1: img_0_data_stream_2_V [1/1] 0.00ns
+entry:23  %img_0_data_stream_2_V = alloca i8, align 1     ; <i8*> [#uses=5]
+
+ST_1: img_1_data_stream_0_V [1/1] 0.00ns
+entry:26  %img_1_data_stream_0_V = alloca i8, align 1     ; <i8*> [#uses=5]
+
+ST_1: img_1_data_stream_1_V [1/1] 0.00ns
+entry:29  %img_1_data_stream_1_V = alloca i8, align 1     ; <i8*> [#uses=5]
+
+ST_1: img_1_data_stream_2_V [1/1] 0.00ns
+entry:32  %img_1_data_stream_2_V = alloca i8, align 1     ; <i8*> [#uses=5]
+
+ST_1: call_ret [1/1] 0.00ns
+entry:42  %call_ret = call fastcc %"hls::Mat<1080, 1920, 16>::init_ret" @init(i32 %rows_read, i32 %cols_read) ; <%"hls::Mat<1080, 1920, 16>::init_ret"> [#uses=4]
+
+ST_1: img_0_rows_V [1/1] 0.00ns
+entry:43  %img_0_rows_V = extractvalue %"hls::Mat<1080, 1920, 16>::init_ret" %call_ret, 0 ; <i12> [#uses=1]
+
+ST_1: img_0_rows_V_channel [1/1] 0.00ns
+entry:44  %img_0_rows_V_channel = extractvalue %"hls::Mat<1080, 1920, 16>::init_ret" %call_ret, 1 ; <i12> [#uses=1]
+
+ST_1: img_0_cols_V [1/1] 0.00ns
+entry:45  %img_0_cols_V = extractvalue %"hls::Mat<1080, 1920, 16>::init_ret" %call_ret, 2 ; <i12> [#uses=1]
+
+ST_1: img_0_cols_V_channel [1/1] 0.00ns
+entry:46  %img_0_cols_V_channel = extractvalue %"hls::Mat<1080, 1920, 16>::init_ret" %call_ret, 3 ; <i12> [#uses=1]
+
+ST_1: call_ret1 [1/1] 0.00ns
+entry:47  %call_ret1 = call fastcc %"hls::Mat<1080, 1920, 16>::init.1_ret" @init.1(i32 %rows_read, i32 %cols_read) ; <%"hls::Mat<1080, 1920, 16>::init.1_ret"> [#uses=2]
+
+ST_1: img_1_rows_V [1/1] 0.00ns
+entry:48  %img_1_rows_V = extractvalue %"hls::Mat<1080, 1920, 16>::init.1_ret" %call_ret1, 0 ; <i12> [#uses=1]
+
+ST_1: img_1_cols_V [1/1] 0.00ns
+entry:49  %img_1_cols_V = extractvalue %"hls::Mat<1080, 1920, 16>::init.1_ret" %call_ret1, 1 ; <i12> [#uses=1]
+
+ST_1: stg_23 [2/2] 0.00ns
+entry:50  call fastcc void @"AXIvideo2Mat<32,1080,1920,16>"(i32* %input_V_data_V, i4* %input_V_keep_V, i4* %input_V_strb_V, i1* %input_V_user_V, i1* %input_V_last_V, i1* %input_V_id_V, i1* %input_V_dest_V, i12 %img_0_rows_V, i12 %img_0_cols_V, i8* %img_0_data_stream_0_V, i8* %img_0_data_stream_1_V, i8* %img_0_data_stream_2_V)
+
+
+ <State 2>: 0.00ns
+ST_2: stg_24 [1/2] 0.00ns
+entry:50  call fastcc void @"AXIvideo2Mat<32,1080,1920,16>"(i32* %input_V_data_V, i4* %input_V_keep_V, i4* %input_V_strb_V, i1* %input_V_user_V, i1* %input_V_last_V, i1* %input_V_id_V, i1* %input_V_dest_V, i12 %img_0_rows_V, i12 %img_0_cols_V, i8* %img_0_data_stream_0_V, i8* %img_0_data_stream_1_V, i8* %img_0_data_stream_2_V)
+
+
+ <State 3>: 0.00ns
+ST_3: stg_25 [2/2] 0.00ns
+entry:51  call fastcc void @"CvtColor<0,16,16,1080,1920>"(i12 %img_0_rows_V_channel, i12 %img_0_cols_V_channel, i8* %img_0_data_stream_0_V, i8* %img_0_data_stream_1_V, i8* %img_0_data_stream_2_V, i8* %img_1_data_stream_0_V, i8* %img_1_data_stream_1_V, i8* %img_1_data_stream_2_V)
+
+
+ <State 4>: 0.00ns
+ST_4: stg_26 [1/2] 0.00ns
+entry:51  call fastcc void @"CvtColor<0,16,16,1080,1920>"(i12 %img_0_rows_V_channel, i12 %img_0_cols_V_channel, i8* %img_0_data_stream_0_V, i8* %img_0_data_stream_1_V, i8* %img_0_data_stream_2_V, i8* %img_1_data_stream_0_V, i8* %img_1_data_stream_1_V, i8* %img_1_data_stream_2_V)
+
+
+ <State 5>: 1.89ns
+ST_5: stg_27 [2/2] 1.89ns
+entry:52  call fastcc void @"Mat2AXIvideo<32,1080,1920,16>"(i12 %img_1_rows_V, i12 %img_1_cols_V, i8* %img_1_data_stream_0_V, i8* %img_1_data_stream_1_V, i8* %img_1_data_stream_2_V, i32* %output_V_data_V, i4* %output_V_keep_V, i4* %output_V_strb_V, i1* %output_V_user_V, i1* %output_V_last_V, i1* %output_V_id_V, i1* %output_V_dest_V)
+
+
+ <State 6>: 0.00ns
+ST_6: stg_28 [1/1] 0.00ns
+entry:0  call void (...)* @_ssdm_op_SpecDataflowPipeline(i32 -1, [1 x i8]* @p_str20) nounwind
+
+ST_6: empty [1/1] 0.00ns
+entry:1  %empty = call i32 (...)* @_ssdm_op_SpecFifo(i1* %output_V_dest_V, [8 x i8]* @str52, i32 0, i32 0, [8 x i8]* @str52) ; <i32> [#uses=0]
+
+ST_6: empty_24 [1/1] 0.00ns
+entry:2  %empty_24 = call i32 (...)* @_ssdm_op_SpecFifo(i1* %output_V_id_V, [8 x i8]* @str51, i32 0, i32 0, [8 x i8]* @str51) ; <i32> [#uses=0]
+
+ST_6: empty_25 [1/1] 0.00ns
+entry:3  %empty_25 = call i32 (...)* @_ssdm_op_SpecFifo(i1* %output_V_last_V, [8 x i8]* @str50, i32 0, i32 0, [8 x i8]* @str50) ; <i32> [#uses=0]
+
+ST_6: empty_26 [1/1] 0.00ns
+entry:4  %empty_26 = call i32 (...)* @_ssdm_op_SpecFifo(i1* %output_V_user_V, [8 x i8]* @str49, i32 0, i32 0, [8 x i8]* @str49) ; <i32> [#uses=0]
+
+ST_6: empty_27 [1/1] 0.00ns
+entry:5  %empty_27 = call i32 (...)* @_ssdm_op_SpecFifo(i4* %output_V_strb_V, [8 x i8]* @str48, i32 0, i32 0, [8 x i8]* @str48) ; <i32> [#uses=0]
+
+ST_6: empty_28 [1/1] 0.00ns
+entry:6  %empty_28 = call i32 (...)* @_ssdm_op_SpecFifo(i4* %output_V_keep_V, [8 x i8]* @str47, i32 0, i32 0, [8 x i8]* @str47) ; <i32> [#uses=0]
+
+ST_6: empty_29 [1/1] 0.00ns
+entry:7  %empty_29 = call i32 (...)* @_ssdm_op_SpecFifo(i32* %output_V_data_V, [8 x i8]* @str46, i32 0, i32 0, [8 x i8]* @str46) ; <i32> [#uses=0]
+
+ST_6: empty_30 [1/1] 0.00ns
+entry:8  %empty_30 = call i32 (...)* @_ssdm_op_SpecFifo(i1* %input_V_dest_V, [8 x i8]* @str45, i32 0, i32 0, [8 x i8]* @str45) ; <i32> [#uses=0]
+
+ST_6: empty_31 [1/1] 0.00ns
+entry:9  %empty_31 = call i32 (...)* @_ssdm_op_SpecFifo(i1* %input_V_id_V, [8 x i8]* @str44, i32 0, i32 0, [8 x i8]* @str44) ; <i32> [#uses=0]
+
+ST_6: empty_32 [1/1] 0.00ns
+entry:10  %empty_32 = call i32 (...)* @_ssdm_op_SpecFifo(i1* %input_V_last_V, [8 x i8]* @str43, i32 0, i32 0, [8 x i8]* @str43) ; <i32> [#uses=0]
+
+ST_6: empty_33 [1/1] 0.00ns
+entry:11  %empty_33 = call i32 (...)* @_ssdm_op_SpecFifo(i1* %input_V_user_V, [8 x i8]* @str42, i32 0, i32 0, [8 x i8]* @str42) ; <i32> [#uses=0]
+
+ST_6: empty_34 [1/1] 0.00ns
+entry:12  %empty_34 = call i32 (...)* @_ssdm_op_SpecFifo(i4* %input_V_strb_V, [8 x i8]* @str41, i32 0, i32 0, [8 x i8]* @str41) ; <i32> [#uses=0]
+
+ST_6: empty_35 [1/1] 0.00ns
+entry:13  %empty_35 = call i32 (...)* @_ssdm_op_SpecFifo(i4* %input_V_keep_V, [8 x i8]* @str40, i32 0, i32 0, [8 x i8]* @str40) ; <i32> [#uses=0]
+
+ST_6: empty_36 [1/1] 0.00ns
+entry:14  %empty_36 = call i32 (...)* @_ssdm_op_SpecFifo(i32* %input_V_data_V, [8 x i8]* @str, i32 0, i32 0, [8 x i8]* @str) ; <i32> [#uses=0]
+
+ST_6: empty_37 [1/1] 0.00ns
+entry:18  %empty_37 = call i32 (...)* @_ssdm_op_SpecChannel([22 x i8]* @str61, i32 1, [1 x i8]* @str62, [1 x i8]* @str62, i32 1, i32 1, i8* %img_0_data_stream_0_V, i8* %img_0_data_stream_0_V) ; <i32> [#uses=0]
+
+ST_6: empty_38 [1/1] 0.00ns
+entry:19  %empty_38 = call i32 (...)* @_ssdm_op_SpecFifo(i8* %img_0_data_stream_0_V, [8 x i8]* @str63, i32 0, i32 0, [8 x i8]* @str63) ; <i32> [#uses=0]
+
+ST_6: empty_39 [1/1] 0.00ns
+entry:21  %empty_39 = call i32 (...)* @_ssdm_op_SpecChannel([22 x i8]* @str64, i32 1, [1 x i8]* @str65, [1 x i8]* @str65, i32 1, i32 1, i8* %img_0_data_stream_1_V, i8* %img_0_data_stream_1_V) ; <i32> [#uses=0]
+
+ST_6: empty_40 [1/1] 0.00ns
+entry:22  %empty_40 = call i32 (...)* @_ssdm_op_SpecFifo(i8* %img_0_data_stream_1_V, [8 x i8]* @str66, i32 0, i32 0, [8 x i8]* @str66) ; <i32> [#uses=0]
+
+ST_6: empty_41 [1/1] 0.00ns
+entry:24  %empty_41 = call i32 (...)* @_ssdm_op_SpecChannel([22 x i8]* @str67, i32 1, [1 x i8]* @str68, [1 x i8]* @str68, i32 1, i32 1, i8* %img_0_data_stream_2_V, i8* %img_0_data_stream_2_V) ; <i32> [#uses=0]
+
+ST_6: empty_42 [1/1] 0.00ns
+entry:25  %empty_42 = call i32 (...)* @_ssdm_op_SpecFifo(i8* %img_0_data_stream_2_V, [8 x i8]* @str69, i32 0, i32 0, [8 x i8]* @str69) ; <i32> [#uses=0]
+
+ST_6: empty_43 [1/1] 0.00ns
+entry:27  %empty_43 = call i32 (...)* @_ssdm_op_SpecChannel([22 x i8]* @str70, i32 1, [1 x i8]* @str71, [1 x i8]* @str71, i32 1, i32 1, i8* %img_1_data_stream_0_V, i8* %img_1_data_stream_0_V) ; <i32> [#uses=0]
+
+ST_6: empty_44 [1/1] 0.00ns
+entry:28  %empty_44 = call i32 (...)* @_ssdm_op_SpecFifo(i8* %img_1_data_stream_0_V, [8 x i8]* @str72, i32 0, i32 0, [8 x i8]* @str72) ; <i32> [#uses=0]
+
+ST_6: empty_45 [1/1] 0.00ns
+entry:30  %empty_45 = call i32 (...)* @_ssdm_op_SpecChannel([22 x i8]* @str73, i32 1, [1 x i8]* @str74, [1 x i8]* @str74, i32 1, i32 1, i8* %img_1_data_stream_1_V, i8* %img_1_data_stream_1_V) ; <i32> [#uses=0]
+
+ST_6: empty_46 [1/1] 0.00ns
+entry:31  %empty_46 = call i32 (...)* @_ssdm_op_SpecFifo(i8* %img_1_data_stream_1_V, [8 x i8]* @str75, i32 0, i32 0, [8 x i8]* @str75) ; <i32> [#uses=0]
+
+ST_6: empty_47 [1/1] 0.00ns
+entry:33  %empty_47 = call i32 (...)* @_ssdm_op_SpecChannel([22 x i8]* @str76, i32 1, [1 x i8]* @str77, [1 x i8]* @str77, i32 1, i32 1, i8* %img_1_data_stream_2_V, i8* %img_1_data_stream_2_V) ; <i32> [#uses=0]
+
+ST_6: empty_48 [1/1] 0.00ns
+entry:34  %empty_48 = call i32 (...)* @_ssdm_op_SpecFifo(i8* %img_1_data_stream_2_V, [8 x i8]* @str78, i32 0, i32 0, [8 x i8]* @str78) ; <i32> [#uses=0]
+
+ST_6: stg_55 [1/1] 0.00ns
+entry:35  call void (...)* @_ssdm_op_SpecIFCore(i32* %input_V_data_V, i4* %input_V_keep_V, i4* %input_V_strb_V, i1* %input_V_user_V, i1* %input_V_last_V, i1* %input_V_id_V, i1* %input_V_dest_V, [1 x i8]* @p_str20, [5 x i8]* @p_str34, [1 x i8]* @p_str20, [1 x i8]* @p_str20, [1 x i8]* @p_str20, [25 x i8]* @p_str35)
+
+ST_6: stg_56 [1/1] 0.00ns
+entry:36  call void (...)* @_ssdm_op_SpecIFCore(i32* %output_V_data_V, i4* %output_V_keep_V, i4* %output_V_strb_V, i1* %output_V_user_V, i1* %output_V_last_V, i1* %output_V_id_V, i1* %output_V_dest_V, [1 x i8]* @p_str20, [5 x i8]* @p_str34, [1 x i8]* @p_str20, [1 x i8]* @p_str20, [1 x i8]* @p_str20, [26 x i8]* @p_str36)
+
+ST_6: stg_57 [1/1] 0.00ns
+entry:37  call void (...)* @_ssdm_op_SpecIFCore(i32 %rows, [1 x i8]* @p_str20, [10 x i8]* @p_str37, [1 x i8]* @p_str20, [1 x i8]* @p_str20, [1 x i8]* @p_str20, [24 x i8]* @p_str38)
+
+ST_6: stg_58 [1/1] 0.00ns
+entry:38  call void (...)* @_ssdm_op_SpecIFCore(i32 %cols, [1 x i8]* @p_str20, [10 x i8]* @p_str37, [1 x i8]* @p_str20, [1 x i8]* @p_str20, [1 x i8]* @p_str20, [24 x i8]* @p_str38)
+
+ST_6: stg_59 [1/1] 0.00ns
+entry:39  call void (...)* @_ssdm_op_SpecIFCore(i32 0, [1 x i8]* @p_str20, [10 x i8]* @p_str37, [1 x i8]* @p_str20, [1 x i8]* @p_str20, [1 x i8]* @p_str20, [24 x i8]* @p_str38)
+
+ST_6: stg_60 [1/1] 0.00ns
+entry:40  call void (...)* @_ssdm_op_SpecWire(i32 %rows, [10 x i8]* @p_str39, i32 0, i32 0, [1 x i8]* @p_str20) nounwind
+
+ST_6: stg_61 [1/1] 0.00ns
+entry:41  call void (...)* @_ssdm_op_SpecWire(i32 %cols, [10 x i8]* @p_str39, i32 0, i32 0, [1 x i8]* @p_str20) nounwind
+
+ST_6: stg_62 [1/2] 0.00ns
+entry:52  call fastcc void @"Mat2AXIvideo<32,1080,1920,16>"(i12 %img_1_rows_V, i12 %img_1_cols_V, i8* %img_1_data_stream_0_V, i8* %img_1_data_stream_1_V, i8* %img_1_data_stream_2_V, i32* %output_V_data_V, i4* %output_V_keep_V, i4* %output_V_strb_V, i1* %output_V_user_V, i1* %output_V_last_V, i1* %output_V_id_V, i1* %output_V_dest_V)
+
+ST_6: stg_63 [1/1] 0.00ns
+entry:53  ret void
+
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

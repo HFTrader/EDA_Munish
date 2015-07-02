@@ -1,0 +1,468 @@
+--------------------------------------------------------------------------------
+Release 14.5 Trace  (lin64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+/ise_local2/umair_temp/14.5/ISE_DS/ISE/bin/lin64/unwrapped/trce -e 3 -xml
+system.twx system.ncd system.pcf
+
+Design file:              system.ncd
+Physical constraint file: system.pcf
+Device,package,speed:     xc7z020,clg484,C,-1 (PRODUCTION 1.06 2013-03-26)
+Report level:             error report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:3386 - Intersecting Constraints found and resolved.  For more 
+   information, see the TSI report.  Please consult the Xilinx Command Line 
+   Tools User Guide for information on generating a TSI report.
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+================================================================================
+Timing constraint: PATH "TS_FILTER_VDMA_cdc_tig_v_path" TIG;
+
+ 296 paths analyzed, 296 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors)
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: PATH "TS_FILTER_VDMA_cdc_from_2_cdc_to_path" TIG;
+
+ 28 paths analyzed, 28 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors)
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: PATH "TS_TPG_VDMA_cdc_tig_v_path" TIG;
+
+ 154 paths analyzed, 154 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors)
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: PATH "TS_TPG_VDMA_cdc_from_2_cdc_to_path" TIG;
+
+ 15 paths analyzed, 15 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors)
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: PATH "TS_axi4_1_reset_resync_path" TIG;
+
+ 2 paths analyzed, 2 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors)
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: PATH "TS_AXI_CORE_FP_PERF_MON_HP0_HP2_path" TIG;
+
+ 17209 paths analyzed, 5113 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors)
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: PATH "TS_CORE_AXI_FP_PERF_MON_HP0_HP2_path" TIG;
+
+ 3534 paths analyzed, 963 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors)
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: PATH "TS_axi4_0_reset_resync_path" TIG;
+
+ 5 paths analyzed, 5 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors)
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: PATH "TS_axi4_lite_reset_resync_path" TIG;
+
+ 15 paths analyzed, 15 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors)
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: TS_VTC_0_async_clock_conv = MAXDELAY FROM TIMEGRP "FFS" TO 
+TIMEGRP         "VTC_0_async_clock_conv_FFDEST" 13.333 ns DATAPATHONLY;
+For more information, see From:To (Multicycle) Analysis in the Timing Closure User Guide (UG612).
+
+ 0 paths analyzed, 0 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: TS_VTC_0_vid_async_clock_conv = MAXDELAY FROM TIMEGRP "FFS" 
+TO TIMEGRP         "VTC_0_vid_async_clock_conv_FFDEST" 2 ns DATAPATHONLY;
+For more information, see From:To (Multicycle) Analysis in the Timing Closure User Guide (UG612).
+
+ 0 paths analyzed, 0 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: TS_clk_fpga_0 = PERIOD TIMEGRP "clk_fpga_0" 100 MHz HIGH 
+50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 0 paths analyzed, 0 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 component switching limit errors)
+ Minimum period is   4.000ns.
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: TS_clock_generator_0_clock_generator_0_SIG_MMCM0_CLKOUT1 = 
+PERIOD TIMEGRP         "clock_generator_0_clock_generator_0_SIG_MMCM0_CLKOUT1" 
+TS_clk_fpga_0         * 1.5 HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 633946 paths analyzed, 91861 endpoints analyzed, 9 failing endpoints
+ 9 timing errors detected. (9 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is   6.881ns.
+--------------------------------------------------------------------------------
+Slack:                  -0.215ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/tmp_22_reg_3264_0 (FF)
+  Destination:          FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/src_kernel_win_2_val_2_0_fu_310_1 (FF)
+  Requirement:          6.666ns
+  Data Path Delay:      6.825ns (Levels of Logic = 7)
+  Clock Path Skew:      0.008ns (0.893 - 0.885)
+  Source Clock:         clk_150mhz rising at 0.000ns
+  Destination Clock:    clk_150mhz rising at 6.666ns
+  Clock Uncertainty:    0.064ns
+
+  Clock Uncertainty:          0.064ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.105ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/tmp_22_reg_3264_0 to FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/src_kernel_win_2_val_2_0_fu_310_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X81Y21.BMUX    Tshcko                0.591   FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/k_buf_0_val_0_addr_2_reg_3293<2>
+                                                       FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/tmp_22_reg_3264_0
+    SLICE_X89Y21.B6      net (fanout=7)        0.691   FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/tmp_22_reg_3264_0
+    SLICE_X89Y21.B       Tilo                  0.124   FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/or_cond_reg_3176_0
+                                                       FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/ap_sig_bdd_102_ap_sig_bdd_131_OR_509_o31
+    SLICE_X90Y21.C2      net (fanout=13)       1.090   FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/ap_sig_bdd_102_ap_sig_bdd_131_OR_509_o3
+    SLICE_X90Y21.C       Tilo                  0.124   FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/src_kernel_win_1_val_0_0_5_reg_3622<3>
+                                                       FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/k_buf_0_val_1_ce1111
+    SLICE_X90Y21.D6      net (fanout=13)       0.560   FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/PWR_8_o_GND_8_o_AND_2611_o1
+    SLICE_X90Y21.D       Tilo                  0.124   FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/src_kernel_win_1_val_0_0_5_reg_3622<3>
+                                                       FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/PWR_8_o_GND_8_o_AND_600_o1_1
+    SLICE_X87Y15.C6      net (fanout=3)        0.890   FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/PWR_8_o_GND_8_o_AND_600_o1
+    SLICE_X87Y15.C       Tilo                  0.124   FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/ap_reg_ppstg_brmerge_reg_3260_pp0_it2_0
+                                                       FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/PWR_8_o_PWR_8_o_OR_225_o
+    SLICE_X88Y17.C6      net (fanout=26)       0.596   FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/PWR_8_o_PWR_8_o_OR_225_o
+    SLICE_X88Y17.C       Tilo                  0.124   FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/ap_reg_ppstg_or_cond3_1_reg_3446_pp0_it2_0
+                                                       FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/Mmux_src_kernel_win_0_val_2_0_fu_250[7]_k_buf_0_val_0_q1[7]_mux_1520_OUT17
+    SLICE_X90Y14.C4      net (fanout=24)       1.022   FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/Mmux_src_kernel_win_0_val_2_0_fu_250[7]_k_buf_0_val_0_q1[7]_mux_1520_OUT17
+    SLICE_X90Y14.C       Tilo                  0.124   FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/src_kernel_win_2_val_2_0_fu_310<1>
+                                                       FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/Mmux_src_kernel_win_2_val_2_0_fu_310[7]_k_buf_2_val_0_q1[7]_mux_2722_OUT42
+    SLICE_X90Y14.D6      net (fanout=1)        0.596   FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/Mmux_src_kernel_win_2_val_2_0_fu_310[7]_k_buf_2_val_0_q1[7]_mux_2722_OUT41
+    SLICE_X90Y14.CLK     Tas                   0.045   FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/src_kernel_win_2_val_2_0_fu_310<1>
+                                                       FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/Mmux_src_kernel_win_2_val_2_0_fu_310[7]_k_buf_2_val_0_q1[7]_mux_2722_OUT44
+                                                       FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/src_kernel_win_2_val_2_0_fu_310_1
+    -------------------------------------------------  ---------------------------
+    Total                                      6.825ns (1.380ns logic, 5.445ns route)
+                                                       (20.2% logic, 79.8% route)
+
+--------------------------------------------------------------------------------
+Slack:                  -0.196ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/or_cond1_reg_3218_0 (FF)
+  Destination:          FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/src_kernel_win_2_val_2_0_fu_310_1 (FF)
+  Requirement:          6.666ns
+  Data Path Delay:      6.805ns (Levels of Logic = 7)
+  Clock Path Skew:      0.007ns (0.893 - 0.886)
+  Source Clock:         clk_150mhz rising at 0.000ns
+  Destination Clock:    clk_150mhz rising at 6.666ns
+  Clock Uncertainty:    0.064ns
+
+  Clock Uncertainty:          0.064ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.105ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/or_cond1_reg_3218_0 to FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/src_kernel_win_2_val_2_0_fu_310_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X89Y21.AMUX    Tshcko                0.594   FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/or_cond_reg_3176_0
+                                                       FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/or_cond1_reg_3218_0
+    SLICE_X89Y21.B3      net (fanout=2)        0.668   FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/or_cond1_reg_3218_0
+    SLICE_X89Y21.B       Tilo                  0.124   FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/or_cond_reg_3176_0
+                                                       FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/ap_sig_bdd_102_ap_sig_bdd_131_OR_509_o31
+    SLICE_X90Y21.C2      net (fanout=13)       1.090   FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/ap_sig_bdd_102_ap_sig_bdd_131_OR_509_o3
+    SLICE_X90Y21.C       Tilo                  0.124   FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/src_kernel_win_1_val_0_0_5_reg_3622<3>
+                                                       FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/k_buf_0_val_1_ce1111
+    SLICE_X90Y21.D6      net (fanout=13)       0.560   FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/PWR_8_o_GND_8_o_AND_2611_o1
+    SLICE_X90Y21.D       Tilo                  0.124   FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/src_kernel_win_1_val_0_0_5_reg_3622<3>
+                                                       FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/PWR_8_o_GND_8_o_AND_600_o1_1
+    SLICE_X87Y15.C6      net (fanout=3)        0.890   FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/PWR_8_o_GND_8_o_AND_600_o1
+    SLICE_X87Y15.C       Tilo                  0.124   FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/ap_reg_ppstg_brmerge_reg_3260_pp0_it2_0
+                                                       FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/PWR_8_o_PWR_8_o_OR_225_o
+    SLICE_X88Y17.C6      net (fanout=26)       0.596   FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/PWR_8_o_PWR_8_o_OR_225_o
+    SLICE_X88Y17.C       Tilo                  0.124   FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/ap_reg_ppstg_or_cond3_1_reg_3446_pp0_it2_0
+                                                       FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/Mmux_src_kernel_win_0_val_2_0_fu_250[7]_k_buf_0_val_0_q1[7]_mux_1520_OUT17
+    SLICE_X90Y14.C4      net (fanout=24)       1.022   FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/Mmux_src_kernel_win_0_val_2_0_fu_250[7]_k_buf_0_val_0_q1[7]_mux_1520_OUT17
+    SLICE_X90Y14.C       Tilo                  0.124   FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/src_kernel_win_2_val_2_0_fu_310<1>
+                                                       FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/Mmux_src_kernel_win_2_val_2_0_fu_310[7]_k_buf_2_val_0_q1[7]_mux_2722_OUT42
+    SLICE_X90Y14.D6      net (fanout=1)        0.596   FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/Mmux_src_kernel_win_2_val_2_0_fu_310[7]_k_buf_2_val_0_q1[7]_mux_2722_OUT41
+    SLICE_X90Y14.CLK     Tas                   0.045   FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/src_kernel_win_2_val_2_0_fu_310<1>
+                                                       FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/Mmux_src_kernel_win_2_val_2_0_fu_310[7]_k_buf_2_val_0_q1[7]_mux_2722_OUT44
+                                                       FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/src_kernel_win_2_val_2_0_fu_310_1
+    -------------------------------------------------  ---------------------------
+    Total                                      6.805ns (1.383ns logic, 5.422ns route)
+                                                       (20.3% logic, 79.7% route)
+
+--------------------------------------------------------------------------------
+Slack:                  -0.170ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/tmp_22_reg_3264_0 (FF)
+  Destination:          FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/src_kernel_win_0_val_2_0_fu_250_1 (FF)
+  Requirement:          6.666ns
+  Data Path Delay:      6.721ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.051ns (0.834 - 0.885)
+  Source Clock:         clk_150mhz rising at 0.000ns
+  Destination Clock:    clk_150mhz rising at 6.666ns
+  Clock Uncertainty:    0.064ns
+
+  Clock Uncertainty:          0.064ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.105ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/tmp_22_reg_3264_0 to FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/src_kernel_win_0_val_2_0_fu_250_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X81Y21.BMUX    Tshcko                0.591   FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/k_buf_0_val_0_addr_2_reg_3293<2>
+                                                       FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/tmp_22_reg_3264_0
+    SLICE_X89Y21.B6      net (fanout=7)        0.691   FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/tmp_22_reg_3264_0
+    SLICE_X89Y21.B       Tilo                  0.124   FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/or_cond_reg_3176_0
+                                                       FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/ap_sig_bdd_102_ap_sig_bdd_131_OR_509_o31
+    SLICE_X90Y21.C2      net (fanout=13)       1.090   FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/ap_sig_bdd_102_ap_sig_bdd_131_OR_509_o3
+    SLICE_X90Y21.C       Tilo                  0.124   FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/src_kernel_win_1_val_0_0_5_reg_3622<3>
+                                                       FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/k_buf_0_val_1_ce1111
+    SLICE_X90Y21.D6      net (fanout=13)       0.560   FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/PWR_8_o_GND_8_o_AND_2611_o1
+    SLICE_X90Y21.D       Tilo                  0.124   FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/src_kernel_win_1_val_0_0_5_reg_3622<3>
+                                                       FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/PWR_8_o_GND_8_o_AND_600_o1_1
+    SLICE_X87Y15.C6      net (fanout=3)        0.890   FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/PWR_8_o_GND_8_o_AND_600_o1
+    SLICE_X87Y15.C       Tilo                  0.124   FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/ap_reg_ppstg_brmerge_reg_3260_pp0_it2_0
+                                                       FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/PWR_8_o_PWR_8_o_OR_225_o
+    SLICE_X83Y13.B5      net (fanout=26)       0.847   FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/PWR_8_o_PWR_8_o_OR_225_o
+    SLICE_X83Y13.B       Tilo                  0.124   FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/Toppixel_reg_3399<3>
+                                                       FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/Mmux_src_kernel_win_0_val_2_0_fu_250[7]_k_buf_0_val_0_q1[7]_mux_1520_OUT41
+    SLICE_X82Y12.C3      net (fanout=1)        0.667   FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/Mmux_src_kernel_win_0_val_2_0_fu_250[7]_k_buf_0_val_0_q1[7]_mux_1520_OUT4
+    SLICE_X82Y12.C       Tilo                  0.124   FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/src_kernel_win_0_val_2_0_fu_250<1>
+                                                       FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/Mmux_src_kernel_win_0_val_2_0_fu_250[7]_k_buf_0_val_0_q1[7]_mux_1520_OUT42
+    SLICE_X82Y12.D6      net (fanout=1)        0.596   FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/Mmux_src_kernel_win_0_val_2_0_fu_250[7]_k_buf_0_val_0_q1[7]_mux_1520_OUT41
+    SLICE_X82Y12.CLK     Tas                   0.045   FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/src_kernel_win_0_val_2_0_fu_250<1>
+                                                       FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/Mmux_src_kernel_win_0_val_2_0_fu_250[7]_k_buf_0_val_0_q1[7]_mux_1520_OUT44
+                                                       FILTER_ENGINE/FILTER_ENGINE/image_filter_U/Erode_16_16_1080_1920_U0/grp_filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_fu_420/src_kernel_win_0_val_2_0_fu_250_1
+    -------------------------------------------------  ---------------------------
+    Total                                      6.721ns (1.380ns logic, 5.341ns route)
+                                                       (20.5% logic, 79.5% route)
+
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: TS_clock_generator_0_clock_generator_0_SIG_MMCM0_CLKOUT0 = 
+PERIOD TIMEGRP         "clock_generator_0_clock_generator_0_SIG_MMCM0_CLKOUT0" 
+TS_clk_fpga_0         * 0.75 HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 65600 paths analyzed, 9933 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is  11.995ns.
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: TS_VIDEO_CLK_IN = PERIOD TIMEGRP "VIDEO_CLK_PIN" 148.5 MHz 
+HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 14944 paths analyzed, 2865 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is   6.643ns.
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: TS_fmc_hpc_dvidp_dvii_clk_pin = PERIOD TIMEGRP 
+"fmc_imageon_hdmi_in_0_clk_pin"         148.5 MHz HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 20631 paths analyzed, 5953 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is   6.617ns.
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: PATH "TS_75_148_path" TIG;
+
+ 1551 paths analyzed, 497 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors)
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: PATH "TS_148_75_path" TIG;
+
+ 102 paths analyzed, 101 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors)
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: PATH "TS_150_148_path" TIG;
+
+ 16 paths analyzed, 16 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors)
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: PATH "TS_148_150_path" TIG;
+
+ 104 paths analyzed, 55 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors)
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: TIMEGRP "HDMI_IN_GRP" OFFSET = IN 1 ns VALID 6.5 ns BEFORE 
+COMP         "fmc_imageon_hdmi_in_0_clk_pin" "RISING";
+For more information, see Offset In Analysis in the Timing Closure User Guide (UG612).
+
+ 16 paths analyzed, 16 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors)
+ Offset is  -0.809ns.
+--------------------------------------------------------------------------------
+
+
+Derived Constraint Report
+Derived Constraints for TS_clk_fpga_0
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|                               |   Period    |       Actual Period       |      Timing Errors        |      Paths Analyzed       |
+|           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
+|                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|TS_clk_fpga_0                  |     10.000ns|      4.000ns|     10.322ns|            0|            9|            0|       699546|
+| TS_clock_generator_0_clock_gen|      6.667ns|      6.881ns|          N/A|            9|            0|       633946|            0|
+| erator_0_SIG_MMCM0_CLKOUT1    |             |             |             |             |             |             |             |
+| TS_clock_generator_0_clock_gen|     13.333ns|     11.995ns|          N/A|            0|            0|        65600|            0|
+| erator_0_SIG_MMCM0_CLKOUT0    |             |             |             |             |             |             |             |
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+
+1 constraint not met.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Setup/Hold to clock fmc_imageon_hdmi_in_0_clk_pin
+--------------------------------------------+------------+------------+------------+------------+----------------------------------------+--------+
+                                            |Max Setup to|  Process   |Max Hold to |  Process   |                                        | Clock  |
+Source                                      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s)                       | Phase  |
+--------------------------------------------+------------+------------+------------+------------+----------------------------------------+--------+
+fmc_imageon_hdmi_in_0_io_hdmii_video_pin<0> |   -0.952(R)|      FAST  |    4.410(R)|      SLOW  |fmc_imageon_hdmi_in_0_clk_pin_IBUFG_BUFG|   0.000|
+fmc_imageon_hdmi_in_0_io_hdmii_video_pin<1> |   -0.972(R)|      FAST  |    4.429(R)|      SLOW  |fmc_imageon_hdmi_in_0_clk_pin_IBUFG_BUFG|   0.000|
+fmc_imageon_hdmi_in_0_io_hdmii_video_pin<2> |   -0.887(R)|      FAST  |    4.341(R)|      SLOW  |fmc_imageon_hdmi_in_0_clk_pin_IBUFG_BUFG|   0.000|
+fmc_imageon_hdmi_in_0_io_hdmii_video_pin<3> |   -0.880(R)|      FAST  |    4.334(R)|      SLOW  |fmc_imageon_hdmi_in_0_clk_pin_IBUFG_BUFG|   0.000|
+fmc_imageon_hdmi_in_0_io_hdmii_video_pin<4> |   -0.945(R)|      FAST  |    4.401(R)|      SLOW  |fmc_imageon_hdmi_in_0_clk_pin_IBUFG_BUFG|   0.000|
+fmc_imageon_hdmi_in_0_io_hdmii_video_pin<5> |   -0.936(R)|      FAST  |    4.393(R)|      SLOW  |fmc_imageon_hdmi_in_0_clk_pin_IBUFG_BUFG|   0.000|
+fmc_imageon_hdmi_in_0_io_hdmii_video_pin<6> |   -0.912(R)|      FAST  |    4.368(R)|      SLOW  |fmc_imageon_hdmi_in_0_clk_pin_IBUFG_BUFG|   0.000|
+fmc_imageon_hdmi_in_0_io_hdmii_video_pin<7> |   -0.886(R)|      FAST  |    4.342(R)|      SLOW  |fmc_imageon_hdmi_in_0_clk_pin_IBUFG_BUFG|   0.000|
+fmc_imageon_hdmi_in_0_io_hdmii_video_pin<8> |   -0.948(R)|      FAST  |    4.403(R)|      SLOW  |fmc_imageon_hdmi_in_0_clk_pin_IBUFG_BUFG|   0.000|
+fmc_imageon_hdmi_in_0_io_hdmii_video_pin<9> |   -0.949(R)|      FAST  |    4.404(R)|      SLOW  |fmc_imageon_hdmi_in_0_clk_pin_IBUFG_BUFG|   0.000|
+fmc_imageon_hdmi_in_0_io_hdmii_video_pin<10>|   -0.866(R)|      FAST  |    4.323(R)|      SLOW  |fmc_imageon_hdmi_in_0_clk_pin_IBUFG_BUFG|   0.000|
+fmc_imageon_hdmi_in_0_io_hdmii_video_pin<11>|   -0.909(R)|      FAST  |    4.362(R)|      SLOW  |fmc_imageon_hdmi_in_0_clk_pin_IBUFG_BUFG|   0.000|
+fmc_imageon_hdmi_in_0_io_hdmii_video_pin<12>|   -0.809(R)|      FAST  |    4.269(R)|      SLOW  |fmc_imageon_hdmi_in_0_clk_pin_IBUFG_BUFG|   0.000|
+fmc_imageon_hdmi_in_0_io_hdmii_video_pin<13>|   -0.871(R)|      FAST  |    4.328(R)|      SLOW  |fmc_imageon_hdmi_in_0_clk_pin_IBUFG_BUFG|   0.000|
+fmc_imageon_hdmi_in_0_io_hdmii_video_pin<14>|   -0.924(R)|      FAST  |    4.377(R)|      SLOW  |fmc_imageon_hdmi_in_0_clk_pin_IBUFG_BUFG|   0.000|
+fmc_imageon_hdmi_in_0_io_hdmii_video_pin<15>|   -0.816(R)|      FAST  |    4.276(R)|      SLOW  |fmc_imageon_hdmi_in_0_clk_pin_IBUFG_BUFG|   0.000|
+--------------------------------------------+------------+------------+------------+------------+----------------------------------------+--------+
+
+Clock to Setup on destination clock VIDEO_CLK_N
+-----------------------------+---------+---------+---------+---------+
+                             | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                 |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-----------------------------+---------+---------+---------+---------+
+VIDEO_CLK_N                  |    6.643|         |         |         |
+VIDEO_CLK_P                  |    6.643|         |         |         |
+fmc_imageon_hdmi_in_0_clk_pin|    6.617|         |         |         |
+-----------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock VIDEO_CLK_P
+-----------------------------+---------+---------+---------+---------+
+                             | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                 |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-----------------------------+---------+---------+---------+---------+
+VIDEO_CLK_N                  |    6.643|         |         |         |
+VIDEO_CLK_P                  |    6.643|         |         |         |
+fmc_imageon_hdmi_in_0_clk_pin|    6.617|         |         |         |
+-----------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock fmc_imageon_hdmi_in_0_clk_pin
+-----------------------------+---------+---------+---------+---------+
+                             | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                 |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-----------------------------+---------+---------+---------+---------+
+VIDEO_CLK_N                  |    6.617|         |         |         |
+VIDEO_CLK_P                  |    6.617|         |         |         |
+fmc_imageon_hdmi_in_0_clk_pin|    6.617|         |         |         |
+-----------------------------+---------+---------+---------+---------+
+
+TIMEGRP "HDMI_IN_GRP" OFFSET = IN 1 ns VALID 6.5 ns BEFORE COMP         "fmc_imageon_hdmi_in_0_clk_pin" "RISING";
+Worst Case Data Window 3.620; Ideal Clock Offset To Actual Clock -0.369; 
+--------------------------------------------+------------+------------+------------+------------+---------+---------+-------------+
+                                            |            |  Process   |            |  Process   |  Setup  |  Hold   |Source Offset|
+Source                                      |   Setup    |   Corner   |    Hold    |   Corner   |  Slack  |  Slack  |  To Center  |
+--------------------------------------------+------------+------------+------------+------------+---------+---------+-------------+
+fmc_imageon_hdmi_in_0_io_hdmii_video_pin<0> |   -0.952(R)|      FAST  |    4.410(R)|      SLOW  |    1.952|    1.090|        0.431|
+fmc_imageon_hdmi_in_0_io_hdmii_video_pin<1> |   -0.972(R)|      FAST  |    4.429(R)|      SLOW  |    1.972|    1.071|        0.451|
+fmc_imageon_hdmi_in_0_io_hdmii_video_pin<2> |   -0.887(R)|      FAST  |    4.341(R)|      SLOW  |    1.887|    1.159|        0.364|
+fmc_imageon_hdmi_in_0_io_hdmii_video_pin<3> |   -0.880(R)|      FAST  |    4.334(R)|      SLOW  |    1.880|    1.166|        0.357|
+fmc_imageon_hdmi_in_0_io_hdmii_video_pin<4> |   -0.945(R)|      FAST  |    4.401(R)|      SLOW  |    1.945|    1.099|        0.423|
+fmc_imageon_hdmi_in_0_io_hdmii_video_pin<5> |   -0.936(R)|      FAST  |    4.393(R)|      SLOW  |    1.936|    1.107|        0.415|
+fmc_imageon_hdmi_in_0_io_hdmii_video_pin<6> |   -0.912(R)|      FAST  |    4.368(R)|      SLOW  |    1.912|    1.132|        0.390|
+fmc_imageon_hdmi_in_0_io_hdmii_video_pin<7> |   -0.886(R)|      FAST  |    4.342(R)|      SLOW  |    1.886|    1.158|        0.364|
+fmc_imageon_hdmi_in_0_io_hdmii_video_pin<8> |   -0.948(R)|      FAST  |    4.403(R)|      SLOW  |    1.948|    1.097|        0.426|
+fmc_imageon_hdmi_in_0_io_hdmii_video_pin<9> |   -0.949(R)|      FAST  |    4.404(R)|      SLOW  |    1.949|    1.096|        0.427|
+fmc_imageon_hdmi_in_0_io_hdmii_video_pin<10>|   -0.866(R)|      FAST  |    4.323(R)|      SLOW  |    1.866|    1.177|        0.345|
+fmc_imageon_hdmi_in_0_io_hdmii_video_pin<11>|   -0.909(R)|      FAST  |    4.362(R)|      SLOW  |    1.909|    1.138|        0.386|
+fmc_imageon_hdmi_in_0_io_hdmii_video_pin<12>|   -0.809(R)|      FAST  |    4.269(R)|      SLOW  |    1.809|    1.231|        0.289|
+fmc_imageon_hdmi_in_0_io_hdmii_video_pin<13>|   -0.871(R)|      FAST  |    4.328(R)|      SLOW  |    1.871|    1.172|        0.350|
+fmc_imageon_hdmi_in_0_io_hdmii_video_pin<14>|   -0.924(R)|      FAST  |    4.377(R)|      SLOW  |    1.924|    1.123|        0.400|
+fmc_imageon_hdmi_in_0_io_hdmii_video_pin<15>|   -0.816(R)|      FAST  |    4.276(R)|      SLOW  |    1.816|    1.224|        0.296|
+--------------------------------------------+------------+------------+------------+------------+---------+---------+-------------+
+Worst Case Summary                          |      -0.809|         -  |       4.429|         -  |    1.809|    1.071|             |
+--------------------------------------------+------------+------------+------------+------------+---------+---------+-------------+
+
+
+Timing summary:
+---------------
+
+Timing errors: 9  Score: 907  (Setup/Max: 907, Hold: 0)
+
+Constraints cover 758168 paths, 0 nets, and 122567 connections
+
+Design statistics:
+   Minimum period:  11.995ns   (Maximum frequency:  83.368MHz)
+
+
+Analysis completed Fri May 17 17:56:14 2013 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 1381 MB
+
+
+

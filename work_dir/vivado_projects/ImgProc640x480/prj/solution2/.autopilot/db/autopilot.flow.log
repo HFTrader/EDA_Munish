@@ -1,0 +1,2015 @@
+@I [HLS-0] Workspace /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2 opened at Mon Nov 04 20:45:58 CET 2013
+@I [HLS-100] Command "config_clock -quiet -name - -period 6.666666666666667 -unit ns -default=false "
+@I [SYN-201] Setting up clock with a period of 6.66667ns.
+@I [HLS-100] Command 'config_clock' returned 0; elapsed 0Total elapsed time: 1.694 sec.
+@I [HLS-100] Command "open_platform DefaultPlatform "
+@I [HLS-100] Command 'open_platform' returned 0; elapsed 0Total elapsed time: 1.749 sec.
+@I [HLS-100] Command "import_lib /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/zynq/zynq "
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/common/xilinx.lib "
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/interface/xilinx_interface.lib "
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/interface/plb46.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.806 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/interface/fsl.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.810 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/interface/axi4.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.814 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.814 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/common/dsp48.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.814 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.816 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/common/xilinx_old.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.834 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/common/xilinx.hlp "
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/common/target_info.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.864 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/common/dsp48.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 1.874 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 1.874 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/zynq/dsp48e1.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.883 sec.
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 1.883 sec.
+@I [HLS-100] Command "config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 1.883 sec.
+@I [HLS-100] Command "config_chip_info -quiet -speed medium "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 1.883 sec.
+@I [HLS-100] Command 'import_lib' returned 0; elapsed 0.01Total elapsed time: 1.885 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/zynq/zynq.gen "
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/common/virtex.gen "
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/common/xilinx.gen "
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/interface/plb46.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.909 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/interface/fsl.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.913 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/interface/axi4.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 1.923 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/scripts/xilinxcoregen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 1.957 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/interface/XilEDKCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 1.986 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.03Total elapsed time: 1.986 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/common/dsp48.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.988 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.03Total elapsed time: 1.988 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.03Total elapsed time: 1.988 sec.
+@I [HLS-100] Command "open_platform DefaultPlatform "
+@I [HLS-100] Command 'open_platform' returned 0; elapsed 0Total elapsed time: 1.988 sec.
+@I [HLS-100] Command "import_lib /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/zynq/zynq_fpv6 "
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/common/xilinx_fpv7.lib "
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/common/xilinx_fpv6.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 2.18 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 2.20 sec.
+@I [HLS-100] Command 'import_lib' returned 0; elapsed 0.02Total elapsed time: 2.51 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/zynq/zynq_fpv6.gen "
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/common/xilinx_fpv6.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 2.55 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 2.55 sec.
+@I [HLS-100] Command "set_part xc7z020clg484-1 "
+@I [HLS-100] Command "add_library xilinx/zynq/zynq:xc7z020:clg484:-1 "
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 2.57 sec.
+@I [HLS-100] Command "license_exists VIVADO_HLS "
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0Total elapsed time: 2.58 sec.
+@I [HLS-100] Command "license_exists AUTOESL_NI "
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0Total elapsed time: 2.58 sec.
+@I [HLS-100] Command "license_exists HLS "
+@I [HLS-100] Command 'license_exists' returned 0; elapsed 0Total elapsed time: 2.58 sec.
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 2.58 sec.
+@I [HLS-100] Command "config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 2.58 sec.
+@I [HLS-100] Command "config_chip_info -quiet -speed slow "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 2.58 sec.
+@I [HLS-100] Command 'add_library' returned 0; elapsed 0Total elapsed time: 2.60 sec.
+@I [HLS-100] Command "add_library xilinx/zynq/zynq_fpv6 "
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 2.61 sec.
+@I [HLS-100] Command "license_exists VIVADO_HLS "
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0Total elapsed time: 2.61 sec.
+@I [HLS-100] Command "license_exists AUTOESL_NI "
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0Total elapsed time: 2.61 sec.
+@I [HLS-100] Command "license_exists HLS "
+@I [HLS-100] Command 'license_exists' returned 0; elapsed 0Total elapsed time: 2.61 sec.
+@I [HLS-100] Command 'add_library' returned 0; elapsed 0Total elapsed time: 2.62 sec.
+@I [HLS-10] Setting target device to 'xc7z020clg484-1'
+@I [HLS-100] Command 'set_part' returned 0; elapsed 0Total elapsed time: 2.62 sec.
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 2.62 sec.
+@I [HLS-100] Command "config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 2.62 sec.
+@I [HLS-100] Command "config_chip_info -quiet -speed slow "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 2.62 sec.
+@I [HLS-100] Command "config_autosim -O=0 -coverage=false -ignore_init=0 -setup=0 -trace_level=none "
+@I [HLS-100] Command 'config_autosim' returned 0; elapsed 0.01Total elapsed time: 2.64 sec.
+@I [HLS-100] Command 'open_solution' returned 0; elapsed 0.09Total elapsed time: 2.64 sec.
+@I [HLS-100] Command "set_part xc7z020clg484-1 "
+@I [HLS-100] Command "add_library xilinx/zynq/zynq:xc7z020:clg484:-1 "
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 2.65 sec.
+@I [HLS-100] Command "license_exists VIVADO_HLS "
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0Total elapsed time: 2.65 sec.
+@I [HLS-100] Command "license_exists AUTOESL_NI "
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0Total elapsed time: 2.65 sec.
+@I [HLS-100] Command "license_exists HLS "
+@I [HLS-100] Command 'license_exists' returned 0; elapsed 0Total elapsed time: 2.65 sec.
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 2.66 sec.
+@I [HLS-100] Command "config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 2.66 sec.
+@I [HLS-100] Command "config_chip_info -quiet -speed slow "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 2.66 sec.
+@I [HLS-100] Command 'add_library' returned 0; elapsed 0Total elapsed time: 2.66 sec.
+@I [HLS-100] Command "add_library xilinx/zynq/zynq_fpv6 "
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 2.67 sec.
+@I [HLS-100] Command "license_exists VIVADO_HLS "
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0Total elapsed time: 2.67 sec.
+@I [HLS-100] Command "license_exists AUTOESL_NI "
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0Total elapsed time: 2.67 sec.
+@I [HLS-100] Command "license_exists HLS "
+@I [HLS-100] Command 'license_exists' returned 0; elapsed 0Total elapsed time: 2.67 sec.
+@I [HLS-100] Command 'add_library' returned 0; elapsed 0Total elapsed time: 2.68 sec.
+@I [HLS-100] Command 'set_part' returned 0; elapsed 0Total elapsed time: 2.68 sec.
+@I [HLS-100] Command "create_clock -period 150MHz "
+@I [HLS-100] Command 'create_clock' returned 0; elapsed 0Total elapsed time: 2.69 sec.
+@I [HLS-100] Command "source ./prj/solution2/directives.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 2.69 sec.
+@I [HLS-100] Command "csynth_design "
+@I [HLS-100] Command "elaborate -effort=medium -skip_syncheck=0 -lm=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 "
+@I [HLS-10] Importing test bench file 'test.cpp' ... 
+@0 [HLS-0] Importing test bench file 'test.cpp' ... 
+@I [HLS-10] Importing test bench file 'opencv_top.cpp' ... 
+@0 [HLS-0] Importing test bench file 'opencv_top.cpp' ... 
+@I [HLS-10] Importing test bench file 'test_1080p.bmp' ... 
+@0 [HLS-0] Importing test bench file 'test_1080p.bmp' ... 
+@I [HLS-10] Analyzing design file 'top.cpp' ... 
+@0 [HLS-0] Analyzing design file 'top.cpp' ... 
+@I [HLS-0] Compiling one TU...
+@I [HLS-0] 
+Checking before pre-process: exec llvm-gcc -fno-builtin-isinf -fno-builtin-isnan    -D "__asm__(...)=" -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit   -I "/ise_local2/umair_temp/Vivado_HLS/2013.1/Linux_x86_64/tools/systemc/include" -I "/ise_local2/umair_temp/Vivado_HLS/2013.1/include" -I "/ise_local2/umair_temp/Vivado_HLS/2013.1/include/ap_sysc" -fexceptions "top.cpp"  -o "/ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/top.pp.00.o"
+
+@I [HLS-0] Syntax Checker time: 7 seconds per iteration
+@I [HLS-0] 
+Source preprocessing: exec llvm-gcc  -fno-builtin-isinf -fno-builtin-isnan -CC -E "top.cpp"     -D "__asm__(...)=" -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/autopilot" -I "/ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D "__asm__(...)="  -o "/ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/top.pp.0.cpp"
+
+@I [HLS-0] GCC PP time: 3 seconds per iteration
+@I [HLS-0] Marker-Pragma convertor: /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/top.pp.0.cpp /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/top.pp.0.cpp.ap-line.cpp /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/top.pp.0.cpp.ap-line.cpp.CXX 1
+@I [HLS-0] 
+Source processor: exec /ise_local2/umair_temp/Vivado_HLS/2013.1/Linux_x86_64/tools/jre/bin/java -Xmx512m -classpath   "/ise_local2/umair_temp/Vivado_HLS/2013.1/common/lib/autopilot.sourceprocessor.jar:/ise_local2/umair_temp/Vivado_HLS/2013.1/common/lib/org.eclipse.cdt.core_5.3.0.xilinx_patch.jar:/ise_local2/umair_temp/Vivado_HLS/2013.1/common/lib/org.eclipse.core.runtime_3.7.0.v20110110.jar:/ise_local2/umair_temp/Vivado_HLS/2013.1/common/lib/org.eclipse.equinox.common_3.6.0.v20110523.jar:/ise_local2/umair_temp/Vivado_HLS/2013.1/common/lib/com.ibm.icu_4.4.2.v20110208.jar:/ise_local2/umair_temp/Vivado_HLS/2013.1/common/lib/jargs.jar:/ise_local2/umair_temp/Vivado_HLS/2013.1/Linux_x86_64/tools/eclipse/plugins/org.eclipse.emf.common_2.7.0.v20120127-1122.jar:/ise_local2/umair_temp/Vivado_HLS/2013.1/Linux_x86_64/tools/eclipse/plugins/org.eclipse.emf.ecore_2.7.0.v20120127-1122.jar:/ise_local2/umair_temp/Vivado_HLS/2013.1/Linux_x86_64/tools/eclipse/plugins/org.eclipse.emf.ecore.xmi_2.7.0.v20120127-1122.jar:/ise_local2/umair_temp/Vivado_HLS/2013.1/Linux_x86_64/tools/eclipse/plugins/com.autoesl.autopilot.ui.directiveFileModel_1.0.0.jar:/ise_local2/umair_temp/Vivado_HLS/2013.1/Linux_x86_64/tools/eclipse/plugins/com.autoesl.autopilot.ui.common_1.0.0.jar"  autopilot.sourceprocessor.CParser  "/ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/top.pp.0.cpp.ap-line.cpp"  -m image_processor -o "/ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/top.pp.0.cpp.ap-cdt.cpp" --ad --pc --pp --directive /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/solution2.directive --source /ise_local2/umair_temp/vivado_projects/ImgProc640x480/top.cpp --error /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db --ce --tcl /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db --ve --vetcl /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db --lp --ca --es --gf --nk --df --pd --p2d /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db --sd --scff /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/.systemc_flag
+
+@I [HLS-0] Marker-Pragma convertor: /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/top.pp.0.cpp.ap-cdt.cpp /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/top.pragma.0.cpp /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/top.pragma.0.cpp.ap-line.CXX 0
+@I [HLS-100] Command "source /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/pragma.status.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 125.178 sec.
+@I [HLS-0] CDT processor time: 111 seconds per iteration
+@I [HLS-0] Pragma handling time: 1 seconds per iteration
+@I [HLS-0] 
+Source preprocessing: exec llvm-gcc  -fno-builtin-isinf -fno-builtin-isnan -CC -E "/ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/top.pragma.1.cpp"     -D "__asm__(...)=" -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/autopilot" -I "/ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D "__asm__(...)="  -o "/ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/top.pragma.2.cpp"
+
+@I [HLS-0] exec llvm-gcc  -w -fno-builtin-isinf -fno-builtin-isnan  "/ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/top.pragma.2.cpp"    -D "__asm__(...)=" -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/autopilot" -I "/ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -g -o "/ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/top.g.bc"
+@I [HLS-100] Command "source /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/ve_warning.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 147.885 sec.
+@I [HLS-10] Validating synthesis directives ...
+@0 [HLS-0] Validating synthesis directives ...
+@I [HLS-100] Command "source /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/pragma.status.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 147.888 sec.
+@I [HLS-0] Linking all ...
+@I [HLS-0] exec llvm-ld  "/ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/top.bc"  -disable-opt  -L/ise_local2/umair_temp/Vivado_HLS/2013.1/Linux_x86_64/lib -lm_basic -o "/ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/a.o"
+@I [HLS-0] Link time: 0 seconds per iteration
+@I [HLS-0] Linking all ...
+@I [HLS-0] exec llvm-ld  "/ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/top.g.bc"  -disable-opt  -L/ise_local2/umair_temp/Vivado_HLS/2013.1/Linux_x86_64/lib -lm_basic -o "/ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/a.g"
+@I [HLS-0] Link time: 0 seconds per iteration
+@I [HLS-100] Command "opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 "
+@I [HLS-100] Command "cleanup_all_models "
+@I [HLS-100] Command 'cleanup_all_models' returned 0; elapsed 0Total elapsed time: 148.783 sec.
+@I [HLS-10] Checking synthesizability ...
+@0 [HLS-0] Checking synthesizability ...
+@I [HLS-0] std xform: transform -share-std-xform -always-inline -promote-dbg-pointer  -interface-preproc  -scalarrepl -mem2reg -keep-read-access -instcombine -dce  -promote-dbg-pointer  -bitop-raise  -simplifycfg -mem2reg -globalopt  -global-constprop -deadargelim -instcombine -simplifycfg  -prune-eh -simplifycfg  -scalarrepl -instcombine -reassociate -licm  -simplifycfg -loopsimplify -indvars -instcombine  -simplifycfg -mem2reg -loopsimplify -indvars -instcombine  -gvn -gvn -instcombine -dse -adce  -break-crit-edges -deadtypeelim -simplifycfg -loop-delete  -global-array-opt  -find-syn-modules -top image_processor  -deadtypeelim -deadargelim  -mem2reg -instcombine -dce  -presyn-prepare -auto-rom-infer  -syn-check -check-rec-only  -find-region -simplifycfg -func-extr -function-inline  -mem2reg -instcombine -dce   -gvn -adce -adse  -constprop -instcombine -bit-constprop  -instcombine -dce -simplifycfg -bitop-raise  -simplifycfg -dce -loop-delete  -globalopt -global-privatize -mem2reg -dce  -global-constprop -pointer-simplify -constprop -dce  -promote-dbg-pointer  -norm-name   /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/a.g.bc -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/a.g.1.bc -f  -phase std-opt
+@I [HLS-0] Std xform time: 1 seconds per iteration
+@I [HLS-0] syn check 1/2: transform -syn-check -check-rec-only -disaggr -norm-name -deadtypeelim -dce  -mem2reg -instcombine  -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce  -array-normalize -instcombine -dce  -array-seg-normalize -instcombine -dce  -array-flatten -instcombine -dce  -array-burst  -deadargelim -promote-global-argument  -doublePtrSimplify -doublePtrElim -dce  -doublePtrSimplify -promote-dbg-pointer  -dce -scalarrepl -dse -adse -instcombine  -ptrLegalization  -simplifycfg -dce -instcombine  -pointer-simplify -ptrArgReplace -dce -instcombine   -disaggr -norm-name -deadtypeelim -dce  -mem2reg -instcombine  -directive-preproc -mem2reg -dse -dce  -interface-gen -constprop -dse -dce  -globaldce    /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/a.g.1.bc -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/a.g.2.prechk.bc -f
+@I [HLS-0] Syn check 1/2 time: 2 seconds per iteration
+@I [HLS-0] syn check 2/2: transform -syn-check   /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/a.g.2.prechk.bc -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/a.g.2.bc -f  -phase syn-check
+@W [SYNCHK-23] hls_video_io.h:138: variable-indexed range selection may cause suboptimal QoR.
+@I [SYNCHK-10] 0 error(s), 1 warning(s).
+@I [HLS-0] Syn check 2/2 time: 0 seconds per iteration
+@I [HLS-10] Starting code transformations ...
+@0 [HLS-0] Starting code transformations ...
+@I [HLS-0] Compiler optimizing ...
+@I [HLS-0] Share syncheck's 1.bc for syn flow: copy /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/a.g.1.bc to /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/a.o.1.bc
+@I [HLS-0] presyn 1: transform  -directive-preproc -mem2reg -dse -dce  -disaggr -norm-name -deadtypeelim -deadargelim  -mem2reg -instcombine -dce -auto-rom-infer -dce  -directive-preproc -mem2reg -dse -dce  -func-buffer -dce -array-normalize  -func-legal -instcombine -gvn -constprop -dce   -ptrArgReplace -mem2reg -instcombine -dce  -array-seg-normalize -global-constprop -deadargelim  -instcombine -dce  -pointer-simplify -dce  -data-pack -instcombine -dce   -loopsimplify -indvars -instcombine  -gvn -loopsimplify -mem2reg -dce -simplifycfg  -find-region -instcombine  -inst-simplify  -indvars -auto-loop-unroll -loopsimplify -xunroll  -constprop -instcombine -simplifycfg -indvars  -simplifycfg -dce -globaldce  -gvn -disable-agg-range -inst-simplify  -constprop -simplifycfg -dce  -pointer-simplify -dce  -array-transform-check  -globalopt -constprop -dce  -array-promote -constprop -instcombine -dce -auto-par -array-partition -instcombine -dce  -global-constprop -deadargelim -ptrArgReplace -mem2reg  -func-legal -instcombine -dce  -array-reshape -instcombine -simplifycfg -dce   -mem-intrinsic-preproc -dce  -global-privatize  -mem2reg -globaldce  -promote-global-argument  -ptrArgReplace -mem2reg -function-inline  -mem2reg -instcombine -dce  -globalopt -mergereturn -simplify-global-access -mem2reg -dce  -pointer-simplify -dce  -functionattrs  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce  -inst-simplify -dce  -func-inst -constprop -instcombine -simplifycfg -dce  -func-legal -dce   -directive-preproc -mem2reg -dse -dce  -arraycheck -bitwidthmin -on-by-dataflow  -instcombine -simplifycfg -dce -loopsimplify -simplifycfg -loop-stream -instcombine -simplifycfg -dce  -function-stream -dce -globaldce  -array-streaming -instcombine -simplifycfg -dce      -simplifycfg -dce -loop-delete  -norm-name  /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/a.o.1.bc -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/a.o.1.tmp.bc -f
+@I [XFORM-502] Unrolling all sub-loops inside loop 'Loop-2.1' in function 'hls::AXIvideo2Mat<32, 480, 640, 16>' for pipelining.
+@I [XFORM-502] Unrolling all sub-loops inside loop 'Loop-1.1' in function 'hls::CvtColor_opr<hls::kernel_RGB2GRAY, 16, 16, 480, 640>' for pipelining.
+@I [XFORM-502] Unrolling all sub-loops inside loop 'Loop-1.1' in function 'hls::Mat2AXIvideo<32, 480, 640, 16>' for pipelining.
+@I [XFORM-502] Unrolling all sub-loops inside loop 'Loop-5.1' in function 'hls::filter_opr<hls::erode_kernel, 16, 16, unsigned char, int, 480, 640, 3, 3>' for pipelining.
+@I [XFORM-502] Unrolling all sub-loops inside loop 'Loop-5.1' in function 'hls::filter_opr<hls::filter2d_kernel, 16, 16, int, int, 480, 640, 3, 3>' for pipelining.
+@I [XFORM-501] Unrolling loop 'Loop-1' (top.cpp:52) in function 'Sobel' completely.
+@I [XFORM-501] Unrolling loop 'Loop-1.1' (top.cpp:54) in function 'Sobel' completely.
+@I [XFORM-501] Unrolling loop 'Loop-2.1.1' in function 'hls::AXIvideo2Mat<32, 480, 640, 16>' completely.
+@I [XFORM-501] Unrolling loop 'Loop-2.1.2' in function 'hls::AXIvideo2Mat<32, 480, 640, 16>' completely.
+@I [XFORM-501] Unrolling loop 'Loop-1.1.1' in function 'hls::CvtColor_opr<hls::kernel_RGB2GRAY, 16, 16, 480, 640>' completely.
+@I [XFORM-501] Unrolling loop 'Loop-1.1.2' in function 'hls::CvtColor_opr<hls::kernel_RGB2GRAY, 16, 16, 480, 640>' completely.
+@I [XFORM-501] Unrolling loop 'Loop-1.1.1' in function 'hls::Mat2AXIvideo<32, 480, 640, 16>' completely.
+@I [XFORM-501] Unrolling loop 'Loop-1.1.2' in function 'hls::Mat2AXIvideo<32, 480, 640, 16>' completely.
+@I [XFORM-501] Unrolling loop 'channelloop' in function 'hls::filter_opr<hls::erode_kernel, 16, 16, unsigned char, int, 480, 640, 3, 3>' completely.
+@I [XFORM-501] Unrolling loop 'Loop-5.1.1.1' in function 'hls::filter_opr<hls::erode_kernel, 16, 16, unsigned char, int, 480, 640, 3, 3>' completely.
+@I [XFORM-501] Unrolling loop 'Loop-5.1.1.1.1' in function 'hls::filter_opr<hls::erode_kernel, 16, 16, unsigned char, int, 480, 640, 3, 3>' completely.
+@I [XFORM-501] Unrolling loop 'Loop-5.1.1.2' in function 'hls::filter_opr<hls::erode_kernel, 16, 16, unsigned char, int, 480, 640, 3, 3>' completely.
+@I [XFORM-501] Unrolling loop 'Loop-5.1.1.3' in function 'hls::filter_opr<hls::erode_kernel, 16, 16, unsigned char, int, 480, 640, 3, 3>' completely.
+@I [XFORM-501] Unrolling loop 'Loop-5.1.1.4' in function 'hls::filter_opr<hls::erode_kernel, 16, 16, unsigned char, int, 480, 640, 3, 3>' completely.
+@I [XFORM-501] Unrolling loop 'Loop-5.1.1.5' in function 'hls::filter_opr<hls::erode_kernel, 16, 16, unsigned char, int, 480, 640, 3, 3>' completely.
+@I [XFORM-501] Unrolling loop 'Loop-5.1.1.6' in function 'hls::filter_opr<hls::erode_kernel, 16, 16, unsigned char, int, 480, 640, 3, 3>' completely.
+@I [XFORM-501] Unrolling loop 'Loop-5.1.1.7' in function 'hls::filter_opr<hls::erode_kernel, 16, 16, unsigned char, int, 480, 640, 3, 3>' completely.
+@I [XFORM-501] Unrolling loop 'Loop-5.1.1.8' in function 'hls::filter_opr<hls::erode_kernel, 16, 16, unsigned char, int, 480, 640, 3, 3>' completely.
+@I [XFORM-501] Unrolling loop 'Loop-5.1.1.8.1' in function 'hls::filter_opr<hls::erode_kernel, 16, 16, unsigned char, int, 480, 640, 3, 3>' completely.
+@I [XFORM-501] Unrolling loop 'channelloop' in function 'hls::filter_opr<hls::filter2d_kernel, 16, 16, int, int, 480, 640, 3, 3>' completely.
+@I [XFORM-501] Unrolling loop 'Loop-5.1.1.1' in function 'hls::filter_opr<hls::filter2d_kernel, 16, 16, int, int, 480, 640, 3, 3>' completely.
+@I [XFORM-501] Unrolling loop 'Loop-5.1.1.1.1' in function 'hls::filter_opr<hls::filter2d_kernel, 16, 16, int, int, 480, 640, 3, 3>' completely.
+@I [XFORM-501] Unrolling loop 'Loop-5.1.1.2' in function 'hls::filter_opr<hls::filter2d_kernel, 16, 16, int, int, 480, 640, 3, 3>' completely.
+@I [XFORM-501] Unrolling loop 'Loop-5.1.1.3' in function 'hls::filter_opr<hls::filter2d_kernel, 16, 16, int, int, 480, 640, 3, 3>' completely.
+@I [XFORM-501] Unrolling loop 'Loop-5.1.1.4' in function 'hls::filter_opr<hls::filter2d_kernel, 16, 16, int, int, 480, 640, 3, 3>' completely.
+@I [XFORM-501] Unrolling loop 'Loop-5.1.1.5' in function 'hls::filter_opr<hls::filter2d_kernel, 16, 16, int, int, 480, 640, 3, 3>' completely.
+@I [XFORM-501] Unrolling loop 'Loop-5.1.1.6' in function 'hls::filter_opr<hls::filter2d_kernel, 16, 16, int, int, 480, 640, 3, 3>' completely.
+@I [XFORM-501] Unrolling loop 'Loop-5.1.1.7' in function 'hls::filter_opr<hls::filter2d_kernel, 16, 16, int, int, 480, 640, 3, 3>' completely.
+@I [XFORM-501] Unrolling loop 'Loop-5.1.1.8' in function 'hls::filter_opr<hls::filter2d_kernel, 16, 16, int, int, 480, 640, 3, 3>' completely.
+@I [XFORM-501] Unrolling loop 'Loop-5.1.1.8.1' in function 'hls::filter_opr<hls::filter2d_kernel, 16, 16, int, int, 480, 640, 3, 3>' completely.
+@I [XFORM-102] Partitioning array 's.val.assign.1' automatically.
+@I [XFORM-102] Partitioning array 's.val.assign' automatically.
+@I [XFORM-102] Partitioning array '_par.val.V.assign' automatically.
+@I [XFORM-102] Partitioning array 'memtmp.i' automatically.
+@I [XFORM-102] Partitioning array 's.val.assign.2' automatically.
+@I [XFORM-102] Partitioning array 's.val.assign' automatically.
+@I [XFORM-102] Partitioning array 'memtmp.i' automatically.
+@I [XFORM-102] Automatically partitioning streamed array 'img_3.data_stream.V' (top.cpp:80) .
+@I [XFORM-102] Automatically partitioning streamed array 'img_2.data_stream.V' (top.cpp:79) .
+@I [XFORM-102] Automatically partitioning streamed array 'img_1.data_stream.V' (top.cpp:78) .
+@I [XFORM-102] Automatically partitioning streamed array 'img_0.data_stream.V' (top.cpp:77) .
+@I [XFORM-101] Partitioning array 'kernel.val' (top.cpp:50) in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'pix.val' (top.cpp:81) in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'img_3.data_stream.V' (top.cpp:80) in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'img_2.data_stream.V' (top.cpp:79) in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'img_1.data_stream.V' (top.cpp:78) in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'img_0.data_stream.V' (top.cpp:77) in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'kernel.val.0' (top.cpp:50) in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'kernel.val.1' (top.cpp:50) in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'kernel.val.2' (top.cpp:50) in dimension 1 completely.
+@I [XFORM-712] Applying dataflow to function 'image_processor' (top.cpp:65), detected/extracted 9 process function(s): 'hls::Mat<480, 640, 16>::init', 'hls::Mat<480, 640, 16>::init', 'hls::Mat<480, 640, 16>::init', 'hls::Mat<480, 640, 16>::init', 'hls::AXIvideo2Mat<32, 480, 640, 16>', 'hls::CvtColor<0, 16, 16, 480, 640>', 'Sobel', 'hls::Erode<16, 16, 480, 640>' and 'hls::Mat2AXIvideo<32, 480, 640, 16>'.
+@I [HLS-0] Presyn 1 time: 3 seconds per iteration
+@I [HLS-0] presyn 2: transform -keep-callgraph -scalarrepl -mem2reg  -indvars -loop-bound  -instcombine -dce  -merge-array-access -mem2reg -dce  -clean-region -mergereturn -if-conv  -instcombine -dce -constprop  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce  -scalarrepl -mem2reg  -global-constprop -deadargelim -deadargelim  -instcombine -dce -simplifycfg    -ptrArgReplace -mem2reg -function-inline  -mem2reg -instcombine -dce -expr-balance  -instcombine -dce  -bitwidthmin  -directive-preproc  -inst-rectify -instcombine -dce  -functionattrs  -constprop -instcombine -bit-constprop  -globalopt -globaldce  -inst-simplify -instcombine -elimdeaddata -dce  -loop-delete -simplifycfg   -norm-name /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/a.o.1.tmp.bc -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/a.o.2.bc -f  -phase presyn
+@W [XFORM-561] Updating loop lower bound from 0 to 2 for loop 'Loop-3-0' in function 'hls::filter_opr<hls::filter2d_kernel, 16, 16, int, int, 480, 640, 3, 3>'.
+@W [XFORM-561] Updating loop lower bound from 0 to 5 for loop 'Loop-3' in function 'hls::filter_opr<hls::filter2d_kernel, 16, 16, int, int, 480, 640, 3, 3>'.
+@W [XFORM-561] Updating loop lower bound from 0 to 2 for loop 'Loop-3-0' in function 'hls::filter_opr<hls::erode_kernel, 16, 16, unsigned char, int, 480, 640, 3, 3>'.
+@W [XFORM-561] Updating loop lower bound from 0 to 5 for loop 'Loop-3' in function 'hls::filter_opr<hls::erode_kernel, 16, 16, unsigned char, int, 480, 640, 3, 3>'.
+@I [XFORM-401] Performing if-conversion on hyperblock in function 'hls::filter_opr<hls::filter2d_kernel, 16, 16, int, int, 480, 640, 3, 3>'... converting 5 basic blocks.
+@I [XFORM-401] Performing if-conversion on hyperblock in function 'hls::filter_opr<hls::filter2d_kernel, 16, 16, int, int, 480, 640, 3, 3>'... converting 19 basic blocks.
+@I [XFORM-401] Performing if-conversion on hyperblock in function 'hls::filter_opr<hls::filter2d_kernel, 16, 16, int, int, 480, 640, 3, 3>'... converting 5 basic blocks.
+@I [XFORM-401] Performing if-conversion on hyperblock in function 'hls::filter_opr<hls::filter2d_kernel, 16, 16, int, int, 480, 640, 3, 3>'... converting 3 basic blocks.
+@I [XFORM-401] Performing if-conversion on hyperblock in function 'hls::filter_opr<hls::filter2d_kernel, 16, 16, int, int, 480, 640, 3, 3>'... converting 19 basic blocks.
+@I [XFORM-401] Performing if-conversion on hyperblock in function 'hls::filter_opr<hls::filter2d_kernel, 16, 16, int, int, 480, 640, 3, 3>'... converting 5 basic blocks.
+@I [XFORM-401] Performing if-conversion on hyperblock in function 'hls::filter_opr<hls::filter2d_kernel, 16, 16, int, int, 480, 640, 3, 3>'... converting 3 basic blocks.
+@I [XFORM-401] Performing if-conversion on hyperblock in function 'hls::filter_opr<hls::filter2d_kernel, 16, 16, int, int, 480, 640, 3, 3>'... converting 19 basic blocks.
+@I [XFORM-401] Performing if-conversion on hyperblock in function 'hls::filter_opr<hls::filter2d_kernel, 16, 16, int, int, 480, 640, 3, 3>'... converting 3 basic blocks.
+@I [XFORM-401] Performing if-conversion on hyperblock in function 'hls::filter_opr<hls::filter2d_kernel, 16, 16, int, int, 480, 640, 3, 3>'... converting 2 basic blocks.
+@I [XFORM-401] Performing if-conversion on hyperblock in function 'hls::getStructuringElement<unsigned char, int, int, 3, 3>'... converting 11 basic blocks.
+@I [XFORM-401] Performing if-conversion on hyperblock in function 'hls::getStructuringElement<unsigned char, int, int, 3, 3>'... converting 11 basic blocks.
+@I [XFORM-401] Performing if-conversion on hyperblock in function 'hls::getStructuringElement<unsigned char, int, int, 3, 3>'... converting 11 basic blocks.
+@I [XFORM-401] Performing if-conversion on hyperblock in function 'hls::filter_opr<hls::erode_kernel, 16, 16, unsigned char, int, 480, 640, 3, 3>'... converting 3 basic blocks.
+@I [XFORM-401] Performing if-conversion on hyperblock in function 'hls::filter_opr<hls::erode_kernel, 16, 16, unsigned char, int, 480, 640, 3, 3>'... converting 13 basic blocks.
+@I [XFORM-401] Performing if-conversion on hyperblock in function 'hls::filter_opr<hls::erode_kernel, 16, 16, unsigned char, int, 480, 640, 3, 3>'... converting 3 basic blocks.
+@I [XFORM-401] Performing if-conversion on hyperblock in function 'hls::filter_opr<hls::erode_kernel, 16, 16, unsigned char, int, 480, 640, 3, 3>'... converting 13 basic blocks.
+@I [XFORM-401] Performing if-conversion on hyperblock in function 'hls::filter_opr<hls::erode_kernel, 16, 16, unsigned char, int, 480, 640, 3, 3>'... converting 3 basic blocks.
+@I [XFORM-401] Performing if-conversion on hyperblock in function 'hls::filter_opr<hls::erode_kernel, 16, 16, unsigned char, int, 480, 640, 3, 3>'... converting 13 basic blocks.
+@I [XFORM-401] Performing if-conversion on hyperblock in function 'hls::filter_opr<hls::erode_kernel, 16, 16, unsigned char, int, 480, 640, 3, 3>'... converting 2 basic blocks.
+@I [XFORM-11] Balancing expressions in function 'hls::filter_opr<hls::filter2d_kernel, 16, 16, int, int, 480, 640, 3, 3>'...3 expression(s) balanced.
+@I [XFORM-11] Balancing expressions in function 'hls::getStructuringElement<unsigned char, int, int, 3, 3>'...64 expression(s) balanced.
+@I [XFORM-11] Balancing expressions in function 'hls::filter_opr<hls::erode_kernel, 16, 16, unsigned char, int, 480, 640, 3, 3>'...3 expression(s) balanced.
+@I [XFORM-11] Balancing expressions in function 'hls::Mat<480, 640, 16>::init'...3 expression(s) balanced.
+@I [XFORM-11] Balancing expressions in function 'hls::Mat<480, 640, 16>::init.1'...3 expression(s) balanced.
+@I [XFORM-11] Balancing expressions in function 'hls::Mat<480, 640, 16>::init.2'...3 expression(s) balanced.
+@I [XFORM-11] Balancing expressions in function 'hls::Mat<480, 640, 16>::init.3'...3 expression(s) balanced.
+@I [HLS-0] Presyn 2 time: 3 seconds per iteration
+@I [HLS-0] build ssdm: transform -function-uniquify -auto-function-inline  -loopsimplify -indvars -licm -loop-dep  -loop-bound -licm -loopsimplify -flattenloopnest  -array-flatten -gvn -instcombine -dce  -array-burst  -array-map -dce -func-legal  -gvn -adce -instcombine -cfgopt -simplifycfg -loopsimplify   -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn  -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce  -inst-simplify -dce  -array-streaming -instcombine  -dce   -deadargelim -doublePtrSimplify -doublePtrElim  -dce -doublePtrSimplify -promote-dbg-pointer -dce  -scalarrepl -mem2reg -disaggr -norm-name -mem2reg  -instcombine  -dse -adse -adce -ptrLegalization -dce -instcombine  -loop-rot -constprop -cfgopt -simplifycfg -indvars -pointer-simplify -dce -loop-bound  -loopsimplify -loop-preproc  -constprop -gvn -mem2reg -instcombine -dce  -loop-merge -dce  -bitwidthmin  -directive-preproc -inst-simplify -dce  -interface-gen -gvn -mem2reg -instcombine -dce -adse  -loop-bound  -instcombine -cfgopt -simplifycfg -loopsimplify  -clean-region -io-protocol  -find-region -mem2reg  -loopsimplify -phi-opt  -inst-simplify -inst-rectify -adce -cfgopt -simplifycfg  -strip-dead-prototypes  -interface-lower -bitop-lower -directive-lower  -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa  -inst-simplify -simplifycfg   -mergereturn -inst-simplify -inst-rectify -dce -bitop-lower  -loop-rewind -cfgopt  -norm-name -legalize -read-loop-dep -dce -bitwidth   -cdfg-build  /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/a.o.2.bc -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/a.o.3.bc -f  -phase build-ssdm
+@I [XFORM-603] Evaluating the output(s) of a call to function 'hls::getStructuringElement<unsigned char, int, int, 3, 3>' in function 'hls::Erode<16, 16, 480, 640>' and propagating its result(s) since all actual argument(s) to the function are constants.
+@I [ANALYSIS-51] Setting 'None' inter dependency for variable 'k_buf_2_val_1' in loop (:0).
+@I [ANALYSIS-51] Setting 'None' inter dependency for variable 'k_buf_2_val_2' in loop (:0).
+@I [ANALYSIS-51] Setting 'None' inter dependency for variable 'k_buf_2_val_0' in loop (:0).
+@I [ANALYSIS-51] Setting 'None' inter dependency for variable 'k_buf_1_val_1' in loop (:0).
+@I [ANALYSIS-51] Setting 'None' inter dependency for variable 'k_buf_1_val_2' in loop (:0).
+@I [ANALYSIS-51] Setting 'None' inter dependency for variable 'k_buf_1_val_0' in loop (:0).
+@I [ANALYSIS-51] Setting 'None' inter dependency for variable 'k_buf_0_val_1' in loop (:0).
+@I [ANALYSIS-51] Setting 'None' inter dependency for variable 'k_buf_0_val_2' in loop (:0).
+@I [ANALYSIS-51] Setting 'None' inter dependency for variable 'k_buf_0_val_0' in loop (:0).
+@I [ANALYSIS-51] Setting 'None' inter dependency for variable 'k_buf_2_val_1' in loop (:0).
+@I [ANALYSIS-51] Setting 'None' inter dependency for variable 'k_buf_2_val_2' in loop (:0).
+@I [ANALYSIS-51] Setting 'None' inter dependency for variable 'k_buf_2_val_0' in loop (:0).
+@I [ANALYSIS-51] Setting 'None' inter dependency for variable 'k_buf_1_val_1' in loop (:0).
+@I [ANALYSIS-51] Setting 'None' inter dependency for variable 'k_buf_1_val_2' in loop (:0).
+@I [ANALYSIS-51] Setting 'None' inter dependency for variable 'k_buf_1_val_0' in loop (:0).
+@I [ANALYSIS-51] Setting 'None' inter dependency for variable 'k_buf_0_val_1' in loop (:0).
+@I [ANALYSIS-51] Setting 'None' inter dependency for variable 'k_buf_0_val_2' in loop (:0).
+@I [ANALYSIS-51] Setting 'None' inter dependency for variable 'k_buf_0_val_0' in loop (:0).
+@W [SYN-210] Renamed object name 'init_U0' to 'init_U0'
+@W [SYN-210] Renamed object name 'init.1_U0' to 'init_1_U0'
+@W [SYN-210] Renamed object name 'init.2_U0' to 'init_2_U0'
+@W [SYN-210] Renamed object name 'init.3_U0' to 'init_3_U0'
+@W [SYN-210] Renamed object name 'AXIvideo2Mat<32,480,640,16>_U0' to 'AXIvideo2Mat_32_480_640_16_U0'
+@W [SYN-210] Renamed object name 'CvtColor<0,16,16,480,640>_U0' to 'CvtColor_0_16_16_480_640_U0'
+@W [SYN-210] Renamed object name 'Sobel_U0' to 'Sobel_U0'
+@W [SYN-210] Renamed object name 'Erode<16,16,480,640>_U0' to 'Erode_16_16_480_640_U0'
+@W [SYN-210] Renamed object name 'Mat2AXIvideo<32,480,640,16>_U0' to 'Mat2AXIvideo_32_480_640_16_U0'
+@W [SYN-210] Renamed object name 'AP_FIFO_img_0_rows_V_U0' to 'img_0_rows_V'
+@W [SYN-210] Renamed object name 'AP_FIFO_img_0_rows_V_channel_U0' to 'img_0_rows_V_channel'
+@W [SYN-210] Renamed object name 'AP_FIFO_img_0_cols_V_U0' to 'img_0_cols_V'
+@W [SYN-210] Renamed object name 'AP_FIFO_img_0_cols_V_channel_U0' to 'img_0_cols_V_channel'
+@W [SYN-210] Renamed object name 'AP_FIFO_img_1_rows_V_U0' to 'img_1_rows_V'
+@W [SYN-210] Renamed object name 'AP_FIFO_img_1_cols_V_U0' to 'img_1_cols_V'
+@W [SYN-210] Renamed object name 'AP_FIFO_img_2_rows_V_U0' to 'img_2_rows_V'
+@W [SYN-210] Renamed object name 'AP_FIFO_img_2_cols_V_U0' to 'img_2_cols_V'
+@W [SYN-210] Renamed object name 'AP_FIFO_img_3_rows_V_U0' to 'img_3_rows_V'
+@W [SYN-210] Renamed object name 'AP_FIFO_img_3_cols_V_U0' to 'img_3_cols_V'
+@W [SYN-210] Renamed object name 'AP_FIFO_img_0_data_stream_0_V_U0' to 'img_0_data_stream_0_V'
+@W [SYN-210] Renamed object name 'AP_FIFO_img_0_data_stream_1_V_U0' to 'img_0_data_stream_1_V'
+@W [SYN-210] Renamed object name 'AP_FIFO_img_0_data_stream_2_V_U0' to 'img_0_data_stream_2_V'
+@W [SYN-210] Renamed object name 'AP_FIFO_img_1_data_stream_0_V_U0' to 'img_1_data_stream_0_V'
+@W [SYN-210] Renamed object name 'AP_FIFO_img_1_data_stream_1_V_U0' to 'img_1_data_stream_1_V'
+@W [SYN-210] Renamed object name 'AP_FIFO_img_1_data_stream_2_V_U0' to 'img_1_data_stream_2_V'
+@W [SYN-210] Renamed object name 'AP_FIFO_img_2_data_stream_0_V_U0' to 'img_2_data_stream_0_V'
+@W [SYN-210] Renamed object name 'AP_FIFO_img_2_data_stream_1_V_U0' to 'img_2_data_stream_1_V'
+@W [SYN-210] Renamed object name 'AP_FIFO_img_2_data_stream_2_V_U0' to 'img_2_data_stream_2_V'
+@W [SYN-210] Renamed object name 'AP_FIFO_img_3_data_stream_0_V_U0' to 'img_3_data_stream_0_V'
+@W [SYN-210] Renamed object name 'AP_FIFO_img_3_data_stream_1_V_U0' to 'img_3_data_stream_1_V'
+@W [SYN-210] Renamed object name 'AP_FIFO_img_3_data_stream_2_V_U0' to 'img_3_data_stream_2_V'
+@I [HLS-0] Build ssdm time: 4 seconds per iteration
+@I [HLS-0] Finish building internal data model.
+@I [HLS-100] Command 'opt_and_import_c' returned 0; elapsed 14.98Total elapsed time: 164.828 sec.
+@I [HLS-111] Elapsed time: 18.73 seconds; current memory usage: 181 MB.
+@I [HLS-100] Command 'elaborate' returned 0; elapsed 18.39Total elapsed time: 164.828 sec.
+@I [HLS-100] Command "autosyn "
+@I [HLS-10] Starting hardware synthesis ...
+@0 [HLS-0] Starting hardware synthesis ...
+@I [HLS-0] Synthesizing C/C++ design ...
+@I [HLS-10] Synthesizing 'image_processor' ...
+@0 [HLS-0] Synthesizing 'image_processor' ...
+@I [HLS-100] Command "ap_set_top_model image_processor "
+@W [SYN-103] Legalizing function name 'init.1' to 'init_1'.
+@W [SYN-103] Legalizing function name 'init.2' to 'init_2'.
+@W [SYN-103] Legalizing function name 'init.3' to 'init_3'.
+@W [SYN-103] Legalizing function name 'AXIvideo2Mat<32,480,640,16>' to 'AXIvideo2Mat_32_480_640_16_s'.
+@W [SYN-103] Legalizing function name 'CvtColor<0,16,16,480,640>' to 'CvtColor_0_16_16_480_640_s'.
+@W [SYN-103] Legalizing function name 'filter_opr<filter2d_kernel,16,16,int,int,480,640,3,3>' to 'filter_opr_filter2d_kernel_16_16_int_int_480_640_3_3_s'.
+@W [SYN-103] Legalizing function name 'filter_opr<erode_kernel,16,16,unsigned char,int,480,640,3,3>' to 'filter_opr_erode_kernel_16_16_unsigned_char_int_480_640_3_3_s'.
+@W [SYN-103] Legalizing function name 'Erode<16,16,480,640>' to 'Erode_16_16_480_640_s'.
+@W [SYN-103] Legalizing function name 'Mat2AXIvideo<32,480,640,16>' to 'Mat2AXIvideo_32_480_640_16_s'.
+@I [HLS-100] Command 'ap_set_top_model' returned 0; elapsed 0Total elapsed time: 164.860 sec.
+@I [HLS-100] Command "get_model_list image_processor -filter all-wo-channel -topdown "
+@I [HLS-100] Command 'get_model_list' returned 0; elapsed 0Total elapsed time: 164.861 sec.
+@I [HLS-100] Command "preproc_iomode -model image_processor "
+@I [HLS-100] Command 'preproc_iomode' returned 0; elapsed 0Total elapsed time: 164.871 sec.
+@I [HLS-100] Command "preproc_iomode -model Mat2AXIvideo<32,480,640,16> "
+@I [HLS-100] Command 'preproc_iomode' returned 0; elapsed 0Total elapsed time: 164.871 sec.
+@I [HLS-100] Command "preproc_iomode -model Erode<16,16,480,640> "
+@I [HLS-100] Command 'preproc_iomode' returned 0; elapsed 0Total elapsed time: 164.871 sec.
+@I [HLS-100] Command "preproc_iomode -model filter_opr<erode_kernel,16,16,unsigned char,int,480,640,3,3> "
+@I [HLS-100] Command 'preproc_iomode' returned 0; elapsed 0Total elapsed time: 164.871 sec.
+@I [HLS-100] Command "preproc_iomode -model Sobel "
+@I [HLS-100] Command 'preproc_iomode' returned 0; elapsed 0Total elapsed time: 164.871 sec.
+@I [HLS-100] Command "preproc_iomode -model filter_opr<filter2d_kernel,16,16,int,int,480,640,3,3> "
+@I [HLS-100] Command 'preproc_iomode' returned 0; elapsed 0Total elapsed time: 164.871 sec.
+@I [HLS-100] Command "preproc_iomode -model CvtColor<0,16,16,480,640> "
+@I [HLS-100] Command 'preproc_iomode' returned 0; elapsed 0Total elapsed time: 164.872 sec.
+@I [HLS-100] Command "preproc_iomode -model AXIvideo2Mat<32,480,640,16> "
+@I [HLS-100] Command 'preproc_iomode' returned 0; elapsed 0Total elapsed time: 164.872 sec.
+@I [HLS-100] Command "preproc_iomode -model init.3 "
+@I [HLS-100] Command 'preproc_iomode' returned 0; elapsed 0Total elapsed time: 164.872 sec.
+@I [HLS-100] Command "preproc_iomode -model init.2 "
+@I [HLS-100] Command 'preproc_iomode' returned 0; elapsed 0Total elapsed time: 164.872 sec.
+@I [HLS-100] Command "preproc_iomode -model init.1 "
+@I [HLS-100] Command 'preproc_iomode' returned 0; elapsed 0Total elapsed time: 164.872 sec.
+@I [HLS-100] Command "preproc_iomode -model init "
+@I [HLS-100] Command 'preproc_iomode' returned 0; elapsed 0Total elapsed time: 164.872 sec.
+@I [HLS-100] Command "get_model_list image_processor -filter all-wo-channel "
+@I [HLS-100] Command 'get_model_list' returned 0; elapsed 0Total elapsed time: 164.873 sec.
+@I [HLS-0] Model list for configure: init init.1 init.2 init.3 AXIvideo2Mat<32,480,640,16> CvtColor<0,16,16,480,640> filter_opr<filter2d_kernel,16,16,int,int,480,640,3,3> Sobel {filter_opr<erode_kernel,16,16,unsigned char,int,480,640,3,3>} Erode<16,16,480,640> Mat2AXIvideo<32,480,640,16> image_processor
+@I [HLS-0] Configuring Module : init ...
+@I [HLS-100] Command "set_default_model init "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 164.873 sec.
+@I [HLS-100] Command "apply_spec_resource_limit init "
+@I [HLS-100] Command 'apply_spec_resource_limit' returned 0; elapsed 0Total elapsed time: 164.873 sec.
+@I [HLS-0] Configuring Module : init.1 ...
+@I [HLS-100] Command "set_default_model init.1 "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 164.873 sec.
+@I [HLS-100] Command "apply_spec_resource_limit init.1 "
+@I [HLS-100] Command 'apply_spec_resource_limit' returned 0; elapsed 0Total elapsed time: 164.873 sec.
+@I [HLS-0] Configuring Module : init.2 ...
+@I [HLS-100] Command "set_default_model init.2 "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 164.873 sec.
+@I [HLS-100] Command "apply_spec_resource_limit init.2 "
+@I [HLS-100] Command 'apply_spec_resource_limit' returned 0; elapsed 0Total elapsed time: 164.873 sec.
+@I [HLS-0] Configuring Module : init.3 ...
+@I [HLS-100] Command "set_default_model init.3 "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 164.873 sec.
+@I [HLS-100] Command "apply_spec_resource_limit init.3 "
+@I [HLS-100] Command 'apply_spec_resource_limit' returned 0; elapsed 0Total elapsed time: 164.873 sec.
+@I [HLS-0] Configuring Module : AXIvideo2Mat<32,480,640,16> ...
+@I [HLS-100] Command "set_default_model AXIvideo2Mat<32,480,640,16> "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 164.873 sec.
+@I [HLS-100] Command "apply_spec_resource_limit AXIvideo2Mat<32,480,640,16> "
+@I [HLS-100] Command 'apply_spec_resource_limit' returned 0; elapsed 0Total elapsed time: 164.873 sec.
+@I [HLS-0] Configuring Module : CvtColor<0,16,16,480,640> ...
+@I [HLS-100] Command "set_default_model CvtColor<0,16,16,480,640> "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 164.873 sec.
+@I [HLS-100] Command "apply_spec_resource_limit CvtColor<0,16,16,480,640> "
+@I [HLS-100] Command 'apply_spec_resource_limit' returned 0; elapsed 0Total elapsed time: 164.873 sec.
+@I [HLS-0] Configuring Module : filter_opr<filter2d_kernel,16,16,int,int,480,640,3,3> ...
+@I [HLS-100] Command "set_default_model filter_opr<filter2d_kernel,16,16,int,int,480,640,3,3> "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 164.873 sec.
+@I [HLS-100] Command "apply_spec_resource_limit filter_opr<filter2d_kernel,16,16,int,int,480,640,3,3> "
+@I [HLS-100] Command 'apply_spec_resource_limit' returned 0; elapsed 0Total elapsed time: 164.874 sec.
+@I [HLS-0] Configuring Module : Sobel ...
+@I [HLS-100] Command "set_default_model Sobel "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 164.874 sec.
+@I [HLS-100] Command "apply_spec_resource_limit Sobel "
+@I [HLS-100] Command 'apply_spec_resource_limit' returned 0; elapsed 0Total elapsed time: 164.874 sec.
+@I [HLS-0] Configuring Module : filter_opr<erode_kernel,16,16,unsigned char,int,480,640,3,3> ...
+@I [HLS-100] Command "set_default_model filter_opr<erode_kernel,16,16,unsigned char,int,480,640,3,3> "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 164.874 sec.
+@I [HLS-100] Command "apply_spec_resource_limit filter_opr<erode_kernel,16,16,unsigned char,int,480,640,3,3> "
+@I [HLS-100] Command 'apply_spec_resource_limit' returned 0; elapsed 0Total elapsed time: 164.874 sec.
+@I [HLS-0] Configuring Module : Erode<16,16,480,640> ...
+@I [HLS-100] Command "set_default_model Erode<16,16,480,640> "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 164.874 sec.
+@I [HLS-100] Command "apply_spec_resource_limit Erode<16,16,480,640> "
+@I [HLS-100] Command 'apply_spec_resource_limit' returned 0; elapsed 0Total elapsed time: 164.874 sec.
+@I [HLS-0] Configuring Module : Mat2AXIvideo<32,480,640,16> ...
+@I [HLS-100] Command "set_default_model Mat2AXIvideo<32,480,640,16> "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 164.874 sec.
+@I [HLS-100] Command "apply_spec_resource_limit Mat2AXIvideo<32,480,640,16> "
+@I [HLS-100] Command 'apply_spec_resource_limit' returned 0; elapsed 0Total elapsed time: 164.874 sec.
+@I [HLS-0] Configuring Module : image_processor ...
+@I [HLS-100] Command "set_default_model image_processor "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 164.874 sec.
+@I [HLS-100] Command "apply_spec_resource_limit image_processor "
+@I [HLS-100] Command 'apply_spec_resource_limit' returned 0; elapsed 0Total elapsed time: 164.874 sec.
+@I [HLS-0] Model list for preprocess: init init.1 init.2 init.3 AXIvideo2Mat<32,480,640,16> CvtColor<0,16,16,480,640> filter_opr<filter2d_kernel,16,16,int,int,480,640,3,3> Sobel {filter_opr<erode_kernel,16,16,unsigned char,int,480,640,3,3>} Erode<16,16,480,640> Mat2AXIvideo<32,480,640,16> image_processor
+@I [HLS-0] Preprocessing Module: init ...
+@I [HLS-100] Command "set_default_model init "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 164.874 sec.
+@I [HLS-100] Command "cdfg_preprocess -model init "
+@I [HLS-100] Command 'cdfg_preprocess' returned 0; elapsed 0Total elapsed time: 164.875 sec.
+@I [HLS-100] Command "rtl_gen_preprocess init "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 164.890 sec.
+@I [HLS-0] Preprocessing Module: init.1 ...
+@I [HLS-100] Command "set_default_model init.1 "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 164.890 sec.
+@I [HLS-100] Command "cdfg_preprocess -model init.1 "
+@I [HLS-100] Command 'cdfg_preprocess' returned 0; elapsed 0Total elapsed time: 164.890 sec.
+@I [HLS-100] Command "rtl_gen_preprocess init.1 "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 164.891 sec.
+@I [HLS-0] Preprocessing Module: init.2 ...
+@I [HLS-100] Command "set_default_model init.2 "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 164.891 sec.
+@I [HLS-100] Command "cdfg_preprocess -model init.2 "
+@I [HLS-100] Command 'cdfg_preprocess' returned 0; elapsed 0Total elapsed time: 164.891 sec.
+@I [HLS-100] Command "rtl_gen_preprocess init.2 "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 164.891 sec.
+@I [HLS-0] Preprocessing Module: init.3 ...
+@I [HLS-100] Command "set_default_model init.3 "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 164.891 sec.
+@I [HLS-100] Command "cdfg_preprocess -model init.3 "
+@I [HLS-100] Command 'cdfg_preprocess' returned 0; elapsed 0Total elapsed time: 164.891 sec.
+@I [HLS-100] Command "rtl_gen_preprocess init.3 "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 164.892 sec.
+@I [HLS-0] Preprocessing Module: AXIvideo2Mat<32,480,640,16> ...
+@I [HLS-100] Command "set_default_model AXIvideo2Mat<32,480,640,16> "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 164.892 sec.
+@I [HLS-100] Command "cdfg_preprocess -model AXIvideo2Mat<32,480,640,16> "
+@I [HLS-100] Command 'cdfg_preprocess' returned 0; elapsed 0.01Total elapsed time: 164.893 sec.
+@I [HLS-100] Command "rtl_gen_preprocess AXIvideo2Mat<32,480,640,16> "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 164.893 sec.
+@I [HLS-0] Preprocessing Module: CvtColor<0,16,16,480,640> ...
+@I [HLS-100] Command "set_default_model CvtColor<0,16,16,480,640> "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 164.893 sec.
+@I [HLS-100] Command "cdfg_preprocess -model CvtColor<0,16,16,480,640> "
+@I [HLS-100] Command 'cdfg_preprocess' returned 0; elapsed 0Total elapsed time: 164.894 sec.
+@I [HLS-100] Command "rtl_gen_preprocess CvtColor<0,16,16,480,640> "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 164.894 sec.
+@I [HLS-0] Preprocessing Module: filter_opr<filter2d_kernel,16,16,int,int,480,640,3,3> ...
+@I [HLS-100] Command "set_default_model filter_opr<filter2d_kernel,16,16,int,int,480,640,3,3> "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 164.894 sec.
+@I [HLS-100] Command "cdfg_preprocess -model filter_opr<filter2d_kernel,16,16,int,int,480,640,3,3> "
+@I [HLS-100] Command 'cdfg_preprocess' returned 0; elapsed 0.02Total elapsed time: 164.953 sec.
+@I [HLS-100] Command "rtl_gen_preprocess filter_opr<filter2d_kernel,16,16,int,int,480,640,3,3> "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 164.953 sec.
+@I [HLS-0] Preprocessing Module: Sobel ...
+@I [HLS-100] Command "set_default_model Sobel "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 164.953 sec.
+@I [HLS-100] Command "cdfg_preprocess -model Sobel "
+@I [HLS-100] Command 'cdfg_preprocess' returned 0; elapsed 0Total elapsed time: 164.954 sec.
+@I [HLS-100] Command "rtl_gen_preprocess Sobel "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 164.954 sec.
+@I [HLS-0] Preprocessing Module: filter_opr<erode_kernel,16,16,unsigned char,int,480,640,3,3> ...
+@I [HLS-100] Command "set_default_model filter_opr<erode_kernel,16,16,unsigned char,int,480,640,3,3> "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 164.954 sec.
+@I [HLS-100] Command "cdfg_preprocess -model filter_opr<erode_kernel,16,16,unsigned char,int,480,640,3,3> "
+@I [HLS-100] Command 'cdfg_preprocess' returned 0; elapsed 0.02Total elapsed time: 164.972 sec.
+@I [HLS-100] Command "rtl_gen_preprocess filter_opr<erode_kernel,16,16,unsigned char,int,480,640,3,3> "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 164.973 sec.
+@I [HLS-0] Preprocessing Module: Erode<16,16,480,640> ...
+@I [HLS-100] Command "set_default_model Erode<16,16,480,640> "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 164.973 sec.
+@I [HLS-100] Command "cdfg_preprocess -model Erode<16,16,480,640> "
+@I [HLS-100] Command 'cdfg_preprocess' returned 0; elapsed 0Total elapsed time: 164.974 sec.
+@I [HLS-100] Command "rtl_gen_preprocess Erode<16,16,480,640> "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 164.975 sec.
+@I [HLS-0] Preprocessing Module: Mat2AXIvideo<32,480,640,16> ...
+@I [HLS-100] Command "set_default_model Mat2AXIvideo<32,480,640,16> "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 164.975 sec.
+@I [HLS-100] Command "cdfg_preprocess -model Mat2AXIvideo<32,480,640,16> "
+@I [HLS-100] Command 'cdfg_preprocess' returned 0; elapsed 0Total elapsed time: 164.975 sec.
+@I [HLS-100] Command "rtl_gen_preprocess Mat2AXIvideo<32,480,640,16> "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 164.976 sec.
+@I [HLS-0] Preprocessing Module: image_processor ...
+@I [HLS-100] Command "set_default_model image_processor "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 164.976 sec.
+@I [HLS-100] Command "cdfg_preprocess -model image_processor "
+@I [HLS-100] Command 'cdfg_preprocess' returned 0; elapsed 0Total elapsed time: 164.977 sec.
+@I [HLS-100] Command "rtl_gen_preprocess image_processor "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 164.978 sec.
+@I [HLS-0] Model list for synthesis: init init.1 init.2 init.3 AXIvideo2Mat<32,480,640,16> CvtColor<0,16,16,480,640> filter_opr<filter2d_kernel,16,16,int,int,480,640,3,3> Sobel {filter_opr<erode_kernel,16,16,unsigned char,int,480,640,3,3>} Erode<16,16,480,640> Mat2AXIvideo<32,480,640,16> image_processor
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'init' 
+@0 [HLS-0] -- Scheduling module 'init' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model init "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 164.978 sec.
+@I [HLS-100] Command "schedule -model init "
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-11] Finished scheduling.
+@I [HLS-100] Command 'schedule' returned 0; elapsed 0.02Total elapsed time: 165.258 sec.
+@I [HLS-111] Elapsed time: 0.07 seconds; current memory usage: 182 MB.
+@I [HLS-100] Command "report -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/init.verbose.sched.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.01Total elapsed time: 165.304 sec.
+@I [HLS-100] Command "db_write -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/init.sched.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0Total elapsed time: 165.317 sec.
+@I [HLS-0] Finish scheduling init.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'init' 
+@0 [HLS-0] -- Exploring micro-architecture for module 'init' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model init "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 165.326 sec.
+@I [HLS-100] Command "bind -model init "
+@I [BIND-110] clear=
+@I [BIND-110] debug=
+@I [BIND-110] drf=
+@I [BIND-110] effort=
+@I [BIND-110] fast_refine=
+@I [BIND-110] fu_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] global_opt=
+@I [BIND-110] gsearch=
+@I [BIND-110] help=
+@I [BIND-110] help-hidden=
+@I [BIND-110] min_mem_port=
+@I [BIND-110] min_op=
+@I [BIND-110] minreg=
+@I [BIND-110] ml=
+@I [BIND-110] model=init
+@I [BIND-110] no_false_path=
+@I [BIND-110] no_min_op=
+@I [BIND-110] normalize=
+@I [BIND-110] quiet=
+@I [BIND-110] refine=
+@I [BIND-110] reg_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] search=
+@I [BIND-110] tight_delay=
+@I [BIND-110] verbose=
+@I [BIND-110] wFF=
+@I [BIND-110] wFU=
+@I [BIND-110] wMUX=
+@I [BIND-110] wNET=
+@I [BIND-100] Starting micro-architecture binding ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding resource limited operations ...
+@I [BIND-100] Finished micro-architecture binding.
+@I [HLS-100] Command 'bind' returned 0; elapsed 0Total elapsed time: 165.327 sec.
+@I [HLS-111] Elapsed time: 0.01 seconds; current memory usage: 182 MB.
+@I [HLS-100] Command "report -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/init.verbose.bind.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.01Total elapsed time: 165.331 sec.
+@I [HLS-100] Command "db_write -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/init.bind.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0Total elapsed time: 165.336 sec.
+@I [HLS-0] Finish binding init.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'init_1' 
+@0 [HLS-0] -- Scheduling module 'init_1' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model init.1 "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 165.336 sec.
+@I [HLS-100] Command "schedule -model init.1 "
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-11] Finished scheduling.
+@I [HLS-100] Command 'schedule' returned 0; elapsed 0.02Total elapsed time: 165.352 sec.
+@I [HLS-111] Elapsed time: 0.03 seconds; current memory usage: 182 MB.
+@I [HLS-100] Command "report -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/init_1.verbose.sched.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0Total elapsed time: 165.356 sec.
+@I [HLS-100] Command "db_write -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/init_1.sched.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.01Total elapsed time: 165.361 sec.
+@I [HLS-0] Finish scheduling init.1.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'init_1' 
+@0 [HLS-0] -- Exploring micro-architecture for module 'init_1' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model init.1 "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 165.361 sec.
+@I [HLS-100] Command "bind -model init.1 "
+@I [BIND-110] clear=
+@I [BIND-110] debug=
+@I [BIND-110] drf=
+@I [BIND-110] effort=
+@I [BIND-110] fast_refine=
+@I [BIND-110] fu_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] global_opt=
+@I [BIND-110] gsearch=
+@I [BIND-110] help=
+@I [BIND-110] help-hidden=
+@I [BIND-110] min_mem_port=
+@I [BIND-110] min_op=
+@I [BIND-110] minreg=
+@I [BIND-110] ml=
+@I [BIND-110] model=init.1
+@I [BIND-110] no_false_path=
+@I [BIND-110] no_min_op=
+@I [BIND-110] normalize=
+@I [BIND-110] quiet=
+@I [BIND-110] refine=
+@I [BIND-110] reg_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] search=
+@I [BIND-110] tight_delay=
+@I [BIND-110] verbose=
+@I [BIND-110] wFF=
+@I [BIND-110] wFU=
+@I [BIND-110] wMUX=
+@I [BIND-110] wNET=
+@I [BIND-100] Starting micro-architecture binding ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding resource limited operations ...
+@I [BIND-100] Finished micro-architecture binding.
+@I [HLS-100] Command 'bind' returned 0; elapsed 0Total elapsed time: 165.361 sec.
+@I [HLS-111] Elapsed time: 0.01 seconds; current memory usage: 182 MB.
+@I [HLS-100] Command "report -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/init_1.verbose.bind.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0Total elapsed time: 165.365 sec.
+@I [HLS-100] Command "db_write -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/init_1.bind.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.01Total elapsed time: 165.369 sec.
+@I [HLS-0] Finish binding init.1.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'init_2' 
+@0 [HLS-0] -- Scheduling module 'init_2' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model init.2 "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 165.369 sec.
+@I [HLS-100] Command "schedule -model init.2 "
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-11] Finished scheduling.
+@I [HLS-100] Command 'schedule' returned 0; elapsed 0.01Total elapsed time: 165.385 sec.
+@I [HLS-111] Elapsed time: 0.02 seconds; current memory usage: 182 MB.
+@I [HLS-100] Command "report -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/init_2.verbose.sched.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.01Total elapsed time: 165.389 sec.
+@I [HLS-100] Command "db_write -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/init_2.sched.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0Total elapsed time: 165.393 sec.
+@I [HLS-0] Finish scheduling init.2.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'init_2' 
+@0 [HLS-0] -- Exploring micro-architecture for module 'init_2' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model init.2 "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 165.394 sec.
+@I [HLS-100] Command "bind -model init.2 "
+@I [BIND-110] clear=
+@I [BIND-110] debug=
+@I [BIND-110] drf=
+@I [BIND-110] effort=
+@I [BIND-110] fast_refine=
+@I [BIND-110] fu_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] global_opt=
+@I [BIND-110] gsearch=
+@I [BIND-110] help=
+@I [BIND-110] help-hidden=
+@I [BIND-110] min_mem_port=
+@I [BIND-110] min_op=
+@I [BIND-110] minreg=
+@I [BIND-110] ml=
+@I [BIND-110] model=init.2
+@I [BIND-110] no_false_path=
+@I [BIND-110] no_min_op=
+@I [BIND-110] normalize=
+@I [BIND-110] quiet=
+@I [BIND-110] refine=
+@I [BIND-110] reg_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] search=
+@I [BIND-110] tight_delay=
+@I [BIND-110] verbose=
+@I [BIND-110] wFF=
+@I [BIND-110] wFU=
+@I [BIND-110] wMUX=
+@I [BIND-110] wNET=
+@I [BIND-100] Starting micro-architecture binding ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding resource limited operations ...
+@I [BIND-100] Finished micro-architecture binding.
+@I [HLS-100] Command 'bind' returned 0; elapsed 0Total elapsed time: 165.394 sec.
+@I [HLS-111] Elapsed time: 0.01 seconds; current memory usage: 182 MB.
+@I [HLS-100] Command "report -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/init_2.verbose.bind.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0Total elapsed time: 165.399 sec.
+@I [HLS-100] Command "db_write -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/init_2.bind.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.01Total elapsed time: 165.404 sec.
+@I [HLS-0] Finish binding init.2.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'init_3' 
+@0 [HLS-0] -- Scheduling module 'init_3' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model init.3 "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 165.404 sec.
+@I [HLS-100] Command "schedule -model init.3 "
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-11] Finished scheduling.
+@I [HLS-100] Command 'schedule' returned 0; elapsed 0.01Total elapsed time: 165.419 sec.
+@I [HLS-111] Elapsed time: 0.02 seconds; current memory usage: 182 MB.
+@I [HLS-100] Command "report -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/init_3.verbose.sched.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.01Total elapsed time: 165.423 sec.
+@I [HLS-100] Command "db_write -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/init_3.sched.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0Total elapsed time: 165.425 sec.
+@I [HLS-0] Finish scheduling init.3.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'init_3' 
+@0 [HLS-0] -- Exploring micro-architecture for module 'init_3' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model init.3 "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 165.426 sec.
+@I [HLS-100] Command "bind -model init.3 "
+@I [BIND-110] clear=
+@I [BIND-110] debug=
+@I [BIND-110] drf=
+@I [BIND-110] effort=
+@I [BIND-110] fast_refine=
+@I [BIND-110] fu_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] global_opt=
+@I [BIND-110] gsearch=
+@I [BIND-110] help=
+@I [BIND-110] help-hidden=
+@I [BIND-110] min_mem_port=
+@I [BIND-110] min_op=
+@I [BIND-110] minreg=
+@I [BIND-110] ml=
+@I [BIND-110] model=init.3
+@I [BIND-110] no_false_path=
+@I [BIND-110] no_min_op=
+@I [BIND-110] normalize=
+@I [BIND-110] quiet=
+@I [BIND-110] refine=
+@I [BIND-110] reg_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] search=
+@I [BIND-110] tight_delay=
+@I [BIND-110] verbose=
+@I [BIND-110] wFF=
+@I [BIND-110] wFU=
+@I [BIND-110] wMUX=
+@I [BIND-110] wNET=
+@I [BIND-100] Starting micro-architecture binding ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding resource limited operations ...
+@I [BIND-100] Finished micro-architecture binding.
+@I [HLS-100] Command 'bind' returned 0; elapsed 0Total elapsed time: 165.426 sec.
+@I [HLS-111] Elapsed time: 0.01 seconds; current memory usage: 183 MB.
+@I [HLS-100] Command "report -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/init_3.verbose.bind.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.01Total elapsed time: 165.430 sec.
+@I [HLS-100] Command "db_write -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/init_3.bind.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0Total elapsed time: 165.433 sec.
+@I [HLS-0] Finish binding init.3.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'AXIvideo2Mat_32_480_640_16_s' 
+@0 [HLS-0] -- Scheduling module 'AXIvideo2Mat_32_480_640_16_s' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model AXIvideo2Mat<32,480,640,16> "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 165.433 sec.
+@I [HLS-100] Command "schedule -model AXIvideo2Mat<32,480,640,16> "
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-61] Pipelining loop 'Loop 1'.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 1.
+@I [SCHED-61] Pipelining loop 'Loop 2.1'.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 2.
+@I [SCHED-61] Pipelining loop 'Loop 2.2'.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 1.
+@I [SCHED-11] Finished scheduling.
+@I [HLS-100] Command 'schedule' returned 0; elapsed 0.13Total elapsed time: 165.639 sec.
+@I [HLS-111] Elapsed time: 0.14 seconds; current memory usage: 183 MB.
+@I [HLS-100] Command "report -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/AXIvideo2Mat_32_480_640_16_s.verbose.sched.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.02Total elapsed time: 165.661 sec.
+@I [HLS-100] Command "db_write -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/AXIvideo2Mat_32_480_640_16_s.sched.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.02Total elapsed time: 165.685 sec.
+@I [HLS-0] Finish scheduling AXIvideo2Mat<32,480,640,16>.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'AXIvideo2Mat_32_480_640_16_s' 
+@0 [HLS-0] -- Exploring micro-architecture for module 'AXIvideo2Mat_32_480_640_16_s' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model AXIvideo2Mat<32,480,640,16> "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 165.685 sec.
+@I [HLS-100] Command "bind -model AXIvideo2Mat<32,480,640,16> "
+@I [BIND-110] clear=
+@I [BIND-110] debug=
+@I [BIND-110] drf=
+@I [BIND-110] effort=
+@I [BIND-110] fast_refine=
+@I [BIND-110] fu_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] global_opt=
+@I [BIND-110] gsearch=
+@I [BIND-110] help=
+@I [BIND-110] help-hidden=
+@I [BIND-110] min_mem_port=
+@I [BIND-110] min_op=
+@I [BIND-110] minreg=
+@I [BIND-110] ml=
+@I [BIND-110] model=AXIvideo2Mat<32,480,640,16>
+@I [BIND-110] no_false_path=
+@I [BIND-110] no_min_op=
+@I [BIND-110] normalize=
+@I [BIND-110] quiet=
+@I [BIND-110] refine=
+@I [BIND-110] reg_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] search=
+@I [BIND-110] tight_delay=
+@I [BIND-110] verbose=
+@I [BIND-110] wFF=
+@I [BIND-110] wFU=
+@I [BIND-110] wMUX=
+@I [BIND-110] wNET=
+@I [BIND-100] Starting micro-architecture binding ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding resource limited operations ...
+@I [BIND-100] Finished micro-architecture binding.
+@I [HLS-100] Command 'bind' returned 0; elapsed 0.01Total elapsed time: 165.691 sec.
+@I [HLS-111] Elapsed time: 0.05 seconds; current memory usage: 183 MB.
+@I [HLS-100] Command "report -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/AXIvideo2Mat_32_480_640_16_s.verbose.bind.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.03Total elapsed time: 165.745 sec.
+@I [HLS-100] Command "db_write -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/AXIvideo2Mat_32_480_640_16_s.bind.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.02Total elapsed time: 165.771 sec.
+@I [HLS-0] Finish binding AXIvideo2Mat<32,480,640,16>.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'CvtColor_0_16_16_480_640_s' 
+@0 [HLS-0] -- Scheduling module 'CvtColor_0_16_16_480_640_s' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model CvtColor<0,16,16,480,640> "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 165.771 sec.
+@I [HLS-100] Command "schedule -model CvtColor<0,16,16,480,640> "
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-61] Pipelining loop 'Loop 1.1'.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 8.
+@I [SCHED-11] Finished scheduling.
+@I [HLS-100] Command 'schedule' returned 0; elapsed 0.11Total elapsed time: 165.892 sec.
+@I [HLS-111] Elapsed time: 0.17 seconds; current memory usage: 184 MB.
+@I [HLS-100] Command "report -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/CvtColor_0_16_16_480_640_s.verbose.sched.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.01Total elapsed time: 165.907 sec.
+@I [HLS-100] Command "db_write -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/CvtColor_0_16_16_480_640_s.sched.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.02Total elapsed time: 165.927 sec.
+@I [HLS-0] Finish scheduling CvtColor<0,16,16,480,640>.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'CvtColor_0_16_16_480_640_s' 
+@0 [HLS-0] -- Exploring micro-architecture for module 'CvtColor_0_16_16_480_640_s' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model CvtColor<0,16,16,480,640> "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 165.927 sec.
+@I [HLS-100] Command "bind -model CvtColor<0,16,16,480,640> "
+@I [BIND-110] clear=
+@I [BIND-110] debug=
+@I [BIND-110] drf=
+@I [BIND-110] effort=
+@I [BIND-110] fast_refine=
+@I [BIND-110] fu_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] global_opt=
+@I [BIND-110] gsearch=
+@I [BIND-110] help=
+@I [BIND-110] help-hidden=
+@I [BIND-110] min_mem_port=
+@I [BIND-110] min_op=
+@I [BIND-110] minreg=
+@I [BIND-110] ml=
+@I [BIND-110] model=CvtColor<0,16,16,480,640>
+@I [BIND-110] no_false_path=
+@I [BIND-110] no_min_op=
+@I [BIND-110] normalize=
+@I [BIND-110] quiet=
+@I [BIND-110] refine=
+@I [BIND-110] reg_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] search=
+@I [BIND-110] tight_delay=
+@I [BIND-110] verbose=
+@I [BIND-110] wFF=
+@I [BIND-110] wFU=
+@I [BIND-110] wMUX=
+@I [BIND-110] wNET=
+@I [BIND-100] Starting micro-architecture binding ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding resource limited operations ...
+@I [BIND-100] Finished micro-architecture binding.
+@I [HLS-100] Command 'bind' returned 0; elapsed 0.01Total elapsed time: 165.937 sec.
+@I [HLS-111] Elapsed time: 0.04 seconds; current memory usage: 184 MB.
+@I [HLS-100] Command "report -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/CvtColor_0_16_16_480_640_s.verbose.bind.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.04Total elapsed time: 165.975 sec.
+@I [HLS-100] Command "db_write -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/CvtColor_0_16_16_480_640_s.bind.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.02Total elapsed time: 165.993 sec.
+@I [HLS-0] Finish binding CvtColor<0,16,16,480,640>.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'filter_opr_filter2d_kernel_16_16_int_int_480_640_3_3_s' 
+@0 [HLS-0] -- Scheduling module 'filter_opr_filter2d_kernel_16_16_int_int_480_640_3_3_s' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model filter_opr<filter2d_kernel,16,16,int,int,480,640,3,3> "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 165.993 sec.
+@I [HLS-100] Command "schedule -model filter_opr<filter2d_kernel,16,16,int,int,480,640,3,3> "
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-61] Pipelining loop 'Loop 4.1'.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 8.
+@I [SCHED-11] Finished scheduling.
+@I [HLS-100] Command 'schedule' returned 0; elapsed 1.17Total elapsed time: 167.163 sec.
+@I [HLS-111] Elapsed time: 1.23 seconds; current memory usage: 187 MB.
+@I [HLS-100] Command "report -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/filter_opr_filter2d_kernel_16_16_int_int_480_640_3_3_s.verbose.sched.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.18Total elapsed time: 167.348 sec.
+@I [HLS-100] Command "db_write -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/filter_opr_filter2d_kernel_16_16_int_int_480_640_3_3_s.sched.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.23Total elapsed time: 167.570 sec.
+@I [HLS-0] Finish scheduling filter_opr<filter2d_kernel,16,16,int,int,480,640,3,3>.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'filter_opr_filter2d_kernel_16_16_int_int_480_640_3_3_s' 
+@0 [HLS-0] -- Exploring micro-architecture for module 'filter_opr_filter2d_kernel_16_16_int_int_480_640_3_3_s' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model filter_opr<filter2d_kernel,16,16,int,int,480,640,3,3> "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 167.570 sec.
+@I [HLS-100] Command "bind -model filter_opr<filter2d_kernel,16,16,int,int,480,640,3,3> "
+@I [BIND-110] clear=
+@I [BIND-110] debug=
+@I [BIND-110] drf=
+@I [BIND-110] effort=
+@I [BIND-110] fast_refine=
+@I [BIND-110] fu_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] global_opt=
+@I [BIND-110] gsearch=
+@I [BIND-110] help=
+@I [BIND-110] help-hidden=
+@I [BIND-110] min_mem_port=
+@I [BIND-110] min_op=
+@I [BIND-110] minreg=
+@I [BIND-110] ml=
+@I [BIND-110] model=filter_opr<filter2d_kernel,16,16,int,int,480,640,3,3>
+@I [BIND-110] no_false_path=
+@I [BIND-110] no_min_op=
+@I [BIND-110] normalize=
+@I [BIND-110] quiet=
+@I [BIND-110] refine=
+@I [BIND-110] reg_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] search=
+@I [BIND-110] tight_delay=
+@I [BIND-110] verbose=
+@I [BIND-110] wFF=
+@I [BIND-110] wFU=
+@I [BIND-110] wMUX=
+@I [BIND-110] wNET=
+@I [BIND-100] Starting micro-architecture binding ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding resource limited operations ...
+@I [BIND-100] Finished micro-architecture binding.
+@I [HLS-100] Command 'bind' returned 0; elapsed 0.15Total elapsed time: 167.722 sec.
+@I [HLS-111] Elapsed time: 0.56 seconds; current memory usage: 189 MB.
+@I [HLS-100] Command "report -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/filter_opr_filter2d_kernel_16_16_int_int_480_640_3_3_s.verbose.bind.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.33Total elapsed time: 168.50 sec.
+@I [HLS-100] Command "db_write -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/filter_opr_filter2d_kernel_16_16_int_int_480_640_3_3_s.bind.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.23Total elapsed time: 168.285 sec.
+@I [HLS-0] Finish binding filter_opr<filter2d_kernel,16,16,int,int,480,640,3,3>.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'Sobel' 
+@0 [HLS-0] -- Scheduling module 'Sobel' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model Sobel "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 168.285 sec.
+@I [HLS-100] Command "schedule -model Sobel "
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-11] Finished scheduling.
+@I [HLS-100] Command 'schedule' returned 0; elapsed 0.02Total elapsed time: 168.305 sec.
+@I [HLS-111] Elapsed time: 0.58 seconds; current memory usage: 189 MB.
+@I [HLS-100] Command "report -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/Sobel.verbose.sched.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0Total elapsed time: 168.309 sec.
+@I [HLS-100] Command "db_write -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/Sobel.sched.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.01Total elapsed time: 168.312 sec.
+@I [HLS-0] Finish scheduling Sobel.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'Sobel' 
+@0 [HLS-0] -- Exploring micro-architecture for module 'Sobel' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model Sobel "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 168.312 sec.
+@I [HLS-100] Command "bind -model Sobel "
+@I [BIND-110] clear=
+@I [BIND-110] debug=
+@I [BIND-110] drf=
+@I [BIND-110] effort=
+@I [BIND-110] fast_refine=
+@I [BIND-110] fu_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] global_opt=
+@I [BIND-110] gsearch=
+@I [BIND-110] help=
+@I [BIND-110] help-hidden=
+@I [BIND-110] min_mem_port=
+@I [BIND-110] min_op=
+@I [BIND-110] minreg=
+@I [BIND-110] ml=
+@I [BIND-110] model=Sobel
+@I [BIND-110] no_false_path=
+@I [BIND-110] no_min_op=
+@I [BIND-110] normalize=
+@I [BIND-110] quiet=
+@I [BIND-110] refine=
+@I [BIND-110] reg_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] search=
+@I [BIND-110] tight_delay=
+@I [BIND-110] verbose=
+@I [BIND-110] wFF=
+@I [BIND-110] wFU=
+@I [BIND-110] wMUX=
+@I [BIND-110] wNET=
+@I [BIND-100] Starting micro-architecture binding ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding resource limited operations ...
+@I [BIND-100] Finished micro-architecture binding.
+@I [HLS-100] Command 'bind' returned 0; elapsed 0.05Total elapsed time: 168.362 sec.
+@I [HLS-111] Elapsed time: 0.06 seconds; current memory usage: 190 MB.
+@I [HLS-100] Command "report -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/Sobel.verbose.bind.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.14Total elapsed time: 168.507 sec.
+@I [HLS-100] Command "db_write -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/Sobel.bind.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0Total elapsed time: 168.511 sec.
+@I [HLS-0] Finish binding Sobel.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'filter_opr_erode_kernel_16_16_unsigned_char_int_480_640_3_3_s' 
+@0 [HLS-0] -- Scheduling module 'filter_opr_erode_kernel_16_16_unsigned_char_int_480_640_3_3_s' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model filter_opr<erode_kernel,16,16,unsigned char,int,480,640,3,3> "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 168.511 sec.
+@I [HLS-100] Command "schedule -model filter_opr<erode_kernel,16,16,unsigned char,int,480,640,3,3> "
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-61] Pipelining loop 'Loop 4.1'.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 12.
+@I [SCHED-11] Finished scheduling.
+@I [HLS-100] Command 'schedule' returned 0; elapsed 0.93Total elapsed time: 169.436 sec.
+@I [HLS-111] Elapsed time: 1.07 seconds; current memory usage: 192 MB.
+@I [HLS-100] Command "report -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/filter_opr_erode_kernel_16_16_unsigned_char_int_480_640_3_3_s.verbose.sched.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.17Total elapsed time: 169.612 sec.
+@I [HLS-100] Command "db_write -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/filter_opr_erode_kernel_16_16_unsigned_char_int_480_640_3_3_s.sched.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.2Total elapsed time: 169.824 sec.
+@I [HLS-0] Finish scheduling filter_opr<erode_kernel,16,16,unsigned char,int,480,640,3,3>.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'filter_opr_erode_kernel_16_16_unsigned_char_int_480_640_3_3_s' 
+@0 [HLS-0] -- Exploring micro-architecture for module 'filter_opr_erode_kernel_16_16_unsigned_char_int_480_640_3_3_s' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model filter_opr<erode_kernel,16,16,unsigned char,int,480,640,3,3> "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 169.825 sec.
+@I [HLS-100] Command "bind -model filter_opr<erode_kernel,16,16,unsigned char,int,480,640,3,3> "
+@I [BIND-110] clear=
+@I [BIND-110] debug=
+@I [BIND-110] drf=
+@I [BIND-110] effort=
+@I [BIND-110] fast_refine=
+@I [BIND-110] fu_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] global_opt=
+@I [BIND-110] gsearch=
+@I [BIND-110] help=
+@I [BIND-110] help-hidden=
+@I [BIND-110] min_mem_port=
+@I [BIND-110] min_op=
+@I [BIND-110] minreg=
+@I [BIND-110] ml=
+@I [BIND-110] model=filter_opr<erode_kernel,16,16,unsigned char,int,480,640,3,3>
+@I [BIND-110] no_false_path=
+@I [BIND-110] no_min_op=
+@I [BIND-110] normalize=
+@I [BIND-110] quiet=
+@I [BIND-110] refine=
+@I [BIND-110] reg_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] search=
+@I [BIND-110] tight_delay=
+@I [BIND-110] verbose=
+@I [BIND-110] wFF=
+@I [BIND-110] wFU=
+@I [BIND-110] wMUX=
+@I [BIND-110] wNET=
+@I [BIND-100] Starting micro-architecture binding ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding resource limited operations ...
+@I [BIND-100] Finished micro-architecture binding.
+@I [HLS-100] Command 'bind' returned 0; elapsed 0.14Total elapsed time: 169.955 sec.
+@I [HLS-111] Elapsed time: 0.51 seconds; current memory usage: 195 MB.
+@I [HLS-100] Command "report -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/filter_opr_erode_kernel_16_16_unsigned_char_int_480_640_3_3_s.verbose.bind.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.34Total elapsed time: 170.293 sec.
+@I [HLS-100] Command "db_write -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/filter_opr_erode_kernel_16_16_unsigned_char_int_480_640_3_3_s.bind.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.22Total elapsed time: 170.516 sec.
+@I [HLS-0] Finish binding filter_opr<erode_kernel,16,16,unsigned char,int,480,640,3,3>.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'Erode_16_16_480_640_s' 
+@0 [HLS-0] -- Scheduling module 'Erode_16_16_480_640_s' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model Erode<16,16,480,640> "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 170.516 sec.
+@I [HLS-100] Command "schedule -model Erode<16,16,480,640> "
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-11] Finished scheduling.
+@I [HLS-100] Command 'schedule' returned 0; elapsed 0.08Total elapsed time: 170.595 sec.
+@I [HLS-111] Elapsed time: 0.64 seconds; current memory usage: 195 MB.
+@I [HLS-100] Command "report -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/Erode_16_16_480_640_s.verbose.sched.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.04Total elapsed time: 170.628 sec.
+@I [HLS-100] Command "db_write -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/Erode_16_16_480_640_s.sched.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.04Total elapsed time: 170.669 sec.
+@I [HLS-0] Finish scheduling Erode<16,16,480,640>.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'Erode_16_16_480_640_s' 
+@0 [HLS-0] -- Exploring micro-architecture for module 'Erode_16_16_480_640_s' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model Erode<16,16,480,640> "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 170.670 sec.
+@I [HLS-100] Command "bind -model Erode<16,16,480,640> "
+@I [BIND-110] clear=
+@I [BIND-110] debug=
+@I [BIND-110] drf=
+@I [BIND-110] effort=
+@I [BIND-110] fast_refine=
+@I [BIND-110] fu_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] global_opt=
+@I [BIND-110] gsearch=
+@I [BIND-110] help=
+@I [BIND-110] help-hidden=
+@I [BIND-110] min_mem_port=
+@I [BIND-110] min_op=
+@I [BIND-110] minreg=
+@I [BIND-110] ml=
+@I [BIND-110] model=Erode<16,16,480,640>
+@I [BIND-110] no_false_path=
+@I [BIND-110] no_min_op=
+@I [BIND-110] normalize=
+@I [BIND-110] quiet=
+@I [BIND-110] refine=
+@I [BIND-110] reg_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] search=
+@I [BIND-110] tight_delay=
+@I [BIND-110] verbose=
+@I [BIND-110] wFF=
+@I [BIND-110] wFU=
+@I [BIND-110] wMUX=
+@I [BIND-110] wNET=
+@I [BIND-100] Starting micro-architecture binding ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding resource limited operations ...
+@I [BIND-100] Finished micro-architecture binding.
+@I [HLS-100] Command 'bind' returned 0; elapsed 0.08Total elapsed time: 170.753 sec.
+@I [HLS-111] Elapsed time: 0.16 seconds; current memory usage: 196 MB.
+@I [HLS-100] Command "report -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/Erode_16_16_480_640_s.verbose.bind.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.25Total elapsed time: 171.10 sec.
+@I [HLS-100] Command "db_write -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/Erode_16_16_480_640_s.bind.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.04Total elapsed time: 171.55 sec.
+@I [HLS-0] Finish binding Erode<16,16,480,640>.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'Mat2AXIvideo_32_480_640_16_s' 
+@0 [HLS-0] -- Scheduling module 'Mat2AXIvideo_32_480_640_16_s' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model Mat2AXIvideo<32,480,640,16> "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 171.56 sec.
+@I [HLS-100] Command "schedule -model Mat2AXIvideo<32,480,640,16> "
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-61] Pipelining loop 'Loop 1.1'.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 2.
+@I [SCHED-11] Finished scheduling.
+@I [HLS-100] Command 'schedule' returned 0; elapsed 0.07Total elapsed time: 171.125 sec.
+@I [HLS-111] Elapsed time: 0.36 seconds; current memory usage: 197 MB.
+@I [HLS-100] Command "report -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/Mat2AXIvideo_32_480_640_16_s.verbose.sched.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.01Total elapsed time: 171.137 sec.
+@I [HLS-100] Command "db_write -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/Mat2AXIvideo_32_480_640_16_s.sched.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.02Total elapsed time: 171.150 sec.
+@I [HLS-0] Finish scheduling Mat2AXIvideo<32,480,640,16>.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'Mat2AXIvideo_32_480_640_16_s' 
+@0 [HLS-0] -- Exploring micro-architecture for module 'Mat2AXIvideo_32_480_640_16_s' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model Mat2AXIvideo<32,480,640,16> "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 171.150 sec.
+@I [HLS-100] Command "bind -model Mat2AXIvideo<32,480,640,16> "
+@I [BIND-110] clear=
+@I [BIND-110] debug=
+@I [BIND-110] drf=
+@I [BIND-110] effort=
+@I [BIND-110] fast_refine=
+@I [BIND-110] fu_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] global_opt=
+@I [BIND-110] gsearch=
+@I [BIND-110] help=
+@I [BIND-110] help-hidden=
+@I [BIND-110] min_mem_port=
+@I [BIND-110] min_op=
+@I [BIND-110] minreg=
+@I [BIND-110] ml=
+@I [BIND-110] model=Mat2AXIvideo<32,480,640,16>
+@I [BIND-110] no_false_path=
+@I [BIND-110] no_min_op=
+@I [BIND-110] normalize=
+@I [BIND-110] quiet=
+@I [BIND-110] refine=
+@I [BIND-110] reg_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] search=
+@I [BIND-110] tight_delay=
+@I [BIND-110] verbose=
+@I [BIND-110] wFF=
+@I [BIND-110] wFU=
+@I [BIND-110] wMUX=
+@I [BIND-110] wNET=
+@I [BIND-100] Starting micro-architecture binding ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding resource limited operations ...
+@I [BIND-100] Finished micro-architecture binding.
+@I [HLS-100] Command 'bind' returned 0; elapsed 0Total elapsed time: 171.153 sec.
+@I [HLS-111] Elapsed time: 0.03 seconds; current memory usage: 197 MB.
+@I [HLS-100] Command "report -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/Mat2AXIvideo_32_480_640_16_s.verbose.bind.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.02Total elapsed time: 171.171 sec.
+@I [HLS-100] Command "db_write -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/Mat2AXIvideo_32_480_640_16_s.bind.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.01Total elapsed time: 171.185 sec.
+@I [HLS-0] Finish binding Mat2AXIvideo<32,480,640,16>.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'image_processor' 
+@0 [HLS-0] -- Scheduling module 'image_processor' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model image_processor "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 171.186 sec.
+@I [HLS-100] Command "schedule -model image_processor "
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-11] Finished scheduling.
+@I [HLS-100] Command 'schedule' returned 0; elapsed 0.12Total elapsed time: 171.303 sec.
+@I [HLS-111] Elapsed time: 0.15 seconds; current memory usage: 197 MB.
+@I [HLS-100] Command "report -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/image_processor.verbose.sched.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.02Total elapsed time: 171.323 sec.
+@I [HLS-100] Command "db_write -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/image_processor.sched.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.03Total elapsed time: 171.346 sec.
+@I [HLS-0] Finish scheduling image_processor.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'image_processor' 
+@0 [HLS-0] -- Exploring micro-architecture for module 'image_processor' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model image_processor "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 171.347 sec.
+@I [HLS-100] Command "bind -model image_processor "
+@I [BIND-110] clear=
+@I [BIND-110] debug=
+@I [BIND-110] drf=
+@I [BIND-110] effort=
+@I [BIND-110] fast_refine=
+@I [BIND-110] fu_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] global_opt=
+@I [BIND-110] gsearch=
+@I [BIND-110] help=
+@I [BIND-110] help-hidden=
+@I [BIND-110] min_mem_port=
+@I [BIND-110] min_op=
+@I [BIND-110] minreg=
+@I [BIND-110] ml=
+@I [BIND-110] model=image_processor
+@I [BIND-110] no_false_path=
+@I [BIND-110] no_min_op=
+@I [BIND-110] normalize=
+@I [BIND-110] quiet=
+@I [BIND-110] refine=
+@I [BIND-110] reg_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] search=
+@I [BIND-110] tight_delay=
+@I [BIND-110] verbose=
+@I [BIND-110] wFF=
+@I [BIND-110] wFU=
+@I [BIND-110] wMUX=
+@I [BIND-110] wNET=
+@I [BIND-100] Starting micro-architecture binding ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding resource limited operations ...
+@I [BIND-100] Finished micro-architecture binding.
+@I [HLS-100] Command 'bind' returned 0; elapsed 0.56Total elapsed time: 171.911 sec.
+@I [HLS-111] Elapsed time: 0.61 seconds; current memory usage: 198 MB.
+@I [HLS-100] Command "report -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/image_processor.verbose.bind.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.42Total elapsed time: 172.331 sec.
+@I [HLS-100] Command "db_write -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/image_processor.bind.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.03Total elapsed time: 172.356 sec.
+@I [HLS-0] Finish binding image_processor.
+@I [HLS-100] Command "get_model_list image_processor -filter all-wo-channel "
+@I [HLS-100] Command 'get_model_list' returned 0; elapsed 0Total elapsed time: 172.357 sec.
+@I [HLS-0] Preprocessing for RTLGen ...
+@I [HLS-100] Command "rtl_gen_preprocess init "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 172.357 sec.
+@I [HLS-100] Command "rtl_gen_preprocess init.1 "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 172.358 sec.
+@I [HLS-100] Command "rtl_gen_preprocess init.2 "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 172.358 sec.
+@I [HLS-100] Command "rtl_gen_preprocess init.3 "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 172.359 sec.
+@I [HLS-100] Command "rtl_gen_preprocess AXIvideo2Mat<32,480,640,16> "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 172.360 sec.
+@I [HLS-100] Command "rtl_gen_preprocess CvtColor<0,16,16,480,640> "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 172.360 sec.
+@I [HLS-100] Command "rtl_gen_preprocess filter_opr<filter2d_kernel,16,16,int,int,480,640,3,3> "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 172.361 sec.
+@I [HLS-100] Command "rtl_gen_preprocess Sobel "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 172.362 sec.
+@I [HLS-100] Command "rtl_gen_preprocess filter_opr<erode_kernel,16,16,unsigned char,int,480,640,3,3> "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 172.362 sec.
+@I [HLS-100] Command "rtl_gen_preprocess Erode<16,16,480,640> "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 172.363 sec.
+@I [HLS-100] Command "rtl_gen_preprocess Mat2AXIvideo<32,480,640,16> "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 172.364 sec.
+@I [HLS-100] Command "rtl_gen_preprocess image_processor "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 172.364 sec.
+@I [HLS-0] Model list for RTL generation: init init.1 init.2 init.3 AXIvideo2Mat<32,480,640,16> CvtColor<0,16,16,480,640> filter_opr<filter2d_kernel,16,16,int,int,480,640,3,3> Sobel {filter_opr<erode_kernel,16,16,unsigned char,int,480,640,3,3>} Erode<16,16,480,640> Mat2AXIvideo<32,480,640,16> image_processor
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'init' 
+@0 [HLS-0] -- Generating RTL for module 'init' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "create_rtl_model init -vendor xilinx -mg_file /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/init.compgen.tcl "
+@I [RTGEN-100] Finished creating RTL model for 'init'.
+@I [HLS-100] Command 'create_rtl_model' returned 0; elapsed 0.01Total elapsed time: 172.409 sec.
+@I [HLS-111] Elapsed time: 0.46 seconds; current memory usage: 199 MB.
+@I [HLS-100] Command "source /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/image_processor.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 172.421 sec.
+@I [HLS-100] Command "gen_rtl init -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/syn/systemc/init -synmodules init init.1 init.2 init.3 AXIvideo2Mat<32,480,640,16> CvtColor<0,16,16,480,640> filter_opr<filter2d_kernel,16,16,int,int,480,640,3,3> Sobel {filter_opr<erode_kernel,16,16,unsigned char,int,480,640,3,3>} Erode<16,16,480,640> Mat2AXIvideo<32,480,640,16> image_processor "
+@I [WSYSC-301] Generating RTL SystemC for 'init'.
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 172.423 sec.
+@I [HLS-100] Command "gen_rtl init -style xilinx -f -lang vhdl -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/syn/vhdl/init "
+@I [WVHDL-304] Generating RTL VHDL for 'init'.
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 172.425 sec.
+@I [HLS-100] Command "gen_rtl init -style xilinx -f -lang vlog -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/syn/verilog/init "
+@I [WVLOG-307] Generating RTL Verilog for 'init'.
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.01Total elapsed time: 172.426 sec.
+@I [HLS-100] Command "gen_tb_info init -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/init -p /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db "
+@I [HLS-100] Command 'gen_tb_info' returned 0; elapsed 0Total elapsed time: 172.426 sec.
+@I [HLS-100] Command "report -model init -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/syn/report/init_csynth.rpt -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0Total elapsed time: 172.429 sec.
+@I [HLS-100] Command "report -model init -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/syn/report/init_csynth.xml -f -x "
+@I [HLS-100] Command 'report' returned 0; elapsed 0Total elapsed time: 172.430 sec.
+@I [HLS-100] Command "report -model init -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/init.verbose.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0Total elapsed time: 172.436 sec.
+@I [HLS-100] Command "db_write -model init -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/init.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.01Total elapsed time: 172.440 sec.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'init_1' 
+@0 [HLS-0] -- Generating RTL for module 'init_1' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "create_rtl_model init.1 -vendor xilinx -mg_file /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/init_1.compgen.tcl "
+@I [RTGEN-100] Finished creating RTL model for 'init_1'.
+@I [HLS-100] Command 'create_rtl_model' returned 0; elapsed 0Total elapsed time: 172.444 sec.
+@I [HLS-111] Elapsed time: 0.02 seconds; current memory usage: 199 MB.
+@I [HLS-100] Command "source /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/image_processor.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 172.445 sec.
+@I [HLS-100] Command "gen_rtl init.1 -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/syn/systemc/init_1 -synmodules init init.1 init.2 init.3 AXIvideo2Mat<32,480,640,16> CvtColor<0,16,16,480,640> filter_opr<filter2d_kernel,16,16,int,int,480,640,3,3> Sobel {filter_opr<erode_kernel,16,16,unsigned char,int,480,640,3,3>} Erode<16,16,480,640> Mat2AXIvideo<32,480,640,16> image_processor "
+@I [WSYSC-301] Generating RTL SystemC for 'init_1'.
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 172.445 sec.
+@I [HLS-100] Command "gen_rtl init.1 -style xilinx -f -lang vhdl -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/syn/vhdl/init_1 "
+@I [WVHDL-304] Generating RTL VHDL for 'init_1'.
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 172.446 sec.
+@I [HLS-100] Command "gen_rtl init.1 -style xilinx -f -lang vlog -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/syn/verilog/init_1 "
+@I [WVLOG-307] Generating RTL Verilog for 'init_1'.
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 172.446 sec.
+@I [HLS-100] Command "gen_tb_info init.1 -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/init_1 -p /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db "
+@I [HLS-100] Command 'gen_tb_info' returned 0; elapsed 0Total elapsed time: 172.446 sec.
+@I [HLS-100] Command "report -model init.1 -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/syn/report/init_1_csynth.rpt -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0Total elapsed time: 172.449 sec.
+@I [HLS-100] Command "report -model init.1 -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/syn/report/init_1_csynth.xml -f -x "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.01Total elapsed time: 172.450 sec.
+@I [HLS-100] Command "report -model init.1 -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/init_1.verbose.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0Total elapsed time: 172.455 sec.
+@I [HLS-100] Command "db_write -model init.1 -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/init_1.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0Total elapsed time: 172.459 sec.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'init_2' 
+@0 [HLS-0] -- Generating RTL for module 'init_2' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "create_rtl_model init.2 -vendor xilinx -mg_file /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/init_2.compgen.tcl "
+@I [RTGEN-100] Finished creating RTL model for 'init_2'.
+@I [HLS-100] Command 'create_rtl_model' returned 0; elapsed 0.01Total elapsed time: 172.462 sec.
+@I [HLS-111] Elapsed time: 0.02 seconds; current memory usage: 199 MB.
+@I [HLS-100] Command "source /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/image_processor.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 172.463 sec.
+@I [HLS-100] Command "gen_rtl init.2 -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/syn/systemc/init_2 -synmodules init init.1 init.2 init.3 AXIvideo2Mat<32,480,640,16> CvtColor<0,16,16,480,640> filter_opr<filter2d_kernel,16,16,int,int,480,640,3,3> Sobel {filter_opr<erode_kernel,16,16,unsigned char,int,480,640,3,3>} Erode<16,16,480,640> Mat2AXIvideo<32,480,640,16> image_processor "
+@I [WSYSC-301] Generating RTL SystemC for 'init_2'.
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 172.464 sec.
+@I [HLS-100] Command "gen_rtl init.2 -style xilinx -f -lang vhdl -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/syn/vhdl/init_2 "
+@I [WVHDL-304] Generating RTL VHDL for 'init_2'.
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 172.464 sec.
+@I [HLS-100] Command "gen_rtl init.2 -style xilinx -f -lang vlog -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/syn/verilog/init_2 "
+@I [WVLOG-307] Generating RTL Verilog for 'init_2'.
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 172.464 sec.
+@I [HLS-100] Command "gen_tb_info init.2 -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/init_2 -p /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db "
+@I [HLS-100] Command 'gen_tb_info' returned 0; elapsed 0Total elapsed time: 172.465 sec.
+@I [HLS-100] Command "report -model init.2 -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/syn/report/init_2_csynth.rpt -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0Total elapsed time: 172.467 sec.
+@I [HLS-100] Command "report -model init.2 -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/syn/report/init_2_csynth.xml -f -x "
+@I [HLS-100] Command 'report' returned 0; elapsed 0Total elapsed time: 172.468 sec.
+@I [HLS-100] Command "report -model init.2 -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/init_2.verbose.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.01Total elapsed time: 172.473 sec.
+@I [HLS-100] Command "db_write -model init.2 -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/init_2.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0Total elapsed time: 172.477 sec.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'init_3' 
+@0 [HLS-0] -- Generating RTL for module 'init_3' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "create_rtl_model init.3 -vendor xilinx -mg_file /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/init_3.compgen.tcl "
+@I [RTGEN-100] Finished creating RTL model for 'init_3'.
+@I [HLS-100] Command 'create_rtl_model' returned 0; elapsed 0Total elapsed time: 172.480 sec.
+@I [HLS-111] Elapsed time: 0.01 seconds; current memory usage: 199 MB.
+@I [HLS-100] Command "source /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/image_processor.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 172.481 sec.
+@I [HLS-100] Command "gen_rtl init.3 -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/syn/systemc/init_3 -synmodules init init.1 init.2 init.3 AXIvideo2Mat<32,480,640,16> CvtColor<0,16,16,480,640> filter_opr<filter2d_kernel,16,16,int,int,480,640,3,3> Sobel {filter_opr<erode_kernel,16,16,unsigned char,int,480,640,3,3>} Erode<16,16,480,640> Mat2AXIvideo<32,480,640,16> image_processor "
+@I [WSYSC-301] Generating RTL SystemC for 'init_3'.
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 172.487 sec.
+@I [HLS-100] Command "gen_rtl init.3 -style xilinx -f -lang vhdl -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/syn/vhdl/init_3 "
+@I [WVHDL-304] Generating RTL VHDL for 'init_3'.
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 172.488 sec.
+@I [HLS-100] Command "gen_rtl init.3 -style xilinx -f -lang vlog -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/syn/verilog/init_3 "
+@I [WVLOG-307] Generating RTL Verilog for 'init_3'.
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 172.492 sec.
+@I [HLS-100] Command "gen_tb_info init.3 -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/init_3 -p /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db "
+@I [HLS-100] Command 'gen_tb_info' returned 0; elapsed 0Total elapsed time: 172.492 sec.
+@I [HLS-100] Command "report -model init.3 -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/syn/report/init_3_csynth.rpt -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0Total elapsed time: 172.495 sec.
+@I [HLS-100] Command "report -model init.3 -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/syn/report/init_3_csynth.xml -f -x "
+@I [HLS-100] Command 'report' returned 0; elapsed 0Total elapsed time: 172.496 sec.
+@I [HLS-100] Command "report -model init.3 -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/init_3.verbose.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.01Total elapsed time: 172.501 sec.
+@I [HLS-100] Command "db_write -model init.3 -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/init_3.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0Total elapsed time: 172.504 sec.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'AXIvideo2Mat_32_480_640_16_s' 
+@0 [HLS-0] -- Generating RTL for module 'AXIvideo2Mat_32_480_640_16_s' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "create_rtl_model AXIvideo2Mat<32,480,640,16> -vendor xilinx -mg_file /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/AXIvideo2Mat_32_480_640_16_s.compgen.tcl "
+@I [RTGEN-100] Finished creating RTL model for 'AXIvideo2Mat_32_480_640_16_s'.
+@I [HLS-100] Command 'create_rtl_model' returned 0; elapsed 0.02Total elapsed time: 172.542 sec.
+@I [HLS-111] Elapsed time: 0.04 seconds; current memory usage: 200 MB.
+@I [HLS-100] Command "source /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/image_processor.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 172.543 sec.
+@I [HLS-100] Command "gen_rtl AXIvideo2Mat<32,480,640,16> -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/syn/systemc/AXIvideo2Mat_32_480_640_16_s -synmodules init init.1 init.2 init.3 AXIvideo2Mat<32,480,640,16> CvtColor<0,16,16,480,640> filter_opr<filter2d_kernel,16,16,int,int,480,640,3,3> Sobel {filter_opr<erode_kernel,16,16,unsigned char,int,480,640,3,3>} Erode<16,16,480,640> Mat2AXIvideo<32,480,640,16> image_processor "
+@I [WSYSC-301] Generating RTL SystemC for 'AXIvideo2Mat_32_480_640_16_s'.
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 172.545 sec.
+@I [HLS-100] Command "gen_rtl AXIvideo2Mat<32,480,640,16> -style xilinx -f -lang vhdl -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/syn/vhdl/AXIvideo2Mat_32_480_640_16_s "
+@I [WVHDL-304] Generating RTL VHDL for 'AXIvideo2Mat_32_480_640_16_s'.
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.01Total elapsed time: 172.547 sec.
+@I [HLS-100] Command "gen_rtl AXIvideo2Mat<32,480,640,16> -style xilinx -f -lang vlog -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/syn/verilog/AXIvideo2Mat_32_480_640_16_s "
+@I [WVLOG-307] Generating RTL Verilog for 'AXIvideo2Mat_32_480_640_16_s'.
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 172.549 sec.
+@I [HLS-100] Command "gen_tb_info AXIvideo2Mat<32,480,640,16> -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/AXIvideo2Mat_32_480_640_16_s -p /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db "
+@I [HLS-100] Command 'gen_tb_info' returned 0; elapsed 0Total elapsed time: 172.549 sec.
+@I [HLS-100] Command "report -model AXIvideo2Mat<32,480,640,16> -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/syn/report/AXIvideo2Mat_32_480_640_16_s_csynth.rpt -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.01Total elapsed time: 172.557 sec.
+@I [HLS-100] Command "report -model AXIvideo2Mat<32,480,640,16> -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/syn/report/AXIvideo2Mat_32_480_640_16_s_csynth.xml -f -x "
+@I [HLS-100] Command 'report' returned 0; elapsed 0Total elapsed time: 172.563 sec.
+@I [HLS-100] Command "report -model AXIvideo2Mat<32,480,640,16> -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/AXIvideo2Mat_32_480_640_16_s.verbose.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.04Total elapsed time: 172.598 sec.
+@I [HLS-100] Command "db_write -model AXIvideo2Mat<32,480,640,16> -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/AXIvideo2Mat_32_480_640_16_s.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.03Total elapsed time: 172.627 sec.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'CvtColor_0_16_16_480_640_s' 
+@0 [HLS-0] -- Generating RTL for module 'CvtColor_0_16_16_480_640_s' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "create_rtl_model CvtColor<0,16,16,480,640> -vendor xilinx -mg_file /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/CvtColor_0_16_16_480_640_s.compgen.tcl "
+@I [RTGEN-100] Module generated: image_processor_mul_8ns_18ns_26_3|image_processor_mul_8ns_18ns_26_3_U21.
+@I [RTGEN-100] Module generated: image_processor_mul_8ns_20ns_28_3|image_processor_mul_8ns_20ns_28_3_U22.
+@I [RTGEN-100] Module generated: image_processor_mul_8ns_21ns_29_3|image_processor_mul_8ns_21ns_29_3_U23.
+@I [RTGEN-100] Finished creating RTL model for 'CvtColor_0_16_16_480_640_s'.
+@I [HLS-100] Command 'create_rtl_model' returned 0; elapsed 0.02Total elapsed time: 172.649 sec.
+@I [HLS-111] Elapsed time: 0.11 seconds; current memory usage: 200 MB.
+@I [HLS-100] Command "source /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/image_processor.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 172.650 sec.
+@I [HLS-100] Command "gen_rtl CvtColor<0,16,16,480,640> -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/syn/systemc/CvtColor_0_16_16_480_640_s -synmodules init init.1 init.2 init.3 AXIvideo2Mat<32,480,640,16> CvtColor<0,16,16,480,640> filter_opr<filter2d_kernel,16,16,int,int,480,640,3,3> Sobel {filter_opr<erode_kernel,16,16,unsigned char,int,480,640,3,3>} Erode<16,16,480,640> Mat2AXIvideo<32,480,640,16> image_processor "
+@I [WSYSC-301] Generating RTL SystemC for 'CvtColor_0_16_16_480_640_s'.
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 172.653 sec.
+@I [HLS-100] Command "gen_rtl CvtColor<0,16,16,480,640> -style xilinx -f -lang vhdl -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/syn/vhdl/CvtColor_0_16_16_480_640_s "
+@I [WVHDL-304] Generating RTL VHDL for 'CvtColor_0_16_16_480_640_s'.
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.01Total elapsed time: 172.654 sec.
+@I [HLS-100] Command "gen_rtl CvtColor<0,16,16,480,640> -style xilinx -f -lang vlog -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/syn/verilog/CvtColor_0_16_16_480_640_s "
+@I [WVLOG-307] Generating RTL Verilog for 'CvtColor_0_16_16_480_640_s'.
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 172.656 sec.
+@I [HLS-100] Command "gen_tb_info CvtColor<0,16,16,480,640> -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/CvtColor_0_16_16_480_640_s -p /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db "
+@I [HLS-100] Command 'gen_tb_info' returned 0; elapsed 0Total elapsed time: 172.657 sec.
+@I [HLS-100] Command "report -model CvtColor<0,16,16,480,640> -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/syn/report/CvtColor_0_16_16_480_640_s_csynth.rpt -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.01Total elapsed time: 172.670 sec.
+@I [HLS-100] Command "report -model CvtColor<0,16,16,480,640> -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/syn/report/CvtColor_0_16_16_480_640_s_csynth.xml -f -x "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.01Total elapsed time: 172.679 sec.
+@I [HLS-100] Command "report -model CvtColor<0,16,16,480,640> -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/CvtColor_0_16_16_480_640_s.verbose.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.06Total elapsed time: 172.729 sec.
+@I [HLS-100] Command "db_write -model CvtColor<0,16,16,480,640> -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/CvtColor_0_16_16_480_640_s.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.02Total elapsed time: 172.757 sec.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'filter_opr_filter2d_kernel_16_16_int_int_480_640_3_3_s' 
+@0 [HLS-0] -- Generating RTL for module 'filter_opr_filter2d_kernel_16_16_int_int_480_640_3_3_s' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "create_rtl_model filter_opr<filter2d_kernel,16,16,int,int,480,640,3,3> -vendor xilinx -mg_file /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/filter_opr_filter2d_kernel_16_16_int_int_480_640_3_3_s.compgen.tcl "
+@I [RTGEN-100] Finished creating RTL model for 'filter_opr_filter2d_kernel_16_16_int_int_480_640_3_3_s'.
+@I [HLS-100] Command 'create_rtl_model' returned 0; elapsed 0.24Total elapsed time: 172.989 sec.
+@I [HLS-111] Elapsed time: 0.35 seconds; current memory usage: 203 MB.
+@I [HLS-100] Command "source /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/image_processor.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 172.991 sec.
+@I [HLS-100] Command "gen_rtl filter_opr<filter2d_kernel,16,16,int,int,480,640,3,3> -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/syn/systemc/filter_opr_filter2d_kernel_16_16_int_int_480_640_3_3_s -synmodules init init.1 init.2 init.3 AXIvideo2Mat<32,480,640,16> CvtColor<0,16,16,480,640> filter_opr<filter2d_kernel,16,16,int,int,480,640,3,3> Sobel {filter_opr<erode_kernel,16,16,unsigned char,int,480,640,3,3>} Erode<16,16,480,640> Mat2AXIvideo<32,480,640,16> image_processor "
+@I [WSYSC-301] Generating RTL SystemC for 'filter_opr_filter2d_kernel_16_16_int_int_480_640_3_3_s'.
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.02Total elapsed time: 173.11 sec.
+@I [HLS-100] Command "gen_rtl filter_opr<filter2d_kernel,16,16,int,int,480,640,3,3> -style xilinx -f -lang vhdl -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/syn/vhdl/filter_opr_filter2d_kernel_16_16_int_int_480_640_3_3_s "
+@I [WVHDL-304] Generating RTL VHDL for 'filter_opr_filter2d_kernel_16_16_int_int_480_640_3_3_s'.
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.01Total elapsed time: 173.24 sec.
+@I [HLS-100] Command "gen_rtl filter_opr<filter2d_kernel,16,16,int,int,480,640,3,3> -style xilinx -f -lang vlog -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/syn/verilog/filter_opr_filter2d_kernel_16_16_int_int_480_640_3_3_s "
+@I [WVLOG-307] Generating RTL Verilog for 'filter_opr_filter2d_kernel_16_16_int_int_480_640_3_3_s'.
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.01Total elapsed time: 173.41 sec.
+@I [HLS-100] Command "gen_tb_info filter_opr<filter2d_kernel,16,16,int,int,480,640,3,3> -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/filter_opr_filter2d_kernel_16_16_int_int_480_640_3_3_s -p /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db "
+@I [HLS-100] Command 'gen_tb_info' returned 0; elapsed 0Total elapsed time: 173.43 sec.
+@I [HLS-100] Command "report -model filter_opr<filter2d_kernel,16,16,int,int,480,640,3,3> -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/syn/report/filter_opr_filter2d_kernel_16_16_int_int_480_640_3_3_s_csynth.rpt -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.08Total elapsed time: 173.116 sec.
+@I [HLS-100] Command "report -model filter_opr<filter2d_kernel,16,16,int,int,480,640,3,3> -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/syn/report/filter_opr_filter2d_kernel_16_16_int_int_480_640_3_3_s_csynth.xml -f -x "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.06Total elapsed time: 173.176 sec.
+@I [HLS-100] Command "report -model filter_opr<filter2d_kernel,16,16,int,int,480,640,3,3> -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/filter_opr_filter2d_kernel_16_16_int_int_480_640_3_3_s.verbose.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.39Total elapsed time: 173.573 sec.
+@I [HLS-100] Command "db_write -model filter_opr<filter2d_kernel,16,16,int,int,480,640,3,3> -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/filter_opr_filter2d_kernel_16_16_int_int_480_640_3_3_s.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.3Total elapsed time: 173.875 sec.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'Sobel' 
+@0 [HLS-0] -- Generating RTL for module 'Sobel' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "create_rtl_model Sobel -vendor xilinx -mg_file /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/Sobel.compgen.tcl "
+@I [RTGEN-100] Finished creating RTL model for 'Sobel'.
+@I [HLS-100] Command 'create_rtl_model' returned 0; elapsed 0.01Total elapsed time: 173.881 sec.
+@I [HLS-111] Elapsed time: 0.88 seconds; current memory usage: 204 MB.
+@I [HLS-100] Command "source /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/image_processor.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 173.882 sec.
+@I [HLS-100] Command "gen_rtl Sobel -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/syn/systemc/Sobel -synmodules init init.1 init.2 init.3 AXIvideo2Mat<32,480,640,16> CvtColor<0,16,16,480,640> filter_opr<filter2d_kernel,16,16,int,int,480,640,3,3> Sobel {filter_opr<erode_kernel,16,16,unsigned char,int,480,640,3,3>} Erode<16,16,480,640> Mat2AXIvideo<32,480,640,16> image_processor "
+@I [WSYSC-301] Generating RTL SystemC for 'Sobel'.
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 173.883 sec.
+@I [HLS-100] Command "gen_rtl Sobel -style xilinx -f -lang vhdl -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/syn/vhdl/Sobel "
+@I [WVHDL-304] Generating RTL VHDL for 'Sobel'.
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.01Total elapsed time: 173.883 sec.
+@I [HLS-100] Command "gen_rtl Sobel -style xilinx -f -lang vlog -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/syn/verilog/Sobel "
+@I [WVLOG-307] Generating RTL Verilog for 'Sobel'.
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 173.884 sec.
+@I [HLS-100] Command "gen_tb_info Sobel -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/Sobel -p /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db "
+@I [HLS-100] Command 'gen_tb_info' returned 0; elapsed 0Total elapsed time: 173.885 sec.
+@I [HLS-100] Command "report -model Sobel -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/syn/report/Sobel_csynth.rpt -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0Total elapsed time: 173.887 sec.
+@I [HLS-100] Command "report -model Sobel -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/syn/report/Sobel_csynth.xml -f -x "
+@I [HLS-100] Command 'report' returned 0; elapsed 0Total elapsed time: 173.889 sec.
+@I [HLS-100] Command "report -model Sobel -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/Sobel.verbose.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.15Total elapsed time: 174.36 sec.
+@I [HLS-100] Command "db_write -model Sobel -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/Sobel.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0Total elapsed time: 174.41 sec.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'filter_opr_erode_kernel_16_16_unsigned_char_int_480_640_3_3_s' 
+@0 [HLS-0] -- Generating RTL for module 'filter_opr_erode_kernel_16_16_unsigned_char_int_480_640_3_3_s' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "create_rtl_model filter_opr<erode_kernel,16,16,unsigned char,int,480,640,3,3> -vendor xilinx -mg_file /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/filter_opr_erode_kernel_16_16_unsigned_char_int_480_640_3_3_s.compgen.tcl "
+@I [RTGEN-100] Finished creating RTL model for 'filter_opr_erode_kernel_16_16_unsigned_char_int_480_640_3_3_s'.
+@I [HLS-100] Command 'create_rtl_model' returned 0; elapsed 0.25Total elapsed time: 174.286 sec.
+@I [HLS-111] Elapsed time: 0.41 seconds; current memory usage: 207 MB.
+@I [HLS-100] Command "source /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/image_processor.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 174.287 sec.
+@I [HLS-100] Command "gen_rtl filter_opr<erode_kernel,16,16,unsigned char,int,480,640,3,3> -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/syn/systemc/filter_opr_erode_kernel_16_16_unsigned_char_int_480_640_3_3_s -synmodules init init.1 init.2 init.3 AXIvideo2Mat<32,480,640,16> CvtColor<0,16,16,480,640> filter_opr<filter2d_kernel,16,16,int,int,480,640,3,3> Sobel {filter_opr<erode_kernel,16,16,unsigned char,int,480,640,3,3>} Erode<16,16,480,640> Mat2AXIvideo<32,480,640,16> image_processor "
+@I [WSYSC-301] Generating RTL SystemC for 'filter_opr_erode_kernel_16_16_unsigned_char_int_480_640_3_3_s'.
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.02Total elapsed time: 174.309 sec.
+@I [HLS-100] Command "gen_rtl filter_opr<erode_kernel,16,16,unsigned char,int,480,640,3,3> -style xilinx -f -lang vhdl -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/syn/vhdl/filter_opr_erode_kernel_16_16_unsigned_char_int_480_640_3_3_s "
+@I [WVHDL-304] Generating RTL VHDL for 'filter_opr_erode_kernel_16_16_unsigned_char_int_480_640_3_3_s'.
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.01Total elapsed time: 174.323 sec.
+@I [HLS-100] Command "gen_rtl filter_opr<erode_kernel,16,16,unsigned char,int,480,640,3,3> -style xilinx -f -lang vlog -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/syn/verilog/filter_opr_erode_kernel_16_16_unsigned_char_int_480_640_3_3_s "
+@I [WVLOG-307] Generating RTL Verilog for 'filter_opr_erode_kernel_16_16_unsigned_char_int_480_640_3_3_s'.
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.03Total elapsed time: 174.342 sec.
+@I [HLS-100] Command "gen_tb_info filter_opr<erode_kernel,16,16,unsigned char,int,480,640,3,3> -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/filter_opr_erode_kernel_16_16_unsigned_char_int_480_640_3_3_s -p /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db "
+@I [HLS-100] Command 'gen_tb_info' returned 0; elapsed 0Total elapsed time: 174.343 sec.
+@I [HLS-100] Command "report -model filter_opr<erode_kernel,16,16,unsigned char,int,480,640,3,3> -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/syn/report/filter_opr_erode_kernel_16_16_unsigned_char_int_480_640_3_3_s_csynth.rpt -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.08Total elapsed time: 174.424 sec.
+@I [HLS-100] Command "report -model filter_opr<erode_kernel,16,16,unsigned char,int,480,640,3,3> -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/syn/report/filter_opr_erode_kernel_16_16_unsigned_char_int_480_640_3_3_s_csynth.xml -f -x "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.06Total elapsed time: 174.491 sec.
+@I [HLS-100] Command "report -model filter_opr<erode_kernel,16,16,unsigned char,int,480,640,3,3> -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/filter_opr_erode_kernel_16_16_unsigned_char_int_480_640_3_3_s.verbose.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.42Total elapsed time: 174.910 sec.
+@I [HLS-100] Command "db_write -model filter_opr<erode_kernel,16,16,unsigned char,int,480,640,3,3> -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/filter_opr_erode_kernel_16_16_unsigned_char_int_480_640_3_3_s.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.3Total elapsed time: 175.210 sec.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'Erode_16_16_480_640_s' 
+@0 [HLS-0] -- Generating RTL for module 'Erode_16_16_480_640_s' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "create_rtl_model Erode<16,16,480,640> -vendor xilinx -mg_file /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/Erode_16_16_480_640_s.compgen.tcl "
+@I [RTGEN-100] Finished creating RTL model for 'Erode_16_16_480_640_s'.
+@I [HLS-100] Command 'create_rtl_model' returned 0; elapsed 0.05Total elapsed time: 175.256 sec.
+@I [HLS-111] Elapsed time: 0.97 seconds; current memory usage: 209 MB.
+@I [HLS-100] Command "source /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/image_processor.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 175.257 sec.
+@I [HLS-100] Command "gen_rtl Erode<16,16,480,640> -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/syn/systemc/Erode_16_16_480_640_s -synmodules init init.1 init.2 init.3 AXIvideo2Mat<32,480,640,16> CvtColor<0,16,16,480,640> filter_opr<filter2d_kernel,16,16,int,int,480,640,3,3> Sobel {filter_opr<erode_kernel,16,16,unsigned char,int,480,640,3,3>} Erode<16,16,480,640> Mat2AXIvideo<32,480,640,16> image_processor "
+@I [WSYSC-301] Generating RTL SystemC for 'Erode_16_16_480_640_s'.
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 175.261 sec.
+@I [HLS-100] Command "gen_rtl Erode<16,16,480,640> -style xilinx -f -lang vhdl -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/syn/vhdl/Erode_16_16_480_640_s "
+@I [WVHDL-304] Generating RTL VHDL for 'Erode_16_16_480_640_s'.
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.01Total elapsed time: 175.263 sec.
+@I [HLS-100] Command "gen_rtl Erode<16,16,480,640> -style xilinx -f -lang vlog -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/syn/verilog/Erode_16_16_480_640_s "
+@I [WVLOG-307] Generating RTL Verilog for 'Erode_16_16_480_640_s'.
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 175.266 sec.
+@I [HLS-100] Command "gen_tb_info Erode<16,16,480,640> -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/Erode_16_16_480_640_s -p /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db "
+@I [HLS-100] Command 'gen_tb_info' returned 0; elapsed 0Total elapsed time: 175.266 sec.
+@I [HLS-100] Command "report -model Erode<16,16,480,640> -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/syn/report/Erode_16_16_480_640_s_csynth.rpt -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.03Total elapsed time: 175.296 sec.
+@I [HLS-100] Command "report -model Erode<16,16,480,640> -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/syn/report/Erode_16_16_480_640_s_csynth.xml -f -x "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.02Total elapsed time: 175.318 sec.
+@I [HLS-100] Command "report -model Erode<16,16,480,640> -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/Erode_16_16_480_640_s.verbose.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.29Total elapsed time: 175.603 sec.
+@I [HLS-100] Command "db_write -model Erode<16,16,480,640> -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/Erode_16_16_480_640_s.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.06Total elapsed time: 175.674 sec.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'Mat2AXIvideo_32_480_640_16_s' 
+@0 [HLS-0] -- Generating RTL for module 'Mat2AXIvideo_32_480_640_16_s' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "create_rtl_model Mat2AXIvideo<32,480,640,16> -vendor xilinx -mg_file /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/Mat2AXIvideo_32_480_640_16_s.compgen.tcl "
+@I [RTGEN-100] Finished creating RTL model for 'Mat2AXIvideo_32_480_640_16_s'.
+@I [HLS-100] Command 'create_rtl_model' returned 0; elapsed 0.02Total elapsed time: 175.686 sec.
+@I [HLS-111] Elapsed time: 0.43 seconds; current memory usage: 210 MB.
+@I [HLS-100] Command "source /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/image_processor.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 175.686 sec.
+@I [HLS-100] Command "gen_rtl Mat2AXIvideo<32,480,640,16> -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/syn/systemc/Mat2AXIvideo_32_480_640_16_s -synmodules init init.1 init.2 init.3 AXIvideo2Mat<32,480,640,16> CvtColor<0,16,16,480,640> filter_opr<filter2d_kernel,16,16,int,int,480,640,3,3> Sobel {filter_opr<erode_kernel,16,16,unsigned char,int,480,640,3,3>} Erode<16,16,480,640> Mat2AXIvideo<32,480,640,16> image_processor "
+@I [WSYSC-301] Generating RTL SystemC for 'Mat2AXIvideo_32_480_640_16_s'.
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 175.688 sec.
+@I [HLS-100] Command "gen_rtl Mat2AXIvideo<32,480,640,16> -style xilinx -f -lang vhdl -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/syn/vhdl/Mat2AXIvideo_32_480_640_16_s "
+@I [WVHDL-304] Generating RTL VHDL for 'Mat2AXIvideo_32_480_640_16_s'.
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 175.689 sec.
+@I [HLS-100] Command "gen_rtl Mat2AXIvideo<32,480,640,16> -style xilinx -f -lang vlog -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/syn/verilog/Mat2AXIvideo_32_480_640_16_s "
+@I [WVLOG-307] Generating RTL Verilog for 'Mat2AXIvideo_32_480_640_16_s'.
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.01Total elapsed time: 175.690 sec.
+@I [HLS-100] Command "gen_tb_info Mat2AXIvideo<32,480,640,16> -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/Mat2AXIvideo_32_480_640_16_s -p /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db "
+@I [HLS-100] Command 'gen_tb_info' returned 0; elapsed 0Total elapsed time: 175.690 sec.
+@I [HLS-100] Command "report -model Mat2AXIvideo<32,480,640,16> -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/syn/report/Mat2AXIvideo_32_480_640_16_s_csynth.rpt -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0Total elapsed time: 175.696 sec.
+@I [HLS-100] Command "report -model Mat2AXIvideo<32,480,640,16> -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/syn/report/Mat2AXIvideo_32_480_640_16_s_csynth.xml -f -x "
+@I [HLS-100] Command 'report' returned 0; elapsed 0Total elapsed time: 175.700 sec.
+@I [HLS-100] Command "report -model Mat2AXIvideo<32,480,640,16> -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/Mat2AXIvideo_32_480_640_16_s.verbose.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.03Total elapsed time: 175.724 sec.
+@I [HLS-100] Command "db_write -model Mat2AXIvideo<32,480,640,16> -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/Mat2AXIvideo_32_480_640_16_s.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.01Total elapsed time: 175.741 sec.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'image_processor' 
+@0 [HLS-0] -- Generating RTL for module 'image_processor' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "create_rtl_model image_processor -vendor xilinx -mg_file /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/image_processor.compgen.tcl "
+@I [RTGEN-500] Setting interface mode on port 'image_processor/input_V_data_V' to 'ap_fifo'.
+@I [RTGEN-500] Setting interface mode on port 'image_processor/input_V_keep_V' to 'ap_fifo'.
+@I [RTGEN-500] Setting interface mode on port 'image_processor/input_V_strb_V' to 'ap_fifo'.
+@I [RTGEN-500] Setting interface mode on port 'image_processor/input_V_user_V' to 'ap_fifo'.
+@I [RTGEN-500] Setting interface mode on port 'image_processor/input_V_last_V' to 'ap_fifo'.
+@I [RTGEN-500] Setting interface mode on port 'image_processor/input_V_id_V' to 'ap_fifo'.
+@I [RTGEN-500] Setting interface mode on port 'image_processor/input_V_dest_V' to 'ap_fifo'.
+@I [RTGEN-500] Setting interface mode on port 'image_processor/output_V_data_V' to 'ap_fifo'.
+@I [RTGEN-500] Setting interface mode on port 'image_processor/output_V_keep_V' to 'ap_fifo'.
+@I [RTGEN-500] Setting interface mode on port 'image_processor/output_V_strb_V' to 'ap_fifo'.
+@I [RTGEN-500] Setting interface mode on port 'image_processor/output_V_user_V' to 'ap_fifo'.
+@I [RTGEN-500] Setting interface mode on port 'image_processor/output_V_last_V' to 'ap_fifo'.
+@I [RTGEN-500] Setting interface mode on port 'image_processor/output_V_id_V' to 'ap_fifo'.
+@I [RTGEN-500] Setting interface mode on port 'image_processor/output_V_dest_V' to 'ap_fifo'.
+@I [RTGEN-500] Setting interface mode on port 'image_processor/rows' to 'ap_stable'.
+@I [RTGEN-500] Setting interface mode on port 'image_processor/cols' to 'ap_stable'.
+@I [RTGEN-100] Finished creating RTL model for 'image_processor'.
+@I [HLS-100] Command 'create_rtl_model' returned 0; elapsed 0Total elapsed time: 175.752 sec.
+@I [HLS-111] Elapsed time: 0.06 seconds; current memory usage: 212 MB.
+@I [HLS-100] Command "source /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/image_processor.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 175.753 sec.
+@I [HLS-100] Command "gen_rtl image_processor -istop -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/syn/systemc/image_processor -synmodules init init.1 init.2 init.3 AXIvideo2Mat<32,480,640,16> CvtColor<0,16,16,480,640> filter_opr<filter2d_kernel,16,16,int,int,480,640,3,3> Sobel {filter_opr<erode_kernel,16,16,unsigned char,int,480,640,3,3>} Erode<16,16,480,640> Mat2AXIvideo<32,480,640,16> image_processor "
+@I [WSYSC-301] Generating RTL SystemC for 'image_processor'.
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.01Total elapsed time: 175.757 sec.
+@I [HLS-100] Command "gen_rtl image_processor -istop -style xilinx -f -lang vhdl -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/syn/vhdl/image_processor "
+@I [WVHDL-304] Generating RTL VHDL for 'image_processor'.
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.04Total elapsed time: 175.796 sec.
+@I [HLS-100] Command "gen_rtl image_processor -istop -style xilinx -f -lang vlog -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/syn/verilog/image_processor "
+@I [WVLOG-307] Generating RTL Verilog for 'image_processor'.
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.04Total elapsed time: 175.834 sec.
+@I [HLS-100] Command "export_constraint_db -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/image_processor.constraint.tcl -f -tool general "
+@I [HLS-100] Command 'export_constraint_db' returned 0; elapsed 0Total elapsed time: 175.834 sec.
+@I [HLS-100] Command "report -model image_processor -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/image_processor.design.xml -verbose -f -dv "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.4Total elapsed time: 176.242 sec.
+@I [HLS-100] Command "gen_tb_info image_processor -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/image_processor -p /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db "
+@I [HLS-100] Command 'gen_tb_info' returned 0; elapsed 0Total elapsed time: 176.243 sec.
+@I [HLS-100] Command "report -model image_processor -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/syn/report/image_processor_csynth.rpt -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.04Total elapsed time: 176.282 sec.
+@I [HLS-100] Command "report -model image_processor -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/syn/report/image_processor_csynth.xml -f -x "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.03Total elapsed time: 176.317 sec.
+@I [HLS-100] Command "report -model image_processor -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/image_processor.verbose.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.47Total elapsed time: 176.775 sec.
+@I [HLS-100] Command "db_write -model image_processor -o /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/image_processor.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.06Total elapsed time: 176.835 sec.
+@I [HLS-100] Command "sc_get_clocks image_processor "
+@I [HLS-100] Command 'sc_get_clocks' returned 0; elapsed 0Total elapsed time: 176.836 sec.
+@I [HLS-100] Command "sc_get_portdomain image_processor "
+@I [HLS-100] Command 'sc_get_portdomain' returned 0; elapsed 0Total elapsed time: 176.836 sec.
+@I [HLS-0] Model list for RTL component generation: init init.1 init.2 init.3 AXIvideo2Mat<32,480,640,16> CvtColor<0,16,16,480,640> filter_opr<filter2d_kernel,16,16,int,int,480,640,3,3> Sobel {filter_opr<erode_kernel,16,16,unsigned char,int,480,640,3,3>} Erode<16,16,480,640> Mat2AXIvideo<32,480,640,16> image_processor
+@I [HLS-0] Handling components in module [init] ... 
+@I [HLS-100] Command "source /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/init.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 176.838 sec.
+@I [HLS-0] Handling components in module [init_1] ... 
+@I [HLS-100] Command "source /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/init_1.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 176.838 sec.
+@I [HLS-0] Handling components in module [init_2] ... 
+@I [HLS-100] Command "source /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/init_2.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 176.838 sec.
+@I [HLS-0] Handling components in module [init_3] ... 
+@I [HLS-100] Command "source /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/init_3.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 176.839 sec.
+@I [HLS-0] Handling components in module [AXIvideo2Mat_32_480_640_16_s] ... 
+@I [HLS-100] Command "source /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/AXIvideo2Mat_32_480_640_16_s.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 176.839 sec.
+@I [HLS-0] Handling components in module [CvtColor_0_16_16_480_640_s] ... 
+@I [HLS-100] Command "source /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/CvtColor_0_16_16_480_640_s.compgen.tcl "
+@I [HLS-0] Found component image_processor_mul_8ns_18ns_26_3.
+@I [HLS-0] Append model image_processor_mul_8ns_18ns_26_3
+@I [HLS-0] Found component image_processor_mul_8ns_20ns_28_3.
+@I [HLS-0] Append model image_processor_mul_8ns_20ns_28_3
+@I [HLS-0] Found component image_processor_mul_8ns_21ns_29_3.
+@I [HLS-0] Append model image_processor_mul_8ns_21ns_29_3
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 176.840 sec.
+@I [HLS-0] Handling components in module [filter_opr_filter2d_kernel_16_16_int_int_480_640_3_3_s] ... 
+@I [HLS-100] Command "source /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/filter_opr_filter2d_kernel_16_16_int_int_480_640_3_3_s.compgen.tcl "
+@I [HLS-0] Found component filter_opr_filter2d_kernel_16_16_int_int_480_640_3_3_s_k_buf_0_val_0.
+@I [HLS-0] Append model filter_opr_filter2d_kernel_16_16_int_int_480_640_3_3_s_k_buf_0_val_0
+@I [HLS-0] Found component filter_opr_filter2d_kernel_16_16_int_int_480_640_3_3_s_k_buf_0_val_1.
+@I [HLS-0] Append model filter_opr_filter2d_kernel_16_16_int_int_480_640_3_3_s_k_buf_0_val_1
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 176.840 sec.
+@I [HLS-0] Handling components in module [Sobel] ... 
+@I [HLS-100] Command "source /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/Sobel.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 176.841 sec.
+@I [HLS-0] Handling components in module [filter_opr_erode_kernel_16_16_unsigned_char_int_480_640_3_3_s] ... 
+@I [HLS-100] Command "source /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/filter_opr_erode_kernel_16_16_unsigned_char_int_480_640_3_3_s.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 176.841 sec.
+@I [HLS-0] Handling components in module [Erode_16_16_480_640_s] ... 
+@I [HLS-100] Command "source /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/Erode_16_16_480_640_s.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 176.841 sec.
+@I [HLS-0] Handling components in module [Mat2AXIvideo_32_480_640_16_s] ... 
+@I [HLS-100] Command "source /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/Mat2AXIvideo_32_480_640_16_s.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 176.842 sec.
+@I [HLS-0] Handling components in module [image_processor] ... 
+@I [HLS-100] Command "source /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/image_processor.compgen.tcl "
+@I [HLS-0] Found component FIFO_image_processor_img_0_rows_V.
+@I [HLS-0] Append model FIFO_image_processor_img_0_rows_V
+@I [HLS-0] Found component FIFO_image_processor_img_0_rows_V_channel.
+@I [HLS-0] Append model FIFO_image_processor_img_0_rows_V_channel
+@I [HLS-0] Found component FIFO_image_processor_img_0_cols_V.
+@I [HLS-0] Append model FIFO_image_processor_img_0_cols_V
+@I [HLS-0] Found component FIFO_image_processor_img_0_cols_V_channel.
+@I [HLS-0] Append model FIFO_image_processor_img_0_cols_V_channel
+@I [HLS-0] Found component FIFO_image_processor_img_1_rows_V.
+@I [HLS-0] Append model FIFO_image_processor_img_1_rows_V
+@I [HLS-0] Found component FIFO_image_processor_img_1_cols_V.
+@I [HLS-0] Append model FIFO_image_processor_img_1_cols_V
+@I [HLS-0] Found component FIFO_image_processor_img_2_rows_V.
+@I [HLS-0] Append model FIFO_image_processor_img_2_rows_V
+@I [HLS-0] Found component FIFO_image_processor_img_2_cols_V.
+@I [HLS-0] Append model FIFO_image_processor_img_2_cols_V
+@I [HLS-0] Found component FIFO_image_processor_img_3_rows_V.
+@I [HLS-0] Append model FIFO_image_processor_img_3_rows_V
+@I [HLS-0] Found component FIFO_image_processor_img_3_cols_V.
+@I [HLS-0] Append model FIFO_image_processor_img_3_cols_V
+@I [HLS-0] Found component FIFO_image_processor_img_0_data_stream_0_V.
+@I [HLS-0] Append model FIFO_image_processor_img_0_data_stream_0_V
+@I [HLS-0] Found component FIFO_image_processor_img_0_data_stream_1_V.
+@I [HLS-0] Append model FIFO_image_processor_img_0_data_stream_1_V
+@I [HLS-0] Found component FIFO_image_processor_img_0_data_stream_2_V.
+@I [HLS-0] Append model FIFO_image_processor_img_0_data_stream_2_V
+@I [HLS-0] Found component FIFO_image_processor_img_1_data_stream_0_V.
+@I [HLS-0] Append model FIFO_image_processor_img_1_data_stream_0_V
+@I [HLS-0] Found component FIFO_image_processor_img_1_data_stream_1_V.
+@I [HLS-0] Append model FIFO_image_processor_img_1_data_stream_1_V
+@I [HLS-0] Found component FIFO_image_processor_img_1_data_stream_2_V.
+@I [HLS-0] Append model FIFO_image_processor_img_1_data_stream_2_V
+@I [HLS-0] Found component FIFO_image_processor_img_2_data_stream_0_V.
+@I [HLS-0] Append model FIFO_image_processor_img_2_data_stream_0_V
+@I [HLS-0] Found component FIFO_image_processor_img_2_data_stream_1_V.
+@I [HLS-0] Append model FIFO_image_processor_img_2_data_stream_1_V
+@I [HLS-0] Found component FIFO_image_processor_img_2_data_stream_2_V.
+@I [HLS-0] Append model FIFO_image_processor_img_2_data_stream_2_V
+@I [HLS-0] Found component FIFO_image_processor_img_3_data_stream_0_V.
+@I [HLS-0] Append model FIFO_image_processor_img_3_data_stream_0_V
+@I [HLS-0] Found component FIFO_image_processor_img_3_data_stream_1_V.
+@I [HLS-0] Append model FIFO_image_processor_img_3_data_stream_1_V
+@I [HLS-0] Found component FIFO_image_processor_img_3_data_stream_2_V.
+@I [HLS-0] Append model FIFO_image_processor_img_3_data_stream_2_V
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 176.844 sec.
+@I [HLS-10] Finished generating all RTL models.
+@0 [HLS-0] Finished generating all RTL models.
+@I [HLS-0] Append model init
+@I [HLS-0] Append model init_1
+@I [HLS-0] Append model init_2
+@I [HLS-0] Append model init_3
+@I [HLS-0] Append model AXIvideo2Mat_32_480_640_16_s
+@I [HLS-0] Append model CvtColor_0_16_16_480_640_s
+@I [HLS-0] Append model filter_opr_filter2d_kernel_16_16_int_int_480_640_3_3_s
+@I [HLS-0] Append model Sobel
+@I [HLS-0] Append model filter_opr_erode_kernel_16_16_unsigned_char_int_480_640_3_3_s
+@I [HLS-0] Append model Erode_16_16_480_640_s
+@I [HLS-0] Append model Mat2AXIvideo_32_480_640_16_s
+@I [HLS-0] Append model image_processor
+@I [HLS-0] Generating RTL model list ...
+@I [HLS-0] All models in this session: image_processor_mul_8ns_18ns_26_3 image_processor_mul_8ns_20ns_28_3 image_processor_mul_8ns_21ns_29_3 filter_opr_filter2d_kernel_16_16_int_int_480_640_3_3_s_k_buf_0_val_0 filter_opr_filter2d_kernel_16_16_int_int_480_640_3_3_s_k_buf_0_val_1 FIFO_image_processor_img_0_rows_V FIFO_image_processor_img_0_rows_V_channel FIFO_image_processor_img_0_cols_V FIFO_image_processor_img_0_cols_V_channel FIFO_image_processor_img_1_rows_V FIFO_image_processor_img_1_cols_V FIFO_image_processor_img_2_rows_V FIFO_image_processor_img_2_cols_V FIFO_image_processor_img_3_rows_V FIFO_image_processor_img_3_cols_V FIFO_image_processor_img_0_data_stream_0_V FIFO_image_processor_img_0_data_stream_1_V FIFO_image_processor_img_0_data_stream_2_V FIFO_image_processor_img_1_data_stream_0_V FIFO_image_processor_img_1_data_stream_1_V FIFO_image_processor_img_1_data_stream_2_V FIFO_image_processor_img_2_data_stream_0_V FIFO_image_processor_img_2_data_stream_1_V FIFO_image_processor_img_2_data_stream_2_V FIFO_image_processor_img_3_data_stream_0_V FIFO_image_processor_img_3_data_stream_1_V FIFO_image_processor_img_3_data_stream_2_V init init_1 init_2 init_3 AXIvideo2Mat_32_480_640_16_s CvtColor_0_16_16_480_640_s filter_opr_filter2d_kernel_16_16_int_int_480_640_3_3_s Sobel filter_opr_erode_kernel_16_16_unsigned_char_int_480_640_3_3_s Erode_16_16_480_640_s Mat2AXIvideo_32_480_640_16_s image_processor
+@I [HLS-0] To file: write model image_processor_mul_8ns_18ns_26_3
+@I [HLS-0] To file: write model image_processor_mul_8ns_20ns_28_3
+@I [HLS-0] To file: write model image_processor_mul_8ns_21ns_29_3
+@I [HLS-0] To file: write model filter_opr_filter2d_kernel_16_16_int_int_480_640_3_3_s_k_buf_0_val_0
+@I [HLS-0] To file: write model filter_opr_filter2d_kernel_16_16_int_int_480_640_3_3_s_k_buf_0_val_1
+@I [HLS-0] To file: write model FIFO_image_processor_img_0_rows_V
+@I [HLS-0] To file: write model FIFO_image_processor_img_0_rows_V_channel
+@I [HLS-0] To file: write model FIFO_image_processor_img_0_cols_V
+@I [HLS-0] To file: write model FIFO_image_processor_img_0_cols_V_channel
+@I [HLS-0] To file: write model FIFO_image_processor_img_1_rows_V
+@I [HLS-0] To file: write model FIFO_image_processor_img_1_cols_V
+@I [HLS-0] To file: write model FIFO_image_processor_img_2_rows_V
+@I [HLS-0] To file: write model FIFO_image_processor_img_2_cols_V
+@I [HLS-0] To file: write model FIFO_image_processor_img_3_rows_V
+@I [HLS-0] To file: write model FIFO_image_processor_img_3_cols_V
+@I [HLS-0] To file: write model FIFO_image_processor_img_0_data_stream_0_V
+@I [HLS-0] To file: write model FIFO_image_processor_img_0_data_stream_1_V
+@I [HLS-0] To file: write model FIFO_image_processor_img_0_data_stream_2_V
+@I [HLS-0] To file: write model FIFO_image_processor_img_1_data_stream_0_V
+@I [HLS-0] To file: write model FIFO_image_processor_img_1_data_stream_1_V
+@I [HLS-0] To file: write model FIFO_image_processor_img_1_data_stream_2_V
+@I [HLS-0] To file: write model FIFO_image_processor_img_2_data_stream_0_V
+@I [HLS-0] To file: write model FIFO_image_processor_img_2_data_stream_1_V
+@I [HLS-0] To file: write model FIFO_image_processor_img_2_data_stream_2_V
+@I [HLS-0] To file: write model FIFO_image_processor_img_3_data_stream_0_V
+@I [HLS-0] To file: write model FIFO_image_processor_img_3_data_stream_1_V
+@I [HLS-0] To file: write model FIFO_image_processor_img_3_data_stream_2_V
+@I [HLS-0] To file: write model init
+@I [HLS-0] To file: write model init_1
+@I [HLS-0] To file: write model init_2
+@I [HLS-0] To file: write model init_3
+@I [HLS-0] To file: write model AXIvideo2Mat_32_480_640_16_s
+@I [HLS-0] To file: write model CvtColor_0_16_16_480_640_s
+@I [HLS-0] To file: write model filter_opr_filter2d_kernel_16_16_int_int_480_640_3_3_s
+@I [HLS-0] To file: write model Sobel
+@I [HLS-0] To file: write model filter_opr_erode_kernel_16_16_unsigned_char_int_480_640_3_3_s
+@I [HLS-0] To file: write model Erode_16_16_480_640_s
+@I [HLS-0] To file: write model Mat2AXIvideo_32_480_640_16_s
+@I [HLS-0] To file: write model image_processor
+@I [HLS-0] Finished generating RTL model list.
+
+
+@I [HLS-100] Command "export_ssdm /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/a.export.ll "
+@I [HLS-100] Command 'export_ssdm' returned 0; elapsed 0Total elapsed time: 176.850 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 176.864 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/generic/autopilot/common.gen "
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/generic/autopilot/APCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 176.995 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 176.995 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/generic/autopilot/op.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 177.2 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/generic/autopilot/op_simcore.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 177.4 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/generic/autopilot/interface.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 177.4 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 177.5 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/zynq/zynq.gen "
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/common/virtex.gen "
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/common/xilinx.gen "
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/interface/plb46.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 177.46 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/interface/fsl.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 177.50 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/interface/axi4.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 177.60 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/scripts/xilinxcoregen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 177.84 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/interface/XilEDKCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 177.206 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.03Total elapsed time: 177.206 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/common/dsp48.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 177.221 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.03Total elapsed time: 177.221 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.03Total elapsed time: 177.221 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/zynq/zynq_fpv6.gen "
+@I [HLS-100] Command "source /ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/xilinx/common/xilinx_fpv6.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 177.261 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 177.261 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 177.261 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 177.262 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/init.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 177.263 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/init_1.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 177.263 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/init_2.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 177.263 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/init_3.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 177.263 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/AXIvideo2Mat_32_480_640_16_s.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 177.264 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/CvtColor_0_16_16_480_640_s.compgen.tcl "
+@I [IMPL-282] Generating Xilinx core: 'image_processor_mul_8ns_18ns_26_3_MulnS_0'
+@I [IMPL-282] Generating Xilinx core: 'image_processor_mul_8ns_20ns_28_3_MulnS_1'
+@I [IMPL-282] Generating Xilinx core: 'image_processor_mul_8ns_21ns_29_3_MulnS_2'
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.02Total elapsed time: 177.359 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/filter_opr_filter2d_kernel_16_16_int_int_480_640_3_3_s.compgen.tcl "
+@I [IMPL-278] Implementing memory 'filter_opr_filter2d_kernel_16_16_int_int_480_640_3_3_s_k_buf_0_val_0_ram' as block RAMs.
+@I [IMPL-278] Implementing memory 'filter_opr_filter2d_kernel_16_16_int_int_480_640_3_3_s_k_buf_0_val_1_ram' as block RAMs.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.03Total elapsed time: 177.380 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/Sobel.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 177.381 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/filter_opr_erode_kernel_16_16_unsigned_char_int_480_640_3_3_s.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 177.381 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/Erode_16_16_480_640_s.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 177.382 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/Mat2AXIvideo_32_480_640_16_s.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 177.382 sec.
+@I [HLS-100] Command "source /ise_local2/umair_temp/vivado_projects/ImgProc640x480/prj/solution2/.autopilot/db/image_processor.compgen.tcl "
+@I [IMPL-285] Implementing FIFO 'FIFO_image_processor_img_0_rows_V' as shiftReg.
+@I [IMPL-285] Implementing FIFO 'FIFO_image_processor_img_0_rows_V_channel' as shiftReg.
+@I [IMPL-285] Implementing FIFO 'FIFO_image_processor_img_0_cols_V' as shiftReg.
+@I [IMPL-285] Implementing FIFO 'FIFO_image_processor_img_0_cols_V_channel' as shiftReg.
+@I [IMPL-285] Implementing FIFO 'FIFO_image_processor_img_1_rows_V' as shiftReg.
+@I [IMPL-285] Implementing FIFO 'FIFO_image_processor_img_1_cols_V' as shiftReg.
+@I [IMPL-285] Implementing FIFO 'FIFO_image_processor_img_2_rows_V' as shiftReg.
+@I [IMPL-285] Implementing FIFO 'FIFO_image_processor_img_2_cols_V' as shiftReg.
+@I [IMPL-285] Implementing FIFO 'FIFO_image_processor_img_3_rows_V' as shiftReg.
+@I [IMPL-285] Implementing FIFO 'FIFO_image_processor_img_3_cols_V' as shiftReg.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.1Total elapsed time: 177.480 sec.
+@I [HLS-100] Command 'autosyn' returned 0; elapsed 11.64Total elapsed time: 177.814 sec.
+@I [HLS-100] Command 'csynth_design' returned 0; elapsed 30.03Total elapsed time: 177.814 sec.
+@I [HLS-100] Command "cleanup_all "
+@I [HLS-100] Command 'cleanup_all' returned 0; elapsed 0.06Total elapsed time: 177.868 sec.

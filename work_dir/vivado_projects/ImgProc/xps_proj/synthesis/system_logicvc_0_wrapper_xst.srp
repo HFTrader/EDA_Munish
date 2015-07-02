@@ -1,0 +1,852 @@
+Release 14.5 - xst P.58f (lin64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to /home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/synthesis/xst_temp_dir/
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.04 secs
+ 
+--> 
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input Format                       : MIXED
+Input File Name                    : "system_logicvc_0_wrapper_xst.prj"
+Verilog Include Directory          : {"/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/" "/ise_local2/umair_temp/14.5/ISE_DS/EDK/hw/XilinxBFMinterface/pcores/" "/ise_local2/umair_temp/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/" }
+
+---- Target Parameters
+Target Device                      : xc7z020clg484-1
+Output File Name                   : "../implementation/system_logicvc_0_wrapper.ngc"
+
+---- Source Options
+Top Module Name                    : system_logicvc_0_wrapper
+
+---- Target Options
+Add IO Buffers                     : NO
+
+---- General Options
+Optimization Goal                  : speed
+Netlist Hierarchy                  : as_optimized
+Optimization Effort                : 1
+Hierarchy Separator                : /
+
+---- Other Options
+Cores Search Directories           : {../implementation}
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/rgb_ycrcb_pkg.vhd" into library logicvc_v3_00_a
+Parsing package <rgb_ycrcb_pkg>.
+Parsing package body <rgb_ycrcb_pkg>.
+Parsing VHDL file "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/colorpkg.vhd" into library logicvc_v3_00_a
+Parsing package <colorpkg>.
+Parsing package body <colorpkg>.
+Parsing VHDL file "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/logicvcpkg.vhd" into library logicvc_v3_00_a
+Parsing package <logicvcpkg>.
+Parsing package body <logicvcpkg>.
+Parsing VHDL file "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/a_flag_generator.vhd" into library logicvc_v3_00_a
+Parsing entity <a_flag_generator>.
+Parsing architecture <rtl> of entity <a_flag_generator>.
+Parsing VHDL file "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/syncs.vhd" into library logicvc_v3_00_a
+Parsing entity <syncs>.
+Parsing architecture <rtl> of entity <syncs>.
+Parsing VHDL file "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/addr_gen.vhd" into library logicvc_v3_00_a
+Parsing entity <addr_gen>.
+Parsing architecture <rtl> of entity <addr_gen>.
+Parsing VHDL file "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/inferred_bram.vhd" into library logicvc_v3_00_a
+Parsing entity <inferred_bram>.
+Parsing architecture <inferred_bram_arch> of entity <inferred_bram>.
+Parsing VHDL file "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/videoaddr.vhd" into library logicvc_v3_00_a
+Parsing entity <videoaddr>.
+Parsing architecture <rtl> of entity <videoaddr>.
+Parsing VHDL file "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/vbuff_switch.vhd" into library logicvc_v3_00_a
+Parsing entity <vbuff_switch>.
+Parsing architecture <rtl> of entity <vbuff_switch>.
+Parsing VHDL file "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/adrcnt.vhd" into library logicvc_v3_00_a
+Parsing entity <adrcnt>.
+Parsing architecture <rtl> of entity <adrcnt>.
+Parsing VHDL file "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/brams.vhd" into library logicvc_v3_00_a
+Parsing entity <brams>.
+Parsing architecture <rtl> of entity <brams>.
+Parsing VHDL file "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/universal_fifo.vhd" into library logicvc_v3_00_a
+Parsing entity <universal_fifo>.
+Parsing architecture <rtl> of entity <universal_fifo>.
+Parsing VHDL file "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/video_fifo.vhd" into library logicvc_v3_00_a
+Parsing entity <video_fifo>.
+Parsing architecture <rtl> of entity <video_fifo>.
+Parsing VHDL file "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/alpha_blend.vhd" into library logicvc_v3_00_a
+Parsing entity <alpha_blend>.
+Parsing architecture <rtl> of entity <alpha_blend>.
+Parsing VHDL file "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/rgb_ycrcb_lib.vhd" into library logicvc_v3_00_a
+Parsing entity <delay>.
+Parsing architecture <RTL> of entity <delay>.
+Parsing entity <delay_sclr>.
+Parsing architecture <RTL> of entity <delay_sclr>.
+Parsing entity <radd_sub_sclr_yes>.
+Parsing architecture <rtl> of entity <radd_sub_sclr_yes>.
+Parsing entity <radd_sub_sclr_no>.
+Parsing architecture <rtl> of entity <radd_sub_sclr_no>.
+Parsing entity <radd_sub_sclr>.
+Parsing architecture <rtl> of entity <radd_sub_sclr>.
+Parsing entity <get_round_addend>.
+Parsing architecture <rtl> of entity <get_round_addend>.
+Parsing entity <round>.
+Parsing architecture <rtl> of entity <round>.
+Parsing entity <mult>.
+Parsing architecture <rtl> of entity <mult>.
+Parsing entity <mac>.
+Parsing architecture <rtl> of entity <mac>.
+Parsing entity <max_sat>.
+Parsing architecture <rtl> of entity <max_sat>.
+Parsing entity <min_sat>.
+Parsing architecture <rtl> of entity <min_sat>.
+Parsing VHDL file "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/rgb_ycrcb.vhd" into library logicvc_v3_00_a
+Parsing entity <rgb_ycrcb>.
+Parsing architecture <rtl> of entity <rgb_ycrcb>.
+Parsing VHDL file "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/ycrcb_rgb.vhd" into library logicvc_v3_00_a
+Parsing entity <ycrcb_rgb>.
+Parsing architecture <rtl> of entity <ycrcb_rgb>.
+Parsing VHDL file "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/pix_merge.vhd" into library logicvc_v3_00_a
+Parsing entity <pix_merge>.
+Parsing architecture <rtl> of entity <pix_merge>.
+Parsing VHDL file "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/scramble.vhd" into library logicvc_v3_00_a
+Parsing entity <scramble>.
+Parsing architecture <rtl> of entity <scramble>.
+Parsing VHDL file "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/video_out.vhd" into library logicvc_v3_00_a
+Parsing entity <video_out>.
+Parsing architecture <rtl> of entity <video_out>.
+Parsing VHDL file "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/videorst.vhd" into library logicvc_v3_00_a
+Parsing entity <videorst>.
+Parsing architecture <rtl> of entity <videorst>.
+Parsing VHDL file "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/plb_wrapper.vhd" into library logicvc_v3_00_a
+Parsing entity <plb_wrapper>.
+Parsing architecture <rtl> of entity <plb_wrapper>.
+Parsing VHDL file "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/axi_wrapper.vhd" into library logicvc_v3_00_a
+Parsing entity <axi_wrapper>.
+Parsing architecture <rtl> of entity <axi_wrapper>.
+Parsing VHDL file "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/pselect.vhd" into library logicvc_v3_00_a
+Parsing entity <pselect>.
+Parsing architecture <imp> of entity <pselect>.
+Parsing VHDL file "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/opb_wrapper.vhd" into library logicvc_v3_00_a
+Parsing entity <opb_wrapper>.
+Parsing architecture <rtl> of entity <opb_wrapper>.
+Parsing VHDL file "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/splb_wrapper.vhd" into library logicvc_v3_00_a
+Parsing entity <splb_wrapper>.
+Parsing architecture <rtl> of entity <splb_wrapper>.
+Parsing VHDL file "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/axi4_lite_wrapper.vhd" into library logicvc_v3_00_a
+Parsing entity <axi4_lite_wrapper>.
+Parsing architecture <rtl> of entity <axi4_lite_wrapper>.
+Parsing VHDL file "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/reg_comp.vhd" into library logicvc_v3_00_a
+Parsing entity <reg_comp>.
+Parsing architecture <rtl> of entity <reg_comp>.
+Parsing VHDL file "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/clut.vhd" into library logicvc_v3_00_a
+Parsing entity <clut>.
+Parsing architecture <rtl> of entity <clut>.
+Parsing VHDL file "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/regs_file.vhd" into library logicvc_v3_00_a
+Parsing entity <regs_file>.
+Parsing architecture <rtl> of entity <regs_file>.
+Parsing VHDL file "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/mux_2to1_en.vhd" into library logicvc_v3_00_a
+Parsing entity <mux_2to1_en>.
+Parsing architecture <rtl> of entity <mux_2to1_en>.
+Parsing VHDL file "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/xcolor_reg.vhd" into library logicvc_v3_00_a
+Parsing entity <xcolor_reg>.
+Parsing architecture <rtl> of entity <xcolor_reg>.
+Parsing VHDL file "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/xcolor.vhd" into library logicvc_v3_00_a
+Parsing entity <xcolor>.
+Parsing architecture <rtl> of entity <xcolor>.
+Parsing VHDL file "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/dithering_color.vhd" into library logicvc_v3_00_a
+Parsing entity <dithering_color>.
+Parsing architecture <rtl> of entity <dithering_color>.
+Parsing VHDL file "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/dither.vhd" into library logicvc_v3_00_a
+Parsing entity <dither>.
+Parsing architecture <rtl> of entity <dither>.
+Parsing VHDL file "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/ser7to1_4ch.vhd" into library logicvc_v3_00_a
+Parsing entity <ser7to1_4ch>.
+Parsing architecture <rtl> of entity <ser7to1_4ch>.
+Parsing VHDL file "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/lvds_ser_4ch.vhd" into library logicvc_v3_00_a
+Parsing entity <lvds_ser_4ch>.
+Parsing architecture <rtl> of entity <lvds_ser_4ch>.
+Parsing VHDL file "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/ser7to1_s6.vhd" into library logicvc_v3_00_a
+Parsing entity <ser7to1_s6>.
+Parsing architecture <rtl> of entity <ser7to1_s6>.
+Parsing VHDL file "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/lvds_ser_4ch_s6.vhd" into library logicvc_v3_00_a
+Parsing entity <lvds_ser_4ch_s6>.
+Parsing architecture <rtl> of entity <lvds_ser_4ch_s6>.
+Parsing VHDL file "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/ser7to1_k7.vhd" into library logicvc_v3_00_a
+Parsing entity <ser7to1_k7>.
+Parsing architecture <rtl> of entity <ser7to1_k7>.
+Parsing VHDL file "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/lvds_ser_4ch_k7.vhd" into library logicvc_v3_00_a
+Parsing entity <lvds_ser_4ch_k7>.
+Parsing architecture <rtl> of entity <lvds_ser_4ch_k7>.
+Parsing VHDL file "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/itu656_gen.vhd" into library logicvc_v3_00_a
+Parsing entity <itu656_gen>.
+Parsing architecture <rtl> of entity <itu656_gen>.
+Parsing VHDL file "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/xutil.vhd" into library logicvc_v3_00_a
+Parsing entity <xutil>.
+Parsing architecture <rtl> of entity <xutil>.
+Parsing VHDL file "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/mux_2_to_1.vhd" into library logicvc_v3_00_a
+Parsing entity <mux_2_to_1>.
+Parsing architecture <rtl> of entity <mux_2_to_1>.
+Parsing VHDL file "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/encode.vhd" into library logicvc_v3_00_a
+Parsing entity <encode>.
+Parsing architecture <rtl> of entity <encode>.
+Parsing VHDL file "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/oserdes.vhd" into library logicvc_v3_00_a
+Parsing entity <oserdes>.
+Parsing architecture <rtl> of entity <oserdes>.
+Parsing VHDL file "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/dvi_tx.vhd" into library logicvc_v3_00_a
+Parsing entity <dvi_tx>.
+Parsing architecture <rtl> of entity <dvi_tx>.
+Parsing VHDL file "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/logicvc.vhd" into library logicvc_v3_00_a
+Parsing entity <logicvc>.
+Parsing architecture <rtl> of entity <logicvc>.
+Parsing VHDL file "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/hdl/system_logicvc_0_wrapper.vhd" into library work
+Parsing entity <system_logicvc_0_wrapper>.
+Parsing architecture <STRUCTURE> of entity <system_logicvc_0_wrapper>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <system_logicvc_0_wrapper> (architecture <STRUCTURE>) from library <work>.
+
+Elaborating entity <logicvc> (architecture <rtl>) with generics from library <logicvc_v3_00_a>.
+
+Elaborating entity <regs_file> (architecture <rtl>) with generics from library <logicvc_v3_00_a>.
+
+Elaborating entity <axi4_lite_wrapper> (architecture <rtl>) with generics from library <logicvc_v3_00_a>.
+
+Elaborating entity <pselect> (architecture <imp>) with generics from library <logicvc_v3_00_a>.
+WARNING:HDLCompiler:1127 - "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/regs_file.vhd" Line 12: Assignment to low_vector_1 ignored, since the identifier is never used
+
+Elaborating entity <reg_comp> (architecture <rtl>) with generics from library <logicvc_v3_00_a>.
+
+Elaborating entity <reg_comp> (architecture <rtl>) with generics from library <logicvc_v3_00_a>.
+
+Elaborating entity <reg_comp> (architecture <rtl>) with generics from library <logicvc_v3_00_a>.
+
+Elaborating entity <reg_comp> (architecture <rtl>) with generics from library <logicvc_v3_00_a>.
+
+Elaborating entity <reg_comp> (architecture <rtl>) with generics from library <logicvc_v3_00_a>.
+
+Elaborating entity <reg_comp> (architecture <rtl>) with generics from library <logicvc_v3_00_a>.
+
+Elaborating entity <reg_comp> (architecture <rtl>) with generics from library <logicvc_v3_00_a>.
+
+Elaborating entity <reg_comp> (architecture <rtl>) with generics from library <logicvc_v3_00_a>.
+
+Elaborating entity <reg_comp> (architecture <rtl>) with generics from library <logicvc_v3_00_a>.
+
+Elaborating entity <reg_comp> (architecture <rtl>) with generics from library <logicvc_v3_00_a>.
+WARNING:HDLCompiler:634 - "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/regs_file.vhd" Line 12: Net <current_clut[3]> does not have a driver.
+
+Elaborating entity <adrcnt> (architecture <rtl>) with generics from library <logicvc_v3_00_a>.
+
+Elaborating entity <syncs> (architecture <rtl>) with generics from library <logicvc_v3_00_a>.
+INFO:HDLCompiler:679 - "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/syncs.vhd" Line 12. Case statement is complete. others clause is never selected
+WARNING:HDLCompiler:634 - "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/syncs.vhd" Line 12: Net <even_i> does not have a driver.
+
+Elaborating entity <videoaddr> (architecture <rtl>) with generics from library <logicvc_v3_00_a>.
+
+Elaborating entity <inferred_bram> (architecture <inferred_bram_arch>) with generics from library <logicvc_v3_00_a>.
+
+Elaborating entity <addr_gen> (architecture <rtl>) with generics from library <logicvc_v3_00_a>.
+WARNING:HDLCompiler:1127 - "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/addr_gen.vhd" Line 12: Assignment to dummy_burst_length ignored, since the identifier is never used
+
+Elaborating entity <addr_gen> (architecture <rtl>) with generics from library <logicvc_v3_00_a>.
+
+Elaborating entity <vbuff_switch> (architecture <rtl>) with generics from library <logicvc_v3_00_a>.
+
+Elaborating entity <scramble> (architecture <rtl>) with generics from library <logicvc_v3_00_a>.
+
+Elaborating entity <pix_merge> (architecture <rtl>) with generics from library <logicvc_v3_00_a>.
+WARNING:HDLCompiler:871 - "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/pix_merge.vhd" Line 12: Using initial value ('0','1','1','0') for ycrcb_rgb_delay since it is never assigned
+WARNING:HDLCompiler:1127 - "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/pix_merge.vhd" Line 12: Assignment to low ignored, since the identifier is never used
+
+Elaborating entity <alpha_blend> (architecture <rtl>) with generics from library <logicvc_v3_00_a>.
+
+Elaborating entity <alpha_blend> (architecture <rtl>) with generics from library <logicvc_v3_00_a>.
+
+Elaborating entity <rgb_ycrcb> (architecture <rtl>) with generics from library <logicvc_v3_00_a>.
+
+Elaborating entity <delay> (architecture <RTL>) with generics from library <logicvc_v3_00_a>.
+
+Elaborating entity <radd_sub_sclr> (architecture <rtl>) with generics from library <logicvc_v3_00_a>.
+
+Elaborating entity <radd_sub_sclr_no> (architecture <rtl>) with generics from library <logicvc_v3_00_a>.
+
+Elaborating entity <delay_sclr> (architecture <RTL>) with generics from library <logicvc_v3_00_a>.
+WARNING:HDLCompiler:746 - "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/rgb_ycrcb_lib.vhd" Line 12: Range is empty (null range)
+WARNING:HDLCompiler:634 - "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/rgb_ycrcb_lib.vhd" Line 12: Net <a_ext> does not have a driver.
+
+Elaborating entity <mult> (architecture <rtl>) with generics from library <logicvc_v3_00_a>.
+
+Elaborating entity <delay_sclr> (architecture <RTL>) with generics from library <logicvc_v3_00_a>.
+
+Elaborating entity <radd_sub_sclr> (architecture <rtl>) with generics from library <logicvc_v3_00_a>.
+
+Elaborating entity <radd_sub_sclr_no> (architecture <rtl>) with generics from library <logicvc_v3_00_a>.
+
+Elaborating entity <delay_sclr> (architecture <RTL>) with generics from library <logicvc_v3_00_a>.
+
+Elaborating entity <delay> (architecture <RTL>) with generics from library <logicvc_v3_00_a>.
+
+Elaborating entity <radd_sub_sclr> (architecture <rtl>) with generics from library <logicvc_v3_00_a>.
+
+Elaborating entity <radd_sub_sclr_no> (architecture <rtl>) with generics from library <logicvc_v3_00_a>.
+
+Elaborating entity <delay_sclr> (architecture <RTL>) with generics from library <logicvc_v3_00_a>.
+
+Elaborating entity <delay> (architecture <RTL>) with generics from library <logicvc_v3_00_a>.
+
+Elaborating entity <radd_sub_sclr> (architecture <rtl>) with generics from library <logicvc_v3_00_a>.
+
+Elaborating entity <radd_sub_sclr_no> (architecture <rtl>) with generics from library <logicvc_v3_00_a>.
+
+Elaborating entity <delay_sclr> (architecture <RTL>) with generics from library <logicvc_v3_00_a>.
+
+Elaborating entity <mult> (architecture <rtl>) with generics from library <logicvc_v3_00_a>.
+
+Elaborating entity <delay_sclr> (architecture <RTL>) with generics from library <logicvc_v3_00_a>.
+
+Elaborating entity <round> (architecture <rtl>) with generics from library <logicvc_v3_00_a>.
+
+Elaborating entity <get_round_addend> (architecture <rtl>) with generics from library <logicvc_v3_00_a>.
+
+Elaborating entity <radd_sub_sclr> (architecture <rtl>) with generics from library <logicvc_v3_00_a>.
+
+Elaborating entity <radd_sub_sclr_no> (architecture <rtl>) with generics from library <logicvc_v3_00_a>.
+
+Elaborating entity <delay_sclr> (architecture <RTL>) with generics from library <logicvc_v3_00_a>.
+
+Elaborating entity <round> (architecture <rtl>) with generics from library <logicvc_v3_00_a>.
+
+Elaborating entity <get_round_addend> (architecture <rtl>) with generics from library <logicvc_v3_00_a>.
+
+Elaborating entity <radd_sub_sclr> (architecture <rtl>) with generics from library <logicvc_v3_00_a>.
+
+Elaborating entity <radd_sub_sclr_no> (architecture <rtl>) with generics from library <logicvc_v3_00_a>.
+
+Elaborating entity <delay> (architecture <RTL>) with generics from library <logicvc_v3_00_a>.
+
+Elaborating entity <max_sat> (architecture <rtl>) with generics from library <logicvc_v3_00_a>.
+
+Elaborating entity <delay_sclr> (architecture <RTL>) with generics from library <logicvc_v3_00_a>.
+
+Elaborating entity <min_sat> (architecture <rtl>) with generics from library <logicvc_v3_00_a>.
+
+Elaborating entity <video_fifo> (architecture <rtl>) with generics from library <logicvc_v3_00_a>.
+WARNING:HDLCompiler:1127 - "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/video_fifo.vhd" Line 12: Assignment to low ignored, since the identifier is never used
+
+Elaborating entity <universal_fifo> (architecture <rtl>) with generics from library <logicvc_v3_00_a>.
+
+Elaborating entity <brams> (architecture <rtl>) with generics from library <logicvc_v3_00_a>.
+
+Elaborating entity <universal_fifo> (architecture <rtl>) with generics from library <logicvc_v3_00_a>.
+
+Elaborating entity <brams> (architecture <rtl>) with generics from library <logicvc_v3_00_a>.
+WARNING:HDLCompiler:634 - "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/video_fifo.vhd" Line 12: Net <vbuf_i[4][15]> does not have a driver.
+
+Elaborating entity <videorst> (architecture <rtl>) from library <logicvc_v3_00_a>.
+
+Elaborating entity <video_out> (architecture <rtl>) with generics from library <logicvc_v3_00_a>.
+WARNING:HDLCompiler:871 - "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/video_out.vhd" Line 12: Using initial value "00000000000000000000000000000000" for low_vector since it is never assigned
+WARNING:HDLCompiler:634 - "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/video_out.vhd" Line 12: Net <watermark_r[7]> does not have a driver.
+
+Elaborating entity <axi_wrapper> (architecture <rtl>) with generics from library <logicvc_v3_00_a>.
+
+Elaborating entity <xutil> (architecture <rtl>) with generics from library <logicvc_v3_00_a>.
+WARNING:HDLCompiler:92 - "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/xutil.vhd" Line 12: low should be on the sensitivity list of the process
+
+Elaborating entity <a_flag_generator> (architecture <rtl>) with generics from library <logicvc_v3_00_a>.
+WARNING:HDLCompiler:321 - "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/logicvc.vhd" Line 12: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:1127 - "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/logicvc.vhd" Line 12: Assignment to pix_clk_int_n ignored, since the identifier is never used
+WARNING:HDLCompiler:634 - "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/logicvc_v3_00_a/hdl/vhdl/logicvc.vhd" Line 12: Net <e_vsync_i> does not have a driver.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <system_logicvc_0_wrapper>.
+    Related source file is "/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/hdl/system_logicvc_0_wrapper.vhd".
+    Summary:
+	no macro.
+Unit <system_logicvc_0_wrapper> synthesized.
+
+Synthesizing Secure Unit <logicvc>.
+Secure Unit <logicvc> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+INFO:Xst:1901 - Instance sp3_128mem.sp3_128mem_32vid.sp3_128mem_32vid_brams[0].video_fifo_ram_b0 in unit sp3_128mem.sp3_128mem_32vid.sp3_128mem_32vid_brams[0].video_fifo_ram_b0 of type RAMB16_S9_S36 has been replaced by RAMB36E1
+INFO:Xst:1901 - Instance sp3_128mem.sp3_128mem_32vid.sp3_128mem_32vid_brams[0].video_fifo_ram_b1 in unit sp3_128mem.sp3_128mem_32vid.sp3_128mem_32vid_brams[0].video_fifo_ram_b1 of type RAMB16_S9_S36 has been replaced by RAMB36E1
+INFO:Xst:1901 - Instance sp3_128mem.sp3_128mem_32vid.sp3_128mem_32vid_brams[0].video_fifo_ram_b2 in unit sp3_128mem.sp3_128mem_32vid.sp3_128mem_32vid_brams[0].video_fifo_ram_b2 of type RAMB16_S9_S36 has been replaced by RAMB36E1
+INFO:Xst:1901 - Instance sp3_128mem.sp3_128mem_32vid.sp3_128mem_32vid_brams[0].video_fifo_ram_b3 in unit sp3_128mem.sp3_128mem_32vid.sp3_128mem_32vid_brams[0].video_fifo_ram_b3 of type RAMB16_S9_S36 has been replaced by RAMB36E1
+INFO:Xst:1901 - Instance sp3_128mem.sp3_128mem_16vid.sp3_128mem_16vid_brams[0].video_fifo_ram_b0 in unit sp3_128mem.sp3_128mem_16vid.sp3_128mem_16vid_brams[0].video_fifo_ram_b0 of type RAMB16_S4_S36 has been replaced by RAMB36E1
+INFO:Xst:1901 - Instance sp3_128mem.sp3_128mem_16vid.sp3_128mem_16vid_brams[0].video_fifo_ram_b1 in unit sp3_128mem.sp3_128mem_16vid.sp3_128mem_16vid_brams[0].video_fifo_ram_b1 of type RAMB16_S4_S36 has been replaced by RAMB36E1
+INFO:Xst:1901 - Instance sp3_128mem.sp3_128mem_16vid.sp3_128mem_16vid_brams[0].video_fifo_ram_b2 in unit sp3_128mem.sp3_128mem_16vid.sp3_128mem_16vid_brams[0].video_fifo_ram_b2 of type RAMB16_S4_S36 has been replaced by RAMB36E1
+INFO:Xst:1901 - Instance sp3_128mem.sp3_128mem_16vid.sp3_128mem_16vid_brams[0].video_fifo_ram_b3 in unit sp3_128mem.sp3_128mem_16vid.sp3_128mem_16vid_brams[0].video_fifo_ram_b3 of type RAMB16_S4_S36 has been replaced by RAMB36E1
+WARNING:Xst:2040 - Unit regs_file: 32 multi-source signals are replaced by logic (pull-up yes): n1153<0>, n1153<10>, n1153<11>, n1153<12>, n1153<13>, n1153<14>, n1153<15>, n1153<16>, n1153<17>, n1153<18>, n1153<19>, n1153<1>, n1153<20>, n1153<21>, n1153<22>, n1153<23>, n1153<24>, n1153<25>, n1153<26>, n1153<27>, n1153<28>, n1153<29>, n1153<2>, n1153<30>, n1153<31>, n1153<3>, n1153<4>, n1153<5>, n1153<6>, n1153<7>, n1153<8>, n1153<9>.
+WARNING:Xst:2042 - Unit reg_comp_10: 32 internal tristates are replaced by logic (pull-up yes): dout<0>, dout<10>, dout<11>, dout<12>, dout<13>, dout<14>, dout<15>, dout<16>, dout<17>, dout<18>, dout<19>, dout<1>, dout<20>, dout<21>, dout<22>, dout<23>, dout<24>, dout<25>, dout<26>, dout<27>, dout<28>, dout<29>, dout<2>, dout<30>, dout<31>, dout<3>, dout<4>, dout<5>, dout<6>, dout<7>, dout<8>, dout<9>.
+WARNING:Xst:2042 - Unit reg_comp_9: 32 internal tristates are replaced by logic (pull-up yes): dout<0>, dout<10>, dout<11>, dout<12>, dout<13>, dout<14>, dout<15>, dout<16>, dout<17>, dout<18>, dout<19>, dout<1>, dout<20>, dout<21>, dout<22>, dout<23>, dout<24>, dout<25>, dout<26>, dout<27>, dout<28>, dout<29>, dout<2>, dout<30>, dout<31>, dout<3>, dout<4>, dout<5>, dout<6>, dout<7>, dout<8>, dout<9>.
+WARNING:Xst:2042 - Unit reg_comp_8: 32 internal tristates are replaced by logic (pull-up yes): dout<0>, dout<10>, dout<11>, dout<12>, dout<13>, dout<14>, dout<15>, dout<16>, dout<17>, dout<18>, dout<19>, dout<1>, dout<20>, dout<21>, dout<22>, dout<23>, dout<24>, dout<25>, dout<26>, dout<27>, dout<28>, dout<29>, dout<2>, dout<30>, dout<31>, dout<3>, dout<4>, dout<5>, dout<6>, dout<7>, dout<8>, dout<9>.
+WARNING:Xst:2042 - Unit reg_comp_7: 32 internal tristates are replaced by logic (pull-up yes): dout<0>, dout<10>, dout<11>, dout<12>, dout<13>, dout<14>, dout<15>, dout<16>, dout<17>, dout<18>, dout<19>, dout<1>, dout<20>, dout<21>, dout<22>, dout<23>, dout<24>, dout<25>, dout<26>, dout<27>, dout<28>, dout<29>, dout<2>, dout<30>, dout<31>, dout<3>, dout<4>, dout<5>, dout<6>, dout<7>, dout<8>, dout<9>.
+WARNING:Xst:2042 - Unit reg_comp_6: 32 internal tristates are replaced by logic (pull-up yes): dout<0>, dout<10>, dout<11>, dout<12>, dout<13>, dout<14>, dout<15>, dout<16>, dout<17>, dout<18>, dout<19>, dout<1>, dout<20>, dout<21>, dout<22>, dout<23>, dout<24>, dout<25>, dout<26>, dout<27>, dout<28>, dout<29>, dout<2>, dout<30>, dout<31>, dout<3>, dout<4>, dout<5>, dout<6>, dout<7>, dout<8>, dout<9>.
+WARNING:Xst:2042 - Unit reg_comp_5: 32 internal tristates are replaced by logic (pull-up yes): dout<0>, dout<10>, dout<11>, dout<12>, dout<13>, dout<14>, dout<15>, dout<16>, dout<17>, dout<18>, dout<19>, dout<1>, dout<20>, dout<21>, dout<22>, dout<23>, dout<24>, dout<25>, dout<26>, dout<27>, dout<28>, dout<29>, dout<2>, dout<30>, dout<31>, dout<3>, dout<4>, dout<5>, dout<6>, dout<7>, dout<8>, dout<9>.
+WARNING:Xst:2042 - Unit reg_comp_4: 32 internal tristates are replaced by logic (pull-up yes): dout<0>, dout<10>, dout<11>, dout<12>, dout<13>, dout<14>, dout<15>, dout<16>, dout<17>, dout<18>, dout<19>, dout<1>, dout<20>, dout<21>, dout<22>, dout<23>, dout<24>, dout<25>, dout<26>, dout<27>, dout<28>, dout<29>, dout<2>, dout<30>, dout<31>, dout<3>, dout<4>, dout<5>, dout<6>, dout<7>, dout<8>, dout<9>.
+WARNING:Xst:2042 - Unit reg_comp_3: 32 internal tristates are replaced by logic (pull-up yes): dout<0>, dout<10>, dout<11>, dout<12>, dout<13>, dout<14>, dout<15>, dout<16>, dout<17>, dout<18>, dout<19>, dout<1>, dout<20>, dout<21>, dout<22>, dout<23>, dout<24>, dout<25>, dout<26>, dout<27>, dout<28>, dout<29>, dout<2>, dout<30>, dout<31>, dout<3>, dout<4>, dout<5>, dout<6>, dout<7>, dout<8>, dout<9>.
+WARNING:Xst:2042 - Unit reg_comp_2: 32 internal tristates are replaced by logic (pull-up yes): dout<0>, dout<10>, dout<11>, dout<12>, dout<13>, dout<14>, dout<15>, dout<16>, dout<17>, dout<18>, dout<19>, dout<1>, dout<20>, dout<21>, dout<22>, dout<23>, dout<24>, dout<25>, dout<26>, dout<27>, dout<28>, dout<29>, dout<2>, dout<30>, dout<31>, dout<3>, dout<4>, dout<5>, dout<6>, dout<7>, dout<8>, dout<9>.
+WARNING:Xst:2042 - Unit reg_comp_1: 32 internal tristates are replaced by logic (pull-up yes): dout<0>, dout<10>, dout<11>, dout<12>, dout<13>, dout<14>, dout<15>, dout<16>, dout<17>, dout<18>, dout<19>, dout<1>, dout<20>, dout<21>, dout<22>, dout<23>, dout<24>, dout<25>, dout<26>, dout<27>, dout<28>, dout<29>, dout<2>, dout<30>, dout<31>, dout<3>, dout<4>, dout<5>, dout<6>, dout<7>, dout<8>, dout<9>.
+WARNING:Xst:1906 - Unit reg_comp_10 is merged (output ports from interface drive multi-sources)
+WARNING:Xst:1906 - Unit reg_comp_5 is merged (output ports from interface drive multi-sources)
+WARNING:Xst:1906 - Unit reg_comp_9 is merged (output ports from interface drive multi-sources)
+WARNING:Xst:1906 - Unit reg_comp_3 is merged (output ports from interface drive multi-sources)
+WARNING:Xst:1906 - Unit reg_comp_8 is merged (output ports from interface drive multi-sources)
+WARNING:Xst:1906 - Unit reg_comp_7 is merged (output ports from interface drive multi-sources)
+WARNING:Xst:1906 - Unit reg_comp_6 is merged (output ports from interface drive multi-sources)
+WARNING:Xst:1906 - Unit reg_comp_4 is merged (output ports from interface drive multi-sources)
+WARNING:Xst:1906 - Unit reg_comp_2 is merged (output ports from interface drive multi-sources)
+WARNING:Xst:1906 - Unit reg_comp_1 is merged (output ports from interface drive multi-sources)
+
+Optimizing unit <system_logicvc_0_wrapper> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 0) on block system_logicvc_0_wrapper, actual ratio is 1.
+
+Final Macro Processing ...
+
+Processing Secure Unit <LOGICVC_0>.
+Secure Unit <LOGICVC_0> processed.
+
+=========================================================================
+Final Register Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : system_logicvc_0_wrapper.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 7z020clg484-1 
+
+
+Slice Logic Utilization: 
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:      0
+   Number with an unused Flip Flop:       0  out of      0         
+   Number with an unused LUT:             0  out of      0         
+   Number of fully used LUT-FF pairs:     0  out of      0         
+   Number of unique control sets:         0
+
+IO Utilization: 
+ Number of IOs:                        1436
+ Number of bonded IOBs:                   0  out of    200     0%  
+
+Specific Feature Utilization:
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+
+Clock Signal                                                                                                                                                              | Clock buffer(FF name)                                                                                                                                                                                                                                | Load  |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+
+vclk                                                                                                                                                                      | NONE(LOGICVC_0/cb_d_0)                                                                                                                                                                                                                               | 786   |
+S_AXI_ACLK                                                                                                                                                                | NONE(LOGICVC_0/cvc_regs/current_vbuff_rclk_0)                                                                                                                                                                                                        | 546   |
+mclk                                                                                                                                                                      | NONE(LOGICVC_0/cvc_regs/vpru_flag_sd_1)                                                                                                                                                                                                              | 412   |
+LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[1].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_32vid.sp3_128mem_32vid_brams[0].video_fifo_ram_b0/N0| NONE(LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[1].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_32vid.sp3_128mem_32vid_brams[0].video_fifo_ram_b0/sp3_128mem.sp3_128mem_32vid.sp3_128mem_32vid_brams[0].video_fifo_ram_b0)| 1     |
+LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[1].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_32vid.sp3_128mem_32vid_brams[0].video_fifo_ram_b1/N0| NONE(LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[1].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_32vid.sp3_128mem_32vid_brams[0].video_fifo_ram_b1/sp3_128mem.sp3_128mem_32vid.sp3_128mem_32vid_brams[0].video_fifo_ram_b1)| 1     |
+LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[1].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_32vid.sp3_128mem_32vid_brams[0].video_fifo_ram_b2/N0| NONE(LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[1].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_32vid.sp3_128mem_32vid_brams[0].video_fifo_ram_b2/sp3_128mem.sp3_128mem_32vid.sp3_128mem_32vid_brams[0].video_fifo_ram_b2)| 1     |
+LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[1].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_32vid.sp3_128mem_32vid_brams[0].video_fifo_ram_b3/N0| NONE(LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[1].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_32vid.sp3_128mem_32vid_brams[0].video_fifo_ram_b3/sp3_128mem.sp3_128mem_32vid.sp3_128mem_32vid_brams[0].video_fifo_ram_b3)| 1     |
+LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[0].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_16vid.sp3_128mem_16vid_brams[0].video_fifo_ram_b0/N0| NONE(LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[0].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_16vid.sp3_128mem_16vid_brams[0].video_fifo_ram_b0/sp3_128mem.sp3_128mem_16vid.sp3_128mem_16vid_brams[0].video_fifo_ram_b0)| 1     |
+LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[0].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_16vid.sp3_128mem_16vid_brams[0].video_fifo_ram_b1/N0| NONE(LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[0].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_16vid.sp3_128mem_16vid_brams[0].video_fifo_ram_b1/sp3_128mem.sp3_128mem_16vid.sp3_128mem_16vid_brams[0].video_fifo_ram_b1)| 1     |
+LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[0].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_16vid.sp3_128mem_16vid_brams[0].video_fifo_ram_b2/N0| NONE(LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[0].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_16vid.sp3_128mem_16vid_brams[0].video_fifo_ram_b2/sp3_128mem.sp3_128mem_16vid.sp3_128mem_16vid_brams[0].video_fifo_ram_b2)| 1     |
+LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[0].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_16vid.sp3_128mem_16vid_brams[0].video_fifo_ram_b3/N0| NONE(LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[0].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_16vid.sp3_128mem_16vid_brams[0].video_fifo_ram_b3/sp3_128mem.sp3_128mem_16vid.sp3_128mem_16vid_brams[0].video_fifo_ram_b3)| 1     |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+
+Control Signal                                                                                                                                                                                                                                                                                                                                               | Buffer(FF name)                                                                                                                                                                                                                                      | Load  |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+
+LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[0].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_16vid.sp3_128mem_16vid_brams[0].video_fifo_ram_b0/N1(LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[0].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_16vid.sp3_128mem_16vid_brams[0].video_fifo_ram_b0/XST_VCC:P)| NONE(LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[0].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_16vid.sp3_128mem_16vid_brams[0].video_fifo_ram_b0/sp3_128mem.sp3_128mem_16vid.sp3_128mem_16vid_brams[0].video_fifo_ram_b0)| 186   |
+LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[0].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_16vid.sp3_128mem_16vid_brams[0].video_fifo_ram_b1/N1(LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[0].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_16vid.sp3_128mem_16vid_brams[0].video_fifo_ram_b1/XST_VCC:P)| NONE(LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[0].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_16vid.sp3_128mem_16vid_brams[0].video_fifo_ram_b1/sp3_128mem.sp3_128mem_16vid.sp3_128mem_16vid_brams[0].video_fifo_ram_b1)| 186   |
+LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[0].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_16vid.sp3_128mem_16vid_brams[0].video_fifo_ram_b2/N1(LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[0].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_16vid.sp3_128mem_16vid_brams[0].video_fifo_ram_b2/XST_VCC:P)| NONE(LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[0].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_16vid.sp3_128mem_16vid_brams[0].video_fifo_ram_b2/sp3_128mem.sp3_128mem_16vid.sp3_128mem_16vid_brams[0].video_fifo_ram_b2)| 186   |
+LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[0].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_16vid.sp3_128mem_16vid_brams[0].video_fifo_ram_b3/N1(LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[0].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_16vid.sp3_128mem_16vid_brams[0].video_fifo_ram_b3/XST_VCC:P)| NONE(LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[0].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_16vid.sp3_128mem_16vid_brams[0].video_fifo_ram_b3/sp3_128mem.sp3_128mem_16vid.sp3_128mem_16vid_brams[0].video_fifo_ram_b3)| 186   |
+LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[1].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_32vid.sp3_128mem_32vid_brams[0].video_fifo_ram_b0/N1(LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[1].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_32vid.sp3_128mem_32vid_brams[0].video_fifo_ram_b0/XST_VCC:P)| NONE(LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[1].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_32vid.sp3_128mem_32vid_brams[0].video_fifo_ram_b0/sp3_128mem.sp3_128mem_32vid.sp3_128mem_32vid_brams[0].video_fifo_ram_b0)| 186   |
+LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[1].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_32vid.sp3_128mem_32vid_brams[0].video_fifo_ram_b1/N1(LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[1].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_32vid.sp3_128mem_32vid_brams[0].video_fifo_ram_b1/XST_VCC:P)| NONE(LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[1].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_32vid.sp3_128mem_32vid_brams[0].video_fifo_ram_b1/sp3_128mem.sp3_128mem_32vid.sp3_128mem_32vid_brams[0].video_fifo_ram_b1)| 186   |
+LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[1].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_32vid.sp3_128mem_32vid_brams[0].video_fifo_ram_b2/N1(LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[1].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_32vid.sp3_128mem_32vid_brams[0].video_fifo_ram_b2/XST_VCC:P)| NONE(LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[1].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_32vid.sp3_128mem_32vid_brams[0].video_fifo_ram_b2/sp3_128mem.sp3_128mem_32vid.sp3_128mem_32vid_brams[0].video_fifo_ram_b2)| 186   |
+LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[1].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_32vid.sp3_128mem_32vid_brams[0].video_fifo_ram_b3/N1(LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[1].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_32vid.sp3_128mem_32vid_brams[0].video_fifo_ram_b3/XST_VCC:P)| NONE(LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[1].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_32vid.sp3_128mem_32vid_brams[0].video_fifo_ram_b3/sp3_128mem.sp3_128mem_32vid.sp3_128mem_32vid_brams[0].video_fifo_ram_b3)| 186   |
+LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[0].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_16vid.sp3_128mem_16vid_brams[0].video_fifo_ram_b0/N0(LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[0].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_16vid.sp3_128mem_16vid_brams[0].video_fifo_ram_b0/XST_GND:G)| NONE(LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[0].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_16vid.sp3_128mem_16vid_brams[0].video_fifo_ram_b0/sp3_128mem.sp3_128mem_16vid.sp3_128mem_16vid_brams[0].video_fifo_ram_b0)| 108   |
+LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[0].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_16vid.sp3_128mem_16vid_brams[0].video_fifo_ram_b1/N0(LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[0].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_16vid.sp3_128mem_16vid_brams[0].video_fifo_ram_b1/XST_GND:G)| NONE(LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[0].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_16vid.sp3_128mem_16vid_brams[0].video_fifo_ram_b1/sp3_128mem.sp3_128mem_16vid.sp3_128mem_16vid_brams[0].video_fifo_ram_b1)| 108   |
+LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[0].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_16vid.sp3_128mem_16vid_brams[0].video_fifo_ram_b2/N0(LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[0].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_16vid.sp3_128mem_16vid_brams[0].video_fifo_ram_b2/XST_GND:G)| NONE(LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[0].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_16vid.sp3_128mem_16vid_brams[0].video_fifo_ram_b2/sp3_128mem.sp3_128mem_16vid.sp3_128mem_16vid_brams[0].video_fifo_ram_b2)| 108   |
+LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[0].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_16vid.sp3_128mem_16vid_brams[0].video_fifo_ram_b3/N0(LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[0].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_16vid.sp3_128mem_16vid_brams[0].video_fifo_ram_b3/XST_GND:G)| NONE(LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[0].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_16vid.sp3_128mem_16vid_brams[0].video_fifo_ram_b3/sp3_128mem.sp3_128mem_16vid.sp3_128mem_16vid_brams[0].video_fifo_ram_b3)| 108   |
+LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[1].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_32vid.sp3_128mem_32vid_brams[0].video_fifo_ram_b0/N0(LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[1].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_32vid.sp3_128mem_32vid_brams[0].video_fifo_ram_b0/XST_GND:G)| NONE(LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[1].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_32vid.sp3_128mem_32vid_brams[0].video_fifo_ram_b0/sp3_128mem.sp3_128mem_32vid.sp3_128mem_32vid_brams[0].video_fifo_ram_b0)| 108   |
+LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[1].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_32vid.sp3_128mem_32vid_brams[0].video_fifo_ram_b1/N0(LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[1].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_32vid.sp3_128mem_32vid_brams[0].video_fifo_ram_b1/XST_GND:G)| NONE(LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[1].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_32vid.sp3_128mem_32vid_brams[0].video_fifo_ram_b1/sp3_128mem.sp3_128mem_32vid.sp3_128mem_32vid_brams[0].video_fifo_ram_b1)| 108   |
+LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[1].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_32vid.sp3_128mem_32vid_brams[0].video_fifo_ram_b2/N0(LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[1].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_32vid.sp3_128mem_32vid_brams[0].video_fifo_ram_b2/XST_GND:G)| NONE(LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[1].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_32vid.sp3_128mem_32vid_brams[0].video_fifo_ram_b2/sp3_128mem.sp3_128mem_32vid.sp3_128mem_32vid_brams[0].video_fifo_ram_b2)| 108   |
+LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[1].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_32vid.sp3_128mem_32vid_brams[0].video_fifo_ram_b3/N0(LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[1].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_32vid.sp3_128mem_32vid_brams[0].video_fifo_ram_b3/XST_GND:G)| NONE(LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[1].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_32vid.sp3_128mem_32vid_brams[0].video_fifo_ram_b3/sp3_128mem.sp3_128mem_32vid.sp3_128mem_32vid_brams[0].video_fifo_ram_b3)| 108   |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -1
+
+   Minimum period: 4.109ns (Maximum Frequency: 243.355MHz)
+   Minimum input arrival time before clock: 2.134ns
+   Maximum output required time after clock: 1.088ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'vclk'
+  Clock period: 3.298ns (frequency: 303.214MHz)
+  Total number of paths / destination ports: 14715 / 1317
+-------------------------------------------------------------------------
+Delay:               3.298ns (Levels of Logic = 7)
+  Source:            sec_inst (FF)
+  Destination:       sec_inst (FF)
+  Source Clock:      vclk rising
+  Destination Clock: vclk rising
+
+  Data Path: sec_inst to sec_inst
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     SEC:C->out            5   0.282   0.766  sec_inst (sec_net)
+     SEC:in->out           1   0.053   0.485  sec_inst (sec_net)
+     SEC:in->out          10   0.053   0.472  sec_inst (sec_net)
+     SEC:in->out          20   0.053   0.538  sec_inst (sec_net)
+     SEC:in->out          11   0.053   0.479  sec_inst (sec_net)
+     SEC:in->out           1   0.053   0.000  sec_inst (sec_net)
+     SEC:in                    0.011          sec_inst
+    ----------------------------------------
+    Total                      3.298ns (0.558ns logic, 2.740ns route)
+                                       (16.9% logic, 83.1% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'mclk'
+  Clock period: 3.302ns (frequency: 302.847MHz)
+  Total number of paths / destination ports: 11820 / 732
+-------------------------------------------------------------------------
+Delay:               3.302ns (Levels of Logic = 13)
+  Source:            sec_inst (FF)
+  Destination:       sec_inst (FF)
+  Source Clock:      mclk rising
+  Destination Clock: mclk rising
+
+  Data Path: sec_inst to sec_inst
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     SEC:C->out            6   0.282   0.518  sec_inst (sec_net)
+     SEC:in->out           1   0.053   0.000  sec_inst (sec_net)
+     SEC:in->out           1   0.291   0.000  sec_inst (sec_net)
+     SEC:in->out           1   0.015   0.000  sec_inst (sec_net)
+     SEC:in->out           1   0.015   0.000  sec_inst (sec_net)
+     SEC:in->out           1   0.015   0.000  sec_inst (sec_net)
+     SEC:in->out           1   0.015   0.000  sec_inst (sec_net)
+     SEC:in->out           1   0.015   0.000  sec_inst (sec_net)
+     SEC:in->out           5   0.320   0.512  sec_inst (sec_net)
+     SEC:in->out           8   0.053   0.648  sec_inst (sec_net)
+     SEC:in->out           4   0.053   0.433  sec_inst (sec_net)
+     SEC:in->out           1   0.053   0.000  sec_inst (sec_net)
+     SEC:in                    0.011          sec_inst
+    ----------------------------------------
+    Total                      3.302ns (1.191ns logic, 2.111ns route)
+                                       (36.1% logic, 63.9% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'S_AXI_ACLK'
+  Clock period: 4.109ns (frequency: 243.355MHz)
+  Total number of paths / destination ports: 18626 / 1006
+-------------------------------------------------------------------------
+Delay:               4.109ns (Levels of Logic = 7)
+  Source:            sec_inst (FF)
+  Destination:       sec_inst (FF)
+  Source Clock:      S_AXI_ACLK rising
+  Destination Clock: S_AXI_ACLK rising
+
+  Data Path: sec_inst to sec_inst
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     SEC:C->out            9   0.282   0.655  sec_inst (sec_net)
+     SEC:in->out          26   0.053   0.753  sec_inst (sec_net)
+     SEC:in->out          25   0.053   0.564  sec_inst (sec_net)
+     SEC:in->out          16   0.053   0.700  sec_inst (sec_net)
+     SEC:in->out           1   0.053   0.413  sec_inst (sec_net)
+     SEC:in->out           1   0.053   0.413  sec_inst (sec_net)
+     SEC:in->out           1   0.053   0.000  sec_inst (sec_net)
+     SEC:in                    0.011          sec_inst
+    ----------------------------------------
+    Total                      4.109ns (0.611ns logic, 3.498ns route)
+                                       (14.9% logic, 85.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'S_AXI_ACLK'
+  Total number of paths / destination ports: 1132 / 536
+-------------------------------------------------------------------------
+Offset:              2.069ns (Levels of Logic = 9)
+  Source:            S_AXI_ARADDR<31> (PAD)
+  Destination:       sec_inst (FF)
+  Destination Clock: S_AXI_ACLK rising
+
+  Data Path: S_AXI_ARADDR<31> to sec_inst
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     begin scope: 'LOGICVC_0:S_AXI_ARADDR<31>'
+     SEC:in->out           1   0.053   0.000  sec_inst (sec_net)
+     SEC:in->out           1   0.291   0.000  sec_inst (sec_net)
+     SEC:in->out           1   0.015   0.000  sec_inst (sec_net)
+     SEC:in->out           1   0.015   0.000  sec_inst (sec_net)
+     SEC:in->out          14   0.178   0.570  sec_inst (sec_net)
+     SEC:in->out          10   0.053   0.458  sec_inst (sec_net)
+     SEC:in                    0.200          sec_inst
+    ----------------------------------------
+    Total                      2.069ns (1.041ns logic, 1.028ns route)
+                                       (50.3% logic, 49.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'vclk'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              0.011ns (Levels of Logic = 1)
+  Source:            rst (PAD)
+  Destination:       sec_inst (FF)
+  Destination Clock: vclk rising
+
+  Data Path: rst to sec_inst
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     begin scope: 'LOGICVC_0:rst'
+     SEC:in                    0.011          sec_inst
+    ----------------------------------------
+    Total                      0.011ns (0.011ns logic, 0.000ns route)
+                                       (100.0% logic, 0.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'mclk'
+  Total number of paths / destination ports: 372 / 364
+-------------------------------------------------------------------------
+Offset:              2.134ns (Levels of Logic = 6)
+  Source:            M_AXI_ARREADY (PAD)
+  Destination:       sec_inst (FF)
+  Destination Clock: mclk rising
+
+  Data Path: M_AXI_ARREADY to sec_inst
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     begin scope: 'LOGICVC_0:M_AXI_ARREADY'
+     SEC:in->out          10   0.053   0.472  sec_inst (sec_net)
+     SEC:in->out          21   0.053   0.765  sec_inst (sec_net)
+     SEC:in->out           9   0.053   0.452  sec_inst (sec_net)
+     SEC:in                    0.200          sec_inst
+    ----------------------------------------
+    Total                      2.134ns (0.445ns logic, 1.689ns route)
+                                       (20.9% logic, 79.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'mclk'
+  Total number of paths / destination ports: 63 / 62
+-------------------------------------------------------------------------
+Offset:              0.826ns (Levels of Logic = 3)
+  Source:            sec_inst (FF)
+  Destination:       M_AXI_ARVALID (PAD)
+  Source Clock:      mclk rising
+
+  Data Path: sec_inst to M_AXI_ARVALID
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     SEC:C->out            2   0.282   0.491  sec_inst (sec_net)
+     SEC:in->out           1   0.053   0.000  sec_inst (sec_net)
+     end scope: 'LOGICVC_0:M_AXI_ARVALID'
+    ----------------------------------------
+    Total                      0.826ns (0.335ns logic, 0.491ns route)
+                                       (40.6% logic, 59.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'S_AXI_ACLK'
+  Total number of paths / destination ports: 58 / 53
+-------------------------------------------------------------------------
+Offset:              1.088ns (Levels of Logic = 2)
+  Source:            sec_inst (FF)
+  Destination:       interrupt (PAD)
+  Source Clock:      S_AXI_ACLK rising
+
+  Data Path: sec_inst to interrupt
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     SEC:C->out            3   0.282   0.753  sec_inst (sec_net)
+     SEC:in->out           0   0.053   0.000  sec_inst (sec_net)
+     end scope: 'LOGICVC_0:interrupt'
+    ----------------------------------------
+    Total                      1.088ns (0.335ns logic, 0.753ns route)
+                                       (30.8% logic, 69.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'vclk'
+  Total number of paths / destination ports: 21 / 21
+-------------------------------------------------------------------------
+Offset:              0.607ns (Levels of Logic = 1)
+  Source:            sec_inst (FF)
+  Destination:       pix_clk_o (PAD)
+  Source Clock:      vclk rising
+
+  Data Path: sec_inst to pix_clk_o
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     SEC:C->out            0   0.607   0.000  sec_inst (sec_net)
+     end scope: 'LOGICVC_0:pix_clk_o'
+    ----------------------------------------
+    Total                      0.607ns (0.607ns logic, 0.000ns route)
+                                       (100.0% logic, 0.0% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock S_AXI_ACLK
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+S_AXI_ACLK     |    4.109|         |         |         |
+mclk           |    0.725|         |         |         |
+vclk           |    0.968|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock mclk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+S_AXI_ACLK     |    3.317|         |         |         |
+mclk           |    3.302|         |         |         |
+vclk           |    1.091|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock vclk
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+---------+---------+---------+
+                                                                                                                                                                          | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                                                                                                                                              |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+---------+---------+---------+
+LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[0].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_16vid.sp3_128mem_16vid_brams[0].video_fifo_ram_b0/N0|    3.249|         |         |         |
+LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[0].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_16vid.sp3_128mem_16vid_brams[0].video_fifo_ram_b1/N0|    3.249|         |         |         |
+LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[0].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_16vid.sp3_128mem_16vid_brams[0].video_fifo_ram_b2/N0|    3.249|         |         |         |
+LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[0].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_16vid.sp3_128mem_16vid_brams[0].video_fifo_ram_b3/N0|    3.249|         |         |         |
+LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[1].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_32vid.sp3_128mem_32vid_brams[0].video_fifo_ram_b0/N0|    3.249|         |         |         |
+LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[1].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_32vid.sp3_128mem_32vid_brams[0].video_fifo_ram_b1/N0|    2.864|         |         |         |
+LOGICVC_0/scramble_inst/u_video_fifo/universal_fifo_gen[1].fifo_gen.u_universal_fifo/fifo_brams/sp3_128mem.sp3_128mem_32vid.sp3_128mem_32vid_brams[0].video_fifo_ram_b2/N0|    3.249|         |         |         |
+S_AXI_ACLK                                                                                                                                                                |    2.909|         |         |         |
+mclk                                                                                                                                                                      |    0.982|         |         |         |
+vclk                                                                                                                                                                      |    3.298|         |         |         |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 73.00 secs
+Total CPU time to Xst completion: 69.94 secs
+ 
+--> 
+
+
+Total memory usage is 566368 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   37 (   0 filtered)
+Number of infos    :    9 (   0 filtered)
+

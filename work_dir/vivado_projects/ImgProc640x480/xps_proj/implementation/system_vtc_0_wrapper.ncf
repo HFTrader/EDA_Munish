@@ -1,0 +1,4 @@
+INST "VTC_0/*U_VIDEO_CTRL*/*SYNC2PROCCLK_I*/data_sync_0_*" TNM = "VTC_0_async_clock_conv_FFDEST";
+TIMESPEC "TS_VTC_0_async_clock_conv" = FROM FFS TO "VTC_0_async_clock_conv_FFDEST" 13333 PS DATAPATHONLY;
+INST "VTC_0/*U_VIDEO_CTRL*/*SYNC2VIDCLK_I*/data_sync_0_*" TNM = "VTC_0_vid_async_clock_conv_FFDEST";
+TIMESPEC "TS_VTC_0_vid_async_clock_conv" = FROM FFS TO "VTC_0_vid_async_clock_conv_FFDEST" 2 NS DATAPATHONLY;

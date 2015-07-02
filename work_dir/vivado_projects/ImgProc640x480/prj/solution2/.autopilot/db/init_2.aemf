@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1383594529000">
+  <ports id="1" name="p_rows" type="PortType" originalName="_rows" coreName="AXI4LiteS" bitwidth="32">
+    <dataOutputObjs>wireread</dataOutputObjs>
+  </ports>
+  <ports id="2" name="p_cols" type="PortType" originalName="_cols" coreName="AXI4LiteS" bitwidth="32">
+    <dataOutputObjs>wireread</dataOutputObjs>
+  </ports>
+  <ports id="12" name="ap_return_0" direction="DirOut">
+    <dataInputObjs>ret</dataInputObjs>
+  </ports>
+  <ports id="13" name="ap_return_1" direction="DirOut">
+    <dataInputObjs>ret</dataInputObjs>
+  </ports>
+  <edges id="15" source_obj="//@ports.1" sink_obj="//@blocks.0/@node_objs.0"/>
+  <edges id="17" source_obj="//@ports.0" sink_obj="//@blocks.0/@node_objs.1"/>
+  <edges source_obj="//@blocks.0/@node_objs.2" sink_obj="//@ports.2"/>
+  <edges source_obj="//@blocks.0/@node_objs.2" sink_obj="//@ports.3"/>
+  <edges id="-1" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@blocks.0/@node_objs.2"/>
+  <edges id="-1" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@blocks.0/@node_objs.2"/>
+  <blocks id="12" name="init.2" type="BlockType">
+    <node_objs xsi:type="cdfg:CdfgNode" id="5" name="p_cols_read" originalName="_cols" bitwidth="32" opcode="wireread">
+      <dataInputObjs>p_cols</dataInputObjs>
+      <dataOutputObjs>ret</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="6" name="p_rows_read" originalName="_rows" bitwidth="32" opcode="wireread">
+      <dataInputObjs>p_rows</dataInputObjs>
+      <dataOutputObjs>ret</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="11" name="node_11" lineNumber="490" fileName="hls_video_core.h" fileDirectory="/ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/autopilot/hls" contextFuncName="init" opcode="ret">
+      <inlineStackInfo fileName="hls_video_core.h" linenumber="490" fileDirectory="/ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/autopilot/hls" functionName="init"/>
+      <dataInputObjs>wireread</dataInputObjs>
+      <dataInputObjs>wireread</dataInputObjs>
+      <dataOutputObjs>ap_return_0</dataOutputObjs>
+      <dataOutputObjs>ap_return_1</dataOutputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="hls_video_core.h">
+      <validLinenumbers>490</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <ScheduleInfo time="0"/>
+  <expressionNodes realName="mrv_fu_37">
+    <nodeIds>9</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp_fu_29">
+    <nodeIds>7</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp_112_fu_33">
+    <nodeIds>8</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="mrv_1_fu_43">
+    <nodeIds>10</nodeIds>
+  </expressionNodes>
+  <ioNodes realName="p_cols_read_wireread_fu_16">
+    <nodeIds>5</nodeIds>
+  </ioNodes>
+  <ioNodes realName="p_rows_read_wireread_fu_22">
+    <nodeIds>6</nodeIds>
+  </ioNodes>
+  <ioPorts name="p_cols">
+    <contents name="wireread">
+      <nodeIds>5</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="p_rows">
+    <contents name="wireread">
+      <nodeIds>6</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="ap_return_0">
+    <contents name="ret">
+      <nodeIds>11</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="ap_return_1">
+    <contents name="ret">
+      <nodeIds>11</nodeIds>
+    </contents>
+  </ioPorts>
+  <fsm>
+    <states id="1">
+      <operations id="3" stage="1" latency="1"/>
+      <operations id="4" stage="1" latency="1"/>
+      <operations id="5" stage="1" latency="1"/>
+      <operations id="6" stage="1" latency="1"/>
+      <operations id="7" stage="1" latency="1"/>
+      <operations id="8" stage="1" latency="1"/>
+      <operations id="9" stage="1" latency="1"/>
+      <operations id="10" stage="1" latency="1"/>
+      <operations id="11" stage="1" latency="1"/>
+    </states>
+  </fsm>
+  <CFGRegionsRoot>
+    <cfgRegions mId="1" mTag="init.2" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMaxLatency="-1">
+      <basicBlocks>12</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+  </CFGRegionsRoot>
+</cdfg:DBCdfg>

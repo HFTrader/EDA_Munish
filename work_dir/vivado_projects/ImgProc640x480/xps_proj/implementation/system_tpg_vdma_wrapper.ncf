@@ -1,0 +1,11 @@
+## INFO: AXI-Lite to&fro MMAP clock domain Crossings in TPG_VDMA
+INST "TPG_VDMA/*cdc_tig*" TNM = FFS "TNM_TPG_VDMA_cdc_tig_v";
+TIMESPEC TS_TPG_VDMA_cdc_tig_v = TO "TNM_TPG_VDMA_cdc_tig_v" TIG;
+## INFO: CDC Crossings in TPG_VDMA
+INST "TPG_VDMA/*cdc_from*" TNM = FFS "TNM_TPG_VDMA_cdc_from";
+INST "TPG_VDMA/*cdc_to*" TNM = FFS "TNM_TPG_VDMA_cdc_to";
+TIMESPEC TS_TPG_VDMA_cdc_from_2_cdc_to = FROM "TNM_TPG_VDMA_cdc_from" TO "TNM_TPG_VDMA_cdc_to" TIG;
+#
+#
+
+

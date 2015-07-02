@@ -1,0 +1,382 @@
+
+
+================================================================
+== Vivado HLS Report for 'CvtColor_0_16_16_1080_1920_s'
+================================================================
+* Date:           Fri Oct 11 15:48:41 2013
+
+* Version:        2013.1 (build date: Thu Mar 21 12:53:03 PM 2013)
+* Project:        prj
+* Solution:       solution2
+* Product family: zynq zynq_fpv6 
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +---------+-------+----------+------------+
+    |  Clock  | Target| Estimated| Uncertainty|
+    +---------+-------+----------+------------+
+    |default  |   6.67|      4.84|        0.83|
+    +---------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+---------+-----+---------+---------+
+    |    Latency    |    Interval   | Pipeline|
+    | min |   max   | min |   max   |   Type  |
+    +-----+---------+-----+---------+---------+
+    |    1|  2083321|    1|  2083321|   none  |
+    +-----+---------+-----+---------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------+-----+---------+----------+-----------+-----------+----------+----------+
+        |             |    Latency    | Iteration|  Initiation Interval  |   Trip   |          |
+        |  Loop Name  | min |   max   |  Latency |  achieved |   target  |   Count  | Pipelined|
+        +-------------+-----+---------+----------+-----------+-----------+----------+----------+
+        |- Loop 1     |    0|  2083320| 3 ~ 1929 |          -|          -| 0 ~ 1080 |    no    |
+        | + Loop 1.1  |    0|     1926|         8|          1|          1| 0 ~ 1920 |    yes   |
+        +-------------+-----+---------+----------+-----------+-----------+----------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|Expression       |        -|      -|       -|      -|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |        -|      -|       -|      -|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|      -|
+|Register         |        -|      -|       -|      -|
+|ShiftMemory      |        -|      -|       -|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |        0|      0|       0|      0|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        0|      0|       0|      0|
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Shift register: 
+    N/A
+
+    * Expression: 
+    N/A
+
+    * Multiplexer: 
+    N/A
+
+    * Register: 
+    N/A
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
+N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 8
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 11
+* Pipeline: 1
+  Pipeline-0: II = 1, D = 8, States = { 3 4 5 6 7 8 9 10 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (!exitcond4)
+3 --> 
+	11  / (exitcond3)
+	4  / (!exitcond3)
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	3  / true
+11 --> 
+	2  / true
+* FSM state operations: 
+
+ <State 1>: 1.39ns
+ST_1: empty [1/1] 0.00ns
+entry:0  %empty = call i32 (...)* @_ssdm_op_SpecFifo(i8* %p_dst_data_stream_2_V, [8 x i8]* @str152, i32 0, i32 0, [8 x i8]* @str152) ; <i32> [#uses=0]
+
+ST_1: empty_124 [1/1] 0.00ns
+entry:1  %empty_124 = call i32 (...)* @_ssdm_op_SpecFifo(i8* %p_dst_data_stream_1_V, [8 x i8]* @str149, i32 0, i32 0, [8 x i8]* @str149) ; <i32> [#uses=0]
+
+ST_1: empty_125 [1/1] 0.00ns
+entry:2  %empty_125 = call i32 (...)* @_ssdm_op_SpecFifo(i8* %p_dst_data_stream_0_V, [8 x i8]* @str146, i32 0, i32 0, [8 x i8]* @str146) ; <i32> [#uses=0]
+
+ST_1: empty_126 [1/1] 0.00ns
+entry:3  %empty_126 = call i32 (...)* @_ssdm_op_SpecFifo(i8* %p_src_data_stream_2_V, [8 x i8]* @str143, i32 0, i32 0, [8 x i8]* @str143) ; <i32> [#uses=0]
+
+ST_1: empty_127 [1/1] 0.00ns
+entry:4  %empty_127 = call i32 (...)* @_ssdm_op_SpecFifo(i8* %p_src_data_stream_1_V, [8 x i8]* @str140, i32 0, i32 0, [8 x i8]* @str140) ; <i32> [#uses=0]
+
+ST_1: empty_128 [1/1] 0.00ns
+entry:5  %empty_128 = call i32 (...)* @_ssdm_op_SpecFifo(i8* %p_src_data_stream_0_V, [8 x i8]* @str137, i32 0, i32 0, [8 x i8]* @str137) ; <i32> [#uses=0]
+
+ST_1: p_src_cols_V_read_1 [1/1] 0.00ns
+entry:6  %p_src_cols_V_read_1 = call i12 @_ssdm_op_WireRead.i12(i12 %p_src_cols_V_read) ; <i12> [#uses=1]
+
+ST_1: p_src_rows_V_read_1 [1/1] 0.00ns
+entry:7  %p_src_rows_V_read_1 = call i12 @_ssdm_op_WireRead.i12(i12 %p_src_rows_V_read) ; <i12> [#uses=1]
+
+ST_1: stg_20 [1/1] 1.39ns
+entry:8  br label %bb4.i
+
+
+ <State 2>: 2.14ns
+ST_2: i [1/1] 0.00ns
+bb4.i:0  %i = phi i12 [ 0, %entry ], [ %i_2, %bb3.i ]    ; <i12> [#uses=2]
+
+ST_2: exitcond4 [1/1] 2.14ns
+bb4.i:1  %exitcond4 = icmp eq i12 %i, %p_src_rows_V_read_1 ; <i1> [#uses=1]
+
+ST_2: i_2 [1/1] 1.89ns
+bb4.i:2  %i_2 = add i12 %i, 1                            ; <i12> [#uses=1]
+
+ST_2: stg_24 [1/1] 0.00ns
+bb4.i:3  br i1 %exitcond4, label %"CvtColor_opr<kernel_RGB2GRAY,16,16,1080,1920>.exit", label %bb.i
+
+ST_2: tmp [1/1] 0.00ns
+bb.i:0  %tmp = call i32 (...)* @_ssdm_op_SpecRegionBegin([13 x i8]* @p_str30) ; <i32> [#uses=1]
+
+ST_2: stg_26 [1/1] 0.00ns
+bb.i:1  call void (...)* @_ssdm_op_SpecLoopTripCount(i32 0, i32 1080, i32 0, [1 x i8]* @p_str20) nounwind
+
+ST_2: stg_27 [1/1] 1.39ns
+bb.i:2  br label %bb2.i
+
+ST_2: stg_28 [1/1] 0.00ns
+CvtColor_opr<kernel_RGB2GRAY,16,16,1080,1920>.exit:0  ret void
+
+
+ <State 3>: 2.14ns
+ST_3: j [1/1] 0.00ns
+bb2.i:0  %j = phi i12 [ 0, %bb.i ], [ %j_1, %bb1.i ]     ; <i12> [#uses=2]
+
+ST_3: exitcond3 [1/1] 2.14ns
+bb2.i:1  %exitcond3 = icmp eq i12 %j, %p_src_cols_V_read_1 ; <i1> [#uses=1]
+
+ST_3: j_1 [1/1] 1.89ns
+bb2.i:2  %j_1 = add i12 %j, 1                            ; <i12> [#uses=1]
+
+ST_3: stg_32 [1/1] 0.00ns
+bb2.i:3  br i1 %exitcond3, label %bb3.i, label %bb1.i
+
+
+ <State 4>: 1.70ns
+ST_4: tmp_100 [1/1] 1.70ns
+bb1.i:3  %tmp_100 = call i8 @_ssdm_op_FifoRead.volatile.i8P(i8* %p_src_data_stream_0_V) ; <i8> [#uses=1]
+
+ST_4: tmp_101 [1/1] 1.70ns
+bb1.i:4  %tmp_101 = call i8 @_ssdm_op_FifoRead.volatile.i8P(i8* %p_src_data_stream_1_V) ; <i8> [#uses=1]
+
+ST_4: tmp_102 [1/1] 1.70ns
+bb1.i:5  %tmp_102 = call i8 @_ssdm_op_FifoRead.volatile.i8P(i8* %p_src_data_stream_2_V) ; <i8> [#uses=1]
+
+
+ <State 5>: 4.21ns
+ST_5: p_cast7 [1/1] 0.00ns
+bb1.i:6  %p_cast7 = zext i8 %tmp_102 to i26              ; <i26> [#uses=1]
+
+ST_5: r_V [3/3] 4.21ns
+bb1.i:7  %r_V = mul i26 %p_cast7, 239075                 ; <i26> [#uses=1]
+
+ST_5: p_cast [1/1] 0.00ns
+bb1.i:10  %p_cast = zext i8 %tmp_100 to i28               ; <i28> [#uses=1]
+
+ST_5: g_V [3/3] 4.21ns
+bb1.i:11  %g_V = mul i28 %p_cast, 627048                  ; <i28> [#uses=1]
+
+
+ <State 6>: 4.21ns
+ST_6: r_V [2/3] 4.21ns
+bb1.i:7  %r_V = mul i26 %p_cast7, 239075                 ; <i26> [#uses=1]
+
+ST_6: p_cast6 [1/1] 0.00ns
+bb1.i:8  %p_cast6 = zext i8 %tmp_101 to i29              ; <i29> [#uses=1]
+
+ST_6: b_V [3/3] 4.21ns
+bb1.i:9  %b_V = mul i29 %p_cast6, 1231028                ; <i29> [#uses=1]
+
+ST_6: g_V [2/3] 4.21ns
+bb1.i:11  %g_V = mul i28 %p_cast, 627048                  ; <i28> [#uses=1]
+
+
+ <State 7>: 4.21ns
+ST_7: r_V [1/3] 4.21ns
+bb1.i:7  %r_V = mul i26 %p_cast7, 239075                 ; <i26> [#uses=1]
+
+ST_7: b_V [2/3] 4.21ns
+bb1.i:9  %b_V = mul i29 %p_cast6, 1231028                ; <i29> [#uses=1]
+
+ST_7: g_V [1/3] 4.21ns
+bb1.i:11  %g_V = mul i28 %p_cast, 627048                  ; <i28> [#uses=1]
+
+
+ <State 8>: 4.21ns
+ST_8: b_V [1/3] 4.21ns
+bb1.i:9  %b_V = mul i29 %p_cast6, 1231028                ; <i29> [#uses=1]
+
+ST_8: lhs_V1_i_cast [1/1] 0.00ns
+bb1.i:12  %lhs_V1_i_cast = zext i26 %r_V to i28           ; <i28> [#uses=1]
+
+ST_8: r_V_1 [1/1] 3.09ns
+bb1.i:13  %r_V_1 = add i28 %g_V, %lhs_V1_i_cast           ; <i28> [#uses=1]
+
+
+ <State 9>: 3.09ns
+ST_9: lhs_V_1_i_cast [1/1] 0.00ns
+bb1.i:14  %lhs_V_1_i_cast = zext i28 %r_V_1 to i29        ; <i29> [#uses=1]
+
+ST_9: r_V_2 [1/1] 3.09ns
+bb1.i:15  %r_V_2 = add i29 %b_V, %lhs_V_1_i_cast          ; <i29> [#uses=2]
+
+ST_9: tmp_51 [1/1] 0.00ns
+bb1.i:16  %tmp_51 = call i8 @_ssdm_op_PartSelect.i8.i29.i32.i32(i29 %r_V_2, i32 21, i32 28) ; <i8> [#uses=1]
+
+ST_9: qbit [1/1] 0.00ns
+bb1.i:18  %qbit = call i1 @_ssdm_op_BitSelect.i1.i29.i32(i29 %r_V_2, i32 20) ; <i1> [#uses=1]
+
+
+ <State 10>: 4.84ns
+ST_10: tmp_s [1/1] 0.00ns
+bb1.i:0  %tmp_s = call i32 (...)* @_ssdm_op_SpecRegionBegin([13 x i8]* @p_str31) ; <i32> [#uses=1]
+
+ST_10: stg_55 [1/1] 0.00ns
+bb1.i:1  call void (...)* @_ssdm_op_SpecLoopTripCount(i32 0, i32 1920, i32 0, [1 x i8]* @p_str20) nounwind
+
+ST_10: stg_56 [1/1] 0.00ns
+bb1.i:2  call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, [1 x i8]* @p_str20) nounwind
+
+ST_10: p_Val2_8_i_cast [1/1] 0.00ns
+bb1.i:17  %p_Val2_8_i_cast = zext i8 %tmp_51 to i9        ; <i9> [#uses=1]
+
+ST_10: tmp_7_i_cast [1/1] 0.00ns
+bb1.i:19  %tmp_7_i_cast = zext i1 %qbit to i9             ; <i9> [#uses=1]
+
+ST_10: p_Val2_s [1/1] 1.77ns
+bb1.i:20  %p_Val2_s = add i9 %p_Val2_8_i_cast, %tmp_7_i_cast ; <i9> [#uses=2]
+
+ST_10: tmp_98 [1/1] 0.00ns
+bb1.i:21  %tmp_98 = call i1 @_ssdm_op_BitSelect.i1.i9.i32(i9 %p_Val2_s, i32 8) ; <i1> [#uses=1]
+
+ST_10: tmp_99 [1/1] 0.00ns
+bb1.i:22  %tmp_99 = trunc i9 %p_Val2_s to i8              ; <i8> [#uses=1]
+
+ST_10: p_d_val_0 [1/1] 1.37ns
+bb1.i:23  %p_d_val_0 = select i1 %tmp_98, i8 -1, i8 %tmp_99 ; <i8> [#uses=3]
+
+ST_10: stg_63 [1/1] 1.70ns
+bb1.i:24  call void @_ssdm_op_FifoWrite.volatile.i8P(i8* %p_dst_data_stream_0_V, i8 %p_d_val_0)
+
+ST_10: stg_64 [1/1] 1.70ns
+bb1.i:25  call void @_ssdm_op_FifoWrite.volatile.i8P(i8* %p_dst_data_stream_1_V, i8 %p_d_val_0)
+
+ST_10: stg_65 [1/1] 1.70ns
+bb1.i:26  call void @_ssdm_op_FifoWrite.volatile.i8P(i8* %p_dst_data_stream_2_V, i8 %p_d_val_0)
+
+ST_10: empty_129 [1/1] 0.00ns
+bb1.i:27  %empty_129 = call i32 (...)* @_ssdm_op_SpecRegionEnd([13 x i8]* @p_str31, i32 %tmp_s) ; <i32> [#uses=0]
+
+ST_10: stg_67 [1/1] 0.00ns
+bb1.i:28  br label %bb2.i
+
+
+ <State 11>: 0.00ns
+ST_11: empty_130 [1/1] 0.00ns
+bb3.i:0  %empty_130 = call i32 (...)* @_ssdm_op_SpecRegionEnd([13 x i8]* @p_str30, i32 %tmp) ; <i32> [#uses=0]
+
+ST_11: stg_69 [1/1] 0.00ns
+bb3.i:1  br label %bb4.i
+
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

@@ -1,0 +1,486 @@
+Release 14.5 - platgen Xilinx EDK 14.5 Build EDK_P.58f
+ (lin64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: platgen -p xc7z020clg484-1 -lang vhdl -intstyle default -msg
+__xps/ise/xmsgprops.lst system.mhs 
+
+Parse /home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs ...
+
+Read MPD definitions ...
+WARNING:EDK:4092 - IPNAME: processing_system7, INSTANCE: ps7_0 - Pre-Production
+   version not verified on hardware for architecture 'zynq' -
+   /home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs line 48 
+WARNING:EDK:4092 - IPNAME: axi_interconnect, INSTANCE: axi4_0 - Pre-Production
+   version not verified on hardware for architecture 'zynq' -
+   /home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs line 193 
+WARNING:EDK:4092 - IPNAME: axi_interconnect, INSTANCE: axi4_1 - Pre-Production
+   version not verified on hardware for architecture 'zynq' -
+   /home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs line 200 
+WARNING:EDK:4092 - IPNAME: axi_interconnect, INSTANCE: axi4_lite -
+   Pre-Production version not verified on hardware for architecture 'zynq' -
+   /home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs line 207 
+WARNING:EDK:4092 - IPNAME: clock_generator, INSTANCE: clock_generator_0 -
+   Pre-Production version not verified on hardware for architecture 'zynq' -
+   /home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs line 215 
+WARNING:EDK:4092 - IPNAME: proc_sys_reset, INSTANCE: proc_sys_reset_1 -
+   Pre-Production version not verified on hardware for architecture 'zynq' -
+   /home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs line 231 
+WARNING:EDK:4092 - IPNAME: v_tpg, INSTANCE: TPG_0 - Pre-Production version not
+   verified on hardware for architecture 'zynq' -
+   /home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs line 356 
+WARNING:EDK:4092 - IPNAME: axi_vdma, INSTANCE: TPG_VDMA - Pre-Production version
+   not verified on hardware for architecture 'zynq' -
+   /home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs line 422 
+WARNING:EDK:4092 - IPNAME: axi_vdma, INSTANCE: FILTER_VDMA - Pre-Production
+   version not verified on hardware for architecture 'zynq' -
+   /home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs line 477 
+WARNING:EDK:4092 - IPNAME: axi_perf_mon, INSTANCE: PERF_MON_HP0_HP2 -
+   Pre-Production version not verified on hardware for architecture 'zynq' -
+   /home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs line 594 
+WARNING:EDK:4092 - IPNAME: processing_system7, INSTANCE: ps7_0 - Pre-Production
+   version not verified on hardware for architecture 'zynq' -
+   /home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs line 48 
+WARNING:EDK:4092 - IPNAME: axi_interconnect, INSTANCE: axi4_0 - Pre-Production
+   version not verified on hardware for architecture 'zynq' -
+   /home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs line 193 
+WARNING:EDK:4092 - IPNAME: axi_interconnect, INSTANCE: axi4_1 - Pre-Production
+   version not verified on hardware for architecture 'zynq' -
+   /home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs line 200 
+WARNING:EDK:4092 - IPNAME: axi_interconnect, INSTANCE: axi4_lite -
+   Pre-Production version not verified on hardware for architecture 'zynq' -
+   /home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs line 207 
+WARNING:EDK:4092 - IPNAME: clock_generator, INSTANCE: clock_generator_0 -
+   Pre-Production version not verified on hardware for architecture 'zynq' -
+   /home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs line 215 
+WARNING:EDK:4092 - IPNAME: proc_sys_reset, INSTANCE: proc_sys_reset_1 -
+   Pre-Production version not verified on hardware for architecture 'zynq' -
+   /home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs line 231 
+WARNING:EDK:4092 - IPNAME: v_tpg, INSTANCE: TPG_0 - Pre-Production version not
+   verified on hardware for architecture 'zynq' -
+   /home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs line 356 
+WARNING:EDK:4092 - IPNAME: axi_vdma, INSTANCE: TPG_VDMA - Pre-Production version
+   not verified on hardware for architecture 'zynq' -
+   /home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs line 422 
+WARNING:EDK:4092 - IPNAME: axi_vdma, INSTANCE: FILTER_VDMA - Pre-Production
+   version not verified on hardware for architecture 'zynq' -
+   /home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs line 477 
+WARNING:EDK:4092 - IPNAME: axi_perf_mon, INSTANCE: PERF_MON_HP0_HP2 -
+   Pre-Production version not verified on hardware for architecture 'zynq' -
+   /home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs line 594 
+
+Overriding IP level properties ...
+INFO:EDK:4130 - IPNAME: processing_system7, INSTANCE:ps7_0 - tcl is overriding
+   PARAMETER C_NUM_F2P_INTR_INPUTS value to 5 -
+   /ise_local2/umair_temp/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/process
+   ing_system7_v4_02_a/data/processing_system7_v2_1_0.mpd line 319 
+INFO:EDK:4130 - IPNAME: axi_interconnect, INSTANCE:axi4_0 - tcl is overriding
+   PARAMETER C_BASEFAMILY value to zynq -
+   /ise_local2/umair_temp/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_int
+   erconnect_v1_06_a/data/axi_interconnect_v2_1_0.mpd line 81 
+INFO:EDK:4130 - IPNAME: axi_interconnect, INSTANCE:axi4_1 - tcl is overriding
+   PARAMETER C_BASEFAMILY value to zynq -
+   /ise_local2/umair_temp/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_int
+   erconnect_v1_06_a/data/axi_interconnect_v2_1_0.mpd line 81 
+INFO:EDK:4130 - IPNAME: axi_interconnect, INSTANCE:axi4_lite - tcl is overriding
+   PARAMETER C_BASEFAMILY value to zynq -
+   /ise_local2/umair_temp/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_int
+   erconnect_v1_06_a/data/axi_interconnect_v2_1_0.mpd line 81 
+INFO:EDK:4130 - IPNAME: v_vid_in_axi4s, INSTANCE:VID_IN_AXI4S - tcl is
+   overriding PARAMETER VID_IN_DATA_WIDTH value to 16 -
+   /ise_local2/umair_temp/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/v_vid_i
+   n_axi4s_v2_01_a/data/v_vid_in_axi4s_v2_1_0.mpd line 79 
+INFO:EDK:4130 - IPNAME: v_vid_in_axi4s, INSTANCE:VID_IN_AXI4S - tcl is
+   overriding PARAMETER C_M_AXIS_VIDEO_TDATA_WIDTH value to 16 -
+   /ise_local2/umair_temp/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/v_vid_i
+   n_axi4s_v2_01_a/data/v_vid_in_axi4s_v2_1_0.mpd line 80 
+INFO:EDK:4130 - IPNAME: v_cresample, INSTANCE:CRESAMPLE_0 - tcl is overriding
+   PARAMETER C_M_AXIS_VIDEO_TDATA_WIDTH value to 24 -
+   /ise_local2/umair_temp/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/v_cresa
+   mple_v3_01_a/data/v_cresample_v2_1_0.mpd line 86 
+INFO:EDK:4130 - IPNAME: v_ycrcb2rgb, INSTANCE:YUV2RGB_0 - tcl is overriding
+   PARAMETER C_MWIDTH value to 25 -
+   /ise_local2/umair_temp/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/v_ycrcb
+   2rgb_v6_01_a/data/v_ycrcb2rgb_v2_1_0.mpd line 90 
+INFO:EDK:4130 - IPNAME: v_ycrcb2rgb, INSTANCE:YUV2RGB_0 - tcl is overriding
+   PARAMETER C_ROFFSET value to -6965504 -
+   /ise_local2/umair_temp/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/v_ycrcb
+   2rgb_v6_01_a/data/v_ycrcb2rgb_v2_1_0.mpd line 101 
+INFO:EDK:4130 - IPNAME: v_ycrcb2rgb, INSTANCE:YUV2RGB_0 - tcl is overriding
+   PARAMETER C_GOFFSET value to 1666816 -
+   /ise_local2/umair_temp/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/v_ycrcb
+   2rgb_v6_01_a/data/v_ycrcb2rgb_v2_1_0.mpd line 102 
+INFO:EDK:4130 - IPNAME: v_ycrcb2rgb, INSTANCE:YUV2RGB_0 - tcl is overriding
+   PARAMETER C_BOFFSET value to -8117248 -
+   /ise_local2/umair_temp/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/v_ycrcb
+   2rgb_v6_01_a/data/v_ycrcb2rgb_v2_1_0.mpd line 103 
+INFO:EDK:4130 - IPNAME: v_ycrcb2rgb, INSTANCE:YUV2RGB_0 - tcl is overriding
+   PARAMETER C_ACOEF value to 25225 -
+   /ise_local2/umair_temp/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/v_ycrcb
+   2rgb_v6_01_a/data/v_ycrcb2rgb_v2_1_0.mpd line 108 
+INFO:EDK:4130 - IPNAME: v_ycrcb2rgb, INSTANCE:YUV2RGB_0 - tcl is overriding
+   PARAMETER C_BCOEF value to -6067 -
+   /ise_local2/umair_temp/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/v_ycrcb
+   2rgb_v6_01_a/data/v_ycrcb2rgb_v2_1_0.mpd line 109 
+INFO:EDK:4130 - IPNAME: v_ycrcb2rgb, INSTANCE:YUV2RGB_0 - tcl is overriding
+   PARAMETER C_CCOEF value to -2428 -
+   /ise_local2/umair_temp/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/v_ycrcb
+   2rgb_v6_01_a/data/v_ycrcb2rgb_v2_1_0.mpd line 110 
+INFO:EDK:4130 - IPNAME: v_ycrcb2rgb, INSTANCE:YUV2RGB_0 - tcl is overriding
+   PARAMETER C_DCOEF value to 29724 -
+   /ise_local2/umair_temp/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/v_ycrcb
+   2rgb_v6_01_a/data/v_ycrcb2rgb_v2_1_0.mpd line 111 
+INFO:EDK:4130 - IPNAME: axi_perf_mon, INSTANCE:PERF_MON_HP0_HP2 - tcl is
+   overriding PARAMETER C_FIFO_AXIS_TDATA_WIDTH value to 80 -
+   /ise_local2/umair_temp/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_per
+   f_mon_v3_00_a/data/axi_perf_mon_v2_1_0.mpd line 192 
+
+Computing clock values...
+INFO:EDK:1432 - Frequency for Top-Level Input Clock
+   'fmc_imageon_hdmi_in_0_clk_pin' is not specified. Clock DRCs will not be
+   performed for IPs connected to that clock port, unless they are connected
+   through the clock generator IP. 
+
+INFO:EDK:1432 - Frequency for Top-Level Input Clock 'ps7_0_PS_CLK_pin' is not
+   specified. Clock DRCs will not be performed for IPs connected to that clock
+   port, unless they are connected through the clock generator IP. 
+
+INFO:EDK:740 - Cannot determine the input clock associated with port :
+   VIDEO_MUX_0:video_clk. Clock DRCs will not be performed on this core and
+   cores connected to it. 
+INFO:EDK:740 - Cannot determine the input clock associated with port :
+   VIDEO_MUX_0:video_clk. Clock DRCs will not be performed on this core and
+   cores connected to it. 
+
+Performing IP level DRCs on properties...
+
+Running DRC Tcl procedures for OPTION IPLEVEL_DRC_PROC...
+INFO:EDK - INFO: DDR Base and High address in current configuration is
+   0x00000000 and 0x3FFFFFFF respectively. 
+INFO:EDK - INFO: You can modify the DDR address range accessed by Programmable
+   Logic through the processing_system7 AXI slave interfaces. If MicroBlaze is a
+   master on processing_system7 AXI slave interfaces, please use the top half of
+   the address range (Base Address = 0x20000000; High Address = 0x3FFFFFFF). For
+   all other master, any subset of the DDR address can be used. See Xilinx
+   Answer 47167 for more information. 
+Address Map for Processor ps7_0
+  (0x40030000-0x4003ffff) LOGICVC_0	axi4_lite
+  (0x40040000-0x4004ffff) CRESAMPLE_0	axi4_lite
+  (0x40050000-0x4005ffff) YUV2RGB_0	axi4_lite
+  (0x40060000-0x4006ffff) CLK_DETECT_0	axi4_lite
+  (0x40070000-0x4007ffff) VTC_0	axi4_lite
+  (0x40080000-0x4008ffff) TPG_0	axi4_lite
+  (0x40090000-0x4009ffff) TPG_VDMA	axi4_lite
+  (0x400b0000-0x400bffff) FILTER_VDMA	axi4_lite
+  (0x400d0000-0x400dffff) FILTER_ENGINE	axi4_lite
+  (0x400f0000-0x400fffff) PERF_MON_HP0_HP2	axi4_lite
+
+Checking platform address map ...
+
+Checking platform configuration ...
+IPNAME: axi_interconnect, INSTANCE: axi4_0 - 2 master(s) : 1 slave(s) 
+IPNAME: axi_interconnect, INSTANCE: axi4_1 - 2 master(s) : 1 slave(s) 
+IPNAME: axi_interconnect, INSTANCE: axi4_lite - 1 master(s) : 10 slave(s) 
+
+Checking port drivers...
+WARNING:EDK:4180 - PORT: s_axis_s2mm_tkeep, CONNECTOR:
+   v_ycrcb2rgb_0_M_AXIS_VIDEO_TKEEP - No driver found. Port will be driven to
+   VCC -
+   /ise_local2/umair_temp/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_vdm
+   a_v5_04_a/data/axi_vdma_v2_1_0.mpd line 231 
+WARNING:EDK:4180 - PORT: INPUT_STREAM_TSTRB, CONNECTOR: FILTER_DMA_MM2S_TSTRB -
+   No driver found. Port will be driven to GND -
+   /home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/image_filter_top_v1_04
+   _a/data/image_filter_top_v2_1_0.mpd line 67 
+WARNING:EDK:4180 - PORT: INPUT_STREAM_TID, CONNECTOR: FILTER_DMA_MM2S_TID - No
+   driver found. Port will be driven to GND -
+   /home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/image_filter_top_v1_04
+   _a/data/image_filter_top_v2_1_0.mpd line 70 
+WARNING:EDK:4180 - PORT: INPUT_STREAM_TDEST, CONNECTOR: FILTER_DMA_MM2S_TDEST -
+   No driver found. Port will be driven to GND -
+   /home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/image_filter_top_v1_04
+   _a/data/image_filter_top_v2_1_0.mpd line 71 
+WARNING:EDK:4181 - PORT: audio_spdif, CONNECTOR:
+   fmc_imageon_hdmi_in_0_audio_spdif - floating connection -
+   /home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs line 347 
+WARNING:EDK:4181 - PORT: OUTPUT_STREAM_TSTRB, CONNECTOR: FILTER_DMA_S2MM_TSTRB -
+   floating connection -
+   /home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/image_filter_top_v1_04
+   _a/data/image_filter_top_v2_1_0.mpd line 85 
+WARNING:EDK:4181 - PORT: OUTPUT_STREAM_TID, CONNECTOR: FILTER_DMA_S2MM_TID -
+   floating connection -
+   /home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/image_filter_top_v1_04
+   _a/data/image_filter_top_v2_1_0.mpd line 88 
+WARNING:EDK:4181 - PORT: OUTPUT_STREAM_TDEST, CONNECTOR: FILTER_DMA_S2MM_TDEST -
+   floating connection -
+   /home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/pcores/image_filter_top_v1_04
+   _a/data/image_filter_top_v2_1_0.mpd line 89 
+
+Performing Clock DRCs...
+
+Performing Reset DRCs...
+
+Overriding system level properties...
+INFO:EDK:4130 - IPNAME: processing_system7, INSTANCE:ps7_0 - tcl is overriding
+   PARAMETER C_FCLK_CLK1_BUF value to FALSE -
+   /ise_local2/umair_temp/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/process
+   ing_system7_v4_02_a/data/processing_system7_v2_1_0.mpd line 351 
+INFO:EDK:4130 - IPNAME: processing_system7, INSTANCE:ps7_0 - tcl is overriding
+   PARAMETER C_FCLK_CLK2_BUF value to FALSE -
+   /ise_local2/umair_temp/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/process
+   ing_system7_v4_02_a/data/processing_system7_v2_1_0.mpd line 352 
+INFO:EDK:4130 - IPNAME: processing_system7, INSTANCE:ps7_0 - tcl is overriding
+   PARAMETER C_FCLK_CLK3_BUF value to FALSE -
+   /ise_local2/umair_temp/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/process
+   ing_system7_v4_02_a/data/processing_system7_v2_1_0.mpd line 353 
+
+INFO: Setting C_RANGE_CHECK = OFF for axi_interconnect axi4_0; no DECERR
+checking will be performed.
+INFO:EDK:4130 - IPNAME: axi_interconnect, INSTANCE:axi4_0 - tcl is overriding
+   PARAMETER C_RANGE_CHECK value to 0 -
+   /ise_local2/umair_temp/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_int
+   erconnect_v1_06_a/data/axi_interconnect_v2_1_0.mpd line 149 
+
+INFO: Setting C_RANGE_CHECK = OFF for axi_interconnect axi4_1; no DECERR
+checking will be performed.
+INFO:EDK:4130 - IPNAME: axi_interconnect, INSTANCE:axi4_1 - tcl is overriding
+   PARAMETER C_RANGE_CHECK value to 0 -
+   /ise_local2/umair_temp/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_int
+   erconnect_v1_06_a/data/axi_interconnect_v2_1_0.mpd line 149 
+
+INFO: Setting C_RANGE_CHECK = ON for axi_interconnect axi4_lite.
+INFO:EDK:4130 - IPNAME: axi_interconnect, INSTANCE:axi4_lite - tcl is overriding
+   PARAMETER C_RANGE_CHECK value to 1 -
+   /ise_local2/umair_temp/14.5/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_int
+   erconnect_v1_06_a/data/axi_interconnect_v2_1_0.mpd line 149 
+
+Running system level update procedures...
+
+Running UPDATE Tcl procedures for OPTION SYSLEVEL_UPDATE_PROC...
+
+Running system level DRCs...
+
+Performing System level DRCs on properties...
+
+Running DRC Tcl procedures for OPTION SYSLEVEL_DRC_PROC...
+WARNING:EDK -  ****************************************************************
+WARNING:EDK -  Optimization Alert: axi_interconnect axi4_lite: Port 
+WARNING:EDK -  INTERCONNECT_ACLK is connected to a clock source slower than (or 
+WARNING:EDK -  asynchronous to) the fastest MI slot (connected slave). 
+WARNING:EDK -  Throughput may often be improved by connecting INTERCONNECT_ACLK 
+WARNING:EDK -  to the same clock source as the fastest performance-critical MI 
+WARNING:EDK -  slot.
+
+INFO:coreutil - Full license for component <v_tc> allows you to use this
+   component. This license does not give you access to source code implementing
+   this component.
+
+   The license for this core was generated for umair0722@hotmail.com on
+   05/17/2013It is the responsibility of the Licensee of this core to adhere to
+   all terms and conditions of the applicable license agreement when using this
+   core.
+
+
+INFO:coreutil - Hardware Evaluation license for component <v_cresample> found.
+   The generated design will cease to function in the programmed device after
+   operating for some period of time. This allows you to evaluate the component
+   in hardware. You are encouraged to license this component.
+
+   The license for this core was generated for umair0722@hotmail.com on
+   05/17/2013It is the responsibility of the Licensee of this core to adhere to
+   all terms and conditions of the applicable license agreement when using this
+   core.
+
+   For ordering information, please refer to the product page for this component
+   on: www.xilinx.com
+
+Running UPDATE Tcl procedures for OPTION PLATGEN_SYSLEVEL_UPDATE_PROC...
+INFO: No asynchronous clock conversions in axi_interconnect axi4_0.
+INFO: No asynchronous clock conversions in axi_interconnect axi4_1.
+INFO: No asynchronous clock conversions in axi_interconnect axi4_lite.
+INFO: Generating core-level timing constraints for interconnect asynchronous
+clock conversions in VTC_0.
+INFO: Generating core-level timing constraints for video asynchronous clock
+conversions in VTC_0.
+WARNING:EDK -  ****************************************************************
+WARNING:EDK -  Cannot determine frequency of clk or aclk for VTC_0; generating 
+WARNING:EDK -  2 NS DATAPATHONLY constraint for asynchronous clock-converter 
+WARNING:EDK -  data pathways.
+
+INFO: The PERF_MON_HP0_HP2 core has constraints automatically generated by XPS
+in implementation/perf_mon_hp0_hp2_wrapper/perf_mon_hp0_hp2_wrapper.ucf.
+It can be overridden by constraints placed in the system.ucf file.
+
+INFO: The PERF_MON_HP0_HP2 core has constraints automatically generated by XPS
+in implementation/perf_mon_hp0_hp2_wrapper/perf_mon_hp0_hp2_wrapper.ucf.
+It can be overridden by constraints placed in the system.ucf file.
+
+
+Modify defaults ...
+
+Creating stub ...
+
+Processing licensed instances ...
+IPNAME:v_tc INSTANCE:VTC_0 -
+/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs line 319 - processing
+license
+IPNAME:v_cresample INSTANCE:CRESAMPLE_0 -
+/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs line 390 - processing
+license
+WARNING:coreutil:8 - Feature <v_cresample@2012.10> is enabled with a
+   Hardware_Evaluation license.
+WARNING:coreutil:8 - Feature <v_cresample@2012.10> is enabled with a
+   Hardware_Evaluation license.
+Completion time: 6.00 seconds
+
+Creating hardware output directories ...
+
+Managing hardware (BBD-specified) netlist files ...
+
+Managing cache ...
+
+Elaborating instances ...
+IPNAME:clock_generator INSTANCE:clock_generator_0 -
+/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs line 215 -
+elaborating IP
+ClkGen elaborate status: PASSED
+----------------------------------------
+----------------------------------------
+
+Writing HDL for elaborated instances ...
+
+Inserting wrapper level ...
+Completion time: 1.00 seconds
+
+Constructing platform-level connectivity ...
+WARNING:EDK:4059 - INSTANCE: TPG_0, Overriding connection of PORT:
+   s_axis_video_tdata, VALUE: tdata[7:0]&tdata[15:8] - which is part of the
+   connected BUSIF: S_AXIS_VIDEO -
+   /home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs line 356
+WARNING:EDK:4059 - INSTANCE: VID_IN_AXI4S, Overriding connection of PORT:
+   m_axis_video_tdata, VALUE: tdata - which is part of the connected BUSIF:
+   M_AXIS_VIDEO - /home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs
+   line 370
+WARNING:EDK:4059 - INSTANCE: YUV2RGB_0, Overriding connection of PORT:
+   m_axis_video_tdata, VALUE: ycrcb2rgb_axis_tdata - which is part of the
+   connected BUSIF: M_AXIS_VIDEO -
+   /home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs line 406
+WARNING:EDK:4059 - INSTANCE: TPG_VDMA, Overriding connection of PORT:
+   s_axis_s2mm_tdata, VALUE:
+   0xff&ycrcb2rgb_axis_tdata[23:16]&ycrcb2rgb_axis_tdata[7:0]&ycrcb2rgb_axis_tda
+   ta[15:8] - which is part of the connected BUSIF: S_AXIS_S2MM -
+   /home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs line 422
+WARNING:EDK:4059 - INSTANCE: FILTER_ENGINE, Overriding connection of PORT:
+   aresetn, VALUE: FILTER_RST_O - which is part of the connected BUSIF:
+   S_AXI_CONTROL_BUS -
+   /home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs line 464
+Completion time: 0.00 seconds
+
+Writing (top-level) BMM ...
+
+Writing (top-level and wrappers) HDL ...
+
+Generating synthesis project file ...
+
+Running XST synthesis ...
+
+INFO:EDK:4211 - The following instances are synthesized with XST. The MPD option
+   IMP_NETLIST=TRUE indicates that a NGC file is to be produced using XST
+   synthesis. IMP_NETLIST=FALSE (default) instances are not synthesized. 
+INSTANCE:ps7_0 - /home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs line
+48 - Running XST synthesis
+INSTANCE:axi4_0 - /home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs
+line 193 - Running XST synthesis
+INSTANCE:axi4_1 - /home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs
+line 200 - Running XST synthesis
+INSTANCE:axi4_lite - /home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs
+line 207 - Running XST synthesis
+INSTANCE:clock_generator_0 -
+/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs line 215 - Running
+XST synthesis
+INSTANCE:proc_sys_reset_1 -
+/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs line 231 - Running
+XST synthesis
+INSTANCE:tpg_swrst_ff -
+/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs line 242 - Running
+XST synthesis
+INSTANCE:tpg_swrst - /home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs
+line 257 - Running XST synthesis
+INSTANCE:filter_swrst_ff -
+/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs line 266 - Running
+XST synthesis
+INSTANCE:filter_swrst -
+/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs line 281 - Running
+XST synthesis
+INSTANCE:video_mux_0 -
+/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs line 290 - Running
+XST synthesis
+INSTANCE:clk_detect_0 -
+/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs line 309 - Running
+XST synthesis
+INSTANCE:vtc_0 - /home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs line
+319 - Running XST synthesis
+INSTANCE:hdmi_in - /home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs
+line 343 - Running XST synthesis
+INSTANCE:tpg_0 - /home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs line
+356 - Running XST synthesis
+INSTANCE:vid_in_axi4s -
+/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs line 370 - Running
+XST synthesis
+INSTANCE:cresample_0 -
+/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs line 390 - Running
+XST synthesis
+INSTANCE:yuv2rgb_0 - /home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs
+line 406 - Running XST synthesis
+INSTANCE:tpg_vdma - /home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs
+line 422 - Running XST synthesis
+INSTANCE:filter_engine -
+/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs line 464 - Running
+XST synthesis
+INSTANCE:filter_vdma -
+/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs line 477 - Running
+XST synthesis
+INSTANCE:logicvc_0 - /home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs
+line 536 - Running XST synthesis
+INSTANCE:perf_mon_hp0_hp2 -
+/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs line 594 - Running
+XST synthesis
+
+Running NGCBUILD ...
+IPNAME:system_axi4_0_wrapper INSTANCE:axi4_0 -
+/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs line 193 - Running
+NGCBUILD
+IPNAME:system_axi4_1_wrapper INSTANCE:axi4_1 -
+/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs line 200 - Running
+NGCBUILD
+IPNAME:system_axi4_lite_wrapper INSTANCE:axi4_lite -
+/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs line 207 - Running
+NGCBUILD
+IPNAME:system_clock_generator_0_wrapper INSTANCE:clock_generator_0 -
+/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs line 215 - Running
+NGCBUILD
+IPNAME:system_cresample_0_wrapper INSTANCE:cresample_0 -
+/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs line 390 - Running
+NGCBUILD
+IPNAME:system_yuv2rgb_0_wrapper INSTANCE:yuv2rgb_0 -
+/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs line 406 - Running
+NGCBUILD
+IPNAME:system_tpg_vdma_wrapper INSTANCE:tpg_vdma -
+/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs line 422 - Running
+NGCBUILD
+IPNAME:system_filter_vdma_wrapper INSTANCE:filter_vdma -
+/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs line 477 - Running
+NGCBUILD
+IPNAME:system_logicvc_0_wrapper INSTANCE:logicvc_0 -
+/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs line 536 - Running
+NGCBUILD
+IPNAME:system_perf_mon_hp0_hp2_wrapper INSTANCE:perf_mon_hp0_hp2 -
+/home/ga73koz/thesis/xapp1167/sw/erode/xps_proj/system.mhs line 594 - Running
+NGCBUILD
+INFO:EDK:3509 - NCF files should not be modified as they will be regenerated.
+   If any constraint needs to be overridden, this should be done by modifying
+   the data/system.ucf file.
+
+Rebuilding cache ...
+
+Total run time: 3453.00 seconds
