@@ -412,10 +412,8 @@ void processFrame(unsigned char CPU_id) {
 	// grayscale filtering
 #ifdef GRAYSCALE_HA
 	//TODO: check if this accelerator is busy!! only if it is free then configure it
-	GRAY_INTR = 0;
 	config_filterVDMA(XPAR_AXI_VDMA_1_BASEADDR, DMA_MEM_TO_DEV, frameBaseaddr);
 	config_filterVDMA(XPAR_AXI_VDMA_1_BASEADDR, DMA_DEV_TO_MEM, frameBaseaddr + FRAME_SIZE);
-	while(GRAY_INTR == 0);
 #else
 	// SW implementation
 	ConvToGray(frameBaseaddr, frameBaseaddr + FRAME_SIZE, 640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME]);
@@ -430,7 +428,6 @@ void processFrame(unsigned char CPU_id) {
 
 
 	ConfigHdmiVDMA (detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME], frameBaseaddr);
-	//ConfigHdmiVDMA (detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME], 0x2000000);
 }
 
 
