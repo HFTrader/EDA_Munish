@@ -66,9 +66,6 @@ void Xil_SetTlbAttributes_CPU1();
 
 
 
-short int FRAME_INTR = 1;
-short int GRAY_INTR = 1;
-
 
 /***************************************************************************//**
  * @brief Main function.
@@ -84,6 +81,12 @@ int main()
 	RcRev        = 1;
 	DriverEnable = TRUE;
 	LastEnable   = FALSE;
+
+	FRAME_INTR = 1;
+	GRAY_INTR = 1;
+	cpu0_busy_processing_frame = 0;
+	cpu1_busy_processing_frame = 0;
+	debug_frameNo = 0;
 
 #if NUM_CPUS == 2
 	int delay;
@@ -172,7 +175,6 @@ int main()
 
 		FRAME_INTR = 0;
 		while (FRAME_INTR == 0);
-		//cpu0_busy_processing_frame = 1;
 		processFrame(0);
 	}
 
@@ -359,12 +361,14 @@ void InitErodeFilter() {
 
 
 void InitGrayscaleFilter() {
-	xGrayScaleFilter.Control_bus_BaseAddress = XPAR_GRAY_SCALE_TOP_0_S_AXI_CONTROL_BUS_BASEADDR;
+	xGrayScaleFilter.Control_bus_BaseAddress = XPAR_CONVERT_TO_GRAY_TOP_0_S_AXI_CONTROL_BUS_BASEADDR;
 	xGrayScaleFilter.IsReady = XIL_COMPONENT_IS_READY;
 	config_grayScaleFilter(xGrayScaleFilter);
 	resetVDMA(XPAR_AXI_VDMA_1_BASEADDR);
-	config_filterVDMA(XPAR_AXI_VDMA_1_BASEADDR, DMA_MEM_TO_DEV, VIDEO_BASEADDR_CPU0 + FRAME_SIZE*2);
-	config_filterVDMA(XPAR_AXI_VDMA_1_BASEADDR, DMA_DEV_TO_MEM, VIDEO_BASEADDR_CPU0 + FRAME_SIZE*3);
+	//config_filterVDMA(XPAR_AXI_VDMA_1_BASEADDR, DMA_MEM_TO_DEV, VIDEO_BASEADDR_CPU0 + FRAME_SIZE*2);
+	//config_filterVDMA(XPAR_AXI_VDMA_1_BASEADDR, DMA_DEV_TO_MEM, VIDEO_BASEADDR_CPU0 + FRAME_SIZE*3);
+	config_filterVDMA(XPAR_AXI_VDMA_1_BASEADDR, DMA_MEM_TO_DEV, VIDEO_BASEADDR_CPU0);
+	config_filterVDMA(XPAR_AXI_VDMA_1_BASEADDR, DMA_DEV_TO_MEM, VIDEO_BASEADDR_CPU0 + FRAME_SIZE);
 }
 
 
@@ -372,6 +376,8 @@ void InitGrayscaleFilter() {
 
 void processFrame(unsigned char CPU_id) {
 	unsigned int frameBaseaddr;
+
+	//printf("%d,%d\n\r", CPU_id, debug_frameNo);
 
 	if (CPU_id == 0) {
 		frameBaseaddr = VIDEO_BASEADDR_CPU0;
@@ -382,7 +388,7 @@ void processFrame(unsigned char CPU_id) {
 	// capturing the frame pixels from camera line buffers onto DDR memory
 	DDRVideoWr(640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME], frameBaseaddr);
 
-#if 1
+
 	// sobel filtering (edge detection)
 #ifdef SOBEL_HA
 	//TODO: check if this accelerator is busy!! only if it is free then configure it
@@ -390,9 +396,9 @@ void processFrame(unsigned char CPU_id) {
 	config_filterVDMA(XPAR_AXI_VDMA_2_BASEADDR, DMA_DEV_TO_MEM, frameBaseaddr + FRAME_SIZE);
 #else
 	// SW implementation
-	EdgeDetection(frameBaseaddr, frameBaseaddr + FRAME_SIZE, 640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME]);
+	//EdgeDetection(frameBaseaddr, frameBaseaddr + FRAME_SIZE, 640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME]);
 #endif
-	frameBaseaddr += FRAME_SIZE;
+	//frameBaseaddr += FRAME_SIZE;
 
 	// erode filtering
 #ifdef ERODE_HA
@@ -401,15 +407,19 @@ void processFrame(unsigned char CPU_id) {
 	config_filterVDMA(XPAR_AXI_VDMA_3_BASEADDR, DMA_DEV_TO_MEM, frameBaseaddr + FRAME_SIZE);
 #else
 	// SW implementation
-	Erode(frameBaseaddr, frameBaseaddr + FRAME_SIZE, 640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME]);
+	//Erode(frameBaseaddr, frameBaseaddr + FRAME_SIZE, 640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME]);
 #endif
-	frameBaseaddr += FRAME_SIZE;
-#endif
+	//frameBaseaddr += FRAME_SIZE;
+
 	// grayscale filtering
 #ifdef GRAYSCALE_HA
 	//TODO: check if this accelerator is busy!! only if it is free then configure it
+	GRAY_INTR = 0;
+	/*resetVDMA(XPAR_AXI_VDMA_1_BASEADDR);
 	config_filterVDMA(XPAR_AXI_VDMA_1_BASEADDR, DMA_MEM_TO_DEV, frameBaseaddr);
-	config_filterVDMA(XPAR_AXI_VDMA_1_BASEADDR, DMA_DEV_TO_MEM, frameBaseaddr + FRAME_SIZE);
+	config_filterVDMA(XPAR_AXI_VDMA_1_BASEADDR, DMA_DEV_TO_MEM, frameBaseaddr + FRAME_SIZE);*/
+	InitGrayscaleFilter();
+	while(GRAY_INTR == 0);
 #else
 	// SW implementation
 	ConvToGray(frameBaseaddr, frameBaseaddr + FRAME_SIZE, 640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME]);
@@ -424,6 +434,7 @@ void processFrame(unsigned char CPU_id) {
 
 
 	ConfigHdmiVDMA (detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME], frameBaseaddr);
+	//ConfigHdmiVDMA (detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME], 0x2000000);
 }
 
 
@@ -587,7 +598,7 @@ void Xil_SetTlbAttributes_CPU1() {
 	 */
     Xil_SetTlbAttributes(SHARED_OCM_MEMORY_BASE, 0x14de2);
 
-	// should reset stack here and return to 0x09000000 to stop the CPU1 stack buffer to overflow (No return statement at the end of this function to pop stack!!)
+	// should reset stack here and return to initial boot code to stop the CPU1 stack buffer to overflow (No return statement at the end of this function to pop stack!!)
 	asm volatile (
 						"mrs	r0, cpsr			/* get the current PSR */\n"
 						"mvn	r1, #0x1f			/* set up the system stack pointer */\n"
@@ -598,14 +609,14 @@ void Xil_SetTlbAttributes_CPU1() {
 				   );
 	// branching to initial boot code (waiting for sev from cpu 0)
 	Xil_Out32((u32) 0xfffffff0, (u32) 0x0);
+
 	asm volatile("bx %0" : : "r" (CPU1_SLEEP_ADDR));
 }
 
 
 void CPU1_ISR() {
-	//cpu1_busy_processing_frame = 1;
 	processFrame(1);
-	// should reset stack here and return to 0x09000000 to stop the CPU1 stack buffer to overflow (No return statement at the end of this function to pop stack!!)
+	// should reset stack here and return to initial boot code to stop the CPU1 stack buffer to overflow (No return statement at the end of this function to pop stack!!)
 	asm volatile (
 						"mrs	r0, cpsr			/* get the current PSR */\n"
 						"mvn	r1, #0x1f			/* set up the system stack pointer */\n"

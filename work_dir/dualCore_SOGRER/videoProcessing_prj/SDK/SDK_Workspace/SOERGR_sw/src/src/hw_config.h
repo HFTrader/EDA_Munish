@@ -12,7 +12,7 @@
 #include "xsobel_filter.h"
 #include "ximage_filter.h"
 
-#define AXI_FILTER_RX_CTRL 			0x00000030 
+#define AXI_FILTER_RX_CTRL 				0x00000030 
 #define AXI_FILTER_RX_START1 			0x000000A0 + 0x0000000C
 #define AXI_FILTER_RX_START2 			0x000000A0 + 0x0000000C + 0x4
 #define AXI_FILTER_RX_START3 			0x000000A0 + 0x0000000C + 0x8

@@ -6,7 +6,6 @@
  */
 #include "hw_config.h"
 #include "xbasic_types.h"
-#include "xgray_scale.h"
 #include "cf_hdmi.h"
 
 extern unsigned char currentResolution;
@@ -18,10 +17,10 @@ void config_filterVDMA(int VDMA_baseAddr, int vdma_direction, unsigned long base
 	if(vdma_direction == DMA_DEV_TO_MEM)		// from device to memory
 	{// rx : S2MM
 		/* FOR HDMI RELEVANT SETTINGS of VDMA*/
-		Xil_Out32((VDMA_baseAddr + AXI_FILTER_RX_CTRL), 0x00000003); // enable circular mode
+		Xil_Out32((VDMA_baseAddr + AXI_FILTER_RX_CTRL), 0x00011003); // enable circular mode
 		Xil_Out32((VDMA_baseAddr + AXI_FILTER_RX_START1), base_address); // start address
-		Xil_Out32((VDMA_baseAddr + AXI_FILTER_RX_START2), base_address); // start address
-		Xil_Out32((VDMA_baseAddr + AXI_FILTER_RX_START3), base_address); // start address
+		//Xil_Out32((VDMA_baseAddr + AXI_FILTER_RX_START2), base_address); // start address
+		//Xil_Out32((VDMA_baseAddr + AXI_FILTER_RX_START3), base_address); // start address
 		Xil_Out32((VDMA_baseAddr + AXI_FILTER_RX_FRMDLY_STRIDE),
 				  (detailedTiming[currentResolution][H_ACTIVE_TIME]*4)); // h offset
 		Xil_Out32((VDMA_baseAddr + AXI_FILTER_RX_HSIZE),
@@ -33,10 +32,10 @@ void config_filterVDMA(int VDMA_baseAddr, int vdma_direction, unsigned long base
 	else if (vdma_direction ==DMA_MEM_TO_DEV)		// from memory to device
 	{//tx : MM2S
 		/* FOR HDMI RELEVANT SETTINGS of VDMA */
-		Xil_Out32((VDMA_baseAddr + AXI_FILTER_TX_CTRL), 0x00000003); // enable circular mode, genlock synEn
+		Xil_Out32((VDMA_baseAddr + AXI_FILTER_TX_CTRL), 0x00011003); // enable circular mode, genlock synEn
 		Xil_Out32((VDMA_baseAddr + AXI_FILTER_TX_START1), base_address); // start address
-		Xil_Out32((VDMA_baseAddr + AXI_FILTER_TX_START2), base_address); // start address
-		Xil_Out32((VDMA_baseAddr + AXI_FILTER_TX_START3), base_address); // start address
+		//Xil_Out32((VDMA_baseAddr + AXI_FILTER_TX_START2), base_address); // start address
+		//Xil_Out32((VDMA_baseAddr + AXI_FILTER_TX_START3), base_address); // start address
 		Xil_Out32((VDMA_baseAddr + AXI_FILTER_TX_FRMDLY_STRIDE),
 				  (detailedTiming[currentResolution][H_ACTIVE_TIME]*4)); // h offset
 		Xil_Out32((VDMA_baseAddr + AXI_FILTER_TX_HSIZE),

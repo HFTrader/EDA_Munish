@@ -631,3 +631,8 @@ void CPU1_ISR() {
 }
 
 
+
+//TODO: replace LabC grayscale IP/HA with the one provided by Benjamin but which is synthesized @ 8MHz!!
+
+
+
