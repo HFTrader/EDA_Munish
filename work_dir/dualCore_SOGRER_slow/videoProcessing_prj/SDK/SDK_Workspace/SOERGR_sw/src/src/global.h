@@ -10,7 +10,7 @@
 #define sev() __asm__("sev")
 #define NUM_CPUS 1
 #define SOBEL_HA
-//#define ERODE_HA
+#define ERODE_HA
 #define GRAYSCALE_HA
 #define FRAME_SIZE 0x1000000
 
@@ -20,6 +20,7 @@
 short int FRAME_INTR;
 short int GRAY_INTR;
 short int SOBEL_INTR;
+short int ERODE_INTR;
 short int debug_frameNo;
 short int cpu0_busy_processing_frame;
 short int cpu1_busy_processing_frame;

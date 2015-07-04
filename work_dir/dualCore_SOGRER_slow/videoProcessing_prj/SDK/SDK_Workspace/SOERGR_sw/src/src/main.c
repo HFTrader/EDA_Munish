@@ -233,7 +233,10 @@ int ScuGicInterrupt_Init()
 	XScuGic_Enable(&InterruptController, XPAR_FABRIC_AXI_VDMA_2_S2MM_INTROUT_INTR);
 
 
-
+	Status = XScuGic_Connect(&InterruptController,XPAR_FABRIC_AXI_VDMA_3_S2MM_INTROUT_INTR,
+			(Xil_ExceptionHandler)AXI_INTERRUPT__VDMA3_S2MMIntr_Handler,
+			(void *) &InterruptController);
+	XScuGic_Enable(&InterruptController, XPAR_FABRIC_AXI_VDMA_3_S2MM_INTROUT_INTR);
 
 // 	Enable interrupts in the ARM
 	Xil_ExceptionEnable();
@@ -349,7 +352,7 @@ void InitSobelFilter() {
 }
 
 
-/*
+
 void InitErodeFilter() {
 	xErodeFilter.Control_bus_BaseAddress = XPAR_IMAGE_FILTER_TOP_0_S_AXI_CONTROL_BUS_BASEADDR;
 	xErodeFilter.IsReady = XIL_COMPONENT_IS_READY;
@@ -359,7 +362,6 @@ void InitErodeFilter() {
 	config_filterVDMA(XPAR_AXI_VDMA_3_BASEADDR, DMA_DEV_TO_MEM, VIDEO_BASEADDR_CPU0 + FRAME_SIZE*2);
 }
 
-*/
 
 
 void InitGrayscaleFilter() {
@@ -398,21 +400,29 @@ void processFrame(unsigned char CPU_id) {
 	printf("SO=%d\r\n", get_cyclecount());
 #else
 	// SW implementation
+	init_perfcounters(1, 0);
 	EdgeDetection(frameBaseaddr, frameBaseaddr + FRAME_SIZE, 640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME]);
+	printf("SO=%d\r\n", get_cyclecount());
 #endif
 	frameBaseaddr += FRAME_SIZE;
-#if 0
+
 	// erode filtering
 #ifdef ERODE_HA
 	//TODO: check if this accelerator is busy!! only if it is free then configure it
 	config_filterVDMA(XPAR_AXI_VDMA_3_BASEADDR, DMA_MEM_TO_DEV, frameBaseaddr);
 	config_filterVDMA(XPAR_AXI_VDMA_3_BASEADDR, DMA_DEV_TO_MEM, frameBaseaddr + FRAME_SIZE);
+	init_perfcounters(1, 0);
+	ERODE_INTR = 0;
+	while(ERODE_INTR == 0);
+	printf("ER=%d\r\n", get_cyclecount());
 #else
 	// SW implementation
+	init_perfcounters(1, 0);
 	Erode(frameBaseaddr, frameBaseaddr + FRAME_SIZE, 640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME]);
+	printf("ER=%d\r\n", get_cyclecount());
 #endif
 	frameBaseaddr += FRAME_SIZE;
-#endif
+
 	// grayscale filtering
 #ifdef GRAYSCALE_HA
 	//TODO: check if this accelerator is busy!! only if it is free then configure it
@@ -424,7 +434,9 @@ void processFrame(unsigned char CPU_id) {
 	printf("GR=%d\r\n", get_cyclecount());
 #else
 	// SW implementation
+	init_perfcounters(1, 0);
 	ConvToGray(frameBaseaddr, frameBaseaddr + FRAME_SIZE, 640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME]);
+	printf("GR=%d\r\n", get_cyclecount());
 #endif
 	frameBaseaddr += FRAME_SIZE;
 

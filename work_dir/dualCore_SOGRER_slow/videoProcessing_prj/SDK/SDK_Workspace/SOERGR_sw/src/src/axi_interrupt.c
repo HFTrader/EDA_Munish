@@ -111,4 +111,8 @@ void AXI_INTERRUPT__VDMA2_S2MMIntr_Handler(void * baseaddr_p)
 	SOBEL_INTR = 1;
 }
 
-
+void AXI_INTERRUPT__VDMA3_S2MMIntr_Handler(void * baseaddr_p)
+{
+	Xil_Out32((XPAR_AXI_VDMA_3_BASEADDR + AXI_FILTER_RX_CTRL), 0x00000004);
+	ERODE_INTR = 1;
+}

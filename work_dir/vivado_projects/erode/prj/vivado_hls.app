@@ -13,4 +13,7 @@
   <includePaths/>
   <libraryPaths/>
   <libraryFlag/>
+  <Simulation>
+    <SimFlow name="csim"/>
+  </Simulation>
 </project>

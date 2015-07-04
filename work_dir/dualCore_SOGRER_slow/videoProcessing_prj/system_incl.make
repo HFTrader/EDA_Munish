@@ -185,7 +185,31 @@ pcores/sobel_filter_top_v1_01_a/synhdl/verilog/sobel_filter_ap_rst_if.v \
 pcores/sobel_filter_top_v1_01_a/synhdl/verilog/sobel_filter_CONTROL_BUS_if.v \
 pcores/sobel_filter_top_v1_01_a/synhdl/verilog/sobel_filter_INPUT_STREAM_if.v \
 pcores/sobel_filter_top_v1_01_a/synhdl/verilog/sobel_filter_OUTPUT_STREAM_if.v \
-pcores/sobel_filter_top_v1_01_a/synhdl/verilog/sobel_filter_top.v
+pcores/sobel_filter_top_v1_01_a/synhdl/verilog/sobel_filter_top.v \
+pcores/image_filter_top_v1_08_a/synhdl/verilog/AXIvideo2Mat_32_1080_1920_32_s.v \
+pcores/image_filter_top_v1_08_a/synhdl/verilog/Erode_32_32_1080_1920_s_k_buf_0_val_0.v \
+pcores/image_filter_top_v1_08_a/synhdl/verilog/Erode_32_32_1080_1920_s.v \
+pcores/image_filter_top_v1_08_a/synhdl/verilog/FIFO_image_filter_img_0_cols_V.v \
+pcores/image_filter_top_v1_08_a/synhdl/verilog/FIFO_image_filter_img_0_cols_V_channel6.v \
+pcores/image_filter_top_v1_08_a/synhdl/verilog/FIFO_image_filter_img_0_data_stream_0_V.v \
+pcores/image_filter_top_v1_08_a/synhdl/verilog/FIFO_image_filter_img_0_data_stream_1_V.v \
+pcores/image_filter_top_v1_08_a/synhdl/verilog/FIFO_image_filter_img_0_data_stream_2_V.v \
+pcores/image_filter_top_v1_08_a/synhdl/verilog/FIFO_image_filter_img_0_rows_V.v \
+pcores/image_filter_top_v1_08_a/synhdl/verilog/FIFO_image_filter_img_0_rows_V_channel5.v \
+pcores/image_filter_top_v1_08_a/synhdl/verilog/FIFO_image_filter_img_1_cols_V.v \
+pcores/image_filter_top_v1_08_a/synhdl/verilog/FIFO_image_filter_img_1_data_stream_0_V.v \
+pcores/image_filter_top_v1_08_a/synhdl/verilog/FIFO_image_filter_img_1_data_stream_1_V.v \
+pcores/image_filter_top_v1_08_a/synhdl/verilog/FIFO_image_filter_img_1_data_stream_2_V.v \
+pcores/image_filter_top_v1_08_a/synhdl/verilog/FIFO_image_filter_img_1_rows_V.v \
+pcores/image_filter_top_v1_08_a/synhdl/verilog/init.v \
+pcores/image_filter_top_v1_08_a/synhdl/verilog/init_1.v \
+pcores/image_filter_top_v1_08_a/synhdl/verilog/Mat2AXIvideo_32_1080_1920_32_s.v \
+pcores/image_filter_top_v1_08_a/synhdl/verilog/image_filter.v \
+pcores/image_filter_top_v1_08_a/synhdl/verilog/image_filter_ap_rst_if.v \
+pcores/image_filter_top_v1_08_a/synhdl/verilog/image_filter_CONTROL_BUS_if.v \
+pcores/image_filter_top_v1_08_a/synhdl/verilog/image_filter_INPUT_STREAM_if.v \
+pcores/image_filter_top_v1_08_a/synhdl/verilog/image_filter_OUTPUT_STREAM_if.v \
+pcores/image_filter_top_v1_08_a/synhdl/verilog/image_filter_top.v
 
 WRAPPER_NGC_FILES = implementation/system_processing_system7_0_wrapper.ngc \
 implementation/system_axi_vdma_0_wrapper.ngc \
@@ -205,7 +229,9 @@ implementation/system_axi_interconnect_3_wrapper.ngc \
 implementation/system_axi_vdma_1_wrapper.ngc \
 implementation/system_gray_scale_top_0_wrapper.ngc \
 implementation/system_sobel_filter_top_0_wrapper.ngc \
-implementation/system_axi_vdma_2_wrapper.ngc
+implementation/system_axi_vdma_2_wrapper.ngc \
+implementation/system_image_filter_top_0_wrapper.ngc \
+implementation/system_axi_vdma_3_wrapper.ngc
 
 POSTSYN_NETLIST = implementation/$(SYSTEM).ngc
 
