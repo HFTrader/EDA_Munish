@@ -82,7 +82,6 @@ int main()
 	LastEnable   = FALSE;
 
 	FRAME_INTR = 1;
-	GRAY_INTR = 1;
 	cpu0_busy_processing_frame = 0;
 	cpu1_busy_processing_frame = 0;
 	debug_frameNo = 0;
@@ -413,6 +412,10 @@ void processFrame(unsigned char CPU_id) {
 	//TODO: check if this accelerator is busy!! only if it is free then configure it
 	config_filterVDMA(XPAR_AXI_VDMA_1_BASEADDR, DMA_MEM_TO_DEV, frameBaseaddr);
 	config_filterVDMA(XPAR_AXI_VDMA_1_BASEADDR, DMA_DEV_TO_MEM, frameBaseaddr + FRAME_SIZE);
+	/*init_perfcounters(1, 0);
+	GRAY_INTR = 0;
+	while(GRAY_INTR == 0);
+	printf("%d\n\r", get_cyclecount());*/
 #else
 	// SW implementation
 	ConvToGray(frameBaseaddr, frameBaseaddr + FRAME_SIZE, 640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME]);
