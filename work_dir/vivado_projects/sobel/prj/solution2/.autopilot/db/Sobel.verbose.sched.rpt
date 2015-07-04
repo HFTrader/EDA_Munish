@@ -1,0 +1,184 @@
+
+
+================================================================
+== Vivado HLS Report for 'Sobel'
+================================================================
+* Date:           Sat Jul  4 08:28:02 2015
+
+* Version:        2013.3 (build date: Wed Oct 16 18:12:55 PM 2013)
+* Project:        prj
+* Solution:       solution2
+* Product family: zynq zynq_fpv6 
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +---------+--------+----------+------------+
+    |  Clock  | Target | Estimated| Uncertainty|
+    +---------+--------+----------+------------+
+    |default  |  125.00|     26.87|       15.62|
+    +---------+--------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+--------+-----+--------+---------+
+    |    Latency   |   Interval   | Pipeline|
+    | min |   max  | min |   max  |   Type  |
+    +-----+--------+-----+--------+---------+
+    |   37|  309602|   37|  309602|   none  |
+    +-----+--------+-----+--------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|Expression       |        -|      -|       -|      -|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |        -|      -|       -|      -|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|      -|
+|Register         |        -|      -|       -|      -|
+|ShiftMemory      |        -|      -|       -|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |        0|      0|       0|      0|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        0|      0|       0|      0|
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Shift register: 
+    N/A
+
+    * Expression: 
+    N/A
+
+    * Multiplexer: 
+    N/A
+
+    * Register: 
+    N/A
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
+N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 2
+* Pipeline: 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+* FSM state operations: 
+
+ <State 1>: 1.84ns
+ST_1: src_cols_V_read_1 [1/1] 0.00ns
+:6  %src_cols_V_read_1 = call i12 @_ssdm_op_Read.ap_auto.i12(i12 %src_cols_V_read)
+
+ST_1: src_rows_V_read_1 [1/1] 0.00ns
+:7  %src_rows_V_read_1 = call i12 @_ssdm_op_Read.ap_auto.i12(i12 %src_rows_V_read)
+
+ST_1: stg_5 [2/2] 1.84ns
+:8  call fastcc void @"Filter2D<32,32,int,int,480,640,3,3>"(i12 %src_rows_V_read_1, i12 %src_cols_V_read_1, i8* %src_data_stream_0_V, i8* %src_data_stream_1_V, i8* %src_data_stream_2_V, i8* %dst_data_stream_0_V, i8* %dst_data_stream_1_V, i8* %dst_data_stream_2_V)
+
+
+ <State 2>: 0.00ns
+ST_2: empty [1/1] 0.00ns
+:0  %empty = call i32 (...)* @_ssdm_op_SpecFifo(i8* %dst_data_stream_2_V, [8 x i8]* @str143, i32 0, i32 0, i32 0, [8 x i8]* @str143)
+
+ST_2: empty_126 [1/1] 0.00ns
+:1  %empty_126 = call i32 (...)* @_ssdm_op_SpecFifo(i8* %dst_data_stream_1_V, [8 x i8]* @str140, i32 0, i32 0, i32 0, [8 x i8]* @str140)
+
+ST_2: empty_127 [1/1] 0.00ns
+:2  %empty_127 = call i32 (...)* @_ssdm_op_SpecFifo(i8* %dst_data_stream_0_V, [8 x i8]* @str137, i32 0, i32 0, i32 0, [8 x i8]* @str137)
+
+ST_2: empty_128 [1/1] 0.00ns
+:3  %empty_128 = call i32 (...)* @_ssdm_op_SpecFifo(i8* %src_data_stream_2_V, [8 x i8]* @str134, i32 0, i32 0, i32 0, [8 x i8]* @str134)
+
+ST_2: empty_129 [1/1] 0.00ns
+:4  %empty_129 = call i32 (...)* @_ssdm_op_SpecFifo(i8* %src_data_stream_1_V, [8 x i8]* @str131, i32 0, i32 0, i32 0, [8 x i8]* @str131)
+
+ST_2: empty_130 [1/1] 0.00ns
+:5  %empty_130 = call i32 (...)* @_ssdm_op_SpecFifo(i8* %src_data_stream_0_V, [8 x i8]* @str128, i32 0, i32 0, i32 0, [8 x i8]* @str128)
+
+ST_2: stg_12 [1/2] 0.00ns
+:8  call fastcc void @"Filter2D<32,32,int,int,480,640,3,3>"(i12 %src_rows_V_read_1, i12 %src_cols_V_read_1, i8* %src_data_stream_0_V, i8* %src_data_stream_1_V, i8* %src_data_stream_2_V, i8* %dst_data_stream_0_V, i8* %dst_data_stream_1_V, i8* %dst_data_stream_2_V)
+
+ST_2: stg_13 [1/1] 0.00ns
+:9  ret void
+
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+  - Chain level:
+	State 1
+	State 2
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

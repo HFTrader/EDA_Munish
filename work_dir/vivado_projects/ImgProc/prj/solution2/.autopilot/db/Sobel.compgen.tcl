@@ -4,13 +4,16 @@
 if {${::AESL::PGuard_autoexp_gen}} {
     cg_default_interface_gen_dc_begin
     cg_default_interface_gen_bundle_begin
+    AESL_LIB_XILADAPTER::native_axis_begin
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 42 \
+    id 44 \
     name src_rows_V_read \
+    type other \
+    dir I \
     reset_level 1 \
     sync_rst true \
     corename dc_src_rows_V_read \
@@ -22,8 +25,10 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 43 \
+    id 45 \
     name src_cols_V_read \
+    type other \
+    dir I \
     reset_level 1 \
     sync_rst true \
     corename dc_src_cols_V_read \
@@ -35,8 +40,10 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 44 \
+    id 46 \
     name src_data_stream_0_V \
+    type fifo \
+    dir I \
     reset_level 1 \
     sync_rst true \
     corename dc_src_data_stream_0_V \
@@ -48,8 +55,10 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 45 \
+    id 47 \
     name src_data_stream_1_V \
+    type fifo \
+    dir I \
     reset_level 1 \
     sync_rst true \
     corename dc_src_data_stream_1_V \
@@ -61,8 +70,10 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 46 \
+    id 48 \
     name src_data_stream_2_V \
+    type fifo \
+    dir I \
     reset_level 1 \
     sync_rst true \
     corename dc_src_data_stream_2_V \
@@ -74,8 +85,10 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 47 \
+    id 49 \
     name dst_data_stream_0_V \
+    type fifo \
+    dir O \
     reset_level 1 \
     sync_rst true \
     corename dc_dst_data_stream_0_V \
@@ -87,8 +100,10 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 48 \
+    id 50 \
     name dst_data_stream_1_V \
+    type fifo \
+    dir O \
     reset_level 1 \
     sync_rst true \
     corename dc_dst_data_stream_1_V \
@@ -100,8 +115,10 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 49 \
+    id 51 \
     name dst_data_stream_2_V \
+    type fifo \
+    dir O \
     reset_level 1 \
     sync_rst true \
     corename dc_dst_data_stream_2_V \
@@ -115,6 +132,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id -1 \
     name ap_ctrl \
+    type ap_ctrl \
     reset_level 1 \
     sync_rst true \
     corename ap_ctrl \
@@ -169,6 +187,7 @@ puts "@W \[IMPL-114\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
     cg_default_interface_gen_dc_end
     cg_default_interface_gen_bundle_end
+    AESL_LIB_XILADAPTER::native_axis_end
 }
 
 

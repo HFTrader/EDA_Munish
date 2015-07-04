@@ -1,7 +1,7 @@
 # This script segment is generated automatically by AutoPilot
 
 # FIFO definition:
-set ID 87
+set ID 72
 set FifoName FIFO_image_processor_img_0_rows_V
 set CoreName ap_simcore_fifo
 set NumOfStage 2
@@ -38,7 +38,7 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 }
 
 
-if {${::AESL::PGuard_autocg_gen}} {
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
 if {[info proc ::AESL_LIB_VIRTEX::xil_gen_FIFO] == "::AESL_LIB_VIRTEX::xil_gen_FIFO"} {
 eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     id ${ID} \
@@ -62,8 +62,8 @@ puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your pl
 
 
 # FIFO definition:
-set ID 88
-set FifoName FIFO_image_processor_img_0_rows_V_channel
+set ID 73
+set FifoName FIFO_image_processor_img_0_rows_V_channel9
 set CoreName ap_simcore_fifo
 set NumOfStage 2
 set RegisteredInput 0
@@ -99,7 +99,7 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 }
 
 
-if {${::AESL::PGuard_autocg_gen}} {
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
 if {[info proc ::AESL_LIB_VIRTEX::xil_gen_FIFO] == "::AESL_LIB_VIRTEX::xil_gen_FIFO"} {
 eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     id ${ID} \
@@ -123,7 +123,7 @@ puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your pl
 
 
 # FIFO definition:
-set ID 89
+set ID 74
 set FifoName FIFO_image_processor_img_0_cols_V
 set CoreName ap_simcore_fifo
 set NumOfStage 2
@@ -160,7 +160,7 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 }
 
 
-if {${::AESL::PGuard_autocg_gen}} {
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
 if {[info proc ::AESL_LIB_VIRTEX::xil_gen_FIFO] == "::AESL_LIB_VIRTEX::xil_gen_FIFO"} {
 eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     id ${ID} \
@@ -184,7 +184,7 @@ puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your pl
 
 
 # FIFO definition:
-set ID 90
+set ID 75
 set FifoName FIFO_image_processor_img_0_cols_V_channel
 set CoreName ap_simcore_fifo
 set NumOfStage 2
@@ -221,7 +221,7 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 }
 
 
-if {${::AESL::PGuard_autocg_gen}} {
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
 if {[info proc ::AESL_LIB_VIRTEX::xil_gen_FIFO] == "::AESL_LIB_VIRTEX::xil_gen_FIFO"} {
 eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     id ${ID} \
@@ -245,7 +245,7 @@ puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your pl
 
 
 # FIFO definition:
-set ID 91
+set ID 76
 set FifoName FIFO_image_processor_img_1_rows_V
 set CoreName ap_simcore_fifo
 set NumOfStage 2
@@ -282,7 +282,7 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 }
 
 
-if {${::AESL::PGuard_autocg_gen}} {
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
 if {[info proc ::AESL_LIB_VIRTEX::xil_gen_FIFO] == "::AESL_LIB_VIRTEX::xil_gen_FIFO"} {
 eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     id ${ID} \
@@ -306,7 +306,7 @@ puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your pl
 
 
 # FIFO definition:
-set ID 92
+set ID 77
 set FifoName FIFO_image_processor_img_1_cols_V
 set CoreName ap_simcore_fifo
 set NumOfStage 2
@@ -343,7 +343,7 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 }
 
 
-if {${::AESL::PGuard_autocg_gen}} {
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
 if {[info proc ::AESL_LIB_VIRTEX::xil_gen_FIFO] == "::AESL_LIB_VIRTEX::xil_gen_FIFO"} {
 eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     id ${ID} \
@@ -367,7 +367,7 @@ puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your pl
 
 
 # FIFO definition:
-set ID 93
+set ID 78
 set FifoName FIFO_image_processor_img_2_rows_V
 set CoreName ap_simcore_fifo
 set NumOfStage 2
@@ -404,7 +404,7 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 }
 
 
-if {${::AESL::PGuard_autocg_gen}} {
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
 if {[info proc ::AESL_LIB_VIRTEX::xil_gen_FIFO] == "::AESL_LIB_VIRTEX::xil_gen_FIFO"} {
 eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     id ${ID} \
@@ -428,7 +428,7 @@ puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your pl
 
 
 # FIFO definition:
-set ID 94
+set ID 79
 set FifoName FIFO_image_processor_img_2_cols_V
 set CoreName ap_simcore_fifo
 set NumOfStage 2
@@ -465,7 +465,7 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 }
 
 
-if {${::AESL::PGuard_autocg_gen}} {
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
 if {[info proc ::AESL_LIB_VIRTEX::xil_gen_FIFO] == "::AESL_LIB_VIRTEX::xil_gen_FIFO"} {
 eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     id ${ID} \
@@ -489,7 +489,7 @@ puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your pl
 
 
 # FIFO definition:
-set ID 95
+set ID 80
 set FifoName FIFO_image_processor_img_3_rows_V
 set CoreName ap_simcore_fifo
 set NumOfStage 2
@@ -526,7 +526,7 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 }
 
 
-if {${::AESL::PGuard_autocg_gen}} {
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
 if {[info proc ::AESL_LIB_VIRTEX::xil_gen_FIFO] == "::AESL_LIB_VIRTEX::xil_gen_FIFO"} {
 eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     id ${ID} \
@@ -550,7 +550,7 @@ puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your pl
 
 
 # FIFO definition:
-set ID 96
+set ID 81
 set FifoName FIFO_image_processor_img_3_cols_V
 set CoreName ap_simcore_fifo
 set NumOfStage 2
@@ -587,7 +587,7 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 }
 
 
-if {${::AESL::PGuard_autocg_gen}} {
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
 if {[info proc ::AESL_LIB_VIRTEX::xil_gen_FIFO] == "::AESL_LIB_VIRTEX::xil_gen_FIFO"} {
 eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     id ${ID} \
@@ -611,7 +611,7 @@ puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your pl
 
 
 # FIFO definition:
-set ID 97
+set ID 82
 set FifoName FIFO_image_processor_img_0_data_stream_0_V
 set CoreName ap_simcore_fifo
 set NumOfStage 2
@@ -648,7 +648,7 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 }
 
 
-if {${::AESL::PGuard_autocg_gen}} {
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
 if {[info proc ::AESL_LIB_VIRTEX::xil_gen_FIFO] == "::AESL_LIB_VIRTEX::xil_gen_FIFO"} {
 eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     id ${ID} \
@@ -672,7 +672,7 @@ puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your pl
 
 
 # FIFO definition:
-set ID 98
+set ID 83
 set FifoName FIFO_image_processor_img_0_data_stream_1_V
 set CoreName ap_simcore_fifo
 set NumOfStage 2
@@ -709,7 +709,7 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 }
 
 
-if {${::AESL::PGuard_autocg_gen}} {
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
 if {[info proc ::AESL_LIB_VIRTEX::xil_gen_FIFO] == "::AESL_LIB_VIRTEX::xil_gen_FIFO"} {
 eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     id ${ID} \
@@ -733,7 +733,7 @@ puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your pl
 
 
 # FIFO definition:
-set ID 99
+set ID 84
 set FifoName FIFO_image_processor_img_0_data_stream_2_V
 set CoreName ap_simcore_fifo
 set NumOfStage 2
@@ -770,7 +770,7 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 }
 
 
-if {${::AESL::PGuard_autocg_gen}} {
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
 if {[info proc ::AESL_LIB_VIRTEX::xil_gen_FIFO] == "::AESL_LIB_VIRTEX::xil_gen_FIFO"} {
 eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     id ${ID} \
@@ -794,7 +794,7 @@ puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your pl
 
 
 # FIFO definition:
-set ID 100
+set ID 85
 set FifoName FIFO_image_processor_img_1_data_stream_0_V
 set CoreName ap_simcore_fifo
 set NumOfStage 2
@@ -831,7 +831,7 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 }
 
 
-if {${::AESL::PGuard_autocg_gen}} {
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
 if {[info proc ::AESL_LIB_VIRTEX::xil_gen_FIFO] == "::AESL_LIB_VIRTEX::xil_gen_FIFO"} {
 eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     id ${ID} \
@@ -855,7 +855,7 @@ puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your pl
 
 
 # FIFO definition:
-set ID 101
+set ID 86
 set FifoName FIFO_image_processor_img_1_data_stream_1_V
 set CoreName ap_simcore_fifo
 set NumOfStage 2
@@ -892,7 +892,7 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 }
 
 
-if {${::AESL::PGuard_autocg_gen}} {
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
 if {[info proc ::AESL_LIB_VIRTEX::xil_gen_FIFO] == "::AESL_LIB_VIRTEX::xil_gen_FIFO"} {
 eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     id ${ID} \
@@ -916,7 +916,7 @@ puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your pl
 
 
 # FIFO definition:
-set ID 102
+set ID 87
 set FifoName FIFO_image_processor_img_1_data_stream_2_V
 set CoreName ap_simcore_fifo
 set NumOfStage 2
@@ -953,7 +953,7 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 }
 
 
-if {${::AESL::PGuard_autocg_gen}} {
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
 if {[info proc ::AESL_LIB_VIRTEX::xil_gen_FIFO] == "::AESL_LIB_VIRTEX::xil_gen_FIFO"} {
 eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     id ${ID} \
@@ -977,7 +977,7 @@ puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your pl
 
 
 # FIFO definition:
-set ID 103
+set ID 88
 set FifoName FIFO_image_processor_img_2_data_stream_0_V
 set CoreName ap_simcore_fifo
 set NumOfStage 2
@@ -1014,7 +1014,7 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 }
 
 
-if {${::AESL::PGuard_autocg_gen}} {
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
 if {[info proc ::AESL_LIB_VIRTEX::xil_gen_FIFO] == "::AESL_LIB_VIRTEX::xil_gen_FIFO"} {
 eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     id ${ID} \
@@ -1038,7 +1038,7 @@ puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your pl
 
 
 # FIFO definition:
-set ID 104
+set ID 89
 set FifoName FIFO_image_processor_img_2_data_stream_1_V
 set CoreName ap_simcore_fifo
 set NumOfStage 2
@@ -1075,7 +1075,7 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 }
 
 
-if {${::AESL::PGuard_autocg_gen}} {
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
 if {[info proc ::AESL_LIB_VIRTEX::xil_gen_FIFO] == "::AESL_LIB_VIRTEX::xil_gen_FIFO"} {
 eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     id ${ID} \
@@ -1099,7 +1099,7 @@ puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your pl
 
 
 # FIFO definition:
-set ID 105
+set ID 90
 set FifoName FIFO_image_processor_img_2_data_stream_2_V
 set CoreName ap_simcore_fifo
 set NumOfStage 2
@@ -1136,7 +1136,7 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 }
 
 
-if {${::AESL::PGuard_autocg_gen}} {
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
 if {[info proc ::AESL_LIB_VIRTEX::xil_gen_FIFO] == "::AESL_LIB_VIRTEX::xil_gen_FIFO"} {
 eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     id ${ID} \
@@ -1160,7 +1160,7 @@ puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your pl
 
 
 # FIFO definition:
-set ID 106
+set ID 91
 set FifoName FIFO_image_processor_img_3_data_stream_0_V
 set CoreName ap_simcore_fifo
 set NumOfStage 2
@@ -1197,7 +1197,7 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 }
 
 
-if {${::AESL::PGuard_autocg_gen}} {
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
 if {[info proc ::AESL_LIB_VIRTEX::xil_gen_FIFO] == "::AESL_LIB_VIRTEX::xil_gen_FIFO"} {
 eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     id ${ID} \
@@ -1221,7 +1221,7 @@ puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your pl
 
 
 # FIFO definition:
-set ID 107
+set ID 92
 set FifoName FIFO_image_processor_img_3_data_stream_1_V
 set CoreName ap_simcore_fifo
 set NumOfStage 2
@@ -1258,7 +1258,7 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 }
 
 
-if {${::AESL::PGuard_autocg_gen}} {
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
 if {[info proc ::AESL_LIB_VIRTEX::xil_gen_FIFO] == "::AESL_LIB_VIRTEX::xil_gen_FIFO"} {
 eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     id ${ID} \
@@ -1282,7 +1282,7 @@ puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your pl
 
 
 # FIFO definition:
-set ID 108
+set ID 93
 set FifoName FIFO_image_processor_img_3_data_stream_2_V
 set CoreName ap_simcore_fifo
 set NumOfStage 2
@@ -1319,7 +1319,7 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 }
 
 
-if {${::AESL::PGuard_autocg_gen}} {
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
 if {[info proc ::AESL_LIB_VIRTEX::xil_gen_FIFO] == "::AESL_LIB_VIRTEX::xil_gen_FIFO"} {
 eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
     id ${ID} \
@@ -1346,13 +1346,14 @@ puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your pl
 if {${::AESL::PGuard_autoexp_gen}} {
     cg_default_interface_gen_dc_begin
     cg_default_interface_gen_bundle_begin
+    AESL_LIB_XILADAPTER::native_axis_begin
 }
 
 # Adapter definition:
 set corename CONTROL_BUS
 set opts {
     {
-        id 123
+        id 108
         name rows
         reset_level 1
         sync_rst true
@@ -1362,7 +1363,7 @@ set opts {
         mode SIG_IN_VLD_OFF:SIG_IN_ACC_OFF
     }
     {
-        id 124
+        id 109
         name cols
         reset_level 1
         sync_rst true
@@ -1434,7 +1435,7 @@ puts "@W Can not find gen function '::AESL_LIB_XILADAPTER::axi_slave_int_gen' in
 set corename INPUT_STREAM
 set opts {
     {
-        id 109
+        id 94
         name input_V_data_V
         reset_level 1
         sync_rst true
@@ -1443,7 +1444,7 @@ set opts {
         width 32
     }
     {
-        id 110
+        id 95
         name input_V_keep_V
         reset_level 1
         sync_rst true
@@ -1452,7 +1453,7 @@ set opts {
         width 4
     }
     {
-        id 111
+        id 96
         name input_V_strb_V
         reset_level 1
         sync_rst true
@@ -1461,7 +1462,7 @@ set opts {
         width 4
     }
     {
-        id 112
+        id 97
         name input_V_user_V
         reset_level 1
         sync_rst true
@@ -1470,7 +1471,7 @@ set opts {
         width 1
     }
     {
-        id 113
+        id 98
         name input_V_last_V
         reset_level 1
         sync_rst true
@@ -1479,7 +1480,7 @@ set opts {
         width 1
     }
     {
-        id 114
+        id 99
         name input_V_id_V
         reset_level 1
         sync_rst true
@@ -1488,7 +1489,7 @@ set opts {
         width 1
     }
     {
-        id 115
+        id 100
         name input_V_dest_V
         reset_level 1
         sync_rst true
@@ -1519,7 +1520,7 @@ puts "@W Can not find gen function '::AESL_LIB_XILADAPTER::axis_gen' in the libr
 set corename OUTPUT_STREAM
 set opts {
     {
-        id 116
+        id 101
         name output_V_data_V
         reset_level 1
         sync_rst true
@@ -1528,7 +1529,7 @@ set opts {
         width 32
     }
     {
-        id 117
+        id 102
         name output_V_keep_V
         reset_level 1
         sync_rst true
@@ -1537,7 +1538,7 @@ set opts {
         width 4
     }
     {
-        id 118
+        id 103
         name output_V_strb_V
         reset_level 1
         sync_rst true
@@ -1546,7 +1547,7 @@ set opts {
         width 4
     }
     {
-        id 119
+        id 104
         name output_V_user_V
         reset_level 1
         sync_rst true
@@ -1555,7 +1556,7 @@ set opts {
         width 1
     }
     {
-        id 120
+        id 105
         name output_V_last_V
         reset_level 1
         sync_rst true
@@ -1564,7 +1565,7 @@ set opts {
         width 1
     }
     {
-        id 121
+        id 106
         name output_V_id_V
         reset_level 1
         sync_rst true
@@ -1573,7 +1574,7 @@ set opts {
         width 1
     }
     {
-        id 122
+        id 107
         name output_V_dest_V
         reset_level 1
         sync_rst true
@@ -1646,6 +1647,7 @@ puts "@W \[IMPL-114\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
     cg_default_interface_gen_dc_end
     cg_default_interface_gen_bundle_end
+    AESL_LIB_XILADAPTER::native_axis_end
 }
 
 

@@ -25,7 +25,7 @@
 
 <node id="15" bw="12" op_0_bw="12" op_1_bw="12">
 <![CDATA[
-entry:6  %src_cols_V_read_1 = call i12 @_ssdm_op_WireRead.i12(i12 %src_cols_V_read) ; <i12> [#uses=1]
+:6  %src_cols_V_read_1 = call i12 @_ssdm_op_Read.ap_auto.i12(i12 %src_cols_V_read)
 
 ]]></node>
 <StgValue><ssdm name="src_cols_V_read_1"/></StgValue>
@@ -40,7 +40,7 @@ entry:6  %src_cols_V_read_1 = call i12 @_ssdm_op_WireRead.i12(i12 %src_cols_V_re
 
 <node id="16" bw="12" op_0_bw="12" op_1_bw="12">
 <![CDATA[
-entry:7  %src_rows_V_read_1 = call i12 @_ssdm_op_WireRead.i12(i12 %src_rows_V_read) ; <i12> [#uses=1]
+:7  %src_rows_V_read_1 = call i12 @_ssdm_op_Read.ap_auto.i12(i12 %src_rows_V_read)
 
 ]]></node>
 <StgValue><ssdm name="src_rows_V_read_1"/></StgValue>
@@ -53,9 +53,9 @@ entry:7  %src_rows_V_read_1 = call i12 @_ssdm_op_WireRead.i12(i12 %src_rows_V_re
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<node id="17" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="8" op_3_bw="8" op_4_bw="8" op_5_bw="8" op_6_bw="8" op_7_bw="12" op_8_bw="12">
+<node id="17" bw="0" op_0_bw="0" op_1_bw="12" op_2_bw="12" op_3_bw="8" op_4_bw="8" op_5_bw="8" op_6_bw="8" op_7_bw="8" op_8_bw="8">
 <![CDATA[
-entry:8  call fastcc void @"filter_opr<filter2d_kernel,16,16,int,int,1080,1920,3,3>"(i8* %src_data_stream_0_V, i8* %src_data_stream_1_V, i8* %src_data_stream_2_V, i8* %dst_data_stream_0_V, i8* %dst_data_stream_1_V, i8* %dst_data_stream_2_V, i12 %src_rows_V_read_1, i12 %src_cols_V_read_1)
+:8  call fastcc void @"Filter2D<32,32,int,int,1080,1920,3,3>"(i12 %src_rows_V_read_1, i12 %src_cols_V_read_1, i8* %src_data_stream_0_V, i8* %src_data_stream_1_V, i8* %src_data_stream_2_V, i8* %dst_data_stream_0_V, i8* %dst_data_stream_1_V, i8* %dst_data_stream_2_V)
 
 ]]></node>
 <StgValue><ssdm name=""/></StgValue>
@@ -71,9 +71,9 @@ entry:8  call fastcc void @"filter_opr<filter2d_kernel,16,16,int,int,1080,1920,3
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<node id="9" bw="32" op_0_bw="32" op_1_bw="8" op_2_bw="8" op_3_bw="32" op_4_bw="32" op_5_bw="8">
+<node id="9" bw="32" op_0_bw="32" op_1_bw="8" op_2_bw="8" op_3_bw="32" op_4_bw="32" op_5_bw="32" op_6_bw="8">
 <![CDATA[
-entry:0  %empty = call i32 (...)* @_ssdm_op_SpecFifo(i8* %dst_data_stream_2_V, [8 x i8]* @str161, i32 0, i32 0, [8 x i8]* @str161) ; <i32> [#uses=0]
+:0  %empty = call i32 (...)* @_ssdm_op_SpecFifo(i8* %dst_data_stream_2_V, [8 x i8]* @str143, i32 0, i32 0, i32 0, [8 x i8]* @str143)
 
 ]]></node>
 <StgValue><ssdm name="empty"/></StgValue>
@@ -86,12 +86,12 @@ entry:0  %empty = call i32 (...)* @_ssdm_op_SpecFifo(i8* %dst_data_stream_2_V, [
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<node id="10" bw="32" op_0_bw="32" op_1_bw="8" op_2_bw="8" op_3_bw="32" op_4_bw="32" op_5_bw="8">
+<node id="10" bw="32" op_0_bw="32" op_1_bw="8" op_2_bw="8" op_3_bw="32" op_4_bw="32" op_5_bw="32" op_6_bw="8">
 <![CDATA[
-entry:1  %empty_131 = call i32 (...)* @_ssdm_op_SpecFifo(i8* %dst_data_stream_1_V, [8 x i8]* @str158, i32 0, i32 0, [8 x i8]* @str158) ; <i32> [#uses=0]
+:1  %empty_126 = call i32 (...)* @_ssdm_op_SpecFifo(i8* %dst_data_stream_1_V, [8 x i8]* @str140, i32 0, i32 0, i32 0, [8 x i8]* @str140)
 
 ]]></node>
-<StgValue><ssdm name="empty_131"/></StgValue>
+<StgValue><ssdm name="empty_126"/></StgValue>
 </operation>
 
 <operation id="8" st_id="2" stage="1" lat="1">
@@ -101,12 +101,12 @@ entry:1  %empty_131 = call i32 (...)* @_ssdm_op_SpecFifo(i8* %dst_data_stream_1_
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<node id="11" bw="32" op_0_bw="32" op_1_bw="8" op_2_bw="8" op_3_bw="32" op_4_bw="32" op_5_bw="8">
+<node id="11" bw="32" op_0_bw="32" op_1_bw="8" op_2_bw="8" op_3_bw="32" op_4_bw="32" op_5_bw="32" op_6_bw="8">
 <![CDATA[
-entry:2  %empty_132 = call i32 (...)* @_ssdm_op_SpecFifo(i8* %dst_data_stream_0_V, [8 x i8]* @str155, i32 0, i32 0, [8 x i8]* @str155) ; <i32> [#uses=0]
+:2  %empty_127 = call i32 (...)* @_ssdm_op_SpecFifo(i8* %dst_data_stream_0_V, [8 x i8]* @str137, i32 0, i32 0, i32 0, [8 x i8]* @str137)
 
 ]]></node>
-<StgValue><ssdm name="empty_132"/></StgValue>
+<StgValue><ssdm name="empty_127"/></StgValue>
 </operation>
 
 <operation id="9" st_id="2" stage="1" lat="1">
@@ -116,12 +116,12 @@ entry:2  %empty_132 = call i32 (...)* @_ssdm_op_SpecFifo(i8* %dst_data_stream_0_
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<node id="12" bw="32" op_0_bw="32" op_1_bw="8" op_2_bw="8" op_3_bw="32" op_4_bw="32" op_5_bw="8">
+<node id="12" bw="32" op_0_bw="32" op_1_bw="8" op_2_bw="8" op_3_bw="32" op_4_bw="32" op_5_bw="32" op_6_bw="8">
 <![CDATA[
-entry:3  %empty_133 = call i32 (...)* @_ssdm_op_SpecFifo(i8* %src_data_stream_2_V, [8 x i8]* @str152, i32 0, i32 0, [8 x i8]* @str152) ; <i32> [#uses=0]
+:3  %empty_128 = call i32 (...)* @_ssdm_op_SpecFifo(i8* %src_data_stream_2_V, [8 x i8]* @str134, i32 0, i32 0, i32 0, [8 x i8]* @str134)
 
 ]]></node>
-<StgValue><ssdm name="empty_133"/></StgValue>
+<StgValue><ssdm name="empty_128"/></StgValue>
 </operation>
 
 <operation id="10" st_id="2" stage="1" lat="1">
@@ -131,12 +131,12 @@ entry:3  %empty_133 = call i32 (...)* @_ssdm_op_SpecFifo(i8* %src_data_stream_2_
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<node id="13" bw="32" op_0_bw="32" op_1_bw="8" op_2_bw="8" op_3_bw="32" op_4_bw="32" op_5_bw="8">
+<node id="13" bw="32" op_0_bw="32" op_1_bw="8" op_2_bw="8" op_3_bw="32" op_4_bw="32" op_5_bw="32" op_6_bw="8">
 <![CDATA[
-entry:4  %empty_134 = call i32 (...)* @_ssdm_op_SpecFifo(i8* %src_data_stream_1_V, [8 x i8]* @str149, i32 0, i32 0, [8 x i8]* @str149) ; <i32> [#uses=0]
+:4  %empty_129 = call i32 (...)* @_ssdm_op_SpecFifo(i8* %src_data_stream_1_V, [8 x i8]* @str131, i32 0, i32 0, i32 0, [8 x i8]* @str131)
 
 ]]></node>
-<StgValue><ssdm name="empty_134"/></StgValue>
+<StgValue><ssdm name="empty_129"/></StgValue>
 </operation>
 
 <operation id="11" st_id="2" stage="1" lat="1">
@@ -146,12 +146,12 @@ entry:4  %empty_134 = call i32 (...)* @_ssdm_op_SpecFifo(i8* %src_data_stream_1_
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<node id="14" bw="32" op_0_bw="32" op_1_bw="8" op_2_bw="8" op_3_bw="32" op_4_bw="32" op_5_bw="8">
+<node id="14" bw="32" op_0_bw="32" op_1_bw="8" op_2_bw="8" op_3_bw="32" op_4_bw="32" op_5_bw="32" op_6_bw="8">
 <![CDATA[
-entry:5  %empty_135 = call i32 (...)* @_ssdm_op_SpecFifo(i8* %src_data_stream_0_V, [8 x i8]* @str146, i32 0, i32 0, [8 x i8]* @str146) ; <i32> [#uses=0]
+:5  %empty_130 = call i32 (...)* @_ssdm_op_SpecFifo(i8* %src_data_stream_0_V, [8 x i8]* @str128, i32 0, i32 0, i32 0, [8 x i8]* @str128)
 
 ]]></node>
-<StgValue><ssdm name="empty_135"/></StgValue>
+<StgValue><ssdm name="empty_130"/></StgValue>
 </operation>
 
 <operation id="12" st_id="2" stage="1" lat="2">
@@ -161,9 +161,9 @@ entry:5  %empty_135 = call i32 (...)* @_ssdm_op_SpecFifo(i8* %src_data_stream_0_
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<node id="17" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="8" op_3_bw="8" op_4_bw="8" op_5_bw="8" op_6_bw="8" op_7_bw="12" op_8_bw="12">
+<node id="17" bw="0" op_0_bw="0" op_1_bw="12" op_2_bw="12" op_3_bw="8" op_4_bw="8" op_5_bw="8" op_6_bw="8" op_7_bw="8" op_8_bw="8">
 <![CDATA[
-entry:8  call fastcc void @"filter_opr<filter2d_kernel,16,16,int,int,1080,1920,3,3>"(i8* %src_data_stream_0_V, i8* %src_data_stream_1_V, i8* %src_data_stream_2_V, i8* %dst_data_stream_0_V, i8* %dst_data_stream_1_V, i8* %dst_data_stream_2_V, i12 %src_rows_V_read_1, i12 %src_cols_V_read_1)
+:8  call fastcc void @"Filter2D<32,32,int,int,1080,1920,3,3>"(i12 %src_rows_V_read_1, i12 %src_cols_V_read_1, i8* %src_data_stream_0_V, i8* %src_data_stream_1_V, i8* %src_data_stream_2_V, i8* %dst_data_stream_0_V, i8* %dst_data_stream_1_V, i8* %dst_data_stream_2_V)
 
 ]]></node>
 <StgValue><ssdm name=""/></StgValue>
@@ -178,7 +178,7 @@ entry:8  call fastcc void @"filter_opr<filter2d_kernel,16,16,int,int,1080,1920,3
 
 <node id="18" bw="0">
 <![CDATA[
-entry:9  ret void
+:9  ret void
 
 ]]></node>
 <StgValue><ssdm name=""/></StgValue>

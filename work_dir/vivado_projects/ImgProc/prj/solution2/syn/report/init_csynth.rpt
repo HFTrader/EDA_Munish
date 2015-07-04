@@ -3,9 +3,9 @@
 ================================================================
 == Vivado HLS Report for 'init'
 ================================================================
-* Date:           Fri Oct 11 15:48:47 2013
+* Date:           Sat Jul  4 10:35:20 2015
 
-* Version:        2013.1 (build date: Thu Mar 21 12:53:03 PM 2013)
+* Version:        2013.3 (build date: Wed Oct 16 18:12:55 PM 2013)
 * Project:        prj
 * Solution:       solution2
 * Product family: zynq zynq_fpv6 
@@ -117,21 +117,21 @@
 == Interface
 ================================================================
 * Summary: 
-+-------------+-----+-----+---------+--------------+--------------+
-|  RTL Ports  | Dir | Bits| Protocol| Source Object|    C Type    |
-+-------------+-----+-----+---------+--------------+--------------+
-|ap_clk       |  in |    1|        -|     init     | return value |
-|ap_rst       |  in |    1|        -|     init     | return value |
-|ap_start     |  in |    1|        -|     init     | return value |
-|ap_done      | out |    1|        -|     init     | return value |
-|ap_continue  |  in |    1|        -|     init     | return value |
-|ap_idle      | out |    1|        -|     init     | return value |
-|ap_ready     | out |    1|        -|     init     | return value |
-|ap_return_0  | out |   12|        -|     init     | return value |
-|ap_return_1  | out |   12|        -|     init     | return value |
-|ap_return_2  | out |   12|        -|     init     | return value |
-|ap_return_3  | out |   12|        -|     init     | return value |
-|p_rows       |  in |   32| ap_none |    p_rows    |    scalar    |
-|p_cols       |  in |   32| ap_none |    p_cols    |    scalar    |
-+-------------+-----+-----+---------+--------------+--------------+
++-------------+-----+-----+------------+--------------+--------------+
+|  RTL Ports  | Dir | Bits|  Protocol  | Source Object|    C Type    |
++-------------+-----+-----+------------+--------------+--------------+
+|ap_clk       |  in |    1| ap_ctrl_hs |     init     | return value |
+|ap_rst       |  in |    1| ap_ctrl_hs |     init     | return value |
+|ap_start     |  in |    1| ap_ctrl_hs |     init     | return value |
+|ap_done      | out |    1| ap_ctrl_hs |     init     | return value |
+|ap_continue  |  in |    1| ap_ctrl_hs |     init     | return value |
+|ap_idle      | out |    1| ap_ctrl_hs |     init     | return value |
+|ap_ready     | out |    1| ap_ctrl_hs |     init     | return value |
+|ap_return_0  | out |   12| ap_ctrl_hs |     init     | return value |
+|ap_return_1  | out |   12| ap_ctrl_hs |     init     | return value |
+|ap_return_2  | out |   12| ap_ctrl_hs |     init     | return value |
+|ap_return_3  | out |   12| ap_ctrl_hs |     init     | return value |
+|p_rows       |  in |   32|   ap_none  |    p_rows    |    scalar    |
+|p_cols       |  in |   32|   ap_none  |    p_cols    |    scalar    |
++-------------+-----+-----+------------+--------------+--------------+
 

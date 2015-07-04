@@ -227,6 +227,8 @@ void AXI_INTERRUPT_HrefIntr_Handler(void * baseaddr_p);
 
 void AXI_INTERRUPT__VDMA1_S2MMIntr_Handler(void * baseaddr_p);
 
+void AXI_INTERRUPT__VDMA2_S2MMIntr_Handler(void * baseaddr_p);
+
 
 
 

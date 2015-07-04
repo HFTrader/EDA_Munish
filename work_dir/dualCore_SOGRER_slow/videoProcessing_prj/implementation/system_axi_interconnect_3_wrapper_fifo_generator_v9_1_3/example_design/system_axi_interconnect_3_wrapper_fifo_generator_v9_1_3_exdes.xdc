@@ -49,7 +49,7 @@
 
 # Core Period Constraint. This constraint can be modified, and is
 # valid as long as it is met after place and route.
-create_clock -name "TS_S_ACLK" -period 20.0 [ get_ports S_ACLK ]
+create_clock -name "TS_CLK" -period 20.0 [ get_ports CLK ]
   
 
 

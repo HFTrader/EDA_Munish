@@ -36,7 +36,7 @@ set SCTraceOption "all"
 set TargetInfo "xc7z020:clg484:-1"
 set SourceFiles {sc {} c ../../top.cpp}
 set SourceFlags {sc {} c {{}}}
-set DirectiveFile {/ise_local2/umair_temp/vivado_projects/ImgProc/prj/solution2/solution2.directive}
+set DirectiveFile {/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/vivado_projects/ImgProc/prj/solution2/solution2.directive}
 set TBFiles {verilog {../../test_1080p.bmp ../../opencv_top.cpp ../../test.cpp} bc {../../test_1080p.bmp ../../opencv_top.cpp ../../test.cpp} vhdl {../../test_1080p.bmp ../../opencv_top.cpp ../../test.cpp} sc {../../test_1080p.bmp ../../opencv_top.cpp ../../test.cpp} cas {../../test_1080p.bmp ../../opencv_top.cpp ../../test.cpp} c {}}
 set TVInFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
 set TVOutFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}

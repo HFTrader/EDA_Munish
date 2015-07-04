@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <!DOCTYPE boost_serialization>
-<boost_serialization signature="serialization::archive" version="8">
+<boost_serialization signature="serialization::archive" version="10">
 <syndb class_id="0" tracking_level="0" version="0">
 	<userIPLatency>-1</userIPLatency>
 	<userIPName></userIPName>
@@ -87,7 +87,7 @@
 					<bitwidth>8</bitwidth>
 				</Value>
 				<direction>0</direction>
-				<if_type>4</if_type>
+				<if_type>3</if_type>
 				<array_size>0</array_size>
 				<bit_vecs>
 					<count>0</count>
@@ -115,7 +115,7 @@
 					<bitwidth>8</bitwidth>
 				</Value>
 				<direction>0</direction>
-				<if_type>4</if_type>
+				<if_type>3</if_type>
 				<array_size>0</array_size>
 				<bit_vecs>
 					<count>0</count>
@@ -143,7 +143,7 @@
 					<bitwidth>8</bitwidth>
 				</Value>
 				<direction>0</direction>
-				<if_type>4</if_type>
+				<if_type>3</if_type>
 				<array_size>0</array_size>
 				<bit_vecs>
 					<count>0</count>
@@ -171,7 +171,7 @@
 					<bitwidth>8</bitwidth>
 				</Value>
 				<direction>1</direction>
-				<if_type>4</if_type>
+				<if_type>3</if_type>
 				<array_size>0</array_size>
 				<bit_vecs>
 					<count>0</count>
@@ -199,7 +199,7 @@
 					<bitwidth>8</bitwidth>
 				</Value>
 				<direction>1</direction>
-				<if_type>4</if_type>
+				<if_type>3</if_type>
 				<array_size>0</array_size>
 				<bit_vecs>
 					<count>0</count>
@@ -227,7 +227,7 @@
 					<bitwidth>8</bitwidth>
 				</Value>
 				<direction>1</direction>
-				<if_type>4</if_type>
+				<if_type>3</if_type>
 				<array_size>0</array_size>
 				<bit_vecs>
 					<count>0</count>
@@ -264,7 +264,7 @@
 					<item>21</item>
 					<item>22</item>
 				</oprand_edges>
-				<opcode>wireread</opcode>
+				<opcode>read</opcode>
 			</item>
 			<item class_id_reference="9" object_id="_10">
 				<Value>
@@ -292,7 +292,7 @@
 					<item>23</item>
 					<item>24</item>
 				</oprand_edges>
-				<opcode>wireread</opcode>
+				<opcode>read</opcode>
 			</item>
 			<item class_id_reference="9" object_id="_11">
 				<Value>
@@ -300,34 +300,20 @@
 						<type>0</type>
 						<id>17</id>
 						<name></name>
-						<fileName>hls_video_imgproc.h</fileName>
-						<fileDirectory>/ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/autopilot/hls</fileDirectory>
-						<lineNumber>584</lineNumber>
-						<contextFuncName>Filter2D&amp;lt;16, 16, int, int, 1080, 1920, 3, 3&amp;gt;</contextFuncName>
+						<fileName>top.cpp</fileName>
+						<fileDirectory>/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/vivado_projects/ImgProc</fileDirectory>
+						<lineNumber>62</lineNumber>
+						<contextFuncName>Sobel</contextFuncName>
 						<inlineStackInfo>
-							<count>2</count>
+							<count>1</count>
 							<item_version>0</item_version>
 							<item class_id="11" tracking_level="0" version="0">
-								<first>/ise_local2/umair_temp/Vivado_HLS/2013.1/common/technology/autopilot/hls</first>
+								<first>/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/vivado_projects/ImgProc</first>
 								<second class_id="12" tracking_level="0" version="0">
 									<count>1</count>
 									<item_version>0</item_version>
 									<item class_id="13" tracking_level="0" version="0">
 										<first class_id="14" tracking_level="0" version="0">
-											<first>hls_video_imgproc.h</first>
-											<second>Filter2D&amp;lt;16, 16, int, int, 1080, 1920, 3, 3&amp;gt;</second>
-										</first>
-										<second>584</second>
-									</item>
-								</second>
-							</item>
-							<item>
-								<first>/ise_local2/umair_temp/vivado_projects/ImgProc/</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
 											<first>top.cpp</first>
 											<second>Sobel</second>
 										</first>
@@ -364,14 +350,14 @@
 						<id>18</id>
 						<name></name>
 						<fileName>top.cpp</fileName>
-						<fileDirectory>/ise_local2/umair_temp/vivado_projects/ImgProc/</fileDirectory>
+						<fileDirectory>/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/vivado_projects/ImgProc</fileDirectory>
 						<lineNumber>63</lineNumber>
 						<contextFuncName>Sobel</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/ise_local2/umair_temp/vivado_projects/ImgProc/</first>
+								<first>/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/vivado_projects/ImgProc</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -406,7 +392,7 @@
 					<Obj>
 						<type>2</type>
 						<id>25</id>
-						<name>filter_opr_filter2d_kernel_16_16_int_int_1080_1920_3_3_s</name>
+						<name>Filter2D_32_32_int_int_1080_1920_3_3_s</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -422,7 +408,7 @@
 					<bitwidth>0</bitwidth>
 				</Value>
 				<const_type>6</const_type>
-				<content>&lt;constant:filter_opr&lt;filter2d_kernel,16,16,int,int,1080,1920,3,3&gt;&gt;</content>
+				<content>&lt;constant:Filter2D&lt;32,32,int,int,1080,1920,3,3&gt;&gt;</content>
 			</item>
 		</consts>
 		<blocks class_id="17" tracking_level="0" version="0">
@@ -479,49 +465,49 @@
 			<item class_id_reference="20" object_id="_18">
 				<id>27</id>
 				<edge_type>1</edge_type>
-				<source_obj>3</source_obj>
+				<source_obj>16</source_obj>
 				<sink_obj>17</sink_obj>
 			</item>
 			<item class_id_reference="20" object_id="_19">
 				<id>28</id>
 				<edge_type>1</edge_type>
-				<source_obj>4</source_obj>
+				<source_obj>15</source_obj>
 				<sink_obj>17</sink_obj>
 			</item>
 			<item class_id_reference="20" object_id="_20">
 				<id>29</id>
 				<edge_type>1</edge_type>
-				<source_obj>5</source_obj>
+				<source_obj>3</source_obj>
 				<sink_obj>17</sink_obj>
 			</item>
 			<item class_id_reference="20" object_id="_21">
 				<id>30</id>
 				<edge_type>1</edge_type>
-				<source_obj>6</source_obj>
+				<source_obj>4</source_obj>
 				<sink_obj>17</sink_obj>
 			</item>
 			<item class_id_reference="20" object_id="_22">
 				<id>31</id>
 				<edge_type>1</edge_type>
-				<source_obj>7</source_obj>
+				<source_obj>5</source_obj>
 				<sink_obj>17</sink_obj>
 			</item>
 			<item class_id_reference="20" object_id="_23">
 				<id>32</id>
 				<edge_type>1</edge_type>
-				<source_obj>8</source_obj>
+				<source_obj>6</source_obj>
 				<sink_obj>17</sink_obj>
 			</item>
 			<item class_id_reference="20" object_id="_24">
 				<id>33</id>
 				<edge_type>1</edge_type>
-				<source_obj>16</source_obj>
+				<source_obj>7</source_obj>
 				<sink_obj>17</sink_obj>
 			</item>
 			<item class_id_reference="20" object_id="_25">
 				<id>34</id>
 				<edge_type>1</edge_type>
-				<source_obj>15</source_obj>
+				<source_obj>8</source_obj>
 				<sink_obj>17</sink_obj>
 			</item>
 		</edges>
@@ -546,7 +532,7 @@
 			<mDepth>-1</mDepth>
 			<mMinTripCount>-1</mMinTripCount>
 			<mMaxTripCount>-1</mMaxTripCount>
-			<mMinLatency>2085494</mMinLatency>
+			<mMinLatency>2086562</mMinLatency>
 			<mMaxLatency>-1</mMaxLatency>
 			<mIsDfPipe>0</mIsDfPipe>
 			<mDfPipe class_id="-1"></mDfPipe>

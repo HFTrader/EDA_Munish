@@ -1,7 +1,7 @@
-18:01:09 **** Build of project standalone_bsp_0 ****
+15:23:21 **** Build of project standalone_bsp_0 ****
 make -k all 
-libgen -hw ../videoProcessing_prj_hw_platform_0/system.xml\
-	       -lp /home/ga38qoh/EDA_Munish/zedboard_training/ZynqSW/2013_3/Support_documents/sdk_repo\
+libgen -hw ../videoProcessing_prj_hw_platform/system.xml\
+	       \
 	       -pe ps7_cortexa9_0 \
 	       -log libgen.log \
 	       system.mss
@@ -9,9 +9,8 @@ libgen
 Xilinx EDK 14.7 Build EDK_P.20131013
 Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
-Command Line: libgen -hw ../videoProcessing_prj_hw_platform_0/system.xml -lp
-/home/ga38qoh/EDA_Munish/zedboard_training/ZynqSW/2013_3/Support_documents/sdk_r
-epo -pe ps7_cortexa9_0 -log libgen.log system.mss 
+Command Line: libgen -hw ../videoProcessing_prj_hw_platform/system.xml -pe
+ps7_cortexa9_0 -log libgen.log system.mss 
 
 
 Staging source files.
@@ -48,5 +47,5 @@ Compiling cpu_cortexa9
 Running execs_generate.
 Finished building libraries
 
-18:01:52 Build Finished (took 43s.566ms)
+15:23:48 Build Finished (took 27s.240ms)
 

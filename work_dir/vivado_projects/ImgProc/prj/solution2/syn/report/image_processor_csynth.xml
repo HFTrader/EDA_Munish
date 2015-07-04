@@ -1,7 +1,7 @@
 <profile>
 
 <ReportVersion>
-<Version>2013.1</Version>
+<Version>2013.3</Version>
 </ReportVersion>
 
 <UserAssignments>
@@ -16,14 +16,19 @@
 <PerformanceEstimates>
 <SummaryOfTimingAnalysis>
 <unit>ns</unit>
-<EstimatedClockPeriod>5.48</EstimatedClockPeriod>
+<EstimatedClockPeriod>5.81</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>undef</Best-caseLatency>
+<Best-caseLatency>166</Best-caseLatency>
 <Average-caseLatency>undef</Average-caseLatency>
-<Worst-caseLatency>undef</Worst-caseLatency>
-<DataflowPipelineThroughput>undef</DataflowPipelineThroughput>
+<Worst-caseLatency>10414457</Worst-caseLatency>
+<DataflowPipelineThroughput>
+<range>
+<min>82</min>
+<max>2088722</max>
+</range>
+</DataflowPipelineThroughput>
 </SummaryOfOverallLatency>
 </PerformanceEstimates>
 
@@ -31,8 +36,8 @@
 <Resources>
 <BRAM_18K>18</BRAM_18K>
 <DSP48E>3</DSP48E>
-<FF>3650</FF>
-<LUT>5612</LUT>
+<FF>7100</FF>
+<LUT>13093</LUT>
 <SLICE>0</SLICE>
 </Resources>
 <AvailableResources>
@@ -596,17 +601,6 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>ap_start</name>
-<Object>image_processor</Object>
-<Type>return value</Type>
-<Scope></Scope>
-<IOProtocol>ap_ctrl_hs</IOProtocol>
-<IOConfig></IOConfig>
-<Dir>in</Dir>
-<Bits>1</Bits>
-<Attribute>control</Attribute>
-</RtlPorts>
-<RtlPorts>
 <name>ap_done</name>
 <Object>image_processor</Object>
 <Type>return value</Type>
@@ -614,6 +608,17 @@
 <IOProtocol>ap_ctrl_hs</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>ap_start</name>
+<Object>image_processor</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>in</Dir>
 <Bits>1</Bits>
 <Attribute>control</Attribute>
 </RtlPorts>
