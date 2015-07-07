@@ -82,6 +82,9 @@ int main()
 	LastEnable   = FALSE;
 
 	FRAME_INTR = 1;
+	GRAY_INTR = 1;
+	SOBEL_INTR = 1;
+	ERODE_INTR = 1;
 	cpu0_busy_processing_frame = 0;
 	cpu1_busy_processing_frame = 0;
 	debug_frameNo = 0;
@@ -127,15 +130,10 @@ int main()
 					 XPAR_SCUGIC_SINGLE_DEVICE_ID,
 					 XPAR_SCUTIMER_INTR);
 
-#ifdef SOBEL_HA
 	InitSobelFilter();
-#endif
-#ifdef ERODE_HA
 	InitErodeFilter();
-#endif
-#ifdef GRAYSCALE_HA
 	InitGrayscaleFilter();
-#endif
+
 
 	DBG_MSG("  To change the video resolution press:\r\n");
 	DBG_MSG("  '0' - 640x480;  '1' - 800x600;  '2' - 1024x768; '3' - 1280x720 \r\n");
@@ -301,15 +299,9 @@ int APP_ChangeResolution (void)
 		{
 			SetVideoResolution(receivedChar - 0x30);
 
-#ifdef SOBEL_HA
 			config_sobelfilter(xSobelFilter);
-#endif
-#ifdef ERODE_HA
 			config_erodefilter(xErodeFilter);
-#endif
-#ifdef GRAYSCALE_HA
 			config_grayScaleFilter(xGrayScaleFilter);
-#endif
 
 			DBG_MSG("Resolution was changed to %s \r\n", resolutions[receivedChar - 0x30]);
 		}
@@ -322,15 +314,9 @@ int APP_ChangeResolution (void)
 			{
 				SetVideoResolution(RESOLUTION_640x480);
 
-#ifdef SOBEL_HA
 				config_sobelfilter(xSobelFilter);
-#endif
-#ifdef ERODE_HA
 				config_erodefilter(xErodeFilter);
-#endif
-#ifdef GRAYSCALE_HA
 				config_grayScaleFilter(xGrayScaleFilter);
-#endif
 
 				DBG_MSG("Resolution was changed to %s \r\n", resolutions[0]);
 			}
@@ -388,57 +374,47 @@ void processFrame(unsigned char CPU_id) {
 	// capturing the frame pixels from camera line buffers onto DDR memory
 	DDRVideoWr(640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME], frameBaseaddr);
 
-
 	// sobel filtering (edge detection)
-#ifdef SOBEL_HA
-	//TODO: check if this accelerator is busy!! only if it is free then configure it
-	config_filterVDMA(XPAR_AXI_VDMA_2_BASEADDR, DMA_MEM_TO_DEV, frameBaseaddr);
-	config_filterVDMA(XPAR_AXI_VDMA_2_BASEADDR, DMA_DEV_TO_MEM, frameBaseaddr + FRAME_SIZE);
-	init_perfcounters(1, 0);
-	SOBEL_INTR = 0;
-	while(SOBEL_INTR == 0);
-	printf("SO=%d\r\n", get_cyclecount());
-#else
-	// SW implementation
-	init_perfcounters(1, 0);
-	EdgeDetection(frameBaseaddr, frameBaseaddr + FRAME_SIZE, 640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME]);
-	printf("SO=%d\r\n", get_cyclecount());
-#endif
+	if (SOBEL_INTR == 0) {			// if HA is busy
+		printf("%d,S,S\r\n", CPU_id);
+		EdgeDetection(frameBaseaddr, frameBaseaddr + FRAME_SIZE, 640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME]);
+	} else {						// if HA is free
+		printf("%d,S,H\r\n", CPU_id);
+		config_filterVDMA(XPAR_AXI_VDMA_2_BASEADDR, DMA_MEM_TO_DEV, frameBaseaddr);
+		config_filterVDMA(XPAR_AXI_VDMA_2_BASEADDR, DMA_DEV_TO_MEM, frameBaseaddr + FRAME_SIZE);
+		//init_perfcounters(1, 0);
+		SOBEL_INTR = 0;
+		while(SOBEL_INTR == 0);
+		//printf("%d\r\n", get_cyclecount());
+	}
 	frameBaseaddr += FRAME_SIZE;
 
 	// erode filtering
-#ifdef ERODE_HA
-	//TODO: check if this accelerator is busy!! only if it is free then configure it
-	config_filterVDMA(XPAR_AXI_VDMA_3_BASEADDR, DMA_MEM_TO_DEV, frameBaseaddr);
-	config_filterVDMA(XPAR_AXI_VDMA_3_BASEADDR, DMA_DEV_TO_MEM, frameBaseaddr + FRAME_SIZE);
-	init_perfcounters(1, 0);
-	ERODE_INTR = 0;
-	while(ERODE_INTR == 0);
-	printf("ER=%d\r\n", get_cyclecount());
-#else
-	// SW implementation
-	init_perfcounters(1, 0);
-	Erode(frameBaseaddr, frameBaseaddr + FRAME_SIZE, 640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME]);
-	printf("ER=%d\r\n", get_cyclecount());
-#endif
+	if (ERODE_INTR == 0) {			// if HA is busy
+		printf("%d,E,S\r\n", CPU_id);
+		Erode(frameBaseaddr, frameBaseaddr + FRAME_SIZE, 640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME]);
+	} else {						// if HA is free
+		printf("%d,E,H\r\n", CPU_id);
+		config_filterVDMA(XPAR_AXI_VDMA_3_BASEADDR, DMA_MEM_TO_DEV, frameBaseaddr);
+		config_filterVDMA(XPAR_AXI_VDMA_3_BASEADDR, DMA_DEV_TO_MEM, frameBaseaddr + FRAME_SIZE);
+		ERODE_INTR = 0;
+		while(ERODE_INTR == 0);
+	}
 	frameBaseaddr += FRAME_SIZE;
 
 	// grayscale filtering
-#ifdef GRAYSCALE_HA
-	//TODO: check if this accelerator is busy!! only if it is free then configure it
-	config_filterVDMA(XPAR_AXI_VDMA_1_BASEADDR, DMA_MEM_TO_DEV, frameBaseaddr);
-	config_filterVDMA(XPAR_AXI_VDMA_1_BASEADDR, DMA_DEV_TO_MEM, frameBaseaddr + FRAME_SIZE);
-	init_perfcounters(1, 0);
-	GRAY_INTR = 0;
-	while(GRAY_INTR == 0);
-	printf("GR=%d\r\n", get_cyclecount());
-#else
-	// SW implementation
-	init_perfcounters(1, 0);
-	ConvToGray(frameBaseaddr, frameBaseaddr + FRAME_SIZE, 640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME]);
-	printf("GR=%d\r\n", get_cyclecount());
-#endif
+	if (GRAY_INTR == 0) {			// if HA is busy
+		printf("%d,G,S\r\n", CPU_id);
+		ConvToGray(frameBaseaddr, frameBaseaddr + FRAME_SIZE, 640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME]);
+	} else {						// if HA is free
+		printf("%d,G,H\r\n", CPU_id);
+		config_filterVDMA(XPAR_AXI_VDMA_1_BASEADDR, DMA_MEM_TO_DEV, frameBaseaddr);
+		config_filterVDMA(XPAR_AXI_VDMA_1_BASEADDR, DMA_DEV_TO_MEM, frameBaseaddr + FRAME_SIZE);
+		GRAY_INTR = 0;
+		while(GRAY_INTR == 0);
+	}
 	frameBaseaddr += FRAME_SIZE;
+
 
 	if (CPU_id == 0) {
 		cpu0_busy_processing_frame = 0;

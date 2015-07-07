@@ -125,7 +125,7 @@ extern unsigned long  * ps7_peripherals_init_data;
 #define FPGA0_FREQ  100000000
 #define FPGA1_FREQ  200000000
 #define FPGA2_FREQ  200000000
-#define FPGA3_FREQ  8000000
+#define FPGA3_FREQ  2000000
 #define C_CPU_REF_CLK_FREQ_HZ  33333333
 
 
