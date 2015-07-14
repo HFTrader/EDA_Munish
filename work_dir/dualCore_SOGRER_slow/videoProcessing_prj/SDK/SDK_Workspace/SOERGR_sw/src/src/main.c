@@ -15,12 +15,11 @@
 #include "xuartps.h"
 #include "axi_interrupt.h"
 #include "xil_mmu.h"
-#include "sw_functions.h"
 #include "xpseudo_asm.h"
 #include "xscugic.h"
-#include "hw_config.h"
 #include "profile_cnt.h"
 #include "global.h"
+#include "hwsw_functions.h"
 
 
 
@@ -36,15 +35,7 @@ static unsigned char    DriverEnable;
 static unsigned char    LastEnable;
 
 static XScuGic_Config *GicConfig;/* The configuration parameters of the controller */
-
-
-
 XScuGic InterruptController; /* Instance of the Interrupt Controller */
-XGray_scale xGrayScaleFilter;
-XSobel_filter xSobelFilter;
-XImage_filter xErodeFilter;
-
-
 
 
 // functions declarations
@@ -58,10 +49,12 @@ void processFrame(unsigned char CPU_id);
 void InitSobelFilter();
 void InitErodeFilter();
 void InitGrayscaleFilter();
-
+// functions only to be run by CPU1
+#if NUM_CPUS == 2
 void CPU1_ISR();
 void CPU1_init();
 void Xil_SetTlbAttributes_CPU1();
+#endif
 
 
 
@@ -82,9 +75,6 @@ int main()
 	LastEnable   = FALSE;
 
 	FRAME_INTR = 1;
-	GRAY_INTR = 1;
-	SOBEL_INTR = 1;
-	ERODE_INTR = 1;
 	cpu0_busy_processing_frame = 0;
 	cpu1_busy_processing_frame = 0;
 	debug_frameNo = 0;
@@ -130,9 +120,7 @@ int main()
 					 XPAR_SCUGIC_SINGLE_DEVICE_ID,
 					 XPAR_SCUTIMER_INTR);
 
-	InitSobelFilter();
-	InitErodeFilter();
-	InitGrayscaleFilter();
+	HA_Initialize();				// initializes the HW Accelerators setup in the SoC
 
 
 	DBG_MSG("  To change the video resolution press:\r\n");
@@ -182,251 +170,24 @@ int main()
 
 
 
-int ScuGicInterrupt_Init()
-{
-	int Status;
-	/*
-	 * Initialize the interrupt controller driver so that it is ready to
-	 * use.
-	 * */
-	Xil_ExceptionInit();
+#if NUM_CPUS == 2
+void CPU1_ISR() {
+	processFrame(1);
+	// should reset stack here and return to initial boot code to stop the CPU1 stack buffer to overflow (No return statement at the end of this function to pop stack!!)
+	asm volatile (
+						"mrs	r0, cpsr			/* get the current PSR */\n"
+						"mvn	r1, #0x1f			/* set up the system stack pointer */\n"
+						"and	r2, r1, r0\n"
+						"orr	r2, r2, #0x1F			/* SYS mode */\n"
+						"msr	cpsr, r2\n"
+						"ldr	r13,=__stack1			/* SYS stack pointer */\n"
+				   );
 
-	GicConfig = XScuGic_LookupConfig(XPAR_PS7_SCUGIC_0_DEVICE_ID);
-	if (NULL == GicConfig) {
-		return XST_FAILURE;
-	}
+	// branching to initial boot code (waiting for sev from cpu 0)
+	Xil_Out32((u32) 0xfffffff0, (u32) 0x0);
 
-	Status = XScuGic_CfgInitialize(&InterruptController, GicConfig,
-			GicConfig->CpuBaseAddress);
-	if (Status != XST_SUCCESS) {
-		return XST_FAILURE;
-	}
-
-	 // **** Setup the Interrupt System *****
-
-//	 * Connect the interrupt controller interrupt handler to the hardware
-//	 * interrupt handling logic in the ARM processor.
-	Xil_ExceptionRegisterHandler(XIL_EXCEPTION_ID_IRQ_INT,
-			(Xil_ExceptionHandler) XScuGic_InterruptHandler,
-			(void *) &InterruptController);
-
-//	 * Connect a device driver handler that will be called when an
-//	 * interrupt for the device occurs, the device driver handler performs
-//	 * the specific interrupt processing for the device
-	Status = XScuGic_Connect(&InterruptController,XPAR_FABRIC_CAM_INTERFACE_0_VSYNC_NEGEDGE_INTR,
-			(Xil_ExceptionHandler)AXI_INTERRUPT_VsyncIntr_Handler,
-			(void *) &InterruptController);
-	XScuGic_Enable(&InterruptController, XPAR_FABRIC_CAM_INTERFACE_0_VSYNC_NEGEDGE_INTR);
-
-
-	Status = XScuGic_Connect(&InterruptController,XPAR_FABRIC_AXI_VDMA_1_S2MM_INTROUT_INTR,
-			(Xil_ExceptionHandler)AXI_INTERRUPT__VDMA1_S2MMIntr_Handler,
-			(void *) &InterruptController);
-	XScuGic_Enable(&InterruptController, XPAR_FABRIC_AXI_VDMA_1_S2MM_INTROUT_INTR);
-
-
-	Status = XScuGic_Connect(&InterruptController,XPAR_FABRIC_AXI_VDMA_2_S2MM_INTROUT_INTR,
-			(Xil_ExceptionHandler)AXI_INTERRUPT__VDMA2_S2MMIntr_Handler,
-			(void *) &InterruptController);
-	XScuGic_Enable(&InterruptController, XPAR_FABRIC_AXI_VDMA_2_S2MM_INTROUT_INTR);
-
-
-	Status = XScuGic_Connect(&InterruptController,XPAR_FABRIC_AXI_VDMA_3_S2MM_INTROUT_INTR,
-			(Xil_ExceptionHandler)AXI_INTERRUPT__VDMA3_S2MMIntr_Handler,
-			(void *) &InterruptController);
-	XScuGic_Enable(&InterruptController, XPAR_FABRIC_AXI_VDMA_3_S2MM_INTROUT_INTR);
-
-// 	Enable interrupts in the ARM
-	Xil_ExceptionEnable();
-
-	//Only used for edge sensitive Interrupts
-	XScuGic_SetPriorityTriggerType(&InterruptController, XPAR_FABRIC_CAM_INTERFACE_0_VSYNC_NEGEDGE_INTR, 0xa0, 3);
-
-	if (Status != XST_SUCCESS) {
-		return XST_FAILURE;
-	}
-	return XST_SUCCESS ; 
+	asm volatile("bx %0" : : "r" (CPU1_SLEEP_ADDR));
 }
-
-void delay_us(u32 us_count) {
-  u32 count;
-  for (count = 0; count < ((us_count * 800) + 1); count++) {
-    asm("nop");
-  }
-}
-
-/***************************************************************************//**
- * @brief Enables the driver.
- *
- * @return Returns ATVERR_OK.
-*******************************************************************************/
-void APP_EnableDriver (BOOL Enable)
-{
-    DriverEnable = Enable;
-}
-
-/***************************************************************************//**
- * @brief Returns the driver enable status.
- *
- * @return Returns the driver enable status.
-*******************************************************************************/
-static BOOL APP_DriverEnabled (void)
-{
-    if ((DriverEnable && HAL_GetMBSwitchState()) != LastEnable)
-    {
-        LastEnable = DriverEnable && HAL_GetMBSwitchState();
-        DBG_MSG ("APP: Driver %s\n\r", LastEnable? "Enabled": "Disabled");
-    }
-    return (LastEnable);
-}
-
-
-
-/***************************************************************************//**
- * @brief Changes the video resolution depending on User input.
- *
- * @return None.
-*******************************************************************************/
-int APP_ChangeResolution (void)
-{
-	char *resolutions[7] = {"640x480", "800x600", "1024x768", "1280x720", "1360x768", "1600x900", "1920x1080"};
-	char receivedChar    = 0;
-
-	if(XUartPs_IsReceiveData(UART_BASEADDR))
-	{
-		receivedChar = inbyte();
-		if((receivedChar >= 0x30) && (receivedChar <= 0x36))
-		{
-			SetVideoResolution(receivedChar - 0x30);
-
-			config_sobelfilter(xSobelFilter);
-			config_erodefilter(xErodeFilter);
-			config_grayScaleFilter(xGrayScaleFilter);
-
-			DBG_MSG("Resolution was changed to %s \r\n", resolutions[receivedChar - 0x30]);
-		}
-		else if (receivedChar == 'q') {
-			DBG_MSG("Exiting Application. \n\r");
-		    return(0);
-		    }
-		else
-		{
-			{
-				SetVideoResolution(RESOLUTION_640x480);
-
-				config_sobelfilter(xSobelFilter);
-				config_erodefilter(xErodeFilter);
-				config_grayScaleFilter(xGrayScaleFilter);
-
-				DBG_MSG("Resolution was changed to %s \r\n", resolutions[0]);
-			}
-		}
-	}
-	return 1;
-}
-
-
-
-
-void InitSobelFilter() {
-	xSobelFilter.Control_bus_BaseAddress = XPAR_SOBEL_FILTER_TOP_0_S_AXI_CONTROL_BUS_BASEADDR;
-	xSobelFilter.IsReady = XIL_COMPONENT_IS_READY;
-	config_sobelfilter(xSobelFilter);
-	resetVDMA(XPAR_AXI_VDMA_1_BASEADDR);
-	config_filterVDMA(XPAR_AXI_VDMA_1_BASEADDR, DMA_MEM_TO_DEV, VIDEO_BASEADDR_CPU0);
-	config_filterVDMA(XPAR_AXI_VDMA_1_BASEADDR, DMA_DEV_TO_MEM, VIDEO_BASEADDR_CPU0 + FRAME_SIZE);
-}
-
-
-
-void InitErodeFilter() {
-	xErodeFilter.Control_bus_BaseAddress = XPAR_IMAGE_FILTER_TOP_0_S_AXI_CONTROL_BUS_BASEADDR;
-	xErodeFilter.IsReady = XIL_COMPONENT_IS_READY;
-	config_erodefilter(xErodeFilter);
-	resetVDMA(XPAR_AXI_VDMA_3_BASEADDR);
-	config_filterVDMA(XPAR_AXI_VDMA_3_BASEADDR, DMA_MEM_TO_DEV, VIDEO_BASEADDR_CPU0 + FRAME_SIZE);
-	config_filterVDMA(XPAR_AXI_VDMA_3_BASEADDR, DMA_DEV_TO_MEM, VIDEO_BASEADDR_CPU0 + FRAME_SIZE*2);
-}
-
-
-
-void InitGrayscaleFilter() {
-	xGrayScaleFilter.Control_bus_BaseAddress = XPAR_GRAY_SCALE_TOP_0_S_AXI_CONTROL_BUS_BASEADDR;
-	xGrayScaleFilter.IsReady = XIL_COMPONENT_IS_READY;
-	config_grayScaleFilter(xGrayScaleFilter);
-	resetVDMA(XPAR_AXI_VDMA_1_BASEADDR);
-	config_filterVDMA(XPAR_AXI_VDMA_1_BASEADDR, DMA_MEM_TO_DEV, VIDEO_BASEADDR_CPU0 + FRAME_SIZE*2);
-	config_filterVDMA(XPAR_AXI_VDMA_1_BASEADDR, DMA_DEV_TO_MEM, VIDEO_BASEADDR_CPU0 + FRAME_SIZE*3);	
-}
-
-
-void processFrame(unsigned char CPU_id) {
-	unsigned int frameBaseaddr;
-
-	//printf("%d,%d\n\r", CPU_id, debug_frameNo);
-
-	if (CPU_id == 0) {
-		frameBaseaddr = VIDEO_BASEADDR_CPU0;
-	} else if (CPU_id == 1) {
-		frameBaseaddr = VIDEO_BASEADDR_CPU1;
-	} //else (.......for more CPUs.......)
-
-	// capturing the frame pixels from camera line buffers onto DDR memory
-	DDRVideoWr(640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME], frameBaseaddr);
-
-	// sobel filtering (edge detection)
-	if (SOBEL_INTR == 0) {			// if HA is busy
-		printf("%d,S,S\r\n", CPU_id);
-		EdgeDetection(frameBaseaddr, frameBaseaddr + FRAME_SIZE, 640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME]);
-	} else {						// if HA is free
-		printf("%d,S,H\r\n", CPU_id);
-		config_filterVDMA(XPAR_AXI_VDMA_2_BASEADDR, DMA_MEM_TO_DEV, frameBaseaddr);
-		config_filterVDMA(XPAR_AXI_VDMA_2_BASEADDR, DMA_DEV_TO_MEM, frameBaseaddr + FRAME_SIZE);
-		//init_perfcounters(1, 0);
-		SOBEL_INTR = 0;
-		while(SOBEL_INTR == 0);
-		//printf("%d\r\n", get_cyclecount());
-	}
-	frameBaseaddr += FRAME_SIZE;
-
-	// erode filtering
-	if (ERODE_INTR == 0) {			// if HA is busy
-		printf("%d,E,S\r\n", CPU_id);
-		Erode(frameBaseaddr, frameBaseaddr + FRAME_SIZE, 640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME]);
-	} else {						// if HA is free
-		printf("%d,E,H\r\n", CPU_id);
-		config_filterVDMA(XPAR_AXI_VDMA_3_BASEADDR, DMA_MEM_TO_DEV, frameBaseaddr);
-		config_filterVDMA(XPAR_AXI_VDMA_3_BASEADDR, DMA_DEV_TO_MEM, frameBaseaddr + FRAME_SIZE);
-		ERODE_INTR = 0;
-		while(ERODE_INTR == 0);
-	}
-	frameBaseaddr += FRAME_SIZE;
-
-	// grayscale filtering
-	if (GRAY_INTR == 0) {			// if HA is busy
-		printf("%d,G,S\r\n", CPU_id);
-		ConvToGray(frameBaseaddr, frameBaseaddr + FRAME_SIZE, 640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME]);
-	} else {						// if HA is free
-		printf("%d,G,H\r\n", CPU_id);
-		config_filterVDMA(XPAR_AXI_VDMA_1_BASEADDR, DMA_MEM_TO_DEV, frameBaseaddr);
-		config_filterVDMA(XPAR_AXI_VDMA_1_BASEADDR, DMA_DEV_TO_MEM, frameBaseaddr + FRAME_SIZE);
-		GRAY_INTR = 0;
-		while(GRAY_INTR == 0);
-	}
-	frameBaseaddr += FRAME_SIZE;
-
-
-	if (CPU_id == 0) {
-		cpu0_busy_processing_frame = 0;
-	} else if (CPU_id == 1) {
-		cpu1_busy_processing_frame = 0;
-	} //else (.......for more CPUs.......)
-
-
-	ConfigHdmiVDMA (detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME], frameBaseaddr);
-}
-
-
 
 
 
@@ -601,24 +362,209 @@ void Xil_SetTlbAttributes_CPU1() {
 
 	asm volatile("bx %0" : : "r" (CPU1_SLEEP_ADDR));
 }
+#endif
 
 
-void CPU1_ISR() {
-	processFrame(1);
-	// should reset stack here and return to initial boot code to stop the CPU1 stack buffer to overflow (No return statement at the end of this function to pop stack!!)
-	asm volatile (
-						"mrs	r0, cpsr			/* get the current PSR */\n"
-						"mvn	r1, #0x1f			/* set up the system stack pointer */\n"
-						"and	r2, r1, r0\n"
-						"orr	r2, r2, #0x1F			/* SYS mode */\n"
-						"msr	cpsr, r2\n"
-						"ldr	r13,=__stack1			/* SYS stack pointer */\n"
-				   );
 
-	// branching to initial boot code (waiting for sev from cpu 0)
-	Xil_Out32((u32) 0xfffffff0, (u32) 0x0);
+int ScuGicInterrupt_Init()
+{
+	int Status;
+	/*
+	 * Initialize the interrupt controller driver so that it is ready to
+	 * use.
+	 * */
+	Xil_ExceptionInit();
 
-	asm volatile("bx %0" : : "r" (CPU1_SLEEP_ADDR));
+	GicConfig = XScuGic_LookupConfig(XPAR_PS7_SCUGIC_0_DEVICE_ID);
+	if (NULL == GicConfig) {
+		return XST_FAILURE;
+	}
+
+	Status = XScuGic_CfgInitialize(&InterruptController, GicConfig,
+			GicConfig->CpuBaseAddress);
+	if (Status != XST_SUCCESS) {
+		return XST_FAILURE;
+	}
+
+	 // **** Setup the Interrupt System *****
+
+//	 * Connect the interrupt controller interrupt handler to the hardware
+//	 * interrupt handling logic in the ARM processor.
+	Xil_ExceptionRegisterHandler(XIL_EXCEPTION_ID_IRQ_INT,
+			(Xil_ExceptionHandler) XScuGic_InterruptHandler,
+			(void *) &InterruptController);
+
+//	 * Connect a device driver handler that will be called when an
+//	 * interrupt for the device occurs, the device driver handler performs
+//	 * the specific interrupt processing for the device
+	Status = XScuGic_Connect(&InterruptController,XPAR_FABRIC_CAM_INTERFACE_0_VSYNC_NEGEDGE_INTR,
+			(Xil_ExceptionHandler)AXI_INTERRUPT_VsyncIntr_Handler,
+			(void *) &InterruptController);
+	XScuGic_Enable(&InterruptController, XPAR_FABRIC_CAM_INTERFACE_0_VSYNC_NEGEDGE_INTR);
+
+//TODO: the ISRs for HA should be registered to the interrupt controller in hwsw_functions.h i.e the application developer shouldnt care about registering them
+// maybe register them in HA_initialize functions
+	Status = XScuGic_Connect(&InterruptController,SobelFilter_VDMA_INTR_ID,
+			(Xil_ExceptionHandler)SobelFilter_VDMA_ISR,
+			(void *) &InterruptController);
+	XScuGic_Enable(&InterruptController, SobelFilter_VDMA_INTR_ID);
+
+
+	Status = XScuGic_Connect(&InterruptController,ErodeFilter_VDMA_INTR_ID,
+			(Xil_ExceptionHandler)ErodeFilter_VDMA_ISR,
+			(void *) &InterruptController);
+	XScuGic_Enable(&InterruptController, ErodeFilter_VDMA_INTR_ID);
+
+	Status = XScuGic_Connect(&InterruptController,GrayscaleFilter_VDMA_INTR_ID,
+			(Xil_ExceptionHandler)GrayscaleFilter_VDMA_ISR,
+			(void *) &InterruptController);
+	XScuGic_Enable(&InterruptController, GrayscaleFilter_VDMA_INTR_ID);
+
+
+
+// 	Enable interrupts in the ARM
+	Xil_ExceptionEnable();
+
+	//Only used for edge sensitive Interrupts
+	XScuGic_SetPriorityTriggerType(&InterruptController, XPAR_FABRIC_CAM_INTERFACE_0_VSYNC_NEGEDGE_INTR, 0xa0, 3);
+
+	if (Status != XST_SUCCESS) {
+		return XST_FAILURE;
+	}
+	return XST_SUCCESS ; 
 }
+
+void delay_us(u32 us_count) {
+  u32 count;
+  for (count = 0; count < ((us_count * 800) + 1); count++) {
+    asm("nop");
+  }
+}
+
+/***************************************************************************//**
+ * @brief Enables the driver.
+ *
+ * @return Returns ATVERR_OK.
+*******************************************************************************/
+void APP_EnableDriver (BOOL Enable)
+{
+    DriverEnable = Enable;
+}
+
+/***************************************************************************//**
+ * @brief Returns the driver enable status.
+ *
+ * @return Returns the driver enable status.
+*******************************************************************************/
+static BOOL APP_DriverEnabled (void)
+{
+    if ((DriverEnable && HAL_GetMBSwitchState()) != LastEnable)
+    {
+        LastEnable = DriverEnable && HAL_GetMBSwitchState();
+        DBG_MSG ("APP: Driver %s\n\r", LastEnable? "Enabled": "Disabled");
+    }
+    return (LastEnable);
+}
+
+
+
+/***************************************************************************//**
+ * @brief Changes the video resolution depending on User input.
+ *
+ * @return None.
+*******************************************************************************/
+int APP_ChangeResolution (void)
+{
+	char *resolutions[7] = {"640x480", "800x600", "1024x768", "1280x720", "1360x768", "1600x900", "1920x1080"};
+	char receivedChar    = 0;
+
+	if(XUartPs_IsReceiveData(UART_BASEADDR))
+	{
+		receivedChar = inbyte();
+		if((receivedChar >= 0x30) && (receivedChar <= 0x36))
+		{
+			SetVideoResolution(receivedChar - 0x30);
+
+			/*config_sobelfilter(xSobelFilter);
+			config_erodefilter(xErodeFilter);
+			config_grayScaleFilter(xGrayScaleFilter);*/
+
+			DBG_MSG("Resolution was changed to %s \r\n", resolutions[receivedChar - 0x30]);
+		}
+		else if (receivedChar == 'q') {
+			DBG_MSG("Exiting Application. \n\r");
+		    return(0);
+		    }
+		else
+		{
+			{
+				SetVideoResolution(RESOLUTION_640x480);
+
+				/*config_sobelfilter(xSobelFilter);
+				config_erodefilter(xErodeFilter);
+				config_grayScaleFilter(xGrayScaleFilter);*/
+
+				DBG_MSG("Resolution was changed to %s \r\n", resolutions[0]);
+			}
+		}
+	}
+	return 1;
+}
+
+
+
+void processFrame(unsigned char CPU_id) {
+	unsigned int frameBaseaddr;
+
+	//printf("%d,%d\n\r", CPU_id, debug_frameNo);
+
+	if (CPU_id == 0) {
+		frameBaseaddr = VIDEO_BASEADDR_CPU0;
+	} else if (CPU_id == 1) {
+		frameBaseaddr = VIDEO_BASEADDR_CPU1;
+	} //else (.......for more CPUs.......)
+
+	// capturing the frame pixels from camera line buffers onto DDR memory
+	DDRVideoWr(640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME], frameBaseaddr);
+//TODO: if possible avoid different function names for "hwsw_functions.h" and "sw_functions.h"!
+
+	// sobel filtering (edge detection)
+	hwEdgeDetection(frameBaseaddr, frameBaseaddr + FRAME_SIZE, 640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME]);
+	frameBaseaddr += FRAME_SIZE;
+
+	// erode filtering
+	hwErode(frameBaseaddr, frameBaseaddr + FRAME_SIZE, 640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME]);
+	frameBaseaddr += FRAME_SIZE;
+
+	// grayscale filtering
+	hwConvToGray(frameBaseaddr, frameBaseaddr + FRAME_SIZE, 640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME]);
+	frameBaseaddr += FRAME_SIZE;
+
+
+	if (CPU_id == 0) {
+		cpu0_busy_processing_frame = 0;
+	} else if (CPU_id == 1) {
+		cpu1_busy_processing_frame = 0;
+	} //else (.......for more CPUs.......)
+
+
+	ConfigHdmiVDMA (detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME], frameBaseaddr);
+}
+
+
+
+
+
+//TODO: generic use of both CPUs......also should be scalable to more cores.......cpu*_busy_processing_frame should be automated etc.
+
+
+
+
+
+
+
+
+
+
 
 

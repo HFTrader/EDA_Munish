@@ -62,7 +62,9 @@ void AXI_INTERRUPT_EnableInterrupt(void * baseaddr_p)
 unsigned int t=0;
 void AXI_INTERRUPT_VsyncIntr_Handler(void * baseaddr_p)
 {
+#if NUM_CPUS == 2
 	static void (*funcPtr_CPU1proc)() = CPU1_ISR;
+#endif
 	debug_frameNo++;
 
 	if (cpu0_busy_processing_frame == 1) {
@@ -96,23 +98,4 @@ void AXI_INTERRUPT_HrefIntr_Handler(void * baseaddr_p)
   static int cnt = 0;
   cnt++;
   imageRow++;
-}
-
-
-void AXI_INTERRUPT__VDMA1_S2MMIntr_Handler(void * baseaddr_p)
-{
-	Xil_Out32((XPAR_AXI_VDMA_1_BASEADDR + AXI_FILTER_RX_CTRL), 0x00000004); // Mun
-	GRAY_INTR = 1;
-}
-
-void AXI_INTERRUPT__VDMA2_S2MMIntr_Handler(void * baseaddr_p)
-{
-	Xil_Out32((XPAR_AXI_VDMA_2_BASEADDR + AXI_FILTER_RX_CTRL), 0x00000004);
-	SOBEL_INTR = 1;
-}
-
-void AXI_INTERRUPT__VDMA3_S2MMIntr_Handler(void * baseaddr_p)
-{
-	Xil_Out32((XPAR_AXI_VDMA_3_BASEADDR + AXI_FILTER_RX_CTRL), 0x00000004);
-	ERODE_INTR = 1;
 }
