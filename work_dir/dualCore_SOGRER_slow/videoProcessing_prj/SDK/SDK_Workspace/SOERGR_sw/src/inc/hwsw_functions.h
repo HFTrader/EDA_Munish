@@ -10,17 +10,25 @@
 #ifndef HWSW_FUNCTIONS_H_
 #define HWSW_FUNCTIONS_H_
 
+// NOTE: following files are always included even if no HA is in the design
 #include "sw_functions.h"
-//TODO: merge "hw_config.h" functionality in this file or also generate it using template engine
-#include "hw_config.h"
+#include "vdma_config.h"
+// NOTE: the vdma_config contains API to configure the VDMAs associated with each of the HA present in the design
+
+
+// NOTE: depending on whether HAs are present or not following files will be included
+// drivers for Hardware Accelerators
+#include "xgray_scale.h"
+#include "xsobel_filter.h"
+#include "ximage_filter.h"
 
 
 // application processing methods
-void hwConvToGray(unsigned long ImgIn_BaseAddr, unsigned long ImgOut_BaseAddr, unsigned short width, unsigned short height, unsigned short horizontalActiveTime);
+void hwConvToGray(unsigned long ImgIn_BaseAddr, unsigned long ImgOut_BaseAddr, unsigned short width, unsigned short height, unsigned short h_ActiveTime, unsigned short v_ActiveTime);
 
-void hwEdgeDetection(unsigned long ImgIn_BaseAddr, unsigned long ImgOut_BaseAddr, unsigned short width, unsigned short height, unsigned short h_ActiveTime);
+void hwEdgeDetection(unsigned long ImgIn_BaseAddr, unsigned long ImgOut_BaseAddr, unsigned short width, unsigned short height, unsigned short h_ActiveTime, unsigned short v_ActiveTime);
 
-void hwErode(unsigned long ImgIn_BaseAddr, unsigned long ImgOut_BaseAddr, unsigned short width, unsigned short height, unsigned short h_ActiveTime);
+void hwErode(unsigned long ImgIn_BaseAddr, unsigned long ImgOut_BaseAddr, unsigned short width, unsigned short height, unsigned short h_ActiveTime, unsigned short v_ActiveTime);
 
 
 // hardware accelerator related methods
@@ -29,18 +37,18 @@ void hwErode(unsigned long ImgIn_BaseAddr, unsigned long ImgOut_BaseAddr, unsign
 #define SobelFilter_VDMA_INTR_ID 65
 #define SobelFilter_CONTROL_BUS_BASEADDR 0x71800000
 short int SobelFilter_busy;
-void SobelFilter_Init();
+void SobelFilter_Init(unsigned short horizontalActiveTime, unsigned short verticalActiveTime);
 void SobelFilter_VDMA_ISR();
 XSobel_filter xSobelFilter;
 
 // NOTE: template engine should only generate the following if Erode HA is present in the design
-#define ErodeFilter_VDMA_BASEADDR 0x43000000
-#define ErodeFilter_VDMA_INTR_ID 61
-#define ErodeFilter_CONTROL_BUS_BASEADDR 0x7C800000
-short int ErodeFilter_busy;
-void ErodeFilter_Init();
-void ErodeFilter_VDMA_ISR();
-XImage_filter xErodeFilter;
+#define ImageFilter_VDMA_BASEADDR 0x43000000
+#define ImageFilter_VDMA_INTR_ID 61
+#define ImageFilter_CONTROL_BUS_BASEADDR 0x7C800000
+short int ImageFilter_busy;
+void ImageFilter_Init(unsigned short horizontalActiveTime, unsigned short verticalActiveTime);
+void ImageFilter_VDMA_ISR();
+XImage_filter xImageFilter;
 
 
 // NOTE: template engine should only generate the following if Grayscale HA is present in the design
@@ -48,12 +56,14 @@ XImage_filter xErodeFilter;
 #define GrayscaleFilter_VDMA_INTR_ID 68
 #define GrayscaleFilter_CONTROL_BUS_BASEADDR 0x67C00000
 short int GrayscaleFilter_busy;
-void GrayscaleFilter_Init();
+void GrayscaleFilter_Init(unsigned short horizontalActiveTime, unsigned short verticalActiveTime);
 void GrayscaleFilter_VDMA_ISR();
 XGray_scale xGrayScaleFilter;
 
 // NOTE: this should be generated even if there are no HAs in the design..if that is the case then this would be an empty-body function
-void HA_Initialize();
+void HA_Initialize(unsigned short horizontalActiveTime, unsigned short verticalActiveTime);
+
+
 
 
 

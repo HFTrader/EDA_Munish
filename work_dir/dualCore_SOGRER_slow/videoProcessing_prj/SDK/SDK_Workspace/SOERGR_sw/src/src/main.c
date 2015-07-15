@@ -21,7 +21,7 @@
 #include "global.h"
 #include "hwsw_functions.h"
 
-
+// TODO: seperate out pure CPU1 functions into another *.h/*.c module and then include it here
 
 // macros
 #define HDMI_CALL_INTERVAL_MS	10
@@ -36,7 +36,8 @@ static unsigned char    LastEnable;
 
 static XScuGic_Config *GicConfig;/* The configuration parameters of the controller */
 XScuGic InterruptController; /* Instance of the Interrupt Controller */
-
+static int h_ActiveTime;
+static int v_ActiveTime;
 
 // functions declarations
 int ScuGicInterrupt_Init();
@@ -68,6 +69,7 @@ int main()
 {
 	UINT32 StartCount;
 	int xstatus;
+
 	MajorRev     = 1;
 	MinorRev     = 1;
 	RcRev        = 1;
@@ -120,8 +122,6 @@ int main()
 					 XPAR_SCUGIC_SINGLE_DEVICE_ID,
 					 XPAR_SCUTIMER_INTR);
 
-	HA_Initialize();				// initializes the HW Accelerators setup in the SoC
-
 
 	DBG_MSG("  To change the video resolution press:\r\n");
 	DBG_MSG("  '0' - 640x480;  '1' - 800x600;  '2' - 1024x768; '3' - 1280x720 \r\n");
@@ -134,8 +134,11 @@ int main()
 	ADIAPI_TransmitterMain();
 
 	/*Initialize the HDMI Core with default display settings*/
+	// subsequently initialize hardware accelerators with current horizontal/vertical timing
 	SetVideoResolution(RESOLUTION_640x480);
-
+	h_ActiveTime = detailedTiming[currentResolution][H_ACTIVE_TIME];
+	v_ActiveTime = detailedTiming[currentResolution][V_ACTIVE_TIME];
+	HA_Initialize(h_ActiveTime, v_ActiveTime);				// initializes the HW Accelerators setup in the SoC
 
 	/* Initialize the interrupt controller */
 	xstatus = ScuGicInterrupt_Init();
@@ -410,10 +413,10 @@ int ScuGicInterrupt_Init()
 	XScuGic_Enable(&InterruptController, SobelFilter_VDMA_INTR_ID);
 
 
-	Status = XScuGic_Connect(&InterruptController,ErodeFilter_VDMA_INTR_ID,
-			(Xil_ExceptionHandler)ErodeFilter_VDMA_ISR,
+	Status = XScuGic_Connect(&InterruptController,ImageFilter_VDMA_INTR_ID,
+			(Xil_ExceptionHandler)ImageFilter_VDMA_ISR,
 			(void *) &InterruptController);
-	XScuGic_Enable(&InterruptController, ErodeFilter_VDMA_INTR_ID);
+	XScuGic_Enable(&InterruptController, ImageFilter_VDMA_INTR_ID);
 
 	Status = XScuGic_Connect(&InterruptController,GrayscaleFilter_VDMA_INTR_ID,
 			(Xil_ExceptionHandler)GrayscaleFilter_VDMA_ISR,
@@ -484,10 +487,10 @@ int APP_ChangeResolution (void)
 		if((receivedChar >= 0x30) && (receivedChar <= 0x36))
 		{
 			SetVideoResolution(receivedChar - 0x30);
-
-			/*config_sobelfilter(xSobelFilter);
-			config_erodefilter(xErodeFilter);
-			config_grayScaleFilter(xGrayScaleFilter);*/
+			h_ActiveTime = detailedTiming[currentResolution][H_ACTIVE_TIME];
+			v_ActiveTime = detailedTiming[currentResolution][V_ACTIVE_TIME];
+			//TODO: check if following makes sense!
+			//HA_Initialize(h_ActiveTime, v_ActiveTime);
 
 			DBG_MSG("Resolution was changed to %s \r\n", resolutions[receivedChar - 0x30]);
 		}
@@ -499,10 +502,10 @@ int APP_ChangeResolution (void)
 		{
 			{
 				SetVideoResolution(RESOLUTION_640x480);
-
-				/*config_sobelfilter(xSobelFilter);
-				config_erodefilter(xErodeFilter);
-				config_grayScaleFilter(xGrayScaleFilter);*/
+				h_ActiveTime = detailedTiming[currentResolution][H_ACTIVE_TIME];
+				v_ActiveTime = detailedTiming[currentResolution][V_ACTIVE_TIME];
+				//TODO: check if following makes sense!
+				//HA_Initialize(h_ActiveTime, v_ActiveTime);
 
 				DBG_MSG("Resolution was changed to %s \r\n", resolutions[0]);
 			}
@@ -525,19 +528,19 @@ void processFrame(unsigned char CPU_id) {
 	} //else (.......for more CPUs.......)
 
 	// capturing the frame pixels from camera line buffers onto DDR memory
-	DDRVideoWr(640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME], frameBaseaddr);
+	DDRVideoWr(640, 480, h_ActiveTime, v_ActiveTime, frameBaseaddr);
 //TODO: if possible avoid different function names for "hwsw_functions.h" and "sw_functions.h"!
 
 	// sobel filtering (edge detection)
-	hwEdgeDetection(frameBaseaddr, frameBaseaddr + FRAME_SIZE, 640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME]);
+	hwEdgeDetection(frameBaseaddr, frameBaseaddr + FRAME_SIZE, 640, 480, h_ActiveTime, v_ActiveTime);
 	frameBaseaddr += FRAME_SIZE;
 
 	// erode filtering
-	hwErode(frameBaseaddr, frameBaseaddr + FRAME_SIZE, 640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME]);
+	hwErode(frameBaseaddr, frameBaseaddr + FRAME_SIZE, 640, 480, h_ActiveTime, v_ActiveTime);
 	frameBaseaddr += FRAME_SIZE;
 
 	// grayscale filtering
-	hwConvToGray(frameBaseaddr, frameBaseaddr + FRAME_SIZE, 640, 480, detailedTiming[currentResolution][H_ACTIVE_TIME]);
+	hwConvToGray(frameBaseaddr, frameBaseaddr + FRAME_SIZE, 640, 480, h_ActiveTime, v_ActiveTime);
 	frameBaseaddr += FRAME_SIZE;
 
 
@@ -548,7 +551,7 @@ void processFrame(unsigned char CPU_id) {
 	} //else (.......for more CPUs.......)
 
 
-	ConfigHdmiVDMA (detailedTiming[currentResolution][H_ACTIVE_TIME], detailedTiming[currentResolution][V_ACTIVE_TIME], frameBaseaddr);
+	ConfigHdmiVDMA (h_ActiveTime, v_ActiveTime, frameBaseaddr);
 }
 
 

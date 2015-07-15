@@ -6,11 +6,11 @@
 C_SRCS += \
 ../src/src/axi_interrupt.c \
 ../src/src/cf_hdmi.c \
-../src/src/hw_config.c \
 ../src/src/hwsw_functions.c \
 ../src/src/main.c \
 ../src/src/sw_functions.c \
 ../src/src/transmitter.c \
+../src/src/vdma_config.c \
 ../src/src/xgray_scale.c \
 ../src/src/ximage_filter.c \
 ../src/src/xsobel_filter.c 
@@ -18,11 +18,11 @@ C_SRCS += \
 OBJS += \
 ./src/src/axi_interrupt.o \
 ./src/src/cf_hdmi.o \
-./src/src/hw_config.o \
 ./src/src/hwsw_functions.o \
 ./src/src/main.o \
 ./src/src/sw_functions.o \
 ./src/src/transmitter.o \
+./src/src/vdma_config.o \
 ./src/src/xgray_scale.o \
 ./src/src/ximage_filter.o \
 ./src/src/xsobel_filter.o 
@@ -30,11 +30,11 @@ OBJS += \
 C_DEPS += \
 ./src/src/axi_interrupt.d \
 ./src/src/cf_hdmi.d \
-./src/src/hw_config.d \
 ./src/src/hwsw_functions.d \
 ./src/src/main.d \
 ./src/src/sw_functions.d \
 ./src/src/transmitter.d \
+./src/src/vdma_config.d \
 ./src/src/xgray_scale.d \
 ./src/src/ximage_filter.d \
 ./src/src/xsobel_filter.d 
