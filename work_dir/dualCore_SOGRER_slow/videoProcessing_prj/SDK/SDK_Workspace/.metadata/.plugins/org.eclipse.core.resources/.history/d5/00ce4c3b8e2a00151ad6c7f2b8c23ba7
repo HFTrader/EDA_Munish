@@ -62,7 +62,7 @@ void GrayscaleFilter_VDMA_ISR();
 XGray_scale xGrayScaleFilter;
 
 // NOTE: this should be generated even if there are no HAs in the design..if that is the case then this would be an empty-body function
-void HA_Initialize(XScuGic *InterruptController, unsigned short horizontalActiveTime, unsigned short verticalActiveTime);
+void HA_Initialize(XScuGic &InterruptController, unsigned short horizontalActiveTime, unsigned short verticalActiveTime);
 
 
 

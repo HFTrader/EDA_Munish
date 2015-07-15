@@ -1,5 +1,5 @@
 #include "hwsw_functions.h"
-#include <stdlib.h>
+#include <stdio.h>
 
 #if 1
 // NOTE: if Grayscale HA is present
@@ -120,30 +120,15 @@ void GrayscaleFilter_Init(unsigned short horizontalActiveTime, unsigned short ve
 
 
 
-void HA_Initialize(XScuGic *InterruptController, unsigned short horizontalActiveTime, unsigned short verticalActiveTime) {
-	int Status;
+void HA_Initialize(unsigned short horizontalActiveTime, unsigned short verticalActiveTime) {
 	// NOTE: only if Sobel HA is present
 	SobelFilter_Init(horizontalActiveTime, verticalActiveTime);
-	Status = XScuGic_Connect(InterruptController, SobelFilter_VDMA_INTR_ID, (Xil_ExceptionHandler)SobelFilter_VDMA_ISR, (void *)InterruptController);
-	if (Status != XST_SUCCESS) {
-		exit(1);
-	}
-	XScuGic_Enable(InterruptController, SobelFilter_VDMA_INTR_ID);
 	// NOTE: only if Erode HA is present
 	ImageFilter_Init(horizontalActiveTime, verticalActiveTime);
-	Status = XScuGic_Connect(InterruptController, ImageFilter_VDMA_INTR_ID, (Xil_ExceptionHandler)ImageFilter_VDMA_ISR, (void *)InterruptController);
-	if (Status != XST_SUCCESS) {
-		exit(1);
-	}
-	XScuGic_Enable(InterruptController, ImageFilter_VDMA_INTR_ID);
 	// NOTE: only if Grayscale HA is present
 	GrayscaleFilter_Init(horizontalActiveTime, verticalActiveTime);
-	Status = XScuGic_Connect(InterruptController, GrayscaleFilter_VDMA_INTR_ID, (Xil_ExceptionHandler)GrayscaleFilter_VDMA_ISR, (void *)InterruptController);
-	if (Status != XST_SUCCESS) {
-		exit(1);
-	}
-	XScuGic_Enable(InterruptController, GrayscaleFilter_VDMA_INTR_ID);
 }
+
 
 // NOTE: only if Sobel HA is present
 void SobelFilter_VDMA_ISR(void * baseaddr_p)

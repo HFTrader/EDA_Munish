@@ -138,6 +138,7 @@ int main()
 	SetVideoResolution(RESOLUTION_640x480);
 	h_ActiveTime = detailedTiming[currentResolution][H_ACTIVE_TIME];
 	v_ActiveTime = detailedTiming[currentResolution][V_ACTIVE_TIME];
+	HA_Initialize(h_ActiveTime, v_ActiveTime);				// initializes the HW Accelerators setup in the SoC
 
 	/* Initialize the interrupt controller */
 	xstatus = ScuGicInterrupt_Init();
@@ -145,8 +146,6 @@ int main()
 		xil_printf("Unable to initialize Interrupts");
 	  		//return XST_FAILURE;
 	  	}
-
-	HA_Initialize(&InterruptController, h_ActiveTime, v_ActiveTime);				// initializes the HW Accelerators setup in the SoC
 
 	EnablePerfCounters();
 
@@ -406,6 +405,26 @@ int ScuGicInterrupt_Init()
 			(void *) &InterruptController);
 	XScuGic_Enable(&InterruptController, XPAR_FABRIC_CAM_INTERFACE_0_VSYNC_NEGEDGE_INTR);
 
+//TODO: the ISRs for HA should be registered to the interrupt controller in hwsw_functions.h i.e the application developer shouldnt care about registering them
+// maybe register them in HA_initialize functions
+	Status = XScuGic_Connect(&InterruptController,SobelFilter_VDMA_INTR_ID,
+			(Xil_ExceptionHandler)SobelFilter_VDMA_ISR,
+			(void *) &InterruptController);
+	XScuGic_Enable(&InterruptController, SobelFilter_VDMA_INTR_ID);
+
+
+	Status = XScuGic_Connect(&InterruptController,ImageFilter_VDMA_INTR_ID,
+			(Xil_ExceptionHandler)ImageFilter_VDMA_ISR,
+			(void *) &InterruptController);
+	XScuGic_Enable(&InterruptController, ImageFilter_VDMA_INTR_ID);
+
+	Status = XScuGic_Connect(&InterruptController,GrayscaleFilter_VDMA_INTR_ID,
+			(Xil_ExceptionHandler)GrayscaleFilter_VDMA_ISR,
+			(void *) &InterruptController);
+	XScuGic_Enable(&InterruptController, GrayscaleFilter_VDMA_INTR_ID);
+
+
+
 // 	Enable interrupts in the ARM
 	Xil_ExceptionEnable();
 
@@ -470,7 +489,8 @@ int APP_ChangeResolution (void)
 			SetVideoResolution(receivedChar - 0x30);
 			h_ActiveTime = detailedTiming[currentResolution][H_ACTIVE_TIME];
 			v_ActiveTime = detailedTiming[currentResolution][V_ACTIVE_TIME];
-			HA_Initialize(&InterruptController, h_ActiveTime, v_ActiveTime);
+			//TODO: check if following makes sense!
+			//HA_Initialize(h_ActiveTime, v_ActiveTime);
 
 			DBG_MSG("Resolution was changed to %s \r\n", resolutions[receivedChar - 0x30]);
 		}
@@ -484,7 +504,8 @@ int APP_ChangeResolution (void)
 				SetVideoResolution(RESOLUTION_640x480);
 				h_ActiveTime = detailedTiming[currentResolution][H_ACTIVE_TIME];
 				v_ActiveTime = detailedTiming[currentResolution][V_ACTIVE_TIME];
-				HA_Initialize(&InterruptController, h_ActiveTime, v_ActiveTime);
+				//TODO: check if following makes sense!
+				//HA_Initialize(h_ActiveTime, v_ActiveTime);
 
 				DBG_MSG("Resolution was changed to %s \r\n", resolutions[0]);
 			}
@@ -530,7 +551,8 @@ void processFrame(unsigned char CPU_id) {
 	} //else (.......for more CPUs.......)
 
 
-	ConfigHdmiVDMA (h_ActiveTime, v_ActiveTime, frameBaseaddr);
+	//ConfigHdmiVDMA (h_ActiveTime, v_ActiveTime, frameBaseaddr);
+	ConfigHdmiVDMA (h_ActiveTime, v_ActiveTime, 0x9000000);
 }
 
 
@@ -538,6 +560,7 @@ void processFrame(unsigned char CPU_id) {
 
 
 //TODO: generic use of both CPUs......also should be scalable to more cores.......cpu*_busy_processing_frame should be automated etc.
+
 
 
 

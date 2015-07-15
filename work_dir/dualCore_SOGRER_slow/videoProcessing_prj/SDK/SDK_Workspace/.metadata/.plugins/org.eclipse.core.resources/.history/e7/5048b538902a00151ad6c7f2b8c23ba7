@@ -65,6 +65,7 @@ void hwErode(unsigned long ImgIn_BaseAddr, unsigned long ImgOut_BaseAddr, unsign
 
 
 
+//TODO: configure Interrupt Controller (provided as a function argument) by the application developer to connect the HA ISRs in following Init functions!!
 // NOTE: only generate this if Sobel HA is present
 void SobelFilter_Init(unsigned short horizontalActiveTime, unsigned short verticalActiveTime) {
 	SobelFilter_busy = 0;

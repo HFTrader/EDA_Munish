@@ -13,7 +13,6 @@
 // NOTE: following files are always included even if no HA is in the design
 #include "sw_functions.h"
 #include "vdma_config.h"
-#include "xscugic.h"
 // NOTE: the vdma_config contains API to configure the VDMAs associated with each of the HA present in the design
 
 
@@ -62,7 +61,7 @@ void GrayscaleFilter_VDMA_ISR();
 XGray_scale xGrayScaleFilter;
 
 // NOTE: this should be generated even if there are no HAs in the design..if that is the case then this would be an empty-body function
-void HA_Initialize(XScuGic *InterruptController, unsigned short horizontalActiveTime, unsigned short verticalActiveTime);
+void HA_Initialize(XScuGic &InterruptController, unsigned short horizontalActiveTime, unsigned short verticalActiveTime);
 
 
 
