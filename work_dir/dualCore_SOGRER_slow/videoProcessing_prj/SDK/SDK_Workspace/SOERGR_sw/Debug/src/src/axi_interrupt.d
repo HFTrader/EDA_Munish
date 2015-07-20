@@ -21,7 +21,10 @@ src/src/axi_interrupt.d: ../src/src/axi_interrupt.c \
  /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER_slow/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc/tx_lib.h \
  /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER_slow/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc/atv_common.h \
  /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER_slow/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc/profile_cnt.h \
- /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER_slow/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc/global.h
+ /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER_slow/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc/global.h \
+ /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER_slow/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc/SoCProc_support.h \
+ /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER_slow/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc/ZYNQ_ARM_CORTEX_A9_support.h \
+ /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER_slow/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc/XIL_MICROBLAZE_8_5_support.h
 
 /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER_slow/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc/axi_interrupt.h:
 
@@ -68,3 +71,9 @@ src/src/axi_interrupt.d: ../src/src/axi_interrupt.c \
 /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER_slow/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc/profile_cnt.h:
 
 /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER_slow/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc/global.h:
+
+/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER_slow/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc/SoCProc_support.h:
+
+/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER_slow/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc/ZYNQ_ARM_CORTEX_A9_support.h:
+
+/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER_slow/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc/XIL_MICROBLAZE_8_5_support.h:

@@ -1,0 +1,36 @@
+/*
+ * ZYNQ_ARM_CORTEX_A9_support.h
+ *
+ *  Created on: Jul 17, 2015
+ *      Author: ga38qoh
+ */
+
+// this module contains code that is used to initialize and activate an ARM CortexA9 core on Zynq chip
+
+#ifndef ZYNQ_ARM_CORTEX_A9_SUPPORT_H_
+#define ZYNQ_ARM_CORTEX_A9_SUPPORT_H_
+
+#define sev() __asm__("sev")
+#define ZYNQ_BOOT_ADDR 0xffffff00			// or 0xffffff34 depending on Zynq FPGA (can be found easily by using SystemDebugger session in Xilinx SDK)!!
+
+
+// functions that will be run by MasterCPU
+void ZYNQ_ARM_CORTEX_A9_initialize(unsigned int MEM_BASEADDR);
+void ZYNQ_ARM_CORTEX_A9_process(unsigned char *busy, unsigned int MEM_BASEADDR);
+// TODO: for now hardcoding the function pointer to processFrame........Later make this function which could be any function defined by the Application Developer
+void ZYNQ_ARM_VCORTEX_A9_registerDataProcessingChain(void (*ptr)(unsigned int));
+
+// global variables for this module
+unsigned int CORE_MEM_BASEADDR;					// each time either "*_initialize()" or "*_process" is called this will be updated with the core instance's MEM_BASEADDR in those functions which will be passed by the callee i.e SoCProc_support module that has info for all Processors in SoC
+													// this makes sense if there are 2 or more Processors instances of ZYNQ_ARM_CORTEX_A9 type in SoC then each would have its own separate private memory space....this space would be defined by "SoCProc_support.h" and whenever it calls this module method, it has to provide that space's baseaddress
+													// the core's module should store this address into its local variable ASAP to avoid conflicts if another core module is also doing some processing using its own Memory space!
+void (*dataProcChain_Ptr)(unsigned int);			// can afford to store function pointer passed to dataProcChain function (defined by App developer) in global variable as the data processing method would remain same through out the application
+
+
+// functions that will be run by this Core
+void Powerup();
+void XilinxBSP_Bootup();
+
+void preProcess();
+void mainProcess(unsigned int MEM_BASEADDR);
+#endif /* ZYNQ_ARM_CORTEX_A9_SUPPORT_H_ */

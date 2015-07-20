@@ -4,6 +4,9 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../src/src/SoCProc_support.c \
+../src/src/XIL_MICROBLAZE_8_5_support.c \
+../src/src/ZYNQ_ARM_CORTEX_A9_support.c \
 ../src/src/axi_interrupt.c \
 ../src/src/cf_hdmi.c \
 ../src/src/hwsw_functions.c \
@@ -16,6 +19,9 @@ C_SRCS += \
 ../src/src/xsobel_filter.c 
 
 OBJS += \
+./src/src/SoCProc_support.o \
+./src/src/XIL_MICROBLAZE_8_5_support.o \
+./src/src/ZYNQ_ARM_CORTEX_A9_support.o \
 ./src/src/axi_interrupt.o \
 ./src/src/cf_hdmi.o \
 ./src/src/hwsw_functions.o \
@@ -28,6 +34,9 @@ OBJS += \
 ./src/src/xsobel_filter.o 
 
 C_DEPS += \
+./src/src/SoCProc_support.d \
+./src/src/XIL_MICROBLAZE_8_5_support.d \
+./src/src/ZYNQ_ARM_CORTEX_A9_support.d \
 ./src/src/axi_interrupt.d \
 ./src/src/cf_hdmi.d \
 ./src/src/hwsw_functions.d \

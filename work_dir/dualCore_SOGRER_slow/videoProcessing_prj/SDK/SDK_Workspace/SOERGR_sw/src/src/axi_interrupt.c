@@ -16,6 +16,7 @@
 
 #include "profile_cnt.h"
 #include "global.h"
+#include "SoCProc_support.h"
 
 
 /************************** Function Definitions ***************************/
@@ -62,33 +63,16 @@ void AXI_INTERRUPT_EnableInterrupt(void * baseaddr_p)
 unsigned int t=0;
 void AXI_INTERRUPT_VsyncIntr_Handler(void * baseaddr_p)
 {
-#if NUM_CPUS == 2
-	static void (*funcPtr_CPU1proc)() = CPU1_ISR;
-#endif
 	debug_frameNo++;
-
-	if (cpu0_busy_processing_frame == 1) {
-#if NUM_CPUS==2
-		if (cpu1_busy_processing_frame == 0) {
-			cpu1_busy_processing_frame = 1;
-
-			// interrupt cpu1 to start processing this frame
-			Xil_Out32(0xfffffff0, (u32) funcPtr_CPU1proc);
-			dmb();		// wait for memory write to finish!...........very important before issuing SEV().......DON'T REMOVE THIS!!
-			sev();
-		} else {// else skip frame
-			//printf("skipping frame=%d\n\r", debug_frameNo);
-		}
-#else
-		//printf("skipping frame=%d\n\r", debug_frameNo);
-#endif
-	} else if (FRAME_INTR == 0) {
-		cpu0_busy_processing_frame = 1;
-
-		// interrupt cpu0 to start processing this frame
+	if (FRAME_INTR == 0) {	// master CPU is free!!
 		FRAME_INTR = 1;
+	} else {	// master CPU is busy so use other Processor in the SoC..if none is free/available then skip this frame for processing
+		// for using other Processors in the SoC, using the API provided in "SoCProc_support.h"
+		unsigned char SoCProc_status = SoCProc_processDataflow();
+		if (SoCProc_status == 0) {
+			printf("Skipping frame%d\r\n", debug_frameNo);
+		}
 	}
-
 }
 
 

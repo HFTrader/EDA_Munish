@@ -10,6 +10,7 @@
 #include "xil_cache.h"
 #include "xdmaps.h"
 #include "profile_cnt.h"
+#include "helper_funcs.h"
 
 /******************* Macros and Constants Definitions ************************/
 
@@ -39,29 +40,6 @@ void ConvToGray(unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr,
 	  		}
 	  	  }
 	  	}
-}
-/* *** Imititating the Vivado_HLS implementation of grayscale conversion
- * Converts the Raw image to Gray scale and writes back to DDR
- * at a different location
- */
-void ConvToGrayHLS(unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr,unsigned short horizontalActiveTime)
-{
-	int i,j,V_offset;
-	//kernel_CvtColor<CONVERSION>  kernel_opr;
-	int    	cols=640;
-	int   	rows=480;
-	float 	par[3] = {0.114,0.587,0.299};
-
-	int _s;	// src pixel
-	int _d;	// dst pixel
-	for(i= 0; i < rows; i++) {
-		V_offset = i * horizontalActiveTime;
-		for (j= 0; j < cols; j++) {
-			_s	= Xil_In32(ImgIn_BaseAddr + (V_offset + j) * 4); //Get the colored image pixel
-			kernel_apply(&_s,&_d, par);
-			Xil_Out32( ImgOut_BaseAddr + ((V_offset+j) * 4) , _d ); // write to another locationgray pixel
-		}
-	}
 }
 
 
@@ -267,5 +245,6 @@ void SampleFunction(unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr,
 	  	  }
 	  	}
 }
+
 
 

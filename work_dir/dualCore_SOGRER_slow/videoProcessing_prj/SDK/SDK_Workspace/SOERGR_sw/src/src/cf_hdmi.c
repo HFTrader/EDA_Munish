@@ -197,16 +197,6 @@ void InitHdmiVideoPcore(
 	unsigned short verticalDeMin	   = 0;
 	unsigned short verticalDeMax	   = 0;
 
-	unsigned char num_cpus = (unsigned char) NUM_CPUS;
-	unsigned int baseAddr = VIDEO_BASEADDR_CPU0;
-
-	int i;
-	for (i=0; i<num_cpus; i++) {
-		ResetImageSpace(baseAddr + 4*FRAME_SIZE*i, horizontalActiveTime, verticalActiveTime);
-		DDRVideoWr(640,480,horizontalActiveTime, verticalActiveTime, baseAddr + 4*FRAME_SIZE*i);
-	}
-
-
 
 	horizontalCount = horizontalActiveTime +
 					  horizontalBlankingTime;
