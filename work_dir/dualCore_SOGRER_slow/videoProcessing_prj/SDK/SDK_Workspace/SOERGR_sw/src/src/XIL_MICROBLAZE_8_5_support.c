@@ -6,7 +6,7 @@
  */
 
 
-void XIL_MICROBLAZE_8_5_initialize(void(*ptr)(unsigned int)) {
+void XIL_MICROBLAZE_8_5_initialize() {
 
 }
 void XIL_MICROBLAZE_8_5_process() {

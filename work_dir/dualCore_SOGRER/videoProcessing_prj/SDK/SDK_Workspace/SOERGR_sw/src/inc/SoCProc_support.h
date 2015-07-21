@@ -29,9 +29,7 @@ typedef struct {
 SoCProc *SoCProc_elements;
 
 // API for application developer
-// NOTE: the signature for function pointer in _initialize function argument should be got from "sw_functions.h" where the app developer should provide function signature for main data processing chain method
-void SoCProc_initialize(void(*ptr)(unsigned int));
-// NOTE: create callback function pointer from "sw_functions.h"
+void SoCProc_initialize();
 unsigned char SoCProc_processDataflow();
 
 

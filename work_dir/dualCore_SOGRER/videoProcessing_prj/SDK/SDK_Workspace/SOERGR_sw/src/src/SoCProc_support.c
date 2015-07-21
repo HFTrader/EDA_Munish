@@ -12,7 +12,7 @@
 
 
 
-void SoCProc_initialize(void(*ptr)(unsigned int)) {
+void SoCProc_initialize() {
 	int delay;
 	SoCProc_elements = malloc(sizeof(SoCProc)*NUM_PROCS);
 	// NOTE: if ZYNQ-ARM CortexA9 core available in SoC
@@ -20,14 +20,14 @@ void SoCProc_initialize(void(*ptr)(unsigned int)) {
 	SoCProc_elements[0].m_id = 1;
 	SoCProc_elements[0].m_busy = 0;
 	SoCProc_elements[0].m_MEM_BASEADDR = 0x10000000;				//NOTE: this would be got from "SoC_config.h"
-	ZYNQ_ARM_CORTEX_A9_initialize(ptr, SoCProc_elements[0].m_MEM_BASEADDR);
+	ZYNQ_ARM_CORTEX_A9_initialize(SoCProc_elements[0].m_MEM_BASEADDR);
 	for (delay=0; delay<10000; delay++);				// to ensure that the core is properly initialized before moving onto initializing other core (makes sense for similar cores being initialized by same "*_support.h" modules)
 	// NOTE: if Xilinx Microblaze 8.5 IP core available in SoC
 	SoCProc_elements[1].m_type = XIL_MICROBLAZE_8_5;
 	SoCProc_elements[1].m_id = 2;
 	SoCProc_elements[1].m_busy = 0;
 	SoCProc_elements[1].m_MEM_BASEADDR = 0x20000000;				//NOTE: this would be got from "SoC_config.h"
-	XIL_MICROBLAZE_8_5_initialize(ptr);
+	XIL_MICROBLAZE_8_5_initialize();
 	for (delay=0; delay<10000; delay++);
 }
 
@@ -44,7 +44,7 @@ unsigned char SoCProc_processDataflow() {
 			}
 			// NOTE: if Xilinx Microblaze 8.5 IP core available in SoC
 			if (SoCProc_elements[i].m_type == XIL_MICROBLAZE_8_5) {
-				XIL_MICROBLAZE_8_5_process(&SoCProc_elements[i].m_busy, SoCProc_elements[i].m_MEM_BASEADDR);
+				XIL_MICROBLAZE_8_5_process();
 			}
 			return 1;
 		}

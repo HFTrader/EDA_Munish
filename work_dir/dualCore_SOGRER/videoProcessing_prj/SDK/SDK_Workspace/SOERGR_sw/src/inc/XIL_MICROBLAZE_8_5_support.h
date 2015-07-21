@@ -10,7 +10,7 @@
 #ifndef XIL_MICROBLAZE_8_5_SUPPORT_H_
 #define XIL_MICROBLAZE_8_5_SUPPORT_H_
 
-void XIL_MICROBLAZE_8_5_initialize(void(*ptr)(unsigned int));
+void XIL_MICROBLAZE_8_5_initialize();
 void XIL_MICROBLAZE_8_5_process();
 
 

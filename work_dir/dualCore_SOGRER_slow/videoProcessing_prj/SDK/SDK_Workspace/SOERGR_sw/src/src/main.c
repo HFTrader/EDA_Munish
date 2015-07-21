@@ -86,7 +86,7 @@ int main()
 	Xil_ICacheEnable();
 	Xil_DCacheEnable();
 
-	SoCProc_initialize(processFrame);		// initializes all the other processing entities in the SoC so that they are ready to execute data processing chain if they are free
+	SoCProc_initialize();		// initializes all the other processing entities in the SoC so that they are ready to execute data processing chain if they are free
 
 	HAL_PlatformInit(XPAR_AXI_IIC_0_BASEADDR,	/* Perform any required platform init */
 					 XPAR_SCUTIMER_DEVICE_ID,	/* including hardware reset to HDMI devices */
