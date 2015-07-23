@@ -1,0 +1,231 @@
+package TemplateEngine;
+
+
+
+import java.util.HashMap;
+import java.util.Map;
+import java.lang.StringBuilder;
+
+import org.eclipse.cdt.core.dom.ast.IASTTranslationUnit;
+import org.eclipse.cdt.core.dom.ast.cpp.ICPPASTDeclarator;
+import org.eclipse.cdt.core.dom.ast.cpp.ICPPASTParameterDeclaration;
+import org.eclipse.cdt.core.dom.ast.gnu.cpp.GPPLanguage;
+import org.eclipse.cdt.core.parser.DefaultLogService;
+import org.eclipse.cdt.core.parser.FileContent;
+import org.eclipse.cdt.core.parser.IParserLogService;
+import org.eclipse.cdt.core.parser.IScannerInfo;
+import org.eclipse.cdt.core.parser.IncludeFileContentProvider;
+import org.eclipse.cdt.core.parser.ScannerInfo;
+import org.eclipse.core.runtime.CoreException;
+import org.eclipse.cdt.core.dom.ast.IASTDeclaration;
+import org.eclipse.cdt.internal.core.dom.parser.cpp.CPPASTSimpleDeclaration;
+import org.eclipse.cdt.core.dom.ast.IASTDeclarator;
+import org.eclipse.cdt.internal.core.dom.parser.cpp.CPPASTFunctionDeclarator;
+import org.eclipse.cdt.core.dom.ast.IASTDeclSpecifier;
+import org.eclipse.cdt.internal.core.dom.parser.cpp.CPPASTSimpleDeclSpecifier;
+import org.eclipse.cdt.core.dom.ast.IASTPointerOperator;
+
+
+
+public class TemplateEngine {	
+	Map<String, Object> templateDataModel = new HashMap<String, Object>();			// to store the data model that would be used by the freemarker template engine to generate the Embedded-C source code
+
+	
+    public static void main( String[] args ) throws CoreException {
+		// reading in the "sw_functions.h" file provided by Application Developer
+    	// TODO: path location should be automated
+    	FileContent fileContent = FileContent.createForExternalFileLocation("./docs/sw_functions.h");
+    	
+    	// extracting Eclipse CDT parser's translationUnit (AST)
+    	Map definedSymbols = new HashMap();
+    	String[] includePaths = new String[0];
+    	IScannerInfo info = new ScannerInfo(definedSymbols, includePaths);    	
+    	IParserLogService log = new DefaultLogService();
+    	IncludeFileContentProvider emptyIncludes = IncludeFileContentProvider.getEmptyFilesProvider();
+    	int opts = 8;
+    	IASTTranslationUnit translationUnit = GPPLanguage.getDefault().getASTTranslationUnit(fileContent, info, emptyIncludes, null, opts, log);
+    	
+		// generating the data model for template generation using translationUnit
+		createModel(translationUnit);
+    }
+
+    
+	public static void createModel(IASTTranslationUnit tu) {
+		
+		
+		IASTDeclaration[] declarations = tu.getDeclarations();	// extracting all the declarations in the provided source file
+		FunctionSpecifier[] functionsForDatamodel = new FunctionSpecifier[declarations.length]; 
+		
+		int index = 0;		
+		for (IASTDeclaration iastdeclaration : declarations) {			// iterating over each function declaration
+			// for each function declaration, get
+			// a) name
+			// b) return type
+			// c) parameter names
+			// d) parameter types
+			// store each of these function data in the model and then return it to the callee
+			
+			
+			// TODO: for now all the function declarations are found to be of CPPASTSimpleDeclaration type.....what about other types?			
+			if (iastdeclaration instanceof CPPASTSimpleDeclaration) {
+				CPPASTSimpleDeclaration declaration = (CPPASTSimpleDeclaration) iastdeclaration;
+				
+				// TODO: for now all the function declaration specifiers are found to be of CPPASTSimpleDeclSpecifier type.....what about other types?
+				CPPASTSimpleDeclSpecifier declSpecifier = (CPPASTSimpleDeclSpecifier) declaration.getDeclSpecifier();
+				IASTDeclarator[] declarators = declaration.getDeclarators();
+				// we expect only 1 declarator for each declaration
+				assert (declarators.length == 1);
+				// TODO: for now all the function declarators are found to be of CPPASTFunctionDeclarator type.....what about other types?
+				if (declarators[0] instanceof CPPASTFunctionDeclarator) {
+					CPPASTFunctionDeclarator declarator = (CPPASTFunctionDeclarator) declarators[0];
+					 
+
+					functionsForDatamodel[index] = new FunctionSpecifier();
+					// getting function name from declarator
+					functionsForDatamodel[index].name = declarator.getName().toString();
+					// getting return type from declarator and declSpecifier
+					functionsForDatamodel[index].returnType = datatypeParse(declarator, declSpecifier);
+					
+					// getting parameters from declarator
+					ICPPASTParameterDeclaration[] parameters = declarator.getParameters();
+					ParameterSpecifier[] parametersForFunction = new ParameterSpecifier[parameters.length];
+					
+					int paramIndex = 0;
+					for (ICPPASTParameterDeclaration parameter : parameters) {
+						ICPPASTDeclarator paramDeclarator = parameter.getDeclarator();
+						CPPASTSimpleDeclSpecifier paramDeclSpecifier = (CPPASTSimpleDeclSpecifier) parameter.getDeclSpecifier();
+						
+						parametersForFunction[paramIndex].name = paramDeclarator.getName().toString();
+						parametersForFunction[paramIndex].dataType = datatypeParse(paramDeclarator, paramDeclSpecifier);
+						
+						paramIndex++;
+					}
+					
+					functionsForDatamodel[index].parameters = parametersForFunction;					
+				} else {
+					assert false;
+				}
+					
+			}
+			
+			index++;
+		}
+		
+		
+	}
+	
+	public static String datatypeParse (IASTDeclarator declarator, CPPASTSimpleDeclSpecifier declSpecifier) {
+		StringBuilder retString = new StringBuilder();
+		
+		if (!(declarator instanceof CPPASTFunctionDeclarator || declarator instanceof ICPPASTDeclarator)) { 		// for function return datatype as well as argument/parameter datatype this should be true
+			assert false;
+		}
+		
+
+		switch (declSpecifier.getType()) {
+			case 1:			// void
+				retString.append("void ");
+				break;
+			case 2:			// char
+				if (declSpecifier.isSigned()) {
+					retString.append("signed ");
+				} else if (declSpecifier.isUnsigned()) {
+					retString.append("unsigned ");
+				}
+				retString.append("char ");
+				break;
+			case 3:			// int
+				if (declSpecifier.isSigned()) {
+					retString.append("signed ");
+				} else if (declSpecifier.isUnsigned()) {
+					retString.append("unsigned ");
+				} 
+				if (declSpecifier.isShort()) {
+					retString.append("short ");
+				} else if (declSpecifier.isLong()) {
+					retString.append("long ");
+				} else if (declSpecifier.isLongLong()) {
+					retString.append("long long");
+				}
+				retString.append("int ");
+				break;
+			case 4:			// float
+				retString.append("float ");
+				break;
+			case 5:			// double
+				retString.append("double ");
+				break;
+			default:
+				assert false;
+				break;
+		}
+		
+		// figuring out whether this if pointer type
+		boolean isPtr;
+		IASTPointerOperator[] ptrOperator = declarator.getPointerOperators();
+		isPtr = (ptrOperator.length != 0) ? true : false;		
+		if (isPtr) {
+			retString.append("* ");
+		}
+		
+		
+		
+		return retString.toString();
+	}
+	
+	
+	
+}        
+    
+
+
+
+    
+
+
+class FunctionSpecifier {
+	private String name;
+	private String returnType;
+	private ParameterSpecifier[] parameters;
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	public void setReturnType(String retType) {
+		this.returnType = retType;
+	}
+	public void setParameters(ParameterSpecifier[] params) {
+		this.parameters = params;
+	}
+	public String getName() {
+		return this.name;
+	}
+	public String getReturnType() {
+		return this.returnType;
+	}
+	public ParameterSpecifier[] getParameters() {
+		return this.parameters;
+	}	
+}
+
+
+class ParameterSpecifier {
+	private String name;
+	private String dataType;
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	public void setDataType(String dataType) {
+		this.dataType = dataType;
+	}
+	public String getName() {
+		return this.name;
+	}
+	public String getDataType() {
+		return this.dataType;
+	}
+}
+
+    
+    

@@ -1,0 +1,59 @@
+package TemplateEngine;
+
+
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.eclipse.cdt.core.dom.ast.IASTTranslationUnit;
+import org.eclipse.cdt.core.dom.ast.gnu.cpp.GPPLanguage;
+import org.eclipse.cdt.core.parser.DefaultLogService;
+import org.eclipse.cdt.core.parser.FileContent;
+import org.eclipse.cdt.core.parser.IParserLogService;
+import org.eclipse.cdt.core.parser.IScannerInfo;
+import org.eclipse.cdt.core.parser.IncludeFileContentProvider;
+import org.eclipse.cdt.core.parser.ScannerInfo;
+import org.eclipse.core.runtime.CoreException;
+
+
+
+public class TemplateEngine {	
+	Map<String, String> templateDataModel = new HashMap<String, String>();			// to store the data model that would be used by the freemarker template engine to generate the Embedded-C source code
+	
+    public static void main( String[] args ) throws CoreException {
+		// reading in the "sw_functions.h" file provided by Application Developer
+    	FileContent fileContent = FileContent.createForExternalFileLocation("./docs/sw_functions.h");
+    	
+    	// extracting Eclipse CDT parser's translationUnit (AST)
+    	Map definedSymbols = new HashMap();
+    	String[] includePaths = new String[0];
+    	IScannerInfo info = new ScannerInfo(definedSymbols, includePaths);    	
+    	IParserLogService log = new DefaultLogService();
+    	IncludeFileContentProvider emptyIncludes = IncludeFileContentProvider.getEmptyFilesProvider();
+    	int opts = 8;
+    	IASTTranslationUnit translationUnit = GPPLanguage.getDefault().getASTTranslationUnit(fileContent, info, emptyIncludes, null, opts, log);
+    	
+    	generateDataModel(translationUnit);
+    }
+
+    public generateDataModel(IASTTranslationUnit translationUnit) {
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

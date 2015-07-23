@@ -36,7 +36,7 @@ all: video_filter_sw_cpu1.elf secondary-outputs
 video_filter_sw_cpu1.elf: $(OBJS) ../src/lscript.ld $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: ARM gcc linker'
-	arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_cpu1/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_amp_bsp_0/ps7_cortexa9_1/lib -o "video_filter_sw_cpu1.elf" $(OBJS) $(USER_OBJS) $(LIBS)
+	arm-xilinx-eabi-gcc -L"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_cpu1/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_amp_bsp_0/ps7_cortexa9_1/lib -o "video_filter_sw_cpu1.elf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 

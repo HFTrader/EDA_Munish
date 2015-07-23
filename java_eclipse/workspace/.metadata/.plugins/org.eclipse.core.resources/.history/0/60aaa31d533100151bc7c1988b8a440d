@@ -1,0 +1,154 @@
+package TemplateEngine;
+
+
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.eclipse.cdt.core.dom.ast.IASTTranslationUnit;
+import org.eclipse.cdt.core.dom.ast.gnu.cpp.GPPLanguage;
+import org.eclipse.cdt.core.parser.DefaultLogService;
+import org.eclipse.cdt.core.parser.FileContent;
+import org.eclipse.cdt.core.parser.IParserLogService;
+import org.eclipse.cdt.core.parser.IScannerInfo;
+import org.eclipse.cdt.core.parser.IncludeFileContentProvider;
+import org.eclipse.cdt.core.parser.ScannerInfo;
+import org.eclipse.core.runtime.CoreException;
+import org.eclipse.cdt.core.dom.ast.IASTDeclaration;
+import org.eclipse.cdt.internal.core.dom.parser.cpp.CPPASTSimpleDeclaration;
+import org.eclipse.cdt.core.dom.ast.IASTDeclarator;
+import org.eclipse.cdt.internal.core.dom.parser.cpp.CPPASTFunctionDeclarator;
+
+
+
+public class TemplateEngine {	
+	Map<String, String> templateDataModel = new HashMap<String, String>();			// to store the data model that would be used by the freemarker template engine to generate the Embedded-C source code
+	
+	
+
+	
+    public static void main( String[] args ) throws CoreException {
+		// reading in the "sw_functions.h" file provided by Application Developer
+    	// TODO: path location should be automated
+    	FileContent fileContent = FileContent.createForExternalFileLocation("./docs/sw_functions.h");
+    	
+    	// extracting Eclipse CDT parser's translationUnit (AST)
+    	Map definedSymbols = new HashMap();
+    	String[] includePaths = new String[0];
+    	IScannerInfo info = new ScannerInfo(definedSymbols, includePaths);    	
+    	IParserLogService log = new DefaultLogService();
+    	IncludeFileContentProvider emptyIncludes = IncludeFileContentProvider.getEmptyFilesProvider();
+    	int opts = 8;
+    	IASTTranslationUnit translationUnit = GPPLanguage.getDefault().getASTTranslationUnit(fileContent, info, emptyIncludes, null, opts, log);
+    	
+		// generating the data model for template generation using translationUnit
+    	DataModelExtractor dataModel = new DataModelExtractor(translationUnit);
+    	Map<String, Object> templateDataModel = new HashMap<String, Object> ();
+    	templateDataModel = dataModel.createModel();
+    }
+
+}        
+    
+
+
+class DataModelExtractor {
+	Map<String, String> dataModel = new HashMap<String, String>();
+	IASTTranslationUnit m_tu;
+	
+	
+	public DataModelExtractor(IASTTranslationUnit tu) {
+		m_tu = tu;
+	}
+	
+	public Map<String, Object> createModel() {
+		Map<String, Object> returnMap = new HashMap<String, Object> ();
+		
+		IASTDeclaration[] declarations = m_tu.getDeclarations();	// extracting all the declarations in the provided source file
+		FunctionSpecifier[] functionsForMap = new FunctionSpecifier[declarations.length]; 
+		
+		final int index;
+		for (IASTDeclaration declaration : declarations) {			// iterating over each function declaration
+			// for each function declaration, get
+			// a) name
+			// b) return type
+			// c) parameter names
+			// d) parameter types
+			// store each of these function data in the model and then return it to the callee
+
+			
+
+			// TODO: for now all the function declarations are found to be of CPPASTSimpleDeclaration type.....what about other types?
+			if (declaration instanceof CPPASTSimpleDeclaration) {
+				CPPASTSimpleDeclaration cppsimpledeclaration = (CPPASTSimpleDeclaration) declaration;
+				
+				IASTDeclarator[] declarators = cppsimpledeclaration.getDeclarators();
+				// it is expected that we will always get a single declarator in above so no need to iterate over all declarators.....just use the first element!!
+				if (declarators.length == 0) {
+					//TODO: for now all the function declarators are found to be of CPPASTFunctionDeclarator....what about other types?
+					if (declarators[0] instanceof CPPASTFunctionDeclarator) {
+						CPPASTFunctionDeclarator cppdeclarator = (CPPASTFunctionDeclarator) declarators[0];
+						
+					}
+				} else {
+					assert false;
+				}
+				/*for (IASTDeclarator declarator : declarators) {
+					//System.out.println(declarator.getClass());
+					if (declarator instanceof CPPASTFunctionDeclarator) {
+		  			CPPASTFunctionDeclarator cppfunctiondeclarator = (CPPASTFunctionDeclarator) declarator;
+		  			System.out.println(cppfunctiondeclarator.getName());
+		  			IASTPointerOperator[] cpppointoperators = cppfunctiondeclarator.getPointerOperators();
+		  			for (IASTPointerOperator cpppointoperator : cpppointoperators) {
+		  				System.out.println(cpppointoperator.getRawSignature());
+		  			}
+					}
+					System.out.println("----");
+				}      */
+				
+			}
+			
+			/*IASTDeclSpecifier declspecifier = ((CPPASTSimpleDeclaration) declaration).getDeclSpecifier();
+			if (declspecifier instanceof CPPASTSimpleDeclSpecifier) {
+				CPPASTSimpleDeclSpecifier cppsimpledeclspecifier = (CPPASTSimpleDeclSpecifier) declspecifier;
+				System.out.println(cppsimpledeclspecifier.getType());        		
+			}*/
+			
+			
+			index++;
+		}		
+	}
+}
+    
+    
+    
+
+class DatatypeParse {
+	boolean ptr;
+	int basicDatatype;
+	boolean signedType;
+	boolean unsignedType;
+	boolean longType;
+	boolean shortType;
+	boolean longlongType;
+	
+	/*public String getTypeName() {
+		String retName;        		
+	}*/
+}
+    
+
+
+class FunctionSpecifier {
+	String name;
+	String returnType;
+	ParameterSpecifier[] parameters;
+}
+
+
+class ParameterSpecifier {
+	String name;
+	String returnType;
+}
+
+    
+    

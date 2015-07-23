@@ -3532,3 +3532,633 @@ make: Nothing to be done for `all'.
 22:35:23 **** Incremental Build of configuration Debug for project zynq_fsbl_0 ****
 make all 
 make: Nothing to be done for `all'.
+22:04:30 **** Auto Build of project standalone_amp_bsp_0 ****
+make -k all 
+libgen -hw ../videoProcessing_prj_hw_platform/system.xml\
+	       -lp /home/ga38qoh/EDA_Munish/zedboard_training/ZynqSW/2013_3/Support_documents/sdk_repo\
+	       -pe ps7_cortexa9_1 \
+	       -log libgen.log \
+	       system.mss
+libgen
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: libgen -hw ../videoProcessing_prj_hw_platform/system.xml -lp
+/home/ga38qoh/EDA_Munish/zedboard_training/ZynqSW/2013_3/Support_documents/sdk_r
+epo -pe ps7_cortexa9_1 -log libgen.log system.mss 
+
+ERROR:EDK:3326 -
+   /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/w
+make: *** [ps7_cortexa9_1/lib/libxil.a] Error 2
+make: Target `all' not remade because of errors.
+   ork_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/st
+   andalone_amp_bsp_0/system.mss line 5 - Cannot find MLD file
+   standalone_amp_v2_1_0.mld for the os standalone_amp 3.11.a
+INFO:EDK:1040 - Directories Searched :
+  -
+/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
+_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/standalo
+ne_amp_bsp_0/bsp/standalone_amp_v3_11_a/data
+  -
+/home/ga38qoh/EDA_Munish/zedboard_training/ZynqSW/2013_3/Support_documents/sdk_r
+epo/bsp/standalone_amp_v3_11_a/data
+  - /nfs/tools/xilinx/ise/14.7/ISE_DS/EDK/sw/lib/bsp/standalone_amp_v3_11_a/data
+  -
+/nfs/tools/xilinx/ise/14.7/ISE_DS/EDK/sw/XilinxProcessorIPLib/bsp/standalone_amp
+_v3_11_a/data
+  -
+/nfs/tools/xilinx/ise/14.7/ISE_DS/EDK/sw/ThirdParty/bsp/standalone_amp_v3_11_a/d
+ata
+INFO:EDK:773 - Check the following for possible causes of not finding MLD:
+  - If OS_VER is specified in MSS, it must follow literal form X.YY.Z
+  - There is no OS with given name
+  - OS exists but not that version
+  - OS and version (directory) exist but no MLD is available
+
+ERROR:EDK:1204 - Errors occured while creating Software System.
+22:04:32 **** Auto Build of configuration Debug for project app_cpu1 ****
+make all 
+Building file: ../src/app_cpu1.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_amp_bsp_0/ps7_cortexa9_1/include -MMD -MP -MF"src/app_cpu1.d" -MT"src/app_cpu1.d" -o "src/app_cpu1.o" "../src/app_cpu1.c"
+../src/app_cpu1.c: In function 'main':
+../src/app_cpu1.c:158:6: warning: unused variable 'func_ptr' [-Wunused-variable]
+../src/app_cpu1.c: At top level:
+../src/app_cpu1.c:95:13: warning: 'cpu1_data' defined but not used [-Wunused-variable]
+Finished building: ../src/app_cpu1.c
+ 
+Building target: app_cpu1.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_amp_bsp_0/ps7_cortexa9_1/lib -o "app_cpu1.elf"  ./src/app_cpu1.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: app_cpu1.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size app_cpu1.elf  |tee "app_cpu1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  58392	   2548	  29856	  90796	  162ac	app_cpu1.elf
+Finished building: app_cpu1.elf.size
+ 
+22:04:33 **** Auto Build of project standalone_bsp_0 ****
+make -k all 
+libgen -hw ../videoProcessing_prj_hw_platform/system.xml\
+	       -lp /home/ga38qoh/EDA_Munish/zedboard_training/ZynqSW/2013_3/Support_documents/sdk_repo\
+	       -pe ps7_cortexa9_0 \
+	       -log libgen.log \
+	       system.mss
+libgen
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: libgen -hw ../videoProcessing_prj_hw_platform/system.xml -lp
+/home/ga38qoh/EDA_Munish/zedboard_training/ZynqSW/2013_3/Support_documents/sdk_r
+epo -pe ps7_cortexa9_0 -log libgen.log system.mss 
+
+
+Staging source files.
+Running DRCs.
+Running generate.
+Running post_generate.
+Running include - 'gmake -s include "COMPILER=arm-xilinx-eabi-gcc"
+"ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS= -O2 -c"
+"EXTRA_COMPILER_FLAGS=-g"'.
+
+Running libs - 'gmake -s libs "COMPILER=arm-xilinx-eabi-gcc"
+"ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS= -O2 -c"
+"EXTRA_COMPILER_FLAGS=-g"'.
+Compiling common
+arm-xilinx-eabi-ar: creating ../../../lib/libxil.a
+Compiling standalone
+Compiling axidma
+Compiling iic
+Compiling axivdma
+Compiling devcfg
+Compiling dmaps
+Compiling emacps
+Compiling gpiops
+Compiling iicps
+Compiling qspips
+Compiling scugic
+Compiling scutimer
+Compiling scuwdt
+Compiling ttcps
+Compiling uartps
+Compiling usbps
+Compiling xadcps
+Compiling cpu_cortexa9
+Running execs_generate.
+Finished building libraries
+22:05:05 **** Auto Build of configuration Debug for project app_cpu0 ****
+make all 
+Building file: ../src/app_cpu0.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/app_cpu0.d" -MT"src/app_cpu0.d" -o "src/app_cpu0.o" "../src/app_cpu0.c"
+Finished building: ../src/app_cpu0.c
+ 
+Building target: app_cpu0.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "app_cpu0.elf"  ./src/app_cpu0.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: app_cpu0.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size app_cpu0.elf  |tee "app_cpu0.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  63164	   2264	  29852	  95280	  17430	app_cpu0.elf
+Finished building: app_cpu0.elf.size
+ 
+22:05:09 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building file: ../src/src/axi_interrupt.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/axi_interrupt.d" -MT"src/src/axi_interrupt.d" -o "src/src/axi_interrupt.o" "../src/src/axi_interrupt.c"
+Finished building: ../src/src/axi_interrupt.c
+ 
+Building file: ../src/src/cf_hdmi.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/cf_hdmi.d" -MT"src/src/cf_hdmi.d" -o "src/src/cf_hdmi.o" "../src/src/cf_hdmi.c"
+Finished building: ../src/src/cf_hdmi.c
+ 
+Building file: ../src/src/hw_config.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/hw_config.d" -MT"src/src/hw_config.d" -o "src/src/hw_config.o" "../src/src/hw_config.c"
+Finished building: ../src/src/hw_config.c
+ 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+Finished building: ../src/src/main.c
+ 
+Building file: ../src/src/sw_functions.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/sw_functions.d" -MT"src/src/sw_functions.d" -o "src/src/sw_functions.o" "../src/src/sw_functions.c"
+../src/src/sw_functions.c:4:1: warning: "/*" within comment [-Wcomment]
+../src/src/sw_functions.c: In function 'SampleFunction':
+../src/src/sw_functions.c:158:16: warning: unused variable 'VH_offset' [-Wunused-variable]
+Finished building: ../src/src/sw_functions.c
+ 
+Building file: ../src/src/transmitter.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/transmitter.d" -MT"src/src/transmitter.d" -o "src/src/transmitter.o" "../src/src/transmitter.c"
+Finished building: ../src/src/transmitter.c
+ 
+Building file: ../src/inc/xgray_scale.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/inc/xgray_scale.d" -MT"src/inc/xgray_scale.d" -o "src/inc/xgray_scale.o" "../src/inc/xgray_scale.c"
+Finished building: ../src/inc/xgray_scale.c
+ 
+Building target: video_filter_sw.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw.elf  |tee "video_filter_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107296	   1888	  34428	 143612	  230fc	video_filter_sw.elf
+Finished building: video_filter_sw.elf.size
+ 
+22:05:18 **** Auto Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+Building file: ../src/src/axi_interrupt.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/axi_interrupt.d" -MT"src/src/axi_interrupt.d" -o "src/src/axi_interrupt.o" "../src/src/axi_interrupt.c"
+Finished building: ../src/src/axi_interrupt.c
+ 
+Building file: ../src/src/cf_hdmi.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/cf_hdmi.d" -MT"src/src/cf_hdmi.d" -o "src/src/cf_hdmi.o" "../src/src/cf_hdmi.c"
+Finished building: ../src/src/cf_hdmi.c
+ 
+Building file: ../src/src/hw_config.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/hw_config.d" -MT"src/src/hw_config.d" -o "src/src/hw_config.o" "../src/src/hw_config.c"
+Finished building: ../src/src/hw_config.c
+ 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+Finished building: ../src/src/main.c
+ 
+Building file: ../src/src/sw_functions.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/sw_functions.d" -MT"src/src/sw_functions.d" -o "src/src/sw_functions.o" "../src/src/sw_functions.c"
+../src/src/sw_functions.c:4:1: warning: "/*" within comment [-Wcomment]
+../src/src/sw_functions.c: In function 'SampleFunction':
+../src/src/sw_functions.c:158:16: warning: unused variable 'VH_offset' [-Wunused-variable]
+Finished building: ../src/src/sw_functions.c
+ 
+Building file: ../src/src/transmitter.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/transmitter.d" -MT"src/src/transmitter.d" -o "src/src/transmitter.o" "../src/src/transmitter.c"
+Finished building: ../src/src/transmitter.c
+ 
+Building file: ../src/inc/xgray_scale.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/inc/xgray_scale.d" -MT"src/inc/xgray_scale.d" -o "src/inc/xgray_scale.o" "../src/inc/xgray_scale.c"
+Finished building: ../src/inc/xgray_scale.c
+ 
+Building target: video_filter_sw_bothCPUs.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_bothCPUs/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_bothCPUs.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_bothCPUs.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_bothCPUs.elf  |tee "video_filter_sw_bothCPUs.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107928	   1888	  26220	 136036	  21364	video_filter_sw_bothCPUs.elf
+Finished building: video_filter_sw_bothCPUs.elf.size
+ 
+22:05:24 **** Auto Build of configuration Debug for project video_filter_sw_cpu1 ****
+make all 
+Building file: ../src/src/axi_interrupt.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_cpu1/src/inc" -c -fmessage-length=0 -I../../standalone_amp_bsp_0/ps7_cortexa9_1/include -MMD -MP -MF"src/src/axi_interrupt.d" -MT"src/src/axi_interrupt.d" -o "src/src/axi_interrupt.o" "../src/src/axi_interrupt.c"
+Finished building: ../src/src/axi_interrupt.c
+ 
+Building file: ../src/src/cf_hdmi.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_cpu1/src/inc" -c -fmessage-length=0 -I../../standalone_amp_bsp_0/ps7_cortexa9_1/include -MMD -MP -MF"src/src/cf_hdmi.d" -MT"src/src/cf_hdmi.d" -o "src/src/cf_hdmi.o" "../src/src/cf_hdmi.c"
+Finished building: ../src/src/cf_hdmi.c
+ 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_cpu1/src/inc" -c -fmessage-length=0 -I../../standalone_amp_bsp_0/ps7_cortexa9_1/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+Finished building: ../src/src/main.c
+ 
+Building file: ../src/src/sw_functions.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_cpu1/src/inc" -c -fmessage-length=0 -I../../standalone_amp_bsp_0/ps7_cortexa9_1/include -MMD -MP -MF"src/src/sw_functions.d" -MT"src/src/sw_functions.d" -o "src/src/sw_functions.o" "../src/src/sw_functions.c"
+../src/src/sw_functions.c:4:1: warning: "/*" within comment [-Wcomment]
+../src/src/sw_functions.c: In function 'SampleFunction':
+../src/src/sw_functions.c:158:16: warning: unused variable 'VH_offset' [-Wunused-variable]
+Finished building: ../src/src/sw_functions.c
+ 
+Building file: ../src/src/transmitter.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_cpu1/src/inc" -c -fmessage-length=0 -I../../standalone_amp_bsp_0/ps7_cortexa9_1/include -MMD -MP -MF"src/src/transmitter.d" -MT"src/src/transmitter.d" -o "src/src/transmitter.o" "../src/src/transmitter.c"
+Finished building: ../src/src/transmitter.c
+ 
+Building file: ../src/inc/xgray_scale.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_cpu1/src/inc" -c -fmessage-length=0 -I../../standalone_amp_bsp_0/ps7_cortexa9_1/include -MMD -MP -MF"src/inc/xgray_scale.d" -MT"src/inc/xgray_scale.d" -o "src/inc/xgray_scale.o" "../src/inc/xgray_scale.c"
+Finished building: ../src/inc/xgray_scale.c
+ 
+Building target: video_filter_sw_cpu1.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_cpu1/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_amp_bsp_0/ps7_cortexa9_1/lib -o "video_filter_sw_cpu1.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_cpu1.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_cpu1.elf  |tee "video_filter_sw_cpu1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 101296	    808	  34368	 136472	  21518	video_filter_sw_cpu1.elf
+Finished building: video_filter_sw_cpu1.elf.size
+ 
+22:05:32 **** Auto Build of configuration Debug for project video_filter_sw_orig ****
+make all 
+Building file: ../src/src/axi_interrupt.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_orig/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/axi_interrupt.d" -MT"src/src/axi_interrupt.d" -o "src/src/axi_interrupt.o" "../src/src/axi_interrupt.c"
+../src/src/axi_interrupt.c: In function 'AXI_INTERRUPT_VsyncIntr_Handler':
+../src/src/axi_interrupt.c:65:13: warning: unused variable 'frame_no' [-Wunused-variable]
+Finished building: ../src/src/axi_interrupt.c
+ 
+Building file: ../src/src/cf_hdmi.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_orig/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/cf_hdmi.d" -MT"src/src/cf_hdmi.d" -o "src/src/cf_hdmi.o" "../src/src/cf_hdmi.c"
+Finished building: ../src/src/cf_hdmi.c
+ 
+Building file: ../src/src/hw_config.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_orig/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/hw_config.d" -MT"src/src/hw_config.d" -o "src/src/hw_config.o" "../src/src/hw_config.c"
+Finished building: ../src/src/hw_config.c
+ 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_orig/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+Finished building: ../src/src/main.c
+ 
+Building file: ../src/src/sw_functions.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_orig/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/sw_functions.d" -MT"src/src/sw_functions.d" -o "src/src/sw_functions.o" "../src/src/sw_functions.c"
+../src/src/sw_functions.c: In function 'SampleFunction':
+../src/src/sw_functions.c:158:16: warning: unused variable 'VH_offset' [-Wunused-variable]
+Finished building: ../src/src/sw_functions.c
+ 
+Building file: ../src/src/transmitter.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_orig/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/transmitter.d" -MT"src/src/transmitter.d" -o "src/src/transmitter.o" "../src/src/transmitter.c"
+Finished building: ../src/src/transmitter.c
+ 
+Building file: ../src/inc/xgray_scale.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_orig/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/inc/xgray_scale.d" -MT"src/inc/xgray_scale.d" -o "src/inc/xgray_scale.o" "../src/inc/xgray_scale.c"
+Finished building: ../src/inc/xgray_scale.c
+ 
+Building target: video_filter_sw_orig.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw_orig/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw_orig.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw_orig.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw_orig.elf  |tee "video_filter_sw_orig.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107044	   1888	  34412	 143344	  22ff0	video_filter_sw_orig.elf
+Finished building: video_filter_sw_orig.elf.size
+ 
+22:05:40 **** Auto Build of configuration Debug for project zynq_fsbl_0 ****
+make all 
+Building file: ../src/ddr_init.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/ddr_init.d" -MT"src/ddr_init.d" -o "src/ddr_init.o" "../src/ddr_init.c"
+Finished building: ../src/ddr_init.c
+ 
+Building file: ../src/ff.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/ff.d" -MT"src/ff.d" -o "src/ff.o" "../src/ff.c"
+Finished building: ../src/ff.c
+ 
+Building file: ../src/fsbl_handoff.S
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/fsbl_handoff.d" -MT"src/fsbl_handoff.d" -o "src/fsbl_handoff.o" "../src/fsbl_handoff.S"
+Finished building: ../src/fsbl_handoff.S
+ 
+Building file: ../src/fsbl_hooks.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/fsbl_hooks.d" -MT"src/fsbl_hooks.d" -o "src/fsbl_hooks.o" "../src/fsbl_hooks.c"
+Finished building: ../src/fsbl_hooks.c
+ 
+Building file: ../src/image_mover.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/image_mover.d" -MT"src/image_mover.d" -o "src/image_mover.o" "../src/image_mover.c"
+Finished building: ../src/image_mover.c
+ 
+Building file: ../src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building file: ../src/md5.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/md5.d" -MT"src/md5.d" -o "src/md5.o" "../src/md5.c"
+Finished building: ../src/md5.c
+ 
+Building file: ../src/mmc.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/mmc.d" -MT"src/mmc.d" -o "src/mmc.o" "../src/mmc.c"
+Finished building: ../src/mmc.c
+ 
+Building file: ../src/nand.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/nand.d" -MT"src/nand.d" -o "src/nand.o" "../src/nand.c"
+Finished building: ../src/nand.c
+ 
+Building file: ../src/nor.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/nor.d" -MT"src/nor.d" -o "src/nor.o" "../src/nor.c"
+Finished building: ../src/nor.c
+ 
+Building file: ../src/pcap.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/pcap.d" -MT"src/pcap.d" -o "src/pcap.o" "../src/pcap.c"
+Finished building: ../src/pcap.c
+ 
+Building file: ../src/ps7_init.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/ps7_init.d" -MT"src/ps7_init.d" -o "src/ps7_init.o" "../src/ps7_init.c"
+Finished building: ../src/ps7_init.c
+ 
+Building file: ../src/qspi.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/qspi.d" -MT"src/qspi.d" -o "src/qspi.o" "../src/qspi.c"
+Finished building: ../src/qspi.c
+ 
+Building file: ../src/rsa.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/rsa.d" -MT"src/rsa.d" -o "src/rsa.o" "../src/rsa.c"
+Finished building: ../src/rsa.c
+ 
+Building file: ../src/sd.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/sd.d" -MT"src/sd.d" -o "src/sd.o" "../src/sd.c"
+Finished building: ../src/sd.c
+ 
+Building target: zynq_fsbl_0.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/zynq_fsbl_0/src" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "zynq_fsbl_0.elf"  ./src/ddr_init.o ./src/ff.o ./src/fsbl_handoff.o ./src/fsbl_hooks.o ./src/image_mover.o ./src/main.o ./src/md5.o ./src/mmc.o ./src/nand.o ./src/nor.o ./src/pcap.o ./src/ps7_init.o ./src/qspi.o ./src/rsa.o ./src/sd.o   -lrsa -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: zynq_fsbl_0.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size zynq_fsbl_0.elf  |tee "zynq_fsbl_0.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  69844	  11336	  72500	 153680	  25850	zynq_fsbl_0.elf
+Finished building: zynq_fsbl_0.elf.size
+ 
+22:09:42 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw.elf  |tee "video_filter_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107296	   1888	  34428	 143612	  230fc	video_filter_sw.elf
+Finished building: video_filter_sw.elf.size
+ 
+22:16:05 **** Build of project standalone_amp_bsp_0 ****
+make -k all 
+libgen -hw ../videoProcessing_prj_hw_platform/system.xml\
+	       -lp /home/ga38qoh/EDA_Munish/zedboard_training/ZynqSW/2013_3/Support_documents/sdk_repo\
+	       -pe ps7_cortexa9_1 \
+	       -log libgen.log \
+	       system.mss
+libgen
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: libgen -hw ../videoProcessing_prj_hw_platform/system.xml -lp
+/home/ga38qoh/EDA_Munish/zedboard_training/ZynqSW/2013_3/Support_documents/sdk_r
+epo -pe ps7_cortexa9_1 -log libgen.log system.mss 
+
+ERROR:EDK:3326 -
+   /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/w
+make: *** [ps7_cortexa9_1/lib/libxil.a] Error 2
+   ork_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/st
+make: Target `all' not remade because of errors.
+   andalone_amp_bsp_0/system.mss line 5 - Cannot find MLD file
+   standalone_amp_v2_1_0.mld for the os standalone_amp 3.11.a
+INFO:EDK:1040 - Directories Searched :
+  -
+/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
+_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/standalo
+ne_amp_bsp_0/bsp/standalone_amp_v3_11_a/data
+  -
+/home/ga38qoh/EDA_Munish/zedboard_training/ZynqSW/2013_3/Support_documents/sdk_r
+epo/bsp/standalone_amp_v3_11_a/data
+  - /nfs/tools/xilinx/ise/14.7/ISE_DS/EDK/sw/lib/bsp/standalone_amp_v3_11_a/data
+  -
+/nfs/tools/xilinx/ise/14.7/ISE_DS/EDK/sw/XilinxProcessorIPLib/bsp/standalone_amp
+_v3_11_a/data
+  -
+/nfs/tools/xilinx/ise/14.7/ISE_DS/EDK/sw/ThirdParty/bsp/standalone_amp_v3_11_a/d
+ata
+INFO:EDK:773 - Check the following for possible causes of not finding MLD:
+  - If OS_VER is specified in MSS, it must follow literal form X.YY.Z
+  - There is no OS with given name
+  - OS exists but not that version
+  - OS and version (directory) exist but no MLD is available
+
+ERROR:EDK:1204 - Errors occured while creating Software System.
+22:16:50 **** Build of configuration Debug for project app_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+22:16:50 **** Build of project standalone_bsp_0 ****
+make -k all 
+Finished building libraries
+22:16:50 **** Build of configuration Debug for project app_cpu0 ****
+make all 
+make: Nothing to be done for `all'.
+22:16:51 **** Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+22:16:51 **** Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+make: Nothing to be done for `all'.
+22:16:52 **** Build of configuration Debug for project video_filter_sw_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+22:16:53 **** Build of configuration Debug for project video_filter_sw_orig ****
+make all 
+make: Nothing to be done for `all'.
+22:16:53 **** Build of configuration Debug for project zynq_fsbl_0 ****
+make all 
+make: Nothing to be done for `all'.
+22:23:39 **** Incremental Build of configuration Debug for project app_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+22:23:46 **** Incremental Build of configuration Debug for project app_cpu0 ****
+make all 
+make: Nothing to be done for `all'.
+22:23:46 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+22:23:47 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+make: Nothing to be done for `all'.
+22:23:49 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+22:23:50 **** Incremental Build of configuration Debug for project video_filter_sw_orig ****
+make all 
+make: Nothing to be done for `all'.
+22:23:50 **** Incremental Build of configuration Debug for project zynq_fsbl_0 ****
+make all 
+make: Nothing to be done for `all'.
+22:27:03 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building file: ../src/src/axi_interrupt.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/axi_interrupt.d" -MT"src/src/axi_interrupt.d" -o "src/src/axi_interrupt.o" "../src/src/axi_interrupt.c"
+Finished building: ../src/src/axi_interrupt.c
+ 
+Building target: video_filter_sw.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw.elf  |tee "video_filter_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107296	   1888	  34428	 143612	  230fc	video_filter_sw.elf
+Finished building: video_filter_sw.elf.size
+ 
+22:27:18 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+../src/src/main.c: In function 'main':
+../src/src/main.c:322:117: error: 'VIDEO_BASEADDR_CPU0' undeclared (first use in this function)
+../src/src/main.c:322:117: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [src/src/main.o] Error 1
+22:27:25 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw.elf  |tee "video_filter_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107296	   1888	  34428	 143612	  230fc	video_filter_sw.elf
+Finished building: video_filter_sw.elf.size
+ 
+22:27:50 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+Finished building: ../src/src/main.c
+ 
+Building target: video_filter_sw.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw.elf  |tee "video_filter_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107296	   1888	  34428	 143612	  230fc	video_filter_sw.elf
+Finished building: video_filter_sw.elf.size
+ 
+22:28:05 **** Auto Build of configuration Debug for project video_filter_sw ****
+make all 
+Building file: ../src/src/axi_interrupt.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/axi_interrupt.d" -MT"src/src/axi_interrupt.d" -o "src/src/axi_interrupt.o" "../src/src/axi_interrupt.c"
+Finished building: ../src/src/axi_interrupt.c
+ 
+Building target: video_filter_sw.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw.elf"  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hw_config.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o  ./src/inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: video_filter_sw.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size video_filter_sw.elf  |tee "video_filter_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107296	   1888	  34428	 143612	  230fc	video_filter_sw.elf
+Finished building: video_filter_sw.elf.size
+ 
+22:28:09 **** Incremental Build of configuration Debug for project app_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+22:28:10 **** Incremental Build of configuration Debug for project app_cpu0 ****
+make all 
+make: Nothing to be done for `all'.
+22:28:10 **** Incremental Build of configuration Debug for project video_filter_sw ****
+make all 
+make: Nothing to be done for `all'.
+22:28:11 **** Incremental Build of configuration Debug for project video_filter_sw_bothCPUs ****
+make all 
+make: Nothing to be done for `all'.
+22:28:11 **** Incremental Build of configuration Debug for project video_filter_sw_cpu1 ****
+make all 
+make: Nothing to be done for `all'.
+22:28:12 **** Incremental Build of configuration Debug for project video_filter_sw_orig ****
+make all 
+make: Nothing to be done for `all'.
+22:28:13 **** Incremental Build of configuration Debug for project zynq_fsbl_0 ****
+make all 
+make: Nothing to be done for `all'.

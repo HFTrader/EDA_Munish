@@ -1,21 +1,6 @@
-19:23:07 **** Auto Build of configuration Debug for project video_filter_sw ****
+22:02:15 **** Incremental Build of configuration Debug for project video_filter_sw ****
 make all 
-Building file: ../src/main.c
-Invoking: ARM gcc compiler
-arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabD/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
-Finished building: ../src/main.c
- 
-Building target: video_filter_sw.elf
-Invoking: ARM gcc linker
-arm-xilinx-eabi-gcc -L"/home/ga38qoh/EDA_Munish/SDSlabWork/work_dir/LabD/videoProcessing_prj/SDK/SDK_Workspace/video_filter_sw/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "video_filter_sw.elf"  ./src/axi_interrupt.o ./src/cf_hdmi.o ./src/hw_config.o ./src/main.o ./src/sw_functions.o ./src/transmitter.o  ./inc/xgray_scale.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-Finished building target: video_filter_sw.elf
- 
-Invoking: ARM Print Size
-arm-xilinx-eabi-size video_filter_sw.elf  |tee "video_filter_sw.elf.size"
-   text	   data	    bss	    dec	    hex	filename
- 107204	   1888	  34428	 143520	  230a0	video_filter_sw.elf
-Finished building: video_filter_sw.elf.size
- 
+make: Nothing to be done for `all'.
 
-19:23:08 Build Finished (took 778ms)
+22:02:15 Build Finished (took 190ms)
 

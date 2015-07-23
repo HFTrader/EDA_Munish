@@ -1,6 +1,47 @@
-15:59:58 **** Build of project standalone_amp_bsp_0 ****
+22:16:05 **** Build of project standalone_amp_bsp_0 ****
 make -k all 
-Finished building libraries
+libgen -hw ../videoProcessing_prj_hw_platform/system.xml\
+	       -lp /home/ga38qoh/EDA_Munish/zedboard_training/ZynqSW/2013_3/Support_documents/sdk_repo\
+	       -pe ps7_cortexa9_1 \
+	       -log libgen.log \
+	       system.mss
+libgen
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
-15:59:58 Build Finished (took 129ms)
+Command Line: libgen -hw ../videoProcessing_prj_hw_platform/system.xml -lp
+/home/ga38qoh/EDA_Munish/zedboard_training/ZynqSW/2013_3/Support_documents/sdk_r
+epo -pe ps7_cortexa9_1 -log libgen.log system.mss 
+
+ERROR:EDK:3326 -
+   /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/w
+make: *** [ps7_cortexa9_1/lib/libxil.a] Error 2
+   ork_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/st
+make: Target `all' not remade because of errors.
+   andalone_amp_bsp_0/system.mss line 5 - Cannot find MLD file
+   standalone_amp_v2_1_0.mld for the os standalone_amp 3.11.a
+INFO:EDK:1040 - Directories Searched :
+  -
+/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
+_dir/dualCore_grayscaleProcessing/videoProcessing_prj/SDK/SDK_Workspace/standalo
+ne_amp_bsp_0/bsp/standalone_amp_v3_11_a/data
+  -
+/home/ga38qoh/EDA_Munish/zedboard_training/ZynqSW/2013_3/Support_documents/sdk_r
+epo/bsp/standalone_amp_v3_11_a/data
+  - /nfs/tools/xilinx/ise/14.7/ISE_DS/EDK/sw/lib/bsp/standalone_amp_v3_11_a/data
+  -
+/nfs/tools/xilinx/ise/14.7/ISE_DS/EDK/sw/XilinxProcessorIPLib/bsp/standalone_amp
+_v3_11_a/data
+  -
+/nfs/tools/xilinx/ise/14.7/ISE_DS/EDK/sw/ThirdParty/bsp/standalone_amp_v3_11_a/d
+ata
+INFO:EDK:773 - Check the following for possible causes of not finding MLD:
+  - If OS_VER is specified in MSS, it must follow literal form X.YY.Z
+  - There is no OS with given name
+  - OS exists but not that version
+  - OS and version (directory) exist but no MLD is available
+
+ERROR:EDK:1204 - Errors occured while creating Software System.
+
+22:16:49 Build Finished (took 43s.509ms)
 
