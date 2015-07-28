@@ -1,0 +1,13 @@
+16:08:32 **** Auto Build of configuration Debug for project SOERGR_pureSW ****
+make all 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/uzair-sharif/EDA_Munish/work_dir/dualCore_SOGRER/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_pureSW/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+In file included from ../src/src/cf_hdmi.h:48:0,
+                 from ../src/src/main.c:13:
+../src/src/hw_config.h:12:27: fatal error: xsobel_filter.h: No such file or directory
+compilation terminated.
+make: *** [src/src/main.o] Error 1
+
+16:08:33 Build Finished (took 209ms)
+

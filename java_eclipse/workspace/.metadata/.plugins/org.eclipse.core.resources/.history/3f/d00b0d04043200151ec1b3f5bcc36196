@@ -1,0 +1,173 @@
+package TemplateEngine;
+
+
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.List;
+import java.util.ArrayList;
+import java.lang.StringBuilder;
+
+import org.eclipse.cdt.core.dom.ast.IASTTranslationUnit;
+import org.eclipse.cdt.core.dom.ast.cpp.ICPPASTDeclarator;
+import org.eclipse.cdt.core.dom.ast.cpp.ICPPASTParameterDeclaration;
+import org.eclipse.cdt.core.dom.ast.gnu.cpp.GPPLanguage;
+import org.eclipse.cdt.core.parser.DefaultLogService;
+import org.eclipse.cdt.core.parser.FileContent;
+import org.eclipse.cdt.core.parser.IParserLogService;
+import org.eclipse.cdt.core.parser.IScannerInfo;
+import org.eclipse.cdt.core.parser.IncludeFileContentProvider;
+import org.eclipse.cdt.core.parser.ScannerInfo;
+import org.eclipse.core.runtime.CoreException;
+import org.eclipse.cdt.core.dom.ast.IASTDeclaration;
+import org.eclipse.cdt.internal.core.dom.parser.cpp.CPPASTSimpleDeclaration;
+import org.eclipse.cdt.core.dom.ast.IASTDeclarator;
+import org.eclipse.cdt.internal.core.dom.parser.cpp.CPPASTFunctionDeclarator;
+import org.eclipse.cdt.core.dom.ast.IASTDeclSpecifier;
+import org.eclipse.cdt.internal.core.dom.parser.cpp.CPPASTSimpleDeclSpecifier;
+import org.eclipse.cdt.core.dom.ast.IASTPointerOperator;
+
+
+
+public class TemplateEngine {	
+	public static Map<String, Object> templateDataModel = new HashMap<String, Object>();			// to store the data model that would be used by the freemarker template engine to generate the Embedded-C source code
+
+	
+    public static void main( String[] args ) throws CoreException {
+		// reading in the "sw_functions.h" file provided by Application Developer
+    	// TODO: path location should be automated
+    	FileContent fileContent = FileContent.createForExternalFileLocation("./docs/sw_functions.h");
+    	
+    	// extracting Eclipse CDT parser's translationUnit (AST)
+    	Map definedSymbols = new HashMap();
+    	String[] includePaths = new String[0];
+    	IScannerInfo info = new ScannerInfo(definedSymbols, includePaths);    	
+    	IParserLogService log = new DefaultLogService();
+    	IncludeFileContentProvider emptyIncludes = IncludeFileContentProvider.getEmptyFilesProvider();
+    	int opts = 8;
+    	IASTTranslationUnit translationUnit = GPPLanguage.getDefault().getASTTranslationUnit(fileContent, info, emptyIncludes, null, opts, log);
+    	
+		// generating the data model for template generation using translationUnit
+		createModel(translationUnit);
+		
+    }
+
+    
+	public static void createModel(IASTTranslationUnit tu) {
+				
+		IASTDeclaration[] declarations = tu.getDeclarations();	// extracting all the declarations in the provided source file
+		//FunctionSpecifier[] functionsForDatamodel = new FunctionSpecifier[declarations.length];
+		List<FunctionSpecifier> functionsForDatamodel = new ArrayList<FunctionSpecifier>();
+				
+		for (IASTDeclaration iastdeclaration : declarations) {			// iterating over each function declaration
+			// for each function declaration, get
+			// a) name
+			// b) return type
+			// c) parameter names
+			// d) parameter types
+			// store each of these function data in the model
+			
+			
+			// TODO: for now all the function declarations are found to be of CPPASTSimpleDeclaration type.....what about other types?			
+			if (iastdeclaration instanceof CPPASTSimpleDeclaration) {
+				CPPASTSimpleDeclaration declaration = (CPPASTSimpleDeclaration) iastdeclaration;
+				
+				// TODO: for now all the function declaration specifiers are found to be of CPPASTSimpleDeclSpecifier type.....what about other types?
+				CPPASTSimpleDeclSpecifier declSpecifier = (CPPASTSimpleDeclSpecifier) declaration.getDeclSpecifier();
+				IASTDeclarator[] declarators = declaration.getDeclarators();
+				// we expect only 1 declarator for each declaration
+				assert (declarators.length == 1);
+				// TODO: for now all the function declarators are found to be of CPPASTFunctionDeclarator type.....what about other types?
+				if (declarators[0] instanceof CPPASTFunctionDeclarator) {
+					CPPASTFunctionDeclarator declarator = (CPPASTFunctionDeclarator) declarators[0];					 
+
+					FunctionSpecifier funcSpecifier = new FunctionSpecifier();
+					// getting function name from declarator
+					funcSpecifier.setName(declarator.getName().toString());
+					// getting return type from declarator and declSpecifier
+					funcSpecifier.setReturnType(declSpecifier.getRawSignature() + (declarator.getPointerOperators().length != 0 ? " *" : ""));
+					
+					// getting parameters from declarator
+					ICPPASTParameterDeclaration[] parameters = declarator.getParameters();
+					List<ParameterSpecifier> parametersForFunction = new ArrayList<ParameterSpecifier>();
+					
+					for (ICPPASTParameterDeclaration parameter : parameters) {
+						ICPPASTDeclarator paramDeclarator = parameter.getDeclarator();
+						CPPASTSimpleDeclSpecifier paramDeclSpecifier = (CPPASTSimpleDeclSpecifier) parameter.getDeclSpecifier();
+						
+						ParameterSpecifier paramSpecifier = new ParameterSpecifier();
+						paramSpecifier.setName(paramDeclarator.getName().toString());
+						paramSpecifier.setDataType(paramDeclSpecifier.getRawSignature() + (paramDeclarator.getPointerOperators().length != 0 ? " *" : ""));
+						
+						parametersForFunction.add(paramSpecifier);
+					}					
+					funcSpecifier.setParameters(parametersForFunction); 
+					
+					functionsForDatamodel.add(funcSpecifier);
+				} else {
+					assert false;
+				}
+					
+			}
+			
+		}
+		
+		templateDataModel.put("functions", functionsForDatamodel);		
+		
+	}
+	
+	
+}        
+    
+
+
+
+    
+
+
+class FunctionSpecifier {
+	private String name;
+	private String returnType;
+	private List<ParameterSpecifier> parameters;
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	public void setReturnType(String retType) {
+		this.returnType = retType;
+	}
+	public void setParameters(List<ParameterSpecifier> params) {
+		this.parameters = params;
+	}
+	public String getName() {
+		return this.name;
+	}
+	public String getReturnType() {
+		return this.returnType;
+	}
+	public List<ParameterSpecifier> getParameters() {
+		return this.parameters;
+	}	
+}
+
+
+class ParameterSpecifier {
+	private String name;
+	private String dataType;
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	public void setDataType(String dataType) {
+		this.dataType = dataType;
+	}
+	public String getName() {
+		return this.name;
+	}
+	public String getDataType() {
+		return this.dataType;
+	}
+}
+
+    
+    

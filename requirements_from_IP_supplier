@@ -1,0 +1,27 @@
+-- GRIP rules
+-- SW implementation of own functionality
+-- SW support modules (in a specific standardized way) for every supported particluar target platform
+   for a give supported target platform, should give info regarding:
+   a) how to initialize this IP in SW
+   b) how to trigger this IP in SW to start processing
+   c) this IP interrupt on completion of processing (ISR)
+   
+   
+   for now this info should be presented as "support_api.h/c" modules
+   
+   In other words, it is the responsibility of the IP supplier to provide implementation for HA API that will be exposed to application developer/system architect for every supported target platforms
+   Specifically should give implementation for    
+            initialize()
+            vdma_isr()
+            trigger()
+            isBusy()
+   methods!!
+   
+   Later in main HA_API the function calls to these methods would be routed to a particular target platform's support_api
+   
+   
+   
+-- One more restriction for making job of code generator easier is:
+        the function prototypes in pure SW implementation and trigger() method in support_api modules should be similar with the only addition of HA driver instance in trigger() method
+        i.e if you have a method foo(int A, int B); in pure SW implementation then corrersponding method in support_api.h should be foo(Driver_FooHA *InstancePtr, int A, int B) even though A, B might not be needed in the latter case. Similarly if you need a parameter say "int C" in latter then it should be in former as well even if it is not needed for its functionality!
+   
