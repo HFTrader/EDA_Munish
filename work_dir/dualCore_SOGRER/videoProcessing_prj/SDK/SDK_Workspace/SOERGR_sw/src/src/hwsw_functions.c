@@ -162,6 +162,7 @@ void ImageFilter_VDMA_ISR(void * baseaddr_p)
 // NOTE: only if Grayscale HA is present
 void GrayscaleFilter_VDMA_ISR(void * baseaddr_p)
 {
+	//printf("%x\r\n", (unsigned int) *(volatile unsigned int *)(0x6E800000));
 	Xil_Out32((GrayscaleFilter_VDMA_BASEADDR + AXI_FILTER_RX_CTRL), 0x00000004);
 	GrayscaleFilter_busy = 0;
 }

@@ -115,30 +115,6 @@ static void SetHAMode(VDMAIPRegMap mode, unsigned int baseaddr) {
 
 
 void VDMAIP_Driver_initialize(VDMAIPDriverInstance *InstancePtr) {    
-	VDMAIPInitMode.MM2S_START_ADDRESS1.offset = 0x5c;
-	VDMAIPInitMode.MM2S_START_ADDRESS1.mask = 0xffffffff;
-	VDMAIPInitMode.MM2S_START_ADDRESS1.value = InstancePtr->baseaddr;
-
-	VDMAIPInitMode.MM2S_START_ADDRESS2.offset = 0x60;
-	VDMAIPInitMode.MM2S_START_ADDRESS2.mask = 0xffffffff;
-	VDMAIPInitMode.MM2S_START_ADDRESS2.value = InstancePtr->baseaddr;
-
-	VDMAIPInitMode.MM2S_START_ADDRESS3.offset = 0x64;
-	VDMAIPInitMode.MM2S_START_ADDRESS3.mask = 0xffffffff;
-	VDMAIPInitMode.MM2S_START_ADDRESS3.value = InstancePtr->baseaddr;
-
-	VDMAIPInitMode.S2MM_START_ADDRESS1.offset = 0xac;
-	VDMAIPInitMode.S2MM_START_ADDRESS1.mask = 0xffffffff;
-	VDMAIPInitMode.S2MM_START_ADDRESS1.value = InstancePtr->baseaddr;
-
-	VDMAIPInitMode.S2MM_START_ADDRESS2.offset = 0xb0;
-	VDMAIPInitMode.S2MM_START_ADDRESS2.mask = 0xffffffff;
-	VDMAIPInitMode.S2MM_START_ADDRESS2.value = InstancePtr->baseaddr;
-
-	VDMAIPInitMode.S2MM_START_ADDRESS3.offset = 0xb4;
-	VDMAIPInitMode.S2MM_START_ADDRESS3.mask = 0xffffffff;
-	VDMAIPInitMode.S2MM_START_ADDRESS3.value = InstancePtr->baseaddr;
-
 	SetHAMode(VDMAIPInitMode, InstancePtr->baseaddr);
 }
 
@@ -146,31 +122,23 @@ void VDMAIP_Driver_initialize(VDMAIPDriverInstance *InstancePtr) {
 
 
 void VDMAIP_Driver_start(VDMAIPDriverInstance *InstancePtr, unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr,unsigned short width, unsigned short height, unsigned short horizontalActiveTime, unsigned short verticalActiveTime) {
-	VDMAIPStartMode.MM2S_VSIZE.offset = 0x50;
-	VDMAIPStartMode.MM2S_VSIZE.mask = 0xffffffff;
-	VDMAIPStartMode.MM2S_VSIZE.value = verticalActiveTime;
-
-	VDMAIPStartMode.MM2S_HSIZE.offset = 0x54;
-	VDMAIPStartMode.MM2S_HSIZE.mask = 0xffffffff;
-	VDMAIPStartMode.MM2S_HSIZE.value = horizontalActiveTime*4;
-
-	VDMAIPStartMode.MM2S_FRMDLY_STRIDE.offset = 0x58;
-	VDMAIPStartMode.MM2S_FRMDLY_STRIDE.mask = 0xffffffff;
-	VDMAIPStartMode.MM2S_FRMDLY_STRIDE.value = horizontalActiveTime*4;
-
-	VDMAIPStartMode.S2MM_VSIZE.offset = 0xa0;
-	VDMAIPStartMode.S2MM_VSIZE.mask = 0xffffffff;
-	VDMAIPStartMode.S2MM_VSIZE.value = verticalActiveTime;
-
-	VDMAIPStartMode.S2MM_HSIZE.offset = 0xa4;
-	VDMAIPStartMode.S2MM_HSIZE.mask = 0xffffffff;
-	VDMAIPStartMode.S2MM_HSIZE.value = horizontalActiveTime*4;
-
-	VDMAIPStartMode.S2MM_FRMDLY_STRIDE.offset = 0xa8;
-	VDMAIPStartMode.S2MM_FRMDLY_STRIDE.mask = 0xffffffff;
-	VDMAIPStartMode.S2MM_FRMDLY_STRIDE.value = horizontalActiveTime*4;
-
     SetHAMode(VDMAIPStartMode, InstancePtr->baseaddr);
+
+	// MEM2DEV
+	localWriteReg(InstancePtr->baseaddr + 0x5c, 0xffffffff, ImgIn_BaseAddr);
+	localWriteReg(InstancePtr->baseaddr + 0x60, 0xffffffff, ImgIn_BaseAddr);
+	localWriteReg(InstancePtr->baseaddr + 0x64, 0xffffffff, ImgIn_BaseAddr);
+	localWriteReg(InstancePtr->baseaddr + 0x58, 0xffffffff, horizontalActiveTime*4);
+	localWriteReg(InstancePtr->baseaddr + 0x54, 0xffffffff, horizontalActiveTime*4);
+	localWriteReg(InstancePtr->baseaddr + 0x50, 0xffffffff, verticalActiveTime);
+
+	// DEV2MEM
+	localWriteReg(InstancePtr->baseaddr + 0xac, 0xffffffff, ImgOut_BaseAddr);
+	localWriteReg(InstancePtr->baseaddr + 0xb0, 0xffffffff, ImgOut_BaseAddr);
+	localWriteReg(InstancePtr->baseaddr + 0xb4, 0xffffffff, ImgOut_BaseAddr);
+	localWriteReg(InstancePtr->baseaddr + 0xa8, 0xffffffff, horizontalActiveTime*4);
+	localWriteReg(InstancePtr->baseaddr + 0xa4, 0xffffffff, horizontalActiveTime*4);
+	localWriteReg(InstancePtr->baseaddr + 0xa0, 0xffffffff, verticalActiveTime);
 }
 
 

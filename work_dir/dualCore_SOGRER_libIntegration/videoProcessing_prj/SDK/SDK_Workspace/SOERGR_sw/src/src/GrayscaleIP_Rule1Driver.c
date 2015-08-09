@@ -61,10 +61,10 @@ static void SetHAMode(GrayscaleIPRule1RegMap mode, unsigned int baseaddr) {
 void GrayscaleIP_Rule1Driver_initialize(GrayscaleIPRule1DriverInstance *InstancePtr, unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr,unsigned short width, unsigned short height, unsigned short horizontalActiveTime, unsigned short verticalActiveTime) {
     // initializing GrayscaleIP
 	GrayscaleIPRule1InitMode.ROWS_DATA.mask = 0xffffffff;
-	GrayscaleIPRule1InitMode.ROWS_DATA.value = width;
+	GrayscaleIPRule1InitMode.ROWS_DATA.value = height;
 
 	GrayscaleIPRule1InitMode.COLS_DATA.mask = 0xffffffff;
-	GrayscaleIPRule1InitMode.COLS_DATA.value = height;
+	GrayscaleIPRule1InitMode.COLS_DATA.value = width;
 
 	SetHAMode(GrayscaleIPRule1InitMode, InstancePtr->baseaddr);
 
@@ -96,7 +96,7 @@ void GrayscaleIP_Rule1Driver_stop(GrayscaleIPRule1DriverInstance *InstancePtr) {
 bool GrayscaleIP_Rule1Driver_isBusy(GrayscaleIPRule1DriverInstance *InstancePtr) {
     // not using VDMA S2MM busy signal for now as documentation states we have to use scatter-gather mode to read in Idle
     // TODO: see if you can read in VDMA busy signal as well then driver would be more complete...i.e return busy status = '1' only if both the IP as well as the VDMA S2MM are free
-    return (bool) !((localReadReg(InstancePtr->baseaddr + GRAYSCALEIPRULE1_BUSY_STATUS_REG_offset) >> GRAYSCALEIPRULE1_BUSY_STATUS_REG_bit) & 1);
+    return (bool) !((localReadReg(InstancePtr->baseaddr + GRAYSCALEIPRULE1_BUSY_STATUS_REG_offset)>>GRAYSCALEIPRULE1_BUSY_STATUS_REG_bit) & 0x1);
 }
 
 
