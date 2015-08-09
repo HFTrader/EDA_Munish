@@ -1,0 +1,67 @@
+// this file is going to be auto-generated after reading in the IP_SW and all of IP_Rule*Driver modules
+// it will use the configuration flags provided in config file
+
+// this file provides API functionality to application developer to perform HA-aware grayscale filtering on captured video
+
+
+
+#include "GrayscaleIP_func.h"
+
+
+
+void ConvToGray_func(unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr,unsigned short width, unsigned short height, unsigned short horizontalActiveTime, unsigned short verticalActiveTime) {
+    int ip_instance_idx = 0;
+    int rule1_driver_idx = 0;
+    int rule2_driver_idx = 0;
+
+#if NUM_GRAYSCALEIP_INSTANCES != 0
+    static bool driverInit = 0;
+    // and so on if other drivers are supported by this IP
+
+    // initializing the drivers for the first time when this func is called
+    if (driverInit == 0) {
+    	for (ip_instance_idx=0; ip_instance_idx<NUM_GRAYSCALEIP_INSTANCES; ip_instance_idx++) {
+    		if (GRAYSCALEIP_INFO[ip_instance_idx].grip_rule == 1) {
+    			GrayscaleIPRule1Driver[rule1_driver_idx].baseaddr = GRAYSCALEIP_INFO[ip_instance_idx].baseaddr;
+    			GrayscaleIPRule1Driver[rule1_driver_idx].vdmaDriver.baseaddr = GRAYSCALEIP_INFO[ip_instance_idx].vdma_baseaddr;
+    			rule1_driver_idx++;
+    		} else if (GRAYSCALEIP_INFO[ip_instance_idx].grip_rule == 2) {
+    			GrayscaleIPRule2Driver[rule2_driver_idx].baseaddr = GRAYSCALEIP_INFO[ip_instance_idx].baseaddr;
+    			rule2_driver_idx++;
+    		} // else if ... and so on depending on total grip rules supported by IP supplier
+    	}
+        ip_instance_idx = 0;
+        rule1_driver_idx = 0;
+        rule2_driver_idx = 0;
+        // and so on depending on total grip rules supported by IP supplier
+
+        driverInit = 1;
+    }
+#endif
+
+#if NUM_GRAYSCALEIP_INSTANCES == 0                      // no IP module in design so using SW implementation
+    ConvToGray(ImgIn_BaseAddr, ImgOut_BaseAddr, width, height, horizontalActiveTime, verticalActiveTime);
+#else
+    for (ip_instance_idx=0; ip_instance_idx<NUM_GRAYSCALEIP_INSTANCES; ip_instance_idx++) {
+    	if (GRAYSCALEIP_INFO[ip_instance_idx].grip_rule == 1) {
+    		if (GrayscaleIP_Rule1Driver_isBusy(&GrayscaleIPRule1Driver[rule1_driver_idx]) == 0) {      // a free IP instance found
+				GrayscaleIP_Rule1Driver_start(&GrayscaleIPRule1Driver[rule1_driver_idx], ImgIn_BaseAddr, ImgOut_BaseAddr, width, height, horizontalActiveTime, verticalActiveTime);
+				while(GrayscaleIP_Rule1Driver_isBusy(&GrayscaleIPRule1Driver[rule1_driver_idx]) == 1);
+				return;
+			}
+    	} else if (GRAYSCALEIP_INFO[ip_instance_idx].grip_rule == 2) {
+    		if (GrayscaleIP_Rule2Driver_isBusy(&GrayscaleIPRule2Driver[rule2_driver_idx]) == 0) {
+				GrayscaleIP_Rule2Driver_start(&GrayscaleIPRule2Driver[rule2_driver_idx], ImgIn_BaseAddr, ImgOut_BaseAddr, width, height, horizontalActiveTime, verticalActiveTime);
+				while(GrayscaleIP_Rule2Driver_isBusy(&GrayscaleIPRule2Driver[rule2_driver_idx]) == 1);
+				return;
+    		}
+    	} // else if ... so on depending on total grip rules supported by IP supplier
+
+    }    
+    ConvToGray(ImgIn_BaseAddr, ImgOut_BaseAddr, width, height, horizontalActiveTime, verticalActiveTime); 
+#endif
+}
+
+
+
+

@@ -4,49 +4,40 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../src/src/SoCProc_support.c \
-../src/src/XIL_MICROBLAZE_8_5_support.c \
-../src/src/ZYNQ_ARM_CORTEX_A9_support.c \
+../src/src/GrayscaleIP_Rule1Driver.c \
+../src/src/GrayscaleIP_Rule2Driver.c \
+../src/src/GrayscaleIP_SW.c \
+../src/src/GrayscaleIP_config.c \
+../src/src/GrayscaleIP_func.c \
+../src/src/VDMAIP_Driver.c \
 ../src/src/axi_interrupt.c \
 ../src/src/cf_hdmi.c \
-../src/src/hwsw_functions.c \
 ../src/src/main.c \
-../src/src/sw_functions.c \
-../src/src/transmitter.c \
-../src/src/vdma_config.c \
-../src/src/xconvert_to_gray.c \
-../src/src/ximage_filter.c \
-../src/src/xsobel_filter.c 
+../src/src/transmitter.c 
 
 OBJS += \
-./src/src/SoCProc_support.o \
-./src/src/XIL_MICROBLAZE_8_5_support.o \
-./src/src/ZYNQ_ARM_CORTEX_A9_support.o \
+./src/src/GrayscaleIP_Rule1Driver.o \
+./src/src/GrayscaleIP_Rule2Driver.o \
+./src/src/GrayscaleIP_SW.o \
+./src/src/GrayscaleIP_config.o \
+./src/src/GrayscaleIP_func.o \
+./src/src/VDMAIP_Driver.o \
 ./src/src/axi_interrupt.o \
 ./src/src/cf_hdmi.o \
-./src/src/hwsw_functions.o \
 ./src/src/main.o \
-./src/src/sw_functions.o \
-./src/src/transmitter.o \
-./src/src/vdma_config.o \
-./src/src/xconvert_to_gray.o \
-./src/src/ximage_filter.o \
-./src/src/xsobel_filter.o 
+./src/src/transmitter.o 
 
 C_DEPS += \
-./src/src/SoCProc_support.d \
-./src/src/XIL_MICROBLAZE_8_5_support.d \
-./src/src/ZYNQ_ARM_CORTEX_A9_support.d \
+./src/src/GrayscaleIP_Rule1Driver.d \
+./src/src/GrayscaleIP_Rule2Driver.d \
+./src/src/GrayscaleIP_SW.d \
+./src/src/GrayscaleIP_config.d \
+./src/src/GrayscaleIP_func.d \
+./src/src/VDMAIP_Driver.d \
 ./src/src/axi_interrupt.d \
 ./src/src/cf_hdmi.d \
-./src/src/hwsw_functions.d \
 ./src/src/main.d \
-./src/src/sw_functions.d \
-./src/src/transmitter.d \
-./src/src/vdma_config.d \
-./src/src/xconvert_to_gray.d \
-./src/src/ximage_filter.d \
-./src/src/xsobel_filter.d 
+./src/src/transmitter.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

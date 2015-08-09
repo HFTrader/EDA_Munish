@@ -19,13 +19,14 @@
 #include "xscugic.h"
 #include "profile_cnt.h"
 #include "global.h"
-#include "sw_functions.h"
-#include "hwsw_functions.h"
-#include "SoCProc_support.h"
+#include "GrayscaleIP_func.h"
+
 
 
 // macros
 #define HDMI_CALL_INTERVAL_MS	10
+
+#define VIDEO_BASEADDR 0x2000000
 
 
 // global variables only to be used in main.c file
@@ -49,7 +50,7 @@ int APP_ChangeResolution();
 void InitSobelFilter();
 void InitErodeFilter();
 void InitGrayscaleFilter();
-void processFrame(unsigned int dataMem_BASEADDR);			// data processing chain (application's dataflow)
+void processFrame();			// data processing chain (application's dataflow)
 
 
 /***************************************************************************//**
@@ -86,8 +87,6 @@ int main()
 	Xil_ICacheEnable();
 	Xil_DCacheEnable();
 
-	SoCProc_initialize();		// initializes all the other processing entities in the SoC so that they are ready to execute data processing chain if they are free
-
 	HAL_PlatformInit(XPAR_AXI_IIC_0_BASEADDR,	/* Perform any required platform init */
 					 XPAR_SCUTIMER_DEVICE_ID,	/* including hardware reset to HDMI devices */
 					 XPAR_SCUGIC_SINGLE_DEVICE_ID,
@@ -117,8 +116,6 @@ int main()
 	  		//return XST_FAILURE;
 	  	}
 
-	HA_Initialize(&InterruptController, h_ActiveTime, v_ActiveTime);				// initializes the HW Accelerators setup in the SoC
-
 	EnablePerfCounters();
 
 	while (APP_ChangeResolution())
@@ -136,7 +133,7 @@ int main()
 		while (FRAME_INTR == 0);
 
 		// raw data passed through the data processing chain by Master CPU
-		processFrame(VIDEO_BASEADDR_masterCPU);
+		processFrame();
 	}
 
 	Xil_DCacheDisable();
@@ -247,7 +244,6 @@ int APP_ChangeResolution (void)
 			SetVideoResolution(receivedChar - 0x30);
 			h_ActiveTime = detailedTiming[currentResolution][H_ACTIVE_TIME];
 			v_ActiveTime = detailedTiming[currentResolution][V_ACTIVE_TIME];
-			HA_Initialize(&InterruptController, h_ActiveTime, v_ActiveTime);
 
 			DBG_MSG("Resolution was changed to %s \r\n", resolutions[receivedChar - 0x30]);
 		}
@@ -261,7 +257,6 @@ int APP_ChangeResolution (void)
 				SetVideoResolution(RESOLUTION_640x480);
 				h_ActiveTime = detailedTiming[currentResolution][H_ACTIVE_TIME];
 				v_ActiveTime = detailedTiming[currentResolution][V_ACTIVE_TIME];
-				HA_Initialize(&InterruptController, h_ActiveTime, v_ActiveTime);
 
 				DBG_MSG("Resolution was changed to %s \r\n", resolutions[0]);
 			}
@@ -273,24 +268,14 @@ int APP_ChangeResolution (void)
 
 
 
-void processFrame(unsigned int dataMem_BASEADDR) {
-	unsigned int dataMem_ptr = dataMem_BASEADDR;
+void processFrame() {
+	unsigned int dataMem_ptr = VIDEO_BASEADDR;
 
 	// capturing the frame pixels from camera line buffers onto DDR memory
 	DDRVideoWr(640, 480, h_ActiveTime, v_ActiveTime, dataMem_ptr);
 
-	// using the HW aware version of sw_functions!!
-
-	// sobel filtering (edge detection)
-	hwEdgeDetection(dataMem_ptr, dataMem_ptr + FRAME_SIZE, 640, 480, h_ActiveTime, v_ActiveTime);
-	dataMem_ptr += FRAME_SIZE;
-
-	// erode filtering
-	hwErode(dataMem_ptr, dataMem_ptr + FRAME_SIZE, 640, 480, h_ActiveTime, v_ActiveTime);
-	dataMem_ptr += FRAME_SIZE;
-
-	// grayscale filtering
-	hwConvToGray(dataMem_ptr, dataMem_ptr + FRAME_SIZE, 640, 480, h_ActiveTime, v_ActiveTime);
+	// grayscale filtering the captured image
+	ConvToGray_func(dataMem_ptr, dataMem_ptr + FRAME_SIZE, 640, 480, h_ActiveTime, v_ActiveTime);
 	dataMem_ptr += FRAME_SIZE;
 
 	ConfigHdmiVDMA (h_ActiveTime, v_ActiveTime, dataMem_ptr);

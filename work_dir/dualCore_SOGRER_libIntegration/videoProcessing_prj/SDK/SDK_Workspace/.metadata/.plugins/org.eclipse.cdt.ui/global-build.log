@@ -1,75 +1,45 @@
-14:56:47 **** Clean-only build of configuration Debug for project SOERGR_sw ****
+20:11:10 **** Clean-only build of configuration Debug for project SOERGR_sw ****
+make clean 
+rm -rf  ./src/src/GrayscaleIP_Rule1Driver.o ./src/src/GrayscaleIP_Rule2Driver.o ./src/src/GrayscaleIP_SW.o ./src/src/GrayscaleIP_config.o ./src/src/GrayscaleIP_func.o ./src/src/VDMAIP_Driver.o ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/main.o ./src/src/transmitter.o  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/src/GrayscaleIP_Rule1Driver.d ./src/src/GrayscaleIP_Rule2Driver.d ./src/src/GrayscaleIP_SW.d ./src/src/GrayscaleIP_config.d ./src/src/GrayscaleIP_func.d ./src/src/VDMAIP_Driver.d ./src/src/axi_interrupt.d ./src/src/cf_hdmi.d ./src/src/main.d ./src/src/transmitter.d  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.d  SOERGR_sw.elf.size  SOERGR_sw.elf
+ 
+
+20:11:10 Build Finished (took 208ms)
+
+20:11:10 **** Clean-only build of configuration Release for project SOERGR_sw ****
 make clean 
 rm -rf  ./src/src/SoCProc_support.o ./src/src/XIL_MICROBLAZE_8_5_support.o ./src/src/ZYNQ_ARM_CORTEX_A9_support.o ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hwsw_functions.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o ./src/src/vdma_config.o ./src/src/xconvert_to_gray.o ./src/src/ximage_filter.o ./src/src/xsobel_filter.o  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/src/SoCProc_support.d ./src/src/XIL_MICROBLAZE_8_5_support.d ./src/src/ZYNQ_ARM_CORTEX_A9_support.d ./src/src/axi_interrupt.d ./src/src/cf_hdmi.d ./src/src/hwsw_functions.d ./src/src/main.d ./src/src/sw_functions.d ./src/src/transmitter.d ./src/src/vdma_config.d ./src/src/xconvert_to_gray.d ./src/src/ximage_filter.d ./src/src/xsobel_filter.d  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.d  SOERGR_sw.elf.size  SOERGR_sw.elf
  
-14:56:48 **** Clean-only build of project standalone_bsp_0 ****
-make -k clean 
-rm -rf ps7_cortexa9_0
-14:56:49 **** Build of project standalone_bsp_0 ****
-make -k all 
-libgen -hw ../videoProcessing_prj_hw_platform/system.xml\
-	       -lp /home/ga38qoh/EDA_Munish/zedboard_training/ZynqSW/2013_3/Support_documents/sdk_repo\
-	       -pe ps7_cortexa9_0 \
-	       -log libgen.log \
-	       system.mss
-libgen
-Xilinx EDK 14.7 Build EDK_P.20131013
-Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
-
-Command Line: libgen -hw ../videoProcessing_prj_hw_platform/system.xml -lp
-/home/ga38qoh/EDA_Munish/zedboard_training/ZynqSW/2013_3/Support_documents/sdk_r
-epo -pe ps7_cortexa9_0 -log libgen.log system.mss 
-
-
-Staging source files.
-Running DRCs.
-Running generate.
-Running post_generate.
-Running include - 'gmake -s include "COMPILER=arm-xilinx-eabi-gcc"
-"ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS= -O2 -c"
-"EXTRA_COMPILER_FLAGS=-g"'.
-
-Running libs - 'gmake -s libs "COMPILER=arm-xilinx-eabi-gcc"
-"ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS= -O2 -c"
-"EXTRA_COMPILER_FLAGS=-g"'.
-Compiling common
-arm-xilinx-eabi-ar: creating ../../../lib/libxil.a
-Compiling standalone
-Compiling axidma
-Compiling iic
-Compiling axivdma
-Compiling devcfg
-Compiling dmaps
-Compiling emacps
-Compiling gpiops
-Compiling iicps
-Compiling qspips
-Compiling scugic
-Compiling scutimer
-Compiling scuwdt
-Compiling ttcps
-Compiling uartps
-Compiling usbps
-Compiling xadcps
-Compiling cpu_cortexa9
-Running execs_generate.
-Finished building libraries
-14:57:45 **** Build of configuration Debug for project SOERGR_sw ****
+20:11:10 **** Build of configuration Debug for project SOERGR_sw ****
 make all 
-Building file: ../src/src/SoCProc_support.c
+Building file: ../src/src/GrayscaleIP_Rule1Driver.c
 Invoking: ARM gcc compiler
-arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER_libIntegration/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/SoCProc_support.d" -MT"src/src/SoCProc_support.d" -o "src/src/SoCProc_support.o" "../src/src/SoCProc_support.c"
-Finished building: ../src/src/SoCProc_support.c
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER_libIntegration/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/GrayscaleIP_Rule1Driver.d" -MT"src/src/GrayscaleIP_Rule1Driver.d" -o "src/src/GrayscaleIP_Rule1Driver.o" "../src/src/GrayscaleIP_Rule1Driver.c"
+Finished building: ../src/src/GrayscaleIP_Rule1Driver.c
  
-Building file: ../src/src/XIL_MICROBLAZE_8_5_support.c
+Building file: ../src/src/GrayscaleIP_Rule2Driver.c
 Invoking: ARM gcc compiler
-arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER_libIntegration/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/XIL_MICROBLAZE_8_5_support.d" -MT"src/src/XIL_MICROBLAZE_8_5_support.d" -o "src/src/XIL_MICROBLAZE_8_5_support.o" "../src/src/XIL_MICROBLAZE_8_5_support.c"
-Finished building: ../src/src/XIL_MICROBLAZE_8_5_support.c
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER_libIntegration/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/GrayscaleIP_Rule2Driver.d" -MT"src/src/GrayscaleIP_Rule2Driver.d" -o "src/src/GrayscaleIP_Rule2Driver.o" "../src/src/GrayscaleIP_Rule2Driver.c"
+Finished building: ../src/src/GrayscaleIP_Rule2Driver.c
  
-Building file: ../src/src/ZYNQ_ARM_CORTEX_A9_support.c
+Building file: ../src/src/GrayscaleIP_SW.c
 Invoking: ARM gcc compiler
-arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER_libIntegration/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/ZYNQ_ARM_CORTEX_A9_support.d" -MT"src/src/ZYNQ_ARM_CORTEX_A9_support.d" -o "src/src/ZYNQ_ARM_CORTEX_A9_support.o" "../src/src/ZYNQ_ARM_CORTEX_A9_support.c"
-Finished building: ../src/src/ZYNQ_ARM_CORTEX_A9_support.c
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER_libIntegration/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/GrayscaleIP_SW.d" -MT"src/src/GrayscaleIP_SW.d" -o "src/src/GrayscaleIP_SW.o" "../src/src/GrayscaleIP_SW.c"
+Finished building: ../src/src/GrayscaleIP_SW.c
+ 
+Building file: ../src/src/GrayscaleIP_config.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER_libIntegration/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/GrayscaleIP_config.d" -MT"src/src/GrayscaleIP_config.d" -o "src/src/GrayscaleIP_config.o" "../src/src/GrayscaleIP_config.c"
+Finished building: ../src/src/GrayscaleIP_config.c
+ 
+Building file: ../src/src/GrayscaleIP_func.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER_libIntegration/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/GrayscaleIP_func.d" -MT"src/src/GrayscaleIP_func.d" -o "src/src/GrayscaleIP_func.o" "../src/src/GrayscaleIP_func.c"
+Finished building: ../src/src/GrayscaleIP_func.c
+ 
+Building file: ../src/src/VDMAIP_Driver.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER_libIntegration/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/VDMAIP_Driver.d" -MT"src/src/VDMAIP_Driver.d" -o "src/src/VDMAIP_Driver.o" "../src/src/VDMAIP_Driver.c"
+Finished building: ../src/src/VDMAIP_Driver.c
  
 Building file: ../src/src/axi_interrupt.c
 Invoking: ARM gcc compiler
@@ -81,46 +51,15 @@ Invoking: ARM gcc compiler
 arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER_libIntegration/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/cf_hdmi.d" -MT"src/src/cf_hdmi.d" -o "src/src/cf_hdmi.o" "../src/src/cf_hdmi.c"
 Finished building: ../src/src/cf_hdmi.c
  
-Building file: ../src/src/hwsw_functions.c
-Invoking: ARM gcc compiler
-arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER_libIntegration/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/hwsw_functions.d" -MT"src/src/hwsw_functions.d" -o "src/src/hwsw_functions.o" "../src/src/hwsw_functions.c"
-Finished building: ../src/src/hwsw_functions.c
- 
 Building file: ../src/src/main.c
 Invoking: ARM gcc compiler
 arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER_libIntegration/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
 Finished building: ../src/src/main.c
  
-Building file: ../src/src/sw_functions.c
-Invoking: ARM gcc compiler
-arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER_libIntegration/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/sw_functions.d" -MT"src/src/sw_functions.d" -o "src/src/sw_functions.o" "../src/src/sw_functions.c"
-../src/src/sw_functions.c:4:1: warning: "/*" within comment [-Wcomment]
-Finished building: ../src/src/sw_functions.c
- 
 Building file: ../src/src/transmitter.c
 Invoking: ARM gcc compiler
 arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER_libIntegration/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/transmitter.d" -MT"src/src/transmitter.d" -o "src/src/transmitter.o" "../src/src/transmitter.c"
 Finished building: ../src/src/transmitter.c
- 
-Building file: ../src/src/vdma_config.c
-Invoking: ARM gcc compiler
-arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER_libIntegration/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/vdma_config.d" -MT"src/src/vdma_config.d" -o "src/src/vdma_config.o" "../src/src/vdma_config.c"
-Finished building: ../src/src/vdma_config.c
- 
-Building file: ../src/src/xconvert_to_gray.c
-Invoking: ARM gcc compiler
-arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER_libIntegration/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/xconvert_to_gray.d" -MT"src/src/xconvert_to_gray.d" -o "src/src/xconvert_to_gray.o" "../src/src/xconvert_to_gray.c"
-Finished building: ../src/src/xconvert_to_gray.c
- 
-Building file: ../src/src/ximage_filter.c
-Invoking: ARM gcc compiler
-arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER_libIntegration/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/ximage_filter.d" -MT"src/src/ximage_filter.d" -o "src/src/ximage_filter.o" "../src/src/ximage_filter.c"
-Finished building: ../src/src/ximage_filter.c
- 
-Building file: ../src/src/xsobel_filter.c
-Invoking: ARM gcc compiler
-arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER_libIntegration/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/xsobel_filter.d" -MT"src/src/xsobel_filter.d" -o "src/src/xsobel_filter.o" "../src/src/xsobel_filter.c"
-Finished building: ../src/src/xsobel_filter.c
  
 Building file: ../.metadata/.plugins/org.eclipse.cdt.make.core/specs.c
 Invoking: ARM gcc compiler
@@ -129,30 +68,12 @@ Finished building: ../.metadata/.plugins/org.eclipse.cdt.make.core/specs.c
  
 Building target: SOERGR_sw.elf
 Invoking: ARM gcc linker
-arm-xilinx-eabi-gcc -L"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER_libIntegration/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "SOERGR_sw.elf"  ./src/src/SoCProc_support.o ./src/src/XIL_MICROBLAZE_8_5_support.o ./src/src/ZYNQ_ARM_CORTEX_A9_support.o ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hwsw_functions.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o ./src/src/vdma_config.o ./src/src/xconvert_to_gray.o ./src/src/ximage_filter.o ./src/src/xsobel_filter.o  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+arm-xilinx-eabi-gcc -L"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER_libIntegration/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "SOERGR_sw.elf"  ./src/src/GrayscaleIP_Rule1Driver.o ./src/src/GrayscaleIP_Rule2Driver.o ./src/src/GrayscaleIP_SW.o ./src/src/GrayscaleIP_config.o ./src/src/GrayscaleIP_func.o ./src/src/VDMAIP_Driver.o ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/main.o ./src/src/transmitter.o  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
 Finished building target: SOERGR_sw.elf
  
 Invoking: ARM Print Size
 arm-xilinx-eabi-size SOERGR_sw.elf  |tee "SOERGR_sw.elf.size"
    text	   data	    bss	    dec	    hex	filename
- 153644	   3056	  22508	 179208	  2bc08	SOERGR_sw.elf
+ 103912	   2880	  22412	 129204	  1f8b4	SOERGR_sw.elf
 Finished building: SOERGR_sw.elf.size
  
-14:57:49 **** Build of configuration Debug for project zynq_fsbl ****
-make all 
-make: Nothing to be done for `all'.
-15:03:15 **** Incremental Build of configuration Debug for project SOERGR_sw ****
-make all 
-make: Nothing to be done for `all'.
-15:03:16 **** Incremental Build of configuration Debug for project zynq_fsbl ****
-make all 
-make: Nothing to be done for `all'.
-15:06:06 **** Incremental Build of configuration Debug for project SOERGR_sw ****
-make all 
-make: Nothing to be done for `all'.
-15:07:50 **** Incremental Build of configuration Debug for project SOERGR_sw ****
-make all 
-make: Nothing to be done for `all'.
-22:17:56 **** Auto Build of configuration Debug for project SOERGR_sw ****
-make all 
-make: Nothing to be done for `all'.

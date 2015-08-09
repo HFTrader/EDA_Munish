@@ -1,0 +1,5 @@
+-- the ip supplier should provide implementations for driver APIs for all of the rules
+-- the prototypes for SW function and driver _Initialize and _Start methods should match...for driver _Stop and _isBusy methods, currently they only need driver instance so no need to match with SW prototype but if they require some other arguments in future then you have to match them as well
+   e.g if _SW(a, b, c, d) and _initalize(baseaddr, vdma_baseaddr, e, f) and _start(driverinstance, e, g) for Rule1, _initialize(baseaddr, vdma_baseaddr, x, y, z) and _start(driverinstance, e, g) then he should modify the prototypes for _SW, _initialize and _start as
+   _SW(a, b, c, d, e, f, g, x, y, z) and in all the rule driver instances: _initialize(baseaddr, vdma_baseaddr, a, b, c, d, e, f, g, x, y, z) and _start(driverinstance, a, b, c, d, e, f, g, x, y, z) 
+
