@@ -1,21 +1,105 @@
-22:09:11 **** Incremental Build of configuration Debug for project SOERGR_sw ****
+00:06:25 **** Clean-only build of configuration Release for project SOERGR_sw ****
+make clean 
+rm -rf  ./src/src/SoCProc_support.o ./src/src/XIL_MICROBLAZE_8_5_support.o ./src/src/ZYNQ_ARM_CORTEX_A9_support.o ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hwsw_functions.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o ./src/src/vdma_config.o ./src/src/xconvert_to_gray.o ./src/src/ximage_filter.o ./src/src/xsobel_filter.o  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/src/SoCProc_support.d ./src/src/XIL_MICROBLAZE_8_5_support.d ./src/src/ZYNQ_ARM_CORTEX_A9_support.d ./src/src/axi_interrupt.d ./src/src/cf_hdmi.d ./src/src/hwsw_functions.d ./src/src/main.d ./src/src/sw_functions.d ./src/src/transmitter.d ./src/src/vdma_config.d ./src/src/xconvert_to_gray.d ./src/src/ximage_filter.d ./src/src/xsobel_filter.d  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.d  SOERGR_sw.elf.size  SOERGR_sw.elf
+ 
+
+00:06:25 Build Finished (took 313ms)
+
+00:06:25 **** Clean-only build of configuration Debug for project SOERGR_sw ****
+make clean 
+rm -rf  ./src/src/SoCProc_support.o ./src/src/XIL_MICROBLAZE_8_5_support.o ./src/src/ZYNQ_ARM_CORTEX_A9_support.o ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hwsw_functions.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o ./src/src/vdma_config.o ./src/src/xconvert_to_gray.o ./src/src/ximage_filter.o ./src/src/xsobel_filter.o  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/src/SoCProc_support.d ./src/src/XIL_MICROBLAZE_8_5_support.d ./src/src/ZYNQ_ARM_CORTEX_A9_support.d ./src/src/axi_interrupt.d ./src/src/cf_hdmi.d ./src/src/hwsw_functions.d ./src/src/main.d ./src/src/sw_functions.d ./src/src/transmitter.d ./src/src/vdma_config.d ./src/src/xconvert_to_gray.d ./src/src/ximage_filter.d ./src/src/xsobel_filter.d  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.d  SOERGR_sw.elf.size  SOERGR_sw.elf
+ 
+00:06:26 **** Build of configuration Debug for project SOERGR_sw ****
 make all 
-make: Nothing to be done for `all'.
-22:09:13 **** Incremental Build of configuration Debug for project SOERGR_sw ****
-make all 
-make: Nothing to be done for `all'.
-22:09:14 **** Incremental Build of configuration Debug for project zynq_fsbl ****
-make all 
-make: Nothing to be done for `all'.
-22:10:56 **** Auto Build of configuration Debug for project SOERGR_sw ****
-make all 
+Building file: ../src/src/SoCProc_support.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/SoCProc_support.d" -MT"src/src/SoCProc_support.d" -o "src/src/SoCProc_support.o" "../src/src/SoCProc_support.c"
+Finished building: ../src/src/SoCProc_support.c
+ 
+Building file: ../src/src/XIL_MICROBLAZE_8_5_support.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/XIL_MICROBLAZE_8_5_support.d" -MT"src/src/XIL_MICROBLAZE_8_5_support.d" -o "src/src/XIL_MICROBLAZE_8_5_support.o" "../src/src/XIL_MICROBLAZE_8_5_support.c"
+Finished building: ../src/src/XIL_MICROBLAZE_8_5_support.c
+ 
+Building file: ../src/src/ZYNQ_ARM_CORTEX_A9_support.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/ZYNQ_ARM_CORTEX_A9_support.d" -MT"src/src/ZYNQ_ARM_CORTEX_A9_support.d" -o "src/src/ZYNQ_ARM_CORTEX_A9_support.o" "../src/src/ZYNQ_ARM_CORTEX_A9_support.c"
+Finished building: ../src/src/ZYNQ_ARM_CORTEX_A9_support.c
+ 
+Building file: ../src/src/axi_interrupt.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/axi_interrupt.d" -MT"src/src/axi_interrupt.d" -o "src/src/axi_interrupt.o" "../src/src/axi_interrupt.c"
+Finished building: ../src/src/axi_interrupt.c
+ 
+Building file: ../src/src/cf_hdmi.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/cf_hdmi.d" -MT"src/src/cf_hdmi.d" -o "src/src/cf_hdmi.o" "../src/src/cf_hdmi.c"
+Finished building: ../src/src/cf_hdmi.c
+ 
 Building file: ../src/src/hwsw_functions.c
 Invoking: ARM gcc compiler
 arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/hwsw_functions.d" -MT"src/src/hwsw_functions.d" -o "src/src/hwsw_functions.o" "../src/src/hwsw_functions.c"
-../src/src/hwsw_functions.c: In function 'hwConvToGray':
-../src/src/hwsw_functions.c:167:1: error: expected declaration or statement at end of input
-make: *** [src/src/hwsw_functions.o] Error 1
-22:11:35 **** Auto Build of configuration Debug for project SOERGR_sw ****
+Finished building: ../src/src/hwsw_functions.c
+ 
+Building file: ../src/src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/main.d" -MT"src/src/main.d" -o "src/src/main.o" "../src/src/main.c"
+Finished building: ../src/src/main.c
+ 
+Building file: ../src/src/sw_functions.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/sw_functions.d" -MT"src/src/sw_functions.d" -o "src/src/sw_functions.o" "../src/src/sw_functions.c"
+../src/src/sw_functions.c:4:1: warning: "/*" within comment [-Wcomment]
+Finished building: ../src/src/sw_functions.c
+ 
+Building file: ../src/src/transmitter.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/transmitter.d" -MT"src/src/transmitter.d" -o "src/src/transmitter.o" "../src/src/transmitter.c"
+Finished building: ../src/src/transmitter.c
+ 
+Building file: ../src/src/vdma_config.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/vdma_config.d" -MT"src/src/vdma_config.d" -o "src/src/vdma_config.o" "../src/src/vdma_config.c"
+Finished building: ../src/src/vdma_config.c
+ 
+Building file: ../src/src/xconvert_to_gray.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/xconvert_to_gray.d" -MT"src/src/xconvert_to_gray.d" -o "src/src/xconvert_to_gray.o" "../src/src/xconvert_to_gray.c"
+Finished building: ../src/src/xconvert_to_gray.c
+ 
+Building file: ../src/src/ximage_filter.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/ximage_filter.d" -MT"src/src/ximage_filter.d" -o "src/src/ximage_filter.o" "../src/src/ximage_filter.c"
+Finished building: ../src/src/ximage_filter.c
+ 
+Building file: ../src/src/xsobel_filter.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/src/xsobel_filter.d" -MT"src/src/xsobel_filter.d" -o "src/src/xsobel_filter.o" "../src/src/xsobel_filter.c"
+Finished building: ../src/src/xsobel_filter.c
+ 
+Building file: ../.metadata/.plugins/org.eclipse.cdt.make.core/specs.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF".metadata/.plugins/org.eclipse.cdt.make.core/specs.d" -MT".metadata/.plugins/org.eclipse.cdt.make.core/specs.d" -o ".metadata/.plugins/org.eclipse.cdt.make.core/specs.o" "../.metadata/.plugins/org.eclipse.cdt.make.core/specs.c"
+Finished building: ../.metadata/.plugins/org.eclipse.cdt.make.core/specs.c
+ 
+Building target: SOERGR_sw.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "SOERGR_sw.elf"  ./src/src/SoCProc_support.o ./src/src/XIL_MICROBLAZE_8_5_support.o ./src/src/ZYNQ_ARM_CORTEX_A9_support.o ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/hwsw_functions.o ./src/src/main.o ./src/src/sw_functions.o ./src/src/transmitter.o ./src/src/vdma_config.o ./src/src/xconvert_to_gray.o ./src/src/ximage_filter.o ./src/src/xsobel_filter.o  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: SOERGR_sw.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size SOERGR_sw.elf  |tee "SOERGR_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 122124	   2928	  22492	 147544	  24058	SOERGR_sw.elf
+Finished building: SOERGR_sw.elf.size
+ 
+00:06:33 **** Incremental Build of configuration Debug for project SOERGR_sw ****
+make all 
+make: Nothing to be done for `all'.
+00:06:34 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+00:08:22 **** Auto Build of configuration Debug for project SOERGR_sw ****
 make all 
 Building file: ../src/src/hwsw_functions.c
 Invoking: ARM gcc compiler
@@ -30,12 +114,6 @@ Finished building target: SOERGR_sw.elf
 Invoking: ARM Print Size
 arm-xilinx-eabi-size SOERGR_sw.elf  |tee "SOERGR_sw.elf.size"
    text	   data	    bss	    dec	    hex	filename
- 153644	   3056	  22508	 179208	  2bc08	SOERGR_sw.elf
+ 122132	   2928	  22492	 147552	  24060	SOERGR_sw.elf
 Finished building: SOERGR_sw.elf.size
  
-22:11:38 **** Incremental Build of configuration Debug for project SOERGR_sw ****
-make all 
-make: Nothing to be done for `all'.
-22:11:39 **** Incremental Build of configuration Debug for project zynq_fsbl ****
-make all 
-make: Nothing to be done for `all'.

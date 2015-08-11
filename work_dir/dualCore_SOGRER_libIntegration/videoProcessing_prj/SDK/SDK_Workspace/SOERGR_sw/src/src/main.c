@@ -292,7 +292,7 @@ void processFrame() {
 
 
 
-
+// TODO: verify HW/SW partitioning by porting this SW onto dualCore_SOGRER_slow project
 // TODO: multicore optimization
 
 // TODO: build the codeGenerator which is responsible for generating:

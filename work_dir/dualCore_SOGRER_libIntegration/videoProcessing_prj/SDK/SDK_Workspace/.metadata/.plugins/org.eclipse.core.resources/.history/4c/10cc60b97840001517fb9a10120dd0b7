@@ -60,14 +60,18 @@ static void SetHAMode(SobelIPRule1RegMap mode, unsigned int baseaddr) {
 }
 
 
-void SobelIP_Rule1Driver_initialize(SobelIPRule1DriverInstance *InstancePtr, unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr, unsigned short width, unsigned short height, unsigned short horizontalActiveTime, unsigned short vertcialActiveTime) {
-    SobelIPRule1InitMode.ROWS_DATA.mask = 0xffffffff;
-    SobelIPRule1InitMode.ROWS_DATA.value = height;
+void SobelIP_Rule1Driver_initialize(SobelIPRule1DriverInstance *InstancePtr, unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr, unsigned short width, unsigned short height, unsigned short horizontalActiveTime, unsigned short verticalActiveTime) {
+/*	SobelIPRule1InitMode.ROWS_DATA.mask = 0xffffffff;
+    SobelIPRule1InitMode.ROWS_DATA.value = verticalActiveTime;
     
     SobelIPRule1InitMode.COLS_DATA.mask = 0xffffffff;
-    SobelIPRule1InitMode.COLS_DATA.value = width;
+    SobelIPRule1InitMode.COLS_DATA.value = horizontalActiveTime;
     // initializing the IP module
-    SetHAMode(SobelIPRule1InitMode, InstancePtr->baseaddr);   
+    SetHAMode(SobelIPRule1InitMode, InstancePtr->baseaddr);*/
+
+	localWriteReg(InstancePtr->baseaddr + 0x14, 0xffffffff, height);
+	localWriteReg(InstancePtr->baseaddr + 0x1c, 0xffffffff, width);
+	localWriteReg(InstancePtr->baseaddr + 0x0, 0x00000081, 0x81);
 
     // for this rule we also need to initialize the connected VDMA as well
     SOBELIP_VDMA_Driver_initialize(&InstancePtr->vdmaDriver);        
@@ -75,8 +79,8 @@ void SobelIP_Rule1Driver_initialize(SobelIPRule1DriverInstance *InstancePtr, uns
 
 
 
-void SobelIP_Rule1Driver_start(SobelIPRule1DriverInstance *InstancePtr, unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr, unsigned short width, unsigned short height, unsigned short horizontalActiveTime, unsigned short vertcialActiveTime) {
-    SetHAMode(StartMode, InstancePtr->baseaddr);
+void SobelIP_Rule1Driver_start(SobelIPRule1DriverInstance *InstancePtr, unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr, unsigned short width, unsigned short height, unsigned short horizontalActiveTime, unsigned short verticalActiveTime) {
+	SetHAMode(SobelIPRule1StartMode, InstancePtr->baseaddr);
     
     SOBELIP_VDMA_Driver_start(&InstancePtr->vdmaDriver, ImgIn_BaseAddr, ImgOut_BaseAddr, width, height, horizontalActiveTime, verticalActiveTime);    
 }

@@ -3,10 +3,10 @@
 
 #include "SobelIP_Rule1Driver.h"
 
-
+static first_time_started = 0;
 
 SobelIPRule1RegMap SobelIPRule1InitMode = {
-											.AP_CTRL = {.offset = 0x00, .mask = 0x00000081, .value = 0x00000081},
+											.AP_CTRL = {.offset = 0x00, .mask = 0x00000000, .value = 0xffffffff},
 											.GIE = {.offset = 0x04, .mask = 0x00000001, .value = 0x00000001},
 											.IER = {.offset = 0x08, .mask = 0x00000001, .value = 0x00000000},
 											.ISR = {.offset = 0x0c, .mask = 0x00000000, .value = 0xffffffff},
@@ -69,6 +69,8 @@ void SobelIP_Rule1Driver_initialize(SobelIPRule1DriverInstance *InstancePtr, uns
     // initializing the IP module
     SetHAMode(SobelIPRule1InitMode, InstancePtr->baseaddr);
 
+    localWriteReg(InstancePtr->baseaddr + 0x0, 0x00000081, 0x81);
+
     // for this rule we also need to initialize the connected VDMA as well
     SOBELIP_VDMA_Driver_initialize(&InstancePtr->vdmaDriver);        
 }
@@ -77,7 +79,10 @@ void SobelIP_Rule1Driver_initialize(SobelIPRule1DriverInstance *InstancePtr, uns
 
 void SobelIP_Rule1Driver_start(SobelIPRule1DriverInstance *InstancePtr, unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr, unsigned short width, unsigned short height, unsigned short horizontalActiveTime, unsigned short verticalActiveTime) {
 	SetHAMode(SobelIPRule1StartMode, InstancePtr->baseaddr);
-    
+    if (first_time_started == 0) {
+    	first_time_started = 1;
+    }
+
     SOBELIP_VDMA_Driver_start(&InstancePtr->vdmaDriver, ImgIn_BaseAddr, ImgOut_BaseAddr, width, height, horizontalActiveTime, verticalActiveTime);    
 }
 
@@ -93,7 +98,11 @@ void SobelIP_Rule1Driver_stop(SobelIPRule1DriverInstance *InstancePtr) {
 
 
 bool SobelIP_Rule1Driver_isBusy(SobelIPRule1DriverInstance *InstancePtr) {    
-    return (bool) !((localReadReg(InstancePtr->baseaddr + SOBELIPRULE1_BUSY_STATUS_REG_offset) >> SOBELIPRULE1_BUSY_STATUS_REG_bit) & 1);
+	if (first_time_started == 1) {
+		return (bool) !((localReadReg(InstancePtr->baseaddr + SOBELIPRULE1_BUSY_STATUS_REG_offset) >> SOBELIPRULE1_BUSY_STATUS_REG_bit) & 1);
+	} else {
+		return 0;
+	}
 }
 
 

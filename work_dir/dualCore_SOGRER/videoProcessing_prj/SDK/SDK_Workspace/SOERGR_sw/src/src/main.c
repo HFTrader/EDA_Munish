@@ -284,14 +284,14 @@ void processFrame(unsigned int dataMem_BASEADDR) {
 	// sobel filtering (edge detection)
 	hwEdgeDetection(dataMem_ptr, dataMem_ptr + FRAME_SIZE, 640, 480, h_ActiveTime, v_ActiveTime);
 	dataMem_ptr += FRAME_SIZE;
-
+/*
 	// erode filtering
 	hwErode(dataMem_ptr, dataMem_ptr + FRAME_SIZE, 640, 480, h_ActiveTime, v_ActiveTime);
 	dataMem_ptr += FRAME_SIZE;
 
 	// grayscale filtering
 	hwConvToGray(dataMem_ptr, dataMem_ptr + FRAME_SIZE, 640, 480, h_ActiveTime, v_ActiveTime);
-	dataMem_ptr += FRAME_SIZE;
+	dataMem_ptr += FRAME_SIZE;*/
 
 	ConfigHdmiVDMA (h_ActiveTime, v_ActiveTime, dataMem_ptr);
 }

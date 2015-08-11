@@ -70,7 +70,7 @@ void AXI_INTERRUPT_VsyncIntr_Handler(void * baseaddr_p)
 		// for using other Processors in the SoC, using the API provided in "SoCProc_support.h"
 		unsigned char SoCProc_status = SoCProc_processDataflow();
 		if (SoCProc_status == 0) {
-			printf("Skipping frame%d\r\n", debug_frameNo);
+			//printf("Skipping frame%d\r\n", debug_frameNo);
 		}
 	}
 }
