@@ -4,36 +4,18 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../src/src/GrayscaleIP_Rule1Driver.c \
-../src/src/GrayscaleIP_Rule2Driver.c \
-../src/src/GrayscaleIP_SW.c \
-../src/src/GrayscaleIP_config.c \
-../src/src/GrayscaleIP_func.c \
-../src/src/VDMAIP_Driver.c \
 ../src/src/axi_interrupt.c \
 ../src/src/cf_hdmi.c \
 ../src/src/main.c \
 ../src/src/transmitter.c 
 
 OBJS += \
-./src/src/GrayscaleIP_Rule1Driver.o \
-./src/src/GrayscaleIP_Rule2Driver.o \
-./src/src/GrayscaleIP_SW.o \
-./src/src/GrayscaleIP_config.o \
-./src/src/GrayscaleIP_func.o \
-./src/src/VDMAIP_Driver.o \
 ./src/src/axi_interrupt.o \
 ./src/src/cf_hdmi.o \
 ./src/src/main.o \
 ./src/src/transmitter.o 
 
 C_DEPS += \
-./src/src/GrayscaleIP_Rule1Driver.d \
-./src/src/GrayscaleIP_Rule2Driver.d \
-./src/src/GrayscaleIP_SW.d \
-./src/src/GrayscaleIP_config.d \
-./src/src/GrayscaleIP_func.d \
-./src/src/VDMAIP_Driver.d \
 ./src/src/axi_interrupt.d \
 ./src/src/cf_hdmi.d \
 ./src/src/main.d \
