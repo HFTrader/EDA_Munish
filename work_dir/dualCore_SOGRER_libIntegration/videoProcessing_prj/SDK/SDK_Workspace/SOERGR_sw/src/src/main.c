@@ -135,6 +135,8 @@ int main()
 		FRAME_INTR = 0;
 		while(FRAME_INTR == 0);
 
+		//FRAME_INTR = 1; while(1);
+
 		//printf("%d\r\n", get_cyclecount());
 
 		// raw data passed through the data processing chain by Master CPU
@@ -292,16 +294,10 @@ void processFrame(unsigned int dataMemBaseAddr) {
 	ConvToGray_func(dataMem_ptr, dataMem_ptr + FRAME_SIZE, 640, 480, h_ActiveTime, v_ActiveTime);
 	dataMem_ptr += FRAME_SIZE;
 
-	//ConfigHdmiVDMA(h_ActiveTime, v_ActiveTime, dataMem_ptr);
-	ConfigHdmiVDMA(h_ActiveTime, v_ActiveTime, 0x2000000);
+	ConfigHdmiVDMA(h_ActiveTime, v_ActiveTime, dataMem_ptr);
+	//ConfigHdmiVDMA(h_ActiveTime, v_ActiveTime, 0x12000000);
 }
 
-
-
-void dummy_processFrame() {
-	int i;
-	for (i=0; i<5000000; i++);
-}
 
 // TODO: verify HW/SW partitioning by porting this SW onto dualCore_SOGRER_slow project
 // TODO: multicore optimization
