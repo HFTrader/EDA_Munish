@@ -9,6 +9,7 @@ RM := rm -rf
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include src/src/subdir.mk
+-include src/multicore_sup/subdir.mk
 -include src/IP_SW/SobelIP/SW/function/subdir.mk
 -include src/IP_SW/SobelIP/SW/driver/Rule1/subdir.mk
 -include src/IP_SW/SobelIP/SW/config/subdir.mk

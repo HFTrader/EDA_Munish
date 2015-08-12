@@ -17,6 +17,7 @@ S_UPPER_DEPS :=
 # Every subdirectory with source files must be described here
 SUBDIRS := \
 src/src \
+src/multicore_sup \
 src/IP_SW/SobelIP/SW/function \
 src/IP_SW/SobelIP/SW/driver/Rule1 \
 src/IP_SW/SobelIP/SW/config \

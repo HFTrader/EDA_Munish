@@ -3,7 +3,7 @@
 
 #include "SobelIP_Rule1Driver.h"
 
-static first_time_started = 0;
+static int first_time_started = 0;
 
 SobelIPRule1RegMap SobelIPRule1InitMode = {
 											.AP_CTRL = {.offset = 0x00, .mask = 0x00000000, .value = 0xffffffff},

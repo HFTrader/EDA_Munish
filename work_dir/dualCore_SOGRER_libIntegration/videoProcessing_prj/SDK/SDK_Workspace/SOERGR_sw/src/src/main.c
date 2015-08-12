@@ -17,9 +17,10 @@
 #include "xil_mmu.h"
 #include "xpseudo_asm.h"
 #include "xscugic.h"
-#include "profile_cnt.h"
-#include "global.h"
 #include "../IP_SW/funcs.h"
+#include "global.h"
+
+
 
 
 
@@ -27,7 +28,6 @@
 #define HDMI_CALL_INTERVAL_MS	10
 
 #define VIDEO_BASEADDR 0x2000000
-
 
 // global variables only to be used in main.c file
 static unsigned char    MajorRev;      /* Major Release Number */
@@ -50,7 +50,7 @@ int APP_ChangeResolution();
 void InitSobelFilter();
 void InitErodeFilter();
 void InitGrayscaleFilter();
-void processFrame();			// data processing chain (application's dataflow)
+void processFrame(unsigned int dataMemBaseAddr);			// data processing chain (application's dataflow)
 
 
 /***************************************************************************//**
@@ -92,6 +92,9 @@ int main()
 					 XPAR_SCUGIC_SINGLE_DEVICE_ID,
 					 XPAR_SCUTIMER_INTR);
 
+#ifdef USE_MULTICORE
+	SoCProc_initialize();
+#endif
 
 	DBG_MSG("  To change the video resolution press:\r\n");
 	DBG_MSG("  '0' - 640x480;  '1' - 800x600;  '2' - 1024x768; '3' - 1280x720 \r\n");
@@ -130,10 +133,13 @@ int main()
 		}
 
 		FRAME_INTR = 0;
-		while (FRAME_INTR == 0);
+		while(FRAME_INTR == 0);
+
+		//printf("%d\r\n", get_cyclecount());
 
 		// raw data passed through the data processing chain by Master CPU
-		processFrame();
+		processFrame(VIDEO_BASEADDR);
+		//init_perfcounters(1, 0);
 	}
 
 	Xil_DCacheDisable();
@@ -268,8 +274,8 @@ int APP_ChangeResolution (void)
 
 
 
-void processFrame() {
-	unsigned int dataMem_ptr = VIDEO_BASEADDR;
+void processFrame(unsigned int dataMemBaseAddr) {
+	unsigned int dataMem_ptr = dataMemBaseAddr;
 
 	// capturing the frame pixels from camera line buffers onto DDR memory
 	DDRVideoWr(640, 480, h_ActiveTime, v_ActiveTime, dataMem_ptr);
@@ -278,6 +284,7 @@ void processFrame() {
 	EdgeDetection_func(dataMem_ptr, dataMem_ptr + FRAME_SIZE, 640, 480, h_ActiveTime, v_ActiveTime);
 	dataMem_ptr += FRAME_SIZE;
 
+	// erode filtering the captured image
 	Erode_func(dataMem_ptr, dataMem_ptr + FRAME_SIZE, 640, 480, h_ActiveTime, v_ActiveTime);
 	dataMem_ptr += FRAME_SIZE;
 
@@ -285,12 +292,16 @@ void processFrame() {
 	ConvToGray_func(dataMem_ptr, dataMem_ptr + FRAME_SIZE, 640, 480, h_ActiveTime, v_ActiveTime);
 	dataMem_ptr += FRAME_SIZE;
 
-	ConfigHdmiVDMA (h_ActiveTime, v_ActiveTime, dataMem_ptr);
+	//ConfigHdmiVDMA(h_ActiveTime, v_ActiveTime, dataMem_ptr);
+	ConfigHdmiVDMA(h_ActiveTime, v_ActiveTime, 0x2000000);
 }
 
 
 
-
+void dummy_processFrame() {
+	int i;
+	for (i=0; i<5000000; i++);
+}
 
 // TODO: verify HW/SW partitioning by porting this SW onto dualCore_SOGRER_slow project
 // TODO: multicore optimization
