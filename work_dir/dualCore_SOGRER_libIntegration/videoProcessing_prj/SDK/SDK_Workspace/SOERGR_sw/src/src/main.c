@@ -295,12 +295,11 @@ void processFrame(unsigned int dataMemBaseAddr) {
 	dataMem_ptr += FRAME_SIZE;
 
 	ConfigHdmiVDMA(h_ActiveTime, v_ActiveTime, dataMem_ptr);
-	//ConfigHdmiVDMA(h_ActiveTime, v_ActiveTime, 0x12000000);
 }
 
 
+// TODO: deal with increased control bus bandwidth (which exceeds available throughput!!) due to continuous reading of busy status register
 // TODO: verify HW/SW partitioning by porting this SW onto dualCore_SOGRER_slow project
-// TODO: multicore optimization
 
 // TODO: build the codeGenerator which is responsible for generating:
 // a) Driver templates

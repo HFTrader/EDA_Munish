@@ -7,19 +7,22 @@ C_SRCS += \
 ../src/src/axi_interrupt.c \
 ../src/src/cf_hdmi.c \
 ../src/src/main.c \
-../src/src/transmitter.c 
+../src/src/transmitter.c \
+../src/src/vdma_config.c 
 
 OBJS += \
 ./src/src/axi_interrupt.o \
 ./src/src/cf_hdmi.o \
 ./src/src/main.o \
-./src/src/transmitter.o 
+./src/src/transmitter.o \
+./src/src/vdma_config.o 
 
 C_DEPS += \
 ./src/src/axi_interrupt.d \
 ./src/src/cf_hdmi.d \
 ./src/src/main.d \
-./src/src/transmitter.d 
+./src/src/transmitter.d \
+./src/src/vdma_config.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

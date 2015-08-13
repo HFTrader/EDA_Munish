@@ -7,7 +7,7 @@ static int first_time_started = 0;
 
 SobelIPRule1RegMap SobelIPRule1InitMode = {
 											.AP_CTRL = {.offset = 0x00, .mask = 0x00000000, .value = 0xffffffff},
-											.GIE = {.offset = 0x04, .mask = 0x00000001, .value = 0x00000001},
+											.GIE = {.offset = 0x04, .mask = 0x00000001, .value = 0x00000000},
 											.IER = {.offset = 0x08, .mask = 0x00000001, .value = 0x00000000},
 											.ISR = {.offset = 0x0c, .mask = 0x00000000, .value = 0xffffffff},
 											.ROWS_DATA = {.offset = 0x14, .mask = 0x00000000, .value = 0xffffffff},
@@ -72,7 +72,7 @@ void SobelIP_Rule1Driver_initialize(SobelIPRule1DriverInstance *InstancePtr, uns
     localWriteReg(InstancePtr->baseaddr + 0x0, 0x00000081, 0x81);
 
     // for this rule we also need to initialize the connected VDMA as well
-    SOBELIP_VDMA_Driver_initialize(&InstancePtr->vdmaDriver);        
+    SOBELIP_VDMA_Driver_initialize(&InstancePtr->vdmaDriver);
 }
 
 

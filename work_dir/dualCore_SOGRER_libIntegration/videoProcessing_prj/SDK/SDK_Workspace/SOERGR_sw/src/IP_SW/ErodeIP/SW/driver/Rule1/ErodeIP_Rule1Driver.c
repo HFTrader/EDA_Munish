@@ -3,11 +3,11 @@
 
 #include "ErodeIP_Rule1Driver.h"
 
-
+static int first_time_started = 0;
 
 ErodeIPRule1RegMap ErodeIPRule1InitMode = {
-											.AP_CTRL = {.offset = 0x00, .mask = 0x00000081, .value = 0x00000081},
-											.GIE = {.offset = 0x04, .mask = 0x00000001, .value = 0x00000001},
+											.AP_CTRL = {.offset = 0x00, .mask = 0x00000000, .value = 0xffffffff},
+											.GIE = {.offset = 0x04, .mask = 0x00000001, .value = 0x00000000},
 											.IER = {.offset = 0x08, .mask = 0x00000001, .value = 0x00000000},
 											.ISR = {.offset = 0x0c, .mask = 0x00000000, .value = 0xffffffff},
 											.ROWS_DATA = {.offset = 0x14, .mask = 0x00000000, .value = 0xffffffff},
@@ -69,6 +69,8 @@ void ErodeIP_Rule1Driver_initialize(ErodeIPRule1DriverInstance *InstancePtr, uns
     // initializing the IP module
     SetHAMode(ErodeIPRule1InitMode, InstancePtr->baseaddr);   
 
+    localWriteReg(InstancePtr->baseaddr + 0x0, 0x00000081, 0x81);
+
     // for this rule we also need to initialize the connected VDMA as well
     ERODEIP_VDMA_Driver_initialize(&InstancePtr->vdmaDriver);        
 }
@@ -77,6 +79,9 @@ void ErodeIP_Rule1Driver_initialize(ErodeIPRule1DriverInstance *InstancePtr, uns
 
 void ErodeIP_Rule1Driver_start(ErodeIPRule1DriverInstance *InstancePtr, unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr, unsigned short width, unsigned short height, unsigned short horizontalActiveTime, unsigned short verticalActiveTime) {
 	SetHAMode(ErodeIPRule1StartMode, InstancePtr->baseaddr);
+    if (first_time_started == 0) {
+    	first_time_started = 1;
+    }
     
     ERODEIP_VDMA_Driver_start(&InstancePtr->vdmaDriver, ImgIn_BaseAddr, ImgOut_BaseAddr, width, height, horizontalActiveTime, verticalActiveTime);    
 }
@@ -93,7 +98,11 @@ void ErodeIP_Rule1Driver_stop(ErodeIPRule1DriverInstance *InstancePtr) {
 
 
 bool ErodeIP_Rule1Driver_isBusy(ErodeIPRule1DriverInstance *InstancePtr) {    
-    return (bool) !((localReadReg(InstancePtr->baseaddr + ERODEIPRULE1_BUSY_STATUS_REG_offset) >> ERODEIPRULE1_BUSY_STATUS_REG_bit) & 1);
+    if (first_time_started == 1) {
+    	return (bool) !((localReadReg(InstancePtr->baseaddr + ERODEIPRULE1_BUSY_STATUS_REG_offset) >> ERODEIPRULE1_BUSY_STATUS_REG_bit) & 1);
+    } else {
+    	return 0;
+    }
 }
 
 
