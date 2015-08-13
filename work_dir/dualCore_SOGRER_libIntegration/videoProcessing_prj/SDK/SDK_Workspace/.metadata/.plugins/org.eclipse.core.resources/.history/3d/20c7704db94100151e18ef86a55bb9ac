@@ -36,11 +36,14 @@ void EdgeDetection_func(unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAd
 #if SOBELIP_NUM_INSTANCES == 0                      // no IP module in design so using SW implementation
     EdgeDetection(ImgIn_BaseAddr, ImgOut_BaseAddr, width, height, horizontalActiveTime, verticalActiveTime);
 #else
+    int i;
     for (ip_instance_idx=0; ip_instance_idx<SOBELIP_NUM_INSTANCES; ip_instance_idx++) {
     	if (SOBELIP_INFO[ip_instance_idx].grip_rule == 1) {
     		if (SobelIP_Rule1Driver_isBusy(&SobelIPRule1Driver[rule1_driver_idx]) == 0) {      // a free IP instance found
 				SobelIP_Rule1Driver_start(&SobelIPRule1Driver[rule1_driver_idx], ImgIn_BaseAddr, ImgOut_BaseAddr, width, height, horizontalActiveTime, verticalActiveTime);
-				while(SobelIP_Rule1Driver_isBusy(&SobelIPRule1Driver[rule1_driver_idx]) == 1);
+				while(SobelIP_Rule1Driver_isBusy(&SobelIPRule1Driver[rule1_driver_idx]) == 1) {
+					for (i=0; i<1000000; i++);
+				}
 				return;
 			}
     		rule1_driver_idx++;

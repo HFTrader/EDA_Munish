@@ -98,10 +98,7 @@ void ErodeIP_Rule1Driver_stop(ErodeIPRule1DriverInstance *InstancePtr) {
 
 
 bool ErodeIP_Rule1Driver_isBusy(ErodeIPRule1DriverInstance *InstancePtr) {    
-	int i;
-	for (i=0; i<1000; i++);				// so as not to congest the control bus for repeated read register requests in Polling mode
-
-	if (first_time_started == 1) {
+    if (first_time_started == 1) {
     	return (bool) !((localReadReg(InstancePtr->baseaddr + ERODEIPRULE1_BUSY_STATUS_REG_offset) >> ERODEIPRULE1_BUSY_STATUS_REG_bit) & 1);
     } else {
     	return 0;

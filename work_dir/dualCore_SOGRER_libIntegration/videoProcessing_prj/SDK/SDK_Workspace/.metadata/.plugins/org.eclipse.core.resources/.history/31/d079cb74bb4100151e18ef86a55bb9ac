@@ -80,6 +80,7 @@ void GrayscaleIP_Rule1Driver_initialize(GrayscaleIPRule1DriverInstance *Instance
 
 
 void GrayscaleIP_Rule1Driver_start(GrayscaleIPRule1DriverInstance *InstancePtr, unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr,unsigned short width, unsigned short height, unsigned short horizontalActiveTime, unsigned short verticalActiveTime) {
+    // following is not needed as we haven't updated any register
     SetHAMode(GrayscaleIPRule1StartMode, InstancePtr->baseaddr);
     
     if (first_time_started == 0) {
@@ -104,7 +105,6 @@ void GrayscaleIP_Rule1Driver_stop(GrayscaleIPRule1DriverInstance *InstancePtr) {
 bool GrayscaleIP_Rule1Driver_isBusy(GrayscaleIPRule1DriverInstance *InstancePtr) {
 	int i;
 	for (i=0; i<1000; i++);				// so as not to congest the control bus for repeated read register requests in Polling mode
-
     if (first_time_started == 1) {
     	return (bool) !((localReadReg(InstancePtr->baseaddr + GRAYSCALEIPRULE1_BUSY_STATUS_REG_offset)>>GRAYSCALEIPRULE1_BUSY_STATUS_REG_bit) & 0x1);
     } else {

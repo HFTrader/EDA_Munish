@@ -44,11 +44,14 @@ void ConvToGray_func(unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr,
 #if GRAYSCALEIP_NUM_INSTANCES == 0                      // no IP module in design so using SW implementation
     ConvToGray(ImgIn_BaseAddr, ImgOut_BaseAddr, width, height, horizontalActiveTime, verticalActiveTime);
 #else
+    int i;
     for (ip_instance_idx=0; ip_instance_idx<GRAYSCALEIP_NUM_INSTANCES; ip_instance_idx++) {
     	if (GRAYSCALEIP_INFO[ip_instance_idx].grip_rule == 1) {
     		if (GrayscaleIP_Rule1Driver_isBusy(&GrayscaleIPRule1Driver[rule1_driver_idx]) == 0) {      // a free IP instance found
 				GrayscaleIP_Rule1Driver_start(&GrayscaleIPRule1Driver[rule1_driver_idx], ImgIn_BaseAddr, ImgOut_BaseAddr, width, height, horizontalActiveTime, verticalActiveTime);
-				while(GrayscaleIP_Rule1Driver_isBusy(&GrayscaleIPRule1Driver[rule1_driver_idx]) == 1);
+				while(GrayscaleIP_Rule1Driver_isBusy(&GrayscaleIPRule1Driver[rule1_driver_idx]) == 1) {
+					for (i=0; i<1000; i++);					// so as not to congest the control bus with repeated read register requests
+				}
 				return;
 			}
     		rule1_driver_idx++;

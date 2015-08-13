@@ -3,11 +3,11 @@
 
 #include "SobelIP_Rule1Driver.h"
 
-static first_time_started = 0;
+static int first_time_started = 0;
 
 SobelIPRule1RegMap SobelIPRule1InitMode = {
 											.AP_CTRL = {.offset = 0x00, .mask = 0x00000000, .value = 0xffffffff},
-											.GIE = {.offset = 0x04, .mask = 0x00000001, .value = 0x00000001},
+											.GIE = {.offset = 0x04, .mask = 0x00000001, .value = 0x00000000},
 											.IER = {.offset = 0x08, .mask = 0x00000001, .value = 0x00000000},
 											.ISR = {.offset = 0x0c, .mask = 0x00000000, .value = 0xffffffff},
 											.ROWS_DATA = {.offset = 0x14, .mask = 0x00000000, .value = 0xffffffff},
@@ -98,6 +98,9 @@ void SobelIP_Rule1Driver_stop(SobelIPRule1DriverInstance *InstancePtr) {
 
 
 bool SobelIP_Rule1Driver_isBusy(SobelIPRule1DriverInstance *InstancePtr) {    
+	int i;
+	for (i=0; i<1000; i++);				// so as not to congest the control bus for repeated read register requests in Polling mode
+
 	if (first_time_started == 1) {
     return (bool) !((localReadReg(InstancePtr->baseaddr + SOBELIPRULE1_BUSY_STATUS_REG_offset) >> SOBELIPRULE1_BUSY_STATUS_REG_bit) & 1);
 	} else {

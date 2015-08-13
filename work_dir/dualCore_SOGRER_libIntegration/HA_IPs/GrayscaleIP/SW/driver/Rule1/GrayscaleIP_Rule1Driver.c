@@ -3,10 +3,12 @@
 
 #include "GrayscaleIP_Rule1Driver.h"
 
+static int first_time_started = 0;
+
 
 GrayscaleIPRule1RegMap GrayscaleIPRule1InitMode = {
-													.AP_CTRL = {.offset = 0x00, .mask = 0x00000081, .value = 0x00000081},
-													.GIE = {.offset = 0x04, .mask = 0x00000001, .value = 0x00000001},
+													.AP_CTRL = {.offset = 0x00, .mask = 0x00000000, .value = 0xffffffff},
+													.GIE = {.offset = 0x04, .mask = 0x00000001, .value = 0x00000000},
 													.IER = {.offset = 0x08, .mask = 0x00000001, .value = 0x00000000},
 													.ISR = {.offset = 0x0c, .mask = 0x00000000, .value = 0xffffffff},
 													.ROWS_DATA = {.offset = 0x14, .mask = 0x00000000, .value = 0xffffffff},
@@ -69,6 +71,8 @@ void GrayscaleIP_Rule1Driver_initialize(GrayscaleIPRule1DriverInstance *Instance
 
 	SetHAMode(GrayscaleIPRule1InitMode, InstancePtr->baseaddr);
 
+	localWriteReg(InstancePtr->baseaddr + 0x0, 0x00000081, 0x81);
+
     // for this rule we also need to initialize the connected VDMA as well
     GRAYSCALEIP_VDMA_Driver_initialize(&InstancePtr->vdmaDriver);
 }
@@ -78,6 +82,10 @@ void GrayscaleIP_Rule1Driver_initialize(GrayscaleIPRule1DriverInstance *Instance
 void GrayscaleIP_Rule1Driver_start(GrayscaleIPRule1DriverInstance *InstancePtr, unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr,unsigned short width, unsigned short height, unsigned short horizontalActiveTime, unsigned short verticalActiveTime) {
     SetHAMode(GrayscaleIPRule1StartMode, InstancePtr->baseaddr);        
     
+    if (first_time_started == 0) {
+    	first_time_started = 1;
+    }
+
     // starting the VDMA whose driver will configure its MEM2DEV path as well as DEV2MEM path
     GRAYSCALEIP_VDMA_Driver_start(&InstancePtr->vdmaDriver, ImgIn_BaseAddr, ImgOut_BaseAddr, width, height, horizontalActiveTime, verticalActiveTime);
 }
@@ -94,9 +102,14 @@ void GrayscaleIP_Rule1Driver_stop(GrayscaleIPRule1DriverInstance *InstancePtr) {
 
 
 bool GrayscaleIP_Rule1Driver_isBusy(GrayscaleIPRule1DriverInstance *InstancePtr) {
-    // not using VDMA S2MM busy signal for now as documentation states we have to use scatter-gather mode to read in Idle
-    // TODO: see if you can read in VDMA busy signal as well then driver would be more complete...i.e return busy status = '1' only if both the IP as well as the VDMA S2MM are free
+	int i;
+	for (i=0; i<1000; i++);				// so as not to congest the control bus for repeated read register requests in Polling mode
+
+    if (first_time_started == 1) {
     return (bool) !((localReadReg(InstancePtr->baseaddr + GRAYSCALEIPRULE1_BUSY_STATUS_REG_offset)>>GRAYSCALEIPRULE1_BUSY_STATUS_REG_bit) & 0x1);
+    } else {
+    	return 0;
+    }
 }
 
 

@@ -98,6 +98,9 @@ void SobelIP_Rule1Driver_stop(SobelIPRule1DriverInstance *InstancePtr) {
 
 
 bool SobelIP_Rule1Driver_isBusy(SobelIPRule1DriverInstance *InstancePtr) {    
+	int i;
+	for (i=0; i<1000; i++);				// so as not to congest the control bus for repeated read register requests in Polling mode
+
 	if (first_time_started == 1) {
 		return (bool) !((localReadReg(InstancePtr->baseaddr + SOBELIPRULE1_BUSY_STATUS_REG_offset) >> SOBELIPRULE1_BUSY_STATUS_REG_bit) & 1);
 	} else {

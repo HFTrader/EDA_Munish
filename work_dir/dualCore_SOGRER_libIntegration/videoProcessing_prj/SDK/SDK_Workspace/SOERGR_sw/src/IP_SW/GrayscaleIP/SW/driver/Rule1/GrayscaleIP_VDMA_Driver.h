@@ -3,8 +3,8 @@
 
 
 
-#ifndef __GRAYSCALEIP_VDMA_DRIVER_TEMPLATE_H__
-#define __GRAYSCALEIP_VDMA_DRIVER_TEMPLATE_H__
+#ifndef __GRAYSCALEIP_VDMA_DRIVER_H__
+#define __GRAYSCALEIP_VDMA_DRIVER_H__
 
 #define bool unsigned char
 
