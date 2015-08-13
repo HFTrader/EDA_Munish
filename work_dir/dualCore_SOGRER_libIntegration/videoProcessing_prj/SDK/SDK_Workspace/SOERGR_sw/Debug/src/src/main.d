@@ -48,6 +48,11 @@ src/src/main.d: ../src/src/main.c \
  ../src/src/../IP_SW/./SobelIP/SW/function/../driver/Rule1/SobelIP_VDMA_Driver.h \
  ../src/src/../IP_SW/./SobelIP/SW/function/../config/SobelIP_config.h \
  ../src/src/../IP_SW/./SobelIP/SW/function/SobelIP_SW.h \
+ ../src/src/../IP_SW/./ErodeIP/SW/function/ErodeIP_func.h \
+ ../src/src/../IP_SW/./ErodeIP/SW/function/../driver/Rule1/ErodeIP_Rule1Driver.h \
+ ../src/src/../IP_SW/./ErodeIP/SW/function/../driver/Rule1/ErodeIP_VDMA_Driver.h \
+ ../src/src/../IP_SW/./ErodeIP/SW/function/../config/ErodeIP_config.h \
+ ../src/src/../IP_SW/./ErodeIP/SW/function/ErodeIP_SW.h \
  /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER_libIntegration/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc/global.h
 
 ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_cache.h:
@@ -147,5 +152,15 @@ src/src/main.d: ../src/src/main.c \
 ../src/src/../IP_SW/./SobelIP/SW/function/../config/SobelIP_config.h:
 
 ../src/src/../IP_SW/./SobelIP/SW/function/SobelIP_SW.h:
+
+../src/src/../IP_SW/./ErodeIP/SW/function/ErodeIP_func.h:
+
+../src/src/../IP_SW/./ErodeIP/SW/function/../driver/Rule1/ErodeIP_Rule1Driver.h:
+
+../src/src/../IP_SW/./ErodeIP/SW/function/../driver/Rule1/ErodeIP_VDMA_Driver.h:
+
+../src/src/../IP_SW/./ErodeIP/SW/function/../config/ErodeIP_config.h:
+
+../src/src/../IP_SW/./ErodeIP/SW/function/ErodeIP_SW.h:
 
 /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/dualCore_SOGRER_libIntegration/videoProcessing_prj/SDK/SDK_Workspace/SOERGR_sw/src/inc/global.h:

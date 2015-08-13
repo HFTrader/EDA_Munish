@@ -4,6 +4,7 @@
 #ifndef __GRAYSCALEIP_RULE2DRIVER_H__
 #define __GRAYSCALEIP_RULE2DRIVER_H__
 
+#include "xscugic.h"
 
 
 #define bool unsigned char
@@ -11,7 +12,8 @@
 // all the hardware related info needed by the driver functions should be provided in this struct
 typedef struct {
     unsigned int baseaddr;
-    unsigned int grip_rule;
+    bool busy;
+    unsigned int intr_id;
 } GrayscaleIPRule2DriverInstance;
 
 
@@ -44,7 +46,7 @@ typedef struct {
 
 
 // API for GrayscaleIP_Driver to use if this rule is applied by GRIP
-void GrayscaleIP_Rule2Driver_initialize(GrayscaleIPRule2DriverInstance *InstancePtr, unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr,unsigned short width, unsigned short height, unsigned short horizontalActiveTime, unsigned short verticalActiveTime);
+void GrayscaleIP_Rule2Driver_initialize(GrayscaleIPRule2DriverInstance *InstancePtr, XScuGic *InterruptController, unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr,unsigned short width, unsigned short height, unsigned short horizontalActiveTime, unsigned short verticalActiveTime);
 void GrayscaleIP_Rule2Driver_start(GrayscaleIPRule2DriverInstance *InstancePtr, unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr,unsigned short width, unsigned short height, unsigned short horizontalActiveTime, unsigned short verticalActiveTime);
 void GrayscaleIP_Rule2Driver_stop(GrayscaleIPRule2DriverInstance *InstancePtr);
 bool GrayscaleIP_Rule2Driver_isBusy(GrayscaleIPRule2DriverInstance *InstancePtr);

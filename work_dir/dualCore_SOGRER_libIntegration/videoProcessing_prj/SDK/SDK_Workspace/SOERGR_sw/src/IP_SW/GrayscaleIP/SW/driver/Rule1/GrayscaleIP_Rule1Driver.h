@@ -7,6 +7,7 @@
 
 
 #include "GrayscaleIP_VDMA_Driver.h"
+#include "xscugic.h"
 
 
 #define bool unsigned char
@@ -15,7 +16,8 @@
 typedef struct {
     unsigned int baseaddr;
     GRAYSCALEIP_VDMADriverInstance vdmaDriver;
-    unsigned int grip_rule;
+    bool busy;
+    unsigned int intr_id;
 } GrayscaleIPRule1DriverInstance;
 
 
@@ -39,21 +41,17 @@ typedef struct {
 
 
 
-
-#define GRAYSCALEIPRULE1_BUSY_STATUS_REG_offset 0x00
-#define GRAYSCALEIPRULE1_BUSY_STATUS_REG_bit 1          // little endian convention [31:0]
-
-
-
 // API for GrayscaleIP_Driver to use if this rule is applied by GRIP
 // NOTE: if any of the functions requires runtime info then their prototype should be matched with _SW() function
-void GrayscaleIP_Rule1Driver_initialize(GrayscaleIPRule1DriverInstance *InstancePtr, unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr,unsigned short width, unsigned short height, unsigned short horizontalActiveTime, unsigned short verticalActiveTime);
+void GrayscaleIP_Rule1Driver_initialize(GrayscaleIPRule1DriverInstance *InstancePtr, XScuGic *InterruptController, unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr,unsigned short width, unsigned short height, unsigned short horizontalActiveTime, unsigned short verticalActiveTime);
 void GrayscaleIP_Rule1Driver_start(GrayscaleIPRule1DriverInstance *InstancePtr, unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr,unsigned short width, unsigned short height, unsigned short horizontalActiveTime, unsigned short verticalActiveTime);
 void GrayscaleIP_Rule1Driver_stop(GrayscaleIPRule1DriverInstance *InstancePtr);
 bool GrayscaleIP_Rule1Driver_isBusy(GrayscaleIPRule1DriverInstance *InstancePtr);
 
 // NOTE: for now _stop(), _isBusy() are not expected to take in any realtime info from SW so they have no arguments but if they need it in future then they should have same arguments as that of _initialize(), _start() methods to make the job of code-generator easier!!
 
+// internal functions
+void GrayscaleIP_ISR(void *baseaddr_p);
 
 
 

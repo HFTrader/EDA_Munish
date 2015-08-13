@@ -60,7 +60,7 @@ static void SetHAMode(GrayscaleIPRule2RegMap mode, unsigned int baseaddr) {
 }
 
 // the IP supplier should make necessary modifications to initialize the Grayscale IP here
-void GrayscaleIP_Rule2Driver_initialize(GrayscaleIPRule2DriverInstance *InstancePtr, unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr,unsigned short width, unsigned short height, unsigned short horizontalActiveTime, unsigned short verticalActiveTime) {
+void GrayscaleIP_Rule2Driver_initialize(GrayscaleIPRule2DriverInstance *InstancePtr, XScuGic *InterruptController, unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr,unsigned short width, unsigned short height, unsigned short horizontalActiveTime, unsigned short verticalActiveTime) {
     SetHAMode(GrayscaleIPRule2InitMode, InstancePtr->baseaddr);
 }
 

@@ -61,9 +61,6 @@ void AXI_INTERRUPT_EnableInterrupt(void * baseaddr_p)
 unsigned int t=0;
 void AXI_INTERRUPT_VsyncIntr_Handler(void * baseaddr_p)
 {
-/*	printf("%d\r\n", get_cyclecount());
-	init_perfcounters(1, 0);*/
-
 	debug_frameNo++;
 	if (FRAME_INTR == 0) {		// master cpu available for processing
 		FRAME_INTR = 1;
