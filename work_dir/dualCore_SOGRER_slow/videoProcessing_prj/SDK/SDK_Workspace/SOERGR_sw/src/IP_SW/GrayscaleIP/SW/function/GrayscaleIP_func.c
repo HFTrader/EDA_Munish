@@ -19,8 +19,8 @@ void GrayscaleIP_func_init(XScuGic *InterruptController, unsigned long ImgIn_Bas
 		if (GRAYSCALEIP_INFO[ip_instance_idx].grip_rule == 1) {
 			GrayscaleIPRule1Driver[rule1_driver_idx].baseaddr = GRAYSCALEIP_INFO[ip_instance_idx].baseaddr;
 			GrayscaleIPRule1Driver[rule1_driver_idx].vdmaDriver.baseaddr = GRAYSCALEIP_INFO[ip_instance_idx].vdma_baseaddr;
-			GrayscaleIPRule1Driver[rule1_driver_idx].intr_id = GRAYSCALEIP_INFO[ip_instance_idx].intr_id;
-			GrayscaleIPRule1Driver[rule1_driver_idx].busy = 0;
+			GrayscaleIPRule1Driver[rule1_driver_idx].vdmaDriver.intr_id = GRAYSCALEIP_INFO[ip_instance_idx].intr_id;
+			GrayscaleIPRule1Driver[rule1_driver_idx].vdmaDriver.busy = 0;
 
 			GrayscaleIP_Rule1Driver_initialize(&GrayscaleIPRule1Driver[rule1_driver_idx], InterruptController, ImgIn_BaseAddr, ImgOut_BaseAddr, width, height, horizontalActiveTime, verticalActiveTime);
 			rule1_driver_idx++;
@@ -71,6 +71,7 @@ void ConvToGray_func(unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr,
     	} // else if ... so on depending on total grip rules supported by IP supplier
     }
 
+    printf("G:SW\r\n");
     ConvToGray(ImgIn_BaseAddr, ImgOut_BaseAddr, width, height, horizontalActiveTime, verticalActiveTime); 
 #endif
 }

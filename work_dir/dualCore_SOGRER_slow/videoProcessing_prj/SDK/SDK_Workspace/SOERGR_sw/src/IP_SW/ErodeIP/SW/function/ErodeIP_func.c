@@ -17,8 +17,8 @@ void ErodeIP_func_init(XScuGic *InterruptController, unsigned long ImgIn_BaseAdd
 		if (ERODEIP_INFO[ip_instance_idx].grip_rule == 1) {
 			ErodeIPRule1Driver[rule1_driver_idx].baseaddr = ERODEIP_INFO[ip_instance_idx].baseaddr;
 			ErodeIPRule1Driver[rule1_driver_idx].vdmaDriver.baseaddr = ERODEIP_INFO[ip_instance_idx].vdma_baseaddr;
-			ErodeIPRule1Driver[rule1_driver_idx].intr_id = ERODEIP_INFO[ip_instance_idx].intr_id;
-			ErodeIPRule1Driver[rule1_driver_idx].busy = 0;
+			ErodeIPRule1Driver[rule1_driver_idx].vdmaDriver.intr_id = ERODEIP_INFO[ip_instance_idx].intr_id;
+			ErodeIPRule1Driver[rule1_driver_idx].vdmaDriver.busy = 0;
 
 			ErodeIP_Rule1Driver_initialize(&ErodeIPRule1Driver[rule1_driver_idx], InterruptController, ImgIn_BaseAddr, ImgOut_BaseAddr, width, height, horizontalActiveTime, verticalActiveTime);
 			rule1_driver_idx++;
@@ -49,6 +49,7 @@ void Erode_func(unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr, unsi
     	}
     }    
 
+    printf("E:SW\r\n");
     Erode(ImgIn_BaseAddr, ImgOut_BaseAddr, width, height, horizontalActiveTime, verticalActiveTime); 
 #endif
 }

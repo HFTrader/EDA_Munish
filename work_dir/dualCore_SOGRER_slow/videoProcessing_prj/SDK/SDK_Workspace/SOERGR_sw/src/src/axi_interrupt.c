@@ -67,7 +67,7 @@ void AXI_INTERRUPT_VsyncIntr_Handler(void * baseaddr_p)
 	} else {					// master cpu busy processing previous frame
 #ifdef USE_MULTICORE
 		if (SoCProc_processDataflow() == 0) {
-			printf("missing frame:%d\r\n", debug_frameNo);
+			//printf("missing frame:%d\r\n", debug_frameNo);
 		}
 #else
 		printf("missing frame:%d\r\n", debug_frameNo);
