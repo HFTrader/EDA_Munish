@@ -10,13 +10,11 @@
 
 #include "axi_interrupt.h"
 #include "cf_hdmi.h"
-#include "sw_functions.h"
 #include "transmitter.h"
 #include <stdio.h>
 
 #include "profile_cnt.h"
 #include "global.h"
-#include "SoCProc_support.h"
 
 
 /************************** Function Definitions ***************************/
@@ -64,14 +62,16 @@ unsigned int t=0;
 void AXI_INTERRUPT_VsyncIntr_Handler(void * baseaddr_p)
 {
 	debug_frameNo++;
-	if (FRAME_INTR == 0) {	// master CPU is free!!
+	if (FRAME_INTR == 0) {		// master cpu available for processing
 		FRAME_INTR = 1;
-	} else {	// master CPU is busy so use other Processor in the SoC..if none is free/available then skip this frame for processing
-		// for using other Processors in the SoC, using the API provided in "SoCProc_support.h"
-		unsigned char SoCProc_status = SoCProc_processDataflow();
-		if (SoCProc_status == 0) {
-			printf("Skipping frame%d\r\n", debug_frameNo);
+	} else {					// master cpu busy processing previous frame
+#ifdef USE_MULTICORE
+		if (SoCProc_processDataflow() == 0) {
+			printf("missing frame:%d\r\n", debug_frameNo);
 		}
+#else
+		printf("missing frame:%d\r\n", debug_frameNo);
+#endif
 	}
 }
 

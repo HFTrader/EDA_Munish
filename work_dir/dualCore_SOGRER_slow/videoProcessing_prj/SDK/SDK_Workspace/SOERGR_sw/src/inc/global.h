@@ -8,7 +8,10 @@
 #define SHARED_OCM_MEMORY_BASE 0xFFFF0000
 #define FRAME_SIZE 0x1000000
 
+//#define USE_MULTICORE
 
+#include "profile_cnt.h"
+#include "../multicore_sup/SoCProc_support.h"
 
 // global variables
 short int FRAME_INTR;

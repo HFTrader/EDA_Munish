@@ -84,6 +84,10 @@ void ErodeIP_Rule1Driver_initialize(ErodeIPRule1DriverInstance *InstancePtr, XSc
 
 void ErodeIP_Rule1Driver_start(ErodeIPRule1DriverInstance *InstancePtr, unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr, unsigned short width, unsigned short height, unsigned short horizontalActiveTime, unsigned short verticalActiveTime) {
 	SetHAMode(ErodeIPRule1StartMode, InstancePtr->baseaddr);
+	
+    // enabling the interrupt
+    localWriteReg(InstancePtr->baseaddr + 0x04, 0x00000001, 0x00000001);
+    InstancePtr->busy = 1;	
     
     ERODEIP_VDMA_Driver_start(&InstancePtr->vdmaDriver, ImgIn_BaseAddr, ImgOut_BaseAddr, width, height, horizontalActiveTime, verticalActiveTime);    
 }
@@ -107,6 +111,8 @@ bool ErodeIP_Rule1Driver_isBusy(ErodeIPRule1DriverInstance *InstancePtr) {
 void ErodeIP_ISR(void *baseaddr_p)
 {
 	ErodeIPRule1DriverInstance *InstancePtr = (ErodeIPRule1DriverInstance *) baseaddr_p;
+	// disabling the interrupt now
+	localWriteReg(InstancePtr->baseaddr + 0x04, 0x00000001, 0x0);	
 	InstancePtr->busy = 0;
 }
 
