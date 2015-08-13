@@ -119,6 +119,10 @@ int main()
 	  		//return XST_FAILURE;
 	  	}
 
+	GrayscaleIP_func_init(&InterruptController, VIDEO_BASEADDR, VIDEO_BASEADDR + FRAME_SIZE, 640, 480, h_ActiveTime, v_ActiveTime);
+	ErodeIP_func_init(&InterruptController, VIDEO_BASEADDR, VIDEO_BASEADDR + FRAME_SIZE, 640, 480, h_ActiveTime, v_ActiveTime);
+	SobelIP_func_init(&InterruptController, VIDEO_BASEADDR, VIDEO_BASEADDR + FRAME_SIZE, 640, 480, h_ActiveTime, v_ActiveTime);
+
 	EnablePerfCounters();
 
 	while (APP_ChangeResolution())
@@ -135,7 +139,8 @@ int main()
 		FRAME_INTR = 0;
 		while(FRAME_INTR == 0);
 
-		printf("%d\r\n", debug_frameNo);
+		//FRAME_INTR = 1; while(1);
+
 		//printf("%d\r\n", get_cyclecount());
 
 		// raw data passed through the data processing chain by Master CPU
@@ -280,29 +285,24 @@ void processFrame(unsigned int dataMemBaseAddr) {
 
 	// capturing the frame pixels from camera line buffers onto DDR memory
 	DDRVideoWr(640, 480, h_ActiveTime, v_ActiveTime, dataMem_ptr);
-
+/*
 	// sobel filtering the captured image
 	EdgeDetection_func(dataMem_ptr, dataMem_ptr + FRAME_SIZE, 640, 480, h_ActiveTime, v_ActiveTime);
 	dataMem_ptr += FRAME_SIZE;
 
 	// erode filtering the captured image
 	Erode_func(dataMem_ptr, dataMem_ptr + FRAME_SIZE, 640, 480, h_ActiveTime, v_ActiveTime);
-	dataMem_ptr += FRAME_SIZE;
+	dataMem_ptr += FRAME_SIZE;*/
 
 	// grayscale filtering the captured image
 	ConvToGray_func(dataMem_ptr, dataMem_ptr + FRAME_SIZE, 640, 480, h_ActiveTime, v_ActiveTime);
 	dataMem_ptr += FRAME_SIZE;
 
-	//ConfigHdmiVDMA(h_ActiveTime, v_ActiveTime, dataMem_ptr);
-	ConfigHdmiVDMA(h_ActiveTime, v_ActiveTime, 0x2000000);
+	ConfigHdmiVDMA(h_ActiveTime, v_ActiveTime, dataMem_ptr);
 }
 
 
-
-
-
 // TODO: verify HW/SW partitioning by porting this SW onto dualCore_SOGRER_slow project
-// TODO: multicore optimization
 
 // TODO: build the codeGenerator which is responsible for generating:
 // a) Driver templates

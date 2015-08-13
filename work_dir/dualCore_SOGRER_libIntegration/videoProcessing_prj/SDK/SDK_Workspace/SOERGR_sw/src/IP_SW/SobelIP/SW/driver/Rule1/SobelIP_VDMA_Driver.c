@@ -114,7 +114,7 @@ static void SetHAMode(SOBELIP_VDMARegMap mode, unsigned int baseaddr) {
 
 
 
-void SOBELIP_VDMA_Driver_initialize(SOBELIP_VDMADriverInstance *InstancePtr) {
+void SOBELIP_VDMA_Driver_initialize(SOBELIP_VDMADriverInstance *InstancePtr) {    
 	SetHAMode(SOBELIP_VDMAInitMode, InstancePtr->baseaddr);
 }
 

@@ -42,7 +42,7 @@ typedef struct {
 
 
 // API for GrayscaleIP_Driver to use if this rule is applied by GRIP
-void ErodeIP_Rule1Driver_initialize(ErodeIPRule1DriverInstance *InstancePtr, XScuGic *InterruptController, unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr, unsigned short width, unsigned short height, unsigned short horizontalActiveTime, unsigned short verticalActiveTime);
+void ErodeIP_Rule1Driver_initialize(ErodeIPRule1DriverInstance *InstancePtr, unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr, unsigned short width, unsigned short height, unsigned short horizontalActiveTime, unsigned short verticalActiveTime);
 void ErodeIP_Rule1Driver_start(ErodeIPRule1DriverInstance *InstancePtr, unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr, unsigned short width, unsigned short height, unsigned short horizontalActiveTime, unsigned short verticalActiveTime);
 void ErodeIP_Rule1Driver_stop(ErodeIPRule1DriverInstance *InstancePtr);
 bool ErodeIP_Rule1Driver_isBusy(ErodeIPRule1DriverInstance *InstancePtr);

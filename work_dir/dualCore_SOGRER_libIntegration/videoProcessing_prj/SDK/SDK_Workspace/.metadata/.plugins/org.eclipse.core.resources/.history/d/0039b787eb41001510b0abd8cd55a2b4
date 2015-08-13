@@ -32,7 +32,7 @@ void SobelIP_func_init(XScuGic *InterruptController, unsigned long ImgIn_BaseAdd
 #endif
 }
 
-void EdgeDetection_func(unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr, unsigned short width, unsigned short height, unsigned short horizontalActiveTime, unsigned short verticalActiveTime) {
+void Sobel_func(unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr, unsigned short width, unsigned short height, unsigned short horizontalActiveTime, unsigned short verticalActiveTime) {
     int ip_instance_idx = 0;
     int rule1_driver_idx = 0;
 

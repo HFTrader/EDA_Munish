@@ -105,6 +105,8 @@ void GrayscaleIP_Rule1Driver_stop(GrayscaleIPRule1DriverInstance *InstancePtr) {
     GRAYSCALEIP_VDMA_Driver_stop(&InstancePtr->vdmaDriver);
 }
 
+
+
 bool GrayscaleIP_Rule1Driver_isBusy(GrayscaleIPRule1DriverInstance *InstancePtr) {
 	return InstancePtr->busy;
 }

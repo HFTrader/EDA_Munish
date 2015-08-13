@@ -14,9 +14,10 @@ typedef struct {
     unsigned int baseaddr;
     unsigned int grip_rule;
     unsigned int vdma_baseaddr;
+	unsigned int intr_id;
 } ERODEIP_IPinfo;
 
-
+//if NUM_ERODEIP_INSTANCES != 0
 extern ERODEIP_IPinfo ERODEIP_INFO[ERODEIP_NUM_INSTANCES];
 
 #endif

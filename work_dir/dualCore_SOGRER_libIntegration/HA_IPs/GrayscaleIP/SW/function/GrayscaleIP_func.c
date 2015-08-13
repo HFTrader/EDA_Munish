@@ -8,38 +8,47 @@
 #include "GrayscaleIP_func.h"
 
 
+void GrayscaleIP_func_init(XScuGic *InterruptController, unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr,unsigned short width, unsigned short height, unsigned short horizontalActiveTime, unsigned short verticalActiveTime) {
+	int ip_instance_idx = 0;
+	int rule1_driver_idx = 0;
+	int rule2_driver_idx = 0;
+	// and so on depending on total grip rules supported by IP supplier
+
+#if GRAYSCALEIP_NUM_INSTANCES != 0
+	for (ip_instance_idx=0; ip_instance_idx<GRAYSCALEIP_NUM_INSTANCES; ip_instance_idx++) {
+		if (GRAYSCALEIP_INFO[ip_instance_idx].grip_rule == 1) {
+			GrayscaleIPRule1Driver[rule1_driver_idx].baseaddr = GRAYSCALEIP_INFO[ip_instance_idx].baseaddr;
+			GrayscaleIPRule1Driver[rule1_driver_idx].vdmaDriver.baseaddr = GRAYSCALEIP_INFO[ip_instance_idx].vdma_baseaddr;
+			GrayscaleIPRule1Driver[rule1_driver_idx].intr_id = GRAYSCALEIP_INFO[ip_instance_idx].intr_id;
+			GrayscaleIPRule1Driver[rule1_driver_idx].busy = 0;
+
+			GrayscaleIP_Rule1Driver_initialize(&GrayscaleIPRule1Driver[rule1_driver_idx], InterruptController, ImgIn_BaseAddr, ImgOut_BaseAddr, width, height, horizontalActiveTime, verticalActiveTime);
+			rule1_driver_idx++;
+		} else if (GRAYSCALEIP_INFO[ip_instance_idx].grip_rule == 2) {
+			GrayscaleIPRule2Driver[rule2_driver_idx].baseaddr = GRAYSCALEIP_INFO[ip_instance_idx].baseaddr;
+			GrayscaleIPRule2Driver[rule2_driver_idx].intr_id = GRAYSCALEIP_INFO[ip_instance_idx].intr_id;
+			GrayscaleIPRule2Driver[rule2_driver_idx].busy = 0;
+
+			GrayscaleIP_Rule2Driver_initialize(&GrayscaleIPRule2Driver[rule2_driver_idx], InterruptController, ImgIn_BaseAddr, ImgOut_BaseAddr, width, height, horizontalActiveTime, verticalActiveTime);
+			rule2_driver_idx++;
+		} // else if ... and so on depending on total grip rules supported by IP supplier
+	}
+	ip_instance_idx = 0;
+	rule1_driver_idx = 0;
+	rule2_driver_idx = 0;
+	// and so on depending on total grip rules supported by IP supplier
+
+#endif
+
+}
+
+
 
 void ConvToGray_func(unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr,unsigned short width, unsigned short height, unsigned short horizontalActiveTime, unsigned short verticalActiveTime) {
     int ip_instance_idx = 0;
     int rule1_driver_idx = 0;
     int rule2_driver_idx = 0;
     // and so on depending on total grip rules supported by IP supplier
-
-#if GRAYSCALEIP_NUM_INSTANCES != 0
-    static bool driverInit = 0;
-
-    // initializing the drivers for the first time when this func is called
-    if (driverInit == 0) {
-    	for (ip_instance_idx=0; ip_instance_idx<GRAYSCALEIP_NUM_INSTANCES; ip_instance_idx++) {
-    		if (GRAYSCALEIP_INFO[ip_instance_idx].grip_rule == 1) {
-    			GrayscaleIPRule1Driver[rule1_driver_idx].baseaddr = GRAYSCALEIP_INFO[ip_instance_idx].baseaddr;
-    			GrayscaleIPRule1Driver[rule1_driver_idx].vdmaDriver.baseaddr = GRAYSCALEIP_INFO[ip_instance_idx].vdma_baseaddr;
-    			GrayscaleIP_Rule1Driver_initialize(&GrayscaleIPRule1Driver[rule1_driver_idx], ImgIn_BaseAddr, ImgOut_BaseAddr, width, height, horizontalActiveTime, verticalActiveTime);
-    			rule1_driver_idx++;
-    		} else if (GRAYSCALEIP_INFO[ip_instance_idx].grip_rule == 2) {
-    			GrayscaleIPRule2Driver[rule2_driver_idx].baseaddr = GRAYSCALEIP_INFO[ip_instance_idx].baseaddr;
-    			GrayscaleIP_Rule2Driver_initialize(&GrayscaleIPRule2Driver[rule2_driver_idx], ImgIn_BaseAddr, ImgOut_BaseAddr, width, height, horizontalActiveTime, verticalActiveTime);
-    			rule2_driver_idx++;
-    		} // else if ... and so on depending on total grip rules supported by IP supplier
-    	}
-        ip_instance_idx = 0;
-        rule1_driver_idx = 0;
-        rule2_driver_idx = 0;
-        // and so on depending on total grip rules supported by IP supplier
-
-        driverInit = 1;
-    }
-#endif
 
 #if GRAYSCALEIP_NUM_INSTANCES == 0                      // no IP module in design so using SW implementation
     ConvToGray(ImgIn_BaseAddr, ImgOut_BaseAddr, width, height, horizontalActiveTime, verticalActiveTime);
@@ -60,7 +69,7 @@ void ConvToGray_func(unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr,
     		}
     		rule2_driver_idx++;
     	} // else if ... so on depending on total grip rules supported by IP supplier
-    }    
+    }
 
     ConvToGray(ImgIn_BaseAddr, ImgOut_BaseAddr, width, height, horizontalActiveTime, verticalActiveTime); 
 #endif

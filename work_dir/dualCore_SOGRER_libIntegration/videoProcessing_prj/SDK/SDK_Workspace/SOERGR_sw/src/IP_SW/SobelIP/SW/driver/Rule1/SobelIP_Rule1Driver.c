@@ -3,12 +3,10 @@
 
 #include "SobelIP_Rule1Driver.h"
 
-static int first_time_started = 0;
-
 SobelIPRule1RegMap SobelIPRule1InitMode = {
 											.AP_CTRL = {.offset = 0x00, .mask = 0x00000000, .value = 0xffffffff},
 											.GIE = {.offset = 0x04, .mask = 0x00000001, .value = 0x00000000},
-											.IER = {.offset = 0x08, .mask = 0x00000001, .value = 0x00000000},
+											.IER = {.offset = 0x08, .mask = 0x00000001, .value = 0x00000001},
 											.ISR = {.offset = 0x0c, .mask = 0x00000000, .value = 0xffffffff},
 											.ROWS_DATA = {.offset = 0x14, .mask = 0x00000000, .value = 0xffffffff},
 											.COLS_DATA = {.offset = 0x1c, .mask = 0x00000000, .value = 0xffffffff}
@@ -60,28 +58,35 @@ static void SetHAMode(SobelIPRule1RegMap mode, unsigned int baseaddr) {
 }
 
 
-void SobelIP_Rule1Driver_initialize(SobelIPRule1DriverInstance *InstancePtr, unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr, unsigned short width, unsigned short height, unsigned short horizontalActiveTime, unsigned short verticalActiveTime) {
-	SobelIPRule1InitMode.ROWS_DATA.mask = 0xffffffff;
+void SobelIP_Rule1Driver_initialize(SobelIPRule1DriverInstance *InstancePtr, XScuGic *InterruptController, unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr, unsigned short width, unsigned short height, unsigned short horizontalActiveTime, unsigned short verticalActiveTime) {
+    SobelIPRule1InitMode.ROWS_DATA.mask = 0xffffffff;
     SobelIPRule1InitMode.ROWS_DATA.value = verticalActiveTime;
     
     SobelIPRule1InitMode.COLS_DATA.mask = 0xffffffff;
     SobelIPRule1InitMode.COLS_DATA.value = horizontalActiveTime;
     // initializing the IP module
-    SetHAMode(SobelIPRule1InitMode, InstancePtr->baseaddr);
+    SetHAMode(SobelIPRule1InitMode, InstancePtr->baseaddr);   
 
     localWriteReg(InstancePtr->baseaddr + 0x0, 0x00000081, 0x81);
 
     // for this rule we also need to initialize the connected VDMA as well
-    SOBELIP_VDMA_Driver_initialize(&InstancePtr->vdmaDriver);
+    SOBELIP_VDMA_Driver_initialize(&InstancePtr->vdmaDriver);        
+
+    // registering this IP's ISR with the Interrupt Controller passed on by the application developer
+	int Status = XScuGic_Connect(InterruptController, InstancePtr->intr_id, (Xil_ExceptionHandler) SobelIP_ISR, (void *) InstancePtr);
+	if (Status != XST_SUCCESS) {
+		Xil_AssertVoid(0);
+	}
+	XScuGic_Enable(InterruptController, InstancePtr->intr_id);
 }
 
 
 
 void SobelIP_Rule1Driver_start(SobelIPRule1DriverInstance *InstancePtr, unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr, unsigned short width, unsigned short height, unsigned short horizontalActiveTime, unsigned short verticalActiveTime) {
 	SetHAMode(SobelIPRule1StartMode, InstancePtr->baseaddr);
-    if (first_time_started == 0) {
-    	first_time_started = 1;
-    }
+
+	// enabling the interrupt
+	localWriteReg(InstancePtr->baseaddr + 0x04, 0x00000001, 0x00000001);
 
     SOBELIP_VDMA_Driver_start(&InstancePtr->vdmaDriver, ImgIn_BaseAddr, ImgOut_BaseAddr, width, height, horizontalActiveTime, verticalActiveTime);    
 }
@@ -97,17 +102,19 @@ void SobelIP_Rule1Driver_stop(SobelIPRule1DriverInstance *InstancePtr) {
 }
 
 
-bool SobelIP_Rule1Driver_isBusy(SobelIPRule1DriverInstance *InstancePtr) {    
-	int i;
-	for (i=0; i<1000; i++);				// so as not to congest the control bus for repeated read register requests in Polling mode
 
-	if (first_time_started == 1) {
-		return (bool) !((localReadReg(InstancePtr->baseaddr + SOBELIPRULE1_BUSY_STATUS_REG_offset) >> SOBELIPRULE1_BUSY_STATUS_REG_bit) & 1);
-	} else {
-		return 0;
-	}
+bool SobelIP_Rule1Driver_isBusy(SobelIPRule1DriverInstance *InstancePtr) {
+	return InstancePtr->busy;
 }
 
+
+void SobelIP_ISR(void *baseaddr_p)
+{
+	SobelIPRule1DriverInstance *InstancePtr = (SobelIPRule1DriverInstance *) baseaddr_p;
+	// disabling the interrupt now
+	localWriteReg(InstancePtr->baseaddr + 0x04, 0x00000001, 0x0);
+	InstancePtr->busy = 0;
+}
 
 
 

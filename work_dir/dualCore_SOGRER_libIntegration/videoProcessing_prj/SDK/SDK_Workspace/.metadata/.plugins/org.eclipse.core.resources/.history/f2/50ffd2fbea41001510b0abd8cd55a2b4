@@ -10,6 +10,7 @@
 
 
 #include "SobelIP_VDMA_Driver.h"
+#include "xscugic.h"
 
 
 #define bool unsigned char
@@ -19,7 +20,8 @@
 typedef struct {
     unsigned int baseaddr;
     SOBELIP_VDMADriverInstance vdmaDriver;
-    unsigned int grip_rule;
+	bool busy;
+	unsigned int intr_id;
 } SobelIPRule1DriverInstance;
 
 
@@ -43,17 +45,13 @@ typedef struct {
 
 
 
-// the IP supplier should modify the contents of below register to be able to monitor the status of IP processing
-#define SOBELIPRULE1_BUSY_STATUS_REG_offset 0xff
-#define SOBELIPRULE1_BUSY_STATUS_REG_bit 31          // little endian convention [31:0]
-
-
 
 // API for GrayscaleIP_Driver to use if this rule is applied by GRIP
 void SobelIP_Rule1Driver_initialize(SobelIPRule1DriverInstance *InstancePtr);
 void SobelIP_Rule1Driver_start(SobelIPRule1DriverInstance *InstancePtr);
 void SobelIP_Rule1Driver_stop(SobelIPRule1DriverInstance *InstancePtr);
 bool SobelIP_Rule1Driver_isBusy(SobelIPRule1DriverInstance *InstancePtr);
+void SobelIP_ISR(void *baseaddr_p);
 
 
 

@@ -63,12 +63,19 @@ static void SetHAMode(GrayscaleIPRule1RegMap mode, unsigned int baseaddr) {
 }
 
 // the IP supplier should make necessary modifications to initialize the Grayscale IP here
-void GrayscaleIP_Rule1Driver_initialize(GrayscaleIPRule1DriverInstance *InstancePtr) {
+void GrayscaleIP_Rule1Driver_initialize(GrayscaleIPRule1DriverInstance *InstancePtr, XScuGic *InterruptController) {
     // initializing the IP module
     SetHAMode(GrayscaleIPRule1InitMode, InstancePtr->baseaddr);   
 
     // for this rule we also need to initialize the connected VDMA as well
-    GRAYSCALEIP_VDMA_Driver_initialize(&InstancePtr->vdmaDriver);        
+    GRAYSCALEIP_VDMA_Driver_initialize(&InstancePtr->vdmaDriver);    
+
+	// registering this IP's ISR with the Interrupt Controller passed on by the application developer 
+	int Status = XScuGic_Connect(InterruptController, InstancePtr->intr_id, (Xil_ExceptionHandler) GrayscaleIP_ISR, (void *) InstancePtr);
+	if (Status != XST_SUCCESS) {
+		Xil_AssertVoid(0);
+	}
+	XScuGic_Enable(InterruptController, InstancePtr->intr_id);
 }
     
 
@@ -77,6 +84,8 @@ void GrayscaleIP_Rule1Driver_start(GrayscaleIPRule1DriverInstance *InstancePtr) 
     SetHAMode(GrayscaleIPRule1StartMode, InstancePtr->baseaddr);
     
     GRAYSCALEIP_VDMA_Driver_start(&InstancePtr->vdmaDriver);
+
+	InstancePtr->busy = 1;
 }
 
 
@@ -90,10 +99,17 @@ void GrayscaleIP_Rule1Driver_stop(GrayscaleIPRule1DriverInstance *InstancePtr) {
 }
 
 // the IP supplier should make necessary modifications to inform about the Busy status here
-bool GrayscaleIP_Rule1Driver_isBusy(GrayscaleIPRule1DriverInstance *InstancePtr) {    
-    return (bool) ((localReadReg(InstancePtr->baseaddr + GRAYSCALEIPRULE1_BUSY_STATUS_REG_offset) >> GRAYSCALEIPRULE1_BUSY_STATUS_REG_bit) & 1);
+bool GrayscaleIP_Rule1Driver_isBusy(GrayscaleIPRule1DriverInstance *InstancePtr) {
+	return InstancePtr->busy;
 }
 
+
+void GrayscaleIP_ISR(void *baseaddr_p)
+{
+	GrayscaleIPRule1DriverInstance *InstancePtr = (GrayscaleIPRule1DriverInstance *) baseaddr_p;
+
+	InstancePtr->busy = 0;
+}
 
 
 

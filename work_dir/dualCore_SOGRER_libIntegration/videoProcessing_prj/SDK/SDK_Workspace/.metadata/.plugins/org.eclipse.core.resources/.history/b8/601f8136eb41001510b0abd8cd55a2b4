@@ -73,7 +73,7 @@ void SobelIP_Rule1Driver_initialize(SobelIPRule1DriverInstance *InstancePtr, XSc
     SOBELIP_VDMA_Driver_initialize(&InstancePtr->vdmaDriver);        
 
     // registering this IP's ISR with the Interrupt Controller passed on by the application developer
-	int Status = XScuGic_Connect(InterruptController, InstancePtr->intr_id, (Xil_ExceptionHandler) SobelIP_ISR, (void *) InstancePtr);
+	int Status = XScuGic_Connect(InterruptController, InstancePtr->intr_id, (Xil_ExceptionHandler) GrayscaleIP_ISR, (void *) InstancePtr);
 	if (Status != XST_SUCCESS) {
 		Xil_AssertVoid(0);
 	}

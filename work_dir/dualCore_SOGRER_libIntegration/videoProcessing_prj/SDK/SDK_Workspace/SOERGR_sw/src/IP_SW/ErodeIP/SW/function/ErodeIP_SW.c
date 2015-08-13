@@ -3,7 +3,7 @@
 #include "xil_io.h"
 
 void Erode(unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr, unsigned short width, unsigned short height, unsigned short horizontalActiveTime, unsigned short verticalActiveTime)
-{
+ {
  	int pix_i = 0, pix_j = 0;
  	int x_win = 0, y_win = 0;
  	u32 pixel_temp, pixel_min;

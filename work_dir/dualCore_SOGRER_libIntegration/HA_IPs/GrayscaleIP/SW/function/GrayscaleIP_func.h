@@ -16,10 +16,13 @@
 #include "../config/GrayscaleIP_config.h"
 #include "GrayscaleIP_SW.h"
 
+#include "xscugic.h"
+
 #define bool unsigned char
 
 
 // API
+void GrayscaleIP_func_init(XScuGic *InterruptController, unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr,unsigned short width, unsigned short height, unsigned short horizontalActiveTime, unsigned short verticalActiveTime);
 void ConvToGray_func(unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr,unsigned short width, unsigned short height, unsigned short horizontalActiveTime, unsigned short verticalActiveTime);
 
 

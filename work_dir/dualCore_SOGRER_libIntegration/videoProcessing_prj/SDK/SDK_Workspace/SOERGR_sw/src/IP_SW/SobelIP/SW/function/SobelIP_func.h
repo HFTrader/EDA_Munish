@@ -9,15 +9,19 @@
 
 
 #include "../driver/Rule1/SobelIP_Rule1Driver.h"
+// and so on if other grip rules are supported by this IP
 
 #include "../config/SobelIP_config.h"
 #include "SobelIP_SW.h"
+
+#include "xscugic.h"
 
 #define bool unsigned char
 
 
 // API
-void EdgeDetection(unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr, unsigned short width, unsigned short height, unsigned short horizontalActiveTime, unsigned short vertcialActiveTime);
+void SobelIP_func_init(XScuGic *InterruptController, unsigned long ImgIn_BaseAddr, unsigned long ImgOut_BaseAddr,unsigned short width, unsigned short height, unsigned short horizontalActiveTime, unsigned short verticalActiveTime);
+void EdgeDetection_func(unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr, unsigned short width, unsigned short height, unsigned short horizontalActiveTime, unsigned short vertcialActiveTime);
 
 
 // internal stuff
@@ -27,6 +31,7 @@ void EdgeDetection(unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr, u
     SobelIPRule1DriverInstance SobelIPRule1Driver[SOBELIP_NUM_GRIPRULE1_INSTANCES];
 #endif
 
+// and so on if other grip rules are supported by this IP
 
 #endif
 

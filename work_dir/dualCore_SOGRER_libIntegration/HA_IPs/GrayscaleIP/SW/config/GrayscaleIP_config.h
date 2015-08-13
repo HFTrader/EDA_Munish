@@ -14,6 +14,7 @@ typedef struct {
     unsigned int baseaddr;
     unsigned int grip_rule;
     unsigned int vdma_baseaddr;
+    unsigned int intr_id;
 } GRAYSCALEIP_IPinfo;
 
 //if NUM_GRAYSCALEIP_INSTANCES != 0

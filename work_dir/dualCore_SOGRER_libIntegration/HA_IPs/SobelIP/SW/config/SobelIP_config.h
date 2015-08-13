@@ -14,9 +14,10 @@ typedef struct {
     unsigned int baseaddr;
     unsigned int grip_rule;
     unsigned int vdma_baseaddr;
+	unsigned int intr_id;
 } SOBELIP_IPinfo;
 
-
+//if NUM_SOBELIP_INSTANCES != 0
 extern SOBELIP_IPinfo SOBELIP_INFO[SOBELIP_NUM_INSTANCES];
 
 #endif

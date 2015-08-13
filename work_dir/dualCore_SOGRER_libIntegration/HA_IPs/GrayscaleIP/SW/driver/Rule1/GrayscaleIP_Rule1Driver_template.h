@@ -10,16 +10,17 @@
 
 
 #include "GrayscaleIP_VDMA_Driver.h"
+#include "xscugic.h"
 
 
 #define bool unsigned char
-
 
 // all the hardware related info needed by the driver functions should be provided in this struct
 typedef struct {
     unsigned int baseaddr;
     GRAYSCALEIP_VDMADriverInstance vdmaDriver;
-    unsigned int grip_rule;
+    bool busy;
+    unsigned int intr_id;
 } GrayscaleIPRule1DriverInstance;
 
 
@@ -43,17 +44,12 @@ typedef struct {
 
 
 
-// the IP supplier should modify the contents of below register to be able to monitor the status of IP processing
-#define GRAYSCALEIPRULE1_BUSY_STATUS_REG_offset 0xff
-#define GRAYSCALEIPRULE1_BUSY_STATUS_REG_bit 31          // little endian convention [31:0]
-
-
-
 // API for GrayscaleIP_Driver to use if this rule is applied by GRIP
-void GrayscaleIP_Rule1Driver_initialize(GrayscaleIPRule1DriverInstance *InstancePtr);
+void GrayscaleIP_Rule1Driver_initialize(GrayscaleIPRule1DriverInstance *InstancePtr, XScuGic *InterruptController);
 void GrayscaleIP_Rule1Driver_start(GrayscaleIPRule1DriverInstance *InstancePtr);
 void GrayscaleIP_Rule1Driver_stop(GrayscaleIPRule1DriverInstance *InstancePtr);
 bool GrayscaleIP_Rule1Driver_isBusy(GrayscaleIPRule1DriverInstance *InstancePtr);
+void GrayscaleIP_ISR(void *baseaddr_p);
 
 
 

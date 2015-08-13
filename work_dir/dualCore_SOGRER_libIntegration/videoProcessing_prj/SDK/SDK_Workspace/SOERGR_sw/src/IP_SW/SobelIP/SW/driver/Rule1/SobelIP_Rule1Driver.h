@@ -7,16 +7,16 @@
 
 
 #include "SobelIP_VDMA_Driver.h"
-
+#include "xscugic.h"
 
 #define bool unsigned char
-
 
 // all the hardware related info needed by the driver functions should be provided in this struct
 typedef struct {
     unsigned int baseaddr;
     SOBELIP_VDMADriverInstance vdmaDriver;
-    unsigned int grip_rule;
+	bool busy;
+	unsigned int intr_id;
 } SobelIPRule1DriverInstance;
 
 
@@ -40,17 +40,15 @@ typedef struct {
 
 
 
-// the IP supplier should modify the contents of below register to be able to monitor the status of IP processing
-#define SOBELIPRULE1_BUSY_STATUS_REG_offset 0x00
-#define SOBELIPRULE1_BUSY_STATUS_REG_bit 1          // little endian convention [31:0]
 
 
 
 // API for GrayscaleIP_Driver to use if this rule is applied by GRIP
-void SobelIP_Rule1Driver_initialize(SobelIPRule1DriverInstance *InstancePtr, unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr, unsigned short width, unsigned short height, unsigned short horizontalActiveTime, unsigned short verticalActiveTime);
+void SobelIP_Rule1Driver_initialize(SobelIPRule1DriverInstance *InstancePtr, XScuGic *InterruptController, unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr, unsigned short width, unsigned short height, unsigned short horizontalActiveTime, unsigned short verticalActiveTime);
 void SobelIP_Rule1Driver_start(SobelIPRule1DriverInstance *InstancePtr, unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr, unsigned short width, unsigned short height, unsigned short horizontalActiveTime, unsigned short verticalActiveTime);
 void SobelIP_Rule1Driver_stop(SobelIPRule1DriverInstance *InstancePtr);
 bool SobelIP_Rule1Driver_isBusy(SobelIPRule1DriverInstance *InstancePtr);
+void SobelIP_ISR(void *baseaddr_p);
 
 
 
@@ -58,8 +56,6 @@ bool SobelIP_Rule1Driver_isBusy(SobelIPRule1DriverInstance *InstancePtr);
 
 
 
-
-// NOTE: everything seems to be auto-generatable!!
 
 
 
