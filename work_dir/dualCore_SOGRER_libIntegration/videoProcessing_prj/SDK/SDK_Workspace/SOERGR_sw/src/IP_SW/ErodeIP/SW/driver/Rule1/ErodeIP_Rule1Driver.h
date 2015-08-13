@@ -16,8 +16,6 @@
 typedef struct {
     unsigned int baseaddr;
     ERODEIP_VDMADriverInstance vdmaDriver;
-	bool busy;
-    unsigned int intr_id;
 } ErodeIPRule1DriverInstance;
 
 
@@ -46,8 +44,6 @@ void ErodeIP_Rule1Driver_initialize(ErodeIPRule1DriverInstance *InstancePtr, XSc
 void ErodeIP_Rule1Driver_start(ErodeIPRule1DriverInstance *InstancePtr, unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr, unsigned short width, unsigned short height, unsigned short horizontalActiveTime, unsigned short verticalActiveTime);
 void ErodeIP_Rule1Driver_stop(ErodeIPRule1DriverInstance *InstancePtr);
 bool ErodeIP_Rule1Driver_isBusy(ErodeIPRule1DriverInstance *InstancePtr);
-void ErodeIP_ISR(void *baseaddr_p);
-
 
 #endif
 

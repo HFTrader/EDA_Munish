@@ -18,8 +18,8 @@ void SobelIP_func_init(XScuGic *InterruptController, unsigned long ImgIn_BaseAdd
 		if (SOBELIP_INFO[ip_instance_idx].grip_rule == 1) {
 			SobelIPRule1Driver[rule1_driver_idx].baseaddr = SOBELIP_INFO[ip_instance_idx].baseaddr;
 			SobelIPRule1Driver[rule1_driver_idx].vdmaDriver.baseaddr = SOBELIP_INFO[ip_instance_idx].vdma_baseaddr;
-			SobelIPRule1Driver[rule1_driver_idx].intr_id = SOBELIP_INFO[ip_instance_idx].intr_id;
-			SobelIPRule1Driver[rule1_driver_idx].busy = 0;
+			SobelIPRule1Driver[rule1_driver_idx].vdmaDriver.intr_id = SOBELIP_INFO[ip_instance_idx].intr_id;
+			SobelIPRule1Driver[rule1_driver_idx].vdmaDriver.busy = 0;
 
 			SobelIP_Rule1Driver_initialize(&SobelIPRule1Driver[rule1_driver_idx], InterruptController, ImgIn_BaseAddr, ImgOut_BaseAddr, width, height, horizontalActiveTime, verticalActiveTime);
 			rule1_driver_idx++;
@@ -49,7 +49,7 @@ void EdgeDetection_func(unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAd
     		rule1_driver_idx++;
     	}
     }    
-
+    printf("S:SW\r\n");
     EdgeDetection(ImgIn_BaseAddr, ImgOut_BaseAddr, width, height, horizontalActiveTime, verticalActiveTime); 
 #endif
 }

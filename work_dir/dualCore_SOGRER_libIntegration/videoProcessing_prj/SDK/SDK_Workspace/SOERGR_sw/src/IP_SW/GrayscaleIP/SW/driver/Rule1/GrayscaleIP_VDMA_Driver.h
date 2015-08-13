@@ -6,11 +6,15 @@
 #ifndef __GRAYSCALEIP_VDMA_DRIVER_H__
 #define __GRAYSCALEIP_VDMA_DRIVER_H__
 
+#include "xscugic.h"
+
 #define bool unsigned char
 
 
 typedef struct {
     unsigned int baseaddr;
+    bool busy;
+    unsigned int intr_id;
 } GRAYSCALEIP_VDMADriverInstance;
 
 
@@ -50,18 +54,12 @@ typedef struct {
 
 
 
-#define GRAYSCALEIP_VDMA_BUSY_STATUS_REG_offset 0x34
-#define GRAYSCALEIP_VDMA_BUSY_STATUS_REG_bit 1          // little endian convention [31:0]
-
-
-
-
 // API to configure VDMA_IP
-void GRAYSCALEIP_VDMA_Driver_initialize(GRAYSCALEIP_VDMADriverInstance *InstancePtr);
+void GRAYSCALEIP_VDMA_Driver_initialize(GRAYSCALEIP_VDMADriverInstance *InstancePtr, XScuGic *InterruptController);
 void GRAYSCALEIP_VDMA_Driver_start(GRAYSCALEIP_VDMADriverInstance *InstancePtr, unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr,unsigned short width, unsigned short height, unsigned short horizontalActiveTime, unsigned short verticalActiveTime);
 void GRAYSCALEIP_VDMA_Driver_stop(GRAYSCALEIP_VDMADriverInstance *InstancePtr);
 bool GRAYSCALEIP_VDMA_Driver_isBusy(GRAYSCALEIP_VDMADriverInstance *InstancePtr);
-
+void GRAYSCALEIP_VDMA_Driver_ISR(void *baseaddr_p);
 
 
 

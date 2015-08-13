@@ -302,8 +302,6 @@ void processFrame(unsigned int dataMemBaseAddr) {
 }
 
 
-// TODO: verify HW/SW partitioning by porting this SW onto dualCore_SOGRER_slow project
-
 // TODO: build the codeGenerator which is responsible for generating:
 // a) Driver templates
 // b) IP_config modules from GRIP generated SoC architecture

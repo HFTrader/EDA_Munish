@@ -114,8 +114,15 @@ static void SetHAMode(ERODEIP_VDMARegMap mode, unsigned int baseaddr) {
 
 
 
-void ERODEIP_VDMA_Driver_initialize(ERODEIP_VDMADriverInstance *InstancePtr) {    
+void ERODEIP_VDMA_Driver_initialize(ERODEIP_VDMADriverInstance *InstancePtr, XScuGic *InterruptController) {
 	SetHAMode(ERODEIP_VDMAInitMode, InstancePtr->baseaddr);
+
+    // registering this IP's ISR with the Interrupt Controller passed on by the application developer
+	int Status = XScuGic_Connect(InterruptController, InstancePtr->intr_id, (Xil_ExceptionHandler) ERODEIP_VDMA_Driver_ISR, (void *) InstancePtr);
+	if (Status != XST_SUCCESS) {
+		Xil_AssertVoid(0);
+	}
+	XScuGic_Enable(InterruptController, InstancePtr->intr_id);
 }
 
 
@@ -139,6 +146,8 @@ void ERODEIP_VDMA_Driver_start(ERODEIP_VDMADriverInstance *InstancePtr, unsigned
 	localWriteReg(InstancePtr->baseaddr + 0xa8, 0xffffffff, horizontalActiveTime*4);
 	localWriteReg(InstancePtr->baseaddr + 0xa4, 0xffffffff, horizontalActiveTime*4);
 	localWriteReg(InstancePtr->baseaddr + 0xa0, 0xffffffff, verticalActiveTime);
+
+	InstancePtr->busy = 1;
 }
 
 
@@ -149,12 +158,16 @@ void ERODEIP_VDMA_Driver_stop(ERODEIP_VDMADriverInstance *InstancePtr) {
 
 
 bool ERODEIP_VDMA_Driver_isBusy(ERODEIP_VDMADriverInstance *InstancePtr) {    
-    // if S2MM channel is idle or halted then return '0' else busy so return '1'
-    return (bool) !(((localReadReg(InstancePtr->baseaddr + ERODEIP_VDMA_BUSY_STATUS_REG_offset) >> ERODEIP_VDMA_BUSY_STATUS_REG_bit) & 1) | ((localReadReg(InstancePtr->baseaddr + ERODEIP_VDMA_BUSY_STATUS_REG_offset) >> 0) & 1)) ;
+    return InstancePtr->busy;
 }
 
 
+void ERODEIP_VDMA_Driver_ISR(void *baseaddr_p) {
+	ERODEIP_VDMADriverInstance *InstancePtr = (ERODEIP_VDMADriverInstance *) baseaddr_p;
+	localWriteReg(InstancePtr->baseaddr + 0x30, 0x00000004, 0x00000004);
 
+	InstancePtr->busy = 0;
+}
 
 
 

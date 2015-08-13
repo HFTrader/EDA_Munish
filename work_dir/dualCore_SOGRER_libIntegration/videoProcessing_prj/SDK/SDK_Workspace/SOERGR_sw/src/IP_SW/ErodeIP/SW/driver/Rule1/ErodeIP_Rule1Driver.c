@@ -7,7 +7,7 @@
 ErodeIPRule1RegMap ErodeIPRule1InitMode = {
 											.AP_CTRL = {.offset = 0x00, .mask = 0x00000000, .value = 0xffffffff},
 											.GIE = {.offset = 0x04, .mask = 0x00000001, .value = 0x00000000},
-											.IER = {.offset = 0x08, .mask = 0x00000001, .value = 0x00000001},
+											.IER = {.offset = 0x08, .mask = 0x00000001, .value = 0x00000000},
 											.ISR = {.offset = 0x0c, .mask = 0x00000000, .value = 0xffffffff},
 											.ROWS_DATA = {.offset = 0x14, .mask = 0x00000000, .value = 0xffffffff},
 											.COLS_DATA = {.offset = 0x1c, .mask = 0x00000000, .value = 0xffffffff}
@@ -70,24 +70,13 @@ void ErodeIP_Rule1Driver_initialize(ErodeIPRule1DriverInstance *InstancePtr, XSc
     localWriteReg(InstancePtr->baseaddr + 0x0, 0x00000081, 0x81);
 
     // for this rule we also need to initialize the connected VDMA as well
-    ERODEIP_VDMA_Driver_initialize(&InstancePtr->vdmaDriver);        
-
-    // registering this IP's ISR with the Interrupt Controller passed on by the application developer
-	int Status = XScuGic_Connect(InterruptController, InstancePtr->intr_id, (Xil_ExceptionHandler) ErodeIP_ISR, (void *) InstancePtr);
-	if (Status != XST_SUCCESS) {
-		Xil_AssertVoid(0);
-	}
-	XScuGic_Enable(InterruptController, InstancePtr->intr_id);
+    ERODEIP_VDMA_Driver_initialize(&InstancePtr->vdmaDriver, InterruptController);
 }
 
 
 
 void ErodeIP_Rule1Driver_start(ErodeIPRule1DriverInstance *InstancePtr, unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr, unsigned short width, unsigned short height, unsigned short horizontalActiveTime, unsigned short verticalActiveTime) {
 	SetHAMode(ErodeIPRule1StartMode, InstancePtr->baseaddr);
-	
-    // enabling the interrupt
-    localWriteReg(InstancePtr->baseaddr + 0x04, 0x00000001, 0x00000001);
-    InstancePtr->busy = 1;	
     
     ERODEIP_VDMA_Driver_start(&InstancePtr->vdmaDriver, ImgIn_BaseAddr, ImgOut_BaseAddr, width, height, horizontalActiveTime, verticalActiveTime);    
 }
@@ -104,16 +93,7 @@ void ErodeIP_Rule1Driver_stop(ErodeIPRule1DriverInstance *InstancePtr) {
 
 
 bool ErodeIP_Rule1Driver_isBusy(ErodeIPRule1DriverInstance *InstancePtr) {    
-	return InstancePtr->busy;
-}
-
-
-void ErodeIP_ISR(void *baseaddr_p)
-{
-	ErodeIPRule1DriverInstance *InstancePtr = (ErodeIPRule1DriverInstance *) baseaddr_p;
-	// disabling the interrupt now
-	localWriteReg(InstancePtr->baseaddr + 0x04, 0x00000001, 0x0);	
-	InstancePtr->busy = 0;
+	return ERODEIP_VDMA_Driver_isBusy(&InstancePtr->vdmaDriver);
 }
 
 

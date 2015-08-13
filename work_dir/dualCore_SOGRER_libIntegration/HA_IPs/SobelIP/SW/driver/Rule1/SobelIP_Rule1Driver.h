@@ -15,8 +15,6 @@
 typedef struct {
     unsigned int baseaddr;
     SOBELIP_VDMADriverInstance vdmaDriver;
-	bool busy;
-	unsigned int intr_id;
 } SobelIPRule1DriverInstance;
 
 
@@ -48,7 +46,6 @@ void SobelIP_Rule1Driver_initialize(SobelIPRule1DriverInstance *InstancePtr, XSc
 void SobelIP_Rule1Driver_start(SobelIPRule1DriverInstance *InstancePtr, unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr, unsigned short width, unsigned short height, unsigned short horizontalActiveTime, unsigned short verticalActiveTime);
 void SobelIP_Rule1Driver_stop(SobelIPRule1DriverInstance *InstancePtr);
 bool SobelIP_Rule1Driver_isBusy(SobelIPRule1DriverInstance *InstancePtr);
-void SobelIP_ISR(void *baseaddr_p);
 
 
 

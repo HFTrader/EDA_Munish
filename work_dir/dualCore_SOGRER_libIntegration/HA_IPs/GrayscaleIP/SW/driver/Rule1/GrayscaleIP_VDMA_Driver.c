@@ -114,8 +114,15 @@ static void SetHAMode(GRAYSCALEIP_VDMARegMap mode, unsigned int baseaddr) {
 
 
 
-void GRAYSCALEIP_VDMA_Driver_initialize(GRAYSCALEIP_VDMADriverInstance *InstancePtr) {    
+void GRAYSCALEIP_VDMA_Driver_initialize(GRAYSCALEIP_VDMADriverInstance *InstancePtr, XScuGic *InterruptController) {
 	SetHAMode(GRAYSCALEIP_VDMAInitMode, InstancePtr->baseaddr);
+
+    // registering this IP's ISR with the Interrupt Controller passed on by the application developer
+	int Status = XScuGic_Connect(InterruptController, InstancePtr->intr_id, (Xil_ExceptionHandler) GRAYSCALEIP_VDMA_Driver_ISR, (void *) InstancePtr);
+	if (Status != XST_SUCCESS) {
+		Xil_AssertVoid(0);
+	}
+	XScuGic_Enable(InterruptController, InstancePtr->intr_id);
 }
 
 
@@ -139,6 +146,8 @@ void GRAYSCALEIP_VDMA_Driver_start(GRAYSCALEIP_VDMADriverInstance *InstancePtr, 
 	localWriteReg(InstancePtr->baseaddr + 0xa8, 0xffffffff, horizontalActiveTime*4);
 	localWriteReg(InstancePtr->baseaddr + 0xa4, 0xffffffff, horizontalActiveTime*4);
 	localWriteReg(InstancePtr->baseaddr + 0xa0, 0xffffffff, verticalActiveTime);
+
+	InstancePtr->busy = 1;
 }
 
 
@@ -149,21 +158,20 @@ void GRAYSCALEIP_VDMA_Driver_stop(GRAYSCALEIP_VDMADriverInstance *InstancePtr) {
 
 
 bool GRAYSCALEIP_VDMA_Driver_isBusy(GRAYSCALEIP_VDMADriverInstance *InstancePtr) {    
-    // if S2MM channel is idle or halted then return '0' else busy so return '1'
-    return (bool) !(((localReadReg(InstancePtr->baseaddr + GRAYSCALEIP_VDMA_BUSY_STATUS_REG_offset) >> GRAYSCALEIP_VDMA_BUSY_STATUS_REG_bit) & 1) | ((localReadReg(InstancePtr->baseaddr + GRAYSCALEIP_VDMA_BUSY_STATUS_REG_offset) >> 0) & 1)) ;
+	return InstancePtr->busy;
 }
 
 
 
 
+void GRAYSCALEIP_VDMA_Driver_ISR(void *baseaddr_p) {
+	GRAYSCALEIP_VDMADriverInstance *InstancePtr = (GRAYSCALEIP_VDMADriverInstance *) baseaddr_p;
+	// resetting VDMA
+	localWriteReg(InstancePtr->baseaddr + 0x30, 0x00000004, 0x00000004);
 
+	InstancePtr->busy = 0;
+}
 
-
-
-
-
-
-// NOTE: everything seems to be auto-generatable!!
 
 
 

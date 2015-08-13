@@ -6,11 +6,15 @@
 #ifndef __SOBELIP_VDMA_DRIVER_H__
 #define __SOBELIP_VDMA_DRIVER_H__
 
+#include "xscugic.h"
+
 #define bool unsigned char
 
 
 typedef struct {
     unsigned int baseaddr;
+    bool busy;
+    unsigned int intr_id;
 } SOBELIP_VDMADriverInstance;
 
 
@@ -49,18 +53,12 @@ typedef struct {
 } SOBELIP_VDMARegMap;
 
 
-
-#define SOBELIP_VDMA_BUSY_STATUS_REG_offset 0x34
-#define SOBELIP_VDMA_BUSY_STATUS_REG_bit 1          // little endian convention [31:0]
-
-
-
-
 // API to configure VDMA_IP
-void SOBELIP_VDMA_Driver_initialize(SOBELIP_VDMADriverInstance *InstancePtr);
+void SOBELIP_VDMA_Driver_initialize(SOBELIP_VDMADriverInstance *InstancePtr, XScuGic *InterruptController);
 void SOBELIP_VDMA_Driver_start(SOBELIP_VDMADriverInstance *InstancePtr, unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr,unsigned short width, unsigned short height, unsigned short horizontalActiveTime, unsigned short verticalActiveTime);
 void SOBELIP_VDMA_Driver_stop(SOBELIP_VDMADriverInstance *InstancePtr);
 bool SOBELIP_VDMA_Driver_isBusy(SOBELIP_VDMADriverInstance *InstancePtr);
+void SOBELIP_VDMA_Driver_ISR(void *baseaddr_p);
 
 
 

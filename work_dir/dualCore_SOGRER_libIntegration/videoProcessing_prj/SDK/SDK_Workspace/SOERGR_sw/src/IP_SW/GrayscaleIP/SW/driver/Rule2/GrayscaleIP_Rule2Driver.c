@@ -78,7 +78,10 @@ void GrayscaleIP_Rule2Driver_stop(GrayscaleIPRule2DriverInstance *InstancePtr) {
 
 // the IP supplier should make necessary modifications to inform about the Busy status here
 bool GrayscaleIP_Rule2Driver_isBusy(GrayscaleIPRule2DriverInstance *InstancePtr) {
-    return (bool) ((localReadReg(InstancePtr->baseaddr + GRAYSCALEIPRULE2_BUSY_STATUS_REG_offset) >> GRAYSCALEIPRULE2_BUSY_STATUS_REG_bit) & 1);
+    //return (bool) ((localReadReg(InstancePtr->baseaddr + GRAYSCALEIPRULE2_BUSY_STATUS_REG_offset) >> GRAYSCALEIPRULE2_BUSY_STATUS_REG_bit) & 1);
+
+	// right now simulating it to be always busy
+	return 1;
 }
 
 

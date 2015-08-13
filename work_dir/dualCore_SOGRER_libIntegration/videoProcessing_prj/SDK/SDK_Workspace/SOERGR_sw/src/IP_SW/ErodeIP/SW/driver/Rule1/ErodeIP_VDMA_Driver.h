@@ -6,11 +6,15 @@
 #ifndef __ERODEIP_VDMA_DRIVER_H__
 #define __ERODEIP_VDMA_DRIVER_H__
 
+#include "xscugic.h"
+
 #define bool unsigned char
 
 
 typedef struct {
     unsigned int baseaddr;
+    bool busy;
+    unsigned int intr_id;
 } ERODEIP_VDMADriverInstance;
 
 
@@ -49,19 +53,12 @@ typedef struct {
 } ERODEIP_VDMARegMap;
 
 
-
-#define ERODEIP_VDMA_BUSY_STATUS_REG_offset 0x34
-#define ERODEIP_VDMA_BUSY_STATUS_REG_bit 1          // little endian convention [31:0]
-
-
-
-
 // API to configure VDMA_IP
-void ERODEIP_VDMA_Driver_initialize(ERODEIP_VDMADriverInstance *InstancePtr);
+void ERODEIP_VDMA_Driver_initialize(ERODEIP_VDMADriverInstance *InstancePtr, XScuGic *InterruptController);
 void ERODEIP_VDMA_Driver_start(ERODEIP_VDMADriverInstance *InstancePtr, unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr,unsigned short width, unsigned short height, unsigned short horizontalActiveTime, unsigned short verticalActiveTime);
 void ERODEIP_VDMA_Driver_stop(ERODEIP_VDMADriverInstance *InstancePtr);
 bool ERODEIP_VDMA_Driver_isBusy(ERODEIP_VDMADriverInstance *InstancePtr);
-
+void ERODEIP_VDMA_Driver_ISR(void *baseaddr_p);
 
 
 

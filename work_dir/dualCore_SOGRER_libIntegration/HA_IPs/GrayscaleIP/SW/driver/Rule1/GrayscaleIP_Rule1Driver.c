@@ -8,7 +8,7 @@
 GrayscaleIPRule1RegMap GrayscaleIPRule1InitMode = {
 													.AP_CTRL = {.offset = 0x00, .mask = 0x00000000, .value = 0xffffffff},
 													.GIE = {.offset = 0x04, .mask = 0x00000001, .value = 0x00000000},
-													.IER = {.offset = 0x08, .mask = 0x00000001, .value = 0x00000001},
+													.IER = {.offset = 0x08, .mask = 0x00000001, .value = 0x00000000},
 													.ISR = {.offset = 0x0c, .mask = 0x00000000, .value = 0xffffffff},
 													.ROWS_DATA = {.offset = 0x14, .mask = 0x00000000, .value = 0xffffffff},
 													.COLS_DATA = {.offset = 0x1c, .mask = 0x00000000, .value = 0xffffffff}
@@ -72,24 +72,13 @@ void GrayscaleIP_Rule1Driver_initialize(GrayscaleIPRule1DriverInstance *Instance
 	localWriteReg(InstancePtr->baseaddr + 0x0, 0x00000081, 0x81);
 
     // for this rule we also need to initialize the connected VDMA as well
-    GRAYSCALEIP_VDMA_Driver_initialize(&InstancePtr->vdmaDriver);
-
-    // registering this IP's ISR with the Interrupt Controller passed on by the application developer
-	int Status = XScuGic_Connect(InterruptController, InstancePtr->intr_id, (Xil_ExceptionHandler) GrayscaleIP_ISR, (void *) InstancePtr);
-	if (Status != XST_SUCCESS) {
-		Xil_AssertVoid(0);
-	}
-	XScuGic_Enable(InterruptController, InstancePtr->intr_id);
+    GRAYSCALEIP_VDMA_Driver_initialize(&InstancePtr->vdmaDriver, InterruptController);
 }
 
 
 
 void GrayscaleIP_Rule1Driver_start(GrayscaleIPRule1DriverInstance *InstancePtr, unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr,unsigned short width, unsigned short height, unsigned short horizontalActiveTime, unsigned short verticalActiveTime) {
-    SetHAMode(GrayscaleIPRule1StartMode, InstancePtr->baseaddr);        
-    
-    // enabling the interrupt
-    localWriteReg(InstancePtr->baseaddr + 0x04, 0x00000001, 0x00000001);
-    InstancePtr->busy = 1;
+    SetHAMode(GrayscaleIPRule1StartMode, InstancePtr->baseaddr);
 
     // starting the VDMA whose driver will configure its MEM2DEV path as well as DEV2MEM path
     GRAYSCALEIP_VDMA_Driver_start(&InstancePtr->vdmaDriver, ImgIn_BaseAddr, ImgOut_BaseAddr, width, height, horizontalActiveTime, verticalActiveTime);
@@ -108,17 +97,14 @@ void GrayscaleIP_Rule1Driver_stop(GrayscaleIPRule1DriverInstance *InstancePtr) {
 
 
 bool GrayscaleIP_Rule1Driver_isBusy(GrayscaleIPRule1DriverInstance *InstancePtr) {
-	return InstancePtr->busy;
+	return GRAYSCALEIP_VDMA_Driver_isBusy(&InstancePtr->vdmaDriver);
 }
 
 
-void GrayscaleIP_ISR(void *baseaddr_p)
-{
-	GrayscaleIPRule1DriverInstance *InstancePtr = (GrayscaleIPRule1DriverInstance *) baseaddr_p;
-	// disabling the interrupt now
-	localWriteReg(InstancePtr->baseaddr + 0x04, 0x00000001, 0x0);
-	InstancePtr->busy = 0;
-}
+
+
+
+
 
 
 
