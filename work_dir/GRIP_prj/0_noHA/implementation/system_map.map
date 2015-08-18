@@ -1,0 +1,295 @@
+Release 14.7 Map P.20131013 (lin64)
+Xilinx Map Application Log File for Design 'system'
+
+Design Information
+------------------
+Command Line   : map -o system_map.ncd -w -pr b -ol high -timing -detail
+system.ngd system.pcf 
+Target Device  : xc7z020
+Target Package : clg484
+Target Speed   : -1
+Mapper Version : zynq -- $Revision: 1.55 $
+Mapped Date    : Mon Jul 27 18:38:10 2015
+
+WARNING:LIT:701 - PAD symbol "processing_system7_0_PS_SRSTB" has an undefined
+   IOSTANDARD.
+WARNING:LIT:702 - PAD symbol "processing_system7_0_PS_SRSTB" is not constrained
+   (LOC) to a specific location.
+WARNING:LIT:701 - PAD symbol "processing_system7_0_PS_CLK" has an undefined
+   IOSTANDARD.
+WARNING:LIT:702 - PAD symbol "processing_system7_0_PS_CLK" is not constrained
+   (LOC) to a specific location.
+WARNING:LIT:701 - PAD symbol "processing_system7_0_PS_PORB" has an undefined
+   IOSTANDARD.
+WARNING:LIT:702 - PAD symbol "processing_system7_0_PS_PORB" is not constrained
+   (LOC) to a specific location.
+Mapping design into LUTs...
+Writing file system_map.ngm...
+Running directed packing...
+Running delay-based LUT packing...
+Updating timing models...
+INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
+   (.mrp).
+Running timing-driven placement...
+Total REAL time at the beginning of Placer: 56 secs 
+Total CPU  time at the beginning of Placer: 37 secs 
+
+Phase 1.1  Initial Placement Analysis
+Phase 1.1  Initial Placement Analysis (Checksum:3d3640a4) REAL time: 1 mins 3 secs 
+
+Phase 2.7  Design Feasibility Check
+WARNING:Place:838 - An IO Bus with more than one IO standard is found.
+   Components associated with this bus are as follows: 
+   	 Comp: processing_system7_0_GPIO_pin<0>   IOSTANDARD = LVCMOS25
+   	 Comp: processing_system7_0_GPIO_pin<1>   IOSTANDARD = LVCMOS25
+   	 Comp: processing_system7_0_GPIO_pin<2>   IOSTANDARD = LVCMOS25
+   	 Comp: processing_system7_0_GPIO_pin<3>   IOSTANDARD = LVCMOS25
+   	 Comp: processing_system7_0_GPIO_pin<4>   IOSTANDARD = LVCMOS25
+   	 Comp: processing_system7_0_GPIO_pin<5>   IOSTANDARD = LVCMOS33
+   	 Comp: processing_system7_0_GPIO_pin<6>   IOSTANDARD = LVCMOS33
+   	 Comp: processing_system7_0_GPIO_pin<7>   IOSTANDARD = LVCMOS33
+   	 Comp: processing_system7_0_GPIO_pin<8>   IOSTANDARD = LVCMOS33
+   	 Comp: processing_system7_0_GPIO_pin<9>   IOSTANDARD = LVCMOS33
+   	 Comp: processing_system7_0_GPIO_pin<10>   IOSTANDARD = LVCMOS33
+   	 Comp: processing_system7_0_GPIO_pin<11>   IOSTANDARD = LVCMOS25
+   	 Comp: processing_system7_0_GPIO_pin<12>   IOSTANDARD = LVCMOS25
+   	 Comp: processing_system7_0_GPIO_pin<13>   IOSTANDARD = LVCMOS25
+   	 Comp: processing_system7_0_GPIO_pin<14>   IOSTANDARD = LVCMOS25
+   	 Comp: processing_system7_0_GPIO_pin<15>   IOSTANDARD = LVCMOS25
+   	 Comp: processing_system7_0_GPIO_pin<16>   IOSTANDARD = LVCMOS25
+   	 Comp: processing_system7_0_GPIO_pin<17>   IOSTANDARD = LVCMOS25
+   	 Comp: processing_system7_0_GPIO_pin<18>   IOSTANDARD = LVCMOS25
+   	 Comp: processing_system7_0_GPIO_pin<19>   IOSTANDARD = LVCMOS33
+   	 Comp: processing_system7_0_GPIO_pin<20>   IOSTANDARD = LVCMOS33
+   	 Comp: processing_system7_0_GPIO_pin<21>   IOSTANDARD = LVCMOS33
+   	 Comp: processing_system7_0_GPIO_pin<22>   IOSTANDARD = LVCMOS33
+   	 Comp: processing_system7_0_GPIO_pin<23>   IOSTANDARD = LVCMOS33
+   	 Comp: processing_system7_0_GPIO_pin<24>   IOSTANDARD = LVCMOS33
+   	 Comp: processing_system7_0_GPIO_pin<25>   IOSTANDARD = LVCMOS33
+   	 Comp: processing_system7_0_GPIO_pin<26>   IOSTANDARD = LVCMOS33
+   	 Comp: processing_system7_0_GPIO_pin<27>   IOSTANDARD = LVCMOS25
+   	 Comp: processing_system7_0_GPIO_pin<28>   IOSTANDARD = LVCMOS25
+   	 Comp: processing_system7_0_GPIO_pin<29>   IOSTANDARD = LVCMOS25
+   	 Comp: processing_system7_0_GPIO_pin<30>   IOSTANDARD = LVCMOS25
+   	 Comp: processing_system7_0_GPIO_pin<31>   IOSTANDARD = LVCMOS25
+
+
+Phase 2.7  Design Feasibility Check (Checksum:3d3640a4) REAL time: 1 mins 4 secs 
+
+Phase 3.31  Local Placement Optimization
+Phase 3.31  Local Placement Optimization (Checksum:3d3640a4) REAL time: 1 mins 4 secs 
+
+Phase 4.2  Initial Placement for Architecture Specific Features
+
+Phase 4.2  Initial Placement for Architecture Specific Features
+(Checksum:f6ac320) REAL time: 1 mins 11 secs 
+
+Phase 5.30  Global Clock Region Assignment
+Phase 5.30  Global Clock Region Assignment (Checksum:f6ac320) REAL time: 1 mins 11 secs 
+
+Phase 6.3  Local Placement Optimization
+Phase 6.3  Local Placement Optimization (Checksum:f6ac320) REAL time: 1 mins 11 secs 
+
+Phase 7.5  Local Placement Optimization
+Phase 7.5  Local Placement Optimization (Checksum:f6ac320) REAL time: 1 mins 11 secs 
+
+Phase 8.8  Global Placement
+........................................
+
+..........................................................
+.....................................................................................................................................................
+.........................................................................................................................................................................................
+Phase 8.8  Global Placement (Checksum:e7d3330a) REAL time: 2 mins 39 secs 
+
+Phase 9.5  Local Placement Optimization
+Phase 9.5  Local Placement Optimization (Checksum:e7d3330a) REAL time: 2 mins 39 secs 
+
+Phase 10.18  Placement Optimization
+Phase 10.18  Placement Optimization (Checksum:74aff910) REAL time: 2 mins 53 secs 
+
+Phase 11.5  Local Placement Optimization
+Phase 11.5  Local Placement Optimization (Checksum:74aff910) REAL time: 2 mins 53 secs 
+
+Phase 12.34  Placement Validation
+Phase 12.34  Placement Validation (Checksum:74aff910) REAL time: 2 mins 54 secs 
+
+Total REAL time to Placer completion: 2 mins 54 secs 
+Total CPU  time to Placer completion: 2 mins 33 secs 
+Running post-placement packing...
+Writing output files...
+WARNING:PhysDesignRules:367 - The signal <hdmi_int_IBUF> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <axi_i2s_adi_0/axi_i2s_adi_0/ctrl/rx_sync_fifo_in<3>> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <axi_i2s_adi_0/axi_i2s_adi_0/ctrl/rx_gen.rx_sync/Mram_fifo_RAMD_D1_O> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <axi_i2s_adi_0/axi_i2s_adi_0/ctrl/tx_sync/Mram_fifo_RAMD_D1_O> is incomplete.
+   The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <axi_i2s_adi_0/axi_i2s_adi_0/pl330_dma_rx_gen.rx_fifo/fifo/Mram_data_fifo1_RA
+   MD_D1_O> is incomplete. The signal does not drive any load pins in the
+   design.
+WARNING:PhysDesignRules:367 - The signal
+   <axi_i2s_adi_0/axi_i2s_adi_0/pl330_dma_tx_gen.tx_fifo/fifo/Mram_data_fifo1_RA
+   MD_D1_O> is incomplete. The signal does not drive any load pins in the
+   design.
+WARNING:PhysDesignRules:367 - The signal
+   <axi_i2s_adi_0/axi_i2s_adi_0/pl330_dma_tx_gen.tx_fifo/fifo/Mram_data_fifo2_RA
+   MD_D1_O> is incomplete. The signal does not drive any load pins in the
+   design.
+WARNING:PhysDesignRules:367 - The signal
+   <axi_i2s_adi_0/axi_i2s_adi_0/pl330_dma_tx_gen.tx_fifo/fifo/Mram_data_fifo4_RA
+   MD_D1_O> is incomplete. The signal does not drive any load pins in the
+   design.
+WARNING:PhysDesignRules:367 - The signal
+   <axi_i2s_adi_0/axi_i2s_adi_0/pl330_dma_tx_gen.tx_fifo/fifo/Mram_data_fifo3_RA
+   MD_D1_O> is incomplete. The signal does not drive any load pins in the
+   design.
+WARNING:PhysDesignRules:367 - The signal
+   <axi_i2s_adi_0/axi_i2s_adi_0/pl330_dma_rx_gen.rx_fifo/fifo/Mram_data_fifo4_RA
+   MD_D1_O> is incomplete. The signal does not drive any load pins in the
+   design.
+WARNING:PhysDesignRules:367 - The signal
+   <axi_i2s_adi_0/axi_i2s_adi_0/pl330_dma_rx_gen.rx_fifo/fifo/Mram_data_fifo2_RA
+   MD_D1_O> is incomplete. The signal does not drive any load pins in the
+   design.
+WARNING:PhysDesignRules:367 - The signal
+   <axi_i2s_adi_0/axi_i2s_adi_0/pl330_dma_rx_gen.rx_fifo/fifo/Mram_data_fifo3_RA
+   MD_D1_O> is incomplete. The signal does not drive any load pins in the
+   design.
+WARNING:PhysDesignRules:367 - The signal
+   <axi_interconnect_2/axi_interconnect_2/mi_protocol_conv_bank/gen_protocol_slo
+   t[0].gen_prot_conv.conv_inst/gen_axi3.axi3_conv_inst/USE_WRITE.write_addr_ins
+   t/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/U0/xst_fifo_generator/gconvfifo.rf/
+   grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM_RAMD_D1_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <axi_spdif_tx_0/axi_spdif_tx_0/pl330_dma_gen.fifo/fifo/Mram_data_fifo3_RAMD_D
+   1_O> is incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <axi_interconnect_2/axi_interconnect_2/mi_protocol_conv_bank/gen_protocol_slo
+   t[0].gen_prot_conv.conv_inst/gen_axi3.axi3_conv_inst/USE_WRITE.write_addr_ins
+   t/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/U0/xst_fifo_generator/gconvfif
+   o.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM_RAMD_D1_O> is incomplete.
+   The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <axi_spdif_tx_0/axi_spdif_tx_0/pl330_dma_gen.fifo/fifo/Mram_data_fifo5_RAMD_D
+   1_O> is incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <axi_spdif_tx_0/axi_spdif_tx_0/pl330_dma_gen.fifo/fifo/Mram_data_fifo4_RAMD_D
+   1_O> is incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <axi_spdif_tx_0/axi_spdif_tx_0/pl330_dma_gen.fifo/fifo/Mram_data_fifo2_RAMD_D
+   1_O> is incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <axi_spdif_tx_0/axi_spdif_tx_0/pl330_dma_gen.fifo/fifo/Mram_data_fifo1_RAMD_D
+   1_O> is incomplete. The signal does not drive any load pins in the design.
+
+Design Summary
+--------------
+
+Design Summary:
+Number of errors:      0
+Number of warnings:   26
+Slice Logic Utilization:
+  Number of Slice Registers:                 4,678 out of 106,400    4%
+    Number used as Flip Flops:               4,666
+    Number used as Latches:                      0
+    Number used as Latch-thrus:                  0
+    Number used as AND/OR logics:               12
+  Number of Slice LUTs:                      4,815 out of  53,200    9%
+    Number used as logic:                    4,190 out of  53,200    7%
+      Number using O6 output only:           2,868
+      Number using O5 output only:             143
+      Number using O5 and O6:                1,179
+      Number used as ROM:                        0
+    Number used as Memory:                     390 out of  17,400    2%
+      Number used as Dual Port RAM:             74
+        Number using O6 output only:             6
+        Number using O5 output only:             5
+        Number using O5 and O6:                 63
+      Number used as Single Port RAM:            0
+      Number used as Shift Register:           316
+        Number using O6 output only:           308
+        Number using O5 output only:             0
+        Number using O5 and O6:                  8
+    Number used exclusively as route-thrus:    235
+      Number with same-slice register load:    116
+      Number with same-slice carry load:       119
+      Number with other load:                    0
+
+Slice Logic Distribution:
+  Number of occupied Slices:                 1,780 out of  13,300   13%
+  Number of LUT Flip Flop pairs used:        5,848
+    Number with an unused Flip Flop:         1,684 out of   5,848   28%
+    Number with an unused LUT:               1,033 out of   5,848   17%
+    Number of fully used LUT-FF pairs:       3,131 out of   5,848   53%
+    Number of unique control sets:             294
+    Number of slice register sites lost
+      to control set restrictions:           1,137 out of 106,400    1%
+
+  A LUT Flip Flop pair for this architecture represents one LUT paired with
+  one Flip Flop within a slice.  A control set is a unique combination of
+  clock, reset, set, and enable signals for a registered element.
+  The Slice Logic Distribution report is not meaningful if the design is
+  over-mapped for a non-slice resource or if Placement fails.
+  OVERMAPPING of BRAM resources should be ignored if the design is
+  over-mapped for a non-BRAM resource or if placement fails.
+
+IO Utilization:
+  Number of bonded IOBs:                        74 out of     200   37%
+    Number of LOCed IOBs:                       74 out of      74  100%
+  Number of bonded IOPAD:                      130 out of     130  100%
+    IOB Flip Flops:                             25
+
+Specific Feature Utilization:
+  Number of RAMB36E1/FIFO36E1s:                  3 out of     140    2%
+    Number using RAMB36E1 only:                  3
+    Number using FIFO36E1 only:                  0
+  Number of RAMB18E1/FIFO18E1s:                  0 out of     280    0%
+  Number of BUFG/BUFGCTRLs:                      5 out of      32   15%
+    Number used as BUFGs:                        5
+    Number used as BUFGCTRLs:                    0
+  Number of IDELAYE2/IDELAYE2_FINEDELAYs:        0 out of     200    0%
+  Number of ILOGICE2/ILOGICE3/ISERDESE2s:        1 out of     200    1%
+    Number used as ILOGICE2s:                    1
+  Number used as  ILOGICE3s:                     0
+    Number used as ISERDESE2s:                   0
+  Number of ODELAYE2/ODELAYE2_FINEDELAYs:        0
+  Number of OLOGICE2/OLOGICE3/OSERDESE2s:       56 out of     200   28%
+    Number used as OLOGICE2s:                   56
+    Number used as OLOGICE3s:                    0
+    Number used as OSERDESE2s:                   0
+  Number of PHASER_IN/PHASER_IN_PHYs:            0 out of      16    0%
+  Number of PHASER_OUT/PHASER_OUT_PHYs:          0 out of      16    0%
+  Number of BSCANs:                              0 out of       4    0%
+  Number of BUFHCEs:                             0 out of      72    0%
+  Number of BUFRs:                               0 out of      16    0%
+  Number of CAPTUREs:                            0 out of       1    0%
+  Number of DNA_PORTs:                           0 out of       1    0%
+  Number of DSP48E1s:                            0 out of     220    0%
+  Number of EFUSE_USRs:                          0 out of       1    0%
+  Number of FRAME_ECCs:                          0 out of       1    0%
+  Number of ICAPs:                               0 out of       2    0%
+  Number of IDELAYCTRLs:                         0 out of       4    0%
+  Number of IN_FIFOs:                            0 out of      16    0%
+  Number of MMCME2_ADVs:                         2 out of       4   50%
+  Number of OUT_FIFOs:                           0 out of      16    0%
+  Number of PHASER_REFs:                         0 out of       4    0%
+  Number of PHY_CONTROLs:                        0 out of       4    0%
+  Number of PLLE2_ADVs:                          0 out of       4    0%
+  Number of PS7s:                                1 out of       1  100%
+  Number of STARTUPs:                            0 out of       1    0%
+  Number of XADCs:                               0 out of       1    0%
+
+Average Fanout of Non-Clock Nets:                3.37
+
+Peak Memory Usage:  1379 MB
+Total REAL time to MAP completion:  3 mins 1 secs 
+Total CPU time to MAP completion:   2 mins 38 secs 
+
+Mapping completed.
+See MAP report file "system_map.mrp" for details.

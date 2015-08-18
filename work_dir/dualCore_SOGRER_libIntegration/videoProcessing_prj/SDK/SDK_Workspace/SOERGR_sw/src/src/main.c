@@ -29,12 +29,14 @@
 
 #define VIDEO_BASEADDR 0x2000000
 
+
 // global variables only to be used in main.c file
 static unsigned char    MajorRev;      /* Major Release Number */
 static unsigned char    MinorRev;      /* Usually used for code-drops */
 static unsigned char    RcRev;         /* Release Candidate Number */
 static unsigned char    DriverEnable;
 static unsigned char    LastEnable;
+
 
 static XScuGic_Config *GicConfig;/* The configuration parameters of the controller */
 XScuGic InterruptController; /* Instance of the Interrupt Controller */
@@ -51,6 +53,10 @@ void InitSobelFilter();
 void InitErodeFilter();
 void InitGrayscaleFilter();
 void processFrame(unsigned int dataMemBaseAddr);			// data processing chain (application's dataflow)
+
+// for performance evaluation
+void evaluate_frameThroughput();
+// for performance evaluation
 
 
 /***************************************************************************//**
@@ -69,7 +75,12 @@ int main()
 	DriverEnable = TRUE;
 	LastEnable   = FALSE;
 
-	debug_frameNo = 0;
+#ifdef DO_PERF_EVAL
+	received_frame_count = 0;
+	processed_frame_count = 0;
+	cpu_cycles_for_frameProc = 0.0;
+#endif
+
 
 
 
@@ -139,13 +150,9 @@ int main()
 		FRAME_INTR = 0;
 		while(FRAME_INTR == 0);
 
-		//FRAME_INTR = 1; while(1);
-
-		//printf("%d\r\n", get_cyclecount());
-
 		// raw data passed through the data processing chain by Master CPU
 		processFrame(VIDEO_BASEADDR);
-		//init_perfcounters(1, 0);
+
 	}
 
 	Xil_DCacheDisable();
@@ -281,6 +288,11 @@ int APP_ChangeResolution (void)
 
 
 void processFrame(unsigned int dataMemBaseAddr) {
+
+#ifdef DO_PERF_EVAL
+	init_perfcounters(1, 0);
+#endif
+
 	unsigned int dataMem_ptr = dataMemBaseAddr;
 
 	// capturing the frame pixels from camera line buffers onto DDR memory
@@ -298,8 +310,23 @@ void processFrame(unsigned int dataMemBaseAddr) {
 	ConvToGray_func(dataMem_ptr, dataMem_ptr + FRAME_SIZE, 640, 480, h_ActiveTime, v_ActiveTime);
 	dataMem_ptr += FRAME_SIZE;
 
+#ifdef DO_PERF_EVAL
+	cpu_cycles_for_frameProc = (cpu_cycles_for_frameProc*(double)(processed_frame_count-1) + get_cyclecount()) / ((double) processed_frame_count);
+#endif
+
 	ConfigHdmiVDMA(h_ActiveTime, v_ActiveTime, dataMem_ptr);
 }
+
+#ifdef DO_PERF_EVAL
+void evaluate_frameThroughput() {
+	double frame_throughput;				// approx measure of no of frames processed in 1 sec
+	frame_throughput = ( (double)((double)CPU_FREQ * (double)processed_frame_count) / (double)((double)INTER_FRAME_TIME * (double)TOTAL_FRAMES_FOR_STATS) );
+	printf("\r\n\n\nconsidering first %d frames, frame_thorughput = %f\r\n", TOTAL_FRAMES_FOR_STATS, frame_throughput);
+
+	printf("avg cpu cycles needed = %f\r\n", cpu_cycles_for_frameProc);
+	printf("which amounts to relative cpu-load of %.2f%%\r\n", (cpu_cycles_for_frameProc * 100)/CPU_LOAD );
+}
+#endif
 
 
 // TODO: build the codeGenerator which is responsible for generating:

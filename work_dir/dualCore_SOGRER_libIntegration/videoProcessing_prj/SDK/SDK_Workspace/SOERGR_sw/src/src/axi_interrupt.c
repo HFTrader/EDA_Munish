@@ -61,18 +61,41 @@ void AXI_INTERRUPT_EnableInterrupt(void * baseaddr_p)
 unsigned int t=0;
 void AXI_INTERRUPT_VsyncIntr_Handler(void * baseaddr_p)
 {
-	debug_frameNo++;
+
+#ifdef DO_PERF_EVAL
+	received_frame_count++;
+#endif
+
 	if (FRAME_INTR == 0) {		// master cpu available for processing
 		FRAME_INTR = 1;
+
+#ifdef DO_PERF_EVAL
+		processed_frame_count++;
+#endif
+
 	} else {					// master cpu busy processing previous frame
 #ifdef USE_MULTICORE
 		if (SoCProc_processDataflow() == 0) {
-			printf("missing frame:%d\r\n", debug_frameNo);
+			//printf("missing frame:%d\r\n", received_frame_count);
+		} else {
+
+#ifdef DO_PERF_EVAL
+			processed_frame_count++;
+#endif
+
 		}
 #else
-		printf("missing frame:%d\r\n", debug_frameNo);
+		//printf("missing frame:%d\r\n", received_frame_count);
 #endif
 	}
+
+
+#ifdef DO_PERF_EVAL
+		// if received frames are equal to the frames considered for stats, then evaluate performance metrics
+		if (received_frame_count == TOTAL_FRAMES_FOR_STATS) {
+			evaluate_frameThroughput();
+		}
+#endif
 }
 
 

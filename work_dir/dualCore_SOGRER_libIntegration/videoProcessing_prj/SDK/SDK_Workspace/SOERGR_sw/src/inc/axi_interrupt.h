@@ -226,7 +226,7 @@ void AXI_INTERRUPT_VsyncIntr_Handler(void * baseaddr_p);
 void AXI_INTERRUPT_HrefIntr_Handler(void * baseaddr_p);
 
 
-
+extern void evaluate_frameThroughput();
 
 
 #endif /** AXI_INTERRUPT_H */
