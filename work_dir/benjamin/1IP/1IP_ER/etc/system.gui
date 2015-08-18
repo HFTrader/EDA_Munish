@@ -14,7 +14,7 @@
       <VARIABLE COL_INDEX="6" IS_VISIBLE="FALSE" VIEWDISP="Type" VIEWTYPE="HEADER"/>
     </HEADERS>
     <SPLITTERS COLLAPSIBLE="1" HANDLEWIDTH="4" MARKER="255" ORIENTATION="1" RESIZE="1" SIZES="180,450,200" VERSION="0"/>
-    <SET ID="image_filter_top_0" IS_EXPANDED="TRUE"/>
+    <SET ID="cam_mem_0" IS_EXPANDED="TRUE"/>
     <STATUS>
       <SELECTIONS/>
     </STATUS>
@@ -23,7 +23,7 @@
       <VARIABLE ID="util_i2c_mixer_0" ROW_INDEX="18"/>
       <VARIABLE ID="processing_system7_0" ROW_INDEX="4"/>
       <VARIABLE ID="clock_generator_0" ROW_INDEX="17"/>
-      <VARIABLE ID="cam_mem_0" ROW_INDEX="16"/>
+      <VARIABLE ID="cam_mem_0" IS_EXPANDED="TRUE" ROW_INDEX="16"/>
       <VARIABLE ID="axi_vdma_0" ROW_INDEX="13"/>
       <VARIABLE ID="axi_spdif_tx_0" ROW_INDEX="12"/>
       <VARIABLE ID="axi_interconnect_2" ROW_INDEX="2"/>
@@ -36,7 +36,7 @@
       <VARIABLE ID="axi_dma_i2s" ROW_INDEX="6"/>
       <VARIABLE ID="axi_clkgen_0" ROW_INDEX="5"/>
       <VARIABLE ID="axi_vdma_2" ROW_INDEX="14"/>
-      <VARIABLE ID="image_filter_top_0" IS_EXPANDED="TRUE" ROW_INDEX="15"/>
+      <VARIABLE ID="image_filter_top_0" ROW_INDEX="15"/>
       <VARIABLE ID="axi_interconnect_3" ROW_INDEX="3"/>
       <VARIABLE ID="axi_perf_mon_0" ROW_INDEX="11"/>
     </SEQUENCES>
@@ -84,7 +84,7 @@
   </SET>
 
   <SET CLASS="PROJECT" DISPLAYMODE="TREE" VIEW_ID="PORT">
-    <HEADERS HSCROLL="0" VSCROLL="216">
+    <HEADERS HSCROLL="0" VSCROLL="32">
       <VARIABLE COL_INDEX="0" COL_WIDTH="371" IS_VISIBLE="TRUE" VIEWDISP="Name" VIEWTYPE="HEADER"/>
       <VARIABLE COL_INDEX="1" COL_WIDTH="291" IS_VISIBLE="TRUE" VIEWDISP="Connected Port" VIEWTYPE="HEADER"/>
       <VARIABLE COL_INDEX="2" IS_VISIBLE="FALSE" VIEWDISP="Net" VIEWTYPE="HEADER"/>
@@ -100,12 +100,11 @@
       <VARIABLE COL_INDEX="11" COL_WIDTH="100" IS_VISIBLE="TRUE" VIEWDISP="Differential Polarity" VIEWTYPE="HEADER"/>
     </HEADERS>
     <SPLITTERS COLLAPSIBLE="1" HANDLEWIDTH="4" MARKER="255" ORIENTATION="1" RESIZE="1" SIZES="180,450,200" VERSION="0"/>
-    <SET ID="axi_vdma_2" IS_EXPANDED="TRUE"/>
-    <SET ID="image_filter_top_0" IS_EXPANDED="TRUE"/>
+    <SET ID="cam_mem_0" IS_EXPANDED="TRUE">
+      <SET ID="S_AXI" IS_EXPANDED="TRUE"/>
+    </SET>
     <STATUS>
-      <SELECTIONS>
-        <VARIABLE ID="mm2s_introut" PARENT="axi_vdma_2"/>
-      </SELECTIONS>
+      <SELECTIONS/>
     </STATUS>
     <SEQUENCES IS_DEF_SEQUENCES="TRUE">
       <VARIABLE ID="ExternalPorts" ROW_INDEX="0"/>
@@ -113,7 +112,7 @@
       <VARIABLE ID="util_i2c_mixer_0" ROW_INDEX="19"/>
       <VARIABLE ID="processing_system7_0" ROW_INDEX="5"/>
       <VARIABLE ID="clock_generator_0" ROW_INDEX="18"/>
-      <VARIABLE ID="cam_mem_0" ROW_INDEX="17"/>
+      <VARIABLE ID="cam_mem_0" IS_EXPANDED="TRUE" ROW_INDEX="17"/>
       <VARIABLE ID="axi_vdma_0" ROW_INDEX="14"/>
       <VARIABLE ID="axi_spdif_tx_0" ROW_INDEX="13"/>
       <VARIABLE ID="axi_interconnect_2" ROW_INDEX="3"/>
@@ -125,8 +124,8 @@
       <VARIABLE ID="axi_dma_spdif" ROW_INDEX="8"/>
       <VARIABLE ID="axi_dma_i2s" ROW_INDEX="7"/>
       <VARIABLE ID="axi_clkgen_0" ROW_INDEX="6"/>
-      <VARIABLE ID="axi_vdma_2" IS_EXPANDED="TRUE" ROW_INDEX="15"/>
-      <VARIABLE ID="image_filter_top_0" IS_EXPANDED="TRUE" ROW_INDEX="16"/>
+      <VARIABLE ID="axi_vdma_2" ROW_INDEX="15"/>
+      <VARIABLE ID="image_filter_top_0" ROW_INDEX="16"/>
       <VARIABLE ID="axi_interconnect_3" ROW_INDEX="4"/>
       <VARIABLE ID="axi_perf_mon_0" ROW_INDEX="12"/>
     </SEQUENCES>

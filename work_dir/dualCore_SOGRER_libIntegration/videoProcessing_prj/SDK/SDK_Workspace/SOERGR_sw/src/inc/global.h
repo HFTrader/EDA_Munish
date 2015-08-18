@@ -38,7 +38,5 @@ double cpu_cycles_for_frameProc;
 int h_ActiveTime;
 int v_ActiveTime;
 
-extern void CPU1_ISR();
-
 #endif
 
