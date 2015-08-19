@@ -17,13 +17,7 @@ src/IP_SW/ErodeIP/SW/function/ErodeIP_func.d: \
  ../../standalone_bsp_0/ps7_cortexa9_0/include/xscugic_hw.h \
  ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_exception.h \
  ../src/IP_SW/ErodeIP/SW/function/../config/ErodeIP_config.h \
- ../src/IP_SW/ErodeIP/SW/function/ErodeIP_SW.h \
- ../src/IP_SW/ErodeIP/SW/function/../../../GrayscaleIP/SW/function/GrayscaleIP_func.h \
- ../src/IP_SW/ErodeIP/SW/function/../../../GrayscaleIP/SW/function/../driver/Rule1/GrayscaleIP_Rule1Driver.h \
- ../src/IP_SW/ErodeIP/SW/function/../../../GrayscaleIP/SW/function/../driver/Rule1/GrayscaleIP_VDMA_Driver.h \
- ../src/IP_SW/ErodeIP/SW/function/../../../GrayscaleIP/SW/function/../driver/Rule2/GrayscaleIP_Rule2Driver.h \
- ../src/IP_SW/ErodeIP/SW/function/../../../GrayscaleIP/SW/function/../config/GrayscaleIP_config.h \
- ../src/IP_SW/ErodeIP/SW/function/../../../GrayscaleIP/SW/function/GrayscaleIP_SW.h
+ ../src/IP_SW/ErodeIP/SW/function/ErodeIP_SW.h
 
 ../src/IP_SW/ErodeIP/SW/function/ErodeIP_func.h:
 
@@ -60,15 +54,3 @@ src/IP_SW/ErodeIP/SW/function/ErodeIP_func.d: \
 ../src/IP_SW/ErodeIP/SW/function/../config/ErodeIP_config.h:
 
 ../src/IP_SW/ErodeIP/SW/function/ErodeIP_SW.h:
-
-../src/IP_SW/ErodeIP/SW/function/../../../GrayscaleIP/SW/function/GrayscaleIP_func.h:
-
-../src/IP_SW/ErodeIP/SW/function/../../../GrayscaleIP/SW/function/../driver/Rule1/GrayscaleIP_Rule1Driver.h:
-
-../src/IP_SW/ErodeIP/SW/function/../../../GrayscaleIP/SW/function/../driver/Rule1/GrayscaleIP_VDMA_Driver.h:
-
-../src/IP_SW/ErodeIP/SW/function/../../../GrayscaleIP/SW/function/../driver/Rule2/GrayscaleIP_Rule2Driver.h:
-
-../src/IP_SW/ErodeIP/SW/function/../../../GrayscaleIP/SW/function/../config/GrayscaleIP_config.h:
-
-../src/IP_SW/ErodeIP/SW/function/../../../GrayscaleIP/SW/function/GrayscaleIP_SW.h:

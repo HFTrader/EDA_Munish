@@ -8,7 +8,6 @@
 #include "ErodeIP_func.h"
 #include <stdio.h>
 
-#include "../../../GrayscaleIP/SW/function/GrayscaleIP_func.h"
 
 void ErodeIP_func_init(XScuGic *InterruptController, unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr,unsigned short width, unsigned short height, unsigned short horizontalActiveTime, unsigned short verticalActiveTime) {
 
