@@ -17,7 +17,7 @@ typedef struct {
 	unsigned int intr_id;
 } ERODEIP_IPinfo;
 
-//if NUM_ERODEIP_INSTANCES != 0
+
 extern ERODEIP_IPinfo ERODEIP_INFO[ERODEIP_NUM_INSTANCES];
 
 #endif
