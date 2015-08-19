@@ -14,14 +14,17 @@
       <VARIABLE COL_INDEX="6" IS_VISIBLE="FALSE" VIEWDISP="Type" VIEWTYPE="HEADER"/>
     </HEADERS>
     <SPLITTERS COLLAPSIBLE="1" HANDLEWIDTH="4" MARKER="255" ORIENTATION="1" RESIZE="1" SIZES="166,817,200" VERSION="0"/>
+    <SET ID="processing_system7_0" IS_EXPANDED="TRUE"/>
     <SET ID="cam_interface_0" IS_EXPANDED="TRUE"/>
     <SET ID="axi_vdma_1" IS_EXPANDED="TRUE"/>
     <SET ID="sobel_filter_top_0" IS_EXPANDED="TRUE"/>
     <STATUS>
-      <SELECTIONS/>
+      <SELECTIONS>
+        <VARIABLE ID="S_AXI_HP1" PARENT="processing_system7_0"/>
+      </SELECTIONS>
     </STATUS>
     <SEQUENCES IS_DEF_SEQUENCES="TRUE">
-      <VARIABLE ID="processing_system7_0" ROW_INDEX="4"/>
+      <VARIABLE ID="processing_system7_0" IS_EXPANDED="TRUE" ROW_INDEX="4"/>
       <VARIABLE ID="axi_vdma_0" ROW_INDEX="10"/>
       <VARIABLE ID="axi_interconnect_1" ROW_INDEX="1"/>
       <VARIABLE ID="axi_interconnect_2" ROW_INDEX="2"/>
@@ -87,7 +90,7 @@
   </SET>
 
   <SET CLASS="PROJECT" DISPLAYMODE="TREE" VIEW_ID="PORT">
-    <HEADERS HSCROLL="0" VSCROLL="108">
+    <HEADERS HSCROLL="0" VSCROLL="368">
       <VARIABLE COL_INDEX="0" COL_WIDTH="309" IS_VISIBLE="TRUE" VIEWDISP="Name" VIEWTYPE="HEADER"/>
       <VARIABLE COL_INDEX="1" COL_WIDTH="383" IS_VISIBLE="TRUE" VIEWDISP="Connected Port" VIEWTYPE="HEADER"/>
       <VARIABLE COL_INDEX="2" IS_VISIBLE="FALSE" VIEWDISP="Net" VIEWTYPE="HEADER"/>
@@ -103,7 +106,12 @@
       <VARIABLE COL_INDEX="11" COL_WIDTH="242" IS_VISIBLE="TRUE" VIEWDISP="Differential Polarity" VIEWTYPE="HEADER"/>
     </HEADERS>
     <SPLITTERS COLLAPSIBLE="1" HANDLEWIDTH="4" MARKER="255" ORIENTATION="1" RESIZE="1" SIZES="166,817,200" VERSION="0"/>
-    <SET ID="cam_interface_0" IS_EXPANDED="TRUE"/>
+    <SET ID="axi_interconnect_3" IS_EXPANDED="TRUE"/>
+    <SET ID="axi_vdma_1" IS_EXPANDED="TRUE">
+      <SET ID="S_AXI_LITE" IS_EXPANDED="TRUE"/>
+      <SET ID="M_AXI_MM2S" IS_EXPANDED="TRUE"/>
+      <SET ID="M_AXI_S2MM" IS_EXPANDED="TRUE"/>
+    </SET>
     <SET ID="convert_to_gray_top_0" IS_EXPANDED="TRUE">
       <SET ID="OUTPUT_STREAM" IS_EXPANDED="TRUE"/>
       <SET ID="INPUT_STREAM" IS_EXPANDED="TRUE"/>
@@ -127,9 +135,9 @@
       <VARIABLE ID="axi_i2s_adi_0" ROW_INDEX="9"/>
       <VARIABLE ID="util_i2c_mixer_0" ROW_INDEX="20"/>
       <VARIABLE ID="axi_dma_i2s" ROW_INDEX="7"/>
-      <VARIABLE ID="cam_interface_0" IS_EXPANDED="TRUE" ROW_INDEX="15"/>
-      <VARIABLE ID="axi_interconnect_3" ROW_INDEX="4"/>
-      <VARIABLE ID="axi_vdma_1" ROW_INDEX="12"/>
+      <VARIABLE ID="cam_interface_0" ROW_INDEX="15"/>
+      <VARIABLE ID="axi_interconnect_3" IS_EXPANDED="TRUE" ROW_INDEX="4"/>
+      <VARIABLE ID="axi_vdma_1" IS_EXPANDED="TRUE" ROW_INDEX="12"/>
       <VARIABLE ID="sobel_filter_top_0" ROW_INDEX="18"/>
       <VARIABLE ID="axi_vdma_2" ROW_INDEX="13"/>
       <VARIABLE ID="axi_vdma_3" ROW_INDEX="14"/>

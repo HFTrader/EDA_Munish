@@ -156,10 +156,10 @@ begin
       C_S_AXI_SUPPORTS_WRITE => 1,
       C_S_AXI_SUPPORTS_READ => 1,
       C_FAMILY => "zynq",
-      C_S_AXI_MEM0_BASEADDR => X"61600000",
-      C_S_AXI_MEM0_HIGHADDR => X"6160ffff",
-      C_S_AXI_MEM1_BASEADDR => X"61620000",
-      C_S_AXI_MEM1_HIGHADDR => X"6162ffff"
+      C_S_AXI_MEM0_BASEADDR => X"61620000",
+      C_S_AXI_MEM0_HIGHADDR => X"6162ffff",
+      C_S_AXI_MEM1_BASEADDR => X"61600000",
+      C_S_AXI_MEM1_HIGHADDR => X"6160ffff"
     )
     port map (
       clk100 => clk100,
