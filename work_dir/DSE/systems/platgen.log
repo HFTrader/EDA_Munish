@@ -38,7 +38,7 @@ WARNING:EDK:4088 - IPNAME: axi_dma, INSTANCE: axi_dma_i2s - Superseded core for
 
 Overriding IP level properties ...
 INFO:EDK:4130 - IPNAME: processing_system7, INSTANCE:processing_system7_0 - tcl
-   is overriding PARAMETER C_NUM_F2P_INTR_INPUTS value to 10 -
+   is overriding PARAMETER C_NUM_F2P_INTR_INPUTS value to 13 -
    /nfs/tools/xilinx/ise/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/processi
    ng_system7_v3_00_a/data/processing_system7_v2_1_0.mpd line 254 
 INFO:EDK:4130 - IPNAME: axi_interconnect, INSTANCE:axi_interconnect_1 - tcl is
@@ -66,6 +66,9 @@ INFO:EDK:1432 - Frequency for Top-Level Input Clock 'cam_interface_0_clk100_pin'
 INFO:EDK:3716 - IPNAME: convert_to_gray_top, INSTANCE: convert_to_gray_top_0 -
    Tools are updating the value of the parameter
    C_INTERCONNECT_S_AXI_CONTROL_BUS_IS_ACLK_ASYNC to '1'. 
+INFO:EDK:3716 - IPNAME: sobel_filter_top, INSTANCE: sobel_filter_top_0 - Tools
+   are updating the value of the parameter
+   C_INTERCONNECT_S_AXI_CONTROL_BUS_IS_ACLK_ASYNC to '1'. 
 
 Performing IP level DRCs on properties...
 
@@ -73,25 +76,27 @@ Running DRC Tcl procedures for OPTION IPLEVEL_DRC_PROC...
 Address Map for Processor processing_system7_0
   (0x40400000-0x4040ffff) axi_dma_i2s	axi_interconnect_1
   (0x41600000-0x4160ffff) axi_iic_0	axi_interconnect_1
-  (0x43000000-0x4300ffff) axi_vdma_1	axi_interconnect_1
-  (0x43020000-0x4302ffff) axi_vdma_0	axi_interconnect_1
+  (0x43000000-0x4300ffff) axi_vdma_2	axi_interconnect_1
+  (0x43020000-0x4302ffff) axi_vdma_1	axi_interconnect_1
+  (0x43040000-0x4304ffff) axi_vdma_0	axi_interconnect_1
   (0x61600000-0x6160ffff) cam_interface_0	axi_interconnect_1
   (0x61620000-0x6162ffff) cam_interface_0	axi_interconnect_1
   (0x6e800000-0x6e80ffff) convert_to_gray_top_0	axi_interconnect_1
   (0x70e00000-0x70e0ffff) axi_hdmi_tx_16b_0	axi_interconnect_1
+  (0x71800000-0x7180ffff) sobel_filter_top_0	axi_interconnect_1
   (0x77600000-0x7760ffff) axi_i2s_adi_0	axi_interconnect_1
   (0x79000000-0x7900ffff) axi_clkgen_0	axi_interconnect_1
 
 Checking platform address map ...
 
 Checking platform configuration ...
-IPNAME: axi_interconnect, INSTANCE: axi_interconnect_1 - 1 master(s) : 9
+IPNAME: axi_interconnect, INSTANCE: axi_interconnect_1 - 1 master(s) : 11
 slave(s) 
 IPNAME: axi_interconnect, INSTANCE: axi_interconnect_2 - 1 master(s) : 1
 slave(s) 
 IPNAME: axi_interconnect, INSTANCE: axi_interconnect_0 - 3 master(s) : 1
 slave(s) 
-IPNAME: axi_interconnect, INSTANCE: axi_interconnect_3 - 2 master(s) : 1
+IPNAME: axi_interconnect, INSTANCE: axi_interconnect_3 - 4 master(s) : 1
 slave(s) 
 
 Checking port drivers...
@@ -115,6 +120,21 @@ WARNING:EDK:4180 - PORT: INPUT_STREAM_TDEST, CONNECTOR:
    /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/w
    ork_dir/DSE/systems/pcores/convert_to_gray_top_v1_02_a/data/convert_to_gray_t
    op_v2_1_0.mpd line 57 
+WARNING:EDK:4180 - PORT: INPUT_STREAM_TSTRB, CONNECTOR:
+   axi_vdma_2_M_AXIS_MM2S_TSTRB - No driver found. Port will be driven to GND -
+   /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/w
+   ork_dir/DSE/systems/pcores/sobel_filter_top_v1_01_a/data/sobel_filter_top_v2_
+   1_0.mpd line 66 
+WARNING:EDK:4180 - PORT: INPUT_STREAM_TDEST, CONNECTOR:
+   axi_vdma_2_M_AXIS_MM2S_TDEST - No driver found. Port will be driven to GND -
+   /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/w
+   ork_dir/DSE/systems/pcores/sobel_filter_top_v1_01_a/data/sobel_filter_top_v2_
+   1_0.mpd line 69 
+WARNING:EDK:4180 - PORT: s_axis_s2mm_tkeep, CONNECTOR:
+   sobel_filter_top_0_OUTPUT_STREAM_TKEEP - No driver found. Port will be driven
+   to VCC -
+   /nfs/tools/xilinx/ise/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_vdma
+   _v5_04_a/data/axi_vdma_v2_1_0.mpd line 231 
 WARNING:EDK:4181 - PORT: util_vector_logic_0_Op1_pin, CONNECTOR:
    net_util_vector_logic_0_Op1_pin - floating connection -
    /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/w
@@ -166,6 +186,20 @@ WARNING:EDK:4181 - PORT: OUTPUT_STREAM_TDEST, CONNECTOR:
    /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/w
    ork_dir/DSE/systems/pcores/convert_to_gray_top_v1_02_a/data/convert_to_gray_t
    op_v2_1_0.mpd line 39 
+WARNING:EDK:4181 - PORT: OUTPUT_STREAM_TSTRB, CONNECTOR:
+   sobel_filter_top_0_OUTPUT_STREAM_TSTRB - floating connection -
+   /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/w
+   ork_dir/DSE/systems/pcores/sobel_filter_top_v1_01_a/data/sobel_filter_top_v2_
+   1_0.mpd line 82 
+WARNING:EDK:4181 - PORT: OUTPUT_STREAM_TDEST, CONNECTOR:
+   sobel_filter_top_0_OUTPUT_STREAM_TDEST - floating connection -
+   /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/w
+   ork_dir/DSE/systems/pcores/sobel_filter_top_v1_01_a/data/sobel_filter_top_v2_
+   1_0.mpd line 85 
+WARNING:EDK:4181 - PORT: m_axis_mm2s_tkeep, CONNECTOR:
+   axi_vdma_2_M_AXIS_MM2S_TKEEP - floating connection -
+   /nfs/tools/xilinx/ise/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_vdma
+   _v5_04_a/data/axi_vdma_v2_1_0.mpd line 208 
 
 Performing Clock DRCs...
 
@@ -229,9 +263,6 @@ Creating hardware output directories ...
 Managing hardware (BBD-specified) netlist files ...
 
 Managing cache ...
-IPNAME:processing_system7 INSTANCE:processing_system7_0 -
-/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
-_dir/DSE/systems/system.mhs line 56 - Copying cache implementation netlist
 IPNAME:axi_vdma INSTANCE:axi_vdma_0 -
 /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
 _dir/DSE/systems/system.mhs line 161 - Copying cache implementation netlist
@@ -262,15 +293,12 @@ _dir/DSE/systems/system.mhs line 297 - Copying cache implementation netlist
 IPNAME:axi_dma INSTANCE:axi_dma_i2s -
 /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
 _dir/DSE/systems/system.mhs line 310 - Copying cache implementation netlist
-IPNAME:cam_interface INSTANCE:cam_interface_0 -
-/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
-_dir/DSE/systems/system.mhs line 334 - Copying cache implementation netlist
-IPNAME:axi_interconnect INSTANCE:axi_interconnect_3 -
-/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
-_dir/DSE/systems/system.mhs line 360 - Copying cache implementation netlist
 IPNAME:axi_vdma INSTANCE:axi_vdma_1 -
 /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
 _dir/DSE/systems/system.mhs line 367 - Copying cache implementation netlist
+IPNAME:convert_to_gray_top INSTANCE:convert_to_gray_top_0 -
+/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
+_dir/DSE/systems/system.mhs line 425 - Copying cache implementation netlist
 
 Elaborating instances ...
 IPNAME:clock_generator INSTANCE:clock_generator_0 -
@@ -299,6 +327,9 @@ Running XST synthesis ...
 INFO:EDK:4211 - The following instances are synthesized with XST. The MPD option
    IMP_NETLIST=TRUE indicates that a NGC file is to be produced using XST
    synthesis. IMP_NETLIST=FALSE (default) instances are not synthesized. 
+INSTANCE:processing_system7_0 -
+/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
+_dir/DSE/systems/system.mhs line 56 - Running XST synthesis
 INSTANCE:axi_interconnect_1 -
 /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
 _dir/DSE/systems/system.mhs line 185 - Running XST synthesis
@@ -320,9 +351,18 @@ _dir/DSE/systems/system.mhs line 297 - Running XST synthesis
 INSTANCE:cam_interface_0 -
 /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
 _dir/DSE/systems/system.mhs line 334 - Running XST synthesis
+INSTANCE:axi_interconnect_3 -
+/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
+_dir/DSE/systems/system.mhs line 360 - Running XST synthesis
 INSTANCE:convert_to_gray_top_0 -
 /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
 _dir/DSE/systems/system.mhs line 425 - Running XST synthesis
+INSTANCE:sobel_filter_top_0 -
+/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
+_dir/DSE/systems/system.mhs line 437 - Running XST synthesis
+INSTANCE:axi_vdma_2 -
+/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
+_dir/DSE/systems/system.mhs line 449 - Running XST synthesis
 
 Running NGCBUILD ...
 IPNAME:system_axi_interconnect_1_wrapper INSTANCE:axi_interconnect_1 -
@@ -331,10 +371,16 @@ _dir/DSE/systems/system.mhs line 185 - Running NGCBUILD
 IPNAME:system_clock_generator_0_wrapper INSTANCE:clock_generator_0 -
 /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
 _dir/DSE/systems/system.mhs line 257 - Running NGCBUILD
+IPNAME:system_axi_interconnect_3_wrapper INSTANCE:axi_interconnect_3 -
+/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
+_dir/DSE/systems/system.mhs line 360 - Running NGCBUILD
+IPNAME:system_axi_vdma_2_wrapper INSTANCE:axi_vdma_2 -
+/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work
+_dir/DSE/systems/system.mhs line 449 - Running NGCBUILD
 INFO:EDK:3509 - NCF files should not be modified as they will be regenerated.
    If any constraint needs to be overridden, this should be done by modifying
    the data/system.ucf file.
 
 Rebuilding cache ...
 
-Total run time: 314.00 seconds
+Total run time: 1230.00 seconds

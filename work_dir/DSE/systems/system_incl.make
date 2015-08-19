@@ -179,7 +179,16 @@ pcores/convert_to_gray_top_v1_02_a/synhdl/verilog/convert_to_gray_ap_rst_if.v \
 pcores/convert_to_gray_top_v1_02_a/synhdl/verilog/convert_to_gray_CONTROL_BUS_if.v \
 pcores/convert_to_gray_top_v1_02_a/synhdl/verilog/convert_to_gray_INPUT_STREAM_if.v \
 pcores/convert_to_gray_top_v1_02_a/synhdl/verilog/convert_to_gray_OUTPUT_STREAM_if.v \
-pcores/convert_to_gray_top_v1_02_a/synhdl/verilog/convert_to_gray_top.v
+pcores/convert_to_gray_top_v1_02_a/synhdl/verilog/convert_to_gray_top.v \
+pcores/sobel_filter_top_v1_01_a/synhdl/verilog/sobel_filter_buff_A_M_0.v \
+pcores/sobel_filter_top_v1_01_a/synhdl/verilog/sobel_filter_buff_A_M_2.v \
+pcores/sobel_filter_top_v1_01_a/synhdl/verilog/sobel_filter_mul_8ns_5ns_13_3.v \
+pcores/sobel_filter_top_v1_01_a/synhdl/verilog/sobel_filter.v \
+pcores/sobel_filter_top_v1_01_a/synhdl/verilog/sobel_filter_ap_rst_if.v \
+pcores/sobel_filter_top_v1_01_a/synhdl/verilog/sobel_filter_CONTROL_BUS_if.v \
+pcores/sobel_filter_top_v1_01_a/synhdl/verilog/sobel_filter_INPUT_STREAM_if.v \
+pcores/sobel_filter_top_v1_01_a/synhdl/verilog/sobel_filter_OUTPUT_STREAM_if.v \
+pcores/sobel_filter_top_v1_01_a/synhdl/verilog/sobel_filter_top.v
 
 WRAPPER_NGC_FILES = implementation/system_processing_system7_0_wrapper.ngc \
 implementation/system_axi_vdma_0_wrapper.ngc \
@@ -197,7 +206,9 @@ implementation/system_axi_dma_i2s_wrapper.ngc \
 implementation/system_cam_interface_0_wrapper.ngc \
 implementation/system_axi_interconnect_3_wrapper.ngc \
 implementation/system_axi_vdma_1_wrapper.ngc \
-implementation/system_convert_to_gray_top_0_wrapper.ngc
+implementation/system_convert_to_gray_top_0_wrapper.ngc \
+implementation/system_sobel_filter_top_0_wrapper.ngc \
+implementation/system_axi_vdma_2_wrapper.ngc
 
 POSTSYN_NETLIST = implementation/$(SYSTEM).ngc
 
