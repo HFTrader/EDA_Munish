@@ -2035,49 +2035,6 @@ architecture STRUCTURE of system is
     );
   end component;
 
-  component system_image_filter_top_0_wrapper is
-    port (
-      aclk : in std_logic;
-      aresetn : in std_logic;
-      s_axi_CONTROL_BUS_AWADDR : in std_logic_vector(4 downto 0);
-      s_axi_CONTROL_BUS_AWVALID : in std_logic;
-      s_axi_CONTROL_BUS_AWREADY : out std_logic;
-      s_axi_CONTROL_BUS_WDATA : in std_logic_vector(31 downto 0);
-      s_axi_CONTROL_BUS_WSTRB : in std_logic_vector(3 downto 0);
-      s_axi_CONTROL_BUS_WVALID : in std_logic;
-      s_axi_CONTROL_BUS_WREADY : out std_logic;
-      s_axi_CONTROL_BUS_BRESP : out std_logic_vector(1 downto 0);
-      s_axi_CONTROL_BUS_BVALID : out std_logic;
-      s_axi_CONTROL_BUS_BREADY : in std_logic;
-      s_axi_CONTROL_BUS_ARADDR : in std_logic_vector(4 downto 0);
-      s_axi_CONTROL_BUS_ARVALID : in std_logic;
-      s_axi_CONTROL_BUS_ARREADY : out std_logic;
-      s_axi_CONTROL_BUS_RDATA : out std_logic_vector(31 downto 0);
-      s_axi_CONTROL_BUS_RRESP : out std_logic_vector(1 downto 0);
-      s_axi_CONTROL_BUS_RVALID : out std_logic;
-      s_axi_CONTROL_BUS_RREADY : in std_logic;
-      interrupt : out std_logic;
-      INPUT_STREAM_TVALID : in std_logic;
-      INPUT_STREAM_TREADY : out std_logic;
-      INPUT_STREAM_TDATA : in std_logic_vector(31 downto 0);
-      INPUT_STREAM_TKEEP : in std_logic_vector(3 downto 0);
-      INPUT_STREAM_TSTRB : in std_logic_vector(3 downto 0);
-      INPUT_STREAM_TUSER : in std_logic_vector(0 to 0);
-      INPUT_STREAM_TLAST : in std_logic_vector(0 to 0);
-      INPUT_STREAM_TID : in std_logic_vector(0 to 0);
-      INPUT_STREAM_TDEST : in std_logic_vector(0 to 0);
-      OUTPUT_STREAM_TVALID : out std_logic;
-      OUTPUT_STREAM_TREADY : in std_logic;
-      OUTPUT_STREAM_TDATA : out std_logic_vector(31 downto 0);
-      OUTPUT_STREAM_TKEEP : out std_logic_vector(3 downto 0);
-      OUTPUT_STREAM_TSTRB : out std_logic_vector(3 downto 0);
-      OUTPUT_STREAM_TUSER : out std_logic_vector(0 to 0);
-      OUTPUT_STREAM_TLAST : out std_logic_vector(0 to 0);
-      OUTPUT_STREAM_TID : out std_logic_vector(0 to 0);
-      OUTPUT_STREAM_TDEST : out std_logic_vector(0 to 0)
-    );
-  end component;
-
   component system_axi_vdma_3_wrapper is
     port (
       s_axi_lite_aclk : in std_logic;
@@ -2176,6 +2133,45 @@ architecture STRUCTURE of system is
       mm2s_introut : out std_logic;
       s2mm_introut : out std_logic;
       axi_vdma_tstvec : out std_logic_vector(63 downto 0)
+    );
+  end component;
+
+  component system_sobel_filter_top_0_wrapper is
+    port (
+      aclk : in std_logic;
+      aresetn : in std_logic;
+      s_axi_CONTROL_BUS_AWADDR : in std_logic_vector(4 downto 0);
+      s_axi_CONTROL_BUS_AWVALID : in std_logic;
+      s_axi_CONTROL_BUS_AWREADY : out std_logic;
+      s_axi_CONTROL_BUS_WDATA : in std_logic_vector(31 downto 0);
+      s_axi_CONTROL_BUS_WSTRB : in std_logic_vector(3 downto 0);
+      s_axi_CONTROL_BUS_WVALID : in std_logic;
+      s_axi_CONTROL_BUS_WREADY : out std_logic;
+      s_axi_CONTROL_BUS_BRESP : out std_logic_vector(1 downto 0);
+      s_axi_CONTROL_BUS_BVALID : out std_logic;
+      s_axi_CONTROL_BUS_BREADY : in std_logic;
+      s_axi_CONTROL_BUS_ARADDR : in std_logic_vector(4 downto 0);
+      s_axi_CONTROL_BUS_ARVALID : in std_logic;
+      s_axi_CONTROL_BUS_ARREADY : out std_logic;
+      s_axi_CONTROL_BUS_RDATA : out std_logic_vector(31 downto 0);
+      s_axi_CONTROL_BUS_RRESP : out std_logic_vector(1 downto 0);
+      s_axi_CONTROL_BUS_RVALID : out std_logic;
+      s_axi_CONTROL_BUS_RREADY : in std_logic;
+      interrupt : out std_logic;
+      INPUT_STREAM_TVALID : in std_logic;
+      INPUT_STREAM_TREADY : out std_logic;
+      INPUT_STREAM_TDATA : in std_logic_vector(31 downto 0);
+      INPUT_STREAM_TSTRB : in std_logic_vector(3 downto 0);
+      INPUT_STREAM_TUSER : in std_logic_vector(0 to 0);
+      INPUT_STREAM_TLAST : in std_logic_vector(0 to 0);
+      INPUT_STREAM_TDEST : in std_logic_vector(0 to 0);
+      OUTPUT_STREAM_TVALID : out std_logic;
+      OUTPUT_STREAM_TREADY : in std_logic;
+      OUTPUT_STREAM_TDATA : out std_logic_vector(31 downto 0);
+      OUTPUT_STREAM_TSTRB : out std_logic_vector(3 downto 0);
+      OUTPUT_STREAM_TUSER : out std_logic_vector(0 to 0);
+      OUTPUT_STREAM_TLAST : out std_logic_vector(0 to 0);
+      OUTPUT_STREAM_TDEST : out std_logic_vector(0 to 0)
     );
   end component;
 
@@ -2487,7 +2483,6 @@ architecture STRUCTURE of system is
   signal axi_vdma_0_mm2s_fsync_out : std_logic;
   signal axi_vdma_0_mm2s_introut : std_logic;
   signal axi_vdma_3_M_AXIS_MM2S_TDATA : std_logic_vector(31 downto 0);
-  signal axi_vdma_3_M_AXIS_MM2S_TKEEP : std_logic_vector(3 downto 0);
   signal axi_vdma_3_M_AXIS_MM2S_TLAST : std_logic_vector(0 to 0);
   signal axi_vdma_3_M_AXIS_MM2S_TREADY : std_logic;
   signal axi_vdma_3_M_AXIS_MM2S_TUSER : std_logic_vector(0 to 0);
@@ -2509,13 +2504,6 @@ architecture STRUCTURE of system is
   signal cam_interface_0_href_negedge : std_logic;
   signal cam_interface_0_vsync_negedge : std_logic;
   signal clock_generator_0_CLKOUT0 : std_logic;
-  signal image_filter_top_0_OUTPUT_STREAM_TDATA : std_logic_vector(31 downto 0);
-  signal image_filter_top_0_OUTPUT_STREAM_TKEEP : std_logic_vector(3 downto 0);
-  signal image_filter_top_0_OUTPUT_STREAM_TLAST : std_logic_vector(0 to 0);
-  signal image_filter_top_0_OUTPUT_STREAM_TREADY : std_logic;
-  signal image_filter_top_0_OUTPUT_STREAM_TUSER : std_logic_vector(0 to 0);
-  signal image_filter_top_0_OUTPUT_STREAM_TVALID : std_logic;
-  signal image_filter_top_0_interrupt : std_logic;
   signal net_gnd0 : std_logic;
   signal net_gnd1 : std_logic_vector(0 to 0);
   signal net_gnd2 : std_logic_vector(1 downto 0);
@@ -2543,6 +2531,12 @@ architecture STRUCTURE of system is
   signal processing_system7_0_FCLK_RESET0_N : std_logic;
   signal processing_system7_0_FCLK_RESET1_N : std_logic;
   signal processing_system7_0_FCLK_RESET3_N : std_logic;
+  signal sobel_filter_top_0_OUTPUT_STREAM_TDATA : std_logic_vector(31 downto 0);
+  signal sobel_filter_top_0_OUTPUT_STREAM_TLAST : std_logic_vector(0 to 0);
+  signal sobel_filter_top_0_OUTPUT_STREAM_TREADY : std_logic;
+  signal sobel_filter_top_0_OUTPUT_STREAM_TUSER : std_logic_vector(0 to 0);
+  signal sobel_filter_top_0_OUTPUT_STREAM_TVALID : std_logic;
+  signal sobel_filter_top_0_interrupt : std_logic;
   signal util_i2c_mixer_0_downstream_scl_I : std_logic_vector(1 downto 0);
   signal util_i2c_mixer_0_downstream_scl_O : std_logic_vector(1 downto 0);
   signal util_i2c_mixer_0_downstream_scl_T : std_logic;
@@ -2569,8 +2563,8 @@ architecture STRUCTURE of system is
   attribute BOX_TYPE of system_axi_dma_i2s_wrapper : component is "user_black_box";
   attribute BOX_TYPE of system_cam_interface_0_wrapper : component is "user_black_box";
   attribute BOX_TYPE of system_axi_interconnect_3_wrapper : component is "user_black_box";
-  attribute BOX_TYPE of system_image_filter_top_0_wrapper : component is "user_black_box";
   attribute BOX_TYPE of system_axi_vdma_3_wrapper : component is "user_black_box";
+  attribute BOX_TYPE of system_sobel_filter_top_0_wrapper : component is "user_black_box";
 
 begin
 
@@ -2671,11 +2665,11 @@ begin
   pgassign1(5) <= cam_interface_0_href_negedge;
   pgassign1(4) <= cam_interface_0_vsync_negedge;
   pgassign1(3) <= axi_dma_i2s_s2mm_introut;
-  pgassign1(2) <= image_filter_top_0_interrupt;
-  pgassign1(1) <= axi_vdma_3_mm2s_introut;
-  pgassign1(0) <= axi_vdma_3_s2mm_introut;
-  pgassign2(8 downto 8) <= processing_system7_0_FCLK_CLK0(0 to 0);
-  pgassign2(7 downto 7) <= processing_system7_0_FCLK_CLK3(0 to 0);
+  pgassign1(2) <= axi_vdma_3_mm2s_introut;
+  pgassign1(1) <= axi_vdma_3_s2mm_introut;
+  pgassign1(0) <= sobel_filter_top_0_interrupt;
+  pgassign2(8 downto 8) <= processing_system7_0_FCLK_CLK3(0 to 0);
+  pgassign2(7 downto 7) <= processing_system7_0_FCLK_CLK0(0 to 0);
   pgassign2(6 downto 6) <= processing_system7_0_FCLK_CLK0(0 to 0);
   pgassign2(5 downto 5) <= processing_system7_0_FCLK_CLK0(0 to 0);
   pgassign2(4 downto 4) <= processing_system7_0_FCLK_CLK0(0 to 0);
@@ -2894,7 +2888,7 @@ begin
       M_AXI_GP0_AWLEN => axi_interconnect_1_S_AWLEN(3 downto 0),
       M_AXI_GP0_AWQOS => axi_interconnect_1_S_AWQOS,
       M_AXI_GP0_WSTRB => axi_interconnect_1_S_WSTRB,
-      M_AXI_GP0_ACLK => pgassign2(8),
+      M_AXI_GP0_ACLK => pgassign2(7),
       M_AXI_GP0_ARREADY => axi_interconnect_1_S_ARREADY(0),
       M_AXI_GP0_AWREADY => axi_interconnect_1_S_AWREADY(0),
       M_AXI_GP0_BVALID => axi_interconnect_1_S_BVALID(0),
@@ -3130,7 +3124,7 @@ begin
       S_AXI_HP1_WCOUNT => open,
       S_AXI_HP1_RACOUNT => open,
       S_AXI_HP1_WACOUNT => open,
-      S_AXI_HP1_ACLK => pgassign2(7),
+      S_AXI_HP1_ACLK => pgassign2(8),
       S_AXI_HP1_ARVALID => axi_interconnect_3_M_ARVALID(0),
       S_AXI_HP1_AWVALID => axi_interconnect_3_M_AWVALID(0),
       S_AXI_HP1_BREADY => axi_interconnect_3_M_BREADY(0),
@@ -3176,7 +3170,7 @@ begin
       S_AXI_HP2_WCOUNT => open,
       S_AXI_HP2_RACOUNT => open,
       S_AXI_HP2_WACOUNT => open,
-      S_AXI_HP2_ACLK => pgassign2(8),
+      S_AXI_HP2_ACLK => pgassign2(7),
       S_AXI_HP2_ARVALID => axi_interconnect_0_M_ARVALID(0),
       S_AXI_HP2_AWVALID => axi_interconnect_0_M_AWVALID(0),
       S_AXI_HP2_BREADY => axi_interconnect_0_M_BREADY(0),
@@ -3375,7 +3369,7 @@ begin
 
   axi_vdma_0 : system_axi_vdma_0_wrapper
     port map (
-      s_axi_lite_aclk => pgassign2(8),
+      s_axi_lite_aclk => pgassign2(7),
       m_axi_sg_aclk => net_gnd0,
       m_axi_mm2s_aclk => processing_system7_0_FCLK_CLK1(0),
       m_axi_s2mm_aclk => net_gnd0,
@@ -3475,12 +3469,12 @@ begin
 
   axi_interconnect_1 : system_axi_interconnect_1_wrapper
     port map (
-      INTERCONNECT_ACLK => pgassign2(8),
+      INTERCONNECT_ACLK => pgassign2(7),
       INTERCONNECT_ARESETN => processing_system7_0_FCLK_RESET0_N,
       S_AXI_ARESET_OUT_N => open,
       M_AXI_ARESET_OUT_N => axi_interconnect_1_M_ARESETN,
       IRQ => open,
-      S_AXI_ACLK => pgassign2(8 downto 8),
+      S_AXI_ACLK => pgassign2(7 downto 7),
       S_AXI_AWID => axi_interconnect_1_S_AWID,
       S_AXI_AWADDR => axi_interconnect_1_S_AWADDR,
       S_AXI_AWLEN => axi_interconnect_1_S_AWLEN,
@@ -3905,7 +3899,7 @@ begin
       up_status => open,
       debug_trigger => open,
       debug_data => open,
-      S_AXI_ACLK => pgassign2(8),
+      S_AXI_ACLK => pgassign2(7),
       S_AXI_ARESETN => axi_interconnect_1_M_ARESETN(1),
       S_AXI_AWADDR => axi_interconnect_1_M_AWADDR(63 downto 32),
       S_AXI_AWVALID => axi_interconnect_1_M_AWVALID(1),
@@ -3933,7 +3927,7 @@ begin
 
   axi_interconnect_0 : system_axi_interconnect_0_wrapper
     port map (
-      INTERCONNECT_ACLK => pgassign2(8),
+      INTERCONNECT_ACLK => pgassign2(7),
       INTERCONNECT_ARESETN => processing_system7_0_FCLK_RESET0_N,
       S_AXI_ARESET_OUT_N => open,
       M_AXI_ARESET_OUT_N => open,
@@ -3982,7 +3976,7 @@ begin
       S_AXI_RUSER => open,
       S_AXI_RVALID => axi_interconnect_0_S_RVALID,
       S_AXI_RREADY => axi_interconnect_0_S_RREADY,
-      M_AXI_ACLK => pgassign2(8 downto 8),
+      M_AXI_ACLK => pgassign2(7 downto 7),
       M_AXI_AWID => axi_interconnect_0_M_AWID,
       M_AXI_AWADDR => axi_interconnect_0_M_AWADDR,
       M_AXI_AWLEN => axi_interconnect_0_M_AWLEN,
@@ -4141,7 +4135,7 @@ begin
 
   axi_iic_0 : system_axi_iic_0_wrapper
     port map (
-      S_AXI_ACLK => pgassign2(8),
+      S_AXI_ACLK => pgassign2(7),
       S_AXI_ARESETN => axi_interconnect_1_M_ARESETN(2),
       IIC2INTC_Irpt => axi_iic_0_IIC2INTC_Irpt,
       S_AXI_AWADDR => axi_interconnect_1_M_AWADDR(72 downto 64),
@@ -4174,7 +4168,7 @@ begin
     port map (
       ref_clk => processing_system7_0_FCLK_CLK2,
       clk => axi_hdmi_tx_16b_0_hdmi_ref_clk,
-      S_AXI_ACLK => pgassign2(8),
+      S_AXI_ACLK => pgassign2(7),
       S_AXI_ARESETN => axi_interconnect_1_M_ARESETN(3),
       S_AXI_AWADDR => axi_interconnect_1_M_AWADDR(127 downto 96),
       S_AXI_AWVALID => axi_interconnect_1_M_AWVALID(3),
@@ -4239,19 +4233,19 @@ begin
       SDATA_I => axi_i2s_adi_0_SDATA_I,
       SDATA_O => axi_i2s_adi_0_SDATA_O,
       MEM_RD_O => open,
-      ACLK => pgassign2(8),
+      ACLK => pgassign2(7),
       ARESETN => net_gnd0,
       S_AXIS_TREADY => axi_dma_i2s_M_AXIS_MM2S_TREADY,
       S_AXIS_TDATA => axi_dma_i2s_M_AXIS_MM2S_TDATA,
       S_AXIS_TLAST => axi_dma_i2s_M_AXIS_MM2S_TLAST,
       S_AXIS_TVALID => axi_dma_i2s_M_AXIS_MM2S_TVALID,
-      M_AXIS_ACLK => pgassign2(8),
+      M_AXIS_ACLK => pgassign2(7),
       M_AXIS_TVALID => axi_i2s_adi_0_M_AXIS_S2MM_TVALID,
       M_AXIS_TDATA => axi_i2s_adi_0_M_AXIS_S2MM_TDATA,
       M_AXIS_TLAST => axi_i2s_adi_0_M_AXIS_S2MM_TLAST,
       M_AXIS_TREADY => axi_i2s_adi_0_M_AXIS_S2MM_TREADY,
       M_AXIS_TKEEP => axi_i2s_adi_0_M_AXIS_S2MM_TKEEP,
-      S_AXI_ACLK => pgassign2(8),
+      S_AXI_ACLK => pgassign2(7),
       S_AXI_ARESETN => axi_interconnect_1_M_ARESETN(4),
       S_AXI_AWADDR => axi_interconnect_1_M_AWADDR(159 downto 128),
       S_AXI_AWVALID => axi_interconnect_1_M_AWVALID(4),
@@ -4290,10 +4284,10 @@ begin
 
   axi_dma_i2s : system_axi_dma_i2s_wrapper
     port map (
-      s_axi_lite_aclk => pgassign2(8),
-      m_axi_sg_aclk => pgassign2(8),
-      m_axi_mm2s_aclk => pgassign2(8),
-      m_axi_s2mm_aclk => pgassign2(8),
+      s_axi_lite_aclk => pgassign2(7),
+      m_axi_sg_aclk => pgassign2(7),
+      m_axi_mm2s_aclk => pgassign2(7),
+      m_axi_s2mm_aclk => pgassign2(7),
       axi_resetn => axi_interconnect_1_M_ARESETN(5),
       s_axi_lite_awvalid => axi_interconnect_1_M_AWVALID(5),
       s_axi_lite_awready => axi_interconnect_1_M_AWREADY(5),
@@ -4414,7 +4408,7 @@ begin
       href_posedge => open,
       vsync_negedge => cam_interface_0_vsync_negedge,
       btn => cam_interface_0_btn,
-      S_AXI_ACLK => pgassign2(8),
+      S_AXI_ACLK => pgassign2(7),
       S_AXI_ARESETN => axi_interconnect_1_M_ARESETN(6),
       S_AXI_AWADDR => axi_interconnect_1_M_AWADDR(223 downto 192),
       S_AXI_AWVALID => axi_interconnect_1_M_AWVALID(6),
@@ -4455,7 +4449,7 @@ begin
 
   axi_interconnect_3 : system_axi_interconnect_3_wrapper
     port map (
-      INTERCONNECT_ACLK => pgassign2(7),
+      INTERCONNECT_ACLK => pgassign2(8),
       INTERCONNECT_ARESETN => processing_system7_0_FCLK_RESET3_N,
       S_AXI_ARESET_OUT_N => open,
       M_AXI_ARESET_OUT_N => open,
@@ -4504,7 +4498,7 @@ begin
       S_AXI_RUSER => open,
       S_AXI_RVALID => axi_interconnect_3_S_RVALID,
       S_AXI_RREADY => axi_interconnect_3_S_RREADY,
-      M_AXI_ACLK => pgassign2(7 downto 7),
+      M_AXI_ACLK => pgassign2(8 downto 8),
       M_AXI_AWID => axi_interconnect_3_M_AWID(0 to 0),
       M_AXI_AWADDR => axi_interconnect_3_M_AWADDR,
       M_AXI_AWLEN => axi_interconnect_3_M_AWLEN,
@@ -4661,73 +4655,31 @@ begin
       DEBUG_MP_MR_WDATACONTROL => open
     );
 
-  image_filter_top_0 : system_image_filter_top_0_wrapper
-    port map (
-      aclk => pgassign2(7),
-      aresetn => axi_interconnect_1_M_ARESETN(7),
-      s_axi_CONTROL_BUS_AWADDR => axi_interconnect_1_M_AWADDR(228 downto 224),
-      s_axi_CONTROL_BUS_AWVALID => axi_interconnect_1_M_AWVALID(7),
-      s_axi_CONTROL_BUS_AWREADY => axi_interconnect_1_M_AWREADY(7),
-      s_axi_CONTROL_BUS_WDATA => axi_interconnect_1_M_WDATA(255 downto 224),
-      s_axi_CONTROL_BUS_WSTRB => axi_interconnect_1_M_WSTRB(31 downto 28),
-      s_axi_CONTROL_BUS_WVALID => axi_interconnect_1_M_WVALID(7),
-      s_axi_CONTROL_BUS_WREADY => axi_interconnect_1_M_WREADY(7),
-      s_axi_CONTROL_BUS_BRESP => axi_interconnect_1_M_BRESP(15 downto 14),
-      s_axi_CONTROL_BUS_BVALID => axi_interconnect_1_M_BVALID(7),
-      s_axi_CONTROL_BUS_BREADY => axi_interconnect_1_M_BREADY(7),
-      s_axi_CONTROL_BUS_ARADDR => axi_interconnect_1_M_ARADDR(228 downto 224),
-      s_axi_CONTROL_BUS_ARVALID => axi_interconnect_1_M_ARVALID(7),
-      s_axi_CONTROL_BUS_ARREADY => axi_interconnect_1_M_ARREADY(7),
-      s_axi_CONTROL_BUS_RDATA => axi_interconnect_1_M_RDATA(255 downto 224),
-      s_axi_CONTROL_BUS_RRESP => axi_interconnect_1_M_RRESP(15 downto 14),
-      s_axi_CONTROL_BUS_RVALID => axi_interconnect_1_M_RVALID(7),
-      s_axi_CONTROL_BUS_RREADY => axi_interconnect_1_M_RREADY(7),
-      interrupt => image_filter_top_0_interrupt,
-      INPUT_STREAM_TVALID => axi_vdma_3_M_AXIS_MM2S_TVALID,
-      INPUT_STREAM_TREADY => axi_vdma_3_M_AXIS_MM2S_TREADY,
-      INPUT_STREAM_TDATA => axi_vdma_3_M_AXIS_MM2S_TDATA,
-      INPUT_STREAM_TKEEP => axi_vdma_3_M_AXIS_MM2S_TKEEP,
-      INPUT_STREAM_TSTRB => net_gnd4,
-      INPUT_STREAM_TUSER => axi_vdma_3_M_AXIS_MM2S_TUSER(0 to 0),
-      INPUT_STREAM_TLAST => axi_vdma_3_M_AXIS_MM2S_TLAST(0 to 0),
-      INPUT_STREAM_TID => net_gnd1(0 to 0),
-      INPUT_STREAM_TDEST => net_gnd1(0 to 0),
-      OUTPUT_STREAM_TVALID => image_filter_top_0_OUTPUT_STREAM_TVALID,
-      OUTPUT_STREAM_TREADY => image_filter_top_0_OUTPUT_STREAM_TREADY,
-      OUTPUT_STREAM_TDATA => image_filter_top_0_OUTPUT_STREAM_TDATA,
-      OUTPUT_STREAM_TKEEP => image_filter_top_0_OUTPUT_STREAM_TKEEP,
-      OUTPUT_STREAM_TSTRB => open,
-      OUTPUT_STREAM_TUSER => image_filter_top_0_OUTPUT_STREAM_TUSER(0 to 0),
-      OUTPUT_STREAM_TLAST => image_filter_top_0_OUTPUT_STREAM_TLAST(0 to 0),
-      OUTPUT_STREAM_TID => open,
-      OUTPUT_STREAM_TDEST => open
-    );
-
   axi_vdma_3 : system_axi_vdma_3_wrapper
     port map (
-      s_axi_lite_aclk => pgassign2(8),
+      s_axi_lite_aclk => pgassign2(7),
       m_axi_sg_aclk => net_gnd0,
-      m_axi_mm2s_aclk => pgassign2(7),
-      m_axi_s2mm_aclk => pgassign2(7),
-      m_axis_mm2s_aclk => pgassign2(7),
-      s_axis_s2mm_aclk => pgassign2(7),
-      axi_resetn => axi_interconnect_1_M_ARESETN(8),
-      s_axi_lite_awvalid => axi_interconnect_1_M_AWVALID(8),
-      s_axi_lite_awready => axi_interconnect_1_M_AWREADY(8),
-      s_axi_lite_awaddr => axi_interconnect_1_M_AWADDR(264 downto 256),
-      s_axi_lite_wvalid => axi_interconnect_1_M_WVALID(8),
-      s_axi_lite_wready => axi_interconnect_1_M_WREADY(8),
-      s_axi_lite_wdata => axi_interconnect_1_M_WDATA(287 downto 256),
-      s_axi_lite_bresp => axi_interconnect_1_M_BRESP(17 downto 16),
-      s_axi_lite_bvalid => axi_interconnect_1_M_BVALID(8),
-      s_axi_lite_bready => axi_interconnect_1_M_BREADY(8),
-      s_axi_lite_arvalid => axi_interconnect_1_M_ARVALID(8),
-      s_axi_lite_arready => axi_interconnect_1_M_ARREADY(8),
-      s_axi_lite_araddr => axi_interconnect_1_M_ARADDR(264 downto 256),
-      s_axi_lite_rvalid => axi_interconnect_1_M_RVALID(8),
-      s_axi_lite_rready => axi_interconnect_1_M_RREADY(8),
-      s_axi_lite_rdata => axi_interconnect_1_M_RDATA(287 downto 256),
-      s_axi_lite_rresp => axi_interconnect_1_M_RRESP(17 downto 16),
+      m_axi_mm2s_aclk => pgassign2(8),
+      m_axi_s2mm_aclk => pgassign2(8),
+      m_axis_mm2s_aclk => pgassign2(8),
+      s_axis_s2mm_aclk => pgassign2(8),
+      axi_resetn => axi_interconnect_1_M_ARESETN(7),
+      s_axi_lite_awvalid => axi_interconnect_1_M_AWVALID(7),
+      s_axi_lite_awready => axi_interconnect_1_M_AWREADY(7),
+      s_axi_lite_awaddr => axi_interconnect_1_M_AWADDR(232 downto 224),
+      s_axi_lite_wvalid => axi_interconnect_1_M_WVALID(7),
+      s_axi_lite_wready => axi_interconnect_1_M_WREADY(7),
+      s_axi_lite_wdata => axi_interconnect_1_M_WDATA(255 downto 224),
+      s_axi_lite_bresp => axi_interconnect_1_M_BRESP(15 downto 14),
+      s_axi_lite_bvalid => axi_interconnect_1_M_BVALID(7),
+      s_axi_lite_bready => axi_interconnect_1_M_BREADY(7),
+      s_axi_lite_arvalid => axi_interconnect_1_M_ARVALID(7),
+      s_axi_lite_arready => axi_interconnect_1_M_ARREADY(7),
+      s_axi_lite_araddr => axi_interconnect_1_M_ARADDR(232 downto 224),
+      s_axi_lite_rvalid => axi_interconnect_1_M_RVALID(7),
+      s_axi_lite_rready => axi_interconnect_1_M_RREADY(7),
+      s_axi_lite_rdata => axi_interconnect_1_M_RDATA(255 downto 224),
+      s_axi_lite_rresp => axi_interconnect_1_M_RRESP(15 downto 14),
       m_axi_sg_araddr => open,
       m_axi_sg_arlen => open,
       m_axi_sg_arsize => open,
@@ -4756,7 +4708,7 @@ begin
       m_axi_mm2s_rready => axi_interconnect_3_S_RREADY(0),
       mm2s_prmry_reset_out_n => open,
       m_axis_mm2s_tdata => axi_vdma_3_M_AXIS_MM2S_TDATA,
-      m_axis_mm2s_tkeep => axi_vdma_3_M_AXIS_MM2S_TKEEP,
+      m_axis_mm2s_tkeep => open,
       m_axis_mm2s_tvalid => axi_vdma_3_M_AXIS_MM2S_TVALID,
       m_axis_mm2s_tready => axi_vdma_3_M_AXIS_MM2S_TREADY,
       m_axis_mm2s_tlast => axi_vdma_3_M_AXIS_MM2S_TLAST(0),
@@ -4778,12 +4730,12 @@ begin
       m_axi_s2mm_bvalid => axi_interconnect_3_S_BVALID(1),
       m_axi_s2mm_bready => axi_interconnect_3_S_BREADY(1),
       s2mm_prmry_reset_out_n => open,
-      s_axis_s2mm_tdata => image_filter_top_0_OUTPUT_STREAM_TDATA,
-      s_axis_s2mm_tkeep => image_filter_top_0_OUTPUT_STREAM_TKEEP,
-      s_axis_s2mm_tvalid => image_filter_top_0_OUTPUT_STREAM_TVALID,
-      s_axis_s2mm_tready => image_filter_top_0_OUTPUT_STREAM_TREADY,
-      s_axis_s2mm_tlast => image_filter_top_0_OUTPUT_STREAM_TLAST(0),
-      s_axis_s2mm_tuser => image_filter_top_0_OUTPUT_STREAM_TUSER(0 to 0),
+      s_axis_s2mm_tdata => sobel_filter_top_0_OUTPUT_STREAM_TDATA,
+      s_axis_s2mm_tkeep => net_vcc4,
+      s_axis_s2mm_tvalid => sobel_filter_top_0_OUTPUT_STREAM_TVALID,
+      s_axis_s2mm_tready => sobel_filter_top_0_OUTPUT_STREAM_TREADY,
+      s_axis_s2mm_tlast => sobel_filter_top_0_OUTPUT_STREAM_TLAST(0),
+      s_axis_s2mm_tuser => sobel_filter_top_0_OUTPUT_STREAM_TUSER(0 to 0),
       mm2s_fsync => net_gnd0,
       mm2s_frame_ptr_in => net_gnd6,
       mm2s_frame_ptr_out => open,
@@ -4801,6 +4753,44 @@ begin
       mm2s_introut => axi_vdma_3_mm2s_introut,
       s2mm_introut => axi_vdma_3_s2mm_introut,
       axi_vdma_tstvec => open
+    );
+
+  sobel_filter_top_0 : system_sobel_filter_top_0_wrapper
+    port map (
+      aclk => pgassign2(8),
+      aresetn => axi_interconnect_1_M_ARESETN(8),
+      s_axi_CONTROL_BUS_AWADDR => axi_interconnect_1_M_AWADDR(260 downto 256),
+      s_axi_CONTROL_BUS_AWVALID => axi_interconnect_1_M_AWVALID(8),
+      s_axi_CONTROL_BUS_AWREADY => axi_interconnect_1_M_AWREADY(8),
+      s_axi_CONTROL_BUS_WDATA => axi_interconnect_1_M_WDATA(287 downto 256),
+      s_axi_CONTROL_BUS_WSTRB => axi_interconnect_1_M_WSTRB(35 downto 32),
+      s_axi_CONTROL_BUS_WVALID => axi_interconnect_1_M_WVALID(8),
+      s_axi_CONTROL_BUS_WREADY => axi_interconnect_1_M_WREADY(8),
+      s_axi_CONTROL_BUS_BRESP => axi_interconnect_1_M_BRESP(17 downto 16),
+      s_axi_CONTROL_BUS_BVALID => axi_interconnect_1_M_BVALID(8),
+      s_axi_CONTROL_BUS_BREADY => axi_interconnect_1_M_BREADY(8),
+      s_axi_CONTROL_BUS_ARADDR => axi_interconnect_1_M_ARADDR(260 downto 256),
+      s_axi_CONTROL_BUS_ARVALID => axi_interconnect_1_M_ARVALID(8),
+      s_axi_CONTROL_BUS_ARREADY => axi_interconnect_1_M_ARREADY(8),
+      s_axi_CONTROL_BUS_RDATA => axi_interconnect_1_M_RDATA(287 downto 256),
+      s_axi_CONTROL_BUS_RRESP => axi_interconnect_1_M_RRESP(17 downto 16),
+      s_axi_CONTROL_BUS_RVALID => axi_interconnect_1_M_RVALID(8),
+      s_axi_CONTROL_BUS_RREADY => axi_interconnect_1_M_RREADY(8),
+      interrupt => sobel_filter_top_0_interrupt,
+      INPUT_STREAM_TVALID => axi_vdma_3_M_AXIS_MM2S_TVALID,
+      INPUT_STREAM_TREADY => axi_vdma_3_M_AXIS_MM2S_TREADY,
+      INPUT_STREAM_TDATA => axi_vdma_3_M_AXIS_MM2S_TDATA,
+      INPUT_STREAM_TSTRB => net_gnd4,
+      INPUT_STREAM_TUSER => axi_vdma_3_M_AXIS_MM2S_TUSER(0 to 0),
+      INPUT_STREAM_TLAST => axi_vdma_3_M_AXIS_MM2S_TLAST(0 to 0),
+      INPUT_STREAM_TDEST => net_gnd1(0 to 0),
+      OUTPUT_STREAM_TVALID => sobel_filter_top_0_OUTPUT_STREAM_TVALID,
+      OUTPUT_STREAM_TREADY => sobel_filter_top_0_OUTPUT_STREAM_TREADY,
+      OUTPUT_STREAM_TDATA => sobel_filter_top_0_OUTPUT_STREAM_TDATA,
+      OUTPUT_STREAM_TSTRB => open,
+      OUTPUT_STREAM_TUSER => sobel_filter_top_0_OUTPUT_STREAM_TUSER(0 to 0),
+      OUTPUT_STREAM_TLAST => sobel_filter_top_0_OUTPUT_STREAM_TLAST(0 to 0),
+      OUTPUT_STREAM_TDEST => open
     );
 
   iobuf_0 : IOBUF

@@ -50,10 +50,10 @@ Loading design module
 k_dir/DSE/systems/implementation/system_axi_hdmi_tx_16b_0_wrapper.ngc"...
 Loading design module
 "/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/wor
-k_dir/DSE/systems/implementation/system_image_filter_top_0_wrapper.ngc"...
+k_dir/DSE/systems/implementation/system_axi_vdma_3_wrapper.ngc"...
 Loading design module
 "/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/wor
-k_dir/DSE/systems/implementation/system_axi_vdma_3_wrapper.ngc"...
+k_dir/DSE/systems/implementation/system_sobel_filter_top_0_wrapper.ngc"...
 Loading design module
 "/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/wor
 k_dir/DSE/systems/implementation/system_axi_iic_0_wrapper.ngc"...
@@ -844,18 +844,18 @@ WARNING:ConstraintSystem:135 - Constraint <INST
 
 WARNING:ConstraintSystem:135 - Constraint <INST
    /system/EXPANDED/system/axi_interconnect_1/axi_interconnect_1\/mi_converter_b
-   ank\/gen_conv_slot[7].clock_conv_inst\/s_axi_aresetn_resync<2>_inv1_INV_0 TNM
+   ank\/gen_conv_slot[8].clock_conv_inst\/s_axi_aresetn_resync<2>_inv1_INV_0 TNM
    = FFS:axi_interconnect_1_reset_resync>: No instances of type FFS were found
    under block
-   "axi_interconnect_1/axi_interconnect_1/mi_converter_bank/gen_conv_slot[7].clo
+   "axi_interconnect_1/axi_interconnect_1/mi_converter_bank/gen_conv_slot[8].clo
    ck_conv_inst/s_axi_aresetn_resync<2>_inv1_INV_0" (type=INV).
 
 WARNING:ConstraintSystem:135 - Constraint <INST
    /system/EXPANDED/system/axi_interconnect_1/axi_interconnect_1\/mi_converter_b
-   ank\/gen_conv_slot[7].clock_conv_inst\/m_axi_aresetn_resync<2>_inv1_INV_0 TNM
+   ank\/gen_conv_slot[8].clock_conv_inst\/m_axi_aresetn_resync<2>_inv1_INV_0 TNM
    = FFS:axi_interconnect_1_reset_resync>: No instances of type FFS were found
    under block
-   "axi_interconnect_1/axi_interconnect_1/mi_converter_bank/gen_conv_slot[7].clo
+   "axi_interconnect_1/axi_interconnect_1/mi_converter_bank/gen_conv_slot[8].clo
    ck_conv_inst/m_axi_aresetn_resync<2>_inv1_INV_0" (type=INV).
 
 WARNING:ConstraintSystem:135 - Constraint <INST
@@ -1354,9 +1354,9 @@ WARNING:NgdBuild:452 - logical net 'N265' has no driver
 WARNING:NgdBuild:452 - logical net 'N266' has no driver
 WARNING:NgdBuild:452 - logical net 'N267' has no driver
 WARNING:NgdBuild:452 - logical net
-   'axi_interconnect_1/axi_interconnect_1/mf_mc_ruser<7>' has no driver
+   'axi_interconnect_1/axi_interconnect_1/mf_mc_ruser<8>' has no driver
 WARNING:NgdBuild:452 - logical net
-   'axi_interconnect_1/axi_interconnect_1/mf_mc_buser<7>' has no driver
+   'axi_interconnect_1/axi_interconnect_1/mf_mc_buser<8>' has no driver
 
 Partition Implementation Status
 -------------------------------
@@ -1369,10 +1369,10 @@ NGDBUILD Design Results Summary:
   Number of errors:     0
   Number of warnings: 303
 
-Total memory usage is 826216 kilobytes
+Total memory usage is 811184 kilobytes
 
 Writing NGD file "system.ngd" ...
-Total REAL time to NGDBUILD completion: 1 min  36 sec
-Total CPU time to NGDBUILD completion:  1 min  34 sec
+Total REAL time to NGDBUILD completion: 1 min  33 sec
+Total CPU time to NGDBUILD completion:  1 min  32 sec
 
 Writing NGDBUILD log file "system.bld"...

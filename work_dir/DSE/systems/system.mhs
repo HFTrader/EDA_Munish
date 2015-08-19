@@ -151,7 +151,7 @@ BEGIN processing_system7
  PORT M_AXI_GP0_ACLK = processing_system7_0_FCLK_CLK0
  PORT S_AXI_HP0_ACLK = processing_system7_0_FCLK_CLK1
  PORT S_AXI_HP2_ACLK = processing_system7_0_FCLK_CLK0
- PORT IRQ_F2P = axi_vdma_0_mm2s_introut & hdmi_int & axi_iic_0_IIC2INTC_Irpt & axi_dma_i2s_mm2s_introut & cam_interface_0_href_negedge & cam_interface_0_vsync_negedge & axi_dma_i2s_s2mm_introut & image_filter_top_0_interrupt & axi_vdma_3_mm2s_introut & axi_vdma_3_s2mm_introut
+ PORT IRQ_F2P = axi_vdma_0_mm2s_introut & hdmi_int & axi_iic_0_IIC2INTC_Irpt & axi_dma_i2s_mm2s_introut & cam_interface_0_href_negedge & cam_interface_0_vsync_negedge & axi_dma_i2s_s2mm_introut & axi_vdma_3_mm2s_introut & axi_vdma_3_s2mm_introut & sobel_filter_top_0_interrupt
  PORT USB0_VBUS_PWRFAULT = util_vector_logic_0_Res
  PORT FCLK_CLK3 = processing_system7_0_FCLK_CLK3
  PORT S_AXI_HP1_ACLK = processing_system7_0_FCLK_CLK3
@@ -364,18 +364,6 @@ BEGIN axi_interconnect
  PORT INTERCONNECT_ARESETN = processing_system7_0_FCLK_RESET3_N
 END
 
-BEGIN image_filter_top
- PARAMETER INSTANCE = image_filter_top_0
- PARAMETER HW_VER = 1.00.a
- PARAMETER C_S_AXI_CONTROL_BUS_BASEADDR = 0x7c800000
- PARAMETER C_S_AXI_CONTROL_BUS_HIGHADDR = 0x7c80ffff
- BUS_INTERFACE S_AXI_CONTROL_BUS = axi_interconnect_1
- BUS_INTERFACE OUTPUT_STREAM = image_filter_top_0_OUTPUT_STREAM
- BUS_INTERFACE INPUT_STREAM = axi_vdma_3_M_AXIS_MM2S
- PORT interrupt = image_filter_top_0_interrupt
- PORT aclk = processing_system7_0_FCLK_CLK3
-END
-
 BEGIN axi_vdma
  PARAMETER INSTANCE = axi_vdma_3
  PARAMETER HW_VER = 5.04.a
@@ -423,8 +411,8 @@ BEGIN axi_vdma
  BUS_INTERFACE S_AXI_LITE = axi_interconnect_1
  BUS_INTERFACE M_AXI_MM2S = axi_interconnect_3
  BUS_INTERFACE M_AXI_S2MM = axi_interconnect_3
- BUS_INTERFACE S_AXIS_S2MM = image_filter_top_0_OUTPUT_STREAM
  BUS_INTERFACE M_AXIS_MM2S = axi_vdma_3_M_AXIS_MM2S
+ BUS_INTERFACE S_AXIS_S2MM = sobel_filter_top_0_OUTPUT_STREAM
  PORT m_axis_mm2s_aclk = processing_system7_0_FCLK_CLK3
  PORT s_axis_s2mm_aclk = processing_system7_0_FCLK_CLK3
  PORT s_axi_lite_aclk = processing_system7_0_FCLK_CLK0
@@ -432,5 +420,17 @@ BEGIN axi_vdma
  PORT m_axi_s2mm_aclk = processing_system7_0_FCLK_CLK3
  PORT mm2s_introut = axi_vdma_3_mm2s_introut
  PORT s2mm_introut = axi_vdma_3_s2mm_introut
+END
+
+BEGIN sobel_filter_top
+ PARAMETER INSTANCE = sobel_filter_top_0
+ PARAMETER HW_VER = 1.01.a
+ PARAMETER C_S_AXI_CONTROL_BUS_BASEADDR = 0x71800000
+ PARAMETER C_S_AXI_CONTROL_BUS_HIGHADDR = 0x7180ffff
+ BUS_INTERFACE S_AXI_CONTROL_BUS = axi_interconnect_1
+ BUS_INTERFACE INPUT_STREAM = axi_vdma_3_M_AXIS_MM2S
+ BUS_INTERFACE OUTPUT_STREAM = sobel_filter_top_0_OUTPUT_STREAM
+ PORT interrupt = sobel_filter_top_0_interrupt
+ PORT aclk = processing_system7_0_FCLK_CLK3
 END
 
