@@ -7,8 +7,8 @@
 
 // these actual details would later be filled in or overwritten by GRIP when a final design architecture is achieved
 // for now assuming the SoC has 1 IP instance and both use grip_rule = 1 (vdma + IP solution)
-#define ERODEIP_NUM_INSTANCES 0
-#define ERODEIP_NUM_GRIPRULE1_INSTANCES 0
+#define ERODEIP_NUM_INSTANCES 1
+#define ERODEIP_NUM_GRIPRULE1_INSTANCES 1
 
 typedef struct {
     unsigned int baseaddr;
@@ -18,7 +18,7 @@ typedef struct {
 } ERODEIP_IPinfo;
 
 
-//extern ERODEIP_IPinfo ERODEIP_INFO[ERODEIP_NUM_INSTANCES];
+extern ERODEIP_IPinfo ERODEIP_INFO[ERODEIP_NUM_INSTANCES];
 
 #endif
 
