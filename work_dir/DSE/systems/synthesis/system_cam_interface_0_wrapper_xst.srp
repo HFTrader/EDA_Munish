@@ -5,7 +5,7 @@ Parameter TMPDIR set to /nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzai
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.03 secs
+Total CPU time to Xst completion: 0.06 secs
  
 --> 
 
@@ -547,10 +547,10 @@ WARNING:Xst:37 - Detected unknown constraint/property "sigis". This constraint/p
         C_S_AXI_SUPPORTS_WRITE = 1
         C_S_AXI_SUPPORTS_READ = 1
         C_FAMILY = "zynq"
-        C_S_AXI_MEM0_BASEADDR = "01100001011000100000000000000000"
-        C_S_AXI_MEM0_HIGHADDR = "01100001011000101111111111111111"
-        C_S_AXI_MEM1_BASEADDR = "01100001011000000000000000000000"
-        C_S_AXI_MEM1_HIGHADDR = "01100001011000001111111111111111"
+        C_S_AXI_MEM0_BASEADDR = "01100001011000000000000000000000"
+        C_S_AXI_MEM0_HIGHADDR = "01100001011000001111111111111111"
+        C_S_AXI_MEM1_BASEADDR = "01100001011000100000000000000000"
+        C_S_AXI_MEM1_HIGHADDR = "01100001011000101111111111111111"
     Set property "MAX_FANOUT = 10000" for signal <S_AXI_ACLK>.
 WARNING:Xst:37 - Detected unknown constraint/property "sigis". This constraint/property is not supported by the current software release and will be ignored.
     Set property "MAX_FANOUT = 10000" for signal <S_AXI_ARESETN>.
@@ -571,7 +571,7 @@ Synthesizing Unit <axi_slave_burst>.
         C_S_AXI_ADDR_WIDTH = 32
         C_S_AXI_DATA_WIDTH = 32
         C_S_AXI_ID_WIDTH = 6
-        C_ARD_ADDR_RANGE_ARRAY = ("0000000000000000000000000000000001100001011000100000000000000000","0000000000000000000000000000000001100001011000101111111111111111","0000000000000000000000000000000001100001011000000000000000000000","0000000000000000000000000000000001100001011000001111111111111111")
+        C_ARD_ADDR_RANGE_ARRAY = ("0000000000000000000000000000000001100001011000000000000000000000","0000000000000000000000000000000001100001011000001111111111111111","0000000000000000000000000000000001100001011000100000000000000000","0000000000000000000000000000000001100001011000101111111111111111")
         C_ARD_NUM_CE_ARRAY = (1,1)
     Set property "MAX_FANOUT = 10000" for signal <S_AXI_ACLK>.
     Set property "MAX_FANOUT = 10000" for signal <S_AXI_ARESETN>.
@@ -808,7 +808,7 @@ Synthesizing Unit <address_decode>.
     Related source file is "/nfs/tools/xilinx/ise/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_slave_burst_v1_00_a/hdl/vhdl/address_decode.vhd".
         C_S_AXI_ADDR_WIDTH = 32
         C_ADDR_DECODE_BITS = 32
-        C_ARD_ADDR_RANGE_ARRAY = ("0000000000000000000000000000000001100001011000100000000000000000","0000000000000000000000000000000001100001011000101111111111111111","0000000000000000000000000000000001100001011000000000000000000000","0000000000000000000000000000000001100001011000001111111111111111")
+        C_ARD_ADDR_RANGE_ARRAY = ("0000000000000000000000000000000001100001011000000000000000000000","0000000000000000000000000000000001100001011000001111111111111111","0000000000000000000000000000000001100001011000100000000000000000","0000000000000000000000000000000001100001011000101111111111111111")
         C_ARD_NUM_CE_ARRAY = (1,1)
         C_FAMILY = "zynq"
     Found 1-bit register for signal <cs_out_i<0>>.
@@ -828,7 +828,7 @@ Synthesizing Unit <pselect_f_1>.
     Related source file is "/nfs/tools/xilinx/ise/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/pselect_f.vhd".
         C_AB = 16
         C_AW = 32
-        C_BAR = "01100001011000100000000000000000"
+        C_BAR = "01100001011000000000000000000000"
         C_FAMILY = "zynq"
 WARNING:Xst:647 - Input <A<16:31>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Summary:
@@ -839,7 +839,7 @@ Synthesizing Unit <pselect_f_2>.
     Related source file is "/nfs/tools/xilinx/ise/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/pselect_f.vhd".
         C_AB = 16
         C_AW = 32
-        C_BAR = "01100001011000000000000000000000"
+        C_BAR = "01100001011000100000000000000000"
         C_FAMILY = "zynq"
 WARNING:Xst:647 - Input <A<16:31>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Summary:
@@ -1723,12 +1723,12 @@ cam_interface_0/USER_LOGIC_I/cam_if/your_instance_name/clkout0|    4.442|       
 
 
 Total REAL time to Xst completion: 10.00 secs
-Total CPU time to Xst completion: 9.01 secs
+Total CPU time to Xst completion: 8.99 secs
  
 --> 
 
 
-Total memory usage is 541780 kilobytes
+Total memory usage is 541776 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :  157 (   0 filtered)

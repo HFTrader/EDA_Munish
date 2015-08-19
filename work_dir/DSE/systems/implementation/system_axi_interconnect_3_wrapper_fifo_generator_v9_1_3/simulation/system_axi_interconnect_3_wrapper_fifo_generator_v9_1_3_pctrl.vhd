@@ -110,6 +110,7 @@ ARCHITECTURE fg_pc_arch OF system_axi_interconnect_3_wrapper_fifo_generator_v9_1
  CONSTANT D_WIDTH_DIFF   :   INTEGER := log2roundup(C_DOUT_WIDTH/C_DIN_WIDTH);
 
  SIGNAL data_chk_i       : STD_LOGIC := if_then_else(C_CH_TYPE /= 2,'1','0');
+ SIGNAL data_chk_wr      : STD_LOGIC := '0';
  SIGNAL full_chk_i       : STD_LOGIC := if_then_else(C_CH_TYPE /= 2,'1','0');
  SIGNAL empty_chk_i      : STD_LOGIC := if_then_else(C_CH_TYPE /= 2,'1','0');
  SIGNAL status_i         : STD_LOGIC_VECTOR(4 DOWNTO 0):= (OTHERS => '0');
@@ -182,7 +183,7 @@ BEGIN
 END PROCESS;
 
  -- TB Timeout/Stop
- fifo_tb_stop_run:IF(TB_STOP_CNT /= 0) GENERATE
+ fifo_tb_stop_run:IF(TB_STOP_CNT /= 0 AND C_CH_TYPE /= 2) GENERATE
    PROCESS (RD_CLK)
    BEGIN
        IF (RD_CLK'event AND RD_CLK='1') THEN
@@ -193,6 +194,16 @@ END PROCESS;
    END PROCESS;
  END GENERATE fifo_tb_stop_run;
 
+  pwr_tb_stop_run:IF(C_CH_TYPE = 2) GENERATE
+   PROCESS (RD_CLK)
+   BEGIN
+     IF (RD_CLK'event AND RD_CLK='1') THEN
+       IF(prc_re_i = '1') THEN
+         sim_stop_cntr <= sim_stop_cntr - "1";
+       END IF;
+     END IF;
+   END PROCESS;
+ END GENERATE pwr_tb_stop_run;
 
   -- Stop when error found
   PROCESS (RD_CLK)
@@ -212,6 +223,7 @@ END PROCESS;
   -- CHECKS FOR FIFO
   -----------------------------------------------------
 
+  fifo_flags_checks:IF(C_CH_TYPE /= 2) GENERATE
 
   PROCESS(RD_CLK,RESET_RD)
   BEGIN
@@ -294,13 +306,35 @@ END PROCESS;
       END IF;
     END IF;
   END PROCESS;
+  END GENERATE fifo_flags_checks;
 
   fifo_d_chk:IF(C_CH_TYPE /= 2) GENERATE
-    PRC_WR_EN  <= prc_we_i  AFTER 50 ns;
-    PRC_RD_EN  <= prc_re_i  AFTER 50 ns;
+    PRC_WR_EN  <= prc_we_i  AFTER 100 ns;
+    PRC_RD_EN  <= prc_re_i  AFTER 100 ns;
     data_chk_i <= dout_chk;
   END GENERATE fifo_d_chk;
   -----------------------------------------------------
+
+  -----------------------------------------------------
+  -- Wiring logic data checks
+  -----------------------------------------------------
+  wiring_d_chk:IF(C_CH_TYPE = 2) GENERATE
+    PROCESS(WR_CLK,RESET_WR)
+    BEGIN
+      IF(RESET_WR = '1') THEN
+         data_chk_wr <= '0';
+      ELSIF (WR_CLK'event AND WR_CLK='1') THEN
+          IF ((DATA_OUT = DATA_IN) AND (FULL = NOT rd_en_i) AND (EMPTY = NOT wr_en_i)) THEN
+            data_chk_wr <= '0';
+          ELSE
+            data_chk_wr <= '1';
+          END IF;
+      END IF;
+    END PROCESS;
+    data_chk_i <= data_chk_wr;
+    PRC_WR_EN  <= prc_we_i  AFTER 100 ns;
+    PRC_RD_EN  <= prc_re_i  AFTER 100 ns;
+  END GENERATE wiring_d_chk;
    RESET_EN   <= reset_en_i;
 
    PROCESS(RD_CLK,RESET_RD)
@@ -457,5 +491,20 @@ END PROCESS;
       END IF;
     END PROCESS;
   END GENERATE data_fifo_en;
+   
+  -----------------------------------------------------
+  -- Wiring logic enable generation
+  -----------------------------------------------------
+  axi_pw_enable:IF(C_CH_TYPE = 2) GENERATE
+    RESET_EN <= '1';
+
+    PROCESS(WR_CLK)
+    BEGIN
+      IF (WR_CLK'event AND WR_CLK='1') THEN
+	wr_en_i <= NOT wr_en_i;
+	rd_en_i <= NOT rd_en_i;
+      END IF;
+    END PROCESS;
+  END GENERATE axi_pw_enable;
 
 END ARCHITECTURE;

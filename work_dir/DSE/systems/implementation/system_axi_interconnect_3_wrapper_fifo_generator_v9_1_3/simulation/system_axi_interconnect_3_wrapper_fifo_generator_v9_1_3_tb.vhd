@@ -83,7 +83,7 @@ ARCHITECTURE system_axi_interconnect_3_wrapper_fifo_generator_v9_1_3_arch OF sys
  SIGNAL  sim_done            : STD_LOGIC := '0';
  SIGNAL  end_of_sim          : STD_LOGIC_VECTOR(4 DOWNTO 0) := (OTHERS => '0');
  -- Write and Read clock periods
- CONSTANT wr_clk_period_by_2 : TIME := 100 ns;
+ CONSTANT wr_clk_period_by_2 : TIME := 200 ns;
  -- Procedures to display strings
  PROCEDURE disp_str(CONSTANT str:IN STRING) IS
     variable dp_l : line := null;   
@@ -117,7 +117,7 @@ BEGIN
   
   PROCESS BEGIN
     reset <= '1';
-    WAIT FOR 2000 ns;
+    WAIT FOR 4000 ns;
     reset <= '0';
     WAIT;
   END PROCESS;
@@ -183,10 +183,10 @@ BEGIN
    GENERIC MAP(
               FREEZEON_ERROR => 0,
  	      TB_STOP_CNT    => 2,
- 	      TB_SEED        => 36 
+ 	      TB_SEED        => 21 
  	      )
   PORT MAP(
-	   CLK           => wr_clk,
+	   S_ACLK        => wr_clk,
 	   RESET         => reset,
 	   SIM_DONE      => sim_done,
            STATUS        => status

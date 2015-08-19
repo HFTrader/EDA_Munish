@@ -77,8 +77,8 @@ entity system_axi_interconnect_3_wrapper_fifo_generator_v9_1_1_exdes is
            RST                       : IN  std_logic;
            WR_EN 		     : IN  std_logic;
            RD_EN                     : IN  std_logic;
-           DIN                       : IN  std_logic_vector(6-1 DOWNTO 0);
-           DOUT                      : OUT std_logic_vector(6-1 DOWNTO 0);
+           DIN                       : IN  std_logic_vector(5-1 DOWNTO 0);
+           DOUT                      : OUT std_logic_vector(5-1 DOWNTO 0);
            FULL                      : OUT std_logic;
            EMPTY                     : OUT std_logic);
 
@@ -98,8 +98,8 @@ architecture xilinx of system_axi_interconnect_3_wrapper_fifo_generator_v9_1_1_e
            RST                       : IN  std_logic;
            WR_EN 		     : IN  std_logic;
            RD_EN                     : IN  std_logic;
-           DIN                       : IN  std_logic_vector(6-1 DOWNTO 0);
-           DOUT                      : OUT std_logic_vector(6-1 DOWNTO 0);
+           DIN                       : IN  std_logic_vector(5-1 DOWNTO 0);
+           DOUT                      : OUT std_logic_vector(5-1 DOWNTO 0);
            FULL                      : OUT std_logic;
            EMPTY                     : OUT std_logic);
 

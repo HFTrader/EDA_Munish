@@ -98,13 +98,13 @@ ARCHITECTURE simulation_arch OF system_axi_interconnect_3_wrapper_fifo_generator
     SIGNAL rst	                          :   STD_LOGIC;
     SIGNAL wr_en                          :   STD_LOGIC;
     SIGNAL rd_en                          :   STD_LOGIC;
-    SIGNAL din                            :   STD_LOGIC_VECTOR(5-1 DOWNTO 0);
-    SIGNAL dout                           :   STD_LOGIC_VECTOR(5-1 DOWNTO 0);
+    SIGNAL din                            :   STD_LOGIC_VECTOR(1-1 DOWNTO 0);
+    SIGNAL dout                           :   STD_LOGIC_VECTOR(1-1 DOWNTO 0);
     SIGNAL full                           :   STD_LOGIC;
     SIGNAL empty                          :   STD_LOGIC;
    -- TB Signals
-    SIGNAL wr_data                        :   STD_LOGIC_VECTOR(5-1 DOWNTO 0);
-    SIGNAL dout_i                         :   STD_LOGIC_VECTOR(5-1 DOWNTO 0);
+    SIGNAL wr_data                        :   STD_LOGIC_VECTOR(1-1 DOWNTO 0);
+    SIGNAL dout_i                         :   STD_LOGIC_VECTOR(1-1 DOWNTO 0);
     SIGNAL wr_en_i                        :   STD_LOGIC := '0';
     SIGNAL rd_en_i                        :   STD_LOGIC := '0';
     SIGNAL full_i                         :   STD_LOGIC := '0';
@@ -181,8 +181,8 @@ ARCHITECTURE simulation_arch OF system_axi_interconnect_3_wrapper_fifo_generator
 
     fg_dg_nv: system_axi_interconnect_3_wrapper_fifo_generator_v9_1_2_dgen
       GENERIC MAP (
-          	C_DIN_WIDTH       => 5,
-		C_DOUT_WIDTH      => 5,
+          	C_DIN_WIDTH       => 1,
+		C_DOUT_WIDTH      => 1,
 		TB_SEED           => TB_SEED, 
  		C_CH_TYPE         => 0	
                  )
@@ -197,8 +197,8 @@ ARCHITECTURE simulation_arch OF system_axi_interconnect_3_wrapper_fifo_generator
 
    fg_dv_nv: system_axi_interconnect_3_wrapper_fifo_generator_v9_1_2_dverif
     GENERIC MAP (  
-	       C_DOUT_WIDTH       => 5,
-	       C_DIN_WIDTH        => 5,
+	       C_DOUT_WIDTH       => 1,
+	       C_DIN_WIDTH        => 1,
 	       C_USE_EMBEDDED_REG => 0,
 	       TB_SEED            => TB_SEED, 
  	       C_CH_TYPE          => 0
@@ -217,8 +217,8 @@ ARCHITECTURE simulation_arch OF system_axi_interconnect_3_wrapper_fifo_generator
     GENERIC MAP ( 
               AXI_CHANNEL         => "Native",
               C_APPLICATION_TYPE  => 0,
-	      C_DOUT_WIDTH        => 5,
-	      C_DIN_WIDTH         => 5,
+	      C_DOUT_WIDTH        => 1,
+	      C_DIN_WIDTH         => 1,
 	      C_WR_PNTR_WIDTH     => 5,
     	      C_RD_PNTR_WIDTH     => 5,
  	      C_CH_TYPE           => 0,

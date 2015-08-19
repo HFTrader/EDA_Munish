@@ -344,7 +344,7 @@ ARCHITECTURE simulation_arch OF system_axi_interconnect_3_wrapper_fifo_generator
     s_aresetn 	              <= NOT (RESET OR rst_s_rd) AFTER 12 ns;
 
     STATUS                    <= status_wach OR status_wdch OR status_wrch OR status_rach OR status_rdch;
-    SIM_DONE                  <= sim_done_wach AND sim_done_wdch AND sim_done_wrch AND sim_done_rdch;
+    SIM_DONE                  <= sim_done_wdch AND sim_done_wrch AND sim_done_rach AND sim_done_rdch;
     reset_en                  <= reset_en_wach AND reset_en_wdch AND reset_en_wrch AND reset_en_rach AND reset_en_rdch;
 
 
@@ -371,7 +371,7 @@ ARCHITECTURE simulation_arch OF system_axi_interconnect_3_wrapper_fifo_generator
           	C_DIN_WIDTH      => 63,
 		C_DOUT_WIDTH     => 63,
 		TB_SEED          => TB_SEED, 
- 		C_CH_TYPE        => 2
+ 		C_CH_TYPE        => 0
                )
       PORT MAP (  
                 RESET            => rst_int_wr,
@@ -388,7 +388,7 @@ ARCHITECTURE simulation_arch OF system_axi_interconnect_3_wrapper_fifo_generator
 	      C_DIN_WIDTH         => 63,
 	      C_USE_EMBEDDED_REG  => 0,
 	      TB_SEED             => TB_SEED, 
- 	      C_CH_TYPE           => 2 
+ 	      C_CH_TYPE           => 0 
 	      )
      PORT MAP(
               RESET               => rst_int_rd,
@@ -403,7 +403,7 @@ ARCHITECTURE simulation_arch OF system_axi_interconnect_3_wrapper_fifo_generator
     fg_pc_wach: system_axi_interconnect_3_wrapper_fifo_generator_v9_1_4_pctrl
     GENERIC MAP (  
               AXI_CHANNEL         => "WACH",
-              C_APPLICATION_TYPE  => 0,
+              C_APPLICATION_TYPE  => 1,
 	      C_DOUT_WIDTH        => 63,
 	      C_DIN_WIDTH         => 63,
 	      C_WR_PNTR_WIDTH     => 5,
@@ -411,7 +411,7 @@ ARCHITECTURE simulation_arch OF system_axi_interconnect_3_wrapper_fifo_generator
               FREEZEON_ERROR      => FREEZEON_ERROR,
               TB_STOP_CNT         => TB_STOP_CNT,
 	      TB_SEED             => TB_SEED, 
- 	      C_CH_TYPE           => 2
+ 	      C_CH_TYPE           => 0
 	      )
      PORT MAP(
               RESET_WR            => rst_int_wr,
@@ -438,7 +438,7 @@ ARCHITECTURE simulation_arch OF system_axi_interconnect_3_wrapper_fifo_generator
           	C_DIN_WIDTH      => 74,
 		C_DOUT_WIDTH     => 74,
 		TB_SEED          => TB_SEED, 
- 		C_CH_TYPE        => 2
+ 		C_CH_TYPE        => 0
                 )
       PORT MAP (  
                 RESET            => rst_int_wr,
@@ -455,7 +455,7 @@ ARCHITECTURE simulation_arch OF system_axi_interconnect_3_wrapper_fifo_generator
 	       C_DIN_WIDTH        => 74,
 	       C_USE_EMBEDDED_REG => 0,
 	       TB_SEED            => TB_SEED, 
- 	       C_CH_TYPE          => 2	 
+ 	       C_CH_TYPE          => 0	 
 	      )
      PORT MAP (
               RESET               => rst_int_rd,
@@ -473,12 +473,12 @@ ARCHITECTURE simulation_arch OF system_axi_interconnect_3_wrapper_fifo_generator
               C_APPLICATION_TYPE  => 0,
 	      C_DOUT_WIDTH        => 74,
 	      C_DIN_WIDTH         => 74,
-	      C_WR_PNTR_WIDTH     => 1,
-    	      C_RD_PNTR_WIDTH     => 1,
+	      C_WR_PNTR_WIDTH     => 9,
+    	      C_RD_PNTR_WIDTH     => 9,
               FREEZEON_ERROR      => FREEZEON_ERROR,
               TB_STOP_CNT         => TB_STOP_CNT,
 	      TB_SEED             => TB_SEED, 
- 	      C_CH_TYPE           => 2
+ 	      C_CH_TYPE           => 0
 	      )
      PORT MAP (
               RESET_WR            => rst_int_wr,
@@ -603,7 +603,7 @@ ARCHITECTURE simulation_arch OF system_axi_interconnect_3_wrapper_fifo_generator
           	 C_DIN_WIDTH      => 63,
 		 C_DOUT_WIDTH     => 63,
 		 TB_SEED          => TB_SEED, 
- 		 C_CH_TYPE        => 0 
+ 		 C_CH_TYPE        => 2 
                   )
       PORT MAP (  
                 RESET            => rst_int_wr,
@@ -620,7 +620,7 @@ ARCHITECTURE simulation_arch OF system_axi_interconnect_3_wrapper_fifo_generator
 	      C_DIN_WIDTH         => 63,
 	      C_USE_EMBEDDED_REG  => 0,
 	      TB_SEED             => TB_SEED, 
- 	      C_CH_TYPE           => 0	 
+ 	      C_CH_TYPE           => 2	 
 	      )
      PORT MAP (
               RESET               => rst_int_rd,
@@ -635,7 +635,7 @@ ARCHITECTURE simulation_arch OF system_axi_interconnect_3_wrapper_fifo_generator
     fg_pc_rach: system_axi_interconnect_3_wrapper_fifo_generator_v9_1_4_pctrl
     GENERIC MAP (  
               AXI_CHANNEL         => "RACH",
-              C_APPLICATION_TYPE  => 1,
+              C_APPLICATION_TYPE  => 0,
 	      C_DOUT_WIDTH        => 63,
 	      C_DIN_WIDTH         => 63,
 	      C_WR_PNTR_WIDTH     => 5,
@@ -643,7 +643,7 @@ ARCHITECTURE simulation_arch OF system_axi_interconnect_3_wrapper_fifo_generator
               FREEZEON_ERROR      => FREEZEON_ERROR,
               TB_STOP_CNT         => TB_STOP_CNT,
 	      TB_SEED             => TB_SEED, 
- 	      C_CH_TYPE           => 0
+ 	      C_CH_TYPE           => 2
 	      )
      PORT MAP (
               RESET_WR            => rst_int_wr,
@@ -670,7 +670,7 @@ ARCHITECTURE simulation_arch OF system_axi_interconnect_3_wrapper_fifo_generator
           	 C_DIN_WIDTH      => 68,
 		 C_DOUT_WIDTH     => 68,
 		 TB_SEED          => TB_SEED, 
- 		 C_CH_TYPE        => 0 
+ 		 C_CH_TYPE        => 2 
                )
       PORT MAP (  
                 RESET             => rst_int_rd,
@@ -687,7 +687,7 @@ ARCHITECTURE simulation_arch OF system_axi_interconnect_3_wrapper_fifo_generator
 	      C_DIN_WIDTH         => 68,
 	      C_USE_EMBEDDED_REG  => 0,
 	      TB_SEED             => TB_SEED, 
- 	      C_CH_TYPE           => 0	 
+ 	      C_CH_TYPE           => 2	 
 	      )
      PORT MAP (
               RESET               => rst_int_wr,
@@ -705,12 +705,12 @@ ARCHITECTURE simulation_arch OF system_axi_interconnect_3_wrapper_fifo_generator
               C_APPLICATION_TYPE  => 0,
 	      C_DOUT_WIDTH        => 68,
 	      C_DIN_WIDTH         => 68,
-	      C_WR_PNTR_WIDTH     => 9,
-    	      C_RD_PNTR_WIDTH     => 9,
+	      C_WR_PNTR_WIDTH     => 1,
+    	      C_RD_PNTR_WIDTH     => 1,
               FREEZEON_ERROR      => FREEZEON_ERROR,
               TB_STOP_CNT         => TB_STOP_CNT,
 	      TB_SEED             => TB_SEED, 
- 	      C_CH_TYPE           => 0
+ 	      C_CH_TYPE           => 2
 	      )
      PORT MAP (
               RESET_WR            => rst_int_rd,

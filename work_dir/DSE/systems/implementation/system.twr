@@ -39,20 +39,6 @@ Timing constraint: PATH "TS_axi_vdma_3_cdc_from_2_cdc_to_path" TIG;
 --------------------------------------------------------------------------------
 
 ================================================================================
-Timing constraint: PATH "TS_axi_vdma_2_cdc_tig_v_path" TIG;
-
- 2097 paths analyzed, 767 endpoints analyzed, 0 failing endpoints
- 0 timing errors detected. (0 setup errors, 0 hold errors)
---------------------------------------------------------------------------------
-
-================================================================================
-Timing constraint: PATH "TS_axi_vdma_2_cdc_from_2_cdc_to_path" TIG;
-
- 27 paths analyzed, 27 endpoints analyzed, 0 failing endpoints
- 0 timing errors detected. (0 setup errors, 0 hold errors)
---------------------------------------------------------------------------------
-
-================================================================================
 Timing constraint: PATH "TS_axi_vdma_0_cdc_tig_v_path" TIG;
 
  1178 paths analyzed, 392 endpoints analyzed, 0 failing endpoints
@@ -90,7 +76,7 @@ Timing constraint: PATH "TS_axi_interconnect_2_reset_resync_path" TIG;
 ================================================================================
 Timing constraint: PATH "TS_axi_interconnect_1_reset_resync_path" TIG;
 
- 10 paths analyzed, 10 endpoints analyzed, 0 failing endpoints
+ 6 paths analyzed, 6 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors)
 --------------------------------------------------------------------------------
 
@@ -100,9 +86,9 @@ TIMEGRP "RAMS" TO         TIMEGRP "axi_interconnect_1_async_clock_conv_FFDEST"
 10 ns         DATAPATHONLY;
 For more information, see From:To (Multicycle) Analysis in the Timing Closure User Guide (UG612).
 
- 182 paths analyzed, 182 endpoints analyzed, 0 failing endpoints
+ 91 paths analyzed, 91 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors)
- Maximum delay is   3.319ns.
+ Maximum delay is   2.914ns.
 --------------------------------------------------------------------------------
 
 
@@ -120,21 +106,21 @@ Timing summary:
 
 Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
 
-Constraints cover 5643 paths, 0 nets, and 4640 connections
+Constraints cover 3424 paths, 0 nets, and 2778 connections
 
 Design statistics:
-   Minimum period:   3.319ns   (Maximum frequency: 301.296MHz)
-   Maximum path delay from/to any node:   3.319ns
+   Minimum period:   2.914ns   (Maximum frequency: 343.171MHz)
+   Maximum path delay from/to any node:   2.914ns
 
 
-Analysis completed Wed Aug 19 05:37:08 2015 
+Analysis completed Wed Aug 19 06:32:36 2015 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 1143 MB
+Peak Memory Usage: 1065 MB
 
 
 

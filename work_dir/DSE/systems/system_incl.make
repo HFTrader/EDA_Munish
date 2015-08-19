@@ -154,15 +154,6 @@ pcores/cam_interface_v1_00_a/hdl/vhdl/ov7670_capture.vhd \
 pcores/cam_interface_v1_00_a/hdl/vhdl/ov7670cam_if.vhd \
 pcores/cam_interface_v1_00_a/hdl/vhdl/user_logic.vhd \
 pcores/cam_interface_v1_00_a/hdl/vhdl/cam_interface.vhd \
-pcores/sobel_filter_top_v1_01_a/synhdl/verilog/sobel_filter_buff_A_M_0.v \
-pcores/sobel_filter_top_v1_01_a/synhdl/verilog/sobel_filter_buff_A_M_2.v \
-pcores/sobel_filter_top_v1_01_a/synhdl/verilog/sobel_filter_mul_8ns_5ns_13_3.v \
-pcores/sobel_filter_top_v1_01_a/synhdl/verilog/sobel_filter.v \
-pcores/sobel_filter_top_v1_01_a/synhdl/verilog/sobel_filter_ap_rst_if.v \
-pcores/sobel_filter_top_v1_01_a/synhdl/verilog/sobel_filter_CONTROL_BUS_if.v \
-pcores/sobel_filter_top_v1_01_a/synhdl/verilog/sobel_filter_INPUT_STREAM_if.v \
-pcores/sobel_filter_top_v1_01_a/synhdl/verilog/sobel_filter_OUTPUT_STREAM_if.v \
-pcores/sobel_filter_top_v1_01_a/synhdl/verilog/sobel_filter_top.v \
 pcores/image_filter_top_v1_00_a/synhdl/verilog/AXIvideo2Mat_32_1080_1920_16_s.v \
 pcores/image_filter_top_v1_00_a/synhdl/verilog/filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s_k_buf_0_val_0.v \
 pcores/image_filter_top_v1_00_a/synhdl/verilog/filter_opr_erode_kernel_16_16_unsigned_char_int_1080_1920_3_3_s.v \
@@ -204,8 +195,6 @@ implementation/system_util_i2c_mixer_0_wrapper.ngc \
 implementation/system_axi_dma_i2s_wrapper.ngc \
 implementation/system_cam_interface_0_wrapper.ngc \
 implementation/system_axi_interconnect_3_wrapper.ngc \
-implementation/system_sobel_filter_top_0_wrapper.ngc \
-implementation/system_axi_vdma_2_wrapper.ngc \
 implementation/system_image_filter_top_0_wrapper.ngc \
 implementation/system_axi_vdma_3_wrapper.ngc
 

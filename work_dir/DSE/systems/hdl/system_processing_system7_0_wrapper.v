@@ -1089,8 +1089,8 @@ module system_processing_system7_0_wrapper
   output S_AXI_HP1_WREADY;
   output [1:0] S_AXI_HP1_BRESP;
   output [1:0] S_AXI_HP1_RRESP;
-  output [1:0] S_AXI_HP1_BID;
-  output [1:0] S_AXI_HP1_RID;
+  output [0:0] S_AXI_HP1_BID;
+  output [0:0] S_AXI_HP1_RID;
   output [63:0] S_AXI_HP1_RDATA;
   output [7:0] S_AXI_HP1_RCOUNT;
   output [7:0] S_AXI_HP1_WCOUNT;
@@ -1121,9 +1121,9 @@ module system_processing_system7_0_wrapper
   input [3:0] S_AXI_HP1_AWCACHE;
   input [3:0] S_AXI_HP1_AWLEN;
   input [3:0] S_AXI_HP1_AWQOS;
-  input [1:0] S_AXI_HP1_ARID;
-  input [1:0] S_AXI_HP1_AWID;
-  input [1:0] S_AXI_HP1_WID;
+  input [0:0] S_AXI_HP1_ARID;
+  input [0:0] S_AXI_HP1_AWID;
+  input [0:0] S_AXI_HP1_WID;
   input [63:0] S_AXI_HP1_WDATA;
   input [7:0] S_AXI_HP1_WSTRB;
   output S_AXI_HP2_ARESETN;
@@ -1278,7 +1278,7 @@ module system_processing_system7_0_wrapper
   output FCLK_RESET0_N;
   input FPGA_IDLE_N;
   input [3:0] DDR_ARB;
-  input [12:0] IRQ_F2P;
+  input [9:0] IRQ_F2P;
   input Core0_nFIQ;
   input Core0_nIRQ;
   input Core1_nFIQ;
@@ -1353,13 +1353,13 @@ module system_processing_system7_0_wrapper
       .C_S_AXI_ACP_ID_WIDTH ( 3 ),
       .C_S_AXI_HP0_ID_WIDTH ( 1 ),
       .C_S_AXI_HP0_DATA_WIDTH ( 64 ),
-      .C_S_AXI_HP1_ID_WIDTH ( 2 ),
+      .C_S_AXI_HP1_ID_WIDTH ( 1 ),
       .C_S_AXI_HP1_DATA_WIDTH ( 64 ),
       .C_S_AXI_HP2_ID_WIDTH ( 2 ),
       .C_S_AXI_HP2_DATA_WIDTH ( 64 ),
       .C_S_AXI_HP3_ID_WIDTH ( 6 ),
       .C_S_AXI_HP3_DATA_WIDTH ( 64 ),
-      .C_NUM_F2P_INTR_INPUTS ( 13 ),
+      .C_NUM_F2P_INTR_INPUTS ( 10 ),
       .C_FCLK_CLK0_BUF ( "TRUE" ),
       .C_FCLK_CLK1_BUF ( "TRUE" ),
       .C_FCLK_CLK2_BUF ( "TRUE" ),
