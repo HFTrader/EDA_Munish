@@ -97,7 +97,7 @@ ARCHITECTURE fg_dg_arch OF system_axi_interconnect_3_wrapper_fifo_generator_v9_1
  BEGIN
   
    WR_EN   <= PRC_WR_EN ;
-   WR_DATA <= wr_data_i AFTER 50 ns;
+   WR_DATA <= wr_data_i AFTER 100 ns;
 
   ----------------------------------------------
   -- Generation of DATA
