@@ -1,60 +1,14 @@
-21:44:09 **** Clean-only build of configuration Debug for project SOERGR_sw ****
+23:21:01 **** Clean-only build of configuration Debug for project SOERGR_sw ****
 make clean 
 rm -rf  ./src/src/axi_interrupt.o ./src/src/cf_hdmi.o ./src/src/main.o ./src/src/transmitter.o ./src/src/vdma_config.o  ./src/multicore_sup/SoCProc_support.o ./src/multicore_sup/SoCProc_support_config.o ./src/multicore_sup/XIL_MICROBLAZE_8_5_support.o ./src/multicore_sup/ZYNQ_ARM_CORTEX_A9_support.o  ./src/IP_SW/SobelIP/SW/function/SobelIP_SW.o ./src/IP_SW/SobelIP/SW/function/SobelIP_func.o  ./src/IP_SW/SobelIP/SW/driver/Rule1/SobelIP_Rule1Driver.o ./src/IP_SW/SobelIP/SW/driver/Rule1/SobelIP_VDMA_Driver.o  ./src/IP_SW/SobelIP/SW/config/SobelIP_config.o  ./src/IP_SW/GrayscaleIP/SW/function/GrayscaleIP_SW.o ./src/IP_SW/GrayscaleIP/SW/function/GrayscaleIP_func.o  ./src/IP_SW/GrayscaleIP/SW/driver/Rule2/GrayscaleIP_Rule2Driver.o  ./src/IP_SW/GrayscaleIP/SW/driver/Rule1/GrayscaleIP_Rule1Driver.o ./src/IP_SW/GrayscaleIP/SW/driver/Rule1/GrayscaleIP_VDMA_Driver.o  ./src/IP_SW/GrayscaleIP/SW/config/GrayscaleIP_config.o  ./src/IP_SW/ErodeIP/SW/function/ErodeIP_SW.o ./src/IP_SW/ErodeIP/SW/function/ErodeIP_func.o  ./src/IP_SW/ErodeIP/SW/driver/Rule1/ErodeIP_Rule1Driver.o ./src/IP_SW/ErodeIP/SW/driver/Rule1/ErodeIP_VDMA_Driver.o  ./src/IP_SW/ErodeIP/SW/config/ErodeIP_config.o  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/src/axi_interrupt.d ./src/src/cf_hdmi.d ./src/src/main.d ./src/src/transmitter.d ./src/src/vdma_config.d  ./src/multicore_sup/SoCProc_support.d ./src/multicore_sup/SoCProc_support_config.d ./src/multicore_sup/XIL_MICROBLAZE_8_5_support.d ./src/multicore_sup/ZYNQ_ARM_CORTEX_A9_support.d  ./src/IP_SW/SobelIP/SW/function/SobelIP_SW.d ./src/IP_SW/SobelIP/SW/function/SobelIP_func.d  ./src/IP_SW/SobelIP/SW/driver/Rule1/SobelIP_Rule1Driver.d ./src/IP_SW/SobelIP/SW/driver/Rule1/SobelIP_VDMA_Driver.d  ./src/IP_SW/SobelIP/SW/config/SobelIP_config.d  ./src/IP_SW/GrayscaleIP/SW/function/GrayscaleIP_SW.d ./src/IP_SW/GrayscaleIP/SW/function/GrayscaleIP_func.d  ./src/IP_SW/GrayscaleIP/SW/driver/Rule2/GrayscaleIP_Rule2Driver.d  ./src/IP_SW/GrayscaleIP/SW/driver/Rule1/GrayscaleIP_Rule1Driver.d ./src/IP_SW/GrayscaleIP/SW/driver/Rule1/GrayscaleIP_VDMA_Driver.d  ./src/IP_SW/GrayscaleIP/SW/config/GrayscaleIP_config.d  ./src/IP_SW/ErodeIP/SW/function/ErodeIP_SW.d ./src/IP_SW/ErodeIP/SW/function/ErodeIP_func.d  ./src/IP_SW/ErodeIP/SW/driver/Rule1/ErodeIP_Rule1Driver.d ./src/IP_SW/ErodeIP/SW/driver/Rule1/ErodeIP_VDMA_Driver.d  ./src/IP_SW/ErodeIP/SW/config/ErodeIP_config.d  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.d  SOERGR_sw.elf.size  SOERGR_sw.elf
  
-21:44:09 **** Clean-only build of project standalone_bsp_0 ****
-make -k clean 
-rm -rf ps7_cortexa9_0
-21:44:10 **** Build of project standalone_bsp_0 ****
-make -k all 
-libgen -hw ../systems_hw_platform_0/system.xml\
-	       -lp /home/ga38qoh/EDA_Munish/zedboard_training/ZynqSW/2013_3/Support_documents/sdk_repo\
-	       -pe ps7_cortexa9_0 \
-	       -log libgen.log \
-	       system.mss
-libgen
-Xilinx EDK 14.7 Build EDK_P.20131013
-Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
-Command Line: libgen -hw ../systems_hw_platform_0/system.xml -lp
-/home/ga38qoh/EDA_Munish/zedboard_training/ZynqSW/2013_3/Support_documents/sdk_r
-epo -pe ps7_cortexa9_0 -log libgen.log system.mss 
+23:21:01 Build Finished (took 113ms)
 
-
-Staging source files.
-Running DRCs.
-Running generate.
-Running post_generate.
-Running include - 'gmake -s include "COMPILER=arm-xilinx-eabi-gcc"
-"ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS= -O2 -c"
-"EXTRA_COMPILER_FLAGS=-g"'.
-
-Running libs - 'gmake -s libs "COMPILER=arm-xilinx-eabi-gcc"
-"ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS= -O2 -c"
-"EXTRA_COMPILER_FLAGS=-g"'.
-Compiling common
-arm-xilinx-eabi-ar: creating ../../../lib/libxil.a
-Compiling standalone
-Compiling axidma
-Compiling iic
-Compiling axivdma
-Compiling devcfg
-Compiling dmaps
-Compiling emacps
-Compiling gpiops
-Compiling iicps
-Compiling qspips
-Compiling scugic
-Compiling scutimer
-Compiling scuwdt
-Compiling ttcps
-Compiling uartps
-Compiling usbps
-Compiling xadcps
-Compiling cpu_cortexa9
-Running execs_generate.
-Finished building libraries
-21:44:41 **** Build of configuration Debug for project SOERGR_sw ****
+23:21:01 **** Clean-only build of configuration Release for project SOERGR_sw ****
+make clean 
+make: *** No rule to make target `clean'.  Stop.
+23:21:02 **** Build of configuration Debug for project SOERGR_sw ****
 make all 
 Building file: ../src/src/axi_interrupt.c
 Invoking: ARM gcc compiler
@@ -137,13 +91,13 @@ Finished building: ../src/IP_SW/GrayscaleIP/SW/function/GrayscaleIP_SW.c
 Building file: ../src/IP_SW/GrayscaleIP/SW/function/GrayscaleIP_func.c
 Invoking: ARM gcc compiler
 arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/DSE/systems/SDK/SDK_Workspace/SOERGR_sw/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/IP_SW/GrayscaleIP/SW/function/GrayscaleIP_func.d" -MT"src/IP_SW/GrayscaleIP/SW/function/GrayscaleIP_func.d" -o "src/IP_SW/GrayscaleIP/SW/function/GrayscaleIP_func.o" "../src/IP_SW/GrayscaleIP/SW/function/GrayscaleIP_func.c"
+../src/IP_SW/GrayscaleIP/SW/driver/Rule1/GrayscaleIP_Rule1Driver.c:47:21: warning: 'localReadReg' defined but not used [-Wunused-function]
+../src/IP_SW/GrayscaleIP/SW/driver/Rule1/GrayscaleIP_VDMA_Driver.c:86:21: warning: 'localReadReg' defined but not used [-Wunused-function]
 Finished building: ../src/IP_SW/GrayscaleIP/SW/function/GrayscaleIP_func.c
  
-../src/IP_SW/GrayscaleIP/SW/driver/Rule1/GrayscaleIP_Rule1Driver.c:47:21: warning: 'localReadReg' defined but not used [-Wunused-function]
 Building file: ../src/IP_SW/GrayscaleIP/SW/driver/Rule2/GrayscaleIP_Rule2Driver.c
 Invoking: ARM gcc compiler
 arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/DSE/systems/SDK/SDK_Workspace/SOERGR_sw/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/IP_SW/GrayscaleIP/SW/driver/Rule2/GrayscaleIP_Rule2Driver.d" -MT"src/IP_SW/GrayscaleIP/SW/driver/Rule2/GrayscaleIP_Rule2Driver.d" -o "src/IP_SW/GrayscaleIP/SW/driver/Rule2/GrayscaleIP_Rule2Driver.o" "../src/IP_SW/GrayscaleIP/SW/driver/Rule2/GrayscaleIP_Rule2Driver.c"
-../src/IP_SW/GrayscaleIP/SW/driver/Rule1/GrayscaleIP_VDMA_Driver.c:86:21: warning: 'localReadReg' defined but not used [-Wunused-function]
 Finished building: ../src/IP_SW/GrayscaleIP/SW/driver/Rule2/GrayscaleIP_Rule2Driver.c
  
 Building file: ../src/IP_SW/GrayscaleIP/SW/driver/Rule1/GrayscaleIP_Rule1Driver.c
@@ -154,18 +108,18 @@ Finished building: ../src/IP_SW/GrayscaleIP/SW/driver/Rule1/GrayscaleIP_Rule1Dri
 Building file: ../src/IP_SW/GrayscaleIP/SW/driver/Rule1/GrayscaleIP_VDMA_Driver.c
 Invoking: ARM gcc compiler
 arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/DSE/systems/SDK/SDK_Workspace/SOERGR_sw/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/IP_SW/GrayscaleIP/SW/driver/Rule1/GrayscaleIP_VDMA_Driver.d" -MT"src/IP_SW/GrayscaleIP/SW/driver/Rule1/GrayscaleIP_VDMA_Driver.d" -o "src/IP_SW/GrayscaleIP/SW/driver/Rule1/GrayscaleIP_VDMA_Driver.o" "../src/IP_SW/GrayscaleIP/SW/driver/Rule1/GrayscaleIP_VDMA_Driver.c"
+../src/IP_SW/ErodeIP/SW/driver/Rule1/ErodeIP_Rule1Driver.c:47:21: warning: 'localReadReg' defined but not used [-Wunused-function]
 Finished building: ../src/IP_SW/GrayscaleIP/SW/driver/Rule1/GrayscaleIP_VDMA_Driver.c
  
 Building file: ../src/IP_SW/GrayscaleIP/SW/config/GrayscaleIP_config.c
 Invoking: ARM gcc compiler
 arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/DSE/systems/SDK/SDK_Workspace/SOERGR_sw/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/IP_SW/GrayscaleIP/SW/config/GrayscaleIP_config.d" -MT"src/IP_SW/GrayscaleIP/SW/config/GrayscaleIP_config.d" -o "src/IP_SW/GrayscaleIP/SW/config/GrayscaleIP_config.o" "../src/IP_SW/GrayscaleIP/SW/config/GrayscaleIP_config.c"
-../src/IP_SW/ErodeIP/SW/driver/Rule1/ErodeIP_Rule1Driver.c:46:21: warning: 'localReadReg' defined but not used [-Wunused-function]
 Finished building: ../src/IP_SW/GrayscaleIP/SW/config/GrayscaleIP_config.c
+../src/IP_SW/ErodeIP/SW/driver/Rule1/ErodeIP_VDMA_Driver.c:86:21: warning: 'localReadReg' defined but not used [-Wunused-function]
  
 Building file: ../src/IP_SW/ErodeIP/SW/function/ErodeIP_SW.c
 Invoking: ARM gcc compiler
 arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/work_dir/DSE/systems/SDK/SDK_Workspace/SOERGR_sw/src/inc" -c -fmessage-length=0 -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/IP_SW/ErodeIP/SW/function/ErodeIP_SW.d" -MT"src/IP_SW/ErodeIP/SW/function/ErodeIP_SW.d" -o "src/IP_SW/ErodeIP/SW/function/ErodeIP_SW.o" "../src/IP_SW/ErodeIP/SW/function/ErodeIP_SW.c"
-../src/IP_SW/ErodeIP/SW/driver/Rule1/ErodeIP_VDMA_Driver.c:86:21: warning: 'localReadReg' defined but not used [-Wunused-function]
 Finished building: ../src/IP_SW/ErodeIP/SW/function/ErodeIP_SW.c
  
 Building file: ../src/IP_SW/ErodeIP/SW/function/ErodeIP_func.c
@@ -201,12 +155,9 @@ Finished building target: SOERGR_sw.elf
 Invoking: ARM Print Size
 arm-xilinx-eabi-size SOERGR_sw.elf  |tee "SOERGR_sw.elf.size"
    text	   data	    bss	    dec	    hex	filename
- 126068	   5488	  22508	 154064	  259d0	SOERGR_sw.elf
+ 150440	   5584	  22504	 178528	  2b960	SOERGR_sw.elf
 Finished building: SOERGR_sw.elf.size
  
-21:44:53 **** Incremental Build of configuration Debug for project SOERGR_sw ****
-make all 
-make: Nothing to be done for `all'.
-21:45:21 **** Auto Build of configuration Debug for project SOERGR_sw ****
+23:21:05 **** Incremental Build of configuration Debug for project SOERGR_sw ****
 make all 
 make: Nothing to be done for `all'.

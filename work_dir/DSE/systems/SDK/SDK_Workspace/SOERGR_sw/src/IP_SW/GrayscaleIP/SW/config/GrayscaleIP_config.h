@@ -6,9 +6,9 @@
 
 // these actual details would later be filled in or overwritten by GRIP when a final design architecture is achieved
 // for now assuming the SoC has 2 IP instances and both use grip_rule = 1 (vdma + IP solution)
-#define GRAYSCALEIP_NUM_INSTANCES 2
-#define GRAYSCALEIP_NUM_GRIPRULE1_INSTANCES 1
-#define GRAYSCALEIP_NUM_GRIPRULE2_INSTANCES 1
+#define GRAYSCALEIP_NUM_INSTANCES 0
+#define GRAYSCALEIP_NUM_GRIPRULE1_INSTANCES 0
+#define GRAYSCALEIP_NUM_GRIPRULE2_INSTANCES 0
 
 typedef struct {
     unsigned int baseaddr;
@@ -18,7 +18,7 @@ typedef struct {
 } GRAYSCALEIP_IPinfo;
 
 
-extern GRAYSCALEIP_IPinfo GRAYSCALEIP_INFO[GRAYSCALEIP_NUM_INSTANCES];
+//extern GRAYSCALEIP_IPinfo GRAYSCALEIP_INFO[GRAYSCALEIP_NUM_INSTANCES];
 
 #endif
 
