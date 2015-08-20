@@ -4,6 +4,7 @@
 #include "SobelIP_Rule1Driver.h"
 
 #define ERODE_BASEADDR 0x7c800000
+#define GRAYSCALE_BASEADDR 0x6e800000
 
 SobelIPRule1RegMap SobelIPRule1InitMode = {
 											.AP_CTRL = {.offset = 0x00, .mask = 0x00000000, .value = 0xffffffff},
@@ -77,6 +78,10 @@ void SobelIP_Rule1Driver_initialize(SobelIPRule1DriverInstance *InstancePtr, XSc
     localWriteReg(ERODE_BASEADDR + 0x14, 0xffffffff, verticalActiveTime);
     localWriteReg(ERODE_BASEADDR + 0x1c, 0xffffffff, horizontalActiveTime);
     localWriteReg(ERODE_BASEADDR, 0x00000081, 0x00000081);
+
+    localWriteReg(GRAYSCALE_BASEADDR + 0x14, 0xffffffff, verticalActiveTime);
+    localWriteReg(GRAYSCALE_BASEADDR + 0x1c, 0xffffffff, horizontalActiveTime);
+    localWriteReg(GRAYSCALE_BASEADDR, 0x00000081, 0x00000081);
 }
 
 

@@ -50,6 +50,9 @@ Loading design module
 k_dir/DSE/systems/implementation/system_axi_hdmi_tx_16b_0_wrapper.ngc"...
 Loading design module
 "/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/wor
+k_dir/DSE/systems/implementation/system_convert_to_gray_top_0_wrapper.ngc"...
+Loading design module
+"/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/wor
 k_dir/DSE/systems/implementation/system_sobel_filter_top_0_wrapper.ngc"...
 Loading design module
 "/nfs/TUEIEDAprojects/SystemDesign/work/zynq/mamatha/uzair_sharif/EDA_Munish/wor
@@ -863,19 +866,35 @@ WARNING:ConstraintSystem:135 - Constraint <INST
 
 WARNING:ConstraintSystem:135 - Constraint <INST
    /system/EXPANDED/system/axi_interconnect_1/axi_interconnect_1\/mi_converter_b
-   ank\/gen_conv_slot[9].clock_conv_inst\/s_axi_aresetn_resync<2>_inv1_INV_0 TNM
+   ank\/gen_conv_slot[8].clock_conv_inst\/s_axi_aresetn_resync<2>_inv1_INV_0 TNM
    = FFS:axi_interconnect_1_reset_resync>: No instances of type FFS were found
    under block
-   "axi_interconnect_1/axi_interconnect_1/mi_converter_bank/gen_conv_slot[9].clo
+   "axi_interconnect_1/axi_interconnect_1/mi_converter_bank/gen_conv_slot[8].clo
    ck_conv_inst/s_axi_aresetn_resync<2>_inv1_INV_0" (type=INV).
 
 WARNING:ConstraintSystem:135 - Constraint <INST
    /system/EXPANDED/system/axi_interconnect_1/axi_interconnect_1\/mi_converter_b
-   ank\/gen_conv_slot[9].clock_conv_inst\/m_axi_aresetn_resync<2>_inv1_INV_0 TNM
+   ank\/gen_conv_slot[8].clock_conv_inst\/m_axi_aresetn_resync<2>_inv1_INV_0 TNM
    = FFS:axi_interconnect_1_reset_resync>: No instances of type FFS were found
    under block
-   "axi_interconnect_1/axi_interconnect_1/mi_converter_bank/gen_conv_slot[9].clo
+   "axi_interconnect_1/axi_interconnect_1/mi_converter_bank/gen_conv_slot[8].clo
    ck_conv_inst/m_axi_aresetn_resync<2>_inv1_INV_0" (type=INV).
+
+WARNING:ConstraintSystem:135 - Constraint <INST
+   /system/EXPANDED/system/axi_interconnect_1/axi_interconnect_1\/mi_converter_b
+   ank\/gen_conv_slot[10].clock_conv_inst\/s_axi_aresetn_resync<2>_inv1_INV_0
+   TNM = FFS:axi_interconnect_1_reset_resync>: No instances of type FFS were
+   found under block
+   "axi_interconnect_1/axi_interconnect_1/mi_converter_bank/gen_conv_slot[10].cl
+   ock_conv_inst/s_axi_aresetn_resync<2>_inv1_INV_0" (type=INV).
+
+WARNING:ConstraintSystem:135 - Constraint <INST
+   /system/EXPANDED/system/axi_interconnect_1/axi_interconnect_1\/mi_converter_b
+   ank\/gen_conv_slot[10].clock_conv_inst\/m_axi_aresetn_resync<2>_inv1_INV_0
+   TNM = FFS:axi_interconnect_1_reset_resync>: No instances of type FFS were
+   found under block
+   "axi_interconnect_1/axi_interconnect_1/mi_converter_bank/gen_conv_slot[10].cl
+   ock_conv_inst/m_axi_aresetn_resync<2>_inv1_INV_0" (type=INV).
 
 WARNING:ConstraintSystem:135 - Constraint <INST
    /system/EXPANDED/system/axi_interconnect_1/axi_interconnect_1\/si_converter_b
@@ -1237,6 +1256,14 @@ WARNING:ConstraintSystem:194 - The TNM 'axi_interconnect_1_reset_resync', does
    not directly or indirectly drive any flip-flops, latches and/or RAMs and is
    not actively used by any referencing constraint.
 
+WARNING:ConstraintSystem:194 - The TNM 'axi_interconnect_1_reset_resync', does
+   not directly or indirectly drive any flip-flops, latches and/or RAMs and is
+   not actively used by any referencing constraint.
+
+WARNING:ConstraintSystem:194 - The TNM 'axi_interconnect_1_reset_resync', does
+   not directly or indirectly drive any flip-flops, latches and/or RAMs and is
+   not actively used by any referencing constraint.
+
 Done...
 
 Processing BMM file "system.bmm" ...
@@ -1381,13 +1408,17 @@ WARNING:NgdBuild:452 - logical net 'N265' has no driver
 WARNING:NgdBuild:452 - logical net 'N266' has no driver
 WARNING:NgdBuild:452 - logical net 'N267' has no driver
 WARNING:NgdBuild:452 - logical net
+   'axi_interconnect_1/axi_interconnect_1/mf_mc_ruser<10>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'axi_interconnect_1/axi_interconnect_1/mf_mc_ruser<8>' has no driver
+WARNING:NgdBuild:452 - logical net
    'axi_interconnect_1/axi_interconnect_1/mf_mc_ruser<7>' has no driver
 WARNING:NgdBuild:452 - logical net
-   'axi_interconnect_1/axi_interconnect_1/mf_mc_ruser<9>' has no driver
+   'axi_interconnect_1/axi_interconnect_1/mf_mc_buser<10>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'axi_interconnect_1/axi_interconnect_1/mf_mc_buser<8>' has no driver
 WARNING:NgdBuild:452 - logical net
    'axi_interconnect_1/axi_interconnect_1/mf_mc_buser<7>' has no driver
-WARNING:NgdBuild:452 - logical net
-   'axi_interconnect_1/axi_interconnect_1/mf_mc_buser<9>' has no driver
 
 Partition Implementation Status
 -------------------------------
@@ -1398,12 +1429,12 @@ Partition Implementation Status
 
 NGDBUILD Design Results Summary:
   Number of errors:     0
-  Number of warnings: 309
+  Number of warnings: 315
 
-Total memory usage is 846864 kilobytes
+Total memory usage is 869420 kilobytes
 
 Writing NGD file "system.ngd" ...
-Total REAL time to NGDBUILD completion: 1 min  55 sec
-Total CPU time to NGDBUILD completion:  1 min  51 sec
+Total REAL time to NGDBUILD completion: 2 min  3 sec
+Total CPU time to NGDBUILD completion:  2 min  1 sec
 
 Writing NGDBUILD log file "system.bld"...

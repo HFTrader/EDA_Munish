@@ -1278,7 +1278,7 @@ module system_processing_system7_0_wrapper
   output FCLK_RESET0_N;
   input FPGA_IDLE_N;
   input [3:0] DDR_ARB;
-  input [10:0] IRQ_F2P;
+  input [11:0] IRQ_F2P;
   input Core0_nFIQ;
   input Core0_nIRQ;
   input Core1_nFIQ;
@@ -1359,7 +1359,7 @@ module system_processing_system7_0_wrapper
       .C_S_AXI_HP2_DATA_WIDTH ( 64 ),
       .C_S_AXI_HP3_ID_WIDTH ( 6 ),
       .C_S_AXI_HP3_DATA_WIDTH ( 64 ),
-      .C_NUM_F2P_INTR_INPUTS ( 11 ),
+      .C_NUM_F2P_INTR_INPUTS ( 12 ),
       .C_FCLK_CLK0_BUF ( "TRUE" ),
       .C_FCLK_CLK1_BUF ( "TRUE" ),
       .C_FCLK_CLK2_BUF ( "TRUE" ),
