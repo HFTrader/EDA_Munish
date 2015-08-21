@@ -130,8 +130,8 @@ int main()
 	  		//return XST_FAILURE;
 	  	}
 
-//	GrayscaleIP_func_init(&InterruptController, VIDEO_BASEADDR, VIDEO_BASEADDR + FRAME_SIZE, 640, 480, h_ActiveTime, v_ActiveTime);
-	ErodeIP_func_init(&InterruptController, VIDEO_BASEADDR, VIDEO_BASEADDR + FRAME_SIZE, 640, 480, h_ActiveTime, v_ActiveTime);
+	GrayscaleIP_func_init(&InterruptController, VIDEO_BASEADDR, VIDEO_BASEADDR + FRAME_SIZE, 640, 480, h_ActiveTime, v_ActiveTime);
+//	ErodeIP_func_init(&InterruptController, VIDEO_BASEADDR, VIDEO_BASEADDR + FRAME_SIZE, 640, 480, h_ActiveTime, v_ActiveTime);
 	SobelIP_func_init(&InterruptController, VIDEO_BASEADDR, VIDEO_BASEADDR + FRAME_SIZE, 640, 480, h_ActiveTime, v_ActiveTime);
 
 	EnablePerfCounters();
@@ -301,14 +301,14 @@ void processFrame(unsigned int dataMemBaseAddr) {
 	// sobel filtering the captured image
 	EdgeDetection_func(dataMem_ptr, dataMem_ptr + FRAME_SIZE, 640, 480, h_ActiveTime, v_ActiveTime);
 	dataMem_ptr += FRAME_SIZE;
-
+/*
 	// erode filtering the captured image
 	Erode_func(dataMem_ptr, dataMem_ptr + FRAME_SIZE, 640, 480, h_ActiveTime, v_ActiveTime);
 	dataMem_ptr += FRAME_SIZE;
-
-/*	// grayscale filtering the captured image
+*/
+	// grayscale filtering the captured image
 	ConvToGray_func(dataMem_ptr, dataMem_ptr + FRAME_SIZE, 640, 480, h_ActiveTime, v_ActiveTime);
-	dataMem_ptr += FRAME_SIZE;*/
+	dataMem_ptr += FRAME_SIZE;
 
 #ifdef DO_PERF_EVAL
 	cpu_cycles_for_frameProc = (cpu_cycles_for_frameProc*(double)(processed_frame_count-1) + get_cyclecount()) / ((double) processed_frame_count);

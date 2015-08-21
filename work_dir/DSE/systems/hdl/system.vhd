@@ -2035,49 +2035,6 @@ architecture STRUCTURE of system is
     );
   end component;
 
-  component system_image_filter_top_0_wrapper is
-    port (
-      aclk : in std_logic;
-      aresetn : in std_logic;
-      s_axi_CONTROL_BUS_AWADDR : in std_logic_vector(4 downto 0);
-      s_axi_CONTROL_BUS_AWVALID : in std_logic;
-      s_axi_CONTROL_BUS_AWREADY : out std_logic;
-      s_axi_CONTROL_BUS_WDATA : in std_logic_vector(31 downto 0);
-      s_axi_CONTROL_BUS_WSTRB : in std_logic_vector(3 downto 0);
-      s_axi_CONTROL_BUS_WVALID : in std_logic;
-      s_axi_CONTROL_BUS_WREADY : out std_logic;
-      s_axi_CONTROL_BUS_BRESP : out std_logic_vector(1 downto 0);
-      s_axi_CONTROL_BUS_BVALID : out std_logic;
-      s_axi_CONTROL_BUS_BREADY : in std_logic;
-      s_axi_CONTROL_BUS_ARADDR : in std_logic_vector(4 downto 0);
-      s_axi_CONTROL_BUS_ARVALID : in std_logic;
-      s_axi_CONTROL_BUS_ARREADY : out std_logic;
-      s_axi_CONTROL_BUS_RDATA : out std_logic_vector(31 downto 0);
-      s_axi_CONTROL_BUS_RRESP : out std_logic_vector(1 downto 0);
-      s_axi_CONTROL_BUS_RVALID : out std_logic;
-      s_axi_CONTROL_BUS_RREADY : in std_logic;
-      interrupt : out std_logic;
-      INPUT_STREAM_TVALID : in std_logic;
-      INPUT_STREAM_TREADY : out std_logic;
-      INPUT_STREAM_TDATA : in std_logic_vector(31 downto 0);
-      INPUT_STREAM_TKEEP : in std_logic_vector(3 downto 0);
-      INPUT_STREAM_TSTRB : in std_logic_vector(3 downto 0);
-      INPUT_STREAM_TUSER : in std_logic_vector(0 to 0);
-      INPUT_STREAM_TLAST : in std_logic_vector(0 to 0);
-      INPUT_STREAM_TID : in std_logic_vector(0 to 0);
-      INPUT_STREAM_TDEST : in std_logic_vector(0 to 0);
-      OUTPUT_STREAM_TVALID : out std_logic;
-      OUTPUT_STREAM_TREADY : in std_logic;
-      OUTPUT_STREAM_TDATA : out std_logic_vector(31 downto 0);
-      OUTPUT_STREAM_TKEEP : out std_logic_vector(3 downto 0);
-      OUTPUT_STREAM_TSTRB : out std_logic_vector(3 downto 0);
-      OUTPUT_STREAM_TUSER : out std_logic_vector(0 to 0);
-      OUTPUT_STREAM_TLAST : out std_logic_vector(0 to 0);
-      OUTPUT_STREAM_TID : out std_logic_vector(0 to 0);
-      OUTPUT_STREAM_TDEST : out std_logic_vector(0 to 0)
-    );
-  end component;
-
   component system_convert_to_gray_top_0_wrapper is
     port (
       aclk : in std_logic;
@@ -2121,7 +2078,46 @@ architecture STRUCTURE of system is
     );
   end component;
 
-  component system_axi_vdma_1_wrapper is
+  component system_sobel_filter_top_0_wrapper is
+    port (
+      aclk : in std_logic;
+      aresetn : in std_logic;
+      s_axi_CONTROL_BUS_AWADDR : in std_logic_vector(4 downto 0);
+      s_axi_CONTROL_BUS_AWVALID : in std_logic;
+      s_axi_CONTROL_BUS_AWREADY : out std_logic;
+      s_axi_CONTROL_BUS_WDATA : in std_logic_vector(31 downto 0);
+      s_axi_CONTROL_BUS_WSTRB : in std_logic_vector(3 downto 0);
+      s_axi_CONTROL_BUS_WVALID : in std_logic;
+      s_axi_CONTROL_BUS_WREADY : out std_logic;
+      s_axi_CONTROL_BUS_BRESP : out std_logic_vector(1 downto 0);
+      s_axi_CONTROL_BUS_BVALID : out std_logic;
+      s_axi_CONTROL_BUS_BREADY : in std_logic;
+      s_axi_CONTROL_BUS_ARADDR : in std_logic_vector(4 downto 0);
+      s_axi_CONTROL_BUS_ARVALID : in std_logic;
+      s_axi_CONTROL_BUS_ARREADY : out std_logic;
+      s_axi_CONTROL_BUS_RDATA : out std_logic_vector(31 downto 0);
+      s_axi_CONTROL_BUS_RRESP : out std_logic_vector(1 downto 0);
+      s_axi_CONTROL_BUS_RVALID : out std_logic;
+      s_axi_CONTROL_BUS_RREADY : in std_logic;
+      interrupt : out std_logic;
+      INPUT_STREAM_TVALID : in std_logic;
+      INPUT_STREAM_TREADY : out std_logic;
+      INPUT_STREAM_TDATA : in std_logic_vector(31 downto 0);
+      INPUT_STREAM_TSTRB : in std_logic_vector(3 downto 0);
+      INPUT_STREAM_TUSER : in std_logic_vector(0 to 0);
+      INPUT_STREAM_TLAST : in std_logic_vector(0 to 0);
+      INPUT_STREAM_TDEST : in std_logic_vector(0 to 0);
+      OUTPUT_STREAM_TVALID : out std_logic;
+      OUTPUT_STREAM_TREADY : in std_logic;
+      OUTPUT_STREAM_TDATA : out std_logic_vector(31 downto 0);
+      OUTPUT_STREAM_TSTRB : out std_logic_vector(3 downto 0);
+      OUTPUT_STREAM_TUSER : out std_logic_vector(0 to 0);
+      OUTPUT_STREAM_TLAST : out std_logic_vector(0 to 0);
+      OUTPUT_STREAM_TDEST : out std_logic_vector(0 to 0)
+    );
+  end component;
+
+  component system_axi_vdma_2_wrapper is
     port (
       s_axi_lite_aclk : in std_logic;
       m_axi_sg_aclk : in std_logic;
@@ -2222,7 +2218,7 @@ architecture STRUCTURE of system is
     );
   end component;
 
-  component system_sobel_filter_top_0_wrapper is
+  component system_image_filter_top_0_wrapper is
     port (
       aclk : in std_logic;
       aresetn : in std_logic;
@@ -2247,21 +2243,25 @@ architecture STRUCTURE of system is
       INPUT_STREAM_TVALID : in std_logic;
       INPUT_STREAM_TREADY : out std_logic;
       INPUT_STREAM_TDATA : in std_logic_vector(31 downto 0);
+      INPUT_STREAM_TKEEP : in std_logic_vector(3 downto 0);
       INPUT_STREAM_TSTRB : in std_logic_vector(3 downto 0);
       INPUT_STREAM_TUSER : in std_logic_vector(0 to 0);
       INPUT_STREAM_TLAST : in std_logic_vector(0 to 0);
+      INPUT_STREAM_TID : in std_logic_vector(0 to 0);
       INPUT_STREAM_TDEST : in std_logic_vector(0 to 0);
       OUTPUT_STREAM_TVALID : out std_logic;
       OUTPUT_STREAM_TREADY : in std_logic;
       OUTPUT_STREAM_TDATA : out std_logic_vector(31 downto 0);
+      OUTPUT_STREAM_TKEEP : out std_logic_vector(3 downto 0);
       OUTPUT_STREAM_TSTRB : out std_logic_vector(3 downto 0);
       OUTPUT_STREAM_TUSER : out std_logic_vector(0 to 0);
       OUTPUT_STREAM_TLAST : out std_logic_vector(0 to 0);
+      OUTPUT_STREAM_TID : out std_logic_vector(0 to 0);
       OUTPUT_STREAM_TDEST : out std_logic_vector(0 to 0)
     );
   end component;
 
-  component system_axi_vdma_2_wrapper is
+  component system_axi_vdma_1_wrapper is
     port (
       s_axi_lite_aclk : in std_logic;
       m_axi_sg_aclk : in std_logic;
@@ -2707,12 +2707,9 @@ architecture STRUCTURE of system is
   signal convert_to_gray_top_0_OUTPUT_STREAM_TVALID : std_logic;
   signal convert_to_gray_top_0_interrupt : std_logic;
   signal image_filter_top_0_OUTPUT_STREAM_TDATA : std_logic_vector(31 downto 0);
-  signal image_filter_top_0_OUTPUT_STREAM_TDEST : std_logic_vector(0 to 0);
-  signal image_filter_top_0_OUTPUT_STREAM_TID : std_logic_vector(0 to 0);
   signal image_filter_top_0_OUTPUT_STREAM_TKEEP : std_logic_vector(3 downto 0);
   signal image_filter_top_0_OUTPUT_STREAM_TLAST : std_logic_vector(0 to 0);
   signal image_filter_top_0_OUTPUT_STREAM_TREADY : std_logic;
-  signal image_filter_top_0_OUTPUT_STREAM_TSTRB : std_logic_vector(3 downto 0);
   signal image_filter_top_0_OUTPUT_STREAM_TUSER : std_logic_vector(0 to 0);
   signal image_filter_top_0_OUTPUT_STREAM_TVALID : std_logic;
   signal image_filter_top_0_interrupt : std_logic;
@@ -2744,8 +2741,10 @@ architecture STRUCTURE of system is
   signal processing_system7_0_FCLK_RESET1_N : std_logic;
   signal processing_system7_0_FCLK_RESET3_N : std_logic;
   signal sobel_filter_top_0_OUTPUT_STREAM_TDATA : std_logic_vector(31 downto 0);
+  signal sobel_filter_top_0_OUTPUT_STREAM_TDEST : std_logic_vector(0 to 0);
   signal sobel_filter_top_0_OUTPUT_STREAM_TLAST : std_logic_vector(0 to 0);
   signal sobel_filter_top_0_OUTPUT_STREAM_TREADY : std_logic;
+  signal sobel_filter_top_0_OUTPUT_STREAM_TSTRB : std_logic_vector(3 downto 0);
   signal sobel_filter_top_0_OUTPUT_STREAM_TUSER : std_logic_vector(0 to 0);
   signal sobel_filter_top_0_OUTPUT_STREAM_TVALID : std_logic;
   signal sobel_filter_top_0_interrupt : std_logic;
@@ -2775,11 +2774,11 @@ architecture STRUCTURE of system is
   attribute BOX_TYPE of system_axi_dma_i2s_wrapper : component is "user_black_box";
   attribute BOX_TYPE of system_cam_interface_0_wrapper : component is "user_black_box";
   attribute BOX_TYPE of system_axi_interconnect_3_wrapper : component is "user_black_box";
-  attribute BOX_TYPE of system_image_filter_top_0_wrapper : component is "user_black_box";
   attribute BOX_TYPE of system_convert_to_gray_top_0_wrapper : component is "user_black_box";
-  attribute BOX_TYPE of system_axi_vdma_1_wrapper : component is "user_black_box";
   attribute BOX_TYPE of system_sobel_filter_top_0_wrapper : component is "user_black_box";
   attribute BOX_TYPE of system_axi_vdma_2_wrapper : component is "user_black_box";
+  attribute BOX_TYPE of system_image_filter_top_0_wrapper : component is "user_black_box";
+  attribute BOX_TYPE of system_axi_vdma_1_wrapper : component is "user_black_box";
 
 begin
 
@@ -2909,13 +2908,13 @@ begin
   pgassign1(9) <= cam_interface_0_href_negedge;
   pgassign1(8) <= cam_interface_0_vsync_negedge;
   pgassign1(7) <= axi_dma_i2s_s2mm_introut;
-  pgassign1(6) <= image_filter_top_0_interrupt;
-  pgassign1(5) <= convert_to_gray_top_0_interrupt;
-  pgassign1(4) <= axi_vdma_1_mm2s_introut;
-  pgassign1(3) <= axi_vdma_1_s2mm_introut;
-  pgassign1(2) <= sobel_filter_top_0_interrupt;
-  pgassign1(1) <= axi_vdma_2_mm2s_introut;
-  pgassign1(0) <= axi_vdma_2_s2mm_introut;
+  pgassign1(6) <= convert_to_gray_top_0_interrupt;
+  pgassign1(5) <= sobel_filter_top_0_interrupt;
+  pgassign1(4) <= axi_vdma_2_mm2s_introut;
+  pgassign1(3) <= axi_vdma_2_s2mm_introut;
+  pgassign1(2) <= image_filter_top_0_interrupt;
+  pgassign1(1) <= axi_vdma_1_mm2s_introut;
+  pgassign1(0) <= axi_vdma_1_s2mm_introut;
   pgassign2(11 downto 11) <= processing_system7_0_FCLK_CLK0(0 to 0);
   pgassign2(10 downto 10) <= processing_system7_0_FCLK_CLK3(0 to 0);
   pgassign2(9 downto 9) <= processing_system7_0_FCLK_CLK0(0 to 0);
@@ -4908,10 +4907,28 @@ begin
       DEBUG_MP_MR_WDATACONTROL => open
     );
 
-  image_filter_top_0 : system_image_filter_top_0_wrapper
+  convert_to_gray_top_0 : system_convert_to_gray_top_0_wrapper
     port map (
       aclk => pgassign2(10),
       aresetn => axi_interconnect_1_M_ARESETN(7),
+      OUTPUT_STREAM_TVALID => convert_to_gray_top_0_OUTPUT_STREAM_TVALID,
+      OUTPUT_STREAM_TREADY => convert_to_gray_top_0_OUTPUT_STREAM_TREADY,
+      OUTPUT_STREAM_TDATA => convert_to_gray_top_0_OUTPUT_STREAM_TDATA,
+      OUTPUT_STREAM_TKEEP => convert_to_gray_top_0_OUTPUT_STREAM_TKEEP,
+      OUTPUT_STREAM_TSTRB => open,
+      OUTPUT_STREAM_TUSER => convert_to_gray_top_0_OUTPUT_STREAM_TUSER(0 to 0),
+      OUTPUT_STREAM_TLAST => convert_to_gray_top_0_OUTPUT_STREAM_TLAST(0 to 0),
+      OUTPUT_STREAM_TID => open,
+      OUTPUT_STREAM_TDEST => open,
+      INPUT_STREAM_TVALID => axi_vdma_1_M_AXIS_MM2S_TVALID,
+      INPUT_STREAM_TREADY => axi_vdma_1_M_AXIS_MM2S_TREADY,
+      INPUT_STREAM_TDATA => axi_vdma_1_M_AXIS_MM2S_TDATA,
+      INPUT_STREAM_TKEEP => axi_vdma_1_M_AXIS_MM2S_TKEEP,
+      INPUT_STREAM_TSTRB => net_gnd4,
+      INPUT_STREAM_TUSER => axi_vdma_1_M_AXIS_MM2S_TUSER(0 to 0),
+      INPUT_STREAM_TLAST => axi_vdma_1_M_AXIS_MM2S_TLAST(0 to 0),
+      INPUT_STREAM_TID => net_gnd1(0 to 0),
+      INPUT_STREAM_TDEST => net_gnd1(0 to 0),
       s_axi_CONTROL_BUS_AWADDR => axi_interconnect_1_M_AWADDR(228 downto 224),
       s_axi_CONTROL_BUS_AWVALID => axi_interconnect_1_M_AWVALID(7),
       s_axi_CONTROL_BUS_AWREADY => axi_interconnect_1_M_AWREADY(7),
@@ -4929,49 +4946,13 @@ begin
       s_axi_CONTROL_BUS_RRESP => axi_interconnect_1_M_RRESP(15 downto 14),
       s_axi_CONTROL_BUS_RVALID => axi_interconnect_1_M_RVALID(7),
       s_axi_CONTROL_BUS_RREADY => axi_interconnect_1_M_RREADY(7),
-      interrupt => image_filter_top_0_interrupt,
-      INPUT_STREAM_TVALID => axi_vdma_1_M_AXIS_MM2S_TVALID,
-      INPUT_STREAM_TREADY => axi_vdma_1_M_AXIS_MM2S_TREADY,
-      INPUT_STREAM_TDATA => axi_vdma_1_M_AXIS_MM2S_TDATA,
-      INPUT_STREAM_TKEEP => axi_vdma_1_M_AXIS_MM2S_TKEEP,
-      INPUT_STREAM_TSTRB => net_gnd4,
-      INPUT_STREAM_TUSER => axi_vdma_1_M_AXIS_MM2S_TUSER(0 to 0),
-      INPUT_STREAM_TLAST => axi_vdma_1_M_AXIS_MM2S_TLAST(0 to 0),
-      INPUT_STREAM_TID => net_gnd1(0 to 0),
-      INPUT_STREAM_TDEST => net_gnd1(0 to 0),
-      OUTPUT_STREAM_TVALID => image_filter_top_0_OUTPUT_STREAM_TVALID,
-      OUTPUT_STREAM_TREADY => image_filter_top_0_OUTPUT_STREAM_TREADY,
-      OUTPUT_STREAM_TDATA => image_filter_top_0_OUTPUT_STREAM_TDATA,
-      OUTPUT_STREAM_TKEEP => image_filter_top_0_OUTPUT_STREAM_TKEEP,
-      OUTPUT_STREAM_TSTRB => image_filter_top_0_OUTPUT_STREAM_TSTRB,
-      OUTPUT_STREAM_TUSER => image_filter_top_0_OUTPUT_STREAM_TUSER(0 to 0),
-      OUTPUT_STREAM_TLAST => image_filter_top_0_OUTPUT_STREAM_TLAST(0 to 0),
-      OUTPUT_STREAM_TID => image_filter_top_0_OUTPUT_STREAM_TID(0 to 0),
-      OUTPUT_STREAM_TDEST => image_filter_top_0_OUTPUT_STREAM_TDEST(0 to 0)
+      interrupt => convert_to_gray_top_0_interrupt
     );
 
-  convert_to_gray_top_0 : system_convert_to_gray_top_0_wrapper
+  sobel_filter_top_0 : system_sobel_filter_top_0_wrapper
     port map (
       aclk => pgassign2(10),
       aresetn => axi_interconnect_1_M_ARESETN(8),
-      OUTPUT_STREAM_TVALID => convert_to_gray_top_0_OUTPUT_STREAM_TVALID,
-      OUTPUT_STREAM_TREADY => convert_to_gray_top_0_OUTPUT_STREAM_TREADY,
-      OUTPUT_STREAM_TDATA => convert_to_gray_top_0_OUTPUT_STREAM_TDATA,
-      OUTPUT_STREAM_TKEEP => convert_to_gray_top_0_OUTPUT_STREAM_TKEEP,
-      OUTPUT_STREAM_TSTRB => open,
-      OUTPUT_STREAM_TUSER => convert_to_gray_top_0_OUTPUT_STREAM_TUSER(0 to 0),
-      OUTPUT_STREAM_TLAST => convert_to_gray_top_0_OUTPUT_STREAM_TLAST(0 to 0),
-      OUTPUT_STREAM_TID => open,
-      OUTPUT_STREAM_TDEST => open,
-      INPUT_STREAM_TVALID => image_filter_top_0_OUTPUT_STREAM_TVALID,
-      INPUT_STREAM_TREADY => image_filter_top_0_OUTPUT_STREAM_TREADY,
-      INPUT_STREAM_TDATA => image_filter_top_0_OUTPUT_STREAM_TDATA,
-      INPUT_STREAM_TKEEP => image_filter_top_0_OUTPUT_STREAM_TKEEP,
-      INPUT_STREAM_TSTRB => image_filter_top_0_OUTPUT_STREAM_TSTRB,
-      INPUT_STREAM_TUSER => image_filter_top_0_OUTPUT_STREAM_TUSER(0 to 0),
-      INPUT_STREAM_TLAST => image_filter_top_0_OUTPUT_STREAM_TLAST(0 to 0),
-      INPUT_STREAM_TID => image_filter_top_0_OUTPUT_STREAM_TID(0 to 0),
-      INPUT_STREAM_TDEST => image_filter_top_0_OUTPUT_STREAM_TDEST(0 to 0),
       s_axi_CONTROL_BUS_AWADDR => axi_interconnect_1_M_AWADDR(260 downto 256),
       s_axi_CONTROL_BUS_AWVALID => axi_interconnect_1_M_AWVALID(8),
       s_axi_CONTROL_BUS_AWREADY => axi_interconnect_1_M_AWREADY(8),
@@ -4989,10 +4970,24 @@ begin
       s_axi_CONTROL_BUS_RRESP => axi_interconnect_1_M_RRESP(17 downto 16),
       s_axi_CONTROL_BUS_RVALID => axi_interconnect_1_M_RVALID(8),
       s_axi_CONTROL_BUS_RREADY => axi_interconnect_1_M_RREADY(8),
-      interrupt => convert_to_gray_top_0_interrupt
+      interrupt => sobel_filter_top_0_interrupt,
+      INPUT_STREAM_TVALID => axi_vdma_2_M_AXIS_MM2S_TVALID,
+      INPUT_STREAM_TREADY => axi_vdma_2_M_AXIS_MM2S_TREADY,
+      INPUT_STREAM_TDATA => axi_vdma_2_M_AXIS_MM2S_TDATA,
+      INPUT_STREAM_TSTRB => net_gnd4,
+      INPUT_STREAM_TUSER => axi_vdma_2_M_AXIS_MM2S_TUSER(0 to 0),
+      INPUT_STREAM_TLAST => axi_vdma_2_M_AXIS_MM2S_TLAST(0 to 0),
+      INPUT_STREAM_TDEST => net_gnd1(0 to 0),
+      OUTPUT_STREAM_TVALID => sobel_filter_top_0_OUTPUT_STREAM_TVALID,
+      OUTPUT_STREAM_TREADY => sobel_filter_top_0_OUTPUT_STREAM_TREADY,
+      OUTPUT_STREAM_TDATA => sobel_filter_top_0_OUTPUT_STREAM_TDATA,
+      OUTPUT_STREAM_TSTRB => sobel_filter_top_0_OUTPUT_STREAM_TSTRB,
+      OUTPUT_STREAM_TUSER => sobel_filter_top_0_OUTPUT_STREAM_TUSER(0 to 0),
+      OUTPUT_STREAM_TLAST => sobel_filter_top_0_OUTPUT_STREAM_TLAST(0 to 0),
+      OUTPUT_STREAM_TDEST => sobel_filter_top_0_OUTPUT_STREAM_TDEST(0 to 0)
     );
 
-  axi_vdma_1 : system_axi_vdma_1_wrapper
+  axi_vdma_2 : system_axi_vdma_2_wrapper
     port map (
       s_axi_lite_aclk => pgassign2(11),
       m_axi_sg_aclk => net_gnd0,
@@ -5044,12 +5039,12 @@ begin
       m_axi_mm2s_rvalid => axi_interconnect_3_S_RVALID(0),
       m_axi_mm2s_rready => axi_interconnect_3_S_RREADY(0),
       mm2s_prmry_reset_out_n => open,
-      m_axis_mm2s_tdata => axi_vdma_1_M_AXIS_MM2S_TDATA,
-      m_axis_mm2s_tkeep => axi_vdma_1_M_AXIS_MM2S_TKEEP,
-      m_axis_mm2s_tvalid => axi_vdma_1_M_AXIS_MM2S_TVALID,
-      m_axis_mm2s_tready => axi_vdma_1_M_AXIS_MM2S_TREADY,
-      m_axis_mm2s_tlast => axi_vdma_1_M_AXIS_MM2S_TLAST(0),
-      m_axis_mm2s_tuser => axi_vdma_1_M_AXIS_MM2S_TUSER(0 to 0),
+      m_axis_mm2s_tdata => axi_vdma_2_M_AXIS_MM2S_TDATA,
+      m_axis_mm2s_tkeep => open,
+      m_axis_mm2s_tvalid => axi_vdma_2_M_AXIS_MM2S_TVALID,
+      m_axis_mm2s_tready => axi_vdma_2_M_AXIS_MM2S_TREADY,
+      m_axis_mm2s_tlast => axi_vdma_2_M_AXIS_MM2S_TLAST(0),
+      m_axis_mm2s_tuser => axi_vdma_2_M_AXIS_MM2S_TUSER(0 to 0),
       m_axi_s2mm_awaddr => axi_interconnect_3_S_AWADDR(63 downto 32),
       m_axi_s2mm_awlen => axi_interconnect_3_S_AWLEN(15 downto 8),
       m_axi_s2mm_awsize => axi_interconnect_3_S_AWSIZE(5 downto 3),
@@ -5067,12 +5062,12 @@ begin
       m_axi_s2mm_bvalid => axi_interconnect_3_S_BVALID(1),
       m_axi_s2mm_bready => axi_interconnect_3_S_BREADY(1),
       s2mm_prmry_reset_out_n => open,
-      s_axis_s2mm_tdata => convert_to_gray_top_0_OUTPUT_STREAM_TDATA,
-      s_axis_s2mm_tkeep => convert_to_gray_top_0_OUTPUT_STREAM_TKEEP,
-      s_axis_s2mm_tvalid => convert_to_gray_top_0_OUTPUT_STREAM_TVALID,
-      s_axis_s2mm_tready => convert_to_gray_top_0_OUTPUT_STREAM_TREADY,
-      s_axis_s2mm_tlast => convert_to_gray_top_0_OUTPUT_STREAM_TLAST(0),
-      s_axis_s2mm_tuser => convert_to_gray_top_0_OUTPUT_STREAM_TUSER(0 to 0),
+      s_axis_s2mm_tdata => image_filter_top_0_OUTPUT_STREAM_TDATA,
+      s_axis_s2mm_tkeep => image_filter_top_0_OUTPUT_STREAM_TKEEP,
+      s_axis_s2mm_tvalid => image_filter_top_0_OUTPUT_STREAM_TVALID,
+      s_axis_s2mm_tready => image_filter_top_0_OUTPUT_STREAM_TREADY,
+      s_axis_s2mm_tlast => image_filter_top_0_OUTPUT_STREAM_TLAST(0),
+      s_axis_s2mm_tuser => image_filter_top_0_OUTPUT_STREAM_TUSER(0 to 0),
       mm2s_fsync => net_gnd0,
       mm2s_frame_ptr_in => net_gnd6,
       mm2s_frame_ptr_out => open,
@@ -5087,12 +5082,12 @@ begin
       s2mm_buffer_full => open,
       s2mm_buffer_almost_full => open,
       s2mm_prmtr_update => open,
-      mm2s_introut => axi_vdma_1_mm2s_introut,
-      s2mm_introut => axi_vdma_1_s2mm_introut,
+      mm2s_introut => axi_vdma_2_mm2s_introut,
+      s2mm_introut => axi_vdma_2_s2mm_introut,
       axi_vdma_tstvec => open
     );
 
-  sobel_filter_top_0 : system_sobel_filter_top_0_wrapper
+  image_filter_top_0 : system_image_filter_top_0_wrapper
     port map (
       aclk => pgassign2(10),
       aresetn => axi_interconnect_1_M_ARESETN(10),
@@ -5113,24 +5108,28 @@ begin
       s_axi_CONTROL_BUS_RRESP => axi_interconnect_1_M_RRESP(21 downto 20),
       s_axi_CONTROL_BUS_RVALID => axi_interconnect_1_M_RVALID(10),
       s_axi_CONTROL_BUS_RREADY => axi_interconnect_1_M_RREADY(10),
-      interrupt => sobel_filter_top_0_interrupt,
-      INPUT_STREAM_TVALID => axi_vdma_2_M_AXIS_MM2S_TVALID,
-      INPUT_STREAM_TREADY => axi_vdma_2_M_AXIS_MM2S_TREADY,
-      INPUT_STREAM_TDATA => axi_vdma_2_M_AXIS_MM2S_TDATA,
-      INPUT_STREAM_TSTRB => net_gnd4,
-      INPUT_STREAM_TUSER => axi_vdma_2_M_AXIS_MM2S_TUSER(0 to 0),
-      INPUT_STREAM_TLAST => axi_vdma_2_M_AXIS_MM2S_TLAST(0 to 0),
-      INPUT_STREAM_TDEST => net_gnd1(0 to 0),
-      OUTPUT_STREAM_TVALID => sobel_filter_top_0_OUTPUT_STREAM_TVALID,
-      OUTPUT_STREAM_TREADY => sobel_filter_top_0_OUTPUT_STREAM_TREADY,
-      OUTPUT_STREAM_TDATA => sobel_filter_top_0_OUTPUT_STREAM_TDATA,
+      interrupt => image_filter_top_0_interrupt,
+      INPUT_STREAM_TVALID => sobel_filter_top_0_OUTPUT_STREAM_TVALID,
+      INPUT_STREAM_TREADY => sobel_filter_top_0_OUTPUT_STREAM_TREADY,
+      INPUT_STREAM_TDATA => sobel_filter_top_0_OUTPUT_STREAM_TDATA,
+      INPUT_STREAM_TKEEP => net_gnd4,
+      INPUT_STREAM_TSTRB => sobel_filter_top_0_OUTPUT_STREAM_TSTRB,
+      INPUT_STREAM_TUSER => sobel_filter_top_0_OUTPUT_STREAM_TUSER(0 to 0),
+      INPUT_STREAM_TLAST => sobel_filter_top_0_OUTPUT_STREAM_TLAST(0 to 0),
+      INPUT_STREAM_TID => net_gnd1(0 to 0),
+      INPUT_STREAM_TDEST => sobel_filter_top_0_OUTPUT_STREAM_TDEST(0 to 0),
+      OUTPUT_STREAM_TVALID => image_filter_top_0_OUTPUT_STREAM_TVALID,
+      OUTPUT_STREAM_TREADY => image_filter_top_0_OUTPUT_STREAM_TREADY,
+      OUTPUT_STREAM_TDATA => image_filter_top_0_OUTPUT_STREAM_TDATA,
+      OUTPUT_STREAM_TKEEP => image_filter_top_0_OUTPUT_STREAM_TKEEP,
       OUTPUT_STREAM_TSTRB => open,
-      OUTPUT_STREAM_TUSER => sobel_filter_top_0_OUTPUT_STREAM_TUSER(0 to 0),
-      OUTPUT_STREAM_TLAST => sobel_filter_top_0_OUTPUT_STREAM_TLAST(0 to 0),
+      OUTPUT_STREAM_TUSER => image_filter_top_0_OUTPUT_STREAM_TUSER(0 to 0),
+      OUTPUT_STREAM_TLAST => image_filter_top_0_OUTPUT_STREAM_TLAST(0 to 0),
+      OUTPUT_STREAM_TID => open,
       OUTPUT_STREAM_TDEST => open
     );
 
-  axi_vdma_2 : system_axi_vdma_2_wrapper
+  axi_vdma_1 : system_axi_vdma_1_wrapper
     port map (
       s_axi_lite_aclk => pgassign2(11),
       m_axi_sg_aclk => net_gnd0,
@@ -5182,12 +5181,12 @@ begin
       m_axi_mm2s_rvalid => axi_interconnect_3_S_RVALID(2),
       m_axi_mm2s_rready => axi_interconnect_3_S_RREADY(2),
       mm2s_prmry_reset_out_n => open,
-      m_axis_mm2s_tdata => axi_vdma_2_M_AXIS_MM2S_TDATA,
-      m_axis_mm2s_tkeep => open,
-      m_axis_mm2s_tvalid => axi_vdma_2_M_AXIS_MM2S_TVALID,
-      m_axis_mm2s_tready => axi_vdma_2_M_AXIS_MM2S_TREADY,
-      m_axis_mm2s_tlast => axi_vdma_2_M_AXIS_MM2S_TLAST(0),
-      m_axis_mm2s_tuser => axi_vdma_2_M_AXIS_MM2S_TUSER(0 to 0),
+      m_axis_mm2s_tdata => axi_vdma_1_M_AXIS_MM2S_TDATA,
+      m_axis_mm2s_tkeep => axi_vdma_1_M_AXIS_MM2S_TKEEP,
+      m_axis_mm2s_tvalid => axi_vdma_1_M_AXIS_MM2S_TVALID,
+      m_axis_mm2s_tready => axi_vdma_1_M_AXIS_MM2S_TREADY,
+      m_axis_mm2s_tlast => axi_vdma_1_M_AXIS_MM2S_TLAST(0),
+      m_axis_mm2s_tuser => axi_vdma_1_M_AXIS_MM2S_TUSER(0 to 0),
       m_axi_s2mm_awaddr => axi_interconnect_3_S_AWADDR(127 downto 96),
       m_axi_s2mm_awlen => axi_interconnect_3_S_AWLEN(31 downto 24),
       m_axi_s2mm_awsize => axi_interconnect_3_S_AWSIZE(11 downto 9),
@@ -5205,12 +5204,12 @@ begin
       m_axi_s2mm_bvalid => axi_interconnect_3_S_BVALID(3),
       m_axi_s2mm_bready => axi_interconnect_3_S_BREADY(3),
       s2mm_prmry_reset_out_n => open,
-      s_axis_s2mm_tdata => sobel_filter_top_0_OUTPUT_STREAM_TDATA,
-      s_axis_s2mm_tkeep => net_vcc4,
-      s_axis_s2mm_tvalid => sobel_filter_top_0_OUTPUT_STREAM_TVALID,
-      s_axis_s2mm_tready => sobel_filter_top_0_OUTPUT_STREAM_TREADY,
-      s_axis_s2mm_tlast => sobel_filter_top_0_OUTPUT_STREAM_TLAST(0),
-      s_axis_s2mm_tuser => sobel_filter_top_0_OUTPUT_STREAM_TUSER(0 to 0),
+      s_axis_s2mm_tdata => convert_to_gray_top_0_OUTPUT_STREAM_TDATA,
+      s_axis_s2mm_tkeep => convert_to_gray_top_0_OUTPUT_STREAM_TKEEP,
+      s_axis_s2mm_tvalid => convert_to_gray_top_0_OUTPUT_STREAM_TVALID,
+      s_axis_s2mm_tready => convert_to_gray_top_0_OUTPUT_STREAM_TREADY,
+      s_axis_s2mm_tlast => convert_to_gray_top_0_OUTPUT_STREAM_TLAST(0),
+      s_axis_s2mm_tuser => convert_to_gray_top_0_OUTPUT_STREAM_TUSER(0 to 0),
       mm2s_fsync => net_gnd0,
       mm2s_frame_ptr_in => net_gnd6,
       mm2s_frame_ptr_out => open,
@@ -5225,8 +5224,8 @@ begin
       s2mm_buffer_full => open,
       s2mm_buffer_almost_full => open,
       s2mm_prmtr_update => open,
-      mm2s_introut => axi_vdma_2_mm2s_introut,
-      s2mm_introut => axi_vdma_2_s2mm_introut,
+      mm2s_introut => axi_vdma_1_mm2s_introut,
+      s2mm_introut => axi_vdma_1_s2mm_introut,
       axi_vdma_tstvec => open
     );
 

@@ -25,20 +25,6 @@ INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on
    please see the device datasheet.
 
 ================================================================================
-Timing constraint: PATH "TS_axi_vdma_2_cdc_tig_v_path" TIG;
-
- 2097 paths analyzed, 767 endpoints analyzed, 0 failing endpoints
- 0 timing errors detected. (0 setup errors, 0 hold errors)
---------------------------------------------------------------------------------
-
-================================================================================
-Timing constraint: PATH "TS_axi_vdma_2_cdc_from_2_cdc_to_path" TIG;
-
- 27 paths analyzed, 27 endpoints analyzed, 0 failing endpoints
- 0 timing errors detected. (0 setup errors, 0 hold errors)
---------------------------------------------------------------------------------
-
-================================================================================
 Timing constraint: PATH "TS_axi_vdma_1_cdc_tig_v_path" TIG;
 
  2097 paths analyzed, 767 endpoints analyzed, 0 failing endpoints
@@ -47,6 +33,20 @@ Timing constraint: PATH "TS_axi_vdma_1_cdc_tig_v_path" TIG;
 
 ================================================================================
 Timing constraint: PATH "TS_axi_vdma_1_cdc_from_2_cdc_to_path" TIG;
+
+ 27 paths analyzed, 27 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors)
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: PATH "TS_axi_vdma_2_cdc_tig_v_path" TIG;
+
+ 2097 paths analyzed, 767 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors)
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: PATH "TS_axi_vdma_2_cdc_from_2_cdc_to_path" TIG;
 
  27 paths analyzed, 27 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors)
@@ -102,7 +102,7 @@ For more information, see From:To (Multicycle) Analysis in the Timing Closure Us
 
  273 paths analyzed, 273 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors)
- Maximum delay is   3.313ns.
+ Maximum delay is   3.104ns.
 --------------------------------------------------------------------------------
 
 
@@ -120,21 +120,21 @@ Timing summary:
 
 Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
 
-Constraints cover 5738 paths, 0 nets, and 4765 connections
+Constraints cover 5738 paths, 0 nets, and 4766 connections
 
 Design statistics:
-   Minimum period:   3.313ns   (Maximum frequency: 301.841MHz)
-   Maximum path delay from/to any node:   3.313ns
+   Minimum period:   3.104ns   (Maximum frequency: 322.165MHz)
+   Maximum path delay from/to any node:   3.104ns
 
 
-Analysis completed Thu Aug 20 21:29:46 2015 
+Analysis completed Fri Aug 21 05:13:42 2015 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 1168 MB
+Peak Memory Usage: 1167 MB
 
 
 

@@ -3,7 +3,6 @@
 
 #include "ErodeIP_Rule1Driver.h"
 
-#define GRAYSCALE_BASEADDR 0x6e800000
 
 ErodeIPRule1RegMap ErodeIPRule1InitMode = {
 											.AP_CTRL = {.offset = 0x00, .mask = 0x00000000, .value = 0xffffffff},
@@ -72,10 +71,6 @@ void ErodeIP_Rule1Driver_initialize(ErodeIPRule1DriverInstance *InstancePtr, XSc
 
     // for this rule we also need to initialize the connected VDMA as well
     ERODEIP_VDMA_Driver_initialize(&InstancePtr->vdmaDriver, InterruptController);
-
-    localWriteReg(GRAYSCALE_BASEADDR + 0x14, 0xffffffff, verticalActiveTime);
-    localWriteReg(GRAYSCALE_BASEADDR + 0x1c, 0xffffffff, horizontalActiveTime);
-    localWriteReg(GRAYSCALE_BASEADDR, 0x00000081, 0x00000081);
 }
 
 
