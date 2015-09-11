@@ -40,7 +40,7 @@ unsigned char ZYNQ_ARM_CORTEX_A9_process() {
 	for (i=0; i<num_proc_initialized; i++) {
 	    SoCProc *elem = (SoCProc *) *((SoCProc volatile ** )(SHARED_MEM_BASEADDR + i*4));
 	    // TODO: should also check if this processor is not busy AND not halted (due to power management etc), only then execute function on this processor!!
-	    if (elem->busy == 0) {      // a free CPU instance found
+	    if (elem->halted == 0 && elem->busy == 0) {      // a free CPU instance found
 	        if (i==0) {             // 1st cpu of this kind is free    
 	            Xil_Out32(0xfffffff0, (u32) mainProcess);           // triggering the 1st cpu of this kind to start executing the dataflow RTC function passed by application developer
 	            dmb();
@@ -175,6 +175,8 @@ void Powerup() {
     unsigned int proc_instance = 0;         //right now this is not the case so hardcoding the id  
     // associating a unique processor descriptor passed from master cpu to this core
     SoCProc *elem = (SoCProc *) *((SoCProc volatile ** )(SHARED_MEM_BASEADDR + proc_instance*4));
+
+    elem->halted = 0;					// indicating that this core is now activated
 
 	// duplicating the initial boot code for CPU1 into ddr
 	Xil_Out32((u32) elem->MEMSPACE_BASEADDR, (u32) 0xe3e0000f);

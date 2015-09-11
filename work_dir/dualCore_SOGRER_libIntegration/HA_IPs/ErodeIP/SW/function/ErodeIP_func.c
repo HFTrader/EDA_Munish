@@ -9,10 +9,11 @@
 
 
 void ErodeIP_func_init(XScuGic *InterruptController, unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr,unsigned short width, unsigned short height, unsigned short horizontalActiveTime, unsigned short verticalActiveTime) {
+
+#if ERODEIP_NUM_INSTANCES != 0
 	int ip_instance_idx = 0;
 	int rule1_driver_idx = 0;
 
-#if ERODEIP_NUM_INSTANCES != 0
 	for (ip_instance_idx=0; ip_instance_idx<ERODEIP_NUM_INSTANCES; ip_instance_idx++) {
 		if (ERODEIP_INFO[ip_instance_idx].grip_rule == 1) {
 			ErodeIPRule1Driver[rule1_driver_idx].baseaddr = ERODEIP_INFO[ip_instance_idx].baseaddr;
@@ -32,12 +33,13 @@ void ErodeIP_func_init(XScuGic *InterruptController, unsigned long ImgIn_BaseAdd
 }
 
 void Erode_func(unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr, unsigned short width, unsigned short height, unsigned short horizontalActiveTime, unsigned short verticalActiveTime) {
-    int ip_instance_idx = 0;
-    int rule1_driver_idx = 0;
 
 #if ERODEIP_NUM_INSTANCES == 0                      // no IP module in design so using SW implementation
     Erode(ImgIn_BaseAddr, ImgOut_BaseAddr, width, height, horizontalActiveTime, verticalActiveTime);
 #else
+    int ip_instance_idx = 0;
+    int rule1_driver_idx = 0;
+
     for (ip_instance_idx=0; ip_instance_idx<ERODEIP_NUM_INSTANCES; ip_instance_idx++) {
     	if (ERODEIP_INFO[ip_instance_idx].grip_rule == 1) {
     		if (ErodeIP_Rule1Driver_isBusy(&ErodeIPRule1Driver[rule1_driver_idx]) == 0) {      // a free IP instance found

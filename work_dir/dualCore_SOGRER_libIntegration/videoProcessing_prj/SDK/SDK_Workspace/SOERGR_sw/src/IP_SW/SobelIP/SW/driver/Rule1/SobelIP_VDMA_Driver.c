@@ -178,16 +178,5 @@ void SOBELIP_VDMA_Driver_ISR(void *baseaddr_p) {
 
 
 
-// NOTE: everything seems to be auto-generatable!!
-
-
-
-
-
-
-
-
-
-
 
 

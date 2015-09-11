@@ -17,7 +17,7 @@ typedef struct {
 	unsigned int intr_id;
 } SOBELIP_IPinfo;
 
-//if NUM_SOBELIP_INSTANCES != 0
+
 extern SOBELIP_IPinfo SOBELIP_INFO[SOBELIP_NUM_INSTANCES];
 
 #endif

@@ -8,12 +8,12 @@
 #include "SobelIP_func.h"
 
 
-
 void SobelIP_func_init(XScuGic *InterruptController, unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr, unsigned short width, unsigned short height, unsigned short horizontalActiveTime, unsigned short verticalActiveTime) {
+
+#if SOBELIP_NUM_INSTANCES != 0
     int ip_instance_idx = 0;
     int rule1_driver_idx = 0;
 
-#if SOBELIP_NUM_INSTANCES != 0
 	for (ip_instance_idx=0; ip_instance_idx<SOBELIP_NUM_INSTANCES; ip_instance_idx++) {
 		if (SOBELIP_INFO[ip_instance_idx].grip_rule == 1) {
 			SobelIPRule1Driver[rule1_driver_idx].baseaddr = SOBELIP_INFO[ip_instance_idx].baseaddr;
@@ -33,12 +33,13 @@ void SobelIP_func_init(XScuGic *InterruptController, unsigned long ImgIn_BaseAdd
 }
 
 void EdgeDetection_func(unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr, unsigned short width, unsigned short height, unsigned short horizontalActiveTime, unsigned short verticalActiveTime) {
-    int ip_instance_idx = 0;
-    int rule1_driver_idx = 0;
 
 #if SOBELIP_NUM_INSTANCES == 0                      // no IP module in design so using SW implementation
     EdgeDetection(ImgIn_BaseAddr, ImgOut_BaseAddr, width, height, horizontalActiveTime, verticalActiveTime);
 #else
+    int ip_instance_idx = 0;
+    int rule1_driver_idx = 0;
+
     for (ip_instance_idx=0; ip_instance_idx<SOBELIP_NUM_INSTANCES; ip_instance_idx++) {
     	if (SOBELIP_INFO[ip_instance_idx].grip_rule == 1) {
     		if (SobelIP_Rule1Driver_isBusy(&SobelIPRule1Driver[rule1_driver_idx]) == 0) {      // a free IP instance found

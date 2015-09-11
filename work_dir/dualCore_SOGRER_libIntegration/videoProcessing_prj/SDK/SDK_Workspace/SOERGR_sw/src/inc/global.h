@@ -8,13 +8,13 @@
 #define SHARED_OCM_MEMORY_BASE 0xFFFF0000
 #define FRAME_SIZE 0x1000000
 
-#define USE_MULTICORE
-#define DO_PERF_EVAL
+//#define USE_MULTICORE
+//#define DO_PERF_EVAL
 
 #ifdef DO_PERF_EVAL
 // for performance evaluation
-#define TOTAL_FRAMES_FOR_STATS 1000
-#define CPU_FREQ 533333333				// for normal mode, this is 667 MHz
+#define TOTAL_FRAMES_FOR_STATS 100
+#define CPU_FREQ 666666666				// for normal mode, this is 667 MHz
 #define CAMERA_FPS	15
 #define INTER_FRAME_TIME  CPU_FREQ/CAMERA_FPS
 #define CPU_LOAD CPU_FREQ

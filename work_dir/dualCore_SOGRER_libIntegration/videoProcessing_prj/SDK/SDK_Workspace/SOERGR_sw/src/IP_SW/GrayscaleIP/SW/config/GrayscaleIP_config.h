@@ -17,7 +17,7 @@ typedef struct {
     unsigned int intr_id;
 } GRAYSCALEIP_IPinfo;
 
-//if NUM_GRAYSCALEIP_INSTANCES != 0
+
 extern GRAYSCALEIP_IPinfo GRAYSCALEIP_INFO[GRAYSCALEIP_NUM_INSTANCES];
 
 #endif

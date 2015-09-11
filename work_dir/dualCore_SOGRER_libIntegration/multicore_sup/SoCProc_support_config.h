@@ -13,6 +13,7 @@ typedef struct {
 	ProcType type;
 	unsigned char id;
 	unsigned char busy;
+	unsigned char halted;
 	unsigned int MEMSPACE_BASEADDR;
 } SoCProc;
 

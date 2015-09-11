@@ -1,0 +1,147 @@
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.eclipse.cdt.core.dom.ast.IASTDeclaration;
+import org.eclipse.cdt.core.dom.ast.IASTDeclarator;
+import org.eclipse.cdt.core.dom.ast.IASTTranslationUnit;
+import org.eclipse.cdt.core.dom.ast.cpp.ICPPASTDeclarator;
+import org.eclipse.cdt.core.dom.ast.cpp.ICPPASTParameterDeclaration;
+import org.eclipse.cdt.core.dom.ast.gnu.cpp.GPPLanguage;
+import org.eclipse.cdt.core.parser.DefaultLogService;
+import org.eclipse.cdt.core.parser.FileContent;
+import org.eclipse.cdt.core.parser.IParserLogService;
+import org.eclipse.cdt.core.parser.IScannerInfo;
+import org.eclipse.cdt.core.parser.IncludeFileContentProvider;
+import org.eclipse.cdt.core.parser.ScannerInfo;
+import org.eclipse.cdt.internal.core.dom.parser.cpp.CPPASTFunctionDeclarator;
+import org.eclipse.cdt.internal.core.dom.parser.cpp.CPPASTSimpleDeclSpecifier;
+import org.eclipse.cdt.internal.core.dom.parser.cpp.CPPASTSimpleDeclaration;
+import org.eclipse.core.runtime.CoreException;
+  
+import freemarker.template.Configuration;
+import freemarker.template.Template; 
+import freemarker.template.TemplateException;
+
+class ParamSpec {
+    private String name;
+    private String type ;
+
+	// constructor
+	public ParamSpec(String name, String type) {
+	   this.name = name;
+	   this.type = type;
+	}
+    // getters
+	public String getName() { return this.name; }
+	public String getType() { return this.type; }
+	// setters
+    public void setName(String name) { this.name = name; }
+    public void setType(String type) { this.type = type; }
+ }	
+
+public class codegen {
+	
+	public static void main(String[] args) throws CoreException {
+		String ip_name = "GrayscaleIP";
+		int ip_NumGripRules = 2;	
+		String ip_DriverPath = "../driver/";
+		String ip_ConfigPath = "../config/";
+		String ip_SWPath = "";
+		String system_InterruptControllerType_path = "xscugic.h";		
+		String system_InterruptControllerStruct = "XscuGic";
+		
+		
+		FileContent fileContent = FileContent.createForExternalFileLocation("IPSW/GrayscaleIP_SW.h");    	
+		Map definedSymbols = new HashMap();
+    	String[] includePaths = new String[0];
+    	IScannerInfo info = new ScannerInfo(definedSymbols, includePaths);
+    	IParserLogService log = new DefaultLogService();
+    	IncludeFileContentProvider emptyIncludes = IncludeFileContentProvider.getEmptyFilesProvider();
+    	int opts = 8;    	
+		IASTTranslationUnit translationUnit = GPPLanguage.getDefault().getASTTranslationUnit(fileContent, info, emptyIncludes, null, opts, log);
+		IASTDeclaration[] declarations = translationUnit.getDeclarations();
+		// it is expected that the IP SW header only contains 1 function prototype!!
+		assert(declarations.length == 1);		
+		CPPASTSimpleDeclSpecifier declSpecifier = (CPPASTSimpleDeclSpecifier) ((CPPASTSimpleDeclaration)declarations[0]).getDeclSpecifier();
+		IASTDeclarator[] declarators = ((CPPASTSimpleDeclaration)declarations[0]).getDeclarators();
+		assert(declarators.length == 1);		
+		
+		String ip_sw_name = ((CPPASTFunctionDeclarator) declarators[0]).getName().toString();
+		String ip_sw_returnType = declSpecifier.getRawSignature() + (((CPPASTFunctionDeclarator) declarators[0]).getPointerOperators().length != 0 ? " *" : "");
+		
+		ICPPASTParameterDeclaration[] parameters = ((CPPASTFunctionDeclarator) declarators[0]).getParameters();		
+		ParamSpec[] ip_sw_params = new ParamSpec[parameters.length];
+		int param_idx = 0;
+		for (ICPPASTParameterDeclaration parameter : parameters) {
+			ICPPASTDeclarator paramDeclarator = parameter.getDeclarator();
+			CPPASTSimpleDeclSpecifier paramDeclSpecifier = (CPPASTSimpleDeclSpecifier) parameter.getDeclSpecifier();						
+			ip_sw_params[param_idx] = new ParamSpec(paramDeclarator.getName().toString(), paramDeclSpecifier.getRawSignature() + (paramDeclarator.getPointerOperators().length != 0 ? " *" : ""));
+			param_idx++;
+		}
+		
+		
+		
+		
+		//Freemarker configuration object
+		Configuration cfg = new Configuration();
+		try {
+			//Load template from source folder
+			Template template = cfg.getTemplate("src/IP_hwswInterface_template.ftl");
+			
+			// Build the data-model
+			Map<String, Object> data = new HashMap<String, Object>();
+/*			data.put("message", "Hello World!");
+
+			//List parsing 
+			List<String> countries = new ArrayList<String>();
+			countries.add("India");
+			countries.add("United States");
+			countries.add("Germany");
+			countries.add("France");
+			
+			data.put("countries", countries);*/
+			data.put("ip_name", ip_name);
+			data.put("num_grip_rules", ip_NumGripRules);
+			data.put("driver_path", ip_DriverPath);
+			data.put("config_path", ip_ConfigPath);
+			data.put("SW_path", ip_SWPath);
+			data.put("interruptcontroller_path", system_InterruptControllerType_path);
+			data.put("interruptcontroller", system_InterruptControllerStruct);
+			data.put("ip_sw_name", ip_sw_name);
+			data.put("ip_sw_returnType", ip_sw_returnType);
+			data.put("ip_sw_params", ip_sw_params);
+
+/*			
+			// Console output
+			Writer out = new OutputStreamWriter(System.out);
+			template.process(data, out);
+			out.flush();*/
+
+			// File output
+			Writer file = new FileWriter (new File("gen_files/" + ip_name + "_func.h"));
+			template.process(data, file);
+			file.flush();
+			file.close();
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (TemplateException e) {
+			e.printStackTrace();
+		}
+	}	
+}
+
+
+
+
+
+
+
+
