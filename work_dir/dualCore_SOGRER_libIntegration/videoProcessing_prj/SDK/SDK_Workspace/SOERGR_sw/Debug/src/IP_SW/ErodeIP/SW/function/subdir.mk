@@ -4,16 +4,16 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../src/IP_SW/ErodeIP/SW/function/ErodeIP_SW.c \
-../src/IP_SW/ErodeIP/SW/function/ErodeIP_func.c 
+../src/IP_SW/ErodeIP/SW/function/Erode_SW.c \
+../src/IP_SW/ErodeIP/SW/function/Erode_func.c 
 
 OBJS += \
-./src/IP_SW/ErodeIP/SW/function/ErodeIP_SW.o \
-./src/IP_SW/ErodeIP/SW/function/ErodeIP_func.o 
+./src/IP_SW/ErodeIP/SW/function/Erode_SW.o \
+./src/IP_SW/ErodeIP/SW/function/Erode_func.o 
 
 C_DEPS += \
-./src/IP_SW/ErodeIP/SW/function/ErodeIP_SW.d \
-./src/IP_SW/ErodeIP/SW/function/ErodeIP_func.d 
+./src/IP_SW/ErodeIP/SW/function/Erode_SW.d \
+./src/IP_SW/ErodeIP/SW/function/Erode_func.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

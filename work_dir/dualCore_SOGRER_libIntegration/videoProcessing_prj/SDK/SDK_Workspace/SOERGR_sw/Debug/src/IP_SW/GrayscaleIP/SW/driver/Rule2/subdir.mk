@@ -4,13 +4,13 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../src/IP_SW/GrayscaleIP/SW/driver/Rule2/GrayscaleIP_Rule2Driver.c 
+../src/IP_SW/GrayscaleIP/SW/driver/Rule2/Grayscale_Rule2Driver.c 
 
 OBJS += \
-./src/IP_SW/GrayscaleIP/SW/driver/Rule2/GrayscaleIP_Rule2Driver.o 
+./src/IP_SW/GrayscaleIP/SW/driver/Rule2/Grayscale_Rule2Driver.o 
 
 C_DEPS += \
-./src/IP_SW/GrayscaleIP/SW/driver/Rule2/GrayscaleIP_Rule2Driver.d 
+./src/IP_SW/GrayscaleIP/SW/driver/Rule2/Grayscale_Rule2Driver.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

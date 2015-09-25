@@ -4,16 +4,16 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../src/IP_SW/SobelIP/SW/function/SobelIP_SW.c \
-../src/IP_SW/SobelIP/SW/function/SobelIP_func.c 
+../src/IP_SW/SobelIP/SW/function/Sobel_SW.c \
+../src/IP_SW/SobelIP/SW/function/Sobel_func.c 
 
 OBJS += \
-./src/IP_SW/SobelIP/SW/function/SobelIP_SW.o \
-./src/IP_SW/SobelIP/SW/function/SobelIP_func.o 
+./src/IP_SW/SobelIP/SW/function/Sobel_SW.o \
+./src/IP_SW/SobelIP/SW/function/Sobel_func.o 
 
 C_DEPS += \
-./src/IP_SW/SobelIP/SW/function/SobelIP_SW.d \
-./src/IP_SW/SobelIP/SW/function/SobelIP_func.d 
+./src/IP_SW/SobelIP/SW/function/Sobel_SW.d \
+./src/IP_SW/SobelIP/SW/function/Sobel_func.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

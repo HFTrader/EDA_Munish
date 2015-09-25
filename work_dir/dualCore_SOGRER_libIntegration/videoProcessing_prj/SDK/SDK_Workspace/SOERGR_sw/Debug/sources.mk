@@ -18,15 +18,16 @@ S_UPPER_DEPS :=
 SUBDIRS := \
 src/src \
 src/multicore_sup \
+src/IP_SW/VDMAIP/SW/driver/Base \
 src/IP_SW/SobelIP/SW/function \
 src/IP_SW/SobelIP/SW/driver/Rule1 \
-src/IP_SW/SobelIP/SW/config \
+src/IP_SW/SobelIP/SW/driver/Base \
 src/IP_SW/GrayscaleIP/SW/function \
 src/IP_SW/GrayscaleIP/SW/driver/Rule2 \
 src/IP_SW/GrayscaleIP/SW/driver/Rule1 \
-src/IP_SW/GrayscaleIP/SW/config \
+src/IP_SW/GrayscaleIP/SW/driver/Base \
 src/IP_SW/ErodeIP/SW/function \
 src/IP_SW/ErodeIP/SW/driver/Rule1 \
-src/IP_SW/ErodeIP/SW/config \
+src/IP_SW/ErodeIP/SW/driver/Base \
 .metadata/.plugins/org.eclipse.cdt.make.core \
 

@@ -62,10 +62,12 @@ static void SetHAMode(GrayscaleIPRule1RegMap mode, unsigned int baseaddr) {
 
 void GrayscaleIP_Rule1Driver_initialize(GrayscaleIPRule1DriverInstance *InstancePtr, XScuGic *InterruptController, unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr,unsigned short width, unsigned short height, unsigned short horizontalActiveTime, unsigned short verticalActiveTime) {
     // initializing GrayscaleIP
+    // CUSTOM CODE START ....
 	GrayscaleIPRule1InitMode.ROWS_DATA.mask = 0xffffffff;
 	GrayscaleIPRule1InitMode.ROWS_DATA.value = verticalActiveTime;
 	GrayscaleIPRule1InitMode.COLS_DATA.mask = 0xffffffff;
 	GrayscaleIPRule1InitMode.COLS_DATA.value = horizontalActiveTime;
+    // CUSTOM CODE FINISH
 
 	SetHAMode(GrayscaleIPRule1InitMode, InstancePtr->baseaddr);
 

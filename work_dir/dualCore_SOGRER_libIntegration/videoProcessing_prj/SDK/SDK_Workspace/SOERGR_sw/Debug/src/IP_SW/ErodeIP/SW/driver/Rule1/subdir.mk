@@ -4,16 +4,13 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../src/IP_SW/ErodeIP/SW/driver/Rule1/ErodeIP_Rule1Driver.c \
-../src/IP_SW/ErodeIP/SW/driver/Rule1/ErodeIP_VDMA_Driver.c 
+../src/IP_SW/ErodeIP/SW/driver/Rule1/Erode_Rule1Driver.c 
 
 OBJS += \
-./src/IP_SW/ErodeIP/SW/driver/Rule1/ErodeIP_Rule1Driver.o \
-./src/IP_SW/ErodeIP/SW/driver/Rule1/ErodeIP_VDMA_Driver.o 
+./src/IP_SW/ErodeIP/SW/driver/Rule1/Erode_Rule1Driver.o 
 
 C_DEPS += \
-./src/IP_SW/ErodeIP/SW/driver/Rule1/ErodeIP_Rule1Driver.d \
-./src/IP_SW/ErodeIP/SW/driver/Rule1/ErodeIP_VDMA_Driver.d 
+./src/IP_SW/ErodeIP/SW/driver/Rule1/Erode_Rule1Driver.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

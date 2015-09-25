@@ -4,16 +4,16 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../src/IP_SW/GrayscaleIP/SW/function/GrayscaleIP_SW.c \
-../src/IP_SW/GrayscaleIP/SW/function/GrayscaleIP_func.c 
+../src/IP_SW/GrayscaleIP/SW/function/Grayscale_SW.c \
+../src/IP_SW/GrayscaleIP/SW/function/Grayscale_func.c 
 
 OBJS += \
-./src/IP_SW/GrayscaleIP/SW/function/GrayscaleIP_SW.o \
-./src/IP_SW/GrayscaleIP/SW/function/GrayscaleIP_func.o 
+./src/IP_SW/GrayscaleIP/SW/function/Grayscale_SW.o \
+./src/IP_SW/GrayscaleIP/SW/function/Grayscale_func.o 
 
 C_DEPS += \
-./src/IP_SW/GrayscaleIP/SW/function/GrayscaleIP_SW.d \
-./src/IP_SW/GrayscaleIP/SW/function/GrayscaleIP_func.d 
+./src/IP_SW/GrayscaleIP/SW/function/Grayscale_SW.d \
+./src/IP_SW/GrayscaleIP/SW/function/Grayscale_func.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
