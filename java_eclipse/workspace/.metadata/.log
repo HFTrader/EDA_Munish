@@ -1612,3 +1612,129 @@ Binding(CTRL+DEL,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
+!SESSION 2015-09-28 21:05:28.012 -----------------------------------------------
+eclipse.buildId=I20110613-1736
+java.version=1.6.0_36
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.jface 2 0 2015-09-28 21:06:09.940
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2015-09-28 21:06:09.940
+!MESSAGE A conflict occurred for ALT+CTRL+R:
+Binding(ALT+CTRL+R,
+	ParameterizedCommand(Command(org.python.pydev.debug.setnext,Set Next Statement,
+		,
+		Category(org.python.pydev.ui.category.run,PyDev - Run,Python run category,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+CTRL+R,
+	ParameterizedCommand(Command(org.eclipse.team.svn.ui.command.CompareWithRevisionCommand,URL...,
+		,
+		Category(org.eclipse.team.svn.ui.command.category,SVN,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.ui 4 4 2015-09-28 21:06:13.667
+!MESSAGE Bad extension specification
+
+!ENTRY org.eclipse.libra.facet 4 0 2015-09-28 21:06:13.673
+!MESSAGE startup class must implement org.eclipse.ui.IStartup
+
+!ENTRY org.eclipse.wst.common.project.facet.core 4 0 2015-09-28 21:06:14.087
+!MESSAGE Project facet jpt.jpa has not been defined. It is used in plugin org.eclipse.libra.facet.
+
+!ENTRY org.eclipse.jface 2 0 2015-09-28 21:06:18.617
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2015-09-28 21:06:18.617
+!MESSAGE A conflict occurred for ALT+CTRL+P:
+Binding(ALT+CTRL+P,
+	ParameterizedCommand(Command(org.eclipse.linuxtools.changelog.core.preparechangelog,Prepare Changelog,
+		Prepares Changelog,
+		Category(org.eclipse.linuxtools.changelog,Changelog,Changelog key bindings,true),
+		ActionDelegateHandlerProxy(null,org.eclipse.linuxtools.changelog.core.actions.PrepareChangelogKeyHandler),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+CTRL+P,
+	ParameterizedCommand(Command(org.eclipse.team.svn.ui.command.CreatePatchCommand,Create Patch...,
+		,
+		Category(org.eclipse.team.svn.ui.command.category,SVN,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2015-09-28 21:06:18.617
+!MESSAGE A conflict occurred for CTRL+DEL:
+Binding(CTRL+DEL,
+	ParameterizedCommand(Command(org.eclipse.datatools.sqltools.result.removeInstance,Remove Result,
+		,
+		Category(org.eclipse.datatools.sqltools.result.category,SQL Results View,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+DEL,
+	ParameterizedCommand(Command(org.eclipse.graphiti.ui.internal.action.RemoveAction,Remove,
+		Remove selected Pictogram Elements,
+		Category(org.eclipse.graphiti.ui.Graphiti_Category,Edit,Graphiti Diagram Editor,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.python.pydev.core 4 4 2015-09-28 21:07:11.530
+!MESSAGE sun.security.validator.ValidatorException: PKIX path validation failed: java.security.cert.CertPathValidatorException: timestamp check failed
+!STACK 0
+javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path validation failed: java.security.cert.CertPathValidatorException: timestamp check failed
+	at sun.security.ssl.Alerts.getSSLException(Alerts.java:192)
+	at sun.security.ssl.SSLSocketImpl.fatal(SSLSocketImpl.java:1836)
+	at sun.security.ssl.Handshaker.fatalSE(Handshaker.java:287)
+	at sun.security.ssl.Handshaker.fatalSE(Handshaker.java:281)
+	at sun.security.ssl.ClientHandshaker.serverCertificate(ClientHandshaker.java:1276)
+	at sun.security.ssl.ClientHandshaker.processMessage(ClientHandshaker.java:202)
+	at sun.security.ssl.Handshaker.processLoop(Handshaker.java:848)
+	at sun.security.ssl.Handshaker.process_record(Handshaker.java:784)
+	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:1012)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1320)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1347)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1331)
+	at sun.net.www.protocol.https.HttpsClient.afterConnect(HttpsClient.java:440)
+	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:185)
+	at sun.net.www.protocol.http.HttpURLConnection.getOutputStream(HttpURLConnection.java:1050)
+	at sun.net.www.protocol.https.HttpsURLConnectionImpl.getOutputStream(HttpsURLConnectionImpl.java:250)
+	at org.python.pydev.logging.ping.LogPingSender.sendPing(LogPingSender.java:62)
+	at org.python.pydev.logging.ping.SynchedLogPing.send(SynchedLogPing.java:164)
+	at org.python.pydev.logging.ping.AsyncLogPing.consumeAllCommands(AsyncLogPing.java:131)
+	at org.python.pydev.logging.ping.AsyncLogPing.access$0(AsyncLogPing.java:100)
+	at org.python.pydev.logging.ping.AsyncLogPing$1.run(AsyncLogPing.java:47)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: sun.security.validator.ValidatorException: PKIX path validation failed: java.security.cert.CertPathValidatorException: timestamp check failed
+	at sun.security.validator.PKIXValidator.doValidate(PKIXValidator.java:351)
+	at sun.security.validator.PKIXValidator.engineValidate(PKIXValidator.java:250)
+	at sun.security.validator.Validator.validate(Validator.java:260)
+	at sun.security.validator.Validator.validate(Validator.java:236)
+	at sun.security.ssl.X509TrustManagerImpl.validate(X509TrustManagerImpl.java:147)
+	at sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(X509TrustManagerImpl.java:230)
+	at sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(X509TrustManagerImpl.java:270)
+	at sun.security.ssl.ClientHandshaker.serverCertificate(ClientHandshaker.java:1255)
+	... 17 more
+Caused by: java.security.cert.CertPathValidatorException: timestamp check failed
+	at sun.security.provider.certpath.PKIXMasterCertPathValidator.validate(PKIXMasterCertPathValidator.java:153)
+	at sun.security.provider.certpath.PKIXCertPathValidator.doValidate(PKIXCertPathValidator.java:333)
+	at sun.security.provider.certpath.PKIXCertPathValidator.engineValidate(PKIXCertPathValidator.java:187)
+	at java.security.cert.CertPathValidator.validate(CertPathValidator.java:267)
+	at sun.security.validator.PKIXValidator.doValidate(PKIXValidator.java:346)
+	... 24 more
+Caused by: java.security.cert.CertificateExpiredException: NotAfter: Wed Sep 25 23:29:33 CEST 2013
+	at sun.security.x509.CertificateValidity.valid(CertificateValidity.java:273)
+	at sun.security.x509.X509CertImpl.checkValidity(X509CertImpl.java:587)
+	at sun.security.provider.certpath.BasicChecker.verifyTimestamp(BasicChecker.java:178)
+	at sun.security.provider.certpath.BasicChecker.check(BasicChecker.java:130)
+	at sun.security.provider.certpath.PKIXMasterCertPathValidator.validate(PKIXMasterCertPathValidator.java:131)
+	... 28 more

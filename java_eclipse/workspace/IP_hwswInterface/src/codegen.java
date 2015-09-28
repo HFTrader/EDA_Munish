@@ -13,7 +13,7 @@ import org.eclipse.cdt.core.dom.ast.cpp.ICPPASTParameterDeclaration;
 import org.eclipse.cdt.core.dom.ast.gnu.cpp.GPPLanguage;
 import org.eclipse.cdt.core.parser.DefaultLogService;
 import org.eclipse.cdt.core.parser.FileContent;
-import org.eclipse.cdt.core.parser.IParserLogService;
+import org.eclipse.cdt.core.parser.IParserLogService; 
 import org.eclipse.cdt.core.parser.IScannerInfo;
 import org.eclipse.cdt.core.parser.IncludeFileContentProvider;
 import org.eclipse.cdt.core.parser.ScannerInfo;
@@ -29,14 +29,15 @@ import freemarker.template.TemplateException;
 public class codegen {
 	
 	public static void main(String[] args) throws CoreException {
-		String ip_name = "ErodeIP";
-		int ip_NumGripRules = 1;	
+		String ip_name = "Grayscale";
+		int ip_NumGripRules = 2;	
+		int[] ip_GripRulesInstances = new int[] {1,1};
+		String[][] ips_forRule = new String[][] {{"GrayscaleIP", "VDMAIP"}, {"GrayscaleIP"}};
 		String ip_DriverPath = "../driver/";
 		String ip_ConfigPath = "../config/";
 		String ip_SWPath = "";
 		String system_InterruptControllerType_path = "xscugic.h";		
-		String system_InterruptControllerStruct = "XScuGic";
-		
+		String system_InterruptControllerStruct = "XScuGic";				
 		
 		FileContent fileContent = FileContent.createForExternalFileLocation("IPSW/" + ip_name + "_SW.h");    		
 		Map definedSymbols = new HashMap();
@@ -77,7 +78,9 @@ public class codegen {
 			// Build the data-model
 			Map<String, Object> data = new HashMap<String, Object>();
 			data.put("ip_name", ip_name);
-			data.put("num_grip_rules", ip_NumGripRules);
+			data.put("ip_NumGripRules", ip_NumGripRules);
+			data.put("ips_forRule", ips_forRule);
+			data.put("ip_GripRulesInstances", ip_GripRulesInstances);
 			data.put("driver_path", ip_DriverPath);
 			data.put("config_path", ip_ConfigPath);
 			data.put("SW_path", ip_SWPath);
@@ -107,7 +110,9 @@ public class codegen {
 			// Build the data-model
 			Map<String, Object> data = new HashMap<String, Object>();
 			data.put("ip_name", ip_name);
-			data.put("num_grip_rules", ip_NumGripRules);
+			data.put("ip_NumGripRules", ip_NumGripRules);
+			data.put("ips_forRule", ips_forRule);
+			data.put("ip_GripRulesInstances", ip_GripRulesInstances);
 			data.put("driver_path", ip_DriverPath);
 			data.put("config_path", ip_ConfigPath);
 			data.put("SW_path", ip_SWPath);

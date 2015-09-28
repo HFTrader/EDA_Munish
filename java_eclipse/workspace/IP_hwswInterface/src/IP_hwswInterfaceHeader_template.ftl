@@ -1,11 +1,11 @@
 // this module is auto-generated using Java Freemarker tool
 
-// this file provides API functionality to application developer to perform HA-aware grayscale filtering on captured video
+// this file provides API functionality to application developer to perform HA-aware ${ip_name} filtering on captured video
 
 #ifndef __${ip_name?upper_case}_FUNC_H__
 #define __${ip_name?upper_case}_FUNC_H__
 
-<#list 1..num_grip_rules as i>
+<#list 1..ip_NumGripRules as i>
 #include "${driver_path}Rule${i}/${ip_name}_Rule${i}Driver.h"
 </#list>
 

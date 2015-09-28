@@ -8,7 +8,7 @@
 #define SHARED_OCM_MEMORY_BASE 0xFFFF0000
 #define FRAME_SIZE 0x1000000
 
-//#define USE_MULTICORE
+#define USE_MULTICORE
 //#define DO_PERF_EVAL
 
 #ifdef DO_PERF_EVAL
