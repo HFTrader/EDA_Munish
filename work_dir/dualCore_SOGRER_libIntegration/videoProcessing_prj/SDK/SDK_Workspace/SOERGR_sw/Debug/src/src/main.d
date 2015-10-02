@@ -42,6 +42,7 @@ src/src/main.d: ../src/src/main.c \
  ../src/src/../IP_SW/./GrayscaleIP/SW/function/../driver/Rule1/../Base/GrayscaleIP_Driver.h \
  ../src/src/../IP_SW/./GrayscaleIP/SW/function/../driver/Rule1/../Base/GrayscaleIP_RegMap.h \
  ../src/src/../IP_SW/./GrayscaleIP/SW/function/../driver/Rule1/../Base/../../../../common.h \
+ ../src/src/../IP_SW/./GrayscaleIP/SW/function/../driver/Rule1/../Base/../../../../config.h \
  ../src/src/../IP_SW/./GrayscaleIP/SW/function/../driver/Rule1/../../../../VDMAIP/SW/driver/Base/VDMAIP_Driver.h \
  ../src/src/../IP_SW/./GrayscaleIP/SW/function/../driver/Rule1/../../../../VDMAIP/SW/driver/Base/VDMAIP_RegMap.h \
  ../src/src/../IP_SW/./GrayscaleIP/SW/function/../driver/Rule1/../../../../VDMAIP/SW/driver/Base/../../../../common.h \
@@ -152,6 +153,8 @@ src/src/main.d: ../src/src/main.c \
 ../src/src/../IP_SW/./GrayscaleIP/SW/function/../driver/Rule1/../Base/GrayscaleIP_RegMap.h:
 
 ../src/src/../IP_SW/./GrayscaleIP/SW/function/../driver/Rule1/../Base/../../../../common.h:
+
+../src/src/../IP_SW/./GrayscaleIP/SW/function/../driver/Rule1/../Base/../../../../config.h:
 
 ../src/src/../IP_SW/./GrayscaleIP/SW/function/../driver/Rule1/../../../../VDMAIP/SW/driver/Base/VDMAIP_Driver.h:
 

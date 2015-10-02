@@ -3,19 +3,6 @@
 #include "GrayscaleIP_Driver.h"
 #include "xil_assert.h"
 
-void GrayscaleIP_Driver_WriteReg(unsigned int addr, unsigned int mask, unsigned int value) {
-    // only write to reg if mask != 0
-    if ((mask | 0x0) != 0x0) {
-        *((volatile unsigned int *)(addr)) = (*(volatile unsigned int *)(addr) & ~(mask)) | value;
-    }
-}
-
-
-unsigned int GrayscaleIP_Driver_ReadReg(unsigned int addr) {
-    return (unsigned int) *((volatile unsigned int *)(addr));
-}
-
-
 // updates the Grayscale IP peripheral's memory mapped registers with content provided in mode 
 static void SetHAMode(GrayscaleIP_RegMap *mode, unsigned int baseaddr) {
 	// pointing to 1st register in passed regmap
@@ -25,10 +12,17 @@ static void SetHAMode(GrayscaleIP_RegMap *mode, unsigned int baseaddr) {
 	// iterating over all registers in the passed regmap
 	int i=0;
 	for (i=0; i<reg_in_regmap; i++) {
-		GrayscaleIP_Driver_WriteReg(baseaddr + iter_ptr->offset, iter_ptr->mask, iter_ptr->value);
+		RegWrite(baseaddr + iter_ptr->offset, iter_ptr->mask, iter_ptr->value);
 		iter_ptr++;
 	}
 }
+
+
+static void GrayscaleIP_Driver_ISR(void *baseaddr_p) {
+	GrayscaleIP_DriverInstance *InstancePtr = (GrayscaleIP_DriverInstance *) baseaddr_p;
+	InstancePtr->busy = 0;
+}
+
 
 
 void GrayscaleIP_Driver_initialize(GrayscaleIP_DriverInstance *InstancePtr, XScuGic *InterruptController, GrayscaleIP_RegMap InitMode, unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr,unsigned short width, unsigned short height, unsigned short horizontalActiveTime, unsigned short verticalActiveTime) {
@@ -65,10 +59,6 @@ bool GrayscaleIP_Driver_isBusy(GrayscaleIP_DriverInstance *InstancePtr) {
 
 
 
-void GrayscaleIP_Driver_ISR(void *baseaddr_p) {
-	GrayscaleIP_DriverInstance *InstancePtr = (GrayscaleIP_DriverInstance *) baseaddr_p;
-	InstancePtr->busy = 0;
-}
 
 
 

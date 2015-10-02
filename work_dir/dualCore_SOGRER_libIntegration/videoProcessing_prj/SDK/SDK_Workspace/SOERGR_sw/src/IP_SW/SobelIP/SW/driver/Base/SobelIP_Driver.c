@@ -3,18 +3,6 @@
 #include "SobelIP_Driver.h"
 #include "xil_assert.h"
 
-void SobelIP_Driver_WriteReg(unsigned int addr, unsigned int mask, unsigned int value) {
-    // only write to reg if mask != 0
-    if ((mask | 0x0) != 0x0) {
-        *((volatile unsigned int *)(addr)) = (*(volatile unsigned int *)(addr) & ~(mask)) | value;
-    }
-}
-
-
-unsigned int SobelIP_Driver_ReadReg(unsigned int addr) {
-    return (unsigned int) *((volatile unsigned int *)(addr));
-}
-
 
 // updates the Sobel IP peripheral's memory mapped registers with content provided in mode 
 static void SetHAMode(SobelIP_RegMap *mode, unsigned int baseaddr) {
@@ -25,10 +13,19 @@ static void SetHAMode(SobelIP_RegMap *mode, unsigned int baseaddr) {
 	// iterating over all registers in the passed regmap
 	int i=0;
 	for (i=0; i<reg_in_regmap; i++) {
-		SobelIP_Driver_WriteReg(baseaddr + iter_ptr->offset, iter_ptr->mask, iter_ptr->value);
+		RegWrite(baseaddr + iter_ptr->offset, iter_ptr->mask, iter_ptr->value);
 		iter_ptr++;
 	}
 }
+
+
+
+
+void SobelIP_Driver_ISR(void *baseaddr_p) {
+	SobelIP_DriverInstance *InstancePtr = (SobelIP_DriverInstance *) baseaddr_p;
+	InstancePtr->busy = 0;
+}
+
 
 
 void SobelIP_Driver_initialize(SobelIP_DriverInstance *InstancePtr, XScuGic *InterruptController, SobelIP_RegMap InitMode, unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr,unsigned short width, unsigned short height, unsigned short horizontalActiveTime, unsigned short verticalActiveTime) {
@@ -61,13 +58,6 @@ void SobelIP_Driver_stop(SobelIP_DriverInstance *InstancePtr, SobelIP_RegMap Sto
 
 bool SobelIP_Driver_isBusy(SobelIP_DriverInstance *InstancePtr) {
 	return InstancePtr->busy;
-}
-
-
-
-void SobelIP_Driver_ISR(void *baseaddr_p) {
-	SobelIP_DriverInstance *InstancePtr = (SobelIP_DriverInstance *) baseaddr_p;
-	InstancePtr->busy = 0;
 }
 
 

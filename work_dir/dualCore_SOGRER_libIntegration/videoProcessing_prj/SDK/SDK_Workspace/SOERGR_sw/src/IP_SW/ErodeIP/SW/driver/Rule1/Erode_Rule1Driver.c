@@ -116,7 +116,7 @@ void Erode_Rule1Driver_initialize(Erode_Rule1_DriverInstance *InstancePtr, XScuG
     Erode_Rule1_InitMode._ErodeIP_RegMap.COLS_DATA.mask = 0xffffffff;
     Erode_Rule1_InitMode._ErodeIP_RegMap.COLS_DATA.value = horizontalActiveTime;
     ErodeIP_Driver_initialize(&InstancePtr->_ErodeIP_DriverInstance, InterruptController, Erode_Rule1_InitMode._ErodeIP_RegMap, ImgIn_BaseAddr, ImgOut_BaseAddr, width, height, horizontalActiveTime, verticalActiveTime);
-    ErodeIP_Driver_WriteReg(InstancePtr->_ErodeIP_DriverInstance.baseaddr + 0x0, 0x00000081, 0x81);
+    RegWrite(InstancePtr->_ErodeIP_DriverInstance.baseaddr + 0x0, 0x00000081, 0x81);
     
     // initializing the VDMAIP
     VDMAIP_Driver_initialize(&InstancePtr->_VDMAIP_DriverInstance, InterruptController, Erode_Rule1_InitMode._VDMAIP_RegMap);

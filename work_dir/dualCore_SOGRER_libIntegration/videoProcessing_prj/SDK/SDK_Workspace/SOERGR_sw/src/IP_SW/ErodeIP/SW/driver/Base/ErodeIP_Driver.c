@@ -3,18 +3,6 @@
 #include "ErodeIP_Driver.h"
 #include "xil_assert.h"
 
-void ErodeIP_Driver_WriteReg(unsigned int addr, unsigned int mask, unsigned int value) {
-    // only write to reg if mask != 0
-    if ((mask | 0x0) != 0x0) {
-        *((volatile unsigned int *)(addr)) = (*(volatile unsigned int *)(addr) & ~(mask)) | value;
-    }
-}
-
-
-unsigned int ErodeIP_Driver_ReadReg(unsigned int addr) {
-    return (unsigned int) *((volatile unsigned int *)(addr));
-}
-
 
 // updates the Erode IP peripheral's memory mapped registers with content provided in mode 
 static void SetHAMode(ErodeIP_RegMap *mode, unsigned int baseaddr) {
@@ -25,10 +13,17 @@ static void SetHAMode(ErodeIP_RegMap *mode, unsigned int baseaddr) {
 	// iterating over all registers in the passed regmap
 	int i=0;
 	for (i=0; i<reg_in_regmap; i++) {
-		ErodeIP_Driver_WriteReg(baseaddr + iter_ptr->offset, iter_ptr->mask, iter_ptr->value);
+		RegWrite(baseaddr + iter_ptr->offset, iter_ptr->mask, iter_ptr->value);
 		iter_ptr++;
 	}
 }
+
+
+void ErodeIP_Driver_ISR(void *baseaddr_p) {
+	ErodeIP_DriverInstance *InstancePtr = (ErodeIP_DriverInstance *) baseaddr_p;
+	InstancePtr->busy = 0;
+}
+
 
 
 void ErodeIP_Driver_initialize(ErodeIP_DriverInstance *InstancePtr, XScuGic *InterruptController, ErodeIP_RegMap InitMode, unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr,unsigned short width, unsigned short height, unsigned short horizontalActiveTime, unsigned short verticalActiveTime) {
@@ -62,15 +57,6 @@ void ErodeIP_Driver_stop(ErodeIP_DriverInstance *InstancePtr, ErodeIP_RegMap Sto
 bool ErodeIP_Driver_isBusy(ErodeIP_DriverInstance *InstancePtr) {
 	return InstancePtr->busy;
 }
-
-
-
-void ErodeIP_Driver_ISR(void *baseaddr_p) {
-	ErodeIP_DriverInstance *InstancePtr = (ErodeIP_DriverInstance *) baseaddr_p;
-	InstancePtr->busy = 0;
-}
-
-
 
 
 

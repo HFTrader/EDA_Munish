@@ -21,6 +21,7 @@ RM := rm -rf
 -include src/IP_SW/ErodeIP/SW/function/subdir.mk
 -include src/IP_SW/ErodeIP/SW/driver/Rule1/subdir.mk
 -include src/IP_SW/ErodeIP/SW/driver/Base/subdir.mk
+-include src/IP_SW/subdir.mk
 -include .metadata/.plugins/org.eclipse.cdt.make.core/subdir.mk
 -include subdir.mk
 -include objects.mk

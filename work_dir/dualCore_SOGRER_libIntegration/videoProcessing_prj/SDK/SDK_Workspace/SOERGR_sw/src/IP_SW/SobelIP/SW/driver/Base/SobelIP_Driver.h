@@ -19,13 +19,11 @@ typedef struct {
 
 // API for SobelIP_Driver to use if this rule is applied by GRIP
 // NOTE: if any of the functions requires runtime info then their prototype should be matched with _SW() function
-void SobelIP_Driver_WriteReg(unsigned int addr, unsigned int mask, unsigned int value);
-unsigned int SobelIP_Driver_ReadReg(unsigned int addr);
+
 void SobelIP_Driver_initialize(SobelIP_DriverInstance *InstancePtr, XScuGic *InterruptController, SobelIP_RegMap InitMode, unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr,unsigned short width, unsigned short height, unsigned short horizontalActiveTime, unsigned short verticalActiveTime);
 void SobelIP_Driver_start(SobelIP_DriverInstance *InstancePtr, SobelIP_RegMap StartMode, unsigned long ImgIn_BaseAddr,unsigned long ImgOut_BaseAddr,unsigned short width, unsigned short height, unsigned short horizontalActiveTime, unsigned short verticalActiveTime);
 void SobelIP_Driver_stop(SobelIP_DriverInstance *InstancePtr, SobelIP_RegMap StopMode);
 bool SobelIP_Driver_isBusy(SobelIP_DriverInstance *InstancePtr);
-void SobelIP_Driver_ISR(void *baseaddr_p);
 
 
 // NOTE: for now _stop(), _isBusy() are not expected to take in any realtime info from SW so they have no arguments but if they need it in future then they should have same arguments as that of _initialize(), _start() methods to make the job of code-generator easier!!

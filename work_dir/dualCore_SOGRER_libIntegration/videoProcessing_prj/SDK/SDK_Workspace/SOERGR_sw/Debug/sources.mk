@@ -18,6 +18,7 @@ S_UPPER_DEPS :=
 SUBDIRS := \
 src/src \
 src/multicore_sup \
+src/IP_SW \
 src/IP_SW/VDMAIP/SW/driver/Base \
 src/IP_SW/SobelIP/SW/function \
 src/IP_SW/SobelIP/SW/driver/Rule1 \

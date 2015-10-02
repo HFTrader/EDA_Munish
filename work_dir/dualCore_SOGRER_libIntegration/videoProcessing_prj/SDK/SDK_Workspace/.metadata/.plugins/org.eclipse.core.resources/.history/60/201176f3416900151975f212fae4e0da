@@ -1,0 +1,30 @@
+// contains common types/structures that are to be used by various IP drivers
+
+#ifndef __COMMON_H__
+#define __COMMON_H__
+
+// for now assuming every IP register in the system to be of 32 bits!!
+
+#include "config.h"
+#if PLATFORM == XILINX_FPGA
+    #include "xil_io.h"
+#endif
+// #elsif for other platforms
+
+
+typedef struct {
+    unsigned int offset;
+    unsigned int mask;
+    unsigned int value;
+} RegType;
+
+
+void RegWrite(unsigned int addr, unsigned int value) {
+#if PLATFORM == XILINX_FPGA
+	Xil_Out32(addr, value);
+#endif
+// #elsif for other platforms
+}
+
+
+#endif

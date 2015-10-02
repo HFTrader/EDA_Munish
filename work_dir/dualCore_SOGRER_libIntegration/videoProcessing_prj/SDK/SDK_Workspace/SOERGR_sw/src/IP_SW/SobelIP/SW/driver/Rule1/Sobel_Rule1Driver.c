@@ -116,7 +116,7 @@ void Sobel_Rule1Driver_initialize(Sobel_Rule1_DriverInstance *InstancePtr, XScuG
     Sobel_Rule1_InitMode._SobelIP_RegMap.COLS_DATA.mask = 0xffffffff;
     Sobel_Rule1_InitMode._SobelIP_RegMap.COLS_DATA.value = horizontalActiveTime;
     SobelIP_Driver_initialize(&InstancePtr->_SobelIP_DriverInstance, InterruptController, Sobel_Rule1_InitMode._SobelIP_RegMap, ImgIn_BaseAddr, ImgOut_BaseAddr, width, height, horizontalActiveTime, verticalActiveTime);
-    SobelIP_Driver_WriteReg(InstancePtr->_SobelIP_DriverInstance.baseaddr + 0x0, 0x00000081, 0x81);
+    RegWrite(InstancePtr->_SobelIP_DriverInstance.baseaddr + 0x0, 0x00000081, 0x81);
     
     // initializing the VDMAIP
     VDMAIP_Driver_initialize(&InstancePtr->_VDMAIP_DriverInstance, InterruptController, Sobel_Rule1_InitMode._VDMAIP_RegMap);

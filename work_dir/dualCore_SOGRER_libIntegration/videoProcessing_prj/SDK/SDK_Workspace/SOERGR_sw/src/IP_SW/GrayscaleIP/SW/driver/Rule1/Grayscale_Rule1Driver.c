@@ -116,7 +116,7 @@ void Grayscale_Rule1Driver_initialize(Grayscale_Rule1_DriverInstance *InstancePt
     Grayscale_Rule1_InitMode._GrayscaleIP_RegMap.COLS_DATA.mask = 0xffffffff;
     Grayscale_Rule1_InitMode._GrayscaleIP_RegMap.COLS_DATA.value = horizontalActiveTime;
     GrayscaleIP_Driver_initialize(&InstancePtr->_GrayscaleIP_DriverInstance, InterruptController, Grayscale_Rule1_InitMode._GrayscaleIP_RegMap, ImgIn_BaseAddr, ImgOut_BaseAddr, width, height, horizontalActiveTime, verticalActiveTime);
-    GrayscaleIP_Driver_WriteReg(InstancePtr->_GrayscaleIP_DriverInstance.baseaddr + 0x0, 0x00000081, 0x81);
+    RegWrite(InstancePtr->_GrayscaleIP_DriverInstance.baseaddr + 0x0, 0x00000081, 0x81);
     
     // initializing the VDMAIP
     VDMAIP_Driver_initialize(&InstancePtr->_VDMAIP_DriverInstance, InterruptController, Grayscale_Rule1_InitMode._VDMAIP_RegMap);
