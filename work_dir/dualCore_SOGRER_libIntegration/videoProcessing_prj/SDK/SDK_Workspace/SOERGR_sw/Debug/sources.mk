@@ -19,16 +19,11 @@ SUBDIRS := \
 src/src \
 src/multicore_sup \
 src/IP_SW \
-src/IP_SW/VDMAIP/SW/driver/Base \
-src/IP_SW/SobelIP/SW/function \
-src/IP_SW/SobelIP/SW/driver/Rule1 \
-src/IP_SW/SobelIP/SW/driver/Base \
-src/IP_SW/GrayscaleIP/SW/function \
-src/IP_SW/GrayscaleIP/SW/driver/Rule2 \
-src/IP_SW/GrayscaleIP/SW/driver/Rule1 \
-src/IP_SW/GrayscaleIP/SW/driver/Base \
-src/IP_SW/ErodeIP/SW/function \
-src/IP_SW/ErodeIP/SW/driver/Rule1 \
-src/IP_SW/ErodeIP/SW/driver/Base \
+src/IP_SW/VDMAIP/base \
+src/IP_SW/GrayscaleIP \
+src/IP_SW/GrayscaleIP/base \
+src/IP_SW/GrayscaleIP/SW \
+src/IP_SW/GrayscaleIP/Rule1 \
+src/IP_SW/GrayscaleIP/Rule0 \
 .metadata/.plugins/org.eclipse.cdt.make.core \
 

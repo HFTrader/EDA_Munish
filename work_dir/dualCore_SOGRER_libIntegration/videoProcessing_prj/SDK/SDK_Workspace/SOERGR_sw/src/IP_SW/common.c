@@ -8,15 +8,15 @@ void RegWrite(unsigned int addr, unsigned int mask, unsigned int value) {
 	if ((mask | 0x0) != 0x0) {
 #if PLATFORM == XILINX_FPGA
 		Xil_Out32(addr, (Xil_In32(addr) & ~mask) | value);
+// #elsif for other platforms		
 #endif
 	}
-// #elsif for other platforms
 }
 
 
 unsigned int RegRead(unsigned int addr) {
 #if PLATFORM == XILINX_FPGA
 	return Xil_In32(addr);
+// #elsif for other platforms	
 #endif
-// #elsif for other platforms
 }

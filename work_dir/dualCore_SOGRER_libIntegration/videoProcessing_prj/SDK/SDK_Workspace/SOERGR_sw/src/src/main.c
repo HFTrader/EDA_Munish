@@ -17,8 +17,9 @@
 #include "xil_mmu.h"
 #include "xpseudo_asm.h"
 #include "xscugic.h"
-#include "../IP_SW/funcs.h"
 #include "global.h"
+
+#include "../IP_SW/GrayscaleIP/hwsw_func.h"
 
 
 
@@ -130,9 +131,9 @@ int main()
 	  		//return XST_FAILURE;
 	  	}
 
-	Grayscale_func_init(&InterruptController, VIDEO_BASEADDR, VIDEO_BASEADDR + FRAME_SIZE, 640, 480, h_ActiveTime, v_ActiveTime);
-	Erode_func_init(&InterruptController, VIDEO_BASEADDR, VIDEO_BASEADDR + FRAME_SIZE, 640, 480, h_ActiveTime, v_ActiveTime);
-	Sobel_func_init(&InterruptController, VIDEO_BASEADDR, VIDEO_BASEADDR + FRAME_SIZE, 640, 480, h_ActiveTime, v_ActiveTime);
+	Grayscale_funcInit(&InterruptController, VIDEO_BASEADDR, VIDEO_BASEADDR + FRAME_SIZE, 640, 480, h_ActiveTime, v_ActiveTime);
+	/*Erode_func_init(&InterruptController, VIDEO_BASEADDR, VIDEO_BASEADDR + FRAME_SIZE, 640, 480, h_ActiveTime, v_ActiveTime);
+	Sobel_func_init(&InterruptController, VIDEO_BASEADDR, VIDEO_BASEADDR + FRAME_SIZE, 640, 480, h_ActiveTime, v_ActiveTime);*/
 
 	EnablePerfCounters();
 
@@ -297,17 +298,17 @@ void processFrame(unsigned int dataMemBaseAddr) {
 
 	// capturing the frame pixels from camera line buffers onto DDR memory
 	DDRVideoWr(640, 480, h_ActiveTime, v_ActiveTime, dataMem_ptr);
-
+/*
 	// sobel filtering the captured image
 	EdgeDetection_func(dataMem_ptr, dataMem_ptr + FRAME_SIZE, 640, 480, h_ActiveTime, v_ActiveTime);
 	dataMem_ptr += FRAME_SIZE;
 
 	// erode filtering the captured image
 	Erode_func(dataMem_ptr, dataMem_ptr + FRAME_SIZE, 640, 480, h_ActiveTime, v_ActiveTime);
-	dataMem_ptr += FRAME_SIZE;
+	dataMem_ptr += FRAME_SIZE;*/
 
 	// grayscale filtering the captured image
-	ConvToGray_func(dataMem_ptr, dataMem_ptr + FRAME_SIZE, 640, 480, h_ActiveTime, v_ActiveTime);
+	Grayscale_func(dataMem_ptr, dataMem_ptr + FRAME_SIZE, 640, 480, h_ActiveTime, v_ActiveTime);
 	dataMem_ptr += FRAME_SIZE;
 
 #ifdef DO_PERF_EVAL

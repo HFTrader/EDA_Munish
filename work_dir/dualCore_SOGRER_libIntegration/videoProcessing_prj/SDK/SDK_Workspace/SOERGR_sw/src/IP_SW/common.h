@@ -5,20 +5,21 @@
 
 
 
-#include "config.h"
+#include "common_config.h"
 #if PLATFORM == XILINX_FPGA
     #include "xil_io.h"
+// #elsif for other platforms    
 #endif
-// #elsif for other platforms
 
+#define bool unsigned char
 
 typedef struct {
 #if PLATFORM_WORD_SIZE == 32
     unsigned int offset;
     unsigned int mask;
     unsigned int value;
+// #elsif for other wordsizes    
 #endif
-// #elsif for other wordsizes
 } RegType;
 
 
